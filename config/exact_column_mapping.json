@@ -1,0 +1,174 @@
+{
+  "S026": {
+    "source": "S208",
+    "column": "S208AW_EXT"
+  },
+  "S027": {
+    "source": "S013",
+    "column": "S013J_EXT"
+  },
+  "S028": {
+    "source": "S013",
+    "column": "S013P"
+  },
+  "S051": {
+    "source": "S041",
+    "column": "S041O"
+  },
+  "S052": {
+    "source": "S042",
+    "column": "S042D"
+  },
+  "S053": {
+    "source": "S042",
+    "column": "S042"
+  },
+  "S055": {
+    "source": "S042",
+    "column": "S042G"
+  },
+  "S056": {
+    "source": "S040",
+    "column": "S040A"
+  },
+  "S057": {
+    "source": "S041",
+    "column": "S041AB"
+  },
+  "S058": {
+    "source": "S041",
+    "column": "S041AB"
+  },
+  "S059": {
+    "source": "S041",
+    "column": "S041Y"
+  },
+  "S061": {
+    "source": "S200",
+    "column": "S200B"
+  },
+  "S062": {
+    "source": "S200",
+    "column": "S200E"
+  },
+  "S064": {
+    "source": "S203",
+    "column": "S065B"
+  },
+  "S065": {
+    "source": "S203",
+    "column": "S065B"
+  },
+  "S066": {
+    "source": "S203",
+    "column": "S065B"
+  },
+  "S067": {
+    "source": "S203",
+    "column": "S065A"
+  },
+  "S068": {
+    "source": "S202",
+    "column": "S202E"
+  },
+  "S069": {
+    "source": "S073",
+    "column": "S073N"
+  },
+  "S070": {
+    "source": "S202",
+    "column": "S202J"
+  },
+  "S071": {
+    "source": "S202",
+    "column": "S202K"
+  },
+  "S072": {
+    "source": "S202",
+    "column": "S202L"
+  },
+  "S074": {
+    "source": "S202",
+    "column": "S202Z"
+  },
+  "S075": {
+    "source": "S202",
+    "column": "S202Y"
+  },
+  "S079": {
+    "source": "S073",
+    "column": "S073Q"
+  },
+  "S080": {
+    "source": "S073",
+    "column": "S073G"
+  },
+  "S081": {
+    "source": "S073",
+    "column": "S073S"
+  },
+  "S082": {
+    "source": "S073",
+    "column": "S073Y"
+  },
+  "S083": {
+    "source": "S073",
+    "column": "S073C"
+  },
+  "S085": {
+    "source": "S073",
+    "column": "S073C"
+  },
+  "S086": {
+    "source": "S073",
+    "column": "S073U"
+  },
+  "S087": {
+    "source": "S013",
+    "column": "S013AY"
+  },
+  "S090": {
+    "source": "S074",
+    "column": "S074A"
+  },
+  "S092": {
+    "source": "S074",
+    "column": "S074C"
+  },
+  "S093": {
+    "source": "S010",
+    "column": "S010AK"
+  },
+  "S094": {
+    "source": "S220",
+    "column": "S091G"
+  },
+  "S095": {
+    "source": "S220",
+    "column": "S091E"
+  },
+  "S097": {
+    "source": "S073",
+    "column": "S073K"
+  },
+  "S098": {
+    "source": "S224",
+    "column": "S094A"
+  },
+  "S099": {
+    "source": "S013",
+    "column": "S013J"
+  },
+  "S100": {
+    "source": "S222",
+    "column": "S092A"
+  },
+  "S105": {
+    "source": "S013",
+    "column": "S013AO_COMBINED"
+  },
+  "S203": {
+    "source": "S203",
+    "column": "S065A"
+  }
+}

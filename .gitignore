@@ -1,0 +1,28 @@
+# API keys (never commit)
+config/api_keys.env
+
+# Cached API responses (regenerated on run)
+data/cache/
+
+# Pipeline output — series and chopped CSVs are INCLUDED (for validation without API keys)
+# Extenbooks excluded (large, regenerated)
+data/output/extenbooks/
+data/output/figures/
+data/output/reports/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Generator scripts (internal use)
+_generate_*.py
+
+# OS
+.DS_Store
+Thumbs.db
+_generate_*.py
+_apply_*.py
+config/column_mapping.json
+config/exact_column_mapping.json
+config/v3_script_mapping.json

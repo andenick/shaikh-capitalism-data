@@ -1,0 +1,875 @@
+{
+  "S001": {
+    "script": "P01_process_industrial_production.py",
+    "source_table": "S001",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S002": {
+    "script": "P02_process_real_investment.py",
+    "source_table": "S002",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S003": {
+    "script": "P03_process_gdp_measuringworth.py",
+    "source_table": "S003",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S004": {
+    "script": "P04_process_ayres_business_cycle.py",
+    "source_table": "S004",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S007": {
+    "script": "P05_process_mfg_productivity.py",
+    "source_table": "S007",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S008": {
+    "script": "P06_process_mfg_compensation.py",
+    "source_table": "S008",
+    "col_map": {},
+    "composite_subseries": "S008-C",
+    "composite_source_col": null
+  },
+  "S009": {
+    "script": "P07_process_unemployment.py",
+    "source_table": "S009",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S017": {
+    "script": "P08_process_gdp_per_capita.py",
+    "source_table": "S017",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S026": {
+    "script": "P09_process_sectoral_profit_rates.py",
+    "source_table": "S208",
+    "col_map": {},
+    "composite_subseries": "S026-A",
+    "composite_source_col": null
+  },
+  "S027": {
+    "script": "P10_process_corrected_profitability.py",
+    "source_table": "S013",
+    "col_map": {},
+    "composite_subseries": "S027-A",
+    "composite_source_col": null
+  },
+  "S028": {
+    "script": "P11_process_component_ratios.py",
+    "source_table": "S013",
+    "col_map": {},
+    "composite_subseries": "S028-A",
+    "composite_source_col": null
+  },
+  "S105": {
+    "script": "P12_process_incremental_profit.py",
+    "source_table": "S013",
+    "col_map": {},
+    "composite_subseries": "S105-A",
+    "composite_source_col": null
+  },
+  "S034": {
+    "script": "P13_process_us_industry_rop.py",
+    "source_table": "S217",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S035": {
+    "script": "P14_process_us_industry_rop_deviations.py",
+    "source_table": "S217",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S036": {
+    "script": "P15_process_us_industry_irop.py",
+    "source_table": "S215",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S037": {
+    "script": "P16_process_us_industry_irop_deviations.py",
+    "source_table": "S215",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S038": {
+    "script": "P17_process_oecd_irop_deviations.py",
+    "source_table": "S216",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S050": {
+    "script": "P18_process_bank_vs_private_irop.py",
+    "source_table": "S215",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S051": {
+    "script": "P19_process_profit_rate_prime.py",
+    "source_table": "S051",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S052": {
+    "script": "P20_process_interest_price_level.py",
+    "source_table": "S042",
+    "col_map": {},
+    "composite_subseries": "S052-A",
+    "composite_source_col": null
+  },
+  "S053": {
+    "script": "P21_process_relative_price_finance.py",
+    "source_table": "S042",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S054": {
+    "script": "P22_process_real_interest_rate.py",
+    "source_table": "S042",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S055": {
+    "script": "P23_process_dividend_bond_yield.py",
+    "source_table": "S042",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S056": {
+    "script": "P24_process_bond_equity_returns.py",
+    "source_table": "S040",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S057": {
+    "script": "P25_process_equity_vs_irop.py",
+    "source_table": "S057",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S058": {
+    "script": "P26_process_equity_vs_rop.py",
+    "source_table": "S058",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S059": {
+    "script": "P27_process_warranted_price.py",
+    "source_table": "S041",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S020": {
+    "script": "P28_process_gold_prices.py",
+    "source_table": "S010",
+    "col_map": {
+      "S010AA": "S020-A",
+      "S010AB": "S020-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S021": {
+    "script": "P29_process_uk_wpi_variants.py",
+    "source_table": "S010",
+    "col_map": {
+      "S010R": "S021-A",
+      "S010Y": "S021-B",
+      "S010Z": "S021-C"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S022": {
+    "script": "P30_process_us_uk_wpi_short.py",
+    "source_table": "S010",
+    "col_map": {
+      "S010F": "S022-A",
+      "S010R": "S022-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S023": {
+    "script": "P31_process_us_uk_wpi_full.py",
+    "source_table": "S010",
+    "col_map": {
+      "S010F": "S023-A",
+      "S010R": "S023-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S024": {
+    "script": "P32_process_uk_wpi_gold.py",
+    "source_table": "S010",
+    "col_map": {
+      "S010S": "S024-A",
+      "S010AB": "S024-B"
+    },
+    "composite_subseries": "S024-A",
+    "composite_source_col": "S010S"
+  },
+  "S025": {
+    "script": "P33_process_us_wpi_gold.py",
+    "source_table": "S010",
+    "col_map": {
+      "S010H": "S025-A",
+      "S010AA": "S025-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S068": {
+    "script": "P34_process_nominal_gdp_wage_share.py",
+    "source_table": "S202",
+    "col_map": {
+      "S202E": "S068-A",
+      "S202F": "S068-B",
+      "S202I": "S068-C",
+      "S202J": "S068-D"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S069": {
+    "script": "P35_process_unemployment_measures.py",
+    "source_table": "S202",
+    "col_map": {
+      "S202M": "S069-A",
+      "S202Q": "S069-B",
+      "S202O": "S069-C"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S070": {
+    "script": "P36_process_wage_share_vs_unemployment.py",
+    "source_table": "S202",
+    "col_map": {
+      "S202J": "S070-A",
+      "S202R": "S070-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S071": {
+    "script": "P37_process_wage_share_change_vs_unemployment.py",
+    "source_table": "S202",
+    "col_map": {
+      "S202K": "S071-A",
+      "S202Q": "S071-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S072": {
+    "script": "P38_process_hp_wage_share_vs_unemployment.py",
+    "source_table": "S202",
+    "col_map": {
+      "S202L": "S072-A",
+      "S202R": "S072-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S073": {
+    "script": "P39_process_inflation_productivity.py",
+    "source_table": "S202",
+    "col_map": {
+      "S202A": "S073-A",
+      "S202B": "S073-B",
+      "S202C": "S073-C"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S074": {
+    "script": "P40_process_hp_real_wage_vs_unemployment.py",
+    "source_table": "S202",
+    "col_map": {
+      "S202Z": "S074-A",
+      "S202R": "S074-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S075": {
+    "script": "P41_process_hp_nominal_wage_vs_unemployment.py",
+    "source_table": "S202",
+    "col_map": {
+      "S202Y": "S075-A",
+      "S202R": "S075-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S102": {
+    "script": "P42_process_income_distribution_full.py",
+    "source_table": "S102",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S103": {
+    "script": "P43_process_income_below_200k.py",
+    "source_table": "S103",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S104": {
+    "script": "P44_process_income_above_200k.py",
+    "source_table": "S104",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S060": {
+    "script": "P45_process_trade_balances.py",
+    "source_table": "S060",
+    "col_map": {
+      "US": "S060-A",
+      "UK": "S060-B",
+      "Germany": "S060-C",
+      "Japan": "S060-D",
+      "China": "S060-E"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S061": {
+    "script": "P46_process_real_exchange_rates.py",
+    "source_table": "S061",
+    "col_map": {
+      "Japan": "S061-A",
+      "US": "S061-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S062": {
+    "script": "P47_process_law_one_price.py",
+    "source_table": "S062",
+    "col_map": {
+      "Japan": "S062-A",
+      "US": "S062-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S063": {
+    "script": "P48_process_us_trade_rxr_gdp.py",
+    "source_table": "S063",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S064": {
+    "script": "P49_process_phillips_curve_1955_1970.py",
+    "source_table": "S203",
+    "col_map": {
+      "S065B": "S064-A",
+      "S065C": "S064-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S065": {
+    "script": "P50_process_inflation_unemployment_bars.py",
+    "source_table": "S203",
+    "col_map": {
+      "S065B": "S065-A",
+      "S065C": "S065-B",
+      "S065D": "S065-C",
+      "S065": "S065-D"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S066": {
+    "script": "P51_process_phillips_curve_1971_1981.py",
+    "source_table": "S203",
+    "col_map": {
+      "S065B": "S066-A",
+      "S065C": "S066-B",
+      "S065A": "S066-C"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S067": {
+    "script": "P52_process_phillips_curve_1955_2010.py",
+    "source_table": "S203",
+    "col_map": {
+      "S065A": "S067-A",
+      "S065B": "S067-B",
+      "S065C": "S067-C",
+      "S065D": "S067-D",
+      "S065": "S067-E"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S093": {
+    "script": "P53_process_golden_waves.py",
+    "source_table": "S010",
+    "col_map": {
+      "S010AK": "S093-A",
+      "S010AL": "S093-B",
+      "S010AM": "S093-C",
+      "S010AN": "S093-D",
+      "S010AO": "S093-E",
+      "S010AP": "S093-F"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S094": {
+    "script": "P54_process_wage_suppression_impact.py",
+    "source_table": "S220",
+    "col_map": {
+      "S091G": "S094-A",
+      "S091H": "S094-B",
+      "S091I": "S094-C",
+      "S091M": "S094-D",
+      "S091": "S094-E"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S095": {
+    "script": "P55_process_hourly_wages_productivity.py",
+    "source_table": "S220",
+    "col_map": {
+      "S091E": "S095-A",
+      "S091F": "S095-B",
+      "S091J": "S095-C",
+      "S091K": "S095-D"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S096": {
+    "script": "P56_process_theoretical_fig16_4.py",
+    "source_table": "S096",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S097": {
+    "script": "P57_process_interest_rate_path.py",
+    "source_table": "S221",
+    "col_map": {
+      "S090N": "S097-A",
+      "S090C": "S097-B",
+      "S090O": "S097-C",
+      "S090P": "S097-D"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S098": {
+    "script": "P58_process_us_oecd_interest_rates.py",
+    "source_table": "S224",
+    "col_map": {
+      "S094A": "S098-A",
+      "S094B": "S098-B",
+      "S094C": "S098-C",
+      "S094D": "S098-D",
+      "S094": "S098-E"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S099": {
+    "script": "P59_process_profit_rates_ch16.py",
+    "source_table": "S221",
+    "col_map": {
+      "S090C": "S099-A",
+      "S090K": "S099-B",
+      "S090L": "S099-C",
+      "S090M": "S099-D",
+      "S090AA": "S099-E"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S100": {
+    "script": "P60_process_debt_income_ratio.py",
+    "source_table": "S222",
+    "col_map": {
+      "S092A": "S100-A",
+      "S092B": "S100-B",
+      "S092": "S100-C"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S101": {
+    "script": "P61_process_debt_service_ratio.py",
+    "source_table": "S223",
+    "col_map": {
+      "S093A": "S101-A",
+      "S093": "S101-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S841": {
+    "script": "P62_process_bain_aggregates.py",
+    "source_table": "S841",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S842": {
+    "script": "P63_process_bain_industry_scatter.py",
+    "source_table": "S842",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S843": {
+    "script": "P64_process_semmler_prices.py",
+    "source_table": "S843",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S844": {
+    "script": "P65_process_stigler_profit.py",
+    "source_table": "S844",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S845": {
+    "script": "P66_process_demsetz_returns.py",
+    "source_table": "S845",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S846": {
+    "script": "P67_process_corrected_bain.py",
+    "source_table": "S846",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S047": {
+    "script": "P68_process_market_vs_direct_prices.py",
+    "source_table": "S047",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S048": {
+    "script": "P69_process_io_ratios_standard_prices.py",
+    "source_table": "S048",
+    "col_map": {
+      "FPR009_C7": "S048-pctNMAWD",
+      "FPR009_C8": "S048-CVpv",
+      "FPR009_C9": "S048-dpv"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S049": {
+    "script": "P70_process_wage_profit_curves.py",
+    "source_table": "S049",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S076": {
+    "script": "P71_process_cpi_level.py",
+    "source_table": "S072",
+    "col_map": {
+      "S072A": "S076-A",
+      "S072": "S076-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S077": {
+    "script": "P72_process_growth_rates_industry_a.py",
+    "source_table": "S225",
+    "col_map": {
+      "S203T": "S077-A",
+      "S203U": "S077-B",
+      "S203V": "S077-C",
+      "S203W": "S077-D",
+      "S203X": "S077-E",
+      "S203Y": "S077-F",
+      "S203Z": "S077-G",
+      "S203AA": "S077-H",
+      "S203AB": "S077-I"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S078": {
+    "script": "P73_process_growth_rates_industry_b.py",
+    "source_table": "S225",
+    "col_map": {
+      "S203AC": "S078-A",
+      "S203AD": "S078-B",
+      "S203AE": "S078-C",
+      "S203AF": "S078-D",
+      "S203AG": "S078-E",
+      "S203AH": "S078-F",
+      "S203AI": "S078-G",
+      "S203AJ": "S078-H",
+      "S203AK": "S078-I",
+      "S203": "S078-J"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S079": {
+    "script": "P74_process_nominal_gdp_purchasing_power.py",
+    "source_table": "S073",
+    "col_map": {
+      "S073Q": "S079-A",
+      "S073G": "S079-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S080": {
+    "script": "P75_process_gdp_vs_purchasing_power.py",
+    "source_table": "S073",
+    "col_map": {
+      "S073G": "S080-A",
+      "S073Q": "S080-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S081": {
+    "script": "P76_process_output_vs_profit_rate.py",
+    "source_table": "S073",
+    "col_map": {
+      "S073S": "S081-A",
+      "S073T": "S081-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S082": {
+    "script": "P77_process_output_vs_profits.py",
+    "source_table": "S073",
+    "col_map": {
+      "S073Y": "S082-A",
+      "S073": "S082-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S083": {
+    "script": "P78_process_phillips_classical_full.py",
+    "source_table": "S073",
+    "col_map": {
+      "S073C": "S083-A",
+      "S073N": "S083-B",
+      "S073O": "S083-C",
+      "S073H": "S083-D"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S084": {
+    "script": "P79_process_phillips_1948_1981.py",
+    "source_table": "S073",
+    "col_map": {
+      "S073C": "S084-A",
+      "S073N": "S084-B",
+      "S073O": "S084-C",
+      "S073H": "S084-D"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S085": {
+    "script": "P80_process_phillips_1982_2010.py",
+    "source_table": "S073",
+    "col_map": {
+      "S073C": "S085-A",
+      "S073N": "S085-B",
+      "S073O": "S085-C",
+      "S073H": "S085-D"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S086": {
+    "script": "P81_process_normalized_inflation_utilization.py",
+    "source_table": "S073",
+    "col_map": {
+      "S073U": "S086-A",
+      "S073V": "S086-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S087": {
+    "script": "P82_process_hp_profit_trend.py",
+    "source_table": "S073",
+    "col_map": {
+      "S073L": "S087-A",
+      "S073Q": "S087-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S088": {
+    "script": "P83_process_world_inflation_credit_early.py",
+    "source_table": "FPR015",
+    "col_map": {
+      "FPR015_C1": "S088-A",
+      "FPR015_C2": "S088-B",
+      "FPR015_C5": "S088-C",
+      "FPR015_C6": "S088-D"
+    },
+    "composite_subseries": "S088-A",
+    "composite_source_col": "FPR015_C1"
+  },
+  "S089": {
+    "script": "P84_process_world_inflation_credit_late.py",
+    "source_table": "S089",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S090": {
+    "script": "P85_process_argentina_credit_gdp.py",
+    "source_table": "S074",
+    "col_map": {
+      "S074A": "S090-A",
+      "S074B": "S090-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S091": {
+    "script": "P86_process_argentina_credit_inflation.py",
+    "source_table": "S074",
+    "col_map": {
+      "S074A": "S091-A",
+      "S074C": "S091-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S092": {
+    "script": "P87_process_argentina_inflation_depreciation.py",
+    "source_table": "S074",
+    "col_map": {
+      "S074C": "S092-A",
+      "S074D": "S092-B"
+    },
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S010": {
+    "script": "P88_process_gold_prices_and_wpi_source_table.py",
+    "source_table": "S010",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S200": {
+    "script": "P89_process_us_japan_trade_source_table.py",
+    "source_table": "S200",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S201": {
+    "script": "P90_process_export_import_trade_balance_source_table.py",
+    "source_table": "S201",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S202": {
+    "script": "P91_process_inflation_unemployment_wage_share_source_table.py",
+    "source_table": "S202",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S203": {
+    "script": "P92_process_credit_inflation_unemployment_source_table.py",
+    "source_table": "S203",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S220": {
+    "script": "P93_process_wage_productivity_source_table.py",
+    "source_table": "S220",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S221": {
+    "script": "P94_process_profit_rate_source_table.py",
+    "source_table": "S221",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S222": {
+    "script": "P95_process_debt_to_income_ratio_source_table.py",
+    "source_table": "S222",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S223": {
+    "script": "P96_process_debt_service_ratio_source_table.py",
+    "source_table": "S223",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  },
+  "S224": {
+    "script": "P97_process_rxrrulc_oecd_interest_rate_source_table.py",
+    "source_table": "S224",
+    "col_map": {},
+    "composite_subseries": null,
+    "composite_source_col": null
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "processing_order": [2, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17],
+  "chapters": {
+    "2": {
+      "title": "Turbulent Trends and Hidden Structures",
+      "module": "ch02",
+      "series": ["S001", "S002", "S003", "S004", "S007", "S008", "S009", "S017"],
+      "depends_on": []
+    },
+    "5": {
+      "title": "The General Price Level",
+      "module": "ch05",
+      "series": ["S010", "S020", "S021", "S022", "S023", "S024", "S025"],
+      "depends_on": []
+    },
+    "6": {
+      "title": "The Rate of Profit",
+      "module": "ch06",
+      "series": ["S013", "S026", "S027", "S028", "S105", "S206", "S207", "S208", "S209", "S210", "S211", "S212", "S213", "S214"],
+      "depends_on": []
+    },
+    "7": {
+      "title": "Real Competition",
+      "module": "ch07",
+      "series": ["S034", "S035", "S036", "S037", "S038", "S050", "S215", "S216", "S217"],
+      "source_tables": ["S215", "S216", "S217", "S225"],
+      "depends_on": [6]
+    },
+    "8": {
+      "title": "Competition and Concentration",
+      "module": "ch08",
+      "series": ["S841", "S842", "S843", "S844", "S845", "S846"],
+      "depends_on": []
+    },
+    "9": {
+      "title": "Prices of Production",
+      "module": "ch09",
+      "series": ["S047", "S048", "S049"],
+      "depends_on": []
+    },
+    "10": {
+      "title": "Finance and Interest",
+      "module": "ch10",
+      "series": ["S040", "S041", "S042", "S050", "S051", "S052", "S053", "S054", "S055", "S056", "S057", "S058", "S059"],
+      "depends_on": [6]
+    },
+    "11": {
+      "title": "International Trade",
+      "module": "ch11",
+      "series": ["S060", "S061", "S062", "S063", "S200", "S201"],
+      "depends_on": []
+    },
+    "12": {
+      "title": "Phillips Curves",
+      "module": "ch12",
+      "series": ["S064", "S065", "S066", "S067", "S203"],
+      "depends_on": []
+    },
+    "14": {
+      "title": "Classical Phillips Curve",
+      "module": "ch14",
+      "series": ["S068", "S069", "S070", "S071", "S072", "S073", "S074", "S075", "S202"],
+      "depends_on": [6]
+    },
+    "15": {
+      "title": "Money and Inflation",
+      "module": "ch15",
+      "series": ["S076", "S077", "S078", "S079", "S080", "S081", "S082", "S083", "S084", "S085", "S086", "S087", "S088", "S089", "S090", "S091", "S092", "S225"],
+      "depends_on": [6, 14]
+    },
+    "16": {
+      "title": "Long Waves and Crises",
+      "module": "ch16",
+      "series": ["S093", "S094", "S095", "S096", "S097", "S098", "S099", "S100", "S101", "S220", "S221", "S222", "S223", "S224"],
+      "depends_on": [6]
+    },
+    "17": {
+      "title": "Inequality",
+      "module": "ch17",
+      "series": ["S102", "S103", "S104"],
+      "depends_on": []
+    }
+  }
+}

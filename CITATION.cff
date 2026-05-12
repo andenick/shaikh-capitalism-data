@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+title: "Capitalism: Competition, Conflict, Crises — Data Replication Package"
+message: "If you use this data or code, please cite both this package and the original work."
+type: dataset
+authors:
+  - family-names: Anderson
+    given-names: Nicholas
+    affiliation: The New School for Social Research
+date-released: "2026-05-11"
+version: "4.0.0"
+license: MIT
+repository-code: "https://github.com/andenick/shaikh-capitalism-data"
+keywords:
+  - political economy
+  - profit rate
+  - economic data
+  - replication
+  - time series
+  - real competition
+references:
+  - type: book
+    title: "Capitalism: Competition, Conflict, Crises"
+    authors:
+      - family-names: Shaikh
+        given-names: Anwar
+    year: 2016
+    publisher:
+      name: Oxford University Press
+    isbn: "978-0199390632"
+    url: "http://www.anwarshaikhecon.org/"
