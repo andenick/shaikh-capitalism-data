@@ -1,0 +1,161 @@
+{
+  "series_id": "ES2101",
+  "name": "Shaikh, Coronado, Nassif-Pires (2020) - Sraffa price curves from US BEA benchmark I-O tables",
+  "chapter": null,
+  "paper_metadata": {
+    "title": "On the empirical regularities of Sraffa prices",
+    "authors": ["Anwar Shaikh", "Jose Alejandro Coronado", "Luiza Nassif-Pires"],
+    "year": 2020,
+    "journal": "European Journal of Economics and Economic Policies: Intervention",
+    "volume_issue_pages": "Vol. 17 No. 2, pp. 265-275",
+    "doi": "10.4337/ejeep.2020.0069",
+    "url": "https://doi.org/10.4337/ejeep.2020.0069",
+    "received": "2020-04-20",
+    "accepted": "2020-04-29",
+    "first_online": "2020-07"
+  },
+  "figures": [
+    "Figure 1 - Sraffa prices, 2002 US input-output matrix, 425 sectors (paper p. 268)",
+    "Figure 2 - Sraffa prices, 2007 US input-output matrix, 383 sectors (paper p. 268)",
+    "Figure 3 - Sraffa prices, 2002 US input-output matrix, at various levels of aggregation (paper p. 269)",
+    "Figure 4 - Sraffa prices, 2007 US input-output matrix, at various levels of aggregation (paper p. 269)",
+    "Figure 5 - Curvature index for two hypothetical curves (paper p. 270)",
+    "Figure 6 - Average CI by matrix size, 2002 and 2007 (paper p. 271)",
+    "Figure 7 - Theil indexes for 2002 and 2007 (paper p. 271)"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null,
+    "related_rscd_series": ["S901", "S902", "ES2001"],
+    "related_book_chapters": ["Ch9 (wage-profit curves, Sraffa prices, transformation problem)"]
+  },
+  "book_quotes": [
+    {
+      "chapter": "Paper Section 3",
+      "page": 267,
+      "quote": "Figures 1-2 display the Sraffian price curves for the largest 2002 and 2007 matrices as the profit rate (r) varies from zero to its maximum rate (R), that is, as r/R varies from 0 to 1. Basic and non-basic commodities are displayed separately. Each price curve is normalized to its initial value, which is the labor value of that commodity, so that the starting point equals 1 (Sraffa 1960: 12, sec. 14).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Section 2 and Data Source",
+      "page": 267,
+      "quote": "We used the US 2002 403-order and 2007 387-order benchmark tables of Sraffian basic commodities and successively aggregated them to get a total of 295 matrices for these two years ranging from 15-order to the largest in each year. We then further expanded our sample with the 1977, 1982, 1987, 1992, and 1997 benchmark tables at the detailed level.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Appendix 2",
+      "page": 275,
+      "quote": "We utilize a pure circulating capital model of prices of production characterized by n x n single product industries, a uniform rate of profit r, and a uniform wage rate w paid post festum as in Sraffa. We create skill-adjusted sectoral labor inputs by using the compensation of employee entries in the use matrices published by the BLS, normalizing them by the ratio of aggregate employee compensation to aggregate employment (Shaikh 2012: 98).",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Section 5 - Conclusions",
+      "page": 272,
+      "quote": "Across all levels of aggregation in both benchmark years, the average CIs range between 0.03 to 0.06. In 2002 only 26 (6.1 percent) of 425 prices switch from one side of their labor value to the other. Only four (0.9 percent) switch with respect to the Bienenfeld line, none with a deviation greater than 1 percent.",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (BEA)",
+    "publication": "Benchmark Input-Output Data (Industry-by-Industry Direct Requirements / Use and Make tables)",
+    "table_or_series_id": "Benchmark IO 1977, 1982, 1987, 1992, 1997, 2002, 2007 (detailed level: ~389-430 industries)",
+    "url": "https://www.bea.gov/industry/benchmark-input-output-data",
+    "frequency": "quinquennial",
+    "units": "millions of current USD (Use/Make tables); dimensionless (derived A-matrix coefficients)",
+    "license": "U.S. Federal Government public domain (no copyright)",
+    "available_through": "BEA Industry Economic Accounts portal",
+    "discontinued": false,
+    "replaced_by": null,
+    "secondary_sources_used": [
+      {
+        "agency": "U.S. Bureau of Labor Statistics (BLS)",
+        "purpose": "Compensation of employees and employment in use matrices, used to construct skill-adjusted sectoral labor coefficients",
+        "url_hint": "http://www.bls.gov/emp/classifications-crosswalks/sect300.xls (paper-cited crosswalk; BLS Employment Projections labor input data)"
+      },
+      {
+        "agency": "U.S. Census Bureau",
+        "publication": "NAICS classification",
+        "url": "https://www.census.gov/eos/www/naics/"
+      }
+    ]
+  },
+  "construction": "composite",
+  "formula": "p(r) = (1 - r/R) v + r p(r) H, where H = A(I - A)^{-1}; v = l(I - A)^{-1}; A is the n x n direct requirements matrix; l is the skill-adjusted labor coefficient vector; R = 1/lambda_1(H) is the maximum profit rate. Bienenfeld linear approximation: p(r) = v + (r/R)(R p(R) H - v). Curvature Index CI = 1 - SI, where SI is the ratio of Bienenfeld-line length to actual Sraffa-price-curve arc length.",
+  "components": [
+    "A matrix - BEA industry-by-industry direct requirements table (derived from Use and Make tables via the Industry Technology Assumption)",
+    "l vector - skill-adjusted labor coefficients (BLS compensation-of-employees data, normalized by aggregate compensation/aggregate employment)",
+    "Aggregation correspondences - 8 nested levels: 425/383, 342/318, 161/197, 120/142, 63/88, 30-33/49, 17, 15/16 industries (2002/2007); plus intermediate levels from BLS (170), BEA-summary (71, 133) crosswalks",
+    "Pre-processing - exclusion of owner-occupied dwellings, scrap, used/secondhand goods, non-comparable imports, rest-of-world adjustment (paper Appendix 1)"
+  ],
+  "year_range_book": [1977, 2007],
+  "year_range_extension": [1977, 2017],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA Benchmark I-O 2012",
+      "source": "BEA Industry Economic Accounts",
+      "url": "https://www.bea.gov/industry/benchmark-input-output-data",
+      "units": "millions of current USD",
+      "splice_strategy": "none",
+      "concerns": ["NAICS 2012 revisions change sector boundaries vs paper's 2007 NAICS; bridging required for cross-year comparability of A matrices"]
+    },
+    {
+      "subseries_label": "BEA Benchmark I-O 2017",
+      "source": "BEA Industry Economic Accounts",
+      "url": "https://www.bea.gov/industry/benchmark-input-output-data",
+      "units": "millions of current USD",
+      "splice_strategy": "none",
+      "concerns": ["Latest available benchmark as of writing; NAICS 2017 revisions; BEA may have changed Make-table methodology"]
+    },
+    {
+      "subseries_label": "BEA Annual Use/Make tables (non-benchmark years)",
+      "source": "BEA Input-Output Accounts Annual Data",
+      "url": "https://www.bea.gov/industry/input-output-accounts-data",
+      "units": "millions of current USD",
+      "splice_strategy": "none",
+      "concerns": ["Paper cites these as available at summary (71) and detailed (389) levels; lower detail than benchmarks; useful for filling 5-year gaps but A-matrix coefficients less reliable"]
+    },
+    {
+      "subseries_label": "BLS Employment Projections - employment by industry (matched labor input)",
+      "source": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/emp/",
+      "units": "thousands of jobs; dollars of compensation",
+      "splice_strategy": "growth_rate",
+      "concerns": ["BLS sector-300 crosswalk URL cited in paper has been reorganized; current location is BLS Employment Projections industry data"]
+    }
+  ],
+  "methodology_notes": [
+    "This paper produces a *derived* dataset (Sraffa price curves, Curvature Indexes, Theil indexes) from a primary input-output / labor-input source. The empirical object of the paper is the statistical distribution of CI values across 295 aggregated A-matrices for 2002 and 2007 (plus benchmark detailed-level extensions for 1977-1997).",
+    "Sraffa prices are computed from equation (A2): p(r) = (1 - r/R) v + r p(r) H, normalized so p(0) = labor values v and p(R) = dominant left eigenvector of H = A(I-A)^-1. Each price-value ratio p_i/v_i begins at 1.0 at r=0.",
+    "Bienenfeld linear approximation (equation A3) serves as the reference line for the Curvature Index. CI = 0 implies perfect linearity (price curve = Bienenfeld line); CI -> 1 implies extreme curvature/tortuosity. Empirically, in 2002, 50% of CIs fall in [0, 0.001], 80% below 0.022, 90% below 0.158 (paper p. 270).",
+    "Authors restrict to US data because (a) the US economy is relatively closed - ~90% of goods produced domestically 1977-2007, and (b) BEA provides high-quality benchmark I-O tables (paper p. 267 fn 1).",
+    "295 matrices = 176 distinct 2002 aggregation levels + 119 distinct 2007 aggregation levels (Appendix 1). Paper sometimes refers to '425-order' (post-exclusions of owner-occupied dwellings etc.) and sometimes '430-order' (BEA published detail level); the gap reflects the 5-industry exclusions described in Appendix 1.",
+    "For Section 2's rank-size eigenvalue analysis (refers to companion paper Shaikh/Nassif 2018), they used only 'Sraffian basic commodities' (orders 403/2002 and 387/2007). For this paper's price-curve analysis they include non-basic sectors (orders 425/383)."
+  ],
+  "open_questions": [
+    "DECOMPOSITION RECOMMENDATION: This paper's empirical content is best represented as a SINGLE composite series ES2101 = 'Sraffa price curves and curvature statistics from US BEA benchmark IO tables'. While Figures 1-4 (price curves), Figure 6 (Average CI by matrix size), and Figure 7 (Theil indexes) are distinct graphical objects, they all derive from the same underlying input dataset (BEA Benchmark IO 1977-2007 + BLS labor compensation) via the same pipeline (A2)/(A3). For Phase 4-7 replication purposes, building ES2101 means rebuilding the BEA-to-A-matrix pipeline, the price-curve solver, and the CI/Theil statistics together; splitting them into ES2101/ES2102/ES2103 would create artificial dependency chains. RECOMMEND: keep as single ES2101.",
+    "If decomposition IS desired, the natural split is: ES2101 = BEA benchmark A-matrices (the primary data input); ES2102 = derived Sraffa price curves p(r); ES2103 = Curvature Index distribution; ES2104 = Theil index distribution. This mirrors a clean Anu Framework dependency DAG.",
+    "BLS sector-300 crosswalk URL cited in paper (http://www.bls.gov/emp/classifications-crosswalks/sect300.xls) is likely stale by 2026; BLS reorganized Employment Projections data multiple times. Phase 4 should verify or substitute current BLS NAICS-based labor input crosswalk.",
+    "Paper cites a companion working paper (Shaikh, Nassif, Coronado 2018, NSSR WP #1812) for the eigenvalue rank-size results. Replication of ES2101 may require access to that companion paper's data pipeline and may overlap with ES2001 if the latter covers Shaikh's 2020 Sraffa prices empirical-sufficiency paper.",
+    "Paper does NOT report the exact CI / Theil time series values in the body text; they appear only as scatter plots in Figures 6 and 7. Full replication will require either (a) digitizing the figures or (b) reconstructing from BEA tables via equations A1-A3 - the latter is strongly preferred per Druck standards.",
+    "Compensation-of-employees normalization (Appendix 2) creates 'skill-adjusted' labor coefficients; the precise weighting scheme is delegated to Shaikh (2012: 98) and not fully restated here. Phase 4 should cross-reference Shaikh 2012 (Classical Political Economy and Modern Theory chapter) for the exact construction."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-es2101-2301",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from full paper read (10 PDF pages). All 4 quotes verbatim from PDF. Primary source = BEA benchmark IO + BLS labor compensation. Construction=composite (Sraffa price model A2 + Bienenfeld A3 + CI = 1-SI). Recommend KEEP AS SINGLE SERIES rather than decompose - one underlying dataset, one pipeline. Extension candidates: BEA 2012 and 2017 benchmarks."
+    }
+  ]
+}

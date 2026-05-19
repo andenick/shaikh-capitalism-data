@@ -1,0 +1,11 @@
+year,value,subseries_id,source_id,units
+2002,0.03,ES2101-avg_CI_lower_bound,SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY,dimensionless
+2002,0.06,ES2101-avg_CI_upper_bound,SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY,dimensionless
+2002,1.0,ES2101-max_bienenfeld_deviation_pct,SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY,percent
+2002,4.0,ES2101-n_prices_switching_bienenfeld,SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY,count
+2002,0.9,ES2101-n_prices_switching_bienenfeld_pct,SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY,percent
+2002,26.0,ES2101-n_prices_switching_value,SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY,count
+2002,6.1,ES2101-n_prices_switching_value_pct,SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY,percent
+2002,425.0,ES2101-n_prices_total,SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY,count
+2007,0.03,ES2101-avg_CI_lower_bound,SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY,dimensionless
+2007,0.06,ES2101-avg_CI_upper_bound,SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY,dimensionless

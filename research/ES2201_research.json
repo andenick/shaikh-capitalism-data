@@ -1,0 +1,190 @@
+{
+  "series_id": "ES2201",
+  "name": "Shaikh & Jacobo (2020) - US individual income distribution fitted to econophysics two-class model (Boltzmann-exponential bottom 97% + Pareto top 3%)",
+  "chapter": null,
+  "figures": [
+    "Figure 1 (p. 4): Cumulative Probability from Above, 2011 (full distribution + bottom-97% log-linear inset + top-3% log-log inset)",
+    "Figure 2 (p. 9): Wage Income Data with fitted log-linear and log-log models, 2011",
+    "Figure 3 (p. 11): Property Income Data with fitted log-linear and log-log models, 2011",
+    "Table 1 (p. 5): Annual fitted parameters G', <r>, <w>, f, alpha for 2002-2016"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null,
+    "book_chapter_ancestor": "Shaikh (2016) Ch. 17 - econophysics of income distribution"
+  },
+  "paper_metadata": {
+    "title": "Economic Arbitrage and the Econophysics of Income Inequality",
+    "authors": ["Anwar Shaikh", "Juan Esteban Jacobo"],
+    "year": 2020,
+    "journal": "Review of Behavioral Economics",
+    "volume": "7",
+    "pages": "1-17",
+    "issn": "2326-6198",
+    "doi": "10.1561/105.00000129",
+    "publisher": "now Publishers",
+    "url": "https://doi.org/10.1561/105.00000129"
+  },
+  "book_quotes": [
+    {
+      "chapter": null,
+      "page": 2,
+      "quote": "A recent econophysics \"two-class\" theory of income distribution (EPTC) pioneered by Yakovenko and his co-authors has opened up new ground (Dragulescu and Yakovenko, 2000, 2001; Yakovenko and Rosser, 2009; Banerjee and Yakovenko, 2010). This approach provide substantial empirical evidence that the bottom 97-99% of the overall distribution of personal incomes, which is essentially labor income, is well approximated by an exponential distribution, while top 1-3%, which is essentially property income, is well approximated by a power law.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": null,
+      "page": 3,
+      "quote": "We utilize US Internal Revenue Service (IRS) data on adjusted gross income of individuals, pre-binned in varying ranges. The main chart in Figure 1 displays the overall distribution in 2011 with income r on the horizontal axis and C(r) on the log-scaled vertical axis.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": null,
+      "page": 14,
+      "quote": "Sources and Methods: Adjusted Gross Income (AGI) bins and number or returns in each bin are from IRS Tables 1.4 for 2002-2016, column 1-2. Our basic data consists of bin midpoints and return frequency. Total AGI is from IRS Table 1 (which turns out to be the same as Total AGI less deficit in Table 1.4), and <r> = average AGI = total AGI/total returns.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": null,
+      "page": 14,
+      "quote": "The break points between labor and property income were identified by successively adding points to the lower section plot ln C(r) vs r until a significant curvature was evident. In all years, the dividing line turned out to be within the bin $100,000 to $200,000. Lower and upper sections were subsequently treated as separate populations, so that C(r) begins from 1 in each, and MLE regression was used throughout.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": null,
+      "page": 14,
+      "quote": "Because the mean income of the lower section cannot be directly calculated from midpoint data, the average income in the bottom section (\"income temperature\" <w>) is estimated through the regression of ln C(r) vs r, while top income (f) was calculated as f = 1 - <w>/<r> (Banerjee and Yakovenko, 2010).",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Internal Revenue Service (IRS), Statistics of Income (SOI) Division",
+    "publication": "SOI Tax Stats - Individual Statistical Tables by Size of Adjusted Gross Income (Publication 1304, Individual Income Tax Returns - Complete Report)",
+    "table_or_series_id": "Table 1.4 (All Returns: Sources of Income, Adjustments, and Tax Items, by Size of Adjusted Gross Income) and Table 1 (Selected Income and Tax Items, by Size and Accumulated Size of Adjusted Gross Income), tax years 2002-2016",
+    "url": "https://www.irs.gov/statistics/soi-tax-stats-individual-statistical-tables-by-size-of-adjusted-gross-income",
+    "frequency": "annual",
+    "units": "AGI bin endpoints in current USD; number of returns per bin (count); aggregated to bin midpoints with return frequency per bin",
+    "license": "U.S. federal government work, public domain (17 U.S.C. Section 105)",
+    "available_through": "IRS SOI website (HTML + XLS); historical PDFs of Pub 1304 via IRS.gov/SOI",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "For each tax year t in 2002..2016: (1) extract bin midpoints r_i and return counts n_i from IRS Table 1.4; (2) compute cumulative distribution from above C(r_i) = sum_{j>=i} n_j / sum_j n_j; (3) identify break point r* within the $100,000-$200,000 bin by adding points to ln C vs r until curvature appears; (4) fit MLE exponential to bottom section ln C(r) = -(r/<w>) to estimate income temperature <w>; (5) compute <r> = (total AGI from Table 1) / (total returns); (6) compute top income share f = 1 - <w>/<r>; (7) fit MLE power law C(r) propto r^{-alpha} to top section to estimate alpha; (8) compute lower-section Gini G' via midpoint method (Brooks, Notre Dame).",
+  "components": [
+    {
+      "label": "AGI bin endpoints (current USD)",
+      "source": "IRS SOI Table 1.4, column 1",
+      "role": "domain"
+    },
+    {
+      "label": "Number of returns per AGI bin",
+      "source": "IRS SOI Table 1.4, column 2",
+      "role": "frequency"
+    },
+    {
+      "label": "Total AGI",
+      "source": "IRS SOI Table 1 (equivalently Total AGI less deficit in Table 1.4)",
+      "role": "normalizer for <r>"
+    },
+    {
+      "label": "Total number of returns",
+      "source": "IRS SOI Table 1",
+      "role": "normalizer for <r>"
+    },
+    {
+      "label": "Fitted parameter: G' (Gini coefficient, bottom 97%)",
+      "source": "Computed via midpoint Gini method (Brooks, https://www3.nd.edu/~wbrooks/GiniNotes.pdf)",
+      "role": "fitted output, expected 0.5 for pure exponential"
+    },
+    {
+      "label": "Fitted parameter: <r> (overall mean AGI, thousands USD)",
+      "source": "Computed: total AGI / total returns",
+      "role": "fitted output"
+    },
+    {
+      "label": "Fitted parameter: <w> (bottom-97% mean / income temperature, thousands USD)",
+      "source": "MLE regression of ln C(r) vs r on bottom section",
+      "role": "fitted output"
+    },
+    {
+      "label": "Fitted parameter: f (top-3% income share)",
+      "source": "Computed: f = 1 - <w>/<r>",
+      "role": "fitted output"
+    },
+    {
+      "label": "Fitted parameter: alpha (top-3% power-law exponent)",
+      "source": "MLE regression of ln C(r) vs ln r on top section",
+      "role": "fitted output"
+    }
+  ],
+  "year_range_book": [2002, 2016],
+  "year_range_extension": [2002, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "IRS SOI Table 1.4 (Individual returns by size of AGI) - annual extension 2017-present",
+      "source": "IRS Statistics of Income, Individual Statistical Tables by Size of Adjusted Gross Income",
+      "url": "https://www.irs.gov/statistics/soi-tax-stats-individual-statistical-tables-by-size-of-adjusted-gross-income",
+      "units": "AGI bins (current USD), number of returns (count), AGI sums (thousands USD)",
+      "splice_strategy": "none",
+      "concerns": [
+        "Bin schedule changes across years - midpoint convention must be applied year-by-year",
+        "Post-TCJA (2018+) AGI definition revisions need to be checked for continuity",
+        "IRS SOI release lag typically 2-3 years; latest available year as of 2026 likely 2022 or 2023",
+        "Must recompute G', <w>, alpha each year using the same MLE protocol; do NOT growth-rate splice fitted parameters"
+      ]
+    },
+    {
+      "subseries_label": "IRS SOI Table 1.1/Table 1 (Selected Income and Tax Items by Size of AGI) - annual aggregates for <r> normalizer",
+      "source": "IRS SOI Individual Statistical Tables",
+      "url": "https://www.irs.gov/statistics/soi-tax-stats-individual-statistical-tables-by-size-of-adjusted-gross-income",
+      "units": "Total AGI (thousands USD), total number of returns",
+      "splice_strategy": "none",
+      "concerns": [
+        "Use Table 1 total AGI / total returns to construct <r>, matching the paper's appendix"
+      ]
+    },
+    {
+      "subseries_label": "World Inequality Database (WID) US income distribution - cross-validation source",
+      "source": "World Inequality Database (Piketty, Saez, Zucman et al.)",
+      "url": "https://wid.world/country/usa/",
+      "units": "Income shares by percentile (decimal fraction)",
+      "splice_strategy": "none",
+      "concerns": [
+        "Different concept (national income vs AGI) - usable only as a sanity check on top-3% share f, not as a substitute"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Decomposition decision: this paper produces ONE composite series. Although Table 1 reports five annual parameters (G', <r>, <w>, f, alpha), they are jointly estimated from the same IRS AGI binned data with the same MLE fitting protocol and the same labor/property break point identification procedure. Decomposing into five sub-series would obscure the shared provenance and shared methodology. The five parameters are treated as components of one fitted-distribution time series.",
+    "Two-class break point: in every year 2002-2016 the labor/property boundary fell within the $100,000-$200,000 AGI bin (paper p. 14). The exact break is data-driven (added until curvature appears in ln C vs r), so any extension must re-identify the break per year rather than fixing the dollar threshold.",
+    "Mean wage <w> is NOT a direct sample mean. Because IRS data is binned, the bottom-section mean is estimated from the slope of ln C(r) vs r (i.e., as the inverse rate of the fitted exponential / 'income temperature' in the econophysics sense). Per Anu Framework no-proxies rule: any extension must replicate this regression-based <w>, NOT substitute a direct bottom-97% mean from microdata.",
+    "Top income share f is a derived identity: f = 1 - <w>/<r>. Reproducibility requires both <w> (from MLE regression) and <r> (from Table 1 aggregates).",
+    "Gini coefficient G' uses the midpoint method documented at https://www3.nd.edu/~wbrooks/GiniNotes.pdf (Brooks, Notre Dame). The paper does not specify which Brooks note version; the URL was live at time of paper publication (2020) and should be archived as part of replication.",
+    "Figures 1, 2, 3 are 2011-only illustrative snapshots, not time series. The time series is Table 1 only. Replicating the figures requires the raw 2011 IRS Table 1.4 bin data, not a fitted-parameter pull.",
+    "This paper is the journal-article extension of Shaikh (2016) Ch. 17 'The Theory of the Distribution of Personal Income'. The book chapter used IRS data through circa 2009; the 2020 paper extends to 2016 and adds the formal stochastic-arbitrage (CIR / log-linear / log-log) derivation in Sec. 4. Cross-reference S17xx Ch. 17 series in the registry.",
+    "Stationary distribution mapping per paper: log-linear wage model -> Gamma (subsumes exponential); log-log wage model -> Lognormal; log-linear property model -> Gamma; log-log property model -> approximate Power Law via random-growth-with-reflecting-barrier (Gabaix 2009). Empirically the log-linear is preferred for wages and the log-log for property income (paper p. 14)."
+  ],
+  "open_questions": [
+    "Decomposition: registered as ONE composite series ES2201 spanning all five Table-1 parameters. Confirm with Phase 4 that downstream consumers do not require five separate parameter sub-series (ES2201a..ES2201e). Recommendation: keep as one series; expose components via the AnuData panel layout with one row per (year, parameter).",
+    "Pre-2002 backfill: paper starts in 2002. IRS SOI Table 1.4 exists earlier (back to at least 1995 in modern format). Decide in Phase 4 whether to extend backward; methodologically straightforward but requires re-fitting per year and adopting earlier bin schedules.",
+    "Bin midpoint convention for top-coded bin: IRS Table 1.4 highest bin is open-ended ($10M+ or similar in recent years). Paper says 'bin mid-points' but does not specify the top bin treatment. Phase 4 must document a convention (e.g., Pareto tail integral or fixed multiplier of lower bound).",
+    "Brooks Gini midpoint method URL: https://www3.nd.edu/~wbrooks/GiniNotes.pdf was the paper's cited source for G' computation. URL must be re-verified at extension time and PDF archived to SalvagedInputs/ if still live.",
+    "TCJA (2017+) and CARES (2020+) AGI definitional changes: confirm that AGI series remains methodologically continuous post-2017 for backward-comparable extension to 2024.",
+    "Figure 2 and Figure 3 also reference 'Wage Data' and 'Property Income Data' for 2011. Whether the 'Wage Data' label refers to the IRS bottom-97% AGI cut or a separate Form W-2 wage tabulation is not made explicit in the paper text; should be confirmed against the underlying spreadsheet if/when authors release replication data."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-es2201",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Initial dossier from full read of Shaikh & Jacobo (2020), all 17 pages including appendix. Five verbatim quotes (1 definition, 1 source, 3 method) with paper-page citations. Decomposition decision: single composite series; five Table-1 parameters as components."
+    }
+  ]
+}

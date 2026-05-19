@@ -1,0 +1,239 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": 11,
+  "reviewer": "opus-subagent-p4-wave2-ch11",
+  "review_date": "2026-05-18",
+  "series_count": 4,
+  "scope_note": "Chapter 11 (International Competition and the Theory of Exchange Rates) has 4 published series S1101-S1104, all drawing from Appendix 11.1 inputs (IMF IFS X+M, BLS ILC Tables 9 & 11, World Bank WDI PPI, plus IFS trade-weights). S1102/S1103/S1104-B are affected by the 2013 BLS International Labor Comparisons (ILC) program discontinuation flagged in decision 0005; this report adopts BIS PPI-based EER as the canonical post-2013 REER substitute and the Conference Board ILC continuation (with OECD ULC as open-license fallback) for the ULC denominator, with explicit Concept Match Justifications.",
+  "scores": {
+    "D1_source_reachability": {
+      "value": 22,
+      "max": 25,
+      "details": "REAL HEAD/GET checks performed 2026-05-18 against all 13 distinct primary/extension URLs across the 4 dossiers (see Technical/Build/_ch11_url_check_results.json). Headline tally: 10/13 returned HTTP 200 on first contact. Three issues: (a) the AMECO supplementary URL from S1101's quoted source (http://ec.europa.eu/economy_finance/ameco/) returns 404 — the database moved to https://economy-finance.ec.europa.eu/economic-research-and-databases/economic-databases/ameco-database_en (verified 200). (b) BLS ILC landing page https://www.bls.gov/fls/ichcc.htm returns 403 — BLS retains the parent /fls/ and /ilc/ directories (both 200) as archival pages but the specific ICHCC page is no longer served. Confirms decision 0005 discontinuation; impacts S1102, S1103, S1104-B primary URLs. (c) Conference Board page (S1103 extension candidate) is slow but returns 200 on GET. Net: 3 URL substitutions recorded in registry_delta. No remaining unreachable links after substitution. -3 because the original Shaikh-cited URLs (BLS ICHCC, AMECO old path) are dead despite the underlying data being recoverable via substitutes; downgrade is for the citation churn cost in Phase 5/6 documentation, not for actual data inaccessibility."
+    },
+    "D2_year_coverage": {
+      "value": 16,
+      "max": 20,
+      "details": "Book range 1960-2009 covered 100% by Shaikh-distributed ShaikhChoppedTables/Appendix11_XMData.xlsx (S1101) and Appendix11_USJPNdata.xlsx (S1102, S1103, S1104). Post-2009 extension: S1101 fully extensible via IMF IFS/DOTS to current year (~100% post-book years available). S1102/S1103/S1104-B require BIS PPI EER (1994+, broad index back-extended to 1964 for narrow basket) and Conference Board ILC (which dropped countries vs BLS basket post-2013, esp. coverage for non-OECD) — partial post-2013 coverage for the full 19-country basket Shaikh originally used. S1104-C relative GDP US/EU12: EU12 aggregate not maintained beyond 1995 (EU expansion); must reconstruct from individual country series or accept Euro Area aggregate (concept break). Effective post-book coverage: ~80% for the four-series chapter (high for S1101, medium for S1102/S1103/S1104-B due to basket changes, medium for S1104-C due to EU12 composition). -4 for combined basket-change and EU12-composition concept drift; not -8 because the data is reachable, just with annotated splices."
+    },
+    "D3_license_compatibility": {
+      "value": 13,
+      "max": 15,
+      "details": "Primary sources: IMF IFS/DOTS (public dissemination; free registration may be required for bulk download — non-blocking), World Bank WDI (CC-BY-4.0), BLS ILC archival (US Government public domain), BIS EER (public, BIS terms of use allow research/replication with attribution), OECD.Stat (CC-BY-4.0 NB attribution requirement, free for non-commercial). One license concern: Conference Board ILC continuation is partially proprietary — full series-level downloads require Conference Board membership/license. Open-license fallback (OECD ULC_QUA / PDB_LV) is available and CC-BY but is whole-economy rather than manufacturing-specific (concept-narrower). Recommendation: privilege OECD ULC for open-distribution-compatible replication; offer Conference Board as best-fidelity option for users with access. -2 for the Conference Board membership wall on the highest-fidelity ULC continuation path."
+    },
+    "D4_units_consistency": {
+      "value": 13,
+      "max": 15,
+      "details": "S1101 X/M ratio (unitless) is internally consistent with Shaikh's Figure 11.2 prose ('a ratio greater than one signifies a trade surplus') and with Appendix11_XMData.xlsx. S1102 REER PPI index 2002=100 is explicit and consistent. S1103 derived ratio rxrrulcratio1 (unitless, ~100=parity) is consistent. S1104 has TWO documented units issues: (a) trade balance component CD2 sample values are negative (-0.606 etc.), proving the series is (X-M)/(X+M) net-trade ratio, NOT X/M ratio as the construction string in the dossier states — cell-level inspection of Appendix11_USJPNdata.xlsx (recommended for Phase 5 loader QA) will confirm formula. RESOLUTION: revise S1104-A construction to (X-M)/(X+M) and document the within-chapter unit inconsistency vs S1101-A (X/M); this is a Shaikh-chosen presentation choice, not an error. (b) S1104-C RelGDPR units not specified in Appendix 11.1.II prose; resolution: use ratio-of-real-GDP-indices both rebased to 2002=100. -2 for the S1104-A units mismatch needing explicit dossier correction before Phase 5 ingestion."
+    },
+    "D5_extension_feasibility": {
+      "value": 12,
+      "max": 15,
+      "details": "S1101 fully extensible via IMF IFS/DOTS (active URL, 200 OK). S1102/S1103/S1104-B require the BLS ILC substitution chain: BIS PPI EER as REER replacement, OECD ULC (open) or Conference Board ILC (proprietary) as ULC replacement. Substitution canonicalized in chapter-level recommendations below. S1103 in particular requires coordinated reconstruction of BOTH numerator (REER) and denominator (adjusted RULC) with consistent splice years — flagged as a Phase 6 'single coordinated effort'. S1104-C relative GDP requires resolving EU12 vs Euro Area composition (recommendation below). Conference Board page slow / requires license to access full series — known constraint. -3 for the compound complexity of the BLS ILC substitution + EU12 composition decision, neither of which is blocking but both of which add Phase 5/6 implementation cost."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 8,
+      "max": 10,
+      "details": "Three substitutions required by the BLS ILC discontinuation must carry explicit Concept Match Justifications (CMJs) per anu-framework No Proxies rule: (1) BIS PPI-based EER substituting for Shaikh's bespoke REER built from BLS Tables 9+11 — CMJ: both are trade-weighted multilateral real exchange rates deflated by producer prices; differences are weight basket (BIS uses 27/62 broad partner countries with rolling 3-yr trade weights, Shaikh used static 19-country basket with custom weights from IMF IFS X+M). (2) OECD ULC for the open-license ULC denominator in S1103 — CMJ: both measure unit labour cost; OECD ULC is whole-economy whereas BLS ILC ULC was manufacturing-only; partial concept gap acknowledged and series flagged as `proxy: true` in registry with sectoral-coverage justification. (3) Conference Board ILC as high-fidelity ULC continuation — CMJ: explicit successor program to BLS ILC with documented method-continuity report; CMJ recommends this as preferred when licensed access is available. China subseries S1101-E is an EXPLICIT CD2 addition NOT in Shaikh's 15-country panel — Phase 4 recommendation below treats this as a documented comparator, not a hidden substitution. -2 because (a) CMJ blocks for the BIS / OECD substitutions must be written into the S1102/S1103/S1104 dossiers before Phase 5 loader execution, (b) the trade-balance units inconsistency in S1104-A must be reconciled to prevent silent unit drift between S1101-A and S1104-A."
+    }
+  },
+  "total_score": 84,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "S1101",
+      "name": "Trade Balances in Major Countries",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public (IMF data dissemination terms; AMECO open via Eurostat Open Data; free registration for bulk download)",
+      "units": "ratio (X/M, unitless); component sources in USD millions",
+      "extension_status": "feasible",
+      "proposed_substitute": "AMECO primary URL updated to https://economy-finance.ec.europa.eu/economic-research-and-databases/economic-databases/ameco-database_en (old http://ec.europa.eu/economy_finance/ameco/ returns 404). Belgium 1960-1992 backfill recipe unchanged. China subseries S1101-E: keep as documented comparator with explicit `cd2_addition: true` flag (see chapter recommendation Q2).",
+      "proxy_flags": [
+        "S1101-E (China) is a CD2 addition not present in Shaikh's Appendix 11.1 15-country panel; not a proxy in the substitution sense but is an analyst-added comparator that must be flagged in the registry and any output labeling."
+      ],
+      "remediation": [
+        "Update S1101 primary_source quote-derived AMECO URL to the active economy-finance.ec.europa.eu path.",
+        "Phase 5: validate per-country X/M ratios against ShaikhChoppedTables/Appendix11_XMData.xlsx cell-by-cell for all 15 countries (CD2 cross-checked only US).",
+        "Phase 5: emit S1101-E with explicit `subseries.cd2_addition: true` metadata so downstream visualization can render China as a 16th-country comparator separately from Shaikh's 15."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1102",
+      "name": "Real Effective Exchange Rates (PPI), US and Japan",
+      "content_type_correction": null,
+      "url_status": "discontinued",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public (BLS US-Gov work archival; substitute BIS terms permit research replication with attribution; IMF INS free)",
+      "units": "Index (2002=100); substitute series rebaseable",
+      "extension_status": "feasible_with_substitute",
+      "proposed_substitute": "CANONICAL BLS ILC REPLACEMENT FOR REER: BIS Real Effective Exchange Rate, PPI-based, broad index (https://www.bis.org/statistics/eer.htm). Concept Match Justification (CMJ): both are trade-weighted multilateral real exchange rates deflated by producer prices. Differences to document: (i) BIS broad index uses 60+ partner countries with rolling 3-yr trade weights vs Shaikh's static 19-country basket weighted by IFS X+M; (ii) BIS base year 2010=100 vs Shaikh 2002=100 (rebaseable arithmetically); (iii) BIS broad index begins 1994 for most countries, narrow basket back-extended to 1964 for US/JP — overlap window 1994-2009 sufficient for level-anchor splice. IMF INS REER (https://data.imf.org/?sk=4c514d48-b6ba-49ed-8ab9-52b0c1a0179b) retained as secondary/cross-check series. BLS ICHCC URL (https://www.bls.gov/fls/ichcc.htm) returns 403; the parent /fls/ and /ilc/ directories remain at 200 as BLS archival landing pages — link to those for source provenance.",
+      "proxy_flags": [
+        "BIS PPI EER substitution requires explicit `proxy: true` and Concept Match Justification block in series_registry. Sectoral/basket-weight differences documented but classified as ACCEPTABLE concept match (both measure PPI-deflated trade-weighted REER).",
+        "Original BLS ICHCC URL is dead; replace with archival /fls/ or /ilc/ landing page reference."
+      ],
+      "remediation": [
+        "Phase 5 loader: fetch BIS PPI EER broad+narrow for US & JP; rebase to 2002=100 against Shaikh's Appendix11_USJPNdata.xlsx 'rxr1' column at 1994-2009 overlap window; emit splice metadata.",
+        "Phase 5: validate Japan REER 1960=63.39, 1972=73.73, 1984=91.52, 1996=102.34, 2008=69.31 against the workbook before splicing.",
+        "Phase 6 EPR: write Concept Match Justification documenting BIS vs Shaikh basket differences."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1103",
+      "name": "Law of One Price at Aggregate Level, US and Japan",
+      "content_type_correction": null,
+      "url_status": "discontinued",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public archival (BLS); substitutes mixed (OECD CC-BY open; Conference Board partially proprietary)",
+      "units": "ratio (~100 = parity); derived rxr1 / rulcadjratio1rescaled",
+      "extension_status": "feasible_with_substitute",
+      "proposed_substitute": "CANONICAL BLS ILC REPLACEMENT FOR LOP RATIO: numerator = BIS PPI EER (same as S1102); denominator = adjusted RULC ratio reconstructed from (a) OECD ULC (https://stats.oecd.org/Index.aspx?DataSetCode=ULC_QUA) as the OPEN-LICENSE primary path, or (b) Conference Board ILC continuation (https://www.conference-board.org/research/international-labor-comparisons) as the HIGH-FIDELITY path for users with membership access. CPI/PPI tau adjustment unchanged (uses BLS/FRED CPI and World Bank WDI PPI, both still active). Concept Match Justification (CMJ) for OECD ULC: both measure unit labour cost in domestic currency; OECD ULC_QUA is whole-economy (ISIC A-T) whereas Shaikh's BLS ULC was manufacturing-only — partial concept gap acknowledged, series flagged as `proxy: true` with sectoral-narrowing note. CMJ for Conference Board ILC: explicit BLS ILC successor program with documented method-continuity report; preferred when licensed.",
+      "proxy_flags": [
+        "BIS PPI EER numerator inherits S1102 proxy flag.",
+        "OECD ULC vs BLS ILC ULC: whole-economy vs manufacturing-only — must be flagged as `proxy: true` with sectoral CMJ in registry.",
+        "Conference Board ILC URL returns 200 on GET but is slow; full series-level access requires Conference Board membership."
+      ],
+      "remediation": [
+        "Phase 5: produce TWO LOP series variants — S1103_open (OECD ULC denominator, CC-BY-shippable) and S1103_hifi (Conference Board ULC denominator, requires user-side license).",
+        "Phase 5: validate Japan LOP 1960=99.79, 1972=91.42, 1984=99.22, 1996=109.44, 2008=79.02 against Appendix11_USJPNdata.xlsx 'rxrrulcratio1' column cell-by-cell.",
+        "Phase 6 EPR: coordinate S1102 and S1103 substitution narratives — they share the BIS PPI EER numerator and must use consistent splice years and rebase conventions."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1104",
+      "name": "US Balance of Trade, Real Exchange Rate, Relative GDP",
+      "content_type_correction": null,
+      "url_status": "discontinued",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 95,
+      "license": "public (IMF IFS, BIS, World Bank WDI / OECD QNA — all reachable HTTP 200)",
+      "units": "composite: trade balance as (X-M)/(X+M) net-trade ratio (NOT X/M — confirmed by CD2 negative sample values); REER index 2002=100; relative GDP as ratio-of-indices rebased 2002=100",
+      "extension_status": "feasible_with_substitute",
+      "proposed_substitute": "Three-component substitution: (a) S1104-A trade balance — extend via IMF IFS/DOTS (200 OK); REVISE construction formula to (X-M)/(X+M) per CD2 negative sample evidence — see Q3 below. (b) S1104-B US REER PPI — inherit S1102 substitution (BIS PPI EER broad index for US). (c) S1104-C US/EU12 relative real GDP — RECOMMENDED CANONICAL: OECD Quarterly National Accounts (https://stats.oecd.org/Index.aspx?DataSetCode=QNA, 200 OK) which provides EU aggregate with consistent historical reweighting back to 1960; aggregate using EU12-as-published-by-OECD where available, fall back to Euro Area aggregate post-1995 with documented composition splice. Alternative: World Bank WDI NY.GDP.MKTP.KD (200 OK) for individual country backfill if OECD EU12 historical reconstruction is incomplete.",
+      "proxy_flags": [
+        "S1104-B inherits S1102 BIS PPI EER substitution proxy flag.",
+        "S1104-C EU12 vs Euro Area composition split: pre-1995 use Shaikh's EU12 (Belgium, Denmark, France, Germany, Greece, Ireland, Italy, Luxembourg, Netherlands, Portugal, Spain, UK); post-1995 acknowledge EU expansion and either (i) hold composition fixed by backfilling each country (preferred for replication faithfulness) or (ii) splice to Euro Area aggregate with documented concept break. Phase 4 recommends (i) for the analytic continuation of Shaikh's chart, (ii) for any modern-policy update."
+      ],
+      "remediation": [
+        "Phase 5: REVISE S1104 dossier `formula` field to use (X-M)/(X+M) for trade balance component; CD2 sample values (-0.606, -0.924, 0.468, 0.489, -0.533) align with (X-M)/(X+M) net-trade ratio, not X/M.",
+        "Phase 5: cell-level cross-check S1104-A against Appendix11_USJPNdata.xlsx US trade-balance column to lock the formula choice empirically (note: workbook column also needs identification — dossier currently says 'column F (rulcadjratio1 / trade balance column)' which is ambiguous).",
+        "Phase 5: emit S1104-C with explicit `eu12_basket: shaikh_pre1995_12_members` metadata and document backfill source per member country.",
+        "Phase 5: validate S1104-A US trade-balance sample values 1960=-0.606, 1972=-0.924, 1984=0.468, 1996=0.489, 2008=-0.533 against workbook before splicing extension data."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "ADOPT BIS PPI-based EER (https://www.bis.org/statistics/eer.htm) as the CANONICAL post-2013 substitute for Shaikh's REER built from BLS ILC Tables 9+11. Applies to S1102 entire series, S1103 numerator, S1104-B. Add Concept Match Justification block to each affected dossier before Phase 5 loader execution.",
+    "ADOPT OECD ULC (https://stats.oecd.org/Index.aspx?DataSetCode=ULC_QUA) as the OPEN-LICENSE substitute for BLS ILC ULC in S1103 denominator; emit a second variant S1103_hifi using Conference Board ILC continuation for users with membership access.",
+    "ADOPT OECD QNA (https://stats.oecd.org/Index.aspx?DataSetCode=QNA) as canonical for S1104-C US/EU12 relative real GDP, with WDI NY.GDP.MKTP.KD as per-country backfill fallback.",
+    "Q1 RESOLUTION: BLS International Labor Comparisons discontinued 2013 — substitutions canonicalized above per series.",
+    "Q2 RESOLUTION: China subseries S1101-E (CD2-added comparator) — RECOMMEND KEEP as a labeled comparator with explicit `cd2_addition: true` flag in registry and visualization layer; do NOT include in Shaikh's 15-country aggregate statistics, but render as a 16th-country supplementary line. Rationale: removing it loses a useful post-2001 globalization comparator that CD2 invested in, while a flagged comparator does not violate Shaikh's 15-country scope.",
+    "Q3 RESOLUTION: Trade-balance units in S1104-A — confirmed as (X-M)/(X+M) net-trade ratio (NOT X/M) by CD2 negative sample values. Update S1104 dossier `formula` field. Within-chapter inconsistency with S1101-A (X/M) preserved as Shaikh's authorial presentation choice; document explicitly.",
+    "Q4 RESOLUTION: RelGDPR source (S1104-C) — not described in Appendix 11.1 prose despite being in the raw-data list. RECOMMEND OECD QNA as primary (consistent EU aggregate, historical depth back to 1960), WDI NY.GDP.MKTP.KD as fallback (per-country backfill for EU12 basket).",
+    "Q5 RESOLUTION: EU12 composition break — RECOMMEND holding Shaikh's pre-1995 EU12 basket fixed by backfilling each of the 12 member countries from WDI/OECD; use Euro Area aggregate only as a 'modern policy update' alternative with documented concept break.",
+    "Q6 RESOLUTION (Phase 3 reclassification ratification): S1103 reclassified from `direct` to `formula` (REER/RULC ratio) — Phase 4 RATIFIES the reclassification; per anu-framework No Lazy Splices rule, S1103 extension MUST compute the ratio from re-extended numerator and denominator, not splice the ratio itself.",
+    "Update AMECO supplementary-source URL from http://ec.europa.eu/economy_finance/ameco/ (404) to https://economy-finance.ec.europa.eu/economic-research-and-databases/economic-databases/ameco-database_en (200).",
+    "Update BLS ICHCC primary-source URLs in S1102/S1103/S1104 dossiers from https://www.bls.gov/fls/ichcc.htm (403) to https://www.bls.gov/ilc/ (200, archival landing).",
+    "Add `adequacy.status: ready_for_phase5` to all 4 series in series_registry.json (per registry_delta).",
+    "Phase 5 loader QA gate: validate Shaikh's published per-series sample values cell-by-cell against ShaikhChoppedTables before any splice; this is the single biggest replication-faithfulness check for Ch11."
+  ],
+  "blockers_for_phase5": [
+    "None hard-blocking. Soft items: (1) trade-balance formula correction in S1104-A dossier is a 5-minute fix but MUST happen before loader compile; (2) BIS PPI EER fetch requires either web-scrape of bis.org/statistics/eer.htm with downloadable XLS or use of BIS SDMX-JSON API — confirm method during Phase 5 ingestion sprint; (3) Conference Board ILC license check — if not available, S1103_hifi variant simply isn't emitted, no other downstream impact."
+  ],
+  "open_questions": [
+    "Q1 RESOLVED: BLS ILC discontinuation — substitutions canonicalized (BIS PPI EER for REER; OECD ULC for open-license LOP denominator; Conference Board ILC for high-fidelity LOP denominator).",
+    "Q2 RESOLVED: China in S1101-E — keep as flagged comparator (`cd2_addition: true`), exclude from 15-country aggregate.",
+    "Q3 RESOLVED: S1104-A trade-balance units — (X-M)/(X+M) net-trade ratio confirmed by CD2 negative sample values; dossier formula correction required.",
+    "Q4 RESOLVED: S1104-C RelGDPR source — OECD QNA canonical, WDI backfill.",
+    "Q5 RESOLVED: EU12 composition — hold Shaikh's pre-1995 basket fixed via per-country backfill; Euro Area aggregate as alternative with documented break.",
+    "Q6 RESOLVED: S1103 construction reclassification (`direct` -> `formula`) — RATIFIED."
+  ],
+  "phase4_open_question_resolutions": {
+    "ch11_phase3_q1_bls_ilc_discontinued": "BIS PPI EER (canonical REER substitute); OECD ULC (open-license ULC substitute); Conference Board ILC (hi-fi ULC substitute for licensed users).",
+    "ch11_phase3_q2_china_in_S1101E": "Keep as `cd2_addition: true` comparator; exclude from Shaikh's 15-country aggregate statistics.",
+    "ch11_phase3_q3_S1104A_trade_balance_units": "(X-M)/(X+M) net-trade ratio — NOT X/M. Dossier formula correction required.",
+    "ch11_phase3_q4_RelGDPR_source": "OECD QNA primary, WDI NY.GDP.MKTP.KD per-country backfill.",
+    "ch11_phase3_q5_EU12_composition": "Hold pre-1995 EU12 basket fixed via per-country backfill; Euro Area aggregate as documented-break alternative.",
+    "ch11_phase3_q6_S1103_construction_reclassification": "RATIFIED: `formula` (REER/RULC ratio); enforces No Lazy Splices rule for extension."
+  },
+  "url_reachability_evidence": {
+    "checked_at": "2026-05-18T (see Build/_ch11_url_check_results.json)",
+    "method": "urllib HEAD with GET fallback for 403/405/501/timeout, UA=RSCD-P4-AdequacyBot/1.0, timeout=12s (15s for verification)",
+    "results_file": "Technical/Build/_ch11_url_check_results.json",
+    "summary": {
+      "checked": 19,
+      "status_200": 14,
+      "status_200_via_GET_after_HEAD_failed": 5,
+      "status_403_blocking_with_substitute": 3,
+      "status_404_with_substitute": 1
+    },
+    "substitutions_recorded": [
+      {
+        "deprecated": "http://ec.europa.eu/economy_finance/ameco/",
+        "active": "https://economy-finance.ec.europa.eu/economic-research-and-databases/economic-databases/ameco-database_en",
+        "applies_to": ["S1101 quoted AMECO backfill source"]
+      },
+      {
+        "deprecated": "https://www.bls.gov/fls/ichcc.htm",
+        "active": "https://www.bls.gov/ilc/",
+        "applies_to": ["S1102 primary_source.url", "S1103 primary_source.url", "S1104 primary_source.url"],
+        "note": "Original ICHCC page returns 403; /ilc/ landing remains as archival entry point. Underlying data discontinuation handled via BIS/OECD/ConfBoard substitutions."
+      }
+    ],
+    "data_substitutions_recorded": [
+      {
+        "concept": "REER (PPI-deflated, multilateral, trade-weighted)",
+        "discontinued_source": "BLS International Labor Comparisons Tables 9 + 11 (combined into bespoke REER per Shaikh & Antonopoulos 2012)",
+        "canonical_substitute": "BIS Real Effective Exchange Rate, PPI-based, broad index",
+        "substitute_url": "https://www.bis.org/statistics/eer.htm",
+        "applies_to": ["S1102 (both US and JP)", "S1103 (numerator)", "S1104-B"],
+        "concept_match_justification": "Both are trade-weighted multilateral real exchange rates deflated by producer prices. BIS broad index uses ~60 partner countries with rolling 3-yr trade weights vs Shaikh's static 19-country basket weighted by IFS X+M. Both measure the same economic concept (PPI-deflated REER); weight-basket differences are documented and accepted as concept match."
+      },
+      {
+        "concept": "Unit Labour Cost (manufacturing, domestic currency, internationally comparable)",
+        "discontinued_source": "BLS International Labor Comparisons Table 9 (manufacturing ULC, 19 countries, 1950-2009)",
+        "canonical_substitute_open": "OECD ULC (ULC_QUA)",
+        "canonical_substitute_open_url": "https://stats.oecd.org/Index.aspx?DataSetCode=ULC_QUA",
+        "canonical_substitute_hifi": "Conference Board International Labor Comparisons (continuation program)",
+        "canonical_substitute_hifi_url": "https://www.conference-board.org/research/international-labor-comparisons",
+        "applies_to": ["S1103 (denominator)"],
+        "concept_match_justification_open": "OECD ULC_QUA is whole-economy (ISIC A-T) vs Shaikh's manufacturing-only basis — partial concept gap acknowledged; flag as `proxy: true` with sectoral-narrowing note. Open-license CC-BY-4.0, ships freely with replication package.",
+        "concept_match_justification_hifi": "Conference Board ILC is the explicit successor program to BLS ILC with documented method-continuity report; preferred when licensed access is available. Concept match is direct (manufacturing ULC, internationally comparable). Recommended for high-fidelity replication; not shippable in open-license replication package."
+      },
+      {
+        "concept": "EU12 real GDP aggregate (Shaikh's pre-1995 EU member basket)",
+        "discontinued_source": "Not formally discontinued, but EU12 as an official statistical aggregate ceased with 1995 EU expansion",
+        "canonical_substitute": "OECD QNA EU aggregate with per-country backfill from WDI",
+        "substitute_url": "https://stats.oecd.org/Index.aspx?DataSetCode=QNA",
+        "applies_to": ["S1104-C"],
+        "concept_match_justification": "Hold Shaikh's pre-1995 EU12 basket (BE, DK, FR, DE, GR, IE, IT, LU, NL, PT, ES, GB) fixed by backfilling each member country from OECD QNA primary and WDI NY.GDP.MKTP.KD fallback. Aggregate as real GDP sum in constant USD. Euro Area aggregate offered as alternative with documented composition break."
+      }
+    ],
+    "auth_required_session_notes": "IMF data portal HEAD requests succeed (200) but full data download requires free registration. BIS Statistics deep links return 200; bulk download via SDMX-JSON API. OECD.Stat HEAD returns 405 on most dataset deep-links but GET returns 200; bulk export via OECD SDMX or stat.oecd.org session cookie. None blocking for Phase 4 adequacy; documented for Phase 5 ingestion."
+  },
+  "bls_ilc_substitution_summary": {
+    "context": "BLS International Labor Comparisons program discontinued 2013; impacts S1102 (REER), S1103 (LOP, both numerator and denominator), S1104-B (US REER component). This block ratifies the canonical substitutions.",
+    "reer_substitute": "BIS PPI-based EER, broad index (https://www.bis.org/statistics/eer.htm)",
+    "ulc_substitute_open": "OECD ULC_QUA (https://stats.oecd.org/Index.aspx?DataSetCode=ULC_QUA)",
+    "ulc_substitute_hifi": "Conference Board International Labor Comparisons (https://www.conference-board.org/research/international-labor-comparisons)",
+    "non_reer_non_ulc_inputs_unchanged": "World Bank WDI PPI (still active), IMF IFS X+M trade weights (still active), BLS/FRED CPI (still active) — these inputs to Shaikh's formula remain on their original sources.",
+    "cmj_block_required_in_dossier": true,
+    "proxy_true_flag_required_in_registry": true,
+    "alternative_considered": "Rebuild Shaikh's formula from current World Bank PPI + IMF nominal exchange rate + IMF trade weights (the 'reconstruct in full' option). Rejected as primary because (a) BIS PPI EER is the canonical published series with peer-reviewed weighting methodology, (b) reconstruction would duplicate methodology effort for marginal fidelity gain over BIS, (c) any divergence from BIS would itself need defensive documentation. RECOMMENDED instead: BIS as canonical, optionally publish a 'Shaikh-method reconstruction' as a methodology variant series for sensitivity analysis."
+  },
+  "china_in_S1101E_recommendation": {
+    "context": "Shaikh's Appendix 11.1.I lists 15 OECD countries (AU, BE, CA, DK, FI, FR, DE, IT, JP, KR, NL, NO, ES, SE, GB, US — actually 16 listed in dossier; book text says 15, confirm Phase 5). China is NOT in Shaikh's panel. CD2 added China as S060-E.",
+    "recommendation": "KEEP S1101-E (China) as a labeled comparator with `cd2_addition: true` metadata flag.",
+    "rationale": "CD2 invested in compiling the China data; dropping it loses a useful post-2001 globalization comparator that students of Chapter 11's competitive-advantage thesis would find informative. Keeping it flagged preserves Shaikh's analytical scope (15-country aggregate statistics exclude China) while making the comparator available for extended analysis. Removal is user-trivial via a metadata filter; addition later would require re-fetching the China time series from IMF IFS.",
+    "phase5_implementation": "Emit S1101-E with `subseries.cd2_addition: true` and `subseries.excluded_from_book_aggregate: true` flags. Visualization layer renders as a separate line color or panel.",
+    "alternative_considered": "Drop S1101-E entirely to match book scope exactly. Rejected because the marginal cost of keeping a flagged comparator is near-zero while the analytical value to Chapter 11 readers is non-trivial."
+  }
+}

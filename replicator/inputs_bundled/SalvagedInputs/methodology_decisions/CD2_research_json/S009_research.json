@@ -1,0 +1,53 @@
+{
+  "series_id": "S009",
+  "series_name": "Unemployment",
+  "chapter": 2,
+  "figures": ["Fig 2.7"],
+  "research_date": "2026-03-07",
+  "researcher": "agent",
+  "kb_sources_searched": ["ch18_appendices.md", "ch02_turbulent_trends.md", "appendix_methodology_summary.json"],
+  "entries": [
+    {
+      "entry_type": "methodology_description",
+      "content": "Unemployment rate series constructed from BEA Long Term Economic Growth (1966, Series B1-B2) for 1860-1970 and Economic Report of the President for 1948-2010. The two series are spliced to form a continuous annual unemployment rate. Both sources report civilian unemployment as a percentage of the labor force. S009A = LTEG, S009B = ERP; final S009 is the spliced series.",
+      "source_ref": "Appendix 2.1"
+    },
+    {
+      "entry_type": "source_citation",
+      "content": "U.S. Bureau of Economic Analysis (1966). Long Term Economic Growth, 1860-1970. Series B1-B2. Economic Report of the President. Annual volumes 1948-2010. Both sources report unemployment rate (percent of civilian labor force).",
+      "source_ref": "BEA LTEG, ERP"
+    },
+    {
+      "entry_type": "figure_context",
+      "content": "Fig 2.7 displays US unemployment from 1890 to 2010. The series shows major cyclical peaks (1890s depression, 1930s Great Depression, 1980s recessions). FRED UNRATE provides direct continuation post-2010 - same underlying BLS series, identical units (percent). No reindexing required; direct splice at 2010.",
+      "source_ref": "ch02 README"
+    }
+  ],
+  "citations": [
+    {
+      "id": "BEA_LTEG_B1B2",
+      "full": "U.S. Bureau of Economic Analysis (1966). Long Term Economic Growth, 1860-1970. Series B1-B2. Washington, DC: U.S. Government Printing Office.",
+      "short": "BEA LTEG B1-B2 (1966)"
+    },
+    {
+      "id": "ERP",
+      "full": "Council of Economic Advisers. Economic Report of the President. Annual. Washington, DC: U.S. Government Printing Office. 1948-2010.",
+      "short": "Economic Report of the President"
+    },
+    {
+      "id": "FRED_UNRATE",
+      "full": "Federal Reserve Economic Data (FRED). UNRATE - Unemployment Rate. Percent, seasonally adjusted. https://fred.stlouisfed.org/series/UNRATE",
+      "short": "FRED UNRATE"
+    }
+  ],
+  "methodology_summary": "S009 combines BEA LTEG unemployment (Series B1-B2, 1860-1970) with Economic Report of the President data (1948-2010). Splicing produces continuous annual civilian unemployment rate (percent) from 1890-2010. FRED UNRATE provides direct continuation - identical BLS-derived series, same units. No transformation needed at splice; extension is seamless.",
+  "known_issues": [
+    "LTEG coverage 1860-1970 vs ERP 1948-2010 - overlap period uses ERP (more recent source)",
+    "Pre-1948 unemployment estimates from LTEG may differ from current BLS methodology"
+  ],
+  "cross_references": [
+    {"series_id": "S007", "relationship": "Same chapter - labor market indicators"},
+    {"series_id": "S008", "relationship": "Labor market context - unemployment affects real compensation trends"},
+    {"api": "FRED UNRATE", "relationship": "Direct continuation - same series, identical units"}
+  ]
+}

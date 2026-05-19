@@ -1,0 +1,80 @@
+{
+  "series_id": "S204",
+  "name": "Business Cycles, 1831–1866 (Ayres Index)",
+  "chapter": 2,
+  "figures": [
+    "Fig2.4A"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S004",
+    "cd2_id": "S004"
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 57,
+      "quote": "Figures 2.4A–C are monthly indicators of the cyclical component of business activity, compiled by the Cleveland Trust Company (Ayres 1939, table 9, appendix A, col. 1).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 763,
+      "quote": "Figure 2.4A Business Cycles, 1831–1866. Figure 2.4B Business Cycles, 1867–1902. Figure 2.4C Business Cycles, 1903–1939. From Ayres (1939).",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Cleveland Trust Company (Leonard P. Ayres)",
+    "publication": "Ayres, L. P. (1939). Turning Points in Business Cycles. New York: Macmillan.",
+    "table_or_series_id": "Ayres (1939), table 9, appendix A, col. 1",
+    "url": "https://catalog.hathitrust.org/Record/001141928",
+    "frequency": "monthly",
+    "units": "Percent deviation from trend (cyclical component of business activity)",
+    "license": "Public domain (pre-1964, US publication)",
+    "available_through": "HathiTrust Digital Library",
+    "discontinued": true,
+    "replaced_by": "No modern continuation; NBER macrohistory + BCDB business-cycle dates are the closest analogues."
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [],
+  "year_range_book": [
+    1831,
+    1866
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "No modern continuation — historical-only series",
+      "source": "n/a",
+      "url": "",
+      "units": "",
+      "splice_strategy": "none",
+      "concerns": [
+        "Ayres (1939) is a pre-NBER composite indicator with no contemporary successor; NBER macrohistory monthly series (m12003 etc.) cover similar concept but are not the Ayres construction."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Direct port of Ayres (1939) monthly cyclical-component series, 1831–1866 subperiod (Fig 2.4A).",
+    "CD2 dossier S004 notes ~12 obs/year and that pre-NBER composite indicators have no clean modern equivalent.",
+    "Same Ayres source feeds S205 (1867–1902, Fig 2.4B) and S206 (1903–1939, Fig 2.4C)."
+  ],
+  "open_questions": [
+    "Confirm whether anwarshaikhecon.org Appendix 2.2 still hosts the digitized Ayres data table (book references this URL on p. 763)."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

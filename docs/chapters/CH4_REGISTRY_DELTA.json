@@ -1,0 +1,183 @@
+{
+  "schema_version": "rscd-registry-delta-v1.0",
+  "chapter": 4,
+  "generated_by": "opus-subagent-p4-wave1-ch4",
+  "generated_at": "2026-05-18",
+  "notes": [
+    "Apply this delta to series_registry.json after Phase 4 wave 1 close.",
+    "Each entry's 'adequacy' block is to be merged into the corresponding series entry.",
+    "Citation/URL corrections for S404-S407 (CH4-B2) are listed under 'primary_source_patches' and MUST be applied in Phase 5 before any L## loader for these series is implemented."
+  ],
+  "series_patches": [
+    {
+      "sid": "S401",
+      "adequacy": {
+        "status": "ready_for_phase5_with_blocker",
+        "score_contribution": 11.5,
+        "reviewed_at": "2026-05-18",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
+        "issues_resolved": [
+          "content_type reclassification (time_series -> derived) ratified",
+          "URL OUP product page returns 202 (reachable)"
+        ],
+        "issues_outstanding": [
+          "Appendix 4.2 chopped table missing from SalvagedInputs — blocker CH4-B1"
+        ]
+      },
+      "primary_source_patches": []
+    },
+    {
+      "sid": "S402",
+      "adequacy": {
+        "status": "ready_for_phase5_with_blocker",
+        "score_contribution": 11.5,
+        "reviewed_at": "2026-05-18",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
+        "issues_resolved": [
+          "content_type reclassification (time_series -> derived) ratified",
+          "URL OUP product page returns 202 (reachable)"
+        ],
+        "issues_outstanding": [
+          "Appendix 4.2 chopped table missing from SalvagedInputs — blocker CH4-B1"
+        ]
+      },
+      "primary_source_patches": []
+    },
+    {
+      "sid": "S403",
+      "adequacy": {
+        "status": "ready_for_phase5_with_blocker",
+        "score_contribution": 11.5,
+        "reviewed_at": "2026-05-18",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
+        "issues_resolved": [
+          "content_type reclassification (time_series -> derived) ratified",
+          "URL OUP product page returns 202 (reachable)"
+        ],
+        "issues_outstanding": [
+          "Depends on S401/S402 reconstruction — blocker CH4-B1",
+          "Cross-reference fields not yet implemented in registry schema"
+        ],
+        "cross_references": ["S401", "S402"]
+      },
+      "primary_source_patches": []
+    },
+    {
+      "sid": "S404",
+      "adequacy": {
+        "status": "ready_for_phase5_with_blocker",
+        "score_contribution": 11.5,
+        "reviewed_at": "2026-05-18",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
+        "issues_resolved": [
+          "content_type reclassification (time_series -> derived) ratified",
+          "Canonical Inman 1995 citation identified via Crossref (DOI 10.1080/00137919508967475)"
+        ],
+        "issues_outstanding": [
+          "Placeholder URL and provisional bibliography must be updated — blocker CH4-B2"
+        ]
+      },
+      "primary_source_patches": {
+        "agency": "Robert R. Inman (author); Taylor & Francis (publisher)",
+        "publication": "Inman, R. R. (1995). 'Shape Characteristics of Cost Curves Involving Multiple Shifts in Automotive Assembly Plants.' The Engineering Economist 41(1), 53-67.",
+        "table_or_series_id": "Inman (1995) figure 3, p. 61 (simulated average labor cost $/car vs. annual vehicle production, thousands)",
+        "url": "https://doi.org/10.1080/00137919508967475",
+        "license": "Taylor & Francis copyright 1995; reproduced under fair use for research",
+        "available_through": "Taylor & Francis Online (paywalled); reproduced figure in Shaikh (2016), p. 162, fig. 4.19"
+      }
+    },
+    {
+      "sid": "S405",
+      "adequacy": {
+        "status": "ready_for_phase5_with_blocker",
+        "score_contribution": 11.5,
+        "reviewed_at": "2026-05-18",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
+        "issues_resolved": [
+          "content_type reclassification (time_series -> derived) ratified",
+          "Canonical Inman 1995 citation identified via Crossref"
+        ],
+        "issues_outstanding": [
+          "Placeholder URL and provisional bibliography must be updated — blocker CH4-B2"
+        ]
+      },
+      "primary_source_patches": {
+        "agency": "Robert R. Inman (author); Taylor & Francis (publisher)",
+        "publication": "Inman, R. R. (1995). 'Shape Characteristics of Cost Curves Involving Multiple Shifts in Automotive Assembly Plants.' The Engineering Economist 41(1), 53-67.",
+        "table_or_series_id": "Inman (1995) figure 4, p. 62 (simulated marginal labor cost vs. annual vehicle production, thousands)",
+        "url": "https://doi.org/10.1080/00137919508967475",
+        "license": "Taylor & Francis copyright 1995; reproduced under fair use for research",
+        "available_through": "Taylor & Francis Online (paywalled); reproduced figure in Shaikh (2016), p. 162, fig. 4.20"
+      }
+    },
+    {
+      "sid": "S406",
+      "adequacy": {
+        "status": "ready_for_phase5_with_blocker",
+        "score_contribution": 11.5,
+        "reviewed_at": "2026-05-18",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
+        "issues_resolved": [
+          "content_type reclassification (time_series -> derived) ratified",
+          "Canonical Inman 1995 citation identified via Crossref"
+        ],
+        "issues_outstanding": [
+          "Placeholder URL and provisional bibliography must be updated — blocker CH4-B2",
+          "Cross-reference to S404 not yet in registry"
+        ],
+        "cross_references": ["S404"]
+      },
+      "primary_source_patches": {
+        "agency": "Robert R. Inman (author); Taylor & Francis (publisher)",
+        "publication": "Inman, R. R. (1995). 'Shape Characteristics of Cost Curves Involving Multiple Shifts in Automotive Assembly Plants.' The Engineering Economist 41(1), 53-67.",
+        "table_or_series_id": "Inman (1995) figure 5, p. 64 (simulated average cost $/car vs. annual vehicle production)",
+        "url": "https://doi.org/10.1080/00137919508967475",
+        "license": "Taylor & Francis copyright 1995; reproduced under fair use for research",
+        "available_through": "Taylor & Francis Online (paywalled); reproduced figure in Shaikh (2016), p. 162, fig. 4.21"
+      }
+    },
+    {
+      "sid": "S407",
+      "adequacy": {
+        "status": "ready_for_phase5_with_blocker",
+        "score_contribution": 11.5,
+        "reviewed_at": "2026-05-18",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
+        "issues_resolved": [
+          "content_type reclassification (time_series -> derived) ratified",
+          "Canonical Inman 1995 citation identified via Crossref"
+        ],
+        "issues_outstanding": [
+          "Placeholder URL and provisional bibliography must be updated — blocker CH4-B2",
+          "Cross-reference to S405 not yet in registry"
+        ],
+        "cross_references": ["S405"]
+      },
+      "primary_source_patches": {
+        "agency": "Robert R. Inman (author); Taylor & Francis (publisher)",
+        "publication": "Inman, R. R. (1995). 'Shape Characteristics of Cost Curves Involving Multiple Shifts in Automotive Assembly Plants.' The Engineering Economist 41(1), 53-67.",
+        "table_or_series_id": "Inman (1995) figure 6, p. 64 (simulated marginal cost vs. annual vehicle production)",
+        "url": "https://doi.org/10.1080/00137919508967475",
+        "license": "Taylor & Francis copyright 1995; reproduced under fair use for research",
+        "available_through": "Taylor & Francis Online (paywalled); reproduced figure in Shaikh (2016), p. 163, fig. 4.22"
+      }
+    },
+    {
+      "sid": "S408",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 12.0,
+        "reviewed_at": "2026-05-18",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
+        "issues_resolved": [
+          "content_type reclassification (time_series -> cross_sectional) ratified",
+          "Bibliographic citation (Eiteman & Guthrie 1952, AER 42(5):832-838) is well-established"
+        ],
+        "issues_outstanding": [
+          "JSTOR stable ID 1812527 not script-verifiable (JSTOR 403 anti-bot) — manual browser check required in Phase 5 — blocker CH4-B3"
+        ]
+      },
+      "primary_source_patches": []
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "series_id": "S1004",
+  "name": "Real Interest Rate HP-filtered",
+  "chapter": 10,
+  "figures": [
+    "Fig10.2",
+    "Fig10.8"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": "S054",
+    "cd2_id": "S054"
+  },
+  "book_quotes": [
+    {
+      "chapter": 10,
+      "page": 467,
+      "quote": "Figure 10.8 plots the actual long bond real interest rate along with its HP-filtered value (parameter = 3), which is not \"stable\" over any meaningful time period. Indeed, it is highly volatile even over decades-a fact that flies in the face of the basic assumptions of standard theory about the rationality of agents and the efficiency of markets.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 467,
+      "quote": "The filtered value, which is often taken to represent the long-run trend of a variable, falls from 10% in 1874 to -3% in 1917, rises to 8.3% by 1928, and falls again to -4.6% in 1946, and so on.",
+      "role": "caveat",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 873,
+      "quote": "The long bond yield was created by splicing together two long series: the railroad bond yield from 1857 to 1937 was annualized monthly data on American bond yields taken from Macaulay (Macaulay 1938, Appendix Table 10, A142-A161) ... The US Producer Price Index (Wholesale Price Index) for 1857-1976 is from (Jastram 1977, 145-146, table 7) and updated thereafter from the BLS using growth rates of the PPI.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh derived (from S1002 components)",
+    "publication": "Capitalism (Oxford 2016) Appendix 10.2 'Data Tables for Chapter 10'",
+    "table_or_series_id": "Appendix 10.2 spreadsheet, iblongreal and iblongrealHP3 columns",
+    "url": "http://www.anwarshaikhecon.org/",
+    "frequency": "annual",
+    "units": "Percent",
+    "license": "Author-distributed",
+    "available_through": "ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "iblongreal_t = i_t - (PPI_t / PPI_{t-1} - 1) * 100; iblongrealHP3_t = HP_filter(iblongreal, lambda=3)",
+  "components": [
+    {"label": "Nominal long bond yield", "source": "S1002-A"},
+    {"label": "PPI inflation rate", "source": "S1002-B percent-change"}
+  ],
+  "year_range_book": [1857, 2011],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "Extension follows S1002 mechanics (FRED AAA - PPIACO inflation), then re-apply HP filter lambda=3",
+      "source": "FRED",
+      "url": "https://fred.stlouisfed.org/series/AAA",
+      "units": "Percent",
+      "splice_strategy": "none",
+      "concerns": [
+        "HP filter endpoint problem: adding new years changes trend at the splice point",
+        "lambda=3 is Shaikh's choice; not standard (Ravn-Uhlig 2002 suggests ~6.25 for annual)"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "HP filter parameter lambda=3 is non-standard for annual data (Hodrick-Prescott originally suggested lambda=100 annual; Ravn-Uhlig 2002 suggested ~6.25). Shaikh uses 3 - to be flagged in Phase 4.",
+    "Series is a derivative of S1002, not a new data ingest.",
+    "Argument is rhetorical: the HP trend's volatility refutes Fisher's claim that the real interest rate is stable over time."
+  ],
+  "open_questions": [
+    "Confirm Shaikh's specific HP implementation: one-sided vs two-sided filter, endpoint padding strategy.",
+    "Phase 4: should we report both lambda=3 and a more conventional lambda (6.25 or 100) for robustness?"
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-b-ch10",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S054 ported; quotes verified p.467; HP lambda=3 flagged as non-standard"
+    }
+  ]
+}

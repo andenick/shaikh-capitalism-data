@@ -1,0 +1,303 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": 14,
+  "reviewer": "opus-subagent-p4-wave3-ch14",
+  "review_date": "2026-05-18",
+  "series_count": 8,
+  "scope_note": "Chapter 14 (The Theory of Wages and Unemployment) has 8 published series S1401-S1408, all drawing from two government providers via Appendix 14.2: BEA NIPA Historical Tables (T1.10 lines 1+2 for GDP and Compensation of Employees; T1.1.9 line 1 for the GDP deflator; Tables 6.5A-D for Full-Time Equivalent Employees) and BLS CPS (LNS14000000 unemployment rate; LNS13008275 mean unemployment duration). All five Phase 3 open questions are addressed in chapter_level_recommendations + phase4_open_question_resolutions blocks below. No BLS-ILC-style discontinuation impacts this chapter.",
+  "scores": {
+    "D1_source_reachability": {
+      "value": 24,
+      "max": 25,
+      "details": "REAL HEAD/GET checks performed 2026-05-18 against all 15 distinct primary/quoted/extension URLs across the 8 dossiers (see Technical/Build/_ch14_url_check_results.json + _ch14_url_check2_results.json). Tally: 13/15 returned HTTP 200 on first contact (HEAD). All six FRED extension URLs used by Ch14 — GDP, A576RC1, UNRATE, UEMPMEAN, GDPDEF, B4701C0A222NBEA — returned 200. All BEA NIPA and BLS CPS primary/quoted URLs (https://www.bea.gov/itable/national-gdp-and-personal-income; legacy http://www.bea.gov/national/index.htm#gdp; https://www.bls.gov/cps/; http://data.bls.gov/cgi-bin/surveymost?ln; http://www.bls.gov/cps/duration.htm; http://www.bls.gov/cps/cpsatabs.htm) returned 200. BEA iTable root (https://apps.bea.gov/iTable/) returned 200. Two issues: (a) S1403 extension candidate FRED W270RE1Q156NBEA (quarterly shares-of-GDI compensation) returns 404 — series ID has been retired by FRED. Substitute confirmed live: W209RC1 (Compensation of employees, paid: Domestic industries, quarterly, NIPA-consistent with Shaikh's Table 1.10 line 2) returns 200; pair with GDP (quarterly, 200) to compute A576RC1/GDP-equivalent wage share at quarterly frequency. (b) http://www.anwarshaikhecon.org/ DNS resolution failed (gaierror 11001); this is the author's personal site that hosted Appendix 14.3 data tables. Local archival copy exists at SalvagedInputs/book_data/ShaikhChoppedTables/Appendix14_InflationULdata.xlsx so loss of the live site does NOT block replication. -1 point for the W270RE1Q156NBEA 404 (substitution canonicalized, low Phase 5 cost) and noting the anwarshaikhecon.org DNS failure as offline-archival rather than blocking."
+    },
+    "D2_year_coverage": {
+      "value": 19,
+      "max": 20,
+      "details": "Book range 1948-2011 (S1401, S1402, S1406) / 1949-2011 (S1403-S1408 due to differencing first observation loss) covered 100% by Shaikh-distributed ShaikhChoppedTables/Appendix14_InflationULdata.xlsx + Appendix14_Documentation.xlsx for level/raw observations. All six FRED extension series have data through 2024Q4 or later: GDP (1947Q1-present), A576RC1 (1948-present annual), UNRATE (1948-present monthly), UEMPMEAN (1948-present monthly), GDPDEF (1947Q1-present), B4701C0A222NBEA (1948-present annual). Post-2011 extension coverage: ~100% (2012-2024) for all 8 series. UEMPMEAN has a documented 2011 top-coding methodological break (top-coded duration raised from 2 to 5 years in January 2011) — affects S1402, S1403, S1404, S1405, S1407, S1408. The break is small in magnitude for the mean-duration calculation but must be documented and handled per the explicit Phase 4 recommendation (see Q2 resolution). -1 for the UEMPMEAN top-coding break which requires explicit continuity-adjustment decision in Phase 5/6 but does not actually withhold any years of data."
+    },
+    "D3_license_compatibility": {
+      "value": 15,
+      "max": 15,
+      "details": "ALL sources are U.S. Government Work and therefore public-domain: BEA NIPA Historical Tables (Title 17 USC §105 — works of the federal government are not subject to copyright), BLS CPS Labor Force Statistics (same), FRED mirror of both (St. Louis Fed redistribution under public-domain terms with attribution). Local salvaged Appendix 14.3 spreadsheets are author-distributed data tables of public-domain underlying series. No commercial sources (Ibbotson/Morningstar/Conference Board) are involved in Ch14. No CC-BY attribution requirements beyond standard agency citation. Full marks."
+    },
+    "D4_units_consistency": {
+      "value": 14,
+      "max": 15,
+      "details": "All 8 dossiers have explicit `primary_source.units` and component-level units. Documented units: GDP (billions current USD, SAAR), Compensation of Employees (billions current USD), wage share (decimal or percent), unemployment rate (percent), mean unemployment duration (weeks), duration index (1948-1951=100), unemployment intensity (decimal), GDP deflator (index — Shaikh's appendix references rebasing to '100' base implicitly, FRED's current GDPDEF vintage uses 2017=100, S1406 explicitly handles this with growth-rate splice), Full-Time Equivalent Employees (thousands of jobs), inflation (decimal annual rate), productivity (real GDP per FTE, in real USD per worker), wage-share/real-wage/nominal-wage growth (decimal annual rate). One unit consistency note that Phase 5 must enforce: Shaikh's productivity is `(GDP*100/p)/(FEE/1000)` per Appendix 14.2 p. 892 verbatim — the `*100` and `/1000` are unit-correcting factors (deflator scaled-to-100; FEE in thousands-of-jobs converted to millions) yielding productivity in real dollars per worker. The loader for S1406, S1407, S1408 MUST replicate these multipliers literally; replacing them with seemingly equivalent simplifications will silently scale the productivity series by 100,000× and break the Phillips-form regressions. -1 for this loader-time bookkeeping risk that requires explicit Phase 5 enforcement (documented below in remediation)."
+    },
+    "D5_extension_feasibility": {
+      "value": 14,
+      "max": 15,
+      "details": "All 8 series are extensible via FRED through current vintages — six FRED keys provide the entire data backbone (GDP, A576RC1, UNRATE, UEMPMEAN, GDPDEF, B4701C0A222NBEA), all confirmed HTTP 200. S1401, S1402, S1406 extend directly; S1403, S1404, S1405, S1407, S1408 extend by re-deriving (wage share, real wage, nominal wage, productivity, intensity) from the extended FRED components and re-applying HP(100) over the full extended sample (loading should re-filter, not append, to avoid endpoint bias). S1403 (quarterly phase plot) requires the substitute W209RC1 + GDP pair at quarterly frequency to replace the dead W270RE1Q156NBEA candidate (see Q1 resolution). S1405 fitted curves (1949-1982, 1994-2011 Phillips form y = a + b·x^c) need a Phase 5 decision on whether to (a) recompute the original fits, (b) refit to extended sample with original windows, (c) refit on a new window. The 1983-1993 transition gap is preserved as an analytical convention (see Q4 resolution). -1 for HP-filter endpoint bias which is intrinsic to any extension of a filtered series, mitigated by full-sample refiltering."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 9,
+      "max": 10,
+      "details": "No proxy substitutions in the data-substitution sense (the canonical agency series remain alive and reachable for all 8 series). The S1403 W270RE1Q156NBEA -> W209RC1+GDP substitution is a CANONICAL ID UPDATE within FRED (BEA NIPA mirror), not a concept-changing proxy: both fetch the same underlying NIPA Table 1.10 line 2 (Compensation of employees, paid) at quarterly frequency; the dead series was a shares-of-GDI variant that arithmetically equals the ratio of W209RC1/GDP. No Concept Match Justification block is required for this routing update, but a one-line provenance note in the S1403 loader is mandated. The CRITICAL no-proxy compliance item for this chapter is the open question on productivity definition (Q3 in chapter_level_recommendations + Q5 of Phase 3): Shaikh's productivity = real GDP per FTE, NOT BLS labor productivity per hour. Any Phase 5/6 extension MUST use the BEA-based construction (yr = (GDP*100/p)/(FEE/1000)) and explicitly REJECT BLS PRS85006092 / OPHNFB / similar labor-productivity-per-hour series as concept-inappropriate substitutes — this is documented in the chapter_level_recommendations to prevent silent proxy creep. -1 because the productivity-definition concept-policing requirement must be wired into the Phase 5 loader as a hard validation gate, not just a documentation note."
+    }
+  },
+  "total_score": 95,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "S1401",
+      "name": "Nominal GDP Growth and Level of Wage Share",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "U.S. Government Work (public domain)",
+      "units": "Nominal GDP in billions current USD; Compensation of employees in billions current USD; wage share in decimal (EC/GDP); nominal GDP growth in decimal annual rate",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Phase 5: extend via FRED GDP (annual aggregation from quarterly SAAR) + FRED A576RC1 (annual)",
+        "Phase 5: validate annual wage-share values 1948-2011 against ShaikhChoppedTables/Appendix14_InflationULdata.xlsx cell-by-cell before splicing extension",
+        "Phase 5: freeze BEA vintage via FRED ALFRED snapshot for reproducibility (BEA periodically revises NIPA)"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1402",
+      "name": "Unemployment Measures US 1948-2011",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "U.S. Government Work (public domain)",
+      "units": "Unemployment rate in percent; mean duration in weeks; duration index 1948-1951=100; unemployment intensity = unemployment_rate * (duration_index/100), in decimal",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [
+        "UEMPMEAN 2011 TOP-CODING BREAK: BLS raised the top-coded individual unemployment duration from 2 years (104 weeks) to 5 years (260 weeks) in January 2011. This affects the mean-duration calculation when the population of long-duration unemployed is non-trivial. Effect on annual mean duration is modest pre-2011 (long-spell share small) and meaningfully positive 2011-2014 (Great Recession aftermath: long-spell share ~40% of unemployed). For extension beyond 2011 the recommended treatment is: (a) USE THE POST-2011 UEMPMEAN SERIES AS-IS, with a documented annotation in the registry and visualization layer that 2011-present mean-duration values are not directly comparable in level to 1948-2010 values; (b) DO NOT apply a backward continuity adjustment (would alter Shaikh's published pre-2011 numbers); (c) For Phillips-form analysis, the duration INDEX (rebased to 1948-51) absorbs part of the break since the base-period averaging is unchanged. Mark `methodological_break_2011: true` in the registry under S1402 components.duration."
+      ],
+      "remediation": [
+        "Phase 5: extend via FRED UNRATE + UEMPMEAN (monthly to annual mean aggregation)",
+        "Phase 5: confirm 1948-1951 base-window mean (4-year average of annual means of monthly observations) is computed identically to Shaikh's pre-published values",
+        "Phase 5/6: emit explicit `methodological_break: {date: 2011-01, source: BLS UEMPMEAN top-coding raised 104w -> 260w, treatment: no_adjustment_documented_break}` in registry block",
+        "Phase 6 EPR: document the 2011 break in the methodology section so downstream readers do not over-interpret post-2011 mean-duration level changes"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1403",
+      "name": "Wage Share vs Unemployment Intensity (Empirical Spiral)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "U.S. Government Work (public domain)",
+      "units": "Quarterly HP(100) wage share (decimal); quarterly HP(100) unemployment intensity (decimal); time implicit",
+      "extension_status": "feasible_with_substitute",
+      "proposed_substitute": "Quarterly wage-share construction: replace dead FRED W270RE1Q156NBEA (404) with W209RC1 (Compensation of employees, paid: Domestic industries, quarterly, billions USD SAAR — confirmed HTTP 200) divided by GDP (quarterly, billions USD SAAR — confirmed HTTP 200). This is a within-FRED ID update routing to the SAME underlying NIPA Table 1.10 line 2 series Shaikh used; not a concept-changing proxy. Quarterly unemployment intensity construction (Q1 RESOLUTION): aggregate monthly UNRATE and UEMPMEAN to quarterly means, rebase duration index to 1948Q1-1951Q4 mean, multiply.",
+      "proxy_flags": [
+        "FRED W270RE1Q156NBEA quarterly shares-of-GDI variant is RETIRED (HTTP 404). Substitute W209RC1 + GDP at quarterly frequency yields conceptually identical wage share (EC/GDP) at quarterly frequency. Routing update; not a concept substitution."
+      ],
+      "remediation": [
+        "Phase 5: update dossier extension_candidates[0].url and .source to W209RC1 + GDP (quarterly)",
+        "Phase 5: implement quarterly unemployment intensity per Q1 RESOLUTION (aggregate monthly to quarterly means, rebase duration to 1948Q1-1951Q4 base)",
+        "Phase 5: apply HP(100) at quarterly frequency (Hodrick-Prescott parameter for quarterly data conventionally = 1600, but Shaikh explicitly uses lambda=100 per Appendix 14.2 p. 893 — REPLICATE Shaikh's choice, do not substitute the textbook quarterly value)",
+        "Phase 5: validate against Appendix14_InflationULdata.xlsx quarterly tab if present, or against published Fig 14.12 phase trajectory visually"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1404",
+      "name": "Rate of Change of Wage Share vs Unemployment Intensity (Raw)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "U.S. Government Work (public domain)",
+      "units": "Wage-share growth (decimal annual rate, gwsh = first-difference of natural log); unemployment intensity (decimal, ulintensity)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Phase 5: derive from extended S1401 (wage share annual) and S1402 (intensity annual)",
+        "Phase 5: confirm gwsh = ln(wage_share_t) - ln(wage_share_{t-1}) by comparing first three observations against Appendix14 published gwsh column (cell-by-cell)",
+        "Phase 5: emit unfiltered raw scatter; Fig 14.13 is the raw counterpart to Fig 14.14"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1405",
+      "name": "HP(100)-Filtered Rate of Change of Wage Share vs Unemployment Intensity",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "U.S. Government Work (public domain)",
+      "units": "GWSHHP100 (decimal annual rate, HP(100)-filtered); ULINTENSITYHP100 (decimal, HP(100)-filtered); Phillips form parameters a, b, c dimensionless",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [
+        "Phillips functional form is published as y = a + x^c with implicit b=1 (Q3 RESOLUTION below). Phase 5 must fit BOTH variants (free b, constrained b=1) and report the coefficient comparison."
+      ],
+      "remediation": [
+        "Phase 5: apply HP(100) to FULL extended sample (1948-2024) — do NOT append filtered values to original-window filter output (endpoint bias)",
+        "Phase 5: fit Phillips form y = a + b*x^c on (i) original windows 1949-1982 and 1994-2011, (ii) extended windows 1949-1982 and 1994-2024, (iii) optionally a third regime if post-2011 data supports it (see Q4 RESOLUTION)",
+        "Phase 5: replicate published coefficients: era 1 a=-1.026431, c=-0.010677, R²=0.931; era 2 a=-1.010996, c=-0.003709, R²=0.965; AND report free-b estimates for comparison",
+        "Phase 5: omit 1983-1993 transition window from primary fits per Shaikh's convention (Q4 RESOLUTION)"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1406",
+      "name": "Inflation and Productivity Growth",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "U.S. Government Work (public domain)",
+      "units": "GDP deflator (index — current FRED vintage 2017=100, growth-rate splice neutralizes base-year change); inflation (decimal annual rate, inflrate); FEE (thousands of jobs); productivity yr = (GDP*100/p)/(FEE/1000) in real USD per worker; productivity growth (decimal annual rate, GPRODVTY)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [
+        "PRODUCTIVITY DEFINITION POLICING (Q5 RESOLUTION): Phase 5 loader MUST construct productivity as real GDP per FTE per Shaikh's exact formula yr = (GDP*100/p)/(FEE/1000). Do NOT substitute BLS PRS85006092 (nonfarm business sector labor productivity per hour) or OPHNFB or any per-hour series. This is a HARD concept-policing requirement: Shaikh's wage share decomposition yr = wr - gwsh holds only with his per-FTE construction; using per-hour would silently break the decomposition.",
+        "GDPDEF current FRED vintage uses 2017=100 base; Shaikh's appendix is base-agnostic for growth rates and uses an unstated base for levels. Growth-rate splice is the correct extension strategy; level reconstruction at the original base is unnecessary."
+      ],
+      "remediation": [
+        "Phase 5: extend via FRED GDP (annual) + GDPDEF (annual mean of quarterly) + B4701C0A222NBEA (annual FTE all industries)",
+        "Phase 5 HARD GATE: validate productivity formula literally — implement yr = (GDP*100/p)/(FEE/1000) without algebraic simplification; emit unit-test that compares output to Appendix14 published productivity column for 1948, 1972, 1996, 2011",
+        "Phase 5: chain-type vs fixed-weighted deflator question (open Q in dossier) — RESOLUTION: use chain-type GDP price index per current FRED GDPDEF, which is the BEA current standard since 1996 backward-applied. Document in registry; Shaikh's 1948-2011 sample sits entirely on the chain-type vintage as currently published.",
+        "Phase 5: FEE coverage question — RESOLUTION: use B4701C0A222NBEA which is FTE all industries (NIPA Table 6.5 line 1 broadest measure) consistent with Shaikh's economy-wide productivity intent"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1407",
+      "name": "HP(100)-Filtered Rate of Change of Real Wages vs Unemployment Intensity",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "U.S. Government Work (public domain)",
+      "units": "GRWAGEHP100 (decimal annual rate of real wage wr = w/p = (EC*100/FEE)/p); ULINTENSITYHP100 (decimal)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [
+        "Inherits productivity-definition concept-policing from S1406 (real wage construction shares the EC, FEE, p inputs).",
+        "Inherits UEMPMEAN 2011 top-coding break flag from S1402."
+      ],
+      "remediation": [
+        "Phase 5: extend by re-deriving wr = (A576RC1*100/B4701C0A222NBEA)/GDPDEF, first-difference for growth rate, then HP(100) over the full extended sample",
+        "Phase 5: fit OR derive the two-era Phillips curves — open question in dossier: are the dashed curves in Fig 14.16 (a) re-fitted to real-wage growth directly, or (b) computed as S1405 wage-share-fit + HP(100)-productivity-growth? Phase 5 should emit BOTH variants and label them; (b) is the algebraically-implied curve per Eq. 14.18, (a) is the direct empirical fit. Compare visually against published Fig 14.16.",
+        "Phase 5: omit 1983-1993 transition window per Shaikh's convention"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1408",
+      "name": "HP(100)-Filtered Rate of Change of Nominal Wages vs Unemployment Intensity",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "U.S. Government Work (public domain)",
+      "units": "GMWAGEHP100 (decimal annual rate of nominal wage w = EC*100/FEE); ULINTENSITYHP100 (decimal)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [
+        "Inherits productivity-definition concept-policing from S1406.",
+        "Inherits UEMPMEAN 2011 top-coding break flag from S1402.",
+        "Off-by-one window discrepancy noted in Phase 3 open questions: chapter text says Table 14.3 sample windows are 1948-1982 / 1994-2011; Appendix 14.2 Stata/EViews output shows 1949-1982 / 1994-2011. RESOLUTION: differencing loses 1948 first observation, so the regression effectively starts in 1949 regardless of how the text reports the window. Phase 5 should use 1949-1982 / 1994-2011 (the Appendix-documented windows) and note the chapter-text off-by-one in the EPR."
+      ],
+      "remediation": [
+        "Phase 5: extend by re-deriving w = (A576RC1*100)/B4701C0A222NBEA, first-difference for growth rate, then HP(100) over the full extended sample",
+        "Phase 5: emit BOTH (a) direct-fit and (b) algebraic-decomposition variants of the two-era Phillips curves per S1407 remediation pattern, per Eq. 14.19: ˙w/w = ˙p/p + ˙yr/yr + f(uInt_L)",
+        "Phase 5: replicate Table 14.3 secondary regression of residual nominal-wage growth on inflation + productivity growth; published coefficient on inflation in era 1 ≈ slightly below 1, on productivity growth ≈ 0.82",
+        "Phase 5: use sample windows 1949-1982 / 1994-2011 per Appendix 14.2"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "Q1 RESOLUTION (Phase 3 OQ #1, S1403 quarterly intensity construction): Shaikh's footnote 10 (p. 666) states 'Unemployment intensity was not available at the quarterly level'. RECOMMENDED CANONICAL CONSTRUCTION for the quarterly Fig 14.12 phase plot: (i) aggregate monthly UNRATE to quarterly means; (ii) aggregate monthly UEMPMEAN to quarterly means; (iii) rebase duration index to the 1948Q1-1951Q4 average (16 quarters) instead of the annual 1948-1951 base; (iv) intensity = quarterly_UNRATE * (quarterly_duration_index / 100). This produces a true quarterly intensity (the literal reading of footnote 10 is that BLS did not publish a pre-aggregated quarterly intensity, NOT that monthly data was unavailable). Alternative reading — Shaikh annualized intensity then forward-filled to quarters — produces a step-function intensity that visibly contradicts the Fig 14.12 phase trajectory's intra-year curvature. Use construction (i)-(iv).",
+    "Q2 RESOLUTION (Phase 3 OQ #2, UEMPMEAN 2011 top-coding break): DO NOT apply a continuity adjustment. Use raw FRED UEMPMEAN throughout the extended sample. Annotate the registry with `methodological_break_2011-01: true` under S1402.components.duration and surface this in the EPR. Rationale: (i) backward adjustment would alter Shaikh's published pre-2011 figures; (ii) the duration INDEX (rebased to 1948-51) absorbs much of the level break since the base is unchanged; (iii) the intensity Phillips-curve relationships are estimated on HP(100)-filtered data which smooths abrupt level shifts; (iv) BLS did not publish a back-revised series, so any adjustment would be analyst-estimated. Document the break, do not adjust.",
+    "Q3 RESOLUTION (Phase 3 OQ #3, S1405 Phillips b coefficient): Appendix 14.2 reports the fit as y = C(1) + x^C(3), equivalent to constraining b=1 in y = a + b*x^c. Phase 5 should: (i) replicate the published constrained fit (b=1) and verify the reported coefficients a=-1.026431, c=-0.010677 (era 1) and a=-1.010996, c=-0.003709 (era 2); (ii) ALSO estimate the unconstrained y = a + b*x^c and report b along with a, c; (iii) document both in the EPR. The constrained form is Shaikh's published choice; the unconstrained estimate is the more general parameterization and serves as a robustness check.",
+    "Q4 RESOLUTION (Phase 3 OQ #4, 1983-1993 transition window): PRESERVE the omission in Phase 5 fits to maintain comparability with Shaikh's published results. For Phase 6 extension analysis, evaluate whether 2008-2014 (Global Financial Crisis aftermath) constitutes a THIRD regime shift by: (i) fitting the second era curve on 1994-2007 vs 1994-2024 and comparing parameter stability; (ii) if a third regime emerges, document it with the same convention — fit two stable windows, omit the transition. Do NOT attempt to interpolate or fit across transition windows.",
+    "Q5 RESOLUTION (Phase 3 OQ #5, S1406 productivity definition): HARD CONCEPT-POLICING RULE for Phase 5 loader. Productivity = real GDP per FTE per Shaikh's exact formula yr = (GDP*100/p)/(FEE/1000), using BEA NIPA inputs (GDP from T1.10/T1.1.5, p from T1.1.9, FEE from T6.5A-D). REJECT and FAIL the loader if any per-hour series (BLS PRS85006092, OPHNFB, OPHPBS, OPHMFG) is substituted — these measure a different concept (output per hour) and would silently invalidate Shaikh's wage-share decomposition. Emit `concept_policing_assertion: productivity_per_FTE_not_per_hour` in the registry under S1406 and inherited by S1407, S1408.",
+    "S1403 URL UPDATE: replace dead FRED W270RE1Q156NBEA (404) extension candidate with W209RC1 + GDP at quarterly frequency. Within-FRED routing update; not a concept-changing substitution.",
+    "OFFLINE-ARCHIVAL: http://www.anwarshaikhecon.org/ DNS resolution fails (gaierror). The author's site that hosted Appendix 14.3 data tables is offline. Local archival copy exists at Inputs/Capitalism Data/SalvagedInputs/book_data/ShaikhChoppedTables/Appendix14_InflationULdata.xlsx and Appendix14_Documentation.xlsx — use these as the canonical published-values reference for Phase 5 cell-by-cell validation.",
+    "PHASE 5 CELL-BY-CELL VALIDATION GATE: before any extension splice, every Phase 5 loader for Ch14 series MUST validate the original-window reconstruction against ShaikhChoppedTables/Appendix14_InflationULdata.xlsx — this is the single biggest replication-faithfulness check for the chapter and the primary defense against silent loader bugs in the unit-scaling-sensitive productivity formula (Q5).",
+    "HP FILTER PARAMETER REPLICATION: Shaikh explicitly uses lambda=100 for ALL HP filtering in Ch14 including quarterly Fig 14.12 (Appendix 14.2 p. 893: 'filtered by the Hodrick-Prescott (HP) filter with the default parameter of 100'). The textbook quarterly value is 1600; DO NOT substitute. Replicate lambda=100.",
+    "Add `adequacy.status: ready_for_phase5` to all 8 series in series_registry.json (per registry_delta)."
+  ],
+  "blockers_for_phase5": [],
+  "open_questions": [
+    "Q1 RESOLVED: S1403 quarterly intensity construction — aggregate monthly UNRATE/UEMPMEAN to quarterly means, rebase to 1948Q1-1951Q4 base.",
+    "Q2 RESOLVED: UEMPMEAN 2011 top-coding break — do not adjust; document and annotate.",
+    "Q3 RESOLVED: S1405 Phillips b coefficient — published fit uses b=1 constrained; Phase 5 emits both constrained and unconstrained variants.",
+    "Q4 RESOLVED: 1983-1993 transition window — preserve omission; evaluate third regime in Phase 6 extension.",
+    "Q5 RESOLVED: Productivity = real GDP per FTE per BEA (not per-hour per BLS); concept-policing assertion enforced by loader."
+  ],
+  "phase4_open_question_resolutions": {
+    "ch14_phase3_q1_S1403_quarterly_intensity": "Aggregate monthly UNRATE and UEMPMEAN to quarterly means; rebase duration index to 1948Q1-1951Q4 (16-quarter) base; intensity = quarterly_UNRATE * (quarterly_duration_index/100). Footnote 10 indicates BLS did not publish a pre-aggregated quarterly intensity, not that monthly inputs were unavailable.",
+    "ch14_phase3_q2_UEMPMEAN_2011_topcoding_break": "Use raw FRED UEMPMEAN throughout extended sample. Annotate `methodological_break_2011-01: true` in registry. Rationale: backward adjustment alters Shaikh's published numbers; duration INDEX rebase to 1948-51 absorbs part of break; HP(100) smooths abrupt level shifts.",
+    "ch14_phase3_q3_S1405_phillips_b_coefficient": "Published fit uses b=1 constrained form y = C(1) + x^C(3). Phase 5 emits BOTH constrained (replicating a=-1.026431, c=-0.010677 era1; a=-1.010996, c=-0.003709 era2) and unconstrained y = a + b*x^c (reporting all three parameters) variants.",
+    "ch14_phase3_q4_1983_1993_transition_window": "Preserve omission for primary fits. For Phase 6 extension, evaluate post-2007 regime stability by fitting era2 on 1994-2007 vs 1994-2024 and comparing parameter stability; if a third regime emerges, document with same convention (fit two stable windows, omit transition).",
+    "ch14_phase3_q5_S1406_productivity_definition": "HARD CONCEPT-POLICING RULE: productivity = real GDP per FTE per Shaikh's exact formula yr = (GDP*100/p)/(FEE/1000) using BEA NIPA inputs. REJECT per-hour substitutes (PRS85006092, OPHNFB, OPHPBS, OPHMFG). Inherited by S1407, S1408 via the wage share decomposition."
+  },
+  "url_reachability_evidence": {
+    "checked_at": "2026-05-18 (see Build/_ch14_url_check_results.json and _ch14_url_check2_results.json)",
+    "method": "urllib HEAD with GET fallback for 403/405/501/timeout, UA=RSCD-P4-AdequacyBot/1.0, timeout=12s",
+    "results_file": "Technical/Build/_ch14_url_check_results.json",
+    "followup_results_file": "Technical/Build/_ch14_url_check2_results.json",
+    "summary": {
+      "checked": 15,
+      "status_200": 13,
+      "status_404_with_substitute": 1,
+      "dns_failed_offline_archival": 1
+    },
+    "substitutions_recorded": [
+      {
+        "deprecated": "https://fred.stlouisfed.org/series/W270RE1Q156NBEA",
+        "active": "https://fred.stlouisfed.org/series/W209RC1 + https://fred.stlouisfed.org/series/GDP (quarterly pair)",
+        "applies_to": ["S1403 extension_candidates[0]"],
+        "rationale": "W270RE1Q156NBEA returns HTTP 404 (FRED retired). W209RC1 (Compensation of employees, paid: Domestic industries, quarterly) and GDP (quarterly) jointly reconstruct the quarterly wage share Shaikh used. Both 200. Within-FRED routing update; not a concept substitution."
+      }
+    ],
+    "offline_archival_notes": [
+      {
+        "url": "http://www.anwarshaikhecon.org/",
+        "status": "dns_failure",
+        "error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
+        "treatment": "offline-archival; local copy at Inputs/Capitalism Data/SalvagedInputs/book_data/ShaikhChoppedTables/Appendix14_InflationULdata.xlsx and Appendix14_Documentation.xlsx serves as canonical published-values reference"
+      }
+    ],
+    "auth_required_session_notes": "FRED bulk access requires free API key (FRED_API_KEY env var); HEAD/landing pages are public. BEA iTable bulk download requires no auth but is interactive (recommend BEA API instead for Phase 5 — free registration). BLS CPS public bulk download via /timeseries/data/?seriesid=LNS14000000 (no auth). None blocking for Phase 4 adequacy."
+  },
+  "productivity_concept_policing_block": {
+    "context": "Phase 3 OQ #5 surfaced the risk that future loaders/analysts could silently substitute BLS per-hour labor productivity (OPHNFB, PRS85006092) for Shaikh's per-FTE construction. This block ratifies the concept-policing rule that Phase 5 loaders MUST enforce.",
+    "shaikh_definition_verbatim": "yr = productivity = (GDP*100/p)/(FEE/1000) [Appendix 14.2 p. 892 verbatim, where GDP from NIPA T1.10 line 1, p = GDP deflator from NIPA T1.1.9 line 1, FEE = full-time equivalent employees from NIPA T6.5A-D]",
+    "concept": "Real GDP per full-time-equivalent worker (annual, economy-wide)",
+    "must_reject_substitutes": ["BLS OPHNFB (output per hour, nonfarm business sector)", "BLS PRS85006092 (nonfarm business sector labor productivity index)", "BLS OPHPBS (output per hour, business sector)", "BLS OPHMFG (manufacturing output per hour)"],
+    "rationale": "Per-hour productivity differs from per-FTE productivity by the hours-per-worker trend (declining secularly). Substituting per-hour silently breaks Shaikh's wage-share decomposition wr = w/p, gwsh = wr - yr (Eq. 14.18-14.19), because both wr and yr use the same FEE denominator in his construction.",
+    "phase5_implementation": "Loader for S1406, S1407, S1408 emits assertion failure if any per-hour series is detected in extension_candidates. Registry block under S1406 includes `concept_policing_assertion: productivity_per_FTE_not_per_hour`."
+  },
+  "uempmean_2011_break_block": {
+    "context": "BLS raised the top-coded individual unemployment duration from 2 years (104 weeks) to 5 years (260 weeks) in January 2011. This affects the mean-duration computation when long-spell unemployed are a material share of the unemployed.",
+    "affected_series": ["S1402", "S1403", "S1404", "S1405", "S1407", "S1408"],
+    "magnitude_assessment": "Pre-2011 effect is small (long-spell share of unemployed historically <15%, top-coding affected few observations). Post-2011 effect is meaningful 2011-2014 because the Great Recession produced a large long-spell cohort (~40% of unemployed at peak in 2010), so the unbiased 2011+ series shows higher mean duration than a counterfactual 2-year-top-coded continuation would have.",
+    "recommended_treatment": "no_adjustment_documented_break",
+    "rationale": [
+      "Backward adjustment would alter Shaikh's published 1948-2011 figures, defeating the purpose of replication.",
+      "The duration INDEX (rebased to 1948-51 average) absorbs part of the level break: rebasing divides by an unchanged base-period mean.",
+      "HP(100) filtering smooths abrupt one-period level shifts.",
+      "BLS did not publish a back-revised consistent series; any adjustment would be analyst-estimated."
+    ],
+    "registry_annotation": {
+      "S1402.components.duration": "methodological_break_2011-01: {description: 'BLS raised UEMPMEAN top-coding from 104w to 260w', treatment: 'no_adjustment_documented_break', affects_extension: true}"
+    },
+    "epr_documentation_required": true
+  },
+  "hp_filter_lambda_replication_block": {
+    "context": "Shaikh uses HP filter lambda=100 throughout Ch14, including the quarterly Fig 14.12. The textbook convention is lambda=100 for annual data and lambda=1600 for quarterly. Shaikh's explicit choice deviates from the quarterly convention.",
+    "shaikh_choice_verbatim": "Rates of change of w, wr, σW as well as the unemployment rate and intensity were filtered by the Hodrick–Prescott (HP) filter with the default parameter of 100. [Appendix 14.2 p. 893]",
+    "phase5_rule": "Use lambda=100 for ALL HP filtering in Ch14 including quarterly S1403. Do NOT substitute lambda=1600 for quarterly. Document Shaikh's choice in EPR.",
+    "consequence": "Lambda=100 on quarterly data produces less smoothing than lambda=1600; preserves the 'zigs and zags' Shaikh references in footnote 10."
+  }
+}

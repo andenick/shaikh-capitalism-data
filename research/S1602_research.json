@@ -1,0 +1,105 @@
+{
+  "series_id": "S1602",
+  "name": "Hourly Real Wages and Productivity, US Business Sector",
+  "chapter": 16,
+  "figures": [
+    "Fig16.3"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S095",
+    "cd2_id": "S095"
+  },
+  "book_quotes": [
+    {
+      "chapter": 16,
+      "page": 730,
+      "quote": "Figure 16.3 depicts the relation between hourly productivity and hourly real compensation (real wages) in the US business sector from 1947 to 2008. Real wages tend to grow more slowly than productivity even under normal circumstances, but starting in the 1980s in the Reagan era real wage growth slowed down considerably.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 16,
+      "page": 898,
+      "quote": "Hourly productivity and actual real compensation are available from the US Bureau of Labor Statistics (BLS), under the heading of \"Major Sector Productivity and Costs Indexes,\" at http://www.bls.org. The 2010 figure was for the first quarter.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 16,
+      "page": 898,
+      "quote": "The ratio of productivity (y) to real employee compensation (ec) follows a steady trend in the postwar \"golden age\" 1960-1981, which was captured by regressing ln(ec) on ln(y) and a time trend (the latter was not significant). This trend was then forecast over 1982-2009 to estimate the (counterfactual) path that ec would have followed if the previous trend had been maintained (ecc).",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "US Bureau of Labor Statistics (BLS)",
+    "publication": "Major Sector Productivity and Costs",
+    "table_or_series_id": "PRS84006093 (Real Hourly Compensation, Nonfarm Business) and PRS84006153 (Output per Hour, Nonfarm Business)",
+    "url": "https://www.bls.gov/productivity/data.htm",
+    "frequency": "quarterly (annual averages used)",
+    "units": "Index, 1982=100 (Fig 16.3); also rebased 1958=100 for S095-C/D subseries",
+    "license": "Public domain (US Federal data)",
+    "available_through": "BLS Major Sector Productivity data tables; FRED",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Productivity = BLS PRS84006153; RealComp = BLS PRS84006093; Counterfactual EC_c estimated from OLS regression of ln(ec) on ln(y) over 1960-1981, forecast 1982-2009",
+  "components": [
+    "BLS PRS84006153 — Output per hour, nonfarm business sector",
+    "BLS PRS84006093 — Real hourly compensation, nonfarm business sector",
+    "Counterfactual real compensation path (Shaikh estimation, regress over 1960-1981)"
+  ],
+  "year_range_book": [
+    1947,
+    2012
+  ],
+  "year_range_extension": [
+    1947,
+    2025
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "Real hourly compensation (nonfarm business)",
+      "source": "FRED COMPRNFB (BLS PRS85006153 -> 84006153)",
+      "url": "https://fred.stlouisfed.org/series/COMPRNFB",
+      "units": "Index 2017=100",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "BLS rebased from 2012=100 to 2017=100 in 2022; rebase to 1982=100 required",
+        "Real deflator changed from CPI-U-RS to PCE for some series — verify which Shaikh used"
+      ]
+    },
+    {
+      "subseries_label": "Output per hour (nonfarm business)",
+      "source": "FRED OPHNFB (BLS PRS85006093)",
+      "url": "https://fred.stlouisfed.org/series/OPHNFB",
+      "units": "Index 2017=100",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Productivity revisions occur annually; minor level shifts at splice"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Shaikh uses Nonfarm Business Sector (BLS Major Sector Productivity and Costs), NOT total business — CD2 S095 confirms PRS84006xxx series. Some Shaikh code references 'business sector' loosely; verify against Appendix 16.2 data tables.",
+    "Per CD2 (S095), four subseries: S095-A (productivity 1982=100), S095-B (real comp 1982=100), S095-C (productivity 1958=100), S095-D (real comp 1958=100).",
+    "The counterfactual path (visible in Figure 16.3) is internal to this dossier; its construction feeds directly into S1604 Fig 16.4 (counterfactual profit rate).",
+    "Note: book footnote (p. 898) says URL is 'bls.org' — this is a typo for bls.gov; the correct domain is the US BLS at bls.gov."
+  ],
+  "open_questions": [
+    "Confirm which deflator Shaikh used for real compensation (CPI-U-RS vs PCE vs implicit business sector deflator). BLS PRS84006093 uses CPI-U-RS by default.",
+    "Counterfactual regression: replicate ln(ec) ~ ln(y) + trend over 1960-1981 to verify slope match in Phase 5.",
+    "Extension splice year (2012 per CD2): verify FRED COMPRNFB / OPHNFB align at 2012 within tolerance."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch16",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Ported from CD2 S095; quotes verified verbatim against PDF pp. 730 and 898."
+    }
+  ]
+}

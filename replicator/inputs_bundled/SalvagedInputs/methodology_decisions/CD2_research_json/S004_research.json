@@ -1,0 +1,41 @@
+{
+  "series_id": "S004",
+  "series_name": "Ayres Business Cycle",
+  "chapter": 2,
+  "figures": ["Fig 2.4A", "Fig 2.4B", "Fig 2.4C"],
+  "research_date": "2026-03-07",
+  "researcher": "agent",
+  "kb_sources_searched": ["ch18_appendices.md", "ch02_turbulent_trends.md", "appendix_methodology_summary.json"],
+  "entries": [
+    {
+      "entry_type": "methodology_description",
+      "content": "Historical business cycle index compiled by Leonard P. Ayres (1939) for the Cleveland Trust Company. Monthly data (~12 observations per year) covering 1831-1939. The index is a composite indicator of economic activity with no direct modern equivalent—it predates NBER business cycle dates and modern GDP-based measures. Used to illustrate pre-1940 business cycle patterns.",
+      "source_ref": "Appendix 2.1"
+    },
+    {
+      "entry_type": "source_citation",
+      "content": "Ayres, Leonard P. Turning Points in Business Cycles. Cleveland Trust Company, 1939. The Cleveland Trust Company business cycle index was constructed from a variety of 19th- and early 20th-century economic indicators. No extension planned—historical index only.",
+      "source_ref": "Ayres 1939"
+    },
+    {
+      "entry_type": "figure_context",
+      "content": "Figs 2.4A, 2.4B, and 2.4C display the Ayres business cycle index in three panels or sub-periods. The monthly frequency (~12 obs/year) allows identification of cycle turning points and amplitude. The series ends in 1939; there is no modern equivalent to extend the series. Used to demonstrate cyclical volatility in the pre-Great Depression era.",
+      "source_ref": "Shaikh 2016, Ch. 2"
+    }
+  ],
+  "citations": [
+    {
+      "id": "Ayres_1939",
+      "full": "Ayres, Leonard P. Turning Points in Business Cycles. Cleveland, OH: Cleveland Trust Company, 1939."
+    },
+    {
+      "id": "Cleveland_Trust",
+      "full": "Cleveland Trust Company. Business Cycle Index. Historical economic indicators compiled by Leonard P. Ayres. 1831-1939."
+    }
+  ],
+  "methodology_summary": "S004 is the Ayres (1939) business cycle index from the Cleveland Trust Company, monthly data 1831-1939. A historical composite indicator with no modern equivalent. Approximately 12 observations per year. Used for Figs 2.4A, 2.4B, 2.4C to illustrate pre-World War II business cycle patterns. No extension planned—the methodology and underlying indicators are not replicated in contemporary statistical agencies.",
+  "known_issues": [
+    "Monthly frequency causes repeated year values in annual-format validators; inherent to source, not an error"
+  ],
+  "cross_references": ["Appendix2_Ayres.csv"]
+}

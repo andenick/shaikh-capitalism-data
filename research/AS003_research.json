@@ -1,0 +1,116 @@
+{
+  "series_id": "AS003",
+  "name": "Imputed Interest Adjustment and Sectoral Profit Rates",
+  "chapter": 6,
+  "figures": ["Fig6.1", "Fig6.4", "Fig6.5"],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": "S208"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 835,
+      "quote": "NIPA insists on treating banks as if they were ordinary businesses. And since ordinary businesses must have positive value added and positive gross surplus, \"an imputation for implicit financial services produced by banks is included in the NIPA\" under the category of net interest paid (Fixler, Reinsdorf, and Villones 2010, 347). Since banks are corporations, corporate net interest ends up being largely \"composed of imputations\" (Ritter 2000, 18). For instance, in 2009 total net interest within aggregate NIPA NOS is $841.9 billion, of which $747.6 billion is imputed (NIPA table 7.12, lines 43, 44).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 842,
+      "quote": "Bank (Financial Corporate) Net Int Paid ... T 7.11, lines (4 + 44 + 73) - (28 + 52 + 91) ... BankNetIntPaid ... NonFin Business Net Imputed Int Paid ... T 7.11, lines (74+75) - lines (53 + 54) ... NFNetImpIntPaid ... Fin Corp Net Int Paid - NonFin Bus Net Imputed Int Paid ... -(1)-(2) ... BusImpIntAdj.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 841,
+      "quote": "In 2009 the imputed interest adjustments raise business and corporate net value added measures by only 1% and 2%, respectively, but raise business and corporate net operating surpluses by 7% and 10%, respectively. But non-corporate operating surplus are also lowered by the transfer out of the wage equivalent of proprietors and partners, and this swamps the positive effect of the imputed interest adjustment so that the overall business sector NOS is lowered by more than 30%.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "BEA",
+    "publication": "NIPA",
+    "table_or_series_id": "NIPA Table 7.11 (Interest Paid and Received by Sector and Legal Form), specifically lines 4, 28, 44, 52, 53, 54, 73, 74, 75, 91; NIPA Table 7.12 (Imputations, lines 43, 44); BEA Fixed Asset Table 6.1, lines 2/6/7/9 (net fixed capital for business, corporate, noncorporate, partner)",
+    "url": "https://apps.bea.gov/iTable/?reqid=19&step=2&isuri=1&categories=survey",
+    "frequency": "annual",
+    "units": "Billions of current dollars (NOS, NMINT); rate (decimal) for profit rates",
+    "license": "Public domain (U.S. Government work)",
+    "available_through": "BEA iTable",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "BankNetIntPaid = T7.11(L4+L44+L73) - T7.11(L28+L52+L91); NFNetImpIntPaid = T7.11(L74+L75) - T7.11(L53+L54); BusImpIntAdj = -BankNetIntPaid - NFNetImpIntPaid. Final business NOS = NOSbusnipa - WEQ2 + BusImpIntAdj. Sectoral profit rates: rcorp = Pcorp/KNCcorp(-1); rnoncorp = Pnoncorp/KNCnoncorp(-1); rbus = Pbus/KNCbus(-1). All capital stocks lagged one period.",
+  "components": [
+    {"label": "Aggregate business NOS (NIPA)", "source": "AS001 output / Appendix Table 6.7.3"},
+    {"label": "WEQ2 wage-equivalent adjustment", "source": "AS002 output"},
+    {"label": "Bank (financial corporate) net interest paid", "source": "BEA NIPA T7.11 lines 4+44+73 minus 28+52+91"},
+    {"label": "Non-financial business net imputed interest paid", "source": "BEA NIPA T7.11 lines 74+75 minus 53+54"},
+    {"label": "Corporate net imputed interest adjustment (CorpImpIntAdj)", "source": "NonFin Corp Borrower Services Paid - NonFin Corp Imp Int Received; T7.11 line 74 - line 53"},
+    {"label": "KNCbus, KNCcorp, KNCnoncorp - sectoral net fixed capital, current-cost", "source": "BEA Fixed Asset Table 6.1, lines 2, 9, 6+7 respectively"}
+  ],
+  "year_range_book": [1947, 2011],
+  "year_range_extension": [2012, 2025],
+  "extension_candidates": [
+    {
+      "subseries_label": "Net interest imputation extension (BusImpIntAdj)",
+      "source": "BEA NIPA Table 7.11 (current vintage)",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&nipa_table_list=210",
+      "units": "Billions of current dollars",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Line numbers in T7.11 have shifted across vintages; the precise (4+44+73)-(28+52+91) and (74+75)-(53+54) recipes use 2011-vintage line ids and must be re-mapped by stub for current data", "FISIM methodology revisions in 2013/2018 comprehensive revisions change imputation magnitudes"]
+    },
+    {
+      "subseries_label": "Sectoral net fixed capital (KNCcorp, KNCnoncorp) extension",
+      "source": "BEA Fixed Asset Table 6.1 (current vintage)",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "Billions of current dollars",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["BEA FA tables now separate IPP; structure of T6.1 may need re-mapping"]
+    }
+  ],
+  "methodology_notes": [
+    "The imputed interest adjustment exists because NIPA treats banks as ordinary businesses with positive value added, requiring an imputation for unpriced banking services ('borrower services' and 'depositor services'); these imputations cancel out at the aggregate NOS level but redistribute between the production sector and the banking sector. Shaikh removes the imputations to restore the classical accounting concept (Appendix 6.7 Section IV, pp. 835-841).",
+    "Appendix Table 6.7.11 (p. 842) is the canonical worked example for 2009: BankNetIntPaid = -37.6, NFNetImpIntPaid = -136.1, BusImpIntAdj = 173.7; Final Business NOS = 2,030.3 vs NIPA 2,533.8 (68.0%); Final Corporate NOS = 1,416.8 (110.4% of NIPA corporate NOS).",
+    "Appendix Tables 6.7.5-6.7.10 (pp. 836-840) walk through stylized 'classical' vs. 'NIPA' accounts for three cases (production sector only; household-bank only; combined) to derive the BusImpIntAdj formula transparently.",
+    "Final profit rates (Appendix Table 6.7.4 worked example, 2009): rbus = 7.7%, rcorp = 7.5%, moncorp (using WEQ2) = 8.1%, rnoncorp1 (using WEQ1) = 10.2%. The closeness of rbus to rcorp validates using the corporate sector as a representative proxy (book p. 855, Appendix 6.7 Section VII).",
+    "All profit rates use t-1 capital stock as denominator (beginning-of-year), consistent with the convention that capital must be in place before producing the period's NOS.",
+    "Inputs: AS001 (business NOS aggregate), AS002 (WEQ2), AS004/AS006 (sectoral net fixed capital). Output: corrected sectoral NOS measures and the sectoral profit rates rbus, rcorp, rnoncorp that appear in Fig 6.1, 6.4, 6.5 and become the empirical objects of Ch16 dynamics."
+  ],
+  "open_questions": [
+    "Which of S601-S604 directly consumes the corrected sectoral profit rates from AS003? Most likely S601 (corporate profit rate) and S602 (business sector profit rate); confirm via Phase 4 crosswalk.",
+    "BEA's FISIM (Financial Intermediation Services Indirectly Measured) methodology was revised in 2013 and again in the 2018 comprehensive revision; the (4+44+73)-(28+52+91) and (74+75)-(53+54) line recipes need verification against the current T7.11.",
+    "The 30% reduction in overall business NOS combines two opposite-sign corrections (positive imputed interest, negative WEQ2). Sensitivity analysis on each correction independently would clarify magnitudes for Phase 4."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-as-ch6",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from CD2 S208 markdown + verbatim quotes from Appendix 6.7 Section IV and Appendix Tables 6.7.5-6.7.11 (book pp. 835-842). Three book quotes (definition, source, method)."
+    },
+    {
+      "reviewer": "rscd-a3-ch6-blocker-batch",
+      "date": "2026-05-18",
+      "status": "phase5_ready",
+      "notes": "Resolved Phase 5 Blocker B2 (NIPA T7.11 FISIM line-number remap). The 2011-vintage line recipe (4+44+73)-(28+52+91) and (74+75)-(53+54) is now resolved at fetch time via a stub-label resolver. See Technical/code/L01_loaders/_nipa_t711_line_resolver.py and Technical/docs/methodology/NIPA_T711_FISIM_remap.md. Pinned vintages: 2011 (CD2 source-of-truth), 2018 (post-Comprehensive-Update, +1 line shift for all lines >= 28), 2024 (current). BEA Data API path included for live resolution via LineDescription field."
+    }
+  ],
+  "phase5_resolver": {
+    "module": "Technical/code/L01_loaders/_nipa_t711_line_resolver.py",
+    "methodology_doc": "Technical/docs/methodology/NIPA_T711_FISIM_remap.md",
+    "stub_label_count": 10,
+    "vintages_pinned": [2011, 2018, 2024],
+    "api_helper": "fetch_t711_via_api(year, vintage_year) — requires BEA_API_KEY env var"
+  }
+}

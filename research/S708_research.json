@@ -1,0 +1,125 @@
+{
+  "series_id": "S708",
+  "name": "Figure 7.20 Deviations of Greek Manufacturing Incremental Profit Rates from Average Incremental Rate, 1962-1991",
+  "chapter": 7,
+  "figures": [
+    "Fig7.20"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S039",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 7,
+      "page": 305,
+      "quote": "Tsoulfidis and Tsaliki get almost exactly the same results on the profitability of twenty Greek manufacturing industries. For average profit rates displayed in figure 7.19, they find that visual inspection of the graphs does not provide strong support for the idea of the equalization over the thirty-two-year span of their data (Tsoulfidis and Tsaliki 2005, 19). On the other side, they find much stronger visual support for long-run equalization in the case of the incremental rates of profit displayed in figure 7.20 (29). I will return shortly to their subsequent econometric investigations.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 859,
+      "quote": "IV. Average and incremental profit rates for Greek manufacturing 1962-1991 (Tsoulfidis and Tsaliki 2011). Figure 7.19 Deviations of Greek Manufacturing Profit Rates from Average Profit Rate, 1962-1991. Figure 7.20 Deviations of Greek Manufacturing Incremental Profit Rates from Average Incremental Rate, 1962-1991. Source: Tsoulfidis and Tsaliki 2011: 19, fig. 4, and 30, fig. 5.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 301,
+      "quote": "Tsoulfidis and Tsaliki (2005, 14) use the change in gross profit over gross investment, whereas I used the change in GOS over gross investment for the incremental profit rate data presented in figure 7.21 (appendix 7.1). As we will see, despite such variations in the exact measures, the results are remarkably consistent: incremental rate of profit are strongly equalized while average rates of profit are generally not.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Tsoulfidis, Lefteris and Tsaliki, Persefoni (academic authors)",
+    "publication": "Tsoulfidis, L. and Tsaliki, P. (2011), 'Classical Competition and Regulating Capital: Theory and Empirical Evidence' (also cited as Tsoulfidis & Tsaliki 2005). Figure 5 on p. 30 of that paper is Shaikh's Figure 7.20.",
+    "table_or_series_id": "Tsoulfidis & Tsaliki (2011), Figure 5 (p. 30) - Greek manufacturing 20-industry incremental profit rate deviations, 1962-1991; underlying source: Greek ESYE (now ELSTAT) Annual Industrial Survey + Bank of Greece investment data",
+    "url": "https://mpra.ub.uni-muenchen.de/51334/",
+    "frequency": "annual",
+    "units": "rate deviation (decimal; industry IROP minus cross-industry average IROP, year by year)",
+    "license": "Reproduced from Tsoulfidis & Tsaliki (2011); academic fair use. Underlying source: Greek ESYE Annual Industrial Survey.",
+    "available_through": "Tsoulfidis & Tsaliki (2011) PDF + MPRA working paper repository; Shaikh's Figure 7.20 reproduces their Figure 5. No machine-readable dataset on Shaikh's companion site for this figure.",
+    "discontinued": true,
+    "replaced_by": "ELSTAT Annual Industrial Survey is the modern Greek source; for OECD-wide IROP coverage see Shaikh's own Figure 7.21 (OECD STAN-derived)."
+  },
+  "construction": "composite",
+  "formula": "For each Greek manufacturing industry i and year t (1962-1991): dev_i,t = IROP_i,t - IROP_avg,t, where IROP_i,t = (PG_i,t - PG_i,t-1) / IG_i,t-1 per Tsoulfidis & Tsaliki's (2005, p.14) definition (change in gross profit over lagged gross investment), and IROP_avg,t is the cross-industry average per year. Note: T&T use 'change in gross profit' as numerator; Shaikh in his own Fig 7.21 uses 'change in GOS' as numerator. Book p. 301 acknowledges the small definitional difference but finds results 'remarkably consistent.'",
+  "components": [
+    {
+      "label": "Greek manufacturing industry gross profit (PG) by 2-digit ISIC, 1962-1991",
+      "source": "Greek ESYE (now ELSTAT) Annual Industrial Survey, processed by Tsoulfidis & Tsaliki",
+      "role": "numerator-delta source"
+    },
+    {
+      "label": "Greek manufacturing industry gross investment (IG) by 2-digit ISIC, 1962-1991, lagged",
+      "source": "Greek ESYE Annual Industrial Survey, processed by Tsoulfidis & Tsaliki",
+      "role": "denominator"
+    },
+    {
+      "label": "Cross-industry average IROP per year",
+      "source": "Derived: aggregate sum_i delta(PG_i) / sum_i lagged(IG_i), or unweighted mean - check Tsoulfidis & Tsaliki definition",
+      "role": "baseline for deviation calculation"
+    }
+  ],
+  "year_range_book": [1962, 1991],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "ELSTAT Annual Industrial Survey (Greek manufacturing gross profit and investment by 2-digit NACE)",
+      "source": "Hellenic Statistical Authority (ELSTAT)",
+      "url": "https://www.statistics.gr/en/statistics/-/publication/SBR03/-",
+      "units": "Euros, current prices",
+      "splice_strategy": "none",
+      "concerns": [
+        "ESYE -> ELSTAT transition (2010) + ISIC -> NACE Rev 2 reclassification means a direct splice to Tsoulfidis & Tsaliki's 1962-1991 panel is not possible.",
+        "Investment-side data in Greek statistics post-2000 is uneven; gross fixed capital formation at the 2-digit manufacturing level may not match T&T's coverage."
+      ]
+    },
+    {
+      "subseries_label": "OECD STAN database, Greece (industry GOS, GFCF)",
+      "source": "OECD",
+      "url": "https://stats.oecd.org/Index.aspx?DataSetCode=STAN_ARCHIVE",
+      "units": "Euros / PPP-adjusted USD",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "STAN coverage of Greece for early years is partial; industry classification differs from T&T's 1960s-1990s ISIC schema."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Per book p. 859 / PDF p. 897, the source for Fig 7.20 is Tsoulfidis & Tsaliki (2011), Figure 5 on p. 30. The same source/paper provides Fig 7.19 (their Figure 4 on p. 19) - that is the dossier S707.",
+    "Substantive finding (book p. 305): IROP deviations show much stronger long-run equalization than average ROP deviations - the cross-industry IROP series cross zero repeatedly, while the average ROP deviations do not. This is the same empirical pattern Shaikh finds for the US (Figs 7.17/7.18) and for the OECD (Fig 7.21).",
+    "Twenty Greek manufacturing industries are covered (book p. 305). Industry-level data lives in Tsoulfidis & Tsaliki's underlying paper but was not redistributed in Shaikh's Appendix 7.2.",
+    "Definitional note (book p. 301): Tsoulfidis & Tsaliki use 'change in gross profit / gross investment' whereas Shaikh in his own Fig 7.21 uses 'change in GOS / gross investment'. The two definitions are close but not identical (gross profit subtracts wage equivalent; GOS does not). Shaikh argues the difference is empirically minor.",
+    "CD2 had no S039 dossier - this is a first-pass research entry. The closest CD2 material is S038 (OECD IROP, Fig 7.21), which is structurally similar but a different data source.",
+    "Anti-degradation: no meaningful extension as a continuation of T&T's series. Any modern Greek IROP exhibit must be presented as a separate, methodologically-documented panel, not a splice."
+  ],
+  "open_questions": [
+    "Locate Tsoulfidis & Tsaliki (2011) PDF and their underlying Greek industry-level dataset. Without it, RSCD cannot reproduce Fig 7.20 - Shaikh did not redistribute the Greek dataset.",
+    "Verify the exact citation: book bibliography (unread by this pass) will give the canonical journal and volume for Tsoulfidis & Tsaliki (2011).",
+    "Confirm whether Tsoulfidis & Tsaliki's IROP definition uses unweighted industry-mean for the cross-industry average or aggregate-before-ratio. This affects the deviation values for Fig 7.20."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-b-ch7",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from book pp. 301, 305 and Appendix 7.1 IV (book p. 859 / PDF p. 897) verbatim. Source = Tsoulfidis & Tsaliki (2011), Figure 5 (p. 30). CD2 had no S039 dossier; closest is CD2 S038 (OECD IROP Fig 7.21, different data source). No Greek raw dataset in SalvagedInputs; flagged as blocker."
+    },
+    {
+      "reviewer": "opus-subagent-batch1-A4-B5",
+      "date": "2026-05-18",
+      "status": "data_unavailable",
+      "notes": "B5 underlying-data search (shared with S707): Tsoulfidis & Tsaliki (2011) MPRA paper No. 51334 downloaded and fully inspected; the 20-industry x 30-year IROP deviation time series is not tabulated in the paper, only plotted in Figure 5 (p. 30). Tables 4 and 5 contain only AR(1) regression coefficients (a, b, a/(1-b), R^2) per industry, not raw deviation values. Marked data_unavailable; full provenance at SalvagedInputs/book_data/Reconstructed/Tsoulfidis_Tsaliki_2011_data_unavailable.md. Same Phase 5 recommendation as S707."
+    }
+  ]
+}

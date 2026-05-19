@@ -1,0 +1,87 @@
+{
+  "series_id": "S1001",
+  "name": "Bank vs Private Industry IROP",
+  "chapter": 10,
+  "figures": [
+    "Fig10.1",
+    "Fig10.2"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S050",
+    "cd2_id": "S050"
+  },
+  "book_quotes": [
+    {
+      "chapter": 10,
+      "page": 462,
+      "quote": "Figure 10.1 Incremental Rates of Profit, Banks versus All Private Industries, 1988-2005",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 462,
+      "quote": "(the interest rate offered to good business customers) and the Aaa corporate bond yield (the interest rate paid by highly rated corporations on their borrowing in the bond market) is evident in figure 10.2. Sources and methods and data tables are in appendices 10.1 and 10.2.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 873,
+      "quote": "Figure 10.1 Incremental rates of profit for banking and for all private industry were previously derived in appendix 7.2.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh derived (Appendix 7.2)",
+    "publication": "Capitalism: Competition, Conflict, Crises (Oxford 2016), Appendix 10.1 / Appendix 7.2",
+    "table_or_series_id": "Appendix 7.2 banking industry IROP; cross-industry IROP for All Private",
+    "url": "http://www.anwarshaikhecon.org/",
+    "frequency": "annual",
+    "units": "Rate (decimal)",
+    "license": "Author-distributed companion workbook (Appendix 7 + Appendix 10.2)",
+    "available_through": "ShaikhChoppedTables/Appendix10_Documentation.xlsx and Appendix7_iropdataUSind.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "IROP_i = delta NOS_i / (IG_{i,t-1} + INV_{i,t-1}); for All Private = cross-sectional average across all private industries; for Banks = banking-industry row from Appendix 7.2",
+  "components": [
+    {"label": "Banks IROP", "source": "Appendix 7.2 banking industry column (S215 row)"},
+    {"label": "All Private average IROP", "source": "Appendix 7.2 cross-industry average"}
+  ],
+  "year_range_book": [1988, 2005],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA-NIPA industry NOS / gross investment by industry (banking = Finance and Insurance sector)",
+      "source": "BEA Industry Economic Accounts, GDP-by-industry tables 2.7 (Net operating surplus by industry) and Investment by industry",
+      "url": "https://www.bea.gov/industry/gdpbyind_data.htm",
+      "units": "Rate (decimal)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Industry classification shifted from SIC to NAICS in late 1990s; banking definition changes",
+        "Shaikh's banking IROP uses appendix-7.2-specific corrected capital stock not directly published by BEA"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Series is derivative of Ch7 industry-level S215 IROP panel; banking row extracted and benchmarked against all-private cross-industry average.",
+    "Per Appendix 10.1: 'Incremental rates of profit for banking and for all private industry were previously derived in appendix 7.2.' Construction therefore inherits all Ch7 deflator, capital-stock-correction, and inventory-investment choices.",
+    "CD2 predecessor S050 confirmed; CD2 markdown reports validation values 1988=0.169, 1991=-0.037, 1994=0.122, 2003=0.017."
+  ],
+  "open_questions": [
+    "Should the modern extension replicate Shaikh's appendix-7.2 corrected capital stock or accept BEA published net stocks? Decide in Phase 4.",
+    "Banking subsector after NAICS reclassification: NAICS 52 (Finance & Insurance) is broader than Shaikh's 'banking' - may need NAICS 5221 (Depository credit intermediation) only."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-b-ch10",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S050 ported; quotes verified against PDF pp.462, 873"
+    }
+  ]
+}

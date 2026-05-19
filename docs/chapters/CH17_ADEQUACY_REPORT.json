@@ -1,0 +1,131 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": 17,
+  "reviewer": "opus-subagent-p4-wave3-ch17",
+  "review_date": "2026-05-18",
+  "series_count": 3,
+  "scores": {
+    "D1_source_reachability": {
+      "value": 22,
+      "max": 25,
+      "details": "Real HTTP HEAD/GET checks 2026-05-18T20:10Z. S1702/S1703 IRS SOI Publication 1304 landing page https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-publication-1304-complete-report returned 200 OK — IRS still hosts the 2011 complete report. S1701 primary URL http://www.anwarshaikhecon.org/ DNS does not resolve (getaddrinfo failure on both http and https), identical to Ch5 finding; treated as offline-archival with local file fallback SalvagedInputs/book_data/ShaikhChoppedTables/Appendix5_DATALRprices.xlsx (the same Appendix 5.3 spreadsheet that backs Fig 16.1 and Fig 17.1) plus IA snapshot 2024-03-11. S1701 extension candidates: BoE Millennium dataset https://www.bankofengland.co.uk/statistics/research-datasets returned 200 OK; MeasuringWorth gold https://www.measuringworth.com/datasets/gold/ returned 200 OK. MeasuringWorth US Wholesale Price URL https://www.measuringworth.com/datasets/uswholesaleprice/ returned 404 — the Officer 'Annual WPI for the US 1720-Present' dataset is no longer published at MeasuringWorth (only inflation/CPI calculators remain). Substitute proposed: NBER macrohistory Warren-Pearson m04051 + BLS WPU00000000 (same bridge as Ch5 S502). -3 reflects the MeasuringWorth WPI 404 (one of three S1701 extension URLs broken) plus the anwarshaikhecon.org DNS failure (mitigated by local copy)."
+    },
+    "D2_year_coverage": {
+      "value": 17,
+      "max": 20,
+      "details": "S1702/S1703 are cross-sectional 2011 snapshots (year_range_book = [2011,2011]); 100% covered by the IRS SOI 2011 Publication 1304 Table 1.4 spreadsheet present in SalvagedInputs as Appendix17_USIRS2011.xlsx (27 AGI bins, all years 2011, complete). S1701 book range [1890,2030]: the empirical portion (1890-2010) is covered by the same Appendix 5.3 spreadsheet that backs Ch5 series (DATALRprices.xlsx); the post-2011 projection portion of the dashed 'average of past two waves' is a forecast, not data, and should be split into a separate forecast layer at Phase 5 ingestion (already flagged in Phase 3 dossier). Extension feasibility post-2010 is constrained by the broken MeasuringWorth WPI URL and the requirement to recompute (not splice) the HP-filtered gold-deflated WPI. -3 reflects (a) the WPI-extension uncertainty for S1701 and (b) the projection-vs-data decision still pending."
+    },
+    "D3_license_compatibility": {
+      "value": 15,
+      "max": 15,
+      "details": "All sources in scope are public-domain or academic-open. S1702/S1703: IRS SOI Publication 1304 is U.S. federal government public domain. S1701: Shaikh's Appendix 5.3 DATALRprices.xlsx is academic publication by the author (local copy in SalvagedInputs); BoE Millennium dataset is OGL-licensed; MeasuringWorth (Officer & Williamson) is academic-scholarly use permitted; NBER macrohistory is public-academic. No commercial/proprietary licensing risk."
+    },
+    "D4_units_consistency": {
+      "value": 15,
+      "max": 15,
+      "details": "All three series have explicit primary_source.units. S1701: 'Index (US/UK wholesale price level expressed in ounces of gold), with HP filter smoothing parameter = 100; index level dimensionless (chart range ~0 to 180)'. S1702: 'Cumulative probability from above (dimensionless, on natural-log scale) plotted against bin midpoint in US dollars (arithmetic axis, $0 to $160,000)'. S1703: 'Cumulative probability from above (dimensionless, on natural-log scale) plotted against bin midpoint in US dollars (also natural-log axis, $100,000 to $10,000,000)'. Loader-units checks: IRS SOI Table 1.4 supplies number-of-returns (count) and AGI bin edges (USD nominal); the Phase 5 loader transforms count -> frequency -> cumulative-from-above (dimensionless) per Appendix 17.1, p. 900 methodology — unit transformation is explicit and matches Shaikh's published chart axes."
+    },
+    "D5_extension_feasibility": {
+      "value": 12,
+      "max": 15,
+      "details": "S1702 and S1703 are cross_sectional snapshots (2011); per Anu Framework rules extensions do not apply. extension_status = not_applicable_cross_sectional for both; future IRS SOI Tax-Year-YYYY releases support analogous reconstruction in adjacent years but that is a separate-series exercise, not an extension. S1701 is time_series with extension_status = feasible-with-recomposition (three extension components flagged: US WPI, UK WPI, gold price; all three must be recomposed and re-HP-filtered, not growth-rate spliced, since the published series is itself a derived/filtered quantity — No-Lazy-Splices-on-Derived-Quantities rule). MeasuringWorth USWP 404 reduces score by 3: substitute (NBER m04051 + BLS WPU00000000) is documented but not yet operationalised in a loader."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 10,
+      "max": 10,
+      "details": "All substitutions and corrections explicitly flagged. S1701: stub-vs-figure name mismatch (CD2 S102 'IRS 2011 Income Distribution' inherited but Fig17.1 is the long-wave chart) is documented in Phase 3 methodology_notes and ratified here — the figure assignment wins, IRS lineage is captured in S1702/S1703. S1701: forecast portion of the dashed 'average of past two waves' is flagged in Phase 3 open_questions for separate-layer treatment, not silently treated as data. S1702/S1703: CD2 reference_values column-confusion (frequency vs survival function) is documented in Phase 3 open_questions and reconciled in this report against the local Appendix17_USIRS2011.xlsx (see chapter_level_recommendations). No undisclosed proxies."
+    }
+  },
+  "total_score": 91,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "S1701",
+      "name": "The Global Crisis of 2007 in Light of Past Long Waves (HP-smoothed US/UK gold-deflated price indexes)",
+      "content_type_correction": {
+        "from": "stub-name 'IRS 2011 Income Distribution — Full Table' (inherited from cd2_id=S102)",
+        "to": "renamed to 'The Global Crisis of 2007 in Light of Past Long Waves (HP-smoothed US/UK gold-deflated price indexes)' to match figure assignment Fig17.1",
+        "ratified": true,
+        "rationale": "Phase 2 stub mapped cd2_id S102 -> S1701 by ID lineage but the CD2 S102 entry is the IRS 2011 income distribution table (figures 17.2/17.3), not Figure 17.1. The RSCD stub assigns figure Fig17.1 to S1701 — Fig 17.1 is the long-wave WPI chart from Appendix 5.3. Phase 4 ratifies the rename: figure assignment wins, IRS lineage is fully captured in S1702 (Fig17.2) and S1703 (Fig17.3). No registry row count change; only the name and source attribution change. Predecessor cd2_id link is preserved for audit but flagged as 'name-mismatch-with-figure'."
+      },
+      "url_status": "offline-archival",
+      "url_status_checked_at": "2026-05-18T20:10Z",
+      "year_coverage_pct": 100,
+      "license": "academic-public (Appendix 5.3 author-curated; MeasuringWorth scholarly-use; BoE OGL)",
+      "units": "Index (US/UK wholesale price level expressed in ounces of gold), HP(100)-smoothed; index level dimensionless (chart range ~0 to 180)",
+      "extension_status": "feasible",
+      "proposed_substitute": {
+        "primary": "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix5_DATALRprices.xlsx (same Appendix 5.3 spreadsheet that backs Fig 16.1 and Ch5 series S501-S504)",
+        "wayback_snapshot": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+        "extension_us_wpi": "MeasuringWorth /datasets/uswholesaleprice/ returned 404 (2026-05-18). Substitute: NBER macrohistory Warren-Pearson m04051a series (pre-1947) spliced to BLS WPU00000000 via api.bls.gov/publicAPI/v2/timeseries/data/WPU00000000 (same bridge as Ch5 S502/S504; WPS->WPU transition verified). Recompose WPI/USD-gold ratio then re-apply HP(100); do NOT growth-rate splice the derived series.",
+        "extension_uk_wpi": "BoE 'A Millennium of Macroeconomic Data' at https://www.bankofengland.co.uk/statistics/research-datasets (200 OK) — overlap-anchor to Shaikh's Appendix 5.3 series in 1960s-70s window before recomposing.",
+        "extension_gold_price": "MeasuringWorth 'Price of Gold, 1257-Present' at https://www.measuringworth.com/datasets/gold/ (200 OK).",
+        "rationale": "S1701 IS the same long-wave construction as Fig 16.1 (chapter 16); its primary data is Appendix 5.3 (chapter 5). Local salvage copy is canonical; companion site dead but underlying methodology and data files preserved. The chapter-17-specific contribution is only the dashed 'average of past two waves' overlay used to project the 2008-2018 crisis interval."
+      },
+      "proxy_flags": [
+        "Stub inherited CD2 S102 name (IRS table) but assigned figure Fig17.1 (long-wave chart) — name-vs-figure mismatch resolved by renaming to the figure; CD2 S102 IRS lineage is captured in S1702/S1703."
+      ],
+      "remediation": [
+        "In series_registry.json, rename S1701 from the inherited CD2 S102 'IRS 2011 Income Distribution — Full Table' to 'The Global Crisis of 2007 in Light of Past Long Waves'; preserve predecessor_ids for audit.",
+        "Update primary_source.url: http://www.anwarshaikhecon.org/ -> file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix5_DATALRprices.xlsx with Wayback snapshot as web_citation.",
+        "Update extension_candidates[0] (US WPI): replace MeasuringWorth /datasets/uswholesaleprice/ (404) with NBER m04051a + BLS WPU00000000 substitute pair.",
+        "Phase 5 must split the dashed 'average of past two waves' into TWO layers: (a) the smoothed historical mean over 1897-1939 and 1939-1983 intervals (data); (b) the post-2011 projection to 2018/2030 (forecast). Project to a separate sub-series ID at registry-update time, OR add a 'forecast' column flag to the S1701 CSV.",
+        "HP filter endpoint padding: document choice (lambda=100, fixed; padding method to be declared — Shaikh does not state) in the loader EPR."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1702",
+      "name": "Personal Income Distribution below $200,000, Cumulative Probability from Above",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T20:10Z",
+      "year_coverage_pct": 100,
+      "license": "U.S. federal government public domain",
+      "units": "Cumulative probability from above (dimensionless, on natural-log scale) plotted against bin midpoint in US dollars (arithmetic axis, $0 to $160,000)",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Column reconciliation RESOLVED (see chapter_level_recommendations item 2). The Appendix17_USIRS2011.xlsx in SalvagedInputs has six columns: A 'Size of AGI' (label), B 'Number of returns' (raw count), C 'Bin' (midpoint), D 'Frequency' (= B/total = column FPR017_C3 in CD2 naming), E 'Cumulative Frequency from Below' (= FPR017_C4), F 'Cumulative Frequency from Above' (= 1-E = FPR017_C5). The CD2 'reference_values' for S103 (1000->0.044637; 22500->0.070239; 62500->0.130352; 150000->0.101505) MATCH column D (Frequency) EXACTLY, NOT column F (survival). The CORRECT column for Fig 17.2's y-axis is F (survival), e.g. 150000->0.0323316, 1000->0.9554. Phase 5 loader must use column F, not column D; CD2 reference_values must be updated to: 1000->0.95536, 22500->0.58350, 62500->0.21588, 150000->0.03233.",
+        "Open-bin midpoint convention from Appendix 17.2 spreadsheet confirmed: $1M+ -> 750000 (wait — this is actually the '$500k-$1M' midpoint; the spreadsheet shows '$1,000,000 under $1,500,000' -> 1,250,000; '$1.5M-$2M' -> 1,750,000; '$2M-$5M' -> 3,500,009; '$5M-$10M' -> 7,500,000; '$10M+' -> open with no midpoint in the spreadsheet). The truly open-ended '$10M or more' bin has no midpoint and is dropped from the plotted points (visible in the .xlsx: row 27 column C is None). Phase 5 must honour this drop."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1703",
+      "name": "Personal Income Distribution above $200,000, Cumulative Probability from Above",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T20:10Z",
+      "year_coverage_pct": 100,
+      "license": "U.S. federal government public domain",
+      "units": "Cumulative probability from above (dimensionless, on natural-log scale) plotted against bin midpoint in US dollars (also natural-log axis, $100,000 to $10,000,000)",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Column reconciliation RESOLVED. CD2 S104 reference_values for the top tail (350000->0.026151, 750000->0.004110, 1250000->0.000928, 1750000->0.000385, 3500009->0.000546, 7500000->0.000132) MATCH column D (Frequency) of Appendix17_USIRS2011.xlsx, NOT column F (survival/cumulative-from-above). The CORRECT column F values for Fig 17.3's y-axis are: 350000->0.00618, 750000->0.00207, 1250000->0.001142, 1750000->0.000757, 3500009->0.000211, 7500000->0.0000787. Phase 5 loader must use column F.",
+        "Open-bin midpoints for top tail: $500k-$1M -> 750,000; $1M-$1.5M -> 1,250,000; $1.5M-$2M -> 1,750,000; $2M-$5M -> 3,500,009 (note the odd '9' suffix in the Appendix 17.2 spreadsheet — preserve verbatim); $5M-$10M -> 7,500,000; $10M+ -> dropped (no midpoint in spreadsheet).",
+        "Pareto exponent alpha must be recovered in Phase 5 by OLS of ln(survival) on ln(midpoint) over the six top-tail bins (350k through 7.5M); the slight non-monotonicity at 3.5M/7.5M reflects IRS sample noise in the open-ended top bins and should be retained in the fit, not smoothed."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "Ratify Phase 3 rename of S1701: stub inherited CD2 S102 IRS-table name but the assigned figure (Fig17.1) is the long-wave chart from Appendix 5.3. The figure assignment wins; series is renamed to 'The Global Crisis of 2007 in Light of Past Long Waves'. CD2 S102 IRS lineage is fully captured in S1702 (Fig17.2) and S1703 (Fig17.3). No registry-row count change.",
+    "S1702/S1703 column-confusion RESOLVED via direct inspection of SalvagedInputs/book_data/ShaikhChoppedTables/Appendix17_USIRS2011.xlsx (27 rows, 6 columns). CD2 reference_values listed in Phase 3 dossiers are the Frequency column (column D / FPR017_C3), not the Cumulative-Frequency-from-Above column (column F / FPR017_C5). For Phase 5: the Fig 17.2 and Fig 17.3 y-axis values are column F (survival function); CD2 reference_values must be re-mapped before any equality-tolerance check.",
+    "Open-bin midpoint convention from Appendix 17.2 confirmed by .xlsx inspection: top open-ended bin '$10M or more' has NO midpoint in the spreadsheet (row 27 column C is None) and is therefore DROPPED from both Fig 17.2 and Fig 17.3. Phase 5 loader must honour this drop, not impute a midpoint.",
+    "S1701 primary URL anwarshaikhecon.org is DEAD (DNS does not resolve; verified 2026-05-18) — identical Ch5 finding. Promote SalvagedInputs Appendix5_DATALRprices.xlsx to canonical primary file with IA snapshot 2024-03-11 as web citation. This is the SAME file that backs Ch5 series S501-S504 and Ch16 Fig 16.1 (S1601 if registered).",
+    "S1701 MeasuringWorth US Wholesale Price URL https://www.measuringworth.com/datasets/uswholesaleprice/ returned 404 (2026-05-18). The Officer 'Annual WPI for the US 1720-Present' dataset is no longer published at MeasuringWorth (only inflation/CPI calculators remain in /datasets/). Substitute: NBER macrohistory Warren-Pearson series m04051a (pre-1947) spliced to BLS WPU00000000 (post-1947, verified live in Ch5 review). Recompose WPI-in-gold from extended WPI + extended gold price, then re-apply HP(100); do NOT growth-rate splice the derived smoothed quantity.",
+    "S1701 'average of past two waves' dashed line: split into (a) historical smoothed mean over 1897-1939 and 1939-1983 (data) and (b) post-2011 projection to 2018/2030 (forecast). Decide at Phase 5 ingestion whether to add a 'forecast' boolean column to the S1701 CSV or to promote (b) into a separate registry row.",
+    "Apply registry update: S1701 content_type stays 'time_series'; S1702 and S1703 stay 'cross_sectional'; no row count change; primary_source.url updates per per-series remediation."
+  ],
+  "blockers_for_phase5": [],
+  "open_questions": [
+    "S1701 HP-filter endpoint padding (pre-1900 and post-2010 boundary years) is sensitive to filter choice; Shaikh does not state the padding method. Phase 5 loader should document choice (e.g., zero-padding vs mirror vs forecast-padding) in the EPR.",
+    "S1703 Pareto exponent alpha is not published by Shaikh; Phase 5 must recover it numerically and report value plus R-squared.",
+    "S1701 projection layer: confirm with the user whether the dashed projection to 2018/2030 belongs in the S1701 CSV (with a 'forecast' flag) or in a separate registry row 'S1701F' — preference for in-CSV flag to keep registry row count stable.",
+    "Cross-validation candidate: do Shaikh, Papanikolaou, Weiner (2014) cited at p. 753 supply the EPTC dataset for years 1996-2008 in machine-readable form? If so it would support multi-year replication of Fig 17.2/17.3 — out of scope for Ch17 adequacy."
+  ]
+}

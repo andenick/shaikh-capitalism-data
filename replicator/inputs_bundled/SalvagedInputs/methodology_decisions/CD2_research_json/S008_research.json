@@ -1,0 +1,54 @@
+{
+  "series_id": "S008",
+  "series_name": "Manufacturing Real Compensation",
+  "chapter": 2,
+  "figures": ["Fig 2.6"],
+  "research_date": "2026-03-07",
+  "researcher": "agent",
+  "kb_sources_searched": ["ch18_appendices.md", "ch02_turbulent_trends.md", "appendix_methodology_summary.json"],
+  "entries": [
+    {
+      "entry_type": "methodology_description",
+      "content": "Real compensation = nominal compensation / CPI. Seven columns with complex provenance: S008A (Sahr/MeasuringWorth CPI 1780-2010), S008B (US CPI 1982-84=100, Sahr 1780-1785 + MeasuringWorth 1786-2010), S008C (BLS Manufacturing Productivity output/hr index 1958=100), S008D (BLS manufacturing output/hr in 1958 dollars), S008E (BLS real unit labor cost 1889=100), S008F (BLS real compensation 1889=100), S008 (final: Mfg production worker real compensation = comp/hr / CPI, 1790-2010).",
+      "source_ref": "Appendix 2.1"
+    },
+    {
+      "entry_type": "source_citation",
+      "content": "MeasuringWorth.com. US Consumer Price Index, 1982-84=100. Sahr provides inflation conversion factors for 1780-1785; MeasuringWorth extends 1786-2010. Officer & Williamson (2025) citation for MeasuringWorth CPI. BLS Manufacturing Productivity series: output per hour, unit labor costs, and real hourly compensation, 1889-2010.",
+      "source_ref": "MeasuringWorth, BLS"
+    },
+    {
+      "entry_type": "figure_context",
+      "content": "Fig 2.6 plots manufacturing real worker compensation against productivity. The series shows real compensation (compensation per hour deflated by CPI) from 1790-2010. The 7-column structure reflects the multi-source construction: CPI from Sahr/MeasuringWorth, BLS productivity indices, and the derived real compensation series. Extension covers CPI only (S008A/B) via MeasuringWorth 2011-2024; BLS columns (S008C-F) extendable via pull_bls_ch02.py.",
+      "source_ref": "ch02 README"
+    }
+  ],
+  "citations": [
+    {
+      "id": "Sahr_MeasuringWorth_CPI",
+      "full": "Sahr, R. and MeasuringWorth. Inflation conversion factors, 1780-2010. US CPI 1982-84=100. Sahr (1780-1785), MeasuringWorth (1786-2010).",
+      "short": "Sahr/MeasuringWorth CPI"
+    },
+    {
+      "id": "Officer_Williamson_2025",
+      "full": "Officer, L.H. and Williamson, S.H. (2025). MeasuringWorth - US Consumer Price Index. https://www.measuringworth.com",
+      "short": "Officer & Williamson 2025"
+    },
+    {
+      "id": "BLS_Mfg_Productivity",
+      "full": "U.S. Bureau of Labor Statistics. Manufacturing Productivity and Costs. Output per hour, real unit labor cost, real hourly compensation. Series PRS30006092, PRS30006112, PRS30006152.",
+      "short": "BLS Manufacturing Productivity"
+    }
+  ],
+  "methodology_summary": "S008 constructs manufacturing production worker real compensation as compensation per hour divided by CPI. CPI combines Sahr (1780-1785) and MeasuringWorth (1786-2010), both 1982-84=100. BLS provides manufacturing productivity (output/hr, 1958=100), output per hour in 1958 dollars, real unit labor cost (1889=100), and real compensation (1889=100) for 1889-2010. Final series S008 = Mfg real compensation = comp/hr / CPI, 1790-2010. Extension: MeasuringWorth CPI only (2011-2024); BLS manufacturing columns extendable via BLS API.",
+  "known_issues": [
+    "Row 1 metadata concatenated from original Excel merged cells - complex provenance",
+    "S008A uses Sahr for 1780-1785 only; full Sahr dataset at Inputs/Sahr/ cross-referenced in ANU_CHOPPED_CATALOG",
+    "BLS columns (S008C-F) require BLS API key for extension"
+  ],
+  "cross_references": [
+    {"series_id": "S007", "relationship": "Complements S007 - S008 is real compensation (wages), S007 is productivity; together show wage-productivity gap"},
+    {"series_id": "S003", "relationship": "Shared CPI source - MeasuringWorth used for both GDP and CPI"},
+    {"source": "Inputs/Sahr/Sahr_InflationConversionFactors.csv", "relationship": "Sahr CPI subseries S900A-S927 for 1780-1785"}
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "series_id": "ES2305",
+  "name": "Weber & Shaikh (2020) Fig 5 - Estimates of RMB misalignment based on macroeconomic balance approach (scatter compilation 1999-2012 from same 4 literature reviews)",
+  "chapter": null,
+  "paper_metadata": {
+    "title": "The U.S.-China trade imbalance and the theory of free trade: debunking the currency manipulation argument",
+    "authors": ["Isabella Weber", "Anwar Shaikh"],
+    "year": 2020,
+    "journal": "International Review of Applied Economics",
+    "volume_issue_pages": "Vol. 35 Nos. 3-4, pp. 432-455",
+    "doi": "10.1080/02692171.2020.1814221",
+    "url": "https://doi.org/10.1080/02692171.2020.1814221"
+  },
+  "figures": [
+    "Figure 5 (Appendix p. 455) - 'Estimates of RMB misalignment based on macroeconomic balance approach'; scatter plot, x-axis years 1999-2012, y-axis 'Estimated RMB misalignment in percent' (range -100 to +50); approximately 30-35 individual estimates plotted as black dots; estimates range from ~-100% (single outlier 2011) to ~+40% concentration 2003-2009; figure superscript '18' references footnote 18 (paper p. 448) which redirects to note 17 ('See footnote 12' is followed by note 18 'See footnote 12' -- a paper typo; the canonical compilation methodology is note 17)"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null,
+    "related_rscd_series": ["ES2301", "ES2302", "ES2303", "ES2304"],
+    "related_book_chapters": ["Ch11 (real exchange rate; current account; macroeconomic balance approach)"]
+  },
+  "decomposition_context": {
+    "decision": "0006",
+    "scheme": "5-way split of original ES2301 composite",
+    "this_dossier_scope": "Figure 5 only (RMB misalignment estimates compiled under macroeconomic-balance approach, scatter plot 1999-2012, literature-compilation methodology per paper note 17)",
+    "status": "APPROVED 2026-05-18"
+  },
+  "book_quotes": [
+    {
+      "chapter": "Paper Section 4.4 (macroeconomic balance approach)",
+      "page": 443,
+      "quote": "Estimates of the RMB misalignment from MB approaches range from -100% (Bayoumi, Gagnon, and Saborowski 2015) to +40% (Goldstein 2004) (Cline and Williamson 2007; Dunaway and Li 2005; Cheung, Chinn, and Fujii 2010a; Cheung 2012) (see Figure 5). The macroeconomic balance approach essentially focuses on the role of the equilibrium exchange rate to ensure a current account that allows for a sustainable inflow of capital. The MB approach defines the equilibrium current account, also called the current account norm or target current account, as the current account that 'satisfies the saving-investment relationship of a country with no large output gap' (Williamson 1994).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Note 17 (compilation methodology -- applies to both Fig 4 and Fig 5)",
+      "page": 448,
+      "quote": "Figure 4 and Figure 5 are compiled based on the selection of studies contained in the four literature reviews (Cline and Williamson 2007; Dunaway and Li 2005; Cheung, Chinn, and Fujii 2010a; Cheung 2012). If a source reported more than one estimate of the RMB misalignment, each estimate was treated as a separate data point in the scatter plots. If the estimate of the RMB misalignment is reported as a range, the maximum and minimum value are reported in the scatter plots as two separate estimates.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Section 4.4 (macro-balance definition)",
+      "page": 443,
+      "quote": "In national accounts, aggregate domestic and foreign demand (C + I + G + X) is equal to aggregate domestic and international supply (Y + M), where C = consumption, I = investment, G = government spending, X = exports, Y = domestic supply (national income) and M = imports. Further, let T = aggregate taxes. Then, relative to national income (Y), we can say that the excess of investment I over the sum of domestic savings (the difference between private disposable income (Y-T) and private consumption (C) and government savings (G-T) is equal to the current account deficit (M-X). Expressed formally: I - [(Y-T-C)+(T-G)] / Y = (M-X) / Y.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Authors (Weber & Shaikh 2020) -- literature compilation; no single agency source",
+    "publication": "Compilation per paper note 17 from same four literature reviews as ES2304: Cline & Williamson (2007); Dunaway & Li (2005); Cheung, Chinn & Fujii (2010a); Cheung (2012). Filtered to estimates that used the macroeconomic balance (MB) approach rather than extended PPP.",
+    "table_or_series_id": "Scatter compilation per paper note 17 verbatim rule -- each individual MB-approach estimate from each cited review treated as separate (year, percent-misalignment) data point; ranges reported as two endpoint data points",
+    "url": "https://www.piie.com/sites/default/files/publications/pb/pb07-4.pdf",
+    "frequency": "irregular (point estimates at study-year resolution)",
+    "units": "Estimated RMB misalignment in percent (positive = RMB undervalued vs MB-defined equilibrium; negative = RMB overvalued)",
+    "license": "Same as ES2304 -- each individual estimate published in its respective peer-reviewed paper or working paper; replication requires re-extraction per paper note 17 (not verbatim redistribution of cited tables).",
+    "available_through": "Direct PDF download from each of the 4 cited literature-review sources (URLs documented in secondary_sources_used; same 4 as ES2304)",
+    "discontinued": false,
+    "replaced_by": null,
+    "secondary_sources_used": [
+      {
+        "agency": "Peterson Institute for International Economics (PIIE)",
+        "publication": "Cline, W.R. & Williamson, J. (2007) 'Estimates of the Equilibrium Exchange Rate of the Renminbi: Is There a Consensus And, if Not, Why Not?'",
+        "url": "https://www.piie.com/sites/default/files/publications/pb/pb07-4.pdf",
+        "note": "Same source as ES2304; URL HEAD 200 OK 2026-05-18. Filter to MB-approach estimates for ES2305."
+      },
+      {
+        "agency": "International Monetary Fund (IMF)",
+        "publication": "Dunaway, S. & Li, X. (2005) 'Estimating China's Equilibrium Real Exchange Rate' IMF WP/05/202",
+        "url": "https://www.imf.org/external/pubs/ft/wp/2005/wp05202.pdf",
+        "note": "Same source as ES2304; URL HEAD 200 OK 2026-05-18. Filter to MB-approach estimates for ES2305."
+      },
+      {
+        "agency": "La Follette School of Public Affairs, University of Wisconsin-Madison",
+        "publication": "Cheung, Y., Chinn, M.D. & Fujii, E. (2010a) 'Measuring Misalignment: Latest Estimates for the Chinese Yuan' WP 2010-010",
+        "url": "https://www.lafollette.wisc.edu/images/publications/workingpapers/cheung2010-010.pdf",
+        "note": "Same source as ES2304; URL HEAD 202 (Accepted) OK 2026-05-18. Filter to MB-approach estimates for ES2305."
+      },
+      {
+        "agency": "CESifo",
+        "publication": "Cheung, Y. (2012) 'Exchange Rate Misalignment: The Case of the Chinese Renminbi' CESifo WP 3797",
+        "url": "https://www.cesifo.org/DocDL/cesifo1_wp3797.pdf",
+        "note": "Same source as ES2304; URL HEAD 200 OK 2026-05-18. Filter to MB-approach estimates for ES2305."
+      },
+      {
+        "agency": "International Monetary Fund (IMF)",
+        "publication": "External Sector Report (annual since 2012) -- concept-adjacent successor for post-2012 RMB misalignment discussion using EBA model",
+        "url": "https://www.imf.org/en/Publications/ESR",
+        "note": "IMF ESR EBA model produces post-2012 RMB misalignment estimates but uses a methodologically distinct framework (External Balance Assessment). NOT a direct splice candidate -- methodology break too significant for direct continuation of Fig 5. URL HEAD 200 OK 2026-05-18."
+      }
+    ]
+  },
+  "construction": "composite",
+  "formula": "For each cited literature-review study s in {Cline-Williamson 2007, Dunaway-Li 2005, Cheung-Chinn-Fujii 2010a, Cheung 2012}: extract every reported RMB misalignment estimate that uses the macroeconomic balance (MB) METHODOLOGY (as opposed to extended PPP which goes into ES2304). Treat each estimate as one scatter data point (year_y, m). If a study reports a RANGE [m_lo, m_hi], emit TWO data points: (year_y, m_lo) and (year_y, m_hi). Plot all MB-approach data points 1999-2012 on a scatter chart. NO averaging, NO aggregation -- the figure IS the raw scatter.",
+  "components": [
+    "Component A: Cline & Williamson (2007) PIIE -- MB-approach estimates extracted per paper note 17",
+    "Component B: Dunaway & Li (2005) IMF WP/05/202 -- MB-approach estimates extracted per paper note 17",
+    "Component C: Cheung, Chinn & Fujii (2010a) -- MB-approach estimates extracted per paper note 17",
+    "Component D: Cheung (2012) CESifo WP 3797 -- MB-approach estimates extracted per paper note 17"
+  ],
+  "year_range_book": [1999, 2012],
+  "year_range_extension": [1999, 2012],
+  "extension_candidates": [],
+  "extension_status": "not_applicable_literature_compilation",
+  "methodology_notes": [
+    "LITERATURE COMPILATION: Like ES2304, Figure 5 is NOT a new empirical estimate. It is a scatter compilation of RMB misalignment estimates published by OTHER authors in the SAME 4 literature reviews as Fig 4, but filtered to estimates that used the macroeconomic-balance (MB) methodology rather than the extended-PPP methodology.",
+    "EXTENSION IS NOT APPLICABLE BY PAPER CONSTRUCTION: Same as ES2304. The 4 cited literature reviews are dated 2005, 2007, 2010, 2012. Post-2012 RMB misalignment discussion has migrated to the IMF External Sector Report (ESR) framework using the EBA (External Balance Assessment) model -- a methodologically distinct approach. ESR is concept-adjacent but NOT a methodological continuation of paper Fig 5. Phase 4 marks this `extension_status: not_applicable_literature_compilation`.",
+    "Paper note 17 verbatim compilation rule (p. 448) applies identically to ES2305 as to ES2304: extract each estimate as a separate data point; treat ranges as min/max endpoint pairs.",
+    "Reading the scatter plot (Fig 5, p. 455): visible point cloud spans approximately 1999-2012 on x-axis with concentration 2003-2009; y-axis ranges -100 to +50 percent; one extreme outlier at approximately -100% in 2011 (likely Bayoumi-Gagnon-Saborowski 2015 retrospective estimate; paper text p. 443 explicitly cites this as the low-end MB estimate); high-end approximately +40% (Goldstein 2004, cited p. 443); approximately 30-35 individual points visible.",
+    "MACROECONOMIC BALANCE METHODOLOGY (paper Section 4.4, p. 443): The MB approach defines equilibrium exchange rate as the rate that produces a current-account 'norm' consistent with saving-investment balance under no output gap (Williamson 1994). The current-account identity (M-X)/Y = [I - (Y-T-C) - (T-G)]/Y is the algebraic foundation; the MB approach asks 'what real exchange rate produces a CA equal to the norm?' and computes misalignment as the gap between actual and that hypothetical RER.",
+    "KEY DISTINCTION FROM ES2304 (extended PPP): Both ES2304 and ES2305 use the SAME 4 source literature reviews. The difference is the METHODOLOGY of the cited primary estimate -- extended PPP/BEER (Fig 4) vs MB/CA-norm (Fig 5). Each of the 4 reviews covers BOTH methodologies; Phase 5 extraction must correctly label each individual estimate by methodology before assignment to ES2304 or ES2305.",
+    "Paper Section 4.4 frames Fig 5 as evidence AGAINST the currency-manipulation argument from a different angle than Fig 4: even the MB approach (which proponents of currency-manipulation often prefer because it directly relates to CA imbalance) produces estimates ranging from -100% to +40%, demonstrating no consensus.",
+    "License/derivative-work: identical to ES2304 -- re-extraction of individual estimates from the 4 cited papers is a derivative-work transformation following fair-use/academic-quotation norms."
+  ],
+  "open_questions": [
+    "Phase 5: implement extraction worksheet (study, year, misalignment_pct, methodology_label=MB, original_table_or_page) for each of the ~30-35 data points; cross-verify each estimate against the original underlying paper cited by the review.",
+    "Phase 5: decide whether to also archive PDFs of the 4 cited reviews to SalvagedInputs/ (same 4 PDFs already archived for ES2304 -- no incremental cost).",
+    "Phase 6 EPR: write a `compilation_methodology` block (shared with ES2304 with appropriate cross-references) explaining methodology-based filtering between Fig 4 (ext-PPP) and Fig 5 (MB).",
+    "Phase 4/5: should IMF ESR EBA model post-2012 estimates be offered as a SEPARATE related-series ES2305_esr (concept-adjacent, methodologically distinct), or should they NOT be linked to Fig 5 at all? Current recommendation: NOT linked -- methodology break too significant; ESR would be a new figure, not a continuation.",
+    "Footnote 18 in paper (p. 448) reads 'See footnote 12' -- this is a paper typo; footnote 12 discusses the Big Mac index (extended PPP context) and does NOT contain MB-approach methodology. The canonical compilation methodology for BOTH Fig 4 and Fig 5 is note 17 (verbatim quoted above)."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-batch1-a1-decision-0006-fill",
+      "date": "2026-05-18",
+      "status": "reviewed",
+      "notes": "Filled per APPROVED decision 0006. Scope = Fig 5 only (RMB misalignment under macroeconomic balance, literature compilation per paper note 17 of same 4 reviews as ES2304, filtered to MB-methodology estimates). content_type=derived; extension_candidates=[] with extension_status=not_applicable_literature_compilation. All 4 cited literature-review URLs + IMF ESR concept-adjacent URL HEAD 200/202 OK 2026-05-18. All quotes verbatim from PDF (Section 4.4 p. 443, Note 17 p. 448)."
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "project": "Capitalism_Data",
+  "generated": "2026-03-19T20:49:58.714680",
+  "total_relationships": 11,
+  "relationship_types": {
+    "same_decade": 2,
+    "same_domain": 9
+  },
+  "relationships": [
+    {
+      "type": "same_decade",
+      "source": "1961_Kendrick_Productivity_Trends",
+      "target": "1966_BEA_Long_Term_Economic_Growth",
+      "detail": "Decade: 1960s"
+    },
+    {
+      "type": "same_decade",
+      "source": "1970_Stigler_Kindahl_Industrial_Prices",
+      "target": "1977_Jastram_Golden_Constant",
+      "detail": "Decade: 1970s"
+    },
+    {
+      "type": "same_domain",
+      "source": "1913_Mitchell_Business_Cycles",
+      "target": "1946_Burns_Mitchell_Measuring_Business_Cycles",
+      "detail": "Domain: Business_Cycles"
+    },
+    {
+      "type": "same_domain",
+      "source": "1955_Goldsmith_National_Balance_Sheet",
+      "target": "1993_DoC_Fixed_Reproducible_Tangible_Wealth",
+      "detail": "Domain: Capital_Stock"
+    },
+    {
+      "type": "same_domain",
+      "source": "1970_Stigler_Kindahl_Industrial_Prices",
+      "target": "1977_Jastram_Golden_Constant",
+      "detail": "Domain: Price_Indices"
+    },
+    {
+      "type": "same_domain",
+      "source": "HDARP_Methodology_Sources_2025.12.22",
+      "target": "HDARP_References_2025.12.22",
+      "detail": "Domain: Methodology"
+    },
+    {
+      "type": "same_domain",
+      "source": "HDARP_Methodology_Sources_2025.12.22",
+      "target": "HDARP_v4.0_Figure_Metadata",
+      "detail": "Domain: Methodology"
+    },
+    {
+      "type": "same_domain",
+      "source": "HDARP_Methodology_Sources_2025.12.22",
+      "target": "Methodology",
+      "detail": "Domain: Methodology"
+    },
+    {
+      "type": "same_domain",
+      "source": "HDARP_References_2025.12.22",
+      "target": "HDARP_v4.0_Figure_Metadata",
+      "detail": "Domain: Methodology"
+    },
+    {
+      "type": "same_domain",
+      "source": "HDARP_References_2025.12.22",
+      "target": "Methodology",
+      "detail": "Domain: Methodology"
+    },
+    {
+      "type": "same_domain",
+      "source": "HDARP_v4.0_Figure_Metadata",
+      "target": "Methodology",
+      "detail": "Domain: Methodology"
+    }
+  ]
+}

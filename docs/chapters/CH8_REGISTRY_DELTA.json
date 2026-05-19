@@ -1,0 +1,162 @@
+{
+  "schema_version": "rscd-registry-delta-v1.0",
+  "chapter": 8,
+  "generated_by": "opus-subagent-p4-wave2-ch8",
+  "generated_at": "2026-05-18",
+  "note": "Per-series adequacy block + content_type re-typings + stub-name corrections + cd2_id nulls for Ch8 (S801-S805) to be merged into series_registry.json. Phase 3 already corrected the dossier files; this delta propagates those corrections to the registry plus adds the Phase 4 adequacy block.",
+  "per_series_updates": [
+    {
+      "sid": "S801",
+      "name_update": {
+        "from": "US Long-Run Interest Rates and Prices",
+        "to": "Wholesale Prices in Oligopolistic and Competitive Industries, 1965-73 (Eichner)",
+        "reason": "Stale carryover from CD2 S042 (a Chapter 10 series). Phase 3 dossier already carries the correct name."
+      },
+      "content_type": "time_series",
+      "predecessor_ids_update": {
+        "cd2_id": {"from": "S042", "to": null, "reason": "CD2 S042 is a Ch10 series, not a true predecessor for Ch8 Figure 8.1."}
+      },
+      "adequacy": {
+        "status": "ready_for_phase5_with_blocker",
+        "score_contribution": 14,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Stub-name correction (Phase 3 dossier already correct; this delta propagates to registry)",
+          "cd2_id null (no genuine CD2 predecessor)",
+          "URL reachability (DOI 403 rate-limited; Wayback fallback confirmed 200; marked unverified-rate-limited per template glossary)"
+        ],
+        "issues_outstanding": [
+          "PHASE 5 BLOCKER: Figure 8.1 numeric data NOT digitized in SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_*.xlsx. Must be re-extracted from Eichner 1973 Economic Journal p. 1187 via JSTOR PDF + WebPlotDigitizer or equivalent. Estimated 2-4 hours.",
+          "Extension URL substitutes: BLS PPI (200) confirmed; Census 2017 Concentration Ratios page (404) requires substitute https://www.census.gov/programs-surveys/economic-census/data/tables.html (200)."
+        ]
+      }
+    },
+    {
+      "sid": "S802",
+      "name_update": null,
+      "content_type_update": {
+        "from": "time_series",
+        "to": "cross_sectional",
+        "reason": "Each of three NBER-dated contractions (1957-58, 1960-61, 1969-70) is its own industry cross-section binned by CR4 midpoint. Not a continuous time index. Ratified by Phase 4."
+      },
+      "predecessor_ids_update": {
+        "cd2_id": {"from": null, "to": null, "reason": "Already null; confirmed no genuine CD2 predecessor."}
+      },
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 17,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Content-type reclassification (time_series -> cross_sectional) ratified",
+          "Numeric data fully present in SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_Semmler19843.3.xlsx (9 cells)",
+          "JSTOR URL 403 rate-limited; marked unverified-rate-limited (live source reachable via institutional session)"
+        ],
+        "issues_outstanding": []
+      }
+    },
+    {
+      "sid": "S803",
+      "name_update": {
+        "from": "Interest Rates, Prices, and Equity Data",
+        "to": "Rate of Profit on Equity vs. CR8, Bain 42-Industry Sample, 1936-40 (Figures 8.3 and 8.4)",
+        "reason": "Stale carryover from CD2 S041 (a Chapter 10 series). Phase 3 dossier already carries the correct name. One series ID consolidates both Fig 8.3 (42-industry scatter) and Fig 8.4 (Demsetz-corrected decile grouping) since they share the Bain 1951 sample."
+      },
+      "content_type_update": {
+        "from": "time_series",
+        "to": "cross_sectional",
+        "reason": "42 industry-average ROE/CR8 pairs are a single 1936-40 cross-section; Fig 8.4 is the same cross-section re-binned into deciles with Demsetz 1973b corrections, not a second time point."
+      },
+      "predecessor_ids_update": {
+        "cd2_id": {"from": "S041", "to": null, "reason": "CD2 S041 is a Ch10 series; not a true predecessor for Ch8 Figures 8.3/8.4."}
+      },
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 17,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Stub-name correction propagated from Phase 3 dossier to registry",
+          "cd2_id null (no genuine CD2 predecessor)",
+          "Content-type reclassification (time_series -> cross_sectional) ratified",
+          "Numeric data present in three Appendix8_*.xlsx files (Bain42IndustryProfit, Bain42IndustryAggregates, CorrectedBainData)",
+          "Bain 1951 DOI (OUP) and Demsetz 1973b JLE DOI both 403 rate-limited; marked unverified-rate-limited"
+        ],
+        "issues_outstanding": [
+          "Loader must consume BOTH Bain42IndustryProfit.xlsx (scatter) and CorrectedBainData.xlsx (decile-grouped with Demsetz corrections); the Demsetz correction is INTEGRAL, not optional.",
+          "Single series ID emits two regression panels (linear R^2=0.0781 scatter; corrected grouped R^2=0.033)."
+        ]
+      }
+    },
+    {
+      "sid": "S804",
+      "name_update": {
+        "from": "Rate of Profit on Assets (%)",
+        "to": "Rate of Profit on Assets, Concentrated vs. Unconcentrated Industries, 1939-1957 (Stigler)",
+        "reason": "Phase 3 dossier title is more specific and source-attributed; replace the bare units-only stub name."
+      },
+      "content_type": "time_series",
+      "predecessor_ids_update": {
+        "cd2_id": {"from": null, "to": null, "reason": "Already null; confirmed no genuine CD2 predecessor."}
+      },
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 19,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "NBER Stigler 1963 monograph URL confirmed HTTP 200 (best-reachability series in chapter; freely available PDF)",
+          "Numeric data fully present in SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_StiglerRatesOfProfit.xlsx (12 cells: 6 time-bins x 2 groups)",
+          "Group means (concentrated 7.1%, unconcentrated 6.9%) verifiable against loaded data",
+          "Treated as time_series despite unequal time-bin widths; loader preserves bin start/end as metadata"
+        ],
+        "issues_outstanding": [
+          "IRS Corp Source Book extension URL (404) needs substitute to https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report (200), same as Ch6 AS009.",
+          "Census 2017 Concentration Ratios extension URL (404) needs substitute to https://www.census.gov/programs-surveys/economic-census/data/tables.html (200)."
+        ]
+      }
+    },
+    {
+      "sid": "S805",
+      "name_update": null,
+      "content_type_update": {
+        "from": "time_series",
+        "to": "cross_sectional",
+        "reason": "Two non-adjacent year-snapshots (1963, 1969), each an industry cross-section binned by CR4. Not a continuous time index. Ratified by Phase 4."
+      },
+      "predecessor_ids_update": {
+        "cd2_id": {"from": null, "to": null, "reason": "Already null; confirmed no genuine CD2 predecessor."}
+      },
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 18,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Content-type reclassification (time_series -> cross_sectional) ratified",
+          "Numeric data fully present in SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_DemsetzRatesOfReturn.xlsx (12 cells: 6 CR4 bins x 2 years)",
+          "Demsetz 1973b JLE DOI 403 rate-limited; marked unverified-rate-limited",
+          "Shared source with S803 (Demsetz 1973b corrections); recommend single shared loader module"
+        ],
+        "issues_outstanding": [
+          "IRS Corp Source Book extension URL substitute needed (same as S803/S804)."
+        ]
+      }
+    }
+  ],
+  "chapter_level_notes": {
+    "appendix_8_does_not_exist": "Book appendix sequence skips from 7.1 to 9.1. The Appendix8_*.xlsx files in ShaikhChoppedTables/ are the de-facto data dictionary constructed by Shaikh's team from the chapter narrative and the originating publications; they are NOT a book appendix. Source-of-record for replication is the originating Bain/Stigler/Demsetz/Semmler/Eichner publication.",
+    "no_cd2_dossiers_for_ch8": "The CD2 markdown directory contains only S040-S042 and S047-S049 (Ch9/Ch10 series); none correspond to Bain, Stigler, Demsetz, Semmler, or Eichner. All five Ch8 dossiers were constructed de novo in Phase 3. Stub-name carryovers in S801 (cd_id S042) and S803 (cd_id S041) were spurious and have been corrected; cd2_id nulled in both.",
+    "crosswalk_action": "MIGRATION/CD2_to_RSCD_crosswalk.csv should remove the spurious S041->S803 and S042->S801 mappings.",
+    "tables_82_and_83_not_assigned_sids": "Tables 8.2 (Mann 1966) and 8.3 (Brozen 1971) appear in the same chapter section but were not assigned RSCD series IDs in this wave (they are static tables, not figures). Flag for Phase 4/5 follow-up if table-only series IDs are introduced later."
+  },
+  "url_check_provenance": {
+    "checked_at": "2026-05-18",
+    "checker_scripts": [
+      "Technical/Build/_ch8_url_check.py",
+      "Technical/Build/_ch8_url_check2.py"
+    ],
+    "raw_results": [
+      "Technical/Build/_ch8_url_check_results.json",
+      "Technical/Build/_ch8_url_check2_results.json"
+    ],
+    "user_agent": "Mozilla/5.0 (compatible; RSCD-P4-AdequacyBot/1.0)",
+    "timeout_sec": 12
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "series_id": "S1507",
+  "name": "Classical and Conventional Phillips-Type Curves, 1982-2010",
+  "chapter": 15,
+  "figures": [
+    "Fig15.9"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S085",
+    "cd2_id": "S085"
+  },
+  "book_quotes": [
+    {
+      "chapter": 15,
+      "page": 708,
+      "quote": "The contrast between the classical and conventional Phillips curves becomes even starker when we look separately at the pre- and post-neoliberal eras of 1948-1981 and 1982-2010, respectively.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 710,
+      "quote": "Figure 15.9 Classical and Conventional Phillip-Type Curves, 1982-2010",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 709,
+      "quote": "weakening of labor and of the welfare state lowered the intercept of the wage-share Phillips curve and made its slope less steep (figure 14.14). From an econometric point of view, this would suggest the use of both intercept and slope dummies for the entire second period. Econometric estimations by Handfas (2012) are discussed in the next section.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 896,
+      "quote": "Figures 15.7-15.9: pi, 1 - sigma, uL",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Composite: BEA NIPA + BLS",
+    "publication": "Same as S1505/S1506 (Inflation pi from BEA NIPA T1.1.4; sigma from BEA T5.3.5 / T1.16; uL from BLS)",
+    "table_or_series_id": "Subset of S1505 series, restricted to years 1982-2010 (post-Volcker / neoliberal era)",
+    "url": "https://www.bea.gov/itable/national-gdp-and-personal-income",
+    "frequency": "annual",
+    "units": "Rate (decimal)",
+    "license": "U.S. Government work, public domain",
+    "available_through": "ShaikhChoppedTables/Appendix15_USInflation.xlsx and Appendix14_InflationULdata.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Sub-period restriction of S1505 to 1982-2010. Variables: pi, (1 - sigma'), uL.",
+  "components": [
+    {
+      "label": "Inflation rate (pi), 1982-2010",
+      "source": "BEA NIPA T1.1.4 % change in GDP deflator"
+    },
+    {
+      "label": "Growth-utilization rate (sigma), 1982-2010",
+      "source": "BEA NIPA T5.3.5 line 2 / T1.16 line 2 (Handfas 2012)"
+    },
+    {
+      "label": "Unemployment rate (uL), 1982-2010",
+      "source": "BLS via Appendix 14.2"
+    }
+  ],
+  "year_range_book": [
+    1982,
+    2010
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA + BLS modern series, post-1982 extension to present",
+      "source": "BEA NIPA + BLS via FRED",
+      "url": "https://fred.stlouisfed.org/series/GDPDEF",
+      "units": "Rate (decimal)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Post-1982 segment is the natural extension target since regime is consistent.",
+        "Same construction caveats as S1505."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Post-neoliberal sub-period of S1505 — same data, restricted to 1982-2010.",
+    "Shaikh links the regime shift to the Reagan/Volcker era 'weakening of labor and of the welfare state' (p.709).",
+    "Handfas (2012) econometric tests rely on this sub-period dummy structure.",
+    "CD2 predecessor S085 ported."
+  ],
+  "open_questions": [
+    "Whether 1982 (Volcker shock disinflation) or 1981 (Reagan inauguration) is the proper regime-break year — Shaikh uses 1982."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch15",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S085 ported; quotes verified against PDF pp.709-710 and Appendix 15.1 p.896"
+    }
+  ]
+}

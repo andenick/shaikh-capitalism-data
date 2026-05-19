@@ -1,0 +1,105 @@
+{
+  "series_id": "AS001",
+  "name": "GDP/GDI Decomposition and Business NOS",
+  "chapter": 6,
+  "figures": [],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": "S206"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 828,
+      "quote": "In the NIPA definition, NOS = GDP – [SD + compensation of employees within the country + net indirect business taxes – economic depreciation, i.e., the depreciation of capital goods valued at current cost, called Consumption of Fixed Capital (CFC)]. Notice that this procedure implicitly allocates the income side measurement error to the sum of employee compensation and/or net taxes, rather than to Net Operating Surplus (NOS).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 830,
+      "quote": "NIPA defines the \"business\" sector as exclusive of NPISH, HH, and general government, but the Bureau of Labor Statistics (BLS) also correctly excludes government enterprises because they are nonprofit (Harper, Moulton, Rosenthal, and Wasshausen 2008, 1 and table A.1). Appendix table 6.7.3 displays the corrected measures for business NOS, which is 79% of the corresponding aggregate value.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 829,
+      "quote": "Appendix Table 6.7.2 Derivation of Domestic Gross and Net Operating Surplus ... Gross Domestic Product ... NIPA Table 1.7.5 ... Less: Statistical discrepancy ... NIPA Table 1.7.5 ... Gross Domestic Income ... NIPA Table 1.10 ... Less: Domestic compensation of employees (paid) ... NIPA Table 1.10 ... Less: Taxes on production and imports less subsidies ... NIPA Table 1.10 ... Less: Consumption of fixed capital ... NIPA Table 1.10 ... Aggregate Domestic Net Operating Surplus ... NIPA Table 1.10.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "BEA",
+    "publication": "NIPA",
+    "table_or_series_id": "NIPA Table 1.7.5 (GDP); NIPA Table 1.10 (GDI components: domestic compensation of employees, taxes on production and imports less subsidies, consumption of fixed capital, net operating surplus); NIPA Table 7.12 (OOH rental income breakdown)",
+    "url": "https://apps.bea.gov/iTable/?reqid=19&step=2&isuri=1&categories=survey",
+    "frequency": "annual",
+    "units": "Billions of current dollars",
+    "license": "Public domain (U.S. Government work)",
+    "available_through": "BEA iTable / BEA Data API",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Business NOS = Aggregate Domestic NOS - NOS_household - NOS_NPISH - NOS_government - NOS_government_enterprises; with Aggregate NOS = GDP - SD - EC_domestic - (taxes_on_production_imports - subsidies) - CFC",
+  "components": [
+    {"label": "GDP", "source": "NIPA T1.7.5, line 1"},
+    {"label": "Statistical discrepancy (SD)", "source": "NIPA T1.7.5, line 15"},
+    {"label": "Domestic compensation of employees", "source": "NIPA T1.10, line 2"},
+    {"label": "Taxes on production and imports less subsidies", "source": "NIPA T1.10, lines 9-10"},
+    {"label": "Consumption of fixed capital (CFC)", "source": "NIPA T1.10, line 23"},
+    {"label": "Aggregate domestic NOS", "source": "NIPA T1.10, line 11"},
+    {"label": "Household sector NOS (OOH rental + net interest paid by businesses subtractions)", "source": "NIPA T7.12, lines 133-140 (Ritter 2000; Mayerhauser and Reinsdorf 2007)"},
+    {"label": "NPISH operating surplus", "source": "Mead, McCully, and Reinsdorf 2003"},
+    {"label": "Government enterprise current surplus", "source": "NIPA T1.10, line 22"}
+  ],
+  "year_range_book": [1947, 2011],
+  "year_range_extension": [2012, 2025],
+  "extension_candidates": [
+    {
+      "subseries_label": "Aggregate domestic NOS (post-2011 BEA vintage)",
+      "source": "BEA NIPA Table 1.10, line 11 (current vintage)",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&select_all_years=0&nipa_table_list=51&series=a",
+      "units": "Billions of current dollars",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Comprehensive revisions in 2013 and 2018 reclassify R&D and entertainment originals as fixed investment, affecting CFC and NOS levels; vintage drift must be documented", "Footnote 1 in Appendix 6.7 states: 'All BEA data used in this book comes from tables last downloaded in 2011 and may therefore differ from more recent tables.' (Shaikh 2016, p. 828)"]
+    },
+    {
+      "subseries_label": "OOH sector breakdown for business NOS extraction",
+      "source": "BEA NIPA Table 7.12 (current vintage)",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&nipa_table_list=294",
+      "units": "Billions of current dollars",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Line numbers may shift across vintages; must map by NIPA stub label, not line number"]
+    }
+  ],
+  "methodology_notes": [
+    "This series is a construction internal: it sequentially decomposes NIPA aggregate domestic NOS into household, NPISH, government, government-enterprise, and business components, producing the business-sector NOS that is the input to every subsequent profit-rate construction in Ch6 (Appendix 6.7, Section II, pp. 829-830).",
+    "The corrected business NOS is approximately 79% of aggregate NOS (Shaikh 2016, p. 830). The household subtraction is dominated by the fictitious owner-occupied housing (OOH) sector that NIPA imputes as if homeowners rent to themselves; Shaikh treats this as a methodological correction rather than a real business activity.",
+    "Statistical discrepancy is bridged from the product side (GDP) to the income side (GDI) by subtraction on the GDP side; this implicitly allocates measurement error to wages/taxes rather than NOS, a NIPA convention Shaikh adopts but flags as imperfect (p. 828).",
+    "CD2 ancestor S206 implemented a 55-base-column tableau covering this decomposition; the canonical reference table is Appendix Table 6.7.3 (p. 830) showing 'GOS and NOS of the Business Sector (Aggregate - HH - NPISH - GOV)' for 2009: Business Gross Value Added 10,189.6, Business NOS 2,533.8.",
+    "BLS adopts an even tighter business definition that excludes government enterprises (Harper, Moulton, Rosenthal, and Wasshausen 2008); Shaikh follows this practice."
+  ],
+  "open_questions": [
+    "AS001 feeds AS002 (which requires business NOS to validate the corporate/noncorporate split) and AS003 (which adjusts business NOS for imputed interest). Confirm that S601-S604 final dossiers reference AS001 transitively via AS003 rather than directly.",
+    "Extension to 2024 vintage requires retracing OOH and NPISH subtractions because NIPA Table 7.12 line numbering may have changed; flag for Phase 4 adequacy review.",
+    "Footnote 1 (p. 828) warns 'All BEA data used in this book comes from tables last downloaded in 2011 and may therefore differ from more recent tables.' Any extension must explicitly document vintage drift, not silently splice."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-as-ch6",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from CD2 S206 markdown + verbatim quotes from Appendix 6.7 Sections I-II (book pp. 828-830). Three book quotes (definition, source, method)."
+    }
+  ]
+}

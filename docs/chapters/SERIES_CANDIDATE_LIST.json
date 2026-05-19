@@ -1,0 +1,2082 @@
+{
+  "schema_version": "rscd-series-candidates-v1.0",
+  "generated_by": "_phase2_taxonomy_builder.py",
+  "total_candidates": 98,
+  "by_chapter": {
+    "10": 8,
+    "11": 4,
+    "13": 1,
+    "14": 8,
+    "15": 9,
+    "16": 6,
+    "17": 3,
+    "2": 18,
+    "3": 9,
+    "4": 8,
+    "5": 4,
+    "6": 4,
+    "7": 8,
+    "8": 5,
+    "9": 3
+  },
+  "by_content_type": {
+    "cross_sectional": 8,
+    "time_series": 90
+  },
+  "by_construction": {
+    "composite": 32,
+    "direct": 66
+  },
+  "candidates": [
+    {
+      "new_id": "S201",
+      "chapter": 2,
+      "cd_id": "S001",
+      "cd2_id": "S001",
+      "name": "US Industrial Production Index",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1860,
+        2010
+      ],
+      "figures": [
+        "Fig2.1"
+      ],
+      "primary_appendix": "appendix 2.1 and appendix 2.2 data tables",
+      "hdarp_sources": [
+        {
+          "source": "1966_BEA_Long_Term_Economic_Growth",
+          "tables": [
+            "Series A173"
+          ],
+          "coverage": "1860-1965"
+        },
+        {
+          "source": "Robin_FRED",
+          "tables": [
+            "INDPRO.csv"
+          ],
+          "coverage": "2011-2025"
+        }
+      ],
+      "cd2_source_file": "ch02/Appendix2_IndustrialProduction.csv"
+    },
+    {
+      "new_id": "S202",
+      "chapter": 2,
+      "cd_id": "S002",
+      "cd2_id": "S002",
+      "name": "US Real Investment",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1832,
+        2010
+      ],
+      "figures": [
+        "Fig2.2"
+      ],
+      "primary_appendix": "appendix 2.1 and appendix 2.2 data tables",
+      "hdarp_sources": [
+        {
+          "source": "1993_DoC_Fixed_Reproducible_Tangible_Wealth",
+          "tables": [
+            "Table B4"
+          ],
+          "coverage": "1832-1989"
+        },
+        {
+          "source": "Robin_BEA",
+          "tables": [
+            "Table_4.1_CurrentCost_Net_1925_2023.csv"
+          ],
+          "coverage": "1925-2023"
+        }
+      ],
+      "cd2_source_file": "ch02/Appendix2_RealInvestmentUS_1832-2010.csv"
+    },
+    {
+      "new_id": "S203",
+      "chapter": 2,
+      "cd_id": "S003",
+      "cd2_id": "S003",
+      "name": "US GDP (MeasuringWorth)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1889,
+        2010
+      ],
+      "figures": [
+        "Fig2.3"
+      ],
+      "primary_appendix": "appendix 2.1 and appendix 2.2 data tables",
+      "hdarp_sources": [
+        {
+          "source": "MeasuringWorth",
+          "tables": [
+            "USGDP_1790-2025.csv"
+          ],
+          "coverage": "1790-2025"
+        }
+      ],
+      "cd2_source_file": "ch02/Appendix2_MeasuringWorthGDP_1889-2010.csv"
+    },
+    {
+      "new_id": "S204",
+      "chapter": 2,
+      "cd_id": "S004",
+      "cd2_id": "S004",
+      "name": "Ayres Business Cycle Index",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1831,
+        1866
+      ],
+      "figures": [
+        "Fig2.4A"
+      ],
+      "primary_appendix": "Ayres 1939, table 9, appendix A, col. 1",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch02/Appendix2_Ayres.csv"
+    },
+    {
+      "new_id": "S205",
+      "chapter": 2,
+      "cd_id": "S005",
+      "cd2_id": null,
+      "name": "Business Cycles, 1867–1902",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1867,
+        1902
+      ],
+      "figures": [
+        "Fig2.4B"
+      ],
+      "primary_appendix": "Ayres 1939, table 9, appendix A, col. 1",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S206",
+      "chapter": 2,
+      "cd_id": "S006",
+      "cd2_id": null,
+      "name": "Business Cycles, 1903–1939",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1903,
+        1939
+      ],
+      "figures": [
+        "Fig2.4C"
+      ],
+      "primary_appendix": "Ayres 1939, table 9, appendix A, col. 1",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S207",
+      "chapter": 2,
+      "cd_id": "S007",
+      "cd2_id": "S007",
+      "name": "Manufacturing Productivity and Real Wages",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1889,
+        2010
+      ],
+      "figures": [
+        "Fig2.5"
+      ],
+      "primary_appendix": "appendix 2.1 and appendix 2.2 data tables",
+      "hdarp_sources": [
+        {
+          "source": "1961_Kendrick_Productivity_Trends",
+          "tables": [
+            "chunk_01_table_2.csv",
+            "chunk_02_table_1.csv"
+          ],
+          "coverage": "1869-1960"
+        },
+        {
+          "source": "1966_BEA_Long_Term_Economic_Growth",
+          "tables": [
+            "Series A173"
+          ],
+          "coverage": "1860-1965"
+        }
+      ],
+      "cd2_source_file": "ch02/Appendix2_ManufacturingProductivityAndRealWages1889-2010.csv"
+    },
+    {
+      "new_id": "S208",
+      "chapter": 2,
+      "cd_id": "S008",
+      "cd2_id": "S008",
+      "name": "Manufacturing Real Compensation",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1889,
+        2010
+      ],
+      "figures": [
+        "Fig2.6"
+      ],
+      "primary_appendix": "appendix 2.1 and appendix 2.2 data tables",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch02/Appendix2_ManufacturingProductivity.csv"
+    },
+    {
+      "new_id": "S209",
+      "chapter": 2,
+      "cd_id": "S009",
+      "cd2_id": "S009",
+      "name": "US Unemployment Rate",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1890,
+        2010
+      ],
+      "figures": [
+        "Fig2.7"
+      ],
+      "primary_appendix": "appendix 2.1 and appendix 2.2 data tables",
+      "hdarp_sources": [
+        {
+          "source": "1966_BEA_Long_Term_Economic_Growth",
+          "tables": [
+            "CHART 4 data"
+          ],
+          "coverage": "1890-1965"
+        },
+        {
+          "source": "Robin_FRED",
+          "tables": [
+            "UNRATE.csv"
+          ],
+          "coverage": "1948-2025"
+        }
+      ],
+      "cd2_source_file": "ch02/Appendix2_Unemployment.csv"
+    },
+    {
+      "new_id": "S210",
+      "chapter": 2,
+      "cd_id": "S010",
+      "cd2_id": "S010",
+      "name": "Gold Prices and Wholesale Price Indexes (Source Table)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1780,
+        2010
+      ],
+      "figures": [
+        "Fig2.8"
+      ],
+      "primary_appendix": "appendix 2.1 and appendix 2.2 data tables",
+      "hdarp_sources": [
+        {
+          "source": "1977_Jastram_Golden_Constant",
+          "tables": [
+            "chunk_001_tables.csv"
+          ],
+          "coverage": "1780-1976"
+        },
+        {
+          "source": "MeasuringWorth",
+          "tables": [
+            "Historical WPI"
+          ],
+          "coverage": "1780-2025"
+        }
+      ],
+      "cd2_source_file": "ch05/Appendix5_DATALRprices.csv"
+    },
+    {
+      "new_id": "S211",
+      "chapter": 2,
+      "cd_id": "S011",
+      "cd2_id": null,
+      "name": "US and UK Wholesale Price Indexes, 1780–1940 (1930 = 100, Log Scale)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1780,
+        1940
+      ],
+      "figures": [
+        "Fig2.9"
+      ],
+      "primary_appendix": "appendix 2.1 and appendix 2.2 data tables",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S212",
+      "chapter": 2,
+      "cd_id": "S012",
+      "cd2_id": null,
+      "name": "US and UK Wholesale Prices in Ounces of Gold, 1790–2010 (1930 = 100, Log Scale)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1790,
+        2010
+      ],
+      "figures": [
+        "Fig2.10"
+      ],
+      "primary_appendix": "appendix 2.1 and appendix 2.2 data tables",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S213",
+      "chapter": 2,
+      "cd_id": "S013",
+      "cd2_id": "S013",
+      "name": "Final Profit Rate Measures",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1947,
+        2011
+      ],
+      "figures": [
+        "Fig2.11"
+      ],
+      "primary_appendix": "appendix 6.7",
+      "hdarp_sources": [
+        {
+          "source": "1993_DoC_Fixed_Reproducible_Tangible_Wealth",
+          "tables": [
+            "Table A1-A8"
+          ],
+          "coverage": "1925-1989"
+        },
+        {
+          "source": "Robin_BEA",
+          "tables": [
+            "Table_1_14_Corporate_2012_2025.csv",
+            "Table_4.1_CurrentCost_Net_1925_2023.csv"
+          ],
+          "coverage": "1947-2025"
+        }
+      ],
+      "cd2_source_file": "ch06/Appendix6_Table68II7.csv"
+    },
+    {
+      "new_id": "S214",
+      "chapter": 2,
+      "cd_id": "S014",
+      "cd2_id": null,
+      "name": "Average Rates of Profit in US Manufacturing 1960–1989",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1960,
+        1989
+      ],
+      "figures": [
+        "Fig2.12"
+      ],
+      "primary_appendix": "chapter 7 and appendix 7.1",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S215",
+      "chapter": 2,
+      "cd_id": "S015",
+      "cd2_id": null,
+      "name": "Incremental Rates of Profit in US Manufacturing 1960–1989",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1960,
+        1989
+      ],
+      "figures": [
+        "Fig2.13"
+      ],
+      "primary_appendix": "Christodoulopoulos 1995, 138–140; Shaikh 1998b, 395",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S216",
+      "chapter": 2,
+      "cd_id": "S016",
+      "cd2_id": null,
+      "name": "Normalized Total Prices of Production Profit versus Total Unit Labor Costs, US 1972 (Seventy-One Industries)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig2.14"
+      ],
+      "primary_appendix": "chapter 9, tables 9.9 and 9.13",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S217",
+      "chapter": 2,
+      "cd_id": "S017",
+      "cd2_id": "S017",
+      "name": "GDP per Capita (Maddison)",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig2.15"
+      ],
+      "primary_appendix": "Maddison (2003); appendix 2.1",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch02/Appendix2_GDPperCapita.csv"
+    },
+    {
+      "new_id": "S218",
+      "chapter": 2,
+      "cd_id": "S018",
+      "cd2_id": null,
+      "name": "GDP per Capita Richest Four and Poorest Four Countries, International Geary–Khamis Dollars (Log Scale)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig2.16",
+        "Fig2.17"
+      ],
+      "primary_appendix": "appendix 2.1 Data Sources and Methods; appendix 2.1, table 1",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S501",
+      "chapter": 5,
+      "cd_id": "S022",
+      "cd2_id": "S022",
+      "name": "US and UK Wholesale Price Indexes, 1790-1940",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1790,
+        1940
+      ],
+      "figures": [
+        "Fig5.3"
+      ],
+      "primary_appendix": "Appendix 5.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch05/Appendix5_DATALRprices.csv"
+    },
+    {
+      "new_id": "S502",
+      "chapter": 5,
+      "cd_id": "S023",
+      "cd2_id": "S023",
+      "name": "US and UK Wholesale Price Indexes, 1790-2010",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1790,
+        2010
+      ],
+      "figures": [
+        "Fig5.4"
+      ],
+      "primary_appendix": "Appendix 5.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch05/Appendix5_DATALRprices.csv"
+    },
+    {
+      "new_id": "S503",
+      "chapter": 5,
+      "cd_id": "S024",
+      "cd2_id": "S024",
+      "name": "UK WPI in Gold and UK Gold Price",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1790,
+        2009
+      ],
+      "figures": [
+        "Fig5.5"
+      ],
+      "primary_appendix": "Appendix 5.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch05/Appendix5_DATALRprices.csv"
+    },
+    {
+      "new_id": "S504",
+      "chapter": 5,
+      "cd_id": "S025",
+      "cd2_id": "S025",
+      "name": "US WPI in Gold and US Gold Price",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1800,
+        2009
+      ],
+      "figures": [
+        "Fig5.6"
+      ],
+      "primary_appendix": "Appendix 5.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch05/Appendix5_DATALRprices.csv"
+    },
+    {
+      "new_id": "S601",
+      "chapter": 6,
+      "cd_id": "S026",
+      "cd2_id": "S026",
+      "name": "Corporate and Non-Corporate Profit Rates",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig6.1",
+        "Fig6.4",
+        "Fig6.5"
+      ],
+      "primary_appendix": "Appendix 6.7",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S602",
+      "chapter": 6,
+      "cd_id": "S027",
+      "cd2_id": "S027",
+      "name": "Corrected vs Conventional Corporate Profitability",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig6.2",
+        "Fig6.6"
+      ],
+      "primary_appendix": "Appendix 6.7",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S603",
+      "chapter": 6,
+      "cd_id": "S028",
+      "cd2_id": "S028",
+      "name": "Component Ratios x1, x2, x3",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig6.3"
+      ],
+      "primary_appendix": "Appendix 6.7",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S604",
+      "chapter": 6,
+      "cd_id": "S105",
+      "cd2_id": "S105",
+      "name": "Corporate Incremental Rate of Profit (IROP)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig6.7"
+      ],
+      "primary_appendix": "Appendix 6.7, Appendix 6.8.II.7",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S701",
+      "chapter": 7,
+      "cd_id": "S030",
+      "cd2_id": null,
+      "name": "Figure 7.11 Change in Selling Price versus Change in Unit Labor Cost, US 1923-1950 (Ratio of Each Variable in 1950 to its 1923 Value)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1923,
+        1950
+      ],
+      "figures": [
+        "Fig7.11"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S702",
+      "chapter": 7,
+      "cd_id": "S031",
+      "cd2_id": null,
+      "name": "Figure 7.12 Change in Selling Price versus Change in Unit Labor Cost, UK 1954-1963 (Ratio of Each Variable in 1963 to its 1954 Value)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1954,
+        1963
+      ],
+      "figures": [
+        "Fig7.12"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S703",
+      "chapter": 7,
+      "cd_id": "S032",
+      "cd2_id": null,
+      "name": "Figure 7.13 World Manufacturing Average and Incremental Rates of Profit, 1970-1989",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1970,
+        1989
+      ],
+      "figures": [
+        "Fig7.13"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [
+        {
+          "source": "1993_DoC_Fixed_Reproducible_Tangible_Wealth",
+          "tables": [
+            "Manufacturing tables"
+          ],
+          "coverage": "1947-1989"
+        },
+        {
+          "source": "OECD_STAN",
+          "tables": [
+            "B2A3G, P51G"
+          ],
+          "coverage": "1970-1989"
+        }
+      ],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S704",
+      "chapter": 7,
+      "cd_id": "S033",
+      "cd2_id": null,
+      "name": "Figure 7.14 US Manufacturing Average and Incremental Rates of Profit, 1960-1989",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1960,
+        1989
+      ],
+      "figures": [
+        "Fig7.14"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [
+        {
+          "source": "1993_DoC_Fixed_Reproducible_Tangible_Wealth",
+          "tables": [
+            "chunk_005_table_A1_manufacturing.csv"
+          ],
+          "coverage": "1947-1989"
+        }
+      ],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S705",
+      "chapter": 7,
+      "cd_id": "S034",
+      "cd2_id": "S034",
+      "name": "US Industry Average Rates of Profit",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1987,
+        2005
+      ],
+      "figures": [
+        "Fig7.15"
+      ],
+      "primary_appendix": "Appendix 2 in Shaikh 2008",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S706",
+      "chapter": 7,
+      "cd_id": "S036",
+      "cd2_id": "S036",
+      "name": "US Industry Incremental Rates of Profit",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1987,
+        2005
+      ],
+      "figures": [
+        "Fig7.17"
+      ],
+      "primary_appendix": "Appendix 2 in Shaikh 2008",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S707",
+      "chapter": 7,
+      "cd_id": "S038",
+      "cd2_id": "S038",
+      "name": "OECD Industry IROP Deviations (PPP-adjusted)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1962,
+        1991
+      ],
+      "figures": [
+        "Fig7.19"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S708",
+      "chapter": 7,
+      "cd_id": "S039",
+      "cd2_id": null,
+      "name": "Figure 7.20 Deviations of Greek Manufacturing Incremental Profit Rates from Average Incremental Rate, 1962-1991",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1962,
+        1991
+      ],
+      "figures": [
+        "Fig7.20"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S801",
+      "chapter": 8,
+      "cd_id": "S042",
+      "cd2_id": "S042",
+      "name": "US Long-Run Interest Rates and Prices",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig8.1"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": "ch10/Appendix10_USLR.csv"
+    },
+    {
+      "new_id": "S802",
+      "chapter": 8,
+      "cd_id": "S043",
+      "cd2_id": null,
+      "name": "Percentage of Prices Increases or No Decreases during Contractions, in Relation to Concentration",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig8.2"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S803",
+      "chapter": 8,
+      "cd_id": "S041",
+      "cd2_id": "S041",
+      "name": "Interest Rates, Prices, and Equity Data",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig8.3",
+        "Fig8.4"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": "ch10/Appendix10_IntroPPrice.csv"
+    },
+    {
+      "new_id": "S804",
+      "chapter": 8,
+      "cd_id": "S044",
+      "cd2_id": null,
+      "name": "Rate of Profit on Assets (%)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig8.5"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S805",
+      "chapter": 8,
+      "cd_id": "S045",
+      "cd2_id": null,
+      "name": "Rates of Return and Concentration (CR4), 1963 and 1969",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig8.6"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S901",
+      "chapter": 9,
+      "cd_id": "S047",
+      "cd2_id": "S047",
+      "name": "Market Prices vs Direct Prices, 71 Industries",
+      "content_type": "cross_sectional",
+      "construction": "composite",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig9.1",
+        "Fig9.2",
+        "Fig9.16"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S902",
+      "chapter": 9,
+      "cd_id": "S048",
+      "cd2_id": "S048",
+      "name": "Integrated Output-Capital Ratios and Standard Prices",
+      "content_type": "cross_sectional",
+      "construction": "composite",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig9.4",
+        "Fig9.5",
+        "Fig9.6",
+        "Fig9.7",
+        "Fig9.9",
+        "Fig9.10",
+        "Fig9.11",
+        "Fig9.13",
+        "Fig9.14",
+        "Fig9.15",
+        "Fig9.18"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S903",
+      "chapter": 9,
+      "cd_id": "S049",
+      "cd2_id": "S049",
+      "name": "Actual Wage-Profit Curves",
+      "content_type": "cross_sectional",
+      "construction": "composite",
+      "year_range": [
+        1947,
+        1972
+      ],
+      "figures": [
+        "Fig9.6",
+        "Fig9.7",
+        "Fig9.8",
+        "Fig9.10",
+        "Fig9.12",
+        "Fig9.13",
+        "Fig9.14",
+        "Fig9.15",
+        "Fig9.16",
+        "Fig9.18",
+        "Fig9.19"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1001",
+      "chapter": 10,
+      "cd_id": "S050",
+      "cd2_id": "S050",
+      "name": "Bank vs Private Industry IROP",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1988,
+        2005
+      ],
+      "figures": [
+        "Fig10.1",
+        "Fig10.2"
+      ],
+      "primary_appendix": "Appendix 7.2",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1002",
+      "chapter": 10,
+      "cd_id": "S052",
+      "cd2_id": "S052",
+      "name": "Interest Rate and Price Level",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1857,
+        2011
+      ],
+      "figures": [
+        "Fig10.3",
+        "Fig10.6"
+      ],
+      "primary_appendix": "Appendix 10.1",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1003",
+      "chapter": 10,
+      "cd_id": "S053",
+      "cd2_id": "S053",
+      "name": "Relative Price of Finance",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1857,
+        2011
+      ],
+      "figures": [
+        "Fig10.3",
+        "Fig10.7"
+      ],
+      "primary_appendix": "Appendix 10.1",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1004",
+      "chapter": 10,
+      "cd_id": "S054",
+      "cd2_id": "S054",
+      "name": "Real Interest Rate HP-filtered",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1857,
+        2011
+      ],
+      "figures": [
+        "Fig10.2",
+        "Fig10.8"
+      ],
+      "primary_appendix": "Appendix 10.1, 10.2",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1005",
+      "chapter": 10,
+      "cd_id": "S055",
+      "cd2_id": "S055",
+      "name": "Dividend Yield vs Bond Yield",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1871,
+        2011
+      ],
+      "figures": [
+        "Fig10.9"
+      ],
+      "primary_appendix": "Appendix 10.1",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1006",
+      "chapter": 10,
+      "cd_id": "S056",
+      "cd2_id": "S056",
+      "name": "Bond and Equity Returns",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1926,
+        2010
+      ],
+      "figures": [
+        "Fig10.10"
+      ],
+      "primary_appendix": "Appendix 10.1",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1007",
+      "chapter": 10,
+      "cd_id": "S057",
+      "cd2_id": "S057",
+      "name": "Equity Rate vs Corporate IROP",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1948,
+        2011
+      ],
+      "figures": [
+        "Fig10.11"
+      ],
+      "primary_appendix": "Appendix 10.1, 10.2",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1008",
+      "chapter": 10,
+      "cd_id": "S059",
+      "cd2_id": "S059",
+      "name": "Actual vs Warranted Stock Price",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1948,
+        2011
+      ],
+      "figures": [
+        "Fig10.13"
+      ],
+      "primary_appendix": "Appendix 10.1, 10.2",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1101",
+      "chapter": 11,
+      "cd_id": "S060",
+      "cd2_id": "S060",
+      "name": "Trade Balances in Major Countries",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1960,
+        2009
+      ],
+      "figures": [
+        "Fig11.2"
+      ],
+      "primary_appendix": "Appendix 11.1",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1102",
+      "chapter": 11,
+      "cd_id": "S061",
+      "cd2_id": "S061",
+      "name": "Real Effective Exchange Rates (PPI), US and Japan",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1960,
+        2009
+      ],
+      "figures": [
+        "Fig11.3"
+      ],
+      "primary_appendix": "Appendix 11.1",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1103",
+      "chapter": 11,
+      "cd_id": "S062",
+      "cd2_id": "S062",
+      "name": "Law of One Price at Aggregate Level, US and Japan",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1960,
+        2009
+      ],
+      "figures": [
+        "Fig11.6"
+      ],
+      "primary_appendix": "Appendix 11.1",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1104",
+      "chapter": 11,
+      "cd_id": "S063",
+      "cd2_id": "S063",
+      "name": "US Balance of Trade, Real Exchange Rate, Relative GDP",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1960,
+        2009
+      ],
+      "figures": [
+        "Fig11.7"
+      ],
+      "primary_appendix": "Appendix 11.1",
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1401",
+      "chapter": 14,
+      "cd_id": "S068",
+      "cd2_id": "S068",
+      "name": "Nominal GDP Growth and Level of Wage Share",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1948,
+        2011
+      ],
+      "figures": [
+        "Fig14.10"
+      ],
+      "primary_appendix": "Appendix 14.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch14/Appendix14_InflationULdata.csv"
+    },
+    {
+      "new_id": "S1402",
+      "chapter": 14,
+      "cd_id": "S069",
+      "cd2_id": "S069",
+      "name": "Unemployment Measures US 1948-2011",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1948,
+        2011
+      ],
+      "figures": [
+        "Fig14.11"
+      ],
+      "primary_appendix": "Appendix 14.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch14/Appendix14_InflationULdata.csv"
+    },
+    {
+      "new_id": "S1403",
+      "chapter": 14,
+      "cd_id": "S070",
+      "cd2_id": "S070",
+      "name": "Wage Share vs Unemployment Intensity",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1948,
+        2011
+      ],
+      "figures": [
+        "Fig14.12"
+      ],
+      "primary_appendix": "Appendix 14.1, Appendix 14.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch14/Appendix14_InflationULdata.csv"
+    },
+    {
+      "new_id": "S1404",
+      "chapter": 14,
+      "cd_id": "S071",
+      "cd2_id": "S071",
+      "name": "Rate of Change of Wage Share vs Unemployment Intensity",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1949,
+        2011
+      ],
+      "figures": [
+        "Fig14.13"
+      ],
+      "primary_appendix": "Appendix 14.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch14/Appendix14_InflationULdata.csv"
+    },
+    {
+      "new_id": "S1405",
+      "chapter": 14,
+      "cd_id": "S072",
+      "cd2_id": "S072",
+      "name": "HP-Filtered Wage Share Growth vs Unemployment Intensity",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1949,
+        2011
+      ],
+      "figures": [
+        "Fig14.14"
+      ],
+      "primary_appendix": "Appendix 14.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch14/Appendix14_InflationULdata.csv"
+    },
+    {
+      "new_id": "S1406",
+      "chapter": 14,
+      "cd_id": "S073",
+      "cd2_id": "S073",
+      "name": "Inflation and Productivity Growth",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1948,
+        2011
+      ],
+      "figures": [
+        "Fig14.15"
+      ],
+      "primary_appendix": "Appendix 14.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch14/Appendix14_InflationULdata.csv"
+    },
+    {
+      "new_id": "S1407",
+      "chapter": 14,
+      "cd_id": "S074",
+      "cd2_id": "S074",
+      "name": "HP-Filtered Real Wage Growth vs Unemployment Intensity",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1949,
+        2011
+      ],
+      "figures": [
+        "Fig14.16"
+      ],
+      "primary_appendix": "Appendix 14.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch14/Appendix14_InflationULdata.csv"
+    },
+    {
+      "new_id": "S1408",
+      "chapter": 14,
+      "cd_id": "S075",
+      "cd2_id": "S075",
+      "name": "HP-Filtered Nominal Wage Growth vs Unemployment Intensity",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1949,
+        2011
+      ],
+      "figures": [
+        "Fig14.17"
+      ],
+      "primary_appendix": "Appendix 14.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch14/Appendix14_InflationULdata.csv"
+    },
+    {
+      "new_id": "S1501",
+      "chapter": 15,
+      "cd_id": "S076",
+      "cd2_id": "S076",
+      "name": "Consumer Price Level, US, 1774-2011",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1774,
+        2011
+      ],
+      "figures": [
+        "Fig15.1"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [
+        {
+          "source": "MeasuringWorth",
+          "tables": [
+            "USCPI_1774-2025.csv"
+          ],
+          "coverage": "1774-2025"
+        }
+      ],
+      "cd2_source_file": "ch15/Appendix15_MeasuringWorthCPI.csv"
+    },
+    {
+      "new_id": "S1502",
+      "chapter": 15,
+      "cd_id": "S077",
+      "cd2_id": "S077",
+      "name": "Growth Rates of Real Output, US Major Industries (Part 1)",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1987,
+        2010
+      ],
+      "figures": [
+        "Fig15.2A"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": "ch15/Appendix15_USGDPRByIndustry.csv"
+    },
+    {
+      "new_id": "S1503",
+      "chapter": 15,
+      "cd_id": "S078",
+      "cd2_id": "S078",
+      "name": "Growth Rates of Real Output, US Major Industries (Part 2)",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1987,
+        2010
+      ],
+      "figures": [
+        "Fig15.2B"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": "ch15/Appendix15_USGDPRByIndustry.csv"
+    },
+    {
+      "new_id": "S1504",
+      "chapter": 15,
+      "cd_id": "S079",
+      "cd2_id": "S079",
+      "name": "Growth of Nominal GDP and Relative New Purchasing Power",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1950,
+        2010
+      ],
+      "figures": [
+        "Fig15.3"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": "ch15/Appendix15_USInflation.csv"
+    },
+    {
+      "new_id": "S1505",
+      "chapter": 15,
+      "cd_id": "S083",
+      "cd2_id": "S083",
+      "name": "Classical and Conventional Phillips-Type Curves, 1948-2010",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1948,
+        2010
+      ],
+      "figures": [
+        "Fig15.7"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": "ch15/Appendix15_USInflation.csv"
+    },
+    {
+      "new_id": "S1506",
+      "chapter": 15,
+      "cd_id": "S084",
+      "cd2_id": "S084",
+      "name": "Classical and Conventional Phillips-Type Curves, 1948-1981",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1948,
+        1981
+      ],
+      "figures": [
+        "Fig15.8"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": "ch15/Appendix15_USInflation.csv"
+    },
+    {
+      "new_id": "S1507",
+      "chapter": 15,
+      "cd_id": "S085",
+      "cd2_id": "S085",
+      "name": "Classical and Conventional Phillips-Type Curves, 1982-2010",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1982,
+        2010
+      ],
+      "figures": [
+        "Fig15.9"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": "ch15/Appendix15_USInflation.csv"
+    },
+    {
+      "new_id": "S1508",
+      "chapter": 15,
+      "cd_id": "S088",
+      "cd2_id": "S088",
+      "name": "World Inflation vs Growth of Private and Public Credit, 1970-1988",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1970,
+        1988
+      ],
+      "figures": [
+        "Fig15.12"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": "ch15/Appendix15_WorldInflationDataByCountry.csv"
+    },
+    {
+      "new_id": "S1509",
+      "chapter": 15,
+      "cd_id": "S089",
+      "cd2_id": "S089",
+      "name": "World Inflation vs Growth of Total Credit, 1988-2011",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1988,
+        2011
+      ],
+      "figures": [
+        "Fig15.13"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": "ch15/Appendix15_WorldInflationDataLambda.csv"
+    },
+    {
+      "new_id": "S1601",
+      "chapter": 16,
+      "cd_id": "S093",
+      "cd2_id": "S093",
+      "name": "US and UK Golden Waves, 1786-2010",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1786,
+        2010
+      ],
+      "figures": [
+        "Fig16.1"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [
+        {
+          "source": "1977_Jastram_Golden_Constant",
+          "tables": [
+            "chunk_001_tables.csv"
+          ],
+          "coverage": "1786-1976"
+        }
+      ],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1602",
+      "chapter": 16,
+      "cd_id": "S095",
+      "cd2_id": "S095",
+      "name": "Hourly Real Wages and Productivity, US Business Sector",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1947,
+        2012
+      ],
+      "figures": [
+        "Fig16.3"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1603",
+      "chapter": 16,
+      "cd_id": "S098",
+      "cd2_id": "S098",
+      "name": "US and OECD Short-Term Interest Rates",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1960,
+        2011
+      ],
+      "figures": [
+        "Fig16.7"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1604",
+      "chapter": 16,
+      "cd_id": "S099",
+      "cd2_id": "S099",
+      "name": "Net Average and Real Incremental Rates of Profit",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1947,
+        2011
+      ],
+      "figures": [
+        "Fig16.8"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1605",
+      "chapter": 16,
+      "cd_id": "S100",
+      "cd2_id": "S100",
+      "name": "Household Debt-to-Income Ratio",
+      "content_type": "time_series",
+      "construction": "composite",
+      "year_range": [
+        1975,
+        2011
+      ],
+      "figures": [
+        "Fig16.9"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1606",
+      "chapter": 16,
+      "cd_id": "S101",
+      "cd2_id": "S101",
+      "name": "Household Debt-Service Ratio",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        1980,
+        2012
+      ],
+      "figures": [
+        "Fig16.10"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": null
+    },
+    {
+      "new_id": "S1701",
+      "chapter": 17,
+      "cd_id": "S102",
+      "cd2_id": "S102",
+      "name": "IRS 2011 Income Distribution — Full Table",
+      "content_type": "cross_sectional",
+      "construction": "composite",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig17.1"
+      ],
+      "primary_appendix": "Appendix 5.3",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch17/Appendix17_USIRS2011.csv"
+    },
+    {
+      "new_id": "S1702",
+      "chapter": 17,
+      "cd_id": "S103",
+      "cd2_id": "S103",
+      "name": "Personal Income Distribution below $200,000, Cumulative Probability from Above",
+      "content_type": "cross_sectional",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig17.2"
+      ],
+      "primary_appendix": null,
+      "hdarp_sources": [],
+      "cd2_source_file": "ch17/Appendix17_USIRS2011.csv"
+    },
+    {
+      "new_id": "S1703",
+      "chapter": 17,
+      "cd_id": "S104",
+      "cd2_id": "S104",
+      "name": "Personal Income Distribution above $200,000, Cumulative Probability from Above",
+      "content_type": "cross_sectional",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig17.3"
+      ],
+      "primary_appendix": "Appendices 17.1 and 17.2",
+      "hdarp_sources": [],
+      "cd2_source_file": "ch17/Appendix17_USIRS2011.csv"
+    },
+    {
+      "new_id": "S301",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Change in expenditure relative to change in income, Case I",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig3.3"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S302",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Expenditure Share of Necessaries, Case I",
+      "content_type": "cross_sectional",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig3.4"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S303",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Engel Curve of Necessaries, Case I",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig3.5"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S304",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Discretionary Propensity to Consume, Case II",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig3.6"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S305",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Engel Curve of Necessaries, Case II",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig3.7"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S306",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Empirical Expenditure Share on Food (Working Class Budgets, United Kingdom, 1904)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig3.8"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S307",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Empirical Engel Curve for Food (Working Class Budgets, United Kingdom, 1904)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig3.9"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S308",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Necessary Good (x1) Demand Curves, Four Different Micro Foundations",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig3.10"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S309",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Luxury Good (x2) Demand Curves, Four Different Micro Foundations",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig3.11"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S401",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Average and Marginal Costs with Wage Paid per Worker, at Normal Intensity for 8-Hour Shifts up to Engineering Capacity (Two and a Half Shifts)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig4.16"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S402",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Average and Marginal Costs with Wage Paid per Hour, at Normal Intensity for 8-Hour Shifts up to Engineering Capacity (Two and a Half Shifts)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig4.17"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S403",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Total Profit with Different Wage Arrangements, at Normal Intensity for 8-Hour Shifts up to Engineering Capacity (Two and a Half Shifts)",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig4.18"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S404",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Automotive Unit Labor Cost",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig4.19"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S405",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Automotive Marginal Labor Cost",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig4.20"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S406",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Automotive Average Cost",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig4.21"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S407",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Automotive Marginal Cost",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig4.22"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S408",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Cost Curves Chosen by 94% of Business People Surveyed",
+      "content_type": "time_series",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig4.23"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    },
+    {
+      "new_id": "S1301",
+      "chapter": 13,
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Actual and Equilibrium Paths of Output",
+      "content_type": "cross_sectional",
+      "construction": "direct",
+      "year_range": [
+        null,
+        null
+      ],
+      "figures": [
+        "Fig13.7"
+      ],
+      "primary_appendix": "",
+      "hdarp_sources": [],
+      "cd2_source_file": null,
+      "note": "ORPHAN — no CD linkage; needs Phase 3 research to confirm series identity"
+    }
+  ]
+}

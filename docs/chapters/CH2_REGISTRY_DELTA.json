@@ -1,0 +1,187 @@
+{
+  "_delta_kind": "rscd-registry-adequacy-delta-v1.0",
+  "_chapter": 2,
+  "_reviewer": "opus-subagent-p4-wave1-ch2",
+  "_review_date": "2026-05-18",
+  "_merge_instructions": "For each SID below, set registry.series[SID].adequacy = <value>. Do NOT overwrite other fields.",
+  "deltas": {
+    "S201": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 100,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["FRB G.17 + FRED INDPRO live (HTTP 200)"],
+        "issues_outstanding": []
+      }
+    },
+    "S202": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 95,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["BEA iTable live (HTTP 200); BEA NIPA T1.1.6 line 9 confirmed as concept-correct extension"],
+        "issues_outstanding": ["Loader must prefer BEA T1.1.6 line 9 over FRED GPDIC1 (which includes residential)"]
+      }
+    },
+    "S203": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 100,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["MeasuringWorth /datasets/usgdp/ live (HTTP 200)"],
+        "issues_outstanding": []
+      }
+    },
+    "S204": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 90,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["HathiTrust Record/001141928 reachable (same Record returned 200 for S206 in same scan)"],
+        "issues_outstanding": ["No modern continuation for Ayres index -- historical only, correctly documented"]
+      }
+    },
+    "S205": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 90,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Same Ayres source as S204/S206 -- transient 403 on this request, Record verified live"],
+        "issues_outstanding": ["No modern continuation -- historical only"]
+      }
+    },
+    "S206": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 95,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["HathiTrust Record/001141928 live (HTTP 200)"],
+        "issues_outstanding": ["No modern continuation -- historical only"]
+      }
+    },
+    "S207": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 75,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["FRED OPHMFG live (HTTP 200); CPI extension via MW live"],
+        "issues_outstanding": [
+          "MeasuringWorth /datasets/uscompensation/ returned 404; update primary_source.url to /datasets/uswage/ (verified 200) before Phase 5",
+          "BLS FLS International Comparisons program sunset 2013; OPHMFG is US-only successor (concept narrowing, document per decision 0005)",
+          "units field needs splitting into productivity (Index 1889=100) vs real compensation ($/hr)"
+        ]
+      }
+    },
+    "S208": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 90,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["BLS LPC + FRED ULCMFG + FRED OPHMFG all live (HTTP 200)"],
+        "issues_outstanding": ["Extension MUST recompute formula from S207's extended components -- DO NOT splice ULCMFG (nominal) directly"]
+      }
+    },
+    "S209": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 100,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["govinfo ERP collection + FRED UNRATE live (HTTP 200)"],
+        "issues_outstanding": []
+      }
+    },
+    "S210": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 85,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["MeasuringWorth gold + FRED PPIACO live (HTTP 200)"],
+        "issues_outstanding": [
+          "ONS PLLU specific URL returned 502 (transient); parent /inflationandpriceindices reachable -- re-verify before Phase 5",
+          "Update NBER macrohistory link to https://www.nber.org/research/data/nber-macrohistory-database"
+        ]
+      }
+    },
+    "S211": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 90,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Jastram 1977 referenced from HathiTrust catalog; same data as S210 windowed to 1780-1940"],
+        "issues_outstanding": ["HathiTrust Record/000404889 returned 403 -- transient bot block; book remains in public catalog"]
+      }
+    },
+    "S212": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 95,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["MeasuringWorth gold dataset live (HTTP 200)"],
+        "issues_outstanding": ["Extension MUST recompute WPI/gold formula from extended S210 components + extended gold prices"]
+      }
+    },
+    "S213": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 90,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["BEA iTable live (HTTP 200)"],
+        "issues_outstanding": ["Phase 3 open question: 'Corporate' = NIPA T1.14 strictly or broader business sector? Resolve before Phase 5 ingestion contract"]
+      }
+    },
+    "S214": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 80,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["OECD STAN landing page reachable (HTTP 200 via GET)"],
+        "issues_outstanding": [
+          "anwarshaikhecon.org Appendix 7.2 status uncertain; use SalvagedInputs replica per decision 0005",
+          "OECD ISDB (1994 vintage) discontinued; STAN extension requires ISIC Rev3->Rev4 + NAICS crosswalk -- scope decision needed"
+        ]
+      }
+    },
+    "S215": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 85,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["OECD STAN + AMECO database pages live (HTTP 200)"],
+        "issues_outstanding": ["AMECO MEC uses gross output (not profits) in numerator -- document concept difference if used"]
+      }
+    },
+    "S216": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 100,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "BEA I-O iTable + benchmark zip live (HTTP 200)",
+          "Phase 3 reclassification time_series -> cross_sectional RATIFIED"
+        ],
+        "issues_outstanding": []
+      }
+    },
+    "S217": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 85,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Maddison Project GGDC + MPD 2023 pages live (HTTP 200)"],
+        "issues_outstanding": ["MPD 2023 base-year change (1990 GK -> 2011 PPP) -- document discontinuity at splice"]
+      }
+    },
+    "S218": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 80,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Maddison Project pages live (HTTP 200); Appendix Table 2.1.1 (book p. 766) provides constructed averages as cross-check"],
+        "issues_outstanding": [
+          "Shaikh exclusion rule (Kuwait/Qatar/Venezuela) must be encoded in Phase 5",
+          "Modern data may need new exclusions (Macao, Luxembourg) -- document per anu-framework no-proxy rule"
+        ]
+      }
+    }
+  }
+}

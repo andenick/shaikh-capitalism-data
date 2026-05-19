@@ -1,0 +1,50 @@
+{
+  "series_id": "S028",
+  "series_name": "Component Ratios x1, x2, x3",
+  "chapter": 6,
+  "figures": [
+    "Fig 6.3"
+  ],
+  "research_date": "2026-03-07",
+  "researcher": "agent",
+  "kb_sources_searched": [
+    "CH06_DOCUMENTATION.md",
+    "ch06/README.md"
+  ],
+  "entries": [
+    {
+      "entry_type": "methodology_description",
+      "content": "Three ratios decompose the relationship between corrected and conventional corporate profit rates. x1 = 1 + (NMINTcorp/Pcorp) captures the imputed interest adjustment. x2 = 1 + (INVcorp(-1)/KNCcorpbea(-1)) captures the inventory adjustment to capital stock. x3 = KNCcorpbea(-1)/KGCcorp(-1) captures the net/gross capital stock revaluation via GPIM. The relationship is: rcorp/rcorpnipa ≈ x3 * (x1/x2).",
+      "source_ref": "Appendix 6.8, Table II-7, equations in Ch. 6 text"
+    },
+    {
+      "entry_type": "source_citation",
+      "content": "Components derive from BEA NIPA Table 7.11 (net monetary interest), Fixed Asset Tables 6.1-6.8 (net vs gross capital stocks), and IRS Statistics of Income (corporate inventories). The x1 ratio rose from ~1.08 in 1948 to ~1.71 in 1982 as financial intermediation grew relative to profits.",
+      "source_ref": "BEA NIPA T7.11, FA, IRS SOI"
+    },
+    {
+      "entry_type": "figure_context",
+      "content": "Fig 6.3 shows the three component ratios 1947-2011. x1 (interest adjustment) shows the most dramatic trend, rising sharply through the early 1980s then partially declining. x2 (inventory ratio) is relatively stable near 1.14. x3 (net/gross stock ratio) trends downward from ~1.11 to ~0.61 as the net/gross distinction grows with capital aging.",
+      "source_ref": "Shaikh 2016, Ch. 6"
+    }
+  ],
+  "citations": [
+    {
+      "id": "BEA_NIPA_T711",
+      "full": "Bureau of Economic Analysis. NIPA Table 7.11: Monetary Interest Paid and Received by Sector."
+    },
+    {
+      "id": "BEA_FA",
+      "full": "Bureau of Economic Analysis. Fixed Assets Tables 6.1-6.8: Current-Cost Net and Gross Stock of Private Fixed Assets."
+    }
+  ],
+  "methodology_summary": "S028 extracts three component ratio columns from S013 (Table II-7): S013P (x1, interest adjustment), S013Q (x2, inventory ratio), S013R (x3, net/gross revaluation). These ratios provide the analytical decomposition of why Shaikh's corrected profit rate differs from the conventional NIPA measure. The product x3*(x1/x2) approximately equals the ratio rcorp/rcorpnipa.",
+  "known_issues": [
+    "x1 frozen post-2013 because NMINTcorp data from BEA T7.11 is incomplete for recent years"
+  ],
+  "cross_references": [
+    "Appendix6_Table68II7.csv",
+    "BEA NIPA T7.11",
+    "BEA FA T6.1-6.8"
+  ]
+}

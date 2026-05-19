@@ -1,0 +1,103 @@
+{
+  "series_id": "S301",
+  "name": "Change in expenditure relative to change in income, Case I",
+  "chapter": 3,
+  "figures": [
+    "Fig3.3"
+  ],
+  "content_type": "theoretical",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "Figures 3.3–3.5 display the results of the case in which x1min rises more slowly than income, figures 3.6–3.7 the case in which c declines with income, and figures 3.8 and 3.9 the characteristic patterns in actual data.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "But it is very plausible that the minimum level of necessaries, which is always socially defined (Trigg 2004), rises as real income (y/p1) rises but not as fast as income, so that it declines as a share of income. In that case, the slope of the Engel curve becomes d(p1x1)/dy = (1 – c) d(p1x1min)/dy + c, which is still positive but declining as income rises. In other words, the Engel curve for necessary goods will exhibit saturation.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "More formally, we can derive the expenditure shares and income elasticities directly from equations (3.5) and (3.6). It is evident that the expenditure share on necessities declines as income increases, while that of luxuries rises.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Oxford University Press",
+    "publication": "Shaikh, Anwar. 2016. Capitalism: Competition, Conflict, Crises. New York: Oxford University Press.",
+    "table_or_series_id": "Figure 3.3 (p. 94)",
+    "url": "https://global.oup.com/academic/product/capitalism-9780199390632",
+    "frequency": "annual",
+    "units": "marginal expenditure share d(p1x1)/dy (dimensionless), plotted against income y",
+    "license": "Book figure; reproduction governed by OUP permissions",
+    "available_through": "Book PDF in Inputs/Capitalism Data/",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "d(p1x1)/dy = (1 - c) * d(p1x1min)/dy + c, with x1min rising more slowly than income y so that the marginal expenditure share on necessaries declines as y grows (Case I).",
+  "components": [
+    {
+      "label": "y",
+      "role": "input",
+      "description": "Per-capita nominal income, ranging 0 to 60 (model units) on the horizontal axis.",
+      "source": "Author simulation; arbitrary units"
+    },
+    {
+      "label": "c",
+      "role": "parameter",
+      "description": "Discretionary propensity to consume necessaries; bounded 0 ≤ c ≤ 1 (eq. 3.4).",
+      "source": "Shaikh 2016, eq. 3.4 p. 91"
+    },
+    {
+      "label": "x1min",
+      "role": "parameter",
+      "description": "Socially defined minimum level of the necessary good; assumed to rise slower than income in Case I.",
+      "source": "Shaikh 2016, eq. 3.4 p. 91; discussion p. 93"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "Fig 3.3 is an analytical/illustrative plot of the marginal expenditure share d(p1x1)/dy as a function of income y under Case I (x1min grows slower than y). The data values are NOT empirical observations — they are generated from equations (3.5)–(3.6) and are reported by Shaikh purely to visualise saturation of the Engel curve for necessaries.",
+    "HDARP_SERIES_LINKAGE.json classifies Fig3.3 as documentation_type='theoretical' with is_empirical=false; we honour that classification here and re-typed the series from the stub's 'time_series' to 'theoretical'.",
+    "No appendix data exists: the chapter has no Appendix 3 in either the printed book or SalvagedInputs/book_data/ShaikhChoppedTables/.",
+    "Numeric values can be regenerated from eqs (3.5)–(3.6); precise parameter values for the figure are not stated in the text, only inferred from axis ranges (y: 0–60; marginal share: 0–0.8)."
+  ],
+  "open_questions": [
+    "Series was stubbed as content_type='time_series' but is in fact an analytical simulation curve with no historical time dimension; re-typed to 'theoretical'. Phase 4 should confirm.",
+    "Exact parameter values used by Shaikh to render Fig 3.3 (the path of x1min(y) and the level of c) are not stated; reproduction would require parameter calibration to match the printed curve."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-a-ch3",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from book pp. 91–95 (printed). Re-typed to theoretical: Fig 3.3 is an illustrative plot derived from eqs (3.5)–(3.6), not empirical time-series."
+    }
+  ]
+}

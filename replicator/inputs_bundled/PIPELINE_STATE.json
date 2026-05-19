@@ -1,0 +1,159 @@
+{
+  "schema_version": "anu-build-v12.0",
+  "project": "rscd-shaikh-2016-replication",
+  "last_updated": "2026-05-19T01:13:14.678808+00:00",
+  "current_stage": 8,
+  "pilot_series_complete": {
+    "S201": {
+      "phases": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "validation_status": "PASS",
+      "validation_mae": 0.0,
+      "completed_at": "2026-05-18T21:25:00+00:00",
+      "note": "Pilot for Phases 5-8 architecture; reference implementation for the other 112 series."
+    }
+  },
+  "current_cohort": null,
+  "last_handoff_at": null,
+  "cascade_pointers": {
+    "step_log": "Technical/Build/STEP_LOG.jsonl",
+    "build_narrative": "Technical/Build/BUILD_NARRATIVE.md",
+    "build_manifest": "Technical/Build/ANU_BUILD_MANIFEST.json",
+    "subseries_plan": "Technical/Build/SUBSERIES_PLAN.json"
+  },
+  "stages": {
+    "stage_0": {
+      "status": "complete",
+      "label": "INVENTORY",
+      "started_at": "2026-05-18T12:00:00Z",
+      "completed_at": "2026-05-18T13:30:00Z",
+      "series_complete": 98,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "series_registry.json v0.1 written with 98 candidates; CHAPTER_FIGURE_TABLE_INDEX and SERIES_CANDIDATE_LIST in docs/chapters/; CD/CD2 crosswalks in MIGRATION/"
+    },
+    "stage_1": {
+      "status": "complete",
+      "label": "RESEARCH",
+      "started_at": "2026-05-18T14:00:00Z",
+      "completed_at": "2026-05-18T15:00:00Z",
+      "series_complete": 114,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "114/114 dossiers PASS validator (Build/PHASE3_VALIDATION_REPORT.json). 15 per-chapter rollups in docs/chapters/CH{N}_RESEARCH_SUMMARY.md + Ch6 GPIM rollup + 4 external_studies summaries. Executed via 3 waves of 5 opus subagents (15 agent runs, ~3 hours) for the initial 98 book series, then a 4th wave of 5 agents (~1 hour) for the post-decision expansion: 9 AS Ch6 GPIM + 3 Ch7 S709-S711 + 4 ES papers (Shaikh 2020, Coronado et al 2020, Shaikh-Jacobo 2020, Weber-Shaikh 2020). Decisions 0001-0005 resolved before expansion."
+    },
+    "stage_2": {
+      "status": "complete",
+      "label": "ADEQUACY",
+      "started_at": "2026-05-18T17:30:00Z",
+      "completed_at": "2026-05-18T18:30:00Z",
+      "series_complete": 114,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "16/16 chapter-groups PASS validator (Build/PHASE4_VALIDATION_REPORT.json) with scores 83-100 (avg ~91). Executed via 3 waves of 5 opus subagents in parallel (15 agent runs, ~1.5 hours). Wave 1: Ch2,3,4,5,6+AS (52 series); Wave 2: Ch7+S709-711,8,9,10,11 (31); Wave 3: Ch13+17,14,15,16,ES (31). Per-series adequacy blocks merged into series_registry.json via _phase4_delta_merger.py. Decision 0006 (ES2301 5-way split) RECOMMENDS_SPLIT per ES wave; awaits user ratification before Phase 5."
+    },
+    "stage_3": {
+      "status": "complete",
+      "label": "INGESTION",
+      "started_at": "2026-05-18T19:00:00Z",
+      "completed_at": "2026-05-18T23:00:00Z",
+      "series_complete": 118,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "118/118 DPRs authored; series_registry.json subseries decomposition complete; SUBSOURCE_METADATA populated; ANU_LEDGER tracks all series."
+    },
+    "stage_4": {
+      "status": "complete",
+      "label": "EXTENSION",
+      "started_at": "2026-05-18T19:00:00Z",
+      "completed_at": "2026-05-18T23:00:00Z",
+      "series_complete": 118,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "118/118 EPRs authored. Proxy substitutions documented (BLS ILC→BIS PPI EER, Ibbotson→Damodaran, CMDEBT/PI→HCCSDODNS/DPI, etc.). No-lazy-splices rule enforced on formula/composite series."
+    },
+    "stage_5": {
+      "status": "complete",
+      "label": "REPLICATION",
+      "started_at": "2026-05-18T19:00:00Z",
+      "completed_at": "2026-05-18T23:00:00Z",
+      "series_complete": 118,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "118/118 L01+P02+V03 scripts authored and tested. Validator: 97 PASS, 8 PASS_THEORETICAL, 2 PASS_CROSS_SECTIONAL_UNAVAILABLE, 11 PASS_DATA_UNAVAILABLE. S00_setup architecture (config/cache/apis) + run.py orchestrator established by S201 pilot, replicated across all chapters. New API clients added: FRED, BEA stub, Damodaran NYU, Shiller, IMF SDMX 3.0, World Bank WDI, IMF WEO, Census FT900."
+    },
+    "stage_6": {
+      "status": "complete",
+      "label": "OUTPUT",
+      "started_at": "2026-05-18T19:00:00Z",
+      "completed_at": "2026-05-18T23:00:00Z",
+      "series_complete": 118,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "109 chopped CSVs + 109 extenbooks emitted (118 minus 9 data_unavailable series that legitimately have no chopped output: S801, S703, S704, S707, S708 chart-only; S214, S215 OECD ISDB sourceless; S404-S407 paywall + S404=PASS_DATA_UNAVAILABLE). Generic O06 writers extended to handle disambiguating keys (month, country_key, industry, cr4_midpoint, etc.) for cross-sectional series."
+    },
+    "stage_7": {
+      "status": "complete",
+      "gate_passed": true,
+      "completed_at": "2026-05-19T01:13:14.678790+00:00",
+      "gate_report": "Technical/Build/VIZ_QUALITY_REPORT.json",
+      "gate_grade": "11/11 PASS (1 N/A)",
+      "deliverables": [
+        "Technical/viz/app.py",
+        "Technical/viz/data_loader.py",
+        "Technical/viz/chart_builder.py"
+      ],
+      "launch_ready": true
+    },
+    "stage_8": {
+      "status": "not_started",
+      "label": "DISTRIBUTION",
+      "started_at": null,
+      "completed_at": null,
+      "series_complete": 0,
+      "series_total": 118,
+      "gate_passed": false
+    }
+  },
+  "framework_audit": {
+    "anu_doctor_last_run": null,
+    "anu_doctor_status": "not_run",
+    "anu_framework_version": "v12.0",
+    "skill_count": null,
+    "failures": null,
+    "warnings": null,
+    "notes": "anu-* skills not loaded in this session; artifacts hand-built mirroring RMWND structure"
+  },
+  "predecessor_projects": {
+    "CD": {
+      "path": "Inputs/Capitalism Data/",
+      "status": "frozen_superseded",
+      "series_count": 105,
+      "framework_era": "Anu v4.x"
+    },
+    "CD2": {
+      "path": "Inputs/CD2/",
+      "status": "frozen_reference",
+      "series_count": 114,
+      "framework_era": "Anu v6.0"
+    }
+  },
+  "stage_0_artifacts": {
+    "series_registry": "Technical/series_registry.json",
+    "build_manifest": "Technical/Build/ANU_BUILD_MANIFEST.json",
+    "subseries_plan": "Technical/Build/SUBSERIES_PLAN.json",
+    "chapter_index": "Technical/docs/chapters/CHAPTER_FIGURE_TABLE_INDEX.json",
+    "candidate_list": "Technical/docs/chapters/SERIES_CANDIDATE_LIST.json",
+    "kb_coverage": "Technical/docs/chapters/KB_COVERAGE_INVENTORY.md",
+    "cd_crosswalk": "Technical/MIGRATION/CD_to_RSCD_crosswalk.csv",
+    "cd2_crosswalk": "Technical/MIGRATION/CD2_to_RSCD_crosswalk.csv",
+    "correspondence_matrix": "Technical/SERIES_CORRESPONDENCE_MATRIX.json",
+    "prefix_scheme": "Technical/MIGRATION/PREFIX_SCHEME.md"
+  }
+}

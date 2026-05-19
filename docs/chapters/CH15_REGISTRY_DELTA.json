@@ -1,0 +1,225 @@
+{
+  "_schema": "rscd-registry-delta-v1.0",
+  "_purpose": "Per-series adequacy block to be merged into Technical/series_registry.json by the main thread after Wave 3 closeout.",
+  "chapter": 15,
+  "reviewer": "opus-subagent-p4-wave3-ch15",
+  "review_date": "2026-05-18",
+  "deltas": {
+    "S1501": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 24,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "MeasuringWorth USCPI primary URL reachable HTTP 200",
+          "FRED CPIAUCNS open-license fallback for 1913+ confirmed HTTP 200"
+        ],
+        "issues_outstanding": [
+          "Phase 5: cell-by-cell validation against Appendix15_MeasuringWorthCPI.xlsx (CD2 sample values 1774=7.82, 1899=8.04, 1949=23.85, 1999=166.60)"
+        ]
+      }
+    },
+    "S1502": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 24,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "BEA Industry URL reachable HTTP 200 (with auto-redirect to modern landing)",
+          "Start-year 1987 vs 1988 reconciliation: 1988 is the first valid growth-rate year given 1987 levels start"
+        ],
+        "issues_outstanding": [
+          "Phase 5: handle NAICS sector boundary shifts (Information aggregate, Federal Government NIPA reclassification) with per-sector splice metadata",
+          "Phase 5: validate CD2 sample 1988 all-industry growth ~0.047"
+        ]
+      }
+    },
+    "S1503": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 24,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "BEA Industry URL reachable HTTP 200",
+          "Companion panel to S1502; shared loader recommended"
+        ],
+        "issues_outstanding": [
+          "Phase 5: same caveats as S1502 (FIRE reaggregation, Federal Gov NIPA shifts)",
+          "Phase 5: validate CD2 sample 1988 services-side growth ~0.056"
+        ]
+      }
+    },
+    "S1504": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 22,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Q1 NIPA Table 1.15 typo confirmed; correct to T1.1.5",
+          "BEA + IMF IFS primary URLs reachable HTTP 200",
+          "IFS line-number remap recipe documented (see IFS_MODERNIZATION_PLAN in CH15_ADEQUACY_REPORT)"
+        ],
+        "issues_outstanding": [
+          "Phase 5: build IMF IFS code resolver per IFS_MODERNIZATION_PLAN",
+          "Phase 5: validate against Appendix15_USInflation.xlsx (CD2 cross-reference S073-Q, S073-G)",
+          "Phase 5: BEA T4.1 line 29 (Current Account) verify line numbering in modern T4.1 vintage"
+        ]
+      },
+      "code_remap": true,
+      "code_remap_justification": "IMF IFS legacy lines 31 + (78-88) + 79 + 81 (Total Domestic Credit) map to the modern FOSAOP_XDC (Depository Corporations Survey: Domestic Claims, Net) aggregate. This is a CODE REMAP (modern access path to the same concept), NOT a proxy substitution. Anu Framework No Proxies rule is satisfied: same Domestic Claims aggregate, modern IFS publication convention. Per IFS_MODERNIZATION_PLAN in CH15_ADEQUACY_REPORT."
+    },
+    "S1505": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 23,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "BEA + FRED URLs reachable HTTP 200",
+          "Q4 BEA Table 1.16 title 'Sources and Uses of Private Enterprise Income' confirmed still published"
+        ],
+        "issues_outstanding": [
+          "Phase 5: BEA T1.16 line-2 = NOS — loader must validate by row LABEL not numeric line position (vintage-dependent)",
+          "Phase 5: decide NOS-based sigma (recommended for Handfas fidelity) vs gross-investment alternative",
+          "Phase 5: validate pi 1948-2010 against Appendix15_USInflation.xlsx",
+          "Phase 5: BLS UNRATE units normalization (percent → decimal)"
+        ]
+      }
+    },
+    "S1506": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 23,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Closed historical sub-period of S1505 (1948-1981); emit as derived slice"
+        ],
+        "issues_outstanding": [
+          "Phase 5: register as `derived_subperiod` of S1505 (no independent fetch)"
+        ]
+      },
+      "construction_recommendation": "derived_subperiod",
+      "derived_from": "S1505",
+      "subperiod_years": [1948, 1981]
+    },
+    "S1507": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 23,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Open historical sub-period of S1505 (1982-2010, extendable forward)"
+        ],
+        "issues_outstanding": [
+          "Phase 5: register as `derived_subperiod_extendable` of S1505"
+        ]
+      },
+      "construction_recommendation": "derived_subperiod",
+      "derived_from": "S1505",
+      "subperiod_years": [1982, 2010]
+    },
+    "S1508": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 22,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Q2 Harberger table number: 12.11 canonical (figure caption typo)",
+          "IMF IFS URL reachable HTTP 200; line 32 maps to modern FOSAOP_XDC per IFS_MODERNIZATION_PLAN",
+          "Cross_sectional content_type — no forward extension required"
+        ],
+        "issues_outstanding": [
+          "Phase 5: validate 29-country Harberger values against Appendix15_WorldInflationData*.xlsx",
+          "Phase 5: document table-12.1 vs 12.11 figure-caption typo in dossier"
+        ]
+      },
+      "code_remap": true,
+      "code_remap_justification": "IMF IFS legacy line 32 (Domestic Claims) maps to modern FOSAOP_XDC. Same concept, modern access path. Per IFS_MODERNIZATION_PLAN."
+    },
+    "S1509": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 22,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "IMF IFS + WB WDI URLs reachable HTTP 200; lines 32 + 64 map to FOSAOP_XDC + PCPI_IX per IFS_MODERNIZATION_PLAN",
+          "Q5 Romania duplicate: typesetting artifact, effective N=38 unique countries",
+          "Q6 Ramamurthy citation: recommended Santosh Ramamurthy NSSR PhD dissertation (ca. 2014) under Shaikh — Phase 5/6 to verify",
+          "Cross_sectional content_type — no forward extension required"
+        ],
+        "issues_outstanding": [
+          "Phase 5: validate 38-country (Romania de-duplicated) panel against Appendix15_WorldInflationDataByCountry.xlsx",
+          "Phase 5/6: locate Ramamurthy (2014) dissertation via ProQuest / NSSR for full citation"
+        ]
+      },
+      "code_remap": true,
+      "code_remap_justification": "IMF IFS legacy lines 32 + 64 map to FOSAOP_XDC + PCPI_IX. Same concepts, modern access paths. Per IFS_MODERNIZATION_PLAN.",
+      "country_panel_metadata": {
+        "raw_country_count_in_footnote": 39,
+        "effective_unique_country_count": 38,
+        "deduplicated_country": "Romania",
+        "deduplication_rationale": "Appendix 15.1 p.897 footnote 2 lists Romania twice; typesetting artifact (likely from Ramamurthy splitting pre/post-2000 hyperinflation sub-periods that Shaikh collapsed)"
+      }
+    }
+  },
+  "url_substitutions": [
+    {
+      "applies_to_series": ["S1502", "S1503"],
+      "field": "primary_source.url (modernization)",
+      "old_value": "http://www.bea.gov/industry/index.htm#annual",
+      "new_value": "https://www.bea.gov/data/gdp/gdp-industry",
+      "rationale": "Old URL returns HTTP 200 with auto-redirect; update for canonical citation hygiene."
+    }
+  ],
+  "data_substitutions": [
+    {
+      "concept": "IMF IFS Total Domestic Credit / Domestic Claims (code modernization, not proxy)",
+      "applies_to_series": ["S1504", "S1508", "S1509"],
+      "discontinued_source": "IMF IFS numeric line references (lines 31, 32, 64, 78, 79, 81, 88) — replaced post-2009 SDDS+ migration",
+      "canonical_substitute": {
+        "source": "IMF International Financial Statistics modern SRF-based aggregates",
+        "url": "https://data.imf.org/IFS",
+        "api_endpoint": "https://www.imf.org/external/datamapper/api/v1/indicators/FOSAOP_XDC",
+        "code_family": "FOSAOP_XDC (Depository Corporations Survey: Domestic Claims, Net) for credit; PCPI_IX for CPI; FAAOP_XDC for Central Bank Claims on Central Government Net",
+        "license": "IMF free-tier public API with attribution (post-2020 access)",
+        "splice_strategy": "concept_equivalent_remap"
+      },
+      "concept_match_justification": "IFS legacy lines and modern SRF codes refer to the SAME sectoral aggregates by IMF's own continuity documentation. Shaikh's (line 31 + (78-88) + 79 + 81) 4-component sum equals the modern Depository Corporations Survey 'Domestic Claims (net)' aggregate FOSAOP_XDC. This is a code remap (modern access path to the same concept), NOT a concept proxy. Validation strategy: cell-by-cell comparison of FOSAOP_XDC vs Shaikh's hand-summed values over the 1948-2010 (US) and 1970-1988 (Harberger 29-country) and 1988-2011 (Ramamurthy 38-country) overlaps; tolerance ±2% level difference per year.",
+      "code_remap": true,
+      "proxy_true": false
+    }
+  ],
+  "construction_corrections": [
+    {
+      "applies_to_series": ["S1506", "S1507"],
+      "field": "construction (Phase 5 registry schema update recommended)",
+      "old_value": "composite",
+      "new_value": "derived_subperiod",
+      "rationale": "S1506 (1948-1981) and S1507 (1982-2010) are deterministic sub-period slices of S1505. Adding `derived_subperiod` as a 4th construction category makes the parent-child relationship explicit and lets the loader produce all three series from a single source pull, avoiding vintage divergence."
+    }
+  ],
+  "loader_metadata_to_emit": {
+    "S1501": {"primary_source": "MeasuringWorth USCPI", "validate_against": "ShaikhChoppedTables/Appendix15_MeasuringWorthCPI.xlsx"},
+    "S1502": {"primary_source": "BEA GDP-by-Industry real VA (panel A)", "validate_against": "ShaikhChoppedTables/Appendix15_USGDPRByIndustry.xlsx", "naics_sectors": ["Agriculture","Mining","Utilities","Construction","DurableMfg","NondurableMfg","Wholesale","Retail"]},
+    "S1503": {"primary_source": "BEA GDP-by-Industry real VA (panel B)", "validate_against": "ShaikhChoppedTables/Appendix15_USGDPRByIndustry.xlsx", "naics_sectors": ["TransportationWarehousing","Information","FinanceInsuranceRealEstate","ProfessionalBusiness","EducationHealth","ArtsEntertainmentFood","OtherServices","FederalGov","StateLocalGov"]},
+    "S1504": {"primary_sources": ["BEA NIPA T1.1.5 line 1", "BEA NIPA T1.1.4 line 1", "BEA NIPA T4.1 line 29", "IMF IFS FOSAOP_XDC"], "code_remap": true, "ifs_resolver_required": true, "nipa_table_typo_correction": "T1.15 -> T1.1.5", "validate_against": "ShaikhChoppedTables/Appendix15_USInflation.xlsx"},
+    "S1505": {"primary_sources": ["BEA NIPA T1.1.4 (pi)", "BEA NIPA T5.3.5 line 2 (I)", "BEA NIPA T1.16 (NOS)", "BLS UNRATE"], "row_label_validation_required": ["NOS"], "uL_unit_normalization": "percent_to_decimal", "validate_against": "ShaikhChoppedTables/Appendix15_USInflation.xlsx + Appendix14_InflationULdata.xlsx"},
+    "S1506": {"derived_from": "S1505", "subperiod_years": [1948, 1981], "construction": "derived_subperiod"},
+    "S1507": {"derived_from": "S1505", "subperiod_years": [1982, 2010], "construction": "derived_subperiod", "extendable_forward": true},
+    "S1508": {"primary_source": "Harberger (1988) table 12.11", "underlying_source": "IMF IFS FOSAOP_XDC (legacy line 32)", "code_remap": true, "country_count": 29, "validate_against": "ShaikhChoppedTables/Appendix15_WorldInflationDataByCountry.xlsx + Appendix15_WorldInflationDataLambda.xlsx", "figure_caption_typo_note": "Fig 15.12 caption says 'table 12.1'; canonical is 'table 12.11' per narrative + appendix"},
+    "S1509": {"primary_source": "Ramamurthy (2014) ch.3", "underlying_sources": ["IMF IFS FOSAOP_XDC", "IMF IFS PCPI_IX"], "code_remap": true, "country_count_raw": 39, "country_count_unique": 38, "deduplicated_country": "Romania", "validate_against": "ShaikhChoppedTables/Appendix15_WorldInflationDataByCountry.xlsx", "citation_resolution_pending": "Ramamurthy (2014) NSSR PhD — verify via ProQuest"}
+  },
+  "ifs_modernization_plan_summary": {
+    "context": "See CH15_ADEQUACY_REPORT.ifs_modernization_plan for full recipe.",
+    "legacy_to_modern_codes": {
+      "line_31": "FAAOP_XDC (Central Bank: Claims on Central Government, Net)",
+      "line_32": "FOSAOP_XDC (Depository Corporations: Domestic Claims, Net) — RECOMMENDED UNIFIED AGGREGATE FOR S1504",
+      "line_64": "PCPI_IX (Consumer Price Index, 2010=100)",
+      "line_78": "FCAOP_XDC (ODCS: Claims on Central Government, gross)",
+      "line_88": "FLAOP_XDC (ODCS: Liabilities to / Deposits of Central Government)",
+      "line_79": "FCSL_XDC (ODCS: Claims on State and Local Government) — may consolidate under FCDOR_XDC depending on country",
+      "line_81": "FCNI_XDC + FCHO_XDC (ODCS: Claims on Other Nonfinancial Corps + Households), or consolidated FCDP_XDC"
+    },
+    "api_endpoint_verified_200": "https://www.imf.org/external/datamapper/api/v1/indicators",
+    "phase5_loader_required": "Technical/code/loaders/_imf_ifs_resolver.py"
+  }
+}

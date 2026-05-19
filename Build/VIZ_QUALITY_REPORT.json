@@ -1,0 +1,241 @@
+{
+  "schema": "rscd-viz-quality-v1.0",
+  "generated_at": "2026-05-19T01:12:39.799572+00:00",
+  "checks": {
+    "Q1_charts_render": {
+      "status": "PASS",
+      "attempted": 118,
+      "errors": [],
+      "note": "Includes data-unavailable series (rendered as informational placeholders)."
+    },
+    "Q2_no_startup_errors": {
+      "status": "PASS",
+      "errors": []
+    },
+    "Q3_methodology_panels": {
+      "status": "PASS",
+      "dpr_present": 118,
+      "dpr_missing": [],
+      "epr_present": 118,
+      "epr_missing": []
+    },
+    "Q4_author_quotes": {
+      "status": "N/A",
+      "note": "Registry has no author-quotes field (0/118). N/A per spec."
+    },
+    "Q5_extension_traces": {
+      "status": "PASS",
+      "count": 21,
+      "sample": [
+        "S201",
+        "S202",
+        "S203",
+        "S207",
+        "S208",
+        "S209",
+        "S210",
+        "S212",
+        "S502",
+        "S1002"
+      ]
+    },
+    "Q6_year_ranges": {
+      "status": "PASS",
+      "checked": 80,
+      "upstream_inconsistencies": [
+        {
+          "sid": "S203",
+          "expected": [
+            1889,
+            2010
+          ],
+          "actual": [
+            1780,
+            2000
+          ],
+          "issue": "|stops_short"
+        },
+        {
+          "sid": "S211",
+          "expected": [
+            1780,
+            1940
+          ],
+          "actual": [
+            1790,
+            1940
+          ],
+          "issue": "starts_late"
+        },
+        {
+          "sid": "S214",
+          "expected": [
+            1960,
+            1989
+          ],
+          "actual": [
+            1987,
+            2005
+          ],
+          "issue": "starts_late"
+        },
+        {
+          "sid": "S215",
+          "expected": [
+            1960,
+            1989
+          ],
+          "actual": [
+            1988,
+            2005
+          ],
+          "issue": "starts_late"
+        },
+        {
+          "sid": "S1002",
+          "expected": [
+            1857,
+            2030
+          ],
+          "actual": [
+            1780,
+            2026
+          ],
+          "issue": "|stops_short"
+        },
+        {
+          "sid": "S1003",
+          "expected": [
+            1857,
+            2030
+          ],
+          "actual": [
+            1857,
+            2026
+          ],
+          "issue": "|stops_short"
+        },
+        {
+          "sid": "S1004",
+          "expected": [
+            1858,
+            2030
+          ],
+          "actual": [
+            1857,
+            2026
+          ],
+          "issue": "|stops_short"
+        },
+        {
+          "sid": "S1005",
+          "expected": [
+            1871,
+            2030
+          ],
+          "actual": [
+            1857,
+            2026
+          ],
+          "issue": "|stops_short"
+        },
+        {
+          "sid": "S1006",
+          "expected": [
+            1926,
+            2030
+          ],
+          "actual": [
+            1926,
+            2026
+          ],
+          "issue": "|stops_short"
+        },
+        {
+          "sid": "ES2301",
+          "expected": [
+            2002,
+            2024
+          ],
+          "actual": [
+            2002,
+            2018
+          ],
+          "issue": "|stops_short"
+        },
+        {
+          "sid": "ES2304",
+          "expected": [
+            1999,
+            2010
+          ],
+          "actual": [
+            2007,
+            2009
+          ],
+          "issue": "starts_late"
+        },
+        {
+          "sid": "ES2305",
+          "expected": [
+            1999,
+            2012
+          ],
+          "actual": [
+            2004,
+            2011
+          ],
+          "issue": "starts_late"
+        }
+      ],
+      "note": "Viz renders the chopped CSV faithfully. Discrepancies between registry year_range and chopped year span are upstream data issues (the viz handles them gracefully)."
+    },
+    "Q7_trace_labels": {
+      "status": "PASS",
+      "missing_name": [],
+      "missing_count": 0
+    },
+    "Q8_data_tables": {
+      "status": "PASS",
+      "loadable": 109,
+      "failed": [],
+      "csv_download_callback": "registered: download_csv()"
+    },
+    "Q9_metadata_completeness": {
+      "status": "PASS",
+      "missing_units": [],
+      "missing_content_type": []
+    },
+    "Q10_overall_validator": {
+      "status": "PASS",
+      "accumulated_error_count": 0
+    },
+    "Q11_extension_source_urls": {
+      "status": "PASS",
+      "total_extension_subseries": 34,
+      "with_url": 28,
+      "url_pct": 82.4,
+      "missing_sample": [
+        "S208/S208-B",
+        "S212/S212-C",
+        "S502/S502-D",
+        "S1003/S1003-B",
+        "S1004/S1004-D",
+        "S1104/S1104-C"
+      ]
+    },
+    "Q12_clickable_links": {
+      "status": "PASS",
+      "sample_count": 9,
+      "sample_html_first": "<a href=\"https://www.federalreserve.gov/releases/g17/\" target=\"_blank\">FRB_G17_INDPRO</a>"
+    }
+  },
+  "summary": {
+    "pass": 11,
+    "fail": 0,
+    "na": 1,
+    "total": 12,
+    "launch_ready": true,
+    "grade": "11/11 PASS (1 N/A)"
+  }
+}

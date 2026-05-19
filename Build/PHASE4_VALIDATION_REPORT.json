@@ -1,0 +1,112 @@
+{
+  "schema_version": "rscd-phase4-validation-v1.0",
+  "generated_at": "2026-05-18T21:03:53.537539+00:00",
+  "total_chapters": 17,
+  "pass": 17,
+  "fail": 0,
+  "by_chapter": {
+    "10": {
+      "score": 91,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "11": {
+      "score": 84,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "13": {
+      "score": 100,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "14": {
+      "score": 95,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "15": {
+      "score": 91,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "16": {
+      "score": 95,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "17": {
+      "score": 91,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "2": {
+      "score": 92,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "3": {
+      "score": 93,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "4": {
+      "score": 92,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "5": {
+      "score": 92,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "6": {
+      "score": 89,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "7": {
+      "score": 83,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "8": {
+      "score": 85,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "9": {
+      "score": 91,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "ES": {
+      "score": 84,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    },
+    "ES_v2": {
+      "score": 92,
+      "gate_passed": true,
+      "schema_pass": true,
+      "issues": []
+    }
+  },
+  "all_passed": true
+}

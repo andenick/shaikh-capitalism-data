@@ -1,0 +1,109 @@
+{
+  "series_id": "AS006",
+  "name": "GPIM Variant - BEA 1993 vs 2011",
+  "chapter": 6,
+  "figures": ["Appendix Figure 6.7.5", "Appendix Figure 6.7.6"],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": "S211"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 845,
+      "quote": "Prior to 1997, the BEA assumed that different types of individual assets had different types of useful lives. This was superior to the current BEA assumption that assets are never scrapped. However, both methodologies suffer from the defect that depletion rates are assumed to be invariant to economic conditions, to which we will return in the next section. The earlier BEA data gives rise to aggregate useful lives and depreciation rates which vary somewhat over time, but since individual useful lives are assumed to be fixed, this aggregate variability is solely due to changes in the asset-mix. We take these earlier aggregate retirement and depreciation rates up to 1997, project them into the present, and use them in equations (6.5.22) and (6.5.23).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 846,
+      "quote": "Appendix figure 6.7.5 compares corporate depreciation and retirement rates derived from the BEA 1993 data to the aggregate corporate depreciation rate implicit in current BEA data. We see that the earlier depreciation rate is higher than the present one. This is essentially because the earlier BEA calculations were based on finite useful lives for fixed assets, whereas the present BEA ones assume infinite useful lives. Of particular note is the fact that the earlier BEA retirement rate is far lower than either of these.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 846,
+      "quote": "Appendix figure 6.7.6 applies the new depreciation rate based on finite service lives to generate new current-cost net capital stock measures for the corporate sector, all beginning from the initial value of the BEA 2011 corporate stock also shown in this figure. The new net stock estimates are generally lower than the current BEA ones, but the relative gap diminishes over time as the two converge. On the other hand, the new gross capital stock are larger than the modern BEA net stock estimates and grow faster over the postwar period.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "BEA",
+    "publication": "Fixed Asset Accounts (FA), 1993 vintage",
+    "table_or_series_id": "BEA 1993 Table A.13 (depreciation and retirement rates); Gorman, Musgrav, Silverstein, and Comins 1985 (SCB 1985 cross-check); current BEA FA Tables 6.1, 6.4, 6.7 for investment flows post-1997",
+    "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+    "frequency": "annual",
+    "units": "Billions of current dollars; depreciation/retirement rates as decimals",
+    "license": "Public domain (U.S. Government work)",
+    "available_through": "BEA archive (Survey of Current Business 1993); BEA iTable for post-1997 investment flows",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "GPIM accumulation (equations 6.5.22, 6.5.23 on book p. 821) using BEA 1993 finite-life depreciation rate (dcorpnew) and retirement rate (rho_corpnew) instead of BEA 2011's infinite-life geometric depreciation. Initial 1925 KC value held at 98.1 bill$ (BEA 2011) for pure depreciation-rate comparison. KC_t = IG_t + (1 - z_t)(pK'_t/pK'_{t-1}) KC_{t-1}; KR_t = IG_t/pK'_t + (1 - z_t) KR_{t-1} where z_t is BEA-1993-derived.",
+  "components": [
+    {"label": "BEA 1993 finite-life depreciation rates (dcorpnew)", "source": "BEA 1993 Survey of Current Business; Shaikh derived aggregate 1925-1997"},
+    {"label": "BEA 1993 retirement rate (rho_corpnew)", "source": "BEA 1993 vintage; gross-stock-specific"},
+    {"label": "Critical depletion rate threshold z* = 3.29%", "source": "Derived from average gK_p ~ 3.4% (Appendix 6.7 Section V.3, p. 849)"},
+    {"label": "Initial 1925 KC value", "source": "BEA FA T6.1 line 1 (2011 vintage) = 98.1 (held fixed to isolate depreciation effect)"},
+    {"label": "Gross investment IG series", "source": "BEA FA T6.7"},
+    {"label": "Baseline GPIM machinery", "source": "AS004 / AS005"}
+  ],
+  "year_range_book": [1925, 2011],
+  "year_range_extension": [2012, 2025],
+  "extension_candidates": [
+    {
+      "subseries_label": "GPIM corporate stock with BEA 1993 depreciation rates (extended)",
+      "source": "BEA 1993 depreciation rates (frozen) + post-1997 BEA investment flows",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "Billions of current dollars",
+      "splice_strategy": "growth_rate",
+      "concerns": ["BEA 1993 depreciation rates require recovery from the 1993 SCB or from Shaikh's posted Appendix6_Table68II3.xlsx; not directly in current BEA iTable", "Projection 'into the present' (Shaikh's phrase, p. 845) of 1993-vintage rates requires assumption that asset mix has not materially changed; for IPP-heavy post-2000 capital this is increasingly violated"]
+    }
+  ],
+  "methodology_notes": [
+    "DELIBERATE COUNTERFACTUAL vs AS005 baseline: AS006 changes ONLY the depreciation/retirement rate (BEA 1993 finite-life vs BEA 2011 infinite-life geometric) while holding the 1925 initial value at the BEA 2011 level (98.1 bill$). This isolates the effect of the depreciation-rate methodology change.",
+    "Empirical effect (p. 846): The BEA 1993 depreciation rate is higher (between 6.5% and 9.5%) than current BEA (5%-8%); the BEA 1993 retirement rate is much lower (2.2%-3.7%). New net stock measure (KNCcorpnew) starts lower than BEA in 1947 but converges from below; new gross stock measure (KGCcorpnew) starts higher than BEA net stock and grows faster, ending 68% higher by 2009 (Appendix Figure 6.7.7).",
+    "Theoretical underpinning (book p. 849): The depletion rate z determines whether the gross-stock path converges or diverges to the long-run trend. Critical value z* = 0.0329 (= gK_p / (1 + gK_p) for gK_p approx 0.034). BEA 2011 net depreciation lies between 5%-8% (above z*, so converges); BEA 1993 gross retirement at 2.2%-3.7% straddles z*, explaining why the new gross stock path does not converge to BEA's net stock path.",
+    "AS006 is the primary 'depreciation methodology' sensitivity variant. CD2 sample values for AS006 (S211 markdown): 1925=77.769, 1949=155.144, 1973=922.601, 1979=1976.17 - these are visibly lower than AS005's path, confirming the variant ports correctly.",
+    "Output role: AS006 demonstrates that the post-1997 BEA methodological switch to infinite-life geometric depreciation materially understates corporate capital stock; this is one of three corrections (along with Great Depression interwar adjustment AS008 and IRS book-value AS007) that produce the 'corrected' KNCcorp Shaikh uses in S6xx final profit-rate measures."
+  ],
+  "open_questions": [
+    "AS006 sample values in CD2 S211 markdown (e.g., 1925=77.769) match the BEA 1993 initial value of 77.7, suggesting CD2 may have CONFLATED 'BEA 1993 vs 2011' (depreciation-rate variant) with 'using BEA 1993 initial value' (initial-value variant). Per book text p. 846, AS006 should use the BEA 2011 initial value and only change the depreciation rate. Flag for Phase 4 implementation review to confirm correct interpretation.",
+    "Should AS006 produce both KNCcorpnew (net stock) and KGCcorpnew (gross stock) as separate subseries? Appendix Figure 6.7.6 plots both.",
+    "Joint use with AS007 (IRS-adjusted) and AS008 (Interwar) requires careful documentation of the order of operations: AS006 changes depreciation, AS008 changes initial path 1925-1947, AS007 anchors to IRS book value index."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-as-ch6",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from CD2 S211 markdown + verbatim quotes from Appendix 6.7 Section V.2 (book pp. 845-849). Three book quotes (definition, source, method). Documents precise difference from AS005."
+    },
+    {
+      "reviewer": "rscd-a3-ch6-blocker-batch",
+      "date": "2026-05-18",
+      "status": "phase5_ready",
+      "notes": "Resolved Phase 5 Blocker B3. BEA 1993 depreciation and retirement rates staged at SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/ (source: Shaikh Appendix Table 6.8.II.3 in Appendix6_Table68II3.xlsx, MD5 9cdbdf5628837e07856b92925c89599a). Both AS006a (depr-rate-only, BEA 2011 init=98.1) and AS006b (depr-rate + BEA 1993 init=77.769) sub-variants are now fully sourced: dcorpnew, rho_corpnew, and KNCbea93[1925]=77.769 all available in the staged CSV/JSON."
+    }
+  ],
+  "phase5_recovered_inputs": {
+    "bea_1993_rates_dir": "SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/",
+    "primary_csv": "SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/BEA_1993_depreciation_retirement_rates.csv",
+    "source_xlsx": "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix6_Table68II3.xlsx",
+    "source_md5": "9cdbdf5628837e07856b92925c89599a",
+    "variables_used": ["dcorpnew", "rho_corpnew", "KNCbea93"],
+    "initial_value_for_AS006b": {"year": 1925, "KNCbea93": 77.769},
+    "year_coverage": [1925, 2011]
+  }
+}

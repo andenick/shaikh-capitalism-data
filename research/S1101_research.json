@@ -1,0 +1,112 @@
+{
+  "series_id": "S1101",
+  "name": "Trade Balances in Major Countries",
+  "chapter": 11,
+  "figures": [
+    "Fig11.2"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S060",
+    "cd2_id": "S060"
+  },
+  "book_quotes": [
+    {
+      "chapter": 11,
+      "page": 523,
+      "quote": "Figure 11.2 depicts the trade balances of fifteen major countries from 1960 to 2009. These are measured as the export-import ratio in common currency, so that a ratio greater than one signifies a trade surplus and a ratio below one signifies a trade deficit.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 11,
+      "page": 524,
+      "quote": "Figure 11.2 Trade Balances in Major Countries, 1960-2009 (Exports/Imports)",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 11,
+      "page": 875,
+      "quote": "Sum of Exports and Imports (EX+IM): From the International Monetary Fund (IMF), International Financial Statistics (IFS), exports and imports in US dollars. Missing values for Belgium for 1960-1992 were taken from AMECO Database, http://ec.europa.eu/economy_finance/ameco/, imports (UMGS) and exports (UXGS) in current prices and units MrdECU/EUR, which were then converted to US dollars using the exchange rate (XNE) in terms of US dollars per ECU/EUR.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "International Monetary Fund (IMF)",
+    "publication": "International Financial Statistics (IFS)",
+    "table_or_series_id": "Exports and Imports in US dollars, 15 OECD/major countries, 1960-2009 (with AMECO supplement for Belgium 1960-1992)",
+    "url": "https://data.imf.org/?sk=4c514d48-b6ba-49ed-8ab9-52b0c1a0179b",
+    "frequency": "annual",
+    "units": "Ratio (Exports/Imports), unitless",
+    "license": "IMF data dissemination terms (public, registration may be required for bulk download)",
+    "available_through": "ShaikhChoppedTables/Appendix11_XMData.xlsx (15 countries x 1960-2009 X, M, X+M, X/M)",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Trade balance ratio_{c,t} = X_{c,t} / M_{c,t}, where X and M are total goods exports and imports in current US dollars from IMF IFS; ratio > 1 = surplus, < 1 = deficit.",
+  "components": [
+    {"label": "US trade balance ratio (S1101-A)", "source": "IMF IFS exports/imports, United States, 1960-2009 (Appendix11_XMData.xlsx row block 16)"},
+    {"label": "UK trade balance ratio (S1101-B)", "source": "IMF IFS exports/imports, United Kingdom, 1960-2009 (XMData row block 15)"},
+    {"label": "Germany trade balance ratio (S1101-C)", "source": "IMF IFS exports/imports, Germany, 1960-2009 (XMData row block 7)"},
+    {"label": "Japan trade balance ratio (S1101-D)", "source": "IMF IFS exports/imports, Japan, 1960-2009 (XMData row block 9)"},
+    {"label": "China trade balance ratio (S1101-E, illustrative addition)", "source": "Not in Shaikh's Appendix 11.1 sample of 15; CD2 added as comparator. Source: IMF IFS exports/imports, China"}
+  ],
+  "year_range_book": [1960, 2009],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "IMF IFS / Direction of Trade Statistics (DOTS) - country exports and imports of goods, current USD, annual",
+      "source": "IMF International Financial Statistics (IFS) and Direction of Trade Statistics (DOTS)",
+      "url": "https://data.imf.org/?sk=9d6028d4-f14a-464c-a2f2-59b2cd424b85",
+      "units": "USD millions (raw); ratio (constructed)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "DOTS provides bilateral and total trade in current USD on an ongoing basis; X/M ratio reconstructible identically post-2009.",
+        "German reunification break (1991): IFS series for unified Germany begins 1991; pre-1991 series for West Germany must be spliced. Shaikh's XMData already handles this."
+      ]
+    },
+    {
+      "subseries_label": "World Bank World Development Indicators - Exports/Imports of goods and services (BoP, current US$)",
+      "source": "World Bank WDI",
+      "url": "https://data.worldbank.org/indicator/NE.EXP.GNFS.CD",
+      "units": "USD (current)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "WDI includes services; Shaikh's series is goods-only via IFS. Need to separate or accept slight concept drift in extension."
+      ]
+    },
+    {
+      "subseries_label": "OECD International Trade Statistics - merchandise trade by country, annual",
+      "source": "OECD.Stat",
+      "url": "https://stats.oecd.org/Index.aspx?DataSetCode=MEI_TRD",
+      "units": "USD millions",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "OECD coverage for non-OECD countries (e.g., China, Korea pre-1996) more limited than IMF DOTS."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "CD2 predecessor S060 ported: same construction (load XMData, pivot multi-country rows, extract per-country X/M ratio).",
+    "Appendix 11.1 specifies 15-country coverage: Australia, Belgium, Canada, Denmark, Finland, France, Germany, Italy, Japan, (Republic of) Korea, Netherlands, Norway, Spain, Sweden, United Kingdom, and United States. China is NOT in Shaikh's original 15; CD2's inclusion of 'China trade balance ratio' (S060-E) appears to be an analyst-added comparator and must be flagged.",
+    "Units are common-currency (USD) X/M ratios, not percent-of-GDP. CD2 markdown's 'Percent of GDP' label for S063 is inconsistent with this series' Exports/Imports ratio framing.",
+    "Belgium 1960-1992 backfill from AMECO Database (UMGS/UXGS converted via XNE exchange rate). All other countries direct from IMF IFS.",
+    "Reference values from Shaikh's published appendix (US example): 1960=1.1988, 1972=0.8358, 1984=0.6467, 1996=0.7604, 2008=0.5997. Match against ShaikhChoppedTables/Appendix11_XMData.xlsx for validation."
+  ],
+  "open_questions": [
+    "CD2 added China (S060-E) as a 5th subseries even though Shaikh's Appendix 11.1 lists only 15 OECD countries (no China). Should RSCD retain the China subseries as a useful comparator or drop it to match book scope exactly? Decide in Phase 4 adequacy.",
+    "Validation against the digitized XMData ratios for all 15 countries (CD2 cross-checked only US): replicate Shaikh's exact ratios cell-by-cell before declaring source confirmed.",
+    "Extension post-2009: which composite (IMF DOTS vs IFS vs WDI) gives the cleanest splice for each of the 15 (+ China?) countries? Phase 6 task."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch11",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S060 ported; verbatim quotes verified against PDF pp.523-524, 875; Appendix 11.1 source identified as IMF IFS (with AMECO supplement for Belgium)."
+    }
+  ]
+}

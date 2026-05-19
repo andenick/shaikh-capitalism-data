@@ -1,0 +1,32 @@
+industry_no,industry_level,industry_title,exclusion_ground,naics_subgroup
+1,Agriculture,Farms,non-profit-or-noncompetitive,Agriculture
+2,Agriculture,"Forestry, fishing, and related activities",non-profit-or-noncompetitive,Agriculture
+3,Mining,Oil and gas extraction,internationally-noncompetitive,Mining
+4,Mining,"Mining, except oil and gas",internationally-noncompetitive,Mining
+5,Mining,Support activities for mining,internationally-noncompetitive,Mining
+10,Manufacturing D,Primary metals,low-or-negative-profit-rate-period-average,Manufacturing-Durable
+13,Manufacturing D,Computers and electronic products,low-or-negative-profit-rate-period-average,Manufacturing-Durable
+15,Manufacturing D,"Motor vehicles, bodies and trailers, and parts",low-or-negative-profit-rate-period-average,Manufacturing-Durable
+16,Manufacturing D,Other transportation equipment,low-or-negative-profit-rate-period-average,Manufacturing-Durable
+20,Manufacturing ND,Textile mills and textile product mills,internationally-noncompetitive,Manufacturing-Nondurable
+21,Manufacturing ND,Apparel and leather and allied products,internationally-noncompetitive,Manufacturing-Nondurable
+29,Transportation,Air transportation,low-or-negative-profit-rate-period-average,Transportation
+30,Transportation,Rail transportation,low-or-negative-profit-rate-period-average,Transportation
+31,Transportation,Water transportation,low-or-negative-profit-rate-period-average,Transportation
+33,Transportation,Transit and ground passenger transportation,low-or-negative-profit-rate-period-average,Transportation
+34,Transportation,Pipeline transportation,low-or-negative-profit-rate-period-average,Transportation
+35,Transportation,Other transportation and support activities,low-or-negative-profit-rate-period-average,Transportation
+37,Info,Publishing industries (includes software),inadequate-WEQ-data-or-dominated-by-non-profit,Information
+42,Finance,"Securities, commodity contracts, and investments",inadequate-WEQ-data-or-dominated-by-non-profit,Finance
+44,Finance,"Funds, trusts, and other financial vehicles",inadequate-WEQ-data-or-dominated-by-non-profit,Finance
+47,Profess.,Legal services,inadequate-WEQ-data-or-dominated-by-non-profit,Professional
+48,Profess.,Computer systems design and related services,inadequate-WEQ-data-or-dominated-by-non-profit,Professional
+49,Profess.,"Miscellaneous professional, scientific, and technical services",inadequate-WEQ-data-or-dominated-by-non-profit,Professional
+50,Management,Management of companies and enterprises,inadequate-WEQ-data-or-dominated-by-non-profit,Management
+51,Admn&Waste,Administrative and support services,inadequate-WEQ-data-or-dominated-by-non-profit,Administrative
+53,Educ.,Educational services,dominated-by-non-profit,Education
+54,Health&Soc.,Ambulatory health care services,inadequate-WEQ-data-or-dominated-by-non-profit,Health
+55,Health&Soc.,Hospitals and nursing and residential care facilities,inadequate-WEQ-data-or-dominated-by-non-profit,Health
+56,Health&Soc.,Social assistance,dominated-by-non-profit,Health
+57,Arts,"Performing arts, spectator sports, museums, and related activities",dominated-by-non-profit,Arts
+61,Other Services,"Other services, except government",dominated-by-non-profit,Other

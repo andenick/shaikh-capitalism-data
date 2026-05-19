@@ -1,0 +1,50 @@
+{
+  "series_id": "S026",
+  "series_name": "Corporate and Non-Corporate Profit Rates",
+  "chapter": 6,
+  "figures": [
+    "Fig 6.1",
+    "Fig 6.4",
+    "Fig 6.5"
+  ],
+  "research_date": "2026-03-07",
+  "researcher": "agent",
+  "kb_sources_searched": [
+    "CH06_DOCUMENTATION.md",
+    "ch06/README.md"
+  ],
+  "entries": [
+    {
+      "entry_type": "methodology_description",
+      "content": "Sectoral profit rates calculated as net operating surplus (NOS) divided by lagged net capital stock. Corporate profit rate (rcorp) uses imputed-interest-adjusted NOS and current-cost net fixed capital stock from BEA Fixed Asset tables. Noncorporate profit rate (rnoncorp) applies the same methodology to the noncorporate sector, treating the WEQ2 wage equivalent as labor compensation for proprietors.",
+      "source_ref": "Appendix 6.8, Table I-3"
+    },
+    {
+      "entry_type": "source_citation",
+      "content": "BEA NIPA Table 7.11 (monetary interest paid/received by sector), Table 1.14 (corporate GVA), Fixed Asset Table 6.1 (current-cost net stock of private fixed assets by industry). Imputed interest adjustment separates financial flows from genuine profit.",
+      "source_ref": "BEA NIPA T7.11, T1.14, FA T6.1"
+    },
+    {
+      "entry_type": "figure_context",
+      "content": "Fig 6.1 shows corporate and noncorporate profit rates 1947-2011. Both display a secular decline, but the noncorporate rate falls more steeply. Fig 6.4 adjusts for capacity utilization. Fig 6.5 shows normal-capacity profit rates. The corrected profit rate differs from conventional NIPA measures due to the imputed interest adjustment and GPIM capital stock.",
+      "source_ref": "Shaikh 2016, Ch. 6"
+    }
+  ],
+  "citations": [
+    {
+      "id": "BEA_NIPA_T711",
+      "full": "Bureau of Economic Analysis. NIPA Table 7.11: Monetary Interest Paid and Received by Sector. Washington, DC."
+    },
+    {
+      "id": "BEA_FA_T61",
+      "full": "Bureau of Economic Analysis. Fixed Assets Table 6.1: Current-Cost Net Stock of Private Fixed Assets by Industry Group and Legal Form of Organization."
+    }
+  ],
+  "methodology_summary": "S026 extracts two pre-computed profit rate columns from S208 (Table I-3 of Appendix 6.8): S208AW = Pcorp/KNCcorp(-1) and S208AX = Pnoncorp/KNCnoncorp(-1). The profit measures are corrected for imputed interest (net monetary interest paid to households reclassified from factor income to transfer payment). Extensions through 2024 use BEA NIPA and FA data.",
+  "known_issues": [],
+  "cross_references": [
+    "Appendix6_Table68I3.csv",
+    "BEA NIPA T7.11",
+    "BEA FA T6.1"
+  ]
+}

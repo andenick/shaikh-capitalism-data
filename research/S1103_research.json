@@ -1,0 +1,102 @@
+{
+  "series_id": "S1103",
+  "name": "Law of One Price at Aggregate Level, US and Japan",
+  "chapter": 11,
+  "figures": [
+    "Fig11.6"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S062",
+    "cd2_id": "S062"
+  },
+  "book_quotes": [
+    {
+      "chapter": 11,
+      "page": 531,
+      "quote": "It follows that the appropriate aggregate test of the LOP is to look at the deviation of the real exchange rate from its fundamentals. Figure 11.6 depicts this ratio for both the United States and Japan. Given the data limitations discussed earlier, and the large impact of the anomalous 1980-1987 period, it is remarkable how stable this ratio is over the long run.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 11,
+      "page": 531,
+      "quote": "Figure 11.6 Law of One Price at the Aggregate Level, United States and Japan, 1960-2009",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 11,
+      "page": 876,
+      "quote": "These were used for the United States and Japan to calculate in each year the variables in equation (11.16) of the text: ppi · e/ppi*, where ppi = the producer price index of a country, ppi* = the producer price index of its trading partners, and e = the exchange rate of the country vis-à-vis its trading partners; and (vulcr/vulcr*) · (tau/tau*), where vulcr, vulcr* are proxies for the vertically integrated real unit labor costs of a country and its trading partners (we use direct real unit labor costs RULC = ULC/CPI and RULC* due to lack of data on vertically integrated costs).",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh and Antonopoulos (authors' calculations) on BLS, World Bank WDI, IMF IFS inputs",
+    "publication": "Capitalism: Competition, Conflict, Crises (Oxford 2016), Appendix 11.1; Shaikh and Antonopoulos (2012)",
+    "table_or_series_id": "rxrrulcratio1 in Appendix11_USJPNdata.xlsx column F (REER / adjusted real unit labor cost ratio)",
+    "url": "https://www.bls.gov/fls/ichcc.htm",
+    "frequency": "annual",
+    "units": "Ratio, index (~100 = parity)",
+    "license": "Composite of public BLS/IMF/World Bank data; author-distributed in Appendix 11.1 workbook",
+    "available_through": "ShaikhChoppedTables/Appendix11_USJPNdata.xlsx column 'rxrrulcratio1'",
+    "discontinued": true,
+    "replaced_by": "BLS International Labor Comparisons program discontinued 2013; ULC inputs no longer maintained at BLS. Modern equivalents require BIS REER and OECD/Conference Board ULC."
+  },
+  "construction": "formula",
+  "formula": "LOP_aggregate_{c,t} = REER_PPI_{c,t} / RULC_adj_{c,t} = (ppi_c · e_c / ppi*_c) / [(RULC_c / RULC*_c) · (tau_c / tau*_c)], where RULC = ULC / CPI and tau = CPI / PPI (nontradable/tradable adjustment). The series is rxr1 / rulcadjratio1rescaled in the workbook.",
+  "components": [
+    {"label": "Japan LOP ratio (S1103-A)", "source": "Appendix11_USJPNdata.xlsx, Japan rows, column 'rxrrulcratio1'"},
+    {"label": "US LOP ratio (S1103-B)", "source": "Appendix11_USJPNdata.xlsx, USA rows, column 'rxrrulcratio1'"},
+    {"label": "Numerator: REER PPI rxr1", "source": "Same as S1102 (S061 in CD2 lineage)"},
+    {"label": "Denominator: rulcadjratio1rescaled", "source": "Adjusted real unit labor cost ratio rescaled to match REER period average; built from BLS ULC (Table 9), BLS-derived CPI (Tables 7/13), and World Bank PPI"}
+  ],
+  "year_range_book": [1960, 2009],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "Reconstruction: BIS REER (PPI) divided by OECD Unit Labour Costs deflated by CPI, with CPI/PPI adjustment",
+      "source": "BIS + OECD",
+      "url": "https://stats.oecd.org/Index.aspx?DataSetCode=ULC_QUA",
+      "units": "Ratio",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Both numerator (REER) and denominator (adjusted RULC ratio) must be reconstructed; double splice risk.",
+        "OECD ULC is on a quarterly basis with different sectoral coverage (whole-economy vs manufacturing); Shaikh used BLS manufacturing ULC."
+      ]
+    },
+    {
+      "subseries_label": "Conference Board International Labor Comparisons - Unit Labor Costs in Manufacturing (post-BLS-ILC continuation)",
+      "source": "The Conference Board",
+      "url": "https://www.conference-board.org/topics/international-comparisons",
+      "units": "Index (varying base)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Continuation series (took over from BLS ILC after 2013) but coverage and method are not identical; some countries dropped.",
+        "Requires Conference Board membership/license for full series download."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "CD2 predecessor S062 ported with derivation explicitly identified from Appendix 11 Documentation sheet: 'rxrrulcratio1 = rxr1/rulcadjratio1rescaled'.",
+    "Series is a DERIVED RATIO of two other Shaikh-computed series (REER and adjusted RULC), not a raw observation. Construction is therefore 'formula' rather than 'direct' as the stub originally indicated.",
+    "Conceptual meaning: deviation of real exchange rate from its fundamental (relative real unit labor costs adjusted for nontradable/tradable goods composition). Per Shaikh equation (11.16), this ratio should be stationary around 1 (or ~100 if rescaled) if the classical LOP holds at the aggregate level.",
+    "Reference values (CD2 markdown, Japan): 1960=99.79, 1972=91.42, 1984=99.22, 1996=109.44, 2008=79.02. The 1980-1987 'anomalous period' is visible as a sharp deviation.",
+    "Rescaling: rulcadjratio1 is rescaled to share REER's period average, so the ratio is dimensionally interpretable as a stability test around ~100."
+  ],
+  "open_questions": [
+    "Modern extension would require rebuilding BOTH the REER (S1102) and the adjusted RULC ratio with consistent post-2013 sources. Phase 6 should plan as a single coordinated effort.",
+    "Validation: cross-check rxrrulcratio1 column against rxr1 / rulcadjratio1rescaled in Appendix11_USJPNdata.xlsx for every year to confirm derivation formula.",
+    "The original construction classification in the stub was 'direct'; changed to 'formula' here because the series is a ratio of two other series. Confirm with Phase 4 reviewer."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch11",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S062 ported; quotes verified against PDF pp.531, 876; reclassified construction from 'direct' to 'formula' (it is REER/RULC ratio); BLS ILC discontinuation flagged for extension."
+    }
+  ]
+}

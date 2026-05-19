@@ -1,0 +1,115 @@
+cd2_id,cd2_name,cd2_chapter,rscd_id,rscd_name,status,notes
+S001,US Industrial Production Index,2,S201,US Industrial Production Index,mapped,
+S002,US Real Investment,2,S202,US Real Investment,mapped,
+S003,US GDP (MeasuringWorth),2,S203,US GDP (MeasuringWorth),mapped,
+S004,Ayres Business Cycle Index,2,S204,Ayres Business Cycle Index,mapped,
+S007,Manufacturing Productivity and Real Wages,2,S207,Manufacturing Productivity and Real Wages,mapped,
+S008,Manufacturing Real Compensation,2,S208,Manufacturing Real Compensation,mapped,
+S009,US Unemployment Rate,2,S209,US Unemployment Rate,mapped,
+S017,GDP per Capita (Maddison),2,S217,GDP per Capita (Maddison),mapped,
+S010,Gold Prices and Wholesale Price Indexes (Source Table),5,S210,Gold Prices and Wholesale Price Indexes (Source Table),mapped,
+S206,GDP/GDI Decomposition and Business NOS,6,AS001,GDP/GDI Decomposition and Business NOS,mapped (decision 0002),promoted to AS series per decision 0002
+S207,Wage Equivalent and Corporate/Noncorporate Split,6,AS002,Wage Equivalent and Corporate/Noncorporate Split,mapped (decision 0002),promoted to AS series per decision 0002
+S208,Imputed Interest Adjustment and Sectoral Profit Rates,6,AS003,Imputed Interest Adjustment and Sectoral Profit Rates,mapped (decision 0002),promoted to AS series per decision 0002
+S209,GPIM Corporate Capital Stock,6,AS004,GPIM Corporate Capital Stock,mapped (decision 0002),promoted to AS series per decision 0002
+S210,GPIM Variant - BEA 2011 Initial Value,6,AS005,GPIM Variant — BEA 2011 Initial Value,mapped (decision 0002),promoted to AS series per decision 0002
+S211,GPIM Variant - BEA 1993 vs 2011,6,AS006,GPIM Variant — BEA 1993 vs 2011,mapped (decision 0002),promoted to AS series per decision 0002
+S212,GPIM Variant - IRS Adjusted,6,AS007,GPIM Variant — IRS Adjusted,mapped (decision 0002),promoted to AS series per decision 0002
+S213,GPIM Variant - Interwar Adjusted,6,AS008,GPIM Variant — Interwar Adjusted,mapped (decision 0002),promoted to AS series per decision 0002
+S214,IRS Corporate Inventories and Total Capital Stock,6,AS009,IRS Corporate Inventories and Total Capital Stock,mapped (decision 0002),promoted to AS series per decision 0002
+S013,Final Profit Rate Measures,6,S213,Final Profit Rate Measures,mapped,
+S020,US and UK Gold Prices,5,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S021,"UK Wholesale Price Indexes in Pound Sterling, US Dollars, and Ounces of Gold",5,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S022,"US and UK Wholesale Price Indexes, 1790-1940",5,S501,"US and UK Wholesale Price Indexes, 1790-1940",mapped,
+S023,"US and UK Wholesale Price Indexes, 1790-2010",5,S502,"US and UK Wholesale Price Indexes, 1790-2010",mapped,
+S024,UK WPI in Gold and UK Gold Price,5,S503,UK WPI in Gold and UK Gold Price,mapped,
+S025,US WPI in Gold and US Gold Price,5,S504,US WPI in Gold and US Gold Price,mapped,
+S026,Corporate and Non-Corporate Profit Rates,6,S601,Corporate and Non-Corporate Profit Rates,mapped,
+S027,Corrected vs Conventional Corporate Profitability,6,S602,Corrected vs Conventional Corporate Profitability,mapped,
+S028,"Component Ratios x1, x2, x3",6,S603,"Component Ratios x1, x2, x3",mapped,
+S105,Corporate Incremental Rate of Profit (IROP),6,S604,Corporate Incremental Rate of Profit (IROP),mapped,
+S215,US Industry Incremental Rates of Profit (IROP),7,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S216,OECD Industry IROP (PPP-adjusted),7,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S217,US Industry Average Rates of Profit (ROP),7,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S034,US Industry Average Rates of Profit,7,S705,US Industry Average Rates of Profit,mapped,
+S035,US Industry Profit Rate Deviations from Average,7,S709,US ROP Deviations from Average,mapped (decision 0002),promoted to AS series per decision 0002
+S036,US Industry Incremental Rates of Profit,7,S706,US Industry Incremental Rates of Profit,mapped,
+S037,US Industry IROP Deviations from Average,7,S710,US IROP Deviations from Average,mapped (decision 0002),promoted to AS series per decision 0002
+S038,OECD Industry IROP Deviations (PPP-adjusted),7,S707,OECD Industry IROP Deviations (PPP-adjusted),mapped,
+S040,Ibbotson Returns on Stocks and Bonds,10,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S041,"Interest Rates, Prices, and Equity Data",10,S803,"Interest Rates, Prices, and Equity Data",mapped,
+S042,US Long-Run Interest Rates and Prices,10,S801,US Long-Run Interest Rates and Prices,mapped,
+S050,Bank vs Private Industry IROP,10,S1001,Bank vs Private Industry IROP,mapped,
+S051,Business Profit Rate and Prime Rate,10,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S052,Interest Rate and Price Level,10,S1002,Interest Rate and Price Level,mapped,
+S053,Relative Price of Finance,10,S1003,Relative Price of Finance,mapped,
+S054,Real Interest Rate HP-filtered,10,S1004,Real Interest Rate HP-filtered,mapped,
+S055,Dividend Yield vs Bond Yield,10,S1005,Dividend Yield vs Bond Yield,mapped,
+S056,Bond and Equity Returns,10,S1006,Bond and Equity Returns,mapped,
+S057,Equity Rate vs Corporate IROP,10,S1007,Equity Rate vs Corporate IROP,mapped,
+S058,Equity Rate vs Corporate ROP,10,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S059,Actual vs Warranted Stock Price,10,S1008,Actual vs Warranted Stock Price,mapped,
+S200,US-Japan Trade and Exchange Rate Data (Source Table),11,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S201,Export-Import Trade Balance Data (Source Table),11,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S060,Trade Balances in Major Countries,11,S1101,Trade Balances in Major Countries,mapped,
+S061,"Real Effective Exchange Rates (PPI), US and Japan",11,S1102,"Real Effective Exchange Rates (PPI), US and Japan",mapped,
+S062,"Law of One Price at Aggregate Level, US and Japan",11,S1103,"Law of One Price at Aggregate Level, US and Japan",mapped,
+S063,"US Balance of Trade, Real Exchange Rate, Relative GDP",11,S1104,"US Balance of Trade, Real Exchange Rate, Relative GDP",mapped,
+S202,"Inflation, Unemployment, and Wage Share Data (Source Table)",14,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S203,"Credit, Inflation, and Unemployment Data (Source Table)",12,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S064,"Phillips Curve, US, 1955-1970",12,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S065,"US Inflation and Unemployment Rates, 1955-1986",12,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S066,"Phillips Curve, US, 1971-1981",12,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S067,"Phillips Curve, US, 1955-2010",12,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S068,Nominal GDP Growth and Level of Wage Share,14,S1401,Nominal GDP Growth and Level of Wage Share,mapped,
+S069,Unemployment Measures US 1948-2011,14,S1402,Unemployment Measures US 1948-2011,mapped,
+S070,Wage Share vs Unemployment Intensity,14,S1403,Wage Share vs Unemployment Intensity,mapped,
+S071,Rate of Change of Wage Share vs Unemployment Intensity,14,S1404,Rate of Change of Wage Share vs Unemployment Intensity,mapped,
+S072,HP-Filtered Wage Share Growth vs Unemployment Intensity,14,S1405,HP-Filtered Wage Share Growth vs Unemployment Intensity,mapped,
+S073,Inflation and Productivity Growth,14,S1406,Inflation and Productivity Growth,mapped,
+S074,HP-Filtered Real Wage Growth vs Unemployment Intensity,14,S1407,HP-Filtered Real Wage Growth vs Unemployment Intensity,mapped,
+S075,HP-Filtered Nominal Wage Growth vs Unemployment Intensity,14,S1408,HP-Filtered Nominal Wage Growth vs Unemployment Intensity,mapped,
+S102,IRS 2011 Income Distribution — Full Table,17,S1701,IRS 2011 Income Distribution — Full Table,mapped,
+S103,"Personal Income Distribution below $200,000, Cumulative Probability from Above",17,S1702,"Personal Income Distribution below $200,000, Cumulative Probability from Above",mapped,
+S104,"Personal Income Distribution above $200,000, Cumulative Probability from Above",17,S1703,"Personal Income Distribution above $200,000, Cumulative Probability from Above",mapped,
+S220,"Wage and Productivity Data (Source Table, Ch16)",16,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S221,"Profit Rate Data (Source Table, Ch16)",16,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S222,"Household Debt-to-Income Ratio Data (Source Table, Ch16)",16,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S223,"Household Debt-Service Ratio Data (Source Table, Ch16)",16,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S224,"RXRRULC/OECD Interest Rate Data (Source Table, Ch16)",16,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S093,"US and UK Golden Waves, 1786-2010",16,S1601,"US and UK Golden Waves, 1786-2010",mapped,
+S094,Impact on Profitability of Suppression of Real Wage Growth,16,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S095,"Hourly Real Wages and Productivity, US Business Sector",16,S1602,"Hourly Real Wages and Productivity, US Business Sector",mapped,
+S096,Placeholder — No Figure Assignment,16,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S097,The Extraordinary Postwar Path of the Interest Rate,16,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S098,US and OECD Short-Term Interest Rates,16,S1603,US and OECD Short-Term Interest Rates,mapped,
+S099,Net Average and Real Incremental Rates of Profit,16,S1604,Net Average and Real Incremental Rates of Profit,mapped,
+S100,Household Debt-to-Income Ratio,16,S1605,Household Debt-to-Income Ratio,mapped,
+S101,Household Debt-Service Ratio,16,S1606,Household Debt-Service Ratio,mapped,
+S841,Bain 42-Industry Aggregates (Grouped Data),8,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S842,Bain 42-Industry Profit Rate vs CR8 (Scatter),8,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S843,Semmler Price Behavior Data,8,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S844,Stigler Profit Rates on Assets,8,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S845,Demsetz Rates of Return by CR4,8,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S846,Corrected Bain Data (Demsetz 1973),8,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S047,"Market Prices vs Direct Prices, 71 Industries",9,S901,"Market Prices vs Direct Prices, 71 Industries",mapped,
+S048,Integrated Output-Capital Ratios and Standard Prices,9,S902,Integrated Output-Capital Ratios and Standard Prices,mapped,
+S049,Actual Wage-Profit Curves,9,S903,Actual Wage-Profit Curves,mapped,
+S076,"Consumer Price Level, US, 1774-2011",15,S1501,"Consumer Price Level, US, 1774-2011",mapped,
+S077,"Growth Rates of Real Output, US Major Industries (Part 1)",15,S1502,"Growth Rates of Real Output, US Major Industries (Part 1)",mapped,
+S078,"Growth Rates of Real Output, US Major Industries (Part 2)",15,S1503,"Growth Rates of Real Output, US Major Industries (Part 2)",mapped,
+S079,Growth of Nominal GDP and Relative New Purchasing Power,15,S1504,Growth of Nominal GDP and Relative New Purchasing Power,mapped,
+S080,Growth of Nominal GDP vs Relative New Purchasing Power,15,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S081,Real Output Growth vs Real Net Rate of Return on New Capital,15,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S082,Change in Real Output vs Change in Real Gross Profits,15,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S083,"Classical and Conventional Phillips-Type Curves, 1948-2010",15,S1505,"Classical and Conventional Phillips-Type Curves, 1948-2010",mapped,
+S084,"Classical and Conventional Phillips-Type Curves, 1948-1981",15,S1506,"Classical and Conventional Phillips-Type Curves, 1948-1981",mapped,
+S085,"Classical and Conventional Phillips-Type Curves, 1982-2010",15,S1507,"Classical and Conventional Phillips-Type Curves, 1982-2010",mapped,
+S086,Normalized Inflation and Growth Utilization Rates,15,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S087,HP(100) Trend of Net Incremental Rate of Profit,15,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S088,"World Inflation vs Growth of Private and Public Credit, 1970-1988",15,S1508,"World Inflation vs Growth of Private and Public Credit, 1970-1988",mapped,
+S089,"World Inflation vs Growth of Total Credit, 1988-2011",15,S1509,"World Inflation vs Growth of Total Credit, 1988-2011",mapped,
+S090,Argentina Total Credit Growth and Nominal GDP Growth,15,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S091,Total Credit Growth and Inflation (Argentina),15,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S092,Inflation and Currency Depreciation (Argentina),15,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
+S225,"US Real GDP by Industry (Source Table, Ch15)",15,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json

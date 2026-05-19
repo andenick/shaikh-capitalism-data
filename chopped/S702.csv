@@ -1,0 +1,57 @@
+year,value,subseries_id,source_id,units,industry,axis
+1963,136.5,S702-A-1.  Electricity-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,1.  Electricity,selling_price
+1963,98.2,S702-A-1.  Electricity-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,1.  Electricity,unit_labour_cost
+1963,133.9,S702-A-10. Wire and wire manufactures-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,10. Wire and wire manufactures,selling_price
+1963,136.9,S702-A-10. Wire and wire manufactures-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,10. Wire and wire manufactures,unit_labour_cost
+1963,148.3,S702-A-11. Rubber-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,11. Rubber,selling_price
+1963,145.7,S702-A-11. Rubber-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,11. Rubber,unit_labour_cost
+1963,130.4,S702-A-12. Non-ferrous metals-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,12. Non-ferrous metals,selling_price
+1963,129.8,S702-A-12. Non-ferrous metals-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,12. Non-ferrous metals,unit_labour_cost
+1963,145.0,S702-A-13. Steel tubes-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,13. Steel tubes,selling_price
+1963,147.5,S702-A-13. Steel tubes-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,13. Steel tubes,unit_labour_cost
+1963,158.5,S702-A-14. Brewing and malting-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,14. Brewing and malting,selling_price
+1963,154.6,S702-A-14. Brewing and malting-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,14. Brewing and malting,unit_labour_cost
+1963,115.9,S702-A-15. Paint and printing ink-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,15. Paint and printing ink,selling_price
+1963,171.0,S702-A-15. Paint and printing ink-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,15. Paint and printing ink,unit_labour_cost
+1963,140.2,S702-A-16. Cement-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,16. Cement,selling_price
+1963,154.3,S702-A-16. Cement-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,16. Cement,unit_labour_cost
+1963,122.3,S702-A-17. Footwear-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,17. Footwear,selling_price
+1963,118.6,S702-A-17. Footwear-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,17. Footwear,unit_labour_cost
+1963,132.4,S702-A-18. Iron and steel (general)-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,18. Iron and steel (general),selling_price
+1963,148.1,S702-A-18. Iron and steel (general)-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,18. Iron and steel (general),unit_labour_cost
+1963,131.0,"S702-A-19. Bricks, fireclay, etc.-PRICE",SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,"19. Bricks, fireclay, etc.",selling_price
+1963,122.1,"S702-A-19. Bricks, fireclay, etc.-ULC",SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,"19. Bricks, fireclay, etc.",unit_labour_cost
+1963,123.8,S702-A-2. Chemicals (general)*-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,2. Chemicals (general)*,selling_price
+1963,99.7,S702-A-2. Chemicals (general)*-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,2. Chemicals (general)*,unit_labour_cost
+1963,125.5,S702-A-20. Dyestuffs-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,20. Dyestuffs,selling_price
+1963,120.1,S702-A-20. Dyestuffs-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,20. Dyestuffs,unit_labour_cost
+1963,108.6,S702-A-21.  Cutlery-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,21.  Cutlery,selling_price
+1963,149.7,S702-A-21.  Cutlery-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,21.  Cutlery,unit_labour_cost
+1963,127.1,S702-A-22. Jute-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,22. Jute,selling_price
+1963,141.7,S702-A-22. Jute-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,22. Jute,unit_labour_cost
+1963,138.8,S702-A-23. Cocoa and confectionery-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,23. Cocoa and confectionery,selling_price
+1963,155.3,S702-A-23. Cocoa and confectionery-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,23. Cocoa and confectionery,unit_labour_cost
+1963,138.4,S702-A-24. Brushes and brooms-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,24. Brushes and brooms,selling_price
+1963,133.4,S702-A-24. Brushes and brooms-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,24. Brushes and brooms,unit_labour_cost
+1963,146.7,S702-A-25. Coal mining-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,25. Coal mining,selling_price
+1963,125.8,S702-A-25. Coal mining-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,25. Coal mining,unit_labour_cost
+1963,142.6,S702-A-26. Coke ovens-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,26. Coke ovens,selling_price
+1963,165.6,S702-A-26. Coke ovens-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,26. Coke ovens,unit_labour_cost
+1963,135.3,S702-A-27. Leather-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,27. Leather,selling_price
+1963,122.9,S702-A-27. Leather-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,27. Leather,unit_labour_cost
+1963,110.1,"S702-A-28. Cotton spinning, etc.-PRICE",SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,"28. Cotton spinning, etc.",selling_price
+1963,121.5,"S702-A-28. Cotton spinning, etc.-ULC",SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,"28. Cotton spinning, etc.",unit_labour_cost
+1963,148.7,S702-A-3. Toilet preparations*-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,3. Toilet preparations*,selling_price
+1963,149.8,S702-A-3. Toilet preparations*-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,3. Toilet preparations*,unit_labour_cost
+1963,120.4,"S702-A-4. Fertilisers, etc.-PRICE",SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,"4. Fertilisers, etc.",selling_price
+1963,110.8,"S702-A-4. Fertilisers, etc.-ULC",SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,"4. Fertilisers, etc.",unit_labour_cost
+1963,127.1,S702-A-5. Misc. paper manufactures-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,5. Misc. paper manufactures,selling_price
+1963,118.7,S702-A-5. Misc. paper manufactures-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,5. Misc. paper manufactures,unit_labour_cost
+1963,125.8,S702-A-6. Glass-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,6. Glass,selling_price
+1963,124.0,S702-A-6. Glass-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,6. Glass,unit_labour_cost
+1963,105.0,S702-A-7. Paper and board-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,7. Paper and board,selling_price
+1963,133.9,S702-A-7. Paper and board-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,7. Paper and board,unit_labour_cost
+1963,103.5,S702-A-8. Hosiery and knitted goods-PRICE,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,8. Hosiery and knitted goods,selling_price
+1963,105.4,S702-A-8. Hosiery and knitted goods-ULC,SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,8. Hosiery and knitted goods,unit_labour_cost
+1963,161.9,"S702-A-9. Linoleum, leathercloth, etc.-PRICE",SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,"9. Linoleum, leathercloth, etc.",selling_price
+1963,141.2,"S702-A-9. Linoleum, leathercloth, etc.-ULC",SALTER_1969_TABLE33_UK,ratio_1963_over_1954_x100,"9. Linoleum, leathercloth, etc.",unit_labour_cost

@@ -1,0 +1,199 @@
+{
+  "_schema": "rscd-registry-delta-v1.0",
+  "_purpose": "Per-series adequacy block to be merged into Technical/series_registry.json by the main thread after Wave 3 closeout.",
+  "chapter": 14,
+  "reviewer": "opus-subagent-p4-wave3-ch14",
+  "review_date": "2026-05-18",
+  "deltas": {
+    "S1401": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 12,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "BEA NIPA primary URL reachable HTTP 200 (https://www.bea.gov/itable/national-gdp-and-personal-income)",
+          "FRED GDP and A576RC1 extension URLs reachable HTTP 200",
+          "Legacy quoted URL http://www.bea.gov/national/index.htm#gdp also returns 200"
+        ],
+        "issues_outstanding": [
+          "Phase 5: cell-by-cell validation of wage share against Appendix14_InflationULdata.xlsx before extending",
+          "Phase 5: freeze BEA vintage via FRED ALFRED snapshot for reproducibility"
+        ]
+      }
+    },
+    "S1402": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 12,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "BLS CPS primary URL reachable HTTP 200 (https://www.bls.gov/cps/)",
+          "All quoted BLS URLs (surveymost, duration.htm, cpsatabs.htm) reachable HTTP 200",
+          "FRED UNRATE and UEMPMEAN extension URLs reachable HTTP 200",
+          "UEMPMEAN 2011 top-coding break diagnosed and treatment ratified (no adjustment, document the break)"
+        ],
+        "issues_outstanding": [
+          "Phase 5: confirm 1948-1951 base-window mean computation",
+          "Phase 5/6: emit `methodological_break: {date: 2011-01, treatment: no_adjustment_documented_break}` registry block",
+          "Phase 6 EPR: document the 2011 break"
+        ]
+      },
+      "subseries_flags": {
+        "S1402.components.duration": {
+          "methodological_break_2011-01": true,
+          "break_description": "BLS raised UEMPMEAN top-coding from 104w to 260w in January 2011",
+          "treatment": "no_adjustment_documented_break",
+          "affects_extension": true
+        }
+      }
+    },
+    "S1403": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 12,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Dead FRED W270RE1Q156NBEA quarterly wage-share substitute identified (HTTP 404)",
+          "Substitute canonicalized: W209RC1 + GDP at quarterly frequency (both HTTP 200, NIPA-consistent)",
+          "Q1 RESOLUTION: quarterly intensity construction — aggregate monthly UNRATE/UEMPMEAN to quarterly means; rebase to 1948Q1-1951Q4 base",
+          "HP filter lambda=100 (not 1600) for quarterly per Shaikh's explicit Appendix 14.2 choice"
+        ],
+        "issues_outstanding": [
+          "Phase 5: update dossier extension_candidates[0].url and .source to W209RC1 + GDP",
+          "Phase 5: validate against Appendix14_InflationULdata.xlsx quarterly tab if present, else visual against Fig 14.12 phase trajectory"
+        ]
+      },
+      "proxy": false,
+      "proxy_justification": "W270RE1Q156NBEA -> W209RC1+GDP is a within-FRED ID routing update to the SAME NIPA Table 1.10 line 2 underlying series at quarterly frequency. Not a concept-changing substitution; no `proxy: true` flag required."
+    },
+    "S1404": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 12,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Derives from S1401 (wage share) and S1402 (intensity), both adequacy-ready",
+          "gwsh = first-difference of natural log convention to be confirmed against first 3 observations of published gwsh column"
+        ],
+        "issues_outstanding": [
+          "Phase 5: cell-by-cell validation of gwsh against Appendix14 published values"
+        ]
+      }
+    },
+    "S1405": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 12,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Q3 RESOLUTION: Phillips form b coefficient — published fit uses y = C(1) + x^C(3) (constrained b=1); Phase 5 emits BOTH constrained and unconstrained variants",
+          "Q4 RESOLUTION: 1983-1993 transition window preserved as omission; third regime evaluated separately in Phase 6"
+        ],
+        "issues_outstanding": [
+          "Phase 5: apply HP(100) to FULL extended sample (avoid endpoint bias)",
+          "Phase 5: replicate published era 1 (a=-1.026431, c=-0.010677, R²=0.931) and era 2 (a=-1.010996, c=-0.003709, R²=0.965) before extending"
+        ]
+      },
+      "fit_specification": {
+        "functional_form_published": "y = C(1) + x^C(3) [implicit b=1]",
+        "functional_form_phase5_canonical": "y = a + b*x^c (emit both constrained b=1 and free b)",
+        "era_windows": ["1949-1982", "1994-2011"],
+        "transition_window_omitted": ["1983-1993"],
+        "phase6_third_regime_check": "evaluate era 2 on 1994-2007 vs 1994-2024 parameter stability"
+      }
+    },
+    "S1406": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 12,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "FRED GDPDEF and B4701C0A222NBEA extension URLs reachable HTTP 200",
+          "Q5 RESOLUTION: productivity = real GDP per FTE per Shaikh's exact formula (NOT BLS per-hour); concept-policing rule enforced",
+          "Chain-type vs fixed-weighted deflator question resolved: use chain-type GDP price index per current FRED vintage",
+          "FEE coverage question resolved: use B4701C0A222NBEA (FTE all industries, NIPA T6.5 broadest measure)"
+        ],
+        "issues_outstanding": [
+          "Phase 5 HARD GATE: implement productivity formula literally as yr = (GDP*100/p)/(FEE/1000) — do not algebraically simplify (silent scaling risk)",
+          "Phase 5 unit-test: compare output to Appendix14 published productivity column for 1948, 1972, 1996, 2011"
+        ]
+      },
+      "concept_policing_assertion": "productivity_per_FTE_not_per_hour",
+      "must_reject_substitutes": ["OPHNFB", "PRS85006092", "OPHPBS", "OPHMFG"],
+      "rejection_rationale": "Per-hour productivity differs from per-FTE by hours-per-worker trend; substitution silently breaks Shaikh's wage-share decomposition wr = w/p, gwsh = wr - yr (Eq. 14.18-14.19)."
+    },
+    "S1407": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 12,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Inherits all extension URLs from S1401, S1402, S1406 (all HTTP 200)",
+          "Inherits productivity-concept-policing from S1406",
+          "Inherits UEMPMEAN 2011 break treatment from S1402"
+        ],
+        "issues_outstanding": [
+          "Phase 5: emit BOTH variants of two-era curves — (a) direct refit to real-wage growth, (b) algebraic S1405 + HP(100)-productivity-growth per Eq. 14.18",
+          "Phase 5: omit 1983-1993 transition window"
+        ]
+      }
+    },
+    "S1408": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 11,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Inherits all extension URLs from S1401, S1402, S1406 (all HTTP 200)",
+          "Inherits productivity-concept-policing from S1406",
+          "Inherits UEMPMEAN 2011 break treatment from S1402",
+          "Off-by-one window discrepancy resolved: use 1949-1982 / 1994-2011 (Appendix 14.2 documented; first-difference loses 1948)"
+        ],
+        "issues_outstanding": [
+          "Phase 5: emit BOTH direct-fit and algebraic-decomposition variants per Eq. 14.19",
+          "Phase 5: replicate Table 14.3 secondary regression of residual nominal-wage growth on inflation + productivity growth (era 1 inflation coef ≈ ~1, productivity coef ≈ 0.82)"
+        ]
+      }
+    }
+  },
+  "url_substitutions": [
+    {
+      "applies_to_series": ["S1403"],
+      "field": "extension_candidates[0].url and .source",
+      "old_value": "https://fred.stlouisfed.org/series/W270RE1Q156NBEA",
+      "new_value": "https://fred.stlouisfed.org/series/W209RC1 + https://fred.stlouisfed.org/series/GDP (quarterly pair)",
+      "rationale": "W270RE1Q156NBEA returns HTTP 404 (FRED retired). W209RC1 (Compensation of employees, paid: Domestic industries, quarterly) and GDP (quarterly) jointly reconstruct the quarterly wage share Shaikh used. Both 200. Within-FRED routing update; not a concept substitution.",
+      "verified_at": "2026-05-18"
+    }
+  ],
+  "data_substitutions": [],
+  "construction_corrections": [],
+  "phase3_open_question_resolutions": {
+    "Q1_S1403_quarterly_intensity": "Aggregate monthly UNRATE and UEMPMEAN to quarterly means; rebase duration index to 1948Q1-1951Q4 (16-quarter) base; intensity = quarterly_UNRATE * (quarterly_duration_index/100).",
+    "Q2_UEMPMEAN_2011_topcoding": "Use raw FRED UEMPMEAN throughout. Annotate `methodological_break_2011-01: true` in registry. No backward adjustment.",
+    "Q3_S1405_phillips_b_coefficient": "Published fit uses constrained b=1 form y = C(1) + x^C(3). Phase 5 emits both constrained (replicates published a, c) and unconstrained y = a + b*x^c variants.",
+    "Q4_1983_1993_transition_window": "Preserve omission. Evaluate third regime in Phase 6 by comparing era 2 fits on 1994-2007 vs 1994-2024.",
+    "Q5_S1406_productivity_definition": "HARD RULE: productivity = real GDP per FTE per Shaikh's exact formula yr = (GDP*100/p)/(FEE/1000). REJECT BLS per-hour substitutes (OPHNFB, PRS85006092, OPHPBS, OPHMFG)."
+  },
+  "subseries_metadata_to_emit": {
+    "S1402.components.duration": {
+      "methodological_break_2011-01": true,
+      "break_description": "BLS raised UEMPMEAN top-coding from 104 weeks to 260 weeks in January 2011",
+      "treatment": "no_adjustment_documented_break"
+    },
+    "S1406": {
+      "concept_policing_assertion": "productivity_per_FTE_not_per_hour",
+      "must_reject_substitutes": ["OPHNFB", "PRS85006092", "OPHPBS", "OPHMFG"]
+    }
+  },
+  "loader_metadata_to_emit": {
+    "S1401": {"extend_via": ["GDP", "A576RC1"], "validate_against": "ShaikhChoppedTables/Appendix14_InflationULdata.xlsx (wage share column cell-by-cell)", "freeze_vintage": "FRED ALFRED snapshot"},
+    "S1402": {"extend_via": ["UNRATE", "UEMPMEAN"], "base_window": "1948-1951 annual mean", "duration_index_break_flag": "2011-01"},
+    "S1403": {"extend_via": ["W209RC1 (quarterly)", "GDP (quarterly)", "UNRATE (monthly->quarterly)", "UEMPMEAN (monthly->quarterly)"], "hp_lambda": 100, "intensity_construction": "quarterly_UNRATE * quarterly_duration_index_rebased_to_1948Q1-1951Q4_avg / 100"},
+    "S1404": {"extend_via": "derived from S1401 and S1402", "gwsh_formula": "ln(wage_share_t) - ln(wage_share_{t-1})", "validate_against": "ShaikhChoppedTables/Appendix14_InflationULdata.xlsx (gwsh column)"},
+    "S1405": {"extend_via": "derived from S1401 and S1402", "hp_lambda": 100, "fit_variants": ["constrained_b=1", "free_b"], "era_windows": ["1949-1982", "1994-2011"], "transition_omitted": "1983-1993", "published_coefficients_era1": {"a": -1.026431, "c": -0.010677, "r2": 0.931}, "published_coefficients_era2": {"a": -1.010996, "c": -0.003709, "r2": 0.965}},
+    "S1406": {"extend_via": ["GDP", "GDPDEF", "B4701C0A222NBEA"], "productivity_formula_literal": "(GDP*100/p)/(FEE/1000)", "concept_policing_assertion": "productivity_per_FTE_not_per_hour", "validate_against": "ShaikhChoppedTables/Appendix14_InflationULdata.xlsx productivity column for 1948, 1972, 1996, 2011"},
+    "S1407": {"extend_via": "derived from S1401 components + GDPDEF + B4701C0A222NBEA", "real_wage_formula": "(EC*100/FEE)/p", "hp_lambda": 100, "curve_variants": ["direct_refit_real_wage", "algebraic_S1405_plus_productivity_growth"], "era_windows": ["1949-1982", "1994-2011"]},
+    "S1408": {"extend_via": "derived from S1401 components + B4701C0A222NBEA", "nominal_wage_formula": "EC*100/FEE", "hp_lambda": 100, "curve_variants": ["direct_refit_nominal_wage", "algebraic_S1405_plus_inflation_plus_productivity_growth"], "era_windows": ["1949-1982", "1994-2011"], "table_14_3_secondary_regression": true}
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "_schema": "rscd-registry-delta-v1.0",
+  "_purpose": "Per-series adequacy block to be merged into Technical/series_registry.json by the main thread after Wave 1 closeout.",
+  "chapter": 6,
+  "reviewer": "opus-subagent-p4-wave1-ch6",
+  "review_date": "2026-05-18",
+  "deltas": {
+    "S601": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 7,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["URL reachable HTTP 200", "Composite construction with components fully documented"],
+        "issues_outstanding": ["T1.14/T7.11 line-number stub-label resolver needed at load time"]
+      }
+    },
+    "S602": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 7,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["URLs reachable", "GPIM KGC dependency on AS004 confirmed"],
+        "issues_outstanding": ["IRS SOI URL update (Source Book -> Corporation Complete Report)"]
+      }
+    },
+    "S603": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 6,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["URL reachable", "x1/x2/x3 component decomposition matches book eq. 6.11"],
+        "issues_outstanding": ["x1 NMINT_corp freeze rule must be encoded in loader"]
+      }
+    },
+    "S604": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 6,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["URL reachable", "iropcorpnipa identified as canonical extended series"],
+        "issues_outstanding": ["NMINT + IRS inventory bounds for iropcorp extension window"]
+      }
+    },
+    "AS001": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 7,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["URL reachable", "T1.10/T7.12 stub-label mapping requirement documented"],
+        "issues_outstanding": []
+      }
+    },
+    "AS002": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 7,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["URL reachable", "WEQ2 vs WEQ1 preference confirmed"],
+        "issues_outstanding": []
+      }
+    },
+    "AS003": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 6,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["URL reachable"],
+        "issues_outstanding": ["FISIM T7.11 line recipe re-map (Phase 5 work item)"]
+      }
+    },
+    "AS004": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 6,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["URL reachable", "Operational baseline role vs AS005 confirmed"],
+        "issues_outstanding": ["BEA 1993 depreciation rates recovery (SalvagedInputs xlsx primary, Wayback fallback)"]
+      }
+    },
+    "AS005": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 7,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["URL reachable", "Reference-variant role confirmed"],
+        "issues_outstanding": []
+      }
+    },
+    "AS006": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 5,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["URL reachable", "Sample-vs-text disagreement diagnosed (Q1)"],
+        "issues_outstanding": ["Ship two sub-variants AS006_depr_only and AS006_depr_plus_init in Phase 5 loader"]
+      }
+    },
+    "AS007": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 6,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["URL reachable", "Unit mismatch diagnosed (Q2): thousands -> billions normalization required"],
+        "issues_outstanding": ["Encode /1000 normalization in loader; validate against BEA 1925=98.1 within 5-10%"]
+      }
+    },
+    "AS008": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 7,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["URL reachable", "Intrinsic 1925-1947 range confirmed; not_applicable_historical_correction"],
+        "issues_outstanding": ["Validate 1927-1929 multiplier >1.0 against Census Series V 115 source"]
+      }
+    },
+    "AS009": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 5,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["IRS URL substitution recorded", "Unit mismatch diagnosed (Q3)"],
+        "issues_outstanding": ["Post-2011 constant-ratio proxy needs migration to re-estimated ratio in Phase 6; keep with explicit flag in Phase 5"]
+      }
+    }
+  },
+  "url_substitutions": [
+    {
+      "applies_to_series": ["AS009"],
+      "field": "primary_source.url",
+      "old_value": "https://www.irs.gov/statistics/soi-tax-stats-corporation-source-book-of-statistics-of-income",
+      "new_value": "https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report",
+      "rationale": "Source Book slug returns HTTP 404 as of 2026-05-18; Corporation Complete Report is the active IRS SOI portal containing corporate balance-sheet inventory data."
+    }
+  ],
+  "loader_metadata_to_emit": {
+    "AS006": {"variants": ["depr_only", "depr_plus_init"]},
+    "AS007": {"unit_normalization": "divide_by_1000"},
+    "AS009": {"unit_normalization": "divide_by_1000", "extension_method": "constant_ratio_proxy_2012_onwards"},
+    "S603": {"freeze_rule_x1": "NMINT_corp_last_complete_year"},
+    "S604": {"emit_columns": ["iropcorp", "iropcorpnipa"], "freeze_rule_iropcorp": "min(NMINT_corp_last_complete_year, IRS_inv_last_complete_year)"}
+  }
+}

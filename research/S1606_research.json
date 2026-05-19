@@ -1,0 +1,97 @@
+{
+  "series_id": "S1606",
+  "name": "Household Debt-Service Ratio",
+  "chapter": 16,
+  "figures": [
+    "Fig16.10"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S101",
+    "cd2_id": "S101"
+  },
+  "book_quotes": [
+    {
+      "chapter": 16,
+      "page": 735,
+      "quote": "Higher debt loads normally imply higher debt service (principal and interest) burdens. But for two decades falling interest rates offset rising indebtedness, so that even in 2000, the household debt service ratio was no higher than it was in 1985 (figure 16.10). However, as the debt load accelerated, the debt service ratio began to rise sharply.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 16,
+      "page": 899,
+      "quote": "Figure 16.10 Household Debt-Service Ratio, 1980-2012. Household Debt service ratio, Quarterly, seasonally adjusted, Percentage (Federal Reserve, http://www.federalreserve.gov/, data identifier FOR/FOR/DTFD%YPD.Q ).",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Federal Reserve Board",
+    "publication": "Household Debt Service and Financial Obligations Ratios (released quarterly)",
+    "table_or_series_id": "FOR/FOR/DTFD%YPD.Q (legacy Fed identifier for Household Debt Service Ratio)",
+    "url": "https://www.federalreserve.gov/releases/housedebt/",
+    "frequency": "quarterly, SA (annualized via quarter averages in book)",
+    "units": "Percent of disposable personal income (ratio 0.10-0.18)",
+    "license": "Public domain (US Federal data)",
+    "available_through": "Federal Reserve releases; FRED (TDSP and FODSP)",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "direct",
+  "formula": "DSR = (mortgage debt service + consumer debt service) / disposable personal income (Fed's published quarterly series)",
+  "components": [
+    "Federal Reserve Household Debt Service Ratio (Fed series identifier FOR/FOR/DTFD%YPD.Q, equivalent to FRED TDSP)",
+    "Federal Reserve Household Financial Obligations Ratio (FOR — broader: includes rent, auto leases, homeowner's insurance, property tax)"
+  ],
+  "year_range_book": [
+    1980,
+    2012
+  ],
+  "year_range_extension": [
+    1980,
+    2024
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "Household Debt Service Ratio (DSR)",
+      "source": "FRED TDSP (Household Debt Service Payments as a Percent of Disposable Personal Income)",
+      "url": "https://fred.stlouisfed.org/series/TDSP",
+      "units": "Percent",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Direct continuation of Fed's quarterly release; methodology unchanged since 1980",
+        "CD2 references FODSP (Financial Obligations Ratio) which is broader — confirm which subseries Shaikh actually plotted"
+      ]
+    },
+    {
+      "subseries_label": "Financial Obligations Ratio (FOR, alternative/broader)",
+      "source": "FRED FODSP (Household Financial Obligations as a Percent of Disposable Personal Income)",
+      "url": "https://fred.stlouisfed.org/series/FODSP",
+      "units": "Percent",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "FOR > DSR by construction (adds rent, leases, insurance, property tax)",
+        "Per CD2 (S101), both S101-A (FOR) and S101-B (DSR) are kept as parallel subseries"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Single-source direct series; no transformation other than quarterly-to-annual averaging.",
+    "Per CD2 (S101), two subseries: S101-A (Financial Obligations Ratio, FOR) and S101-B (Debt Service Ratio, DSR). The Shaikh data identifier in Appendix 16.1 (FOR/FOR/DTFD%YPD.Q) is specifically the DSR.",
+    "Original Fed data identifier syntax 'FOR/FOR/DTFD%YPD.Q' is the legacy DDP (Data Download Program) reference; modern FRED equivalents are TDSP (this series) and FODSP (FOR).",
+    "Frequency: book chart is quarterly (1980Q1, 1984Q1, ... 2012Q1 on x-axis — see p. 736); RSCD may annualize for consistency with chapter-level annual cadence."
+  ],
+  "open_questions": [
+    "Confirm whether RSCD pipeline keeps quarterly or annualizes to match other Ch16 series (most are annual).",
+    "Verify FRED TDSP exact match to Shaikh's plotted values at sample years (1985, 2000, 2007, 2012) per CD2 validation table."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch16",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Ported from CD2 S101; quotes verbatim from p. 735 narrative and Appendix 16.1 p. 899."
+    }
+  ]
+}

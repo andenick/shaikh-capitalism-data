@@ -1,0 +1,146 @@
+{
+  "series_id": "S710",
+  "name": "US Industry IROP Deviations from Average (Figure 7.18), 1988-2005",
+  "chapter": 7,
+  "figures": [
+    "Fig7.18"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S037",
+    "cd2_id": "S037"
+  },
+  "book_quotes": [
+    {
+      "chapter": 7,
+      "page": 305,
+      "quote": "Figures 7.17 and 7.18 examine the incremental rate of profit in the same manner. Figure 7.17 shows that unlike average profit rates, incremental rates of profit do \"cross over\" a great deal. This is most clear in figure 7.18, which displays the deviations of individual industry incremental profit rates from the overall average. In every single case, individual incremental rates of profit cross back and forth relative to the average incremental rate: the smallest number of such crossing is four (Fabricated Metals), while the largest is twelve (Broadcast). This is a radically different picture from that presented by average rates of profit in the same sample.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 857,
+      "quote": "Since the US BEA now only calculates net capital stock, the rate of profit on total capital is defined here as the ratio of nominal net profits (gross profits minus depreciation) to current-cost net capital stock. On the other hand, since gross investment figures are widely available and are independent of the debatable assumptions needed to estimate capital stocks, the incremental rate of profit is defined as the ratio of the change in nominal gross profits to lagged nominal gross investment.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 858,
+      "quote": "Appendix 7.2 Data Tables for Chapter 7 (available online at http://www.anwarshaikhecon.org/), Sheets = ropdataUSind, iropdataUSind",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 300,
+      "quote": "The incremental rate of profit has two major virtues. First of all, it is easily estimated because its two components, gross profit and gross investment, are widely available across countries and through time: gross profit is defined as gross operating surplus, while gross investment is directly observed, unlike the laboriously constructed measures of the capital stock required to calculate the average rate of profit. Second, it has a direct interpretation as the \"marginal\" return on capital (Elton and Gruber 1991, 454; Damodaran 2001, 695), provided one understands that like all real \"marginals,\" it is turbulent, spiky, and discontinuous.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (BEA) + Shaikh (2008) reconstruction",
+    "publication": "Derived from S706 (US Industry Incremental Rates of Profit, Fig 7.17). Underlying data: BEA GDP-by-Industry tables (GDPbyInd_VA_NAICS 1947-97 and 1998-2005) for Gross Operating Surplus + BEA Fixed Asset Table 3.7ES (Historical-Cost Investment by Industry) + the same OOH/inventory/reserve adjustments as S705. Appendix 7.2 iropdataUSind sheet at http://www.anwarshaikhecon.org/.",
+    "table_or_series_id": "Per-industry deviation = IROP_i,t - IROP_avg,t computed from the same Appendix 7.2 iropdataUSind worksheet used for S706 (Fig 7.17). Same 38 industry sub-panels as Fig 7.16 (Accom, Accom.food, Admn&Waste, Amusement, Arts, Banks, Broadcast., Chemicals, Constr., Electr.Equ., Fab.Metal., Finance, Food, Food.serv., Furniture, Info, Info.serv., Insurance, Mach., Manuf.Misc., Manufacturing, Manufacturing D, Manufacturing ND, Movies, Nonmettalic, Paper, Petroleum, Plastic, Printing, Real, Real&Rental, Rental, Retail, Truck.trans, Utilit., Warehouse, Waste, Wholesale, Wood).",
+    "url": "https://apps.bea.gov/iTable/?reqid=150&step=2&isuri=1&categories=gdpxind",
+    "frequency": "annual",
+    "units": "rate deviation (decimal; industry IROP minus All-Private aggregate IROP, year by year)",
+    "license": "U.S. public domain (BEA primary data); Shaikh adjusted dataset is academic/derivative.",
+    "available_through": "Derived from Appendix 7.2 iropdataUSind sheet (Shaikh companion site http://www.anwarshaikhecon.org/) and from local copy at SalvagedInputs/book_data/ShaikhChoppedTables/Appendix7_iropdataUSind.xlsx. BEA primary tables remain on the BEA iTable interactive system.",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "For each included industry i in each year t (1988-2005): dev_i,t = IROP_i,t - IROP_avg,t, where IROP_i,t = (PG_i,t - PG_i,t-1) / IG_i,t-1 per S706 (with PG = GOS - WEQ, IG = historical-cost gross investment from FA T3.7ES, and the OOH/inventory/reserve adjustments per Appendix 7.1 III), and IROP_avg,t = (sum_i PG_i,t - sum_i PG_i,t-1) / sum_i IG_i,t-1 across the 30 included industries (aggregate before ratio, NOT unweighted mean of industry IROPs).",
+  "components": [
+    {
+      "label": "Industry IROP_i,t for 30 NAICS industries (1988-2005)",
+      "source": "S706 output (BEA GOS + FA T3.7ES + WEQ/OOH/inventory/reserve adjustments)",
+      "role": "minuend - per-industry incremental profit rate"
+    },
+    {
+      "label": "All-Private aggregate IROP_avg,t (1988-2005)",
+      "source": "Computed as (sum_i PG_i,t - sum_i PG_i,t-1) / sum_i IG_i,t-1 across the 30 included industries (S706 'All Private' line)",
+      "role": "subtrahend - cross-industry incremental baseline"
+    },
+    {
+      "label": "Appendix7_iropdataUSind.xlsx",
+      "source": "Local copy at SalvagedInputs/book_data/ShaikhChoppedTables/Appendix7_iropdataUSind.xlsx (Shaikh Appendix 7.2)",
+      "role": "canonical source: contains industry IROP panel and All-Private aggregate from which dev_i,t is directly computed"
+    }
+  ],
+  "year_range_book": [1988, 2005],
+  "year_range_extension": [1988, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA GDP-by-Industry (Gross Operating Surplus by NAICS) - re-run S706 pipeline, then re-compute deviations",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=150&step=2&isuri=1&categories=gdpxind",
+      "units": "rate deviation (decimal)",
+      "splice_strategy": "none",
+      "concerns": [
+        "IROP deviations inherit S706's intrinsic volatility: small denominators near zero make individual industry IROPs swing widely, which propagates one-for-one to deviations. Post-2008 financial crisis values for some industries can exceed |2.0|.",
+        "Any S706 vintage re-run forces a S710 re-run; do not splice deviations."
+      ]
+    },
+    {
+      "subseries_label": "BEA Fixed Asset Table 3.7ES (historical-cost investment by industry)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "billions of USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Same industry-boundary aggregation issues as S706 (sectors 50-51 and 69-70 must be combined to match GDPbyIndustry definitions).",
+        "Post-2013 R&D/IP capitalization changes IG levels - must use coherent single vintage."
+      ]
+    },
+    {
+      "subseries_label": "Federal Reserve Flow of Funds (Z.1)",
+      "source": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/releases/z1/",
+      "units": "billions of USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Same line-number drift concerns as S705/S706 (L.109/L.114-117 reserve flows)."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Pure algebraic derivative of S706: each industry's IROP_i minus the cross-industry All-Private aggregate IROP_avg, plotted as a small-multiple panel of 38 sub-charts (book PDF p. 348 / printed p. 309). This is the empirical exhibit that operationalizes Shaikh's 'turbulent equalization' claim for INCREMENTAL profit rates - the cleaner test, since IROP is invariant to capital-stock assumptions.",
+    "Per book p. 305 (verbatim): EVERY one of the 30 industries crosses the zero line; the minimum number of crossings is 4 (Fabricated Metals) and the maximum is 12 (Broadcast). This is the chapter's strongest single piece of empirical evidence for turbulent equalization of regulating profit rates.",
+    "Substantive contrast with S709 (ROP deviations): for ROP, 12 of 30 industries do NOT cross zero (7 above, 5 below); for IROP, ALL 30 cross zero, and most cross many times. This is the core asymmetry between average and incremental profit rates that Shaikh's theory of regulating capital predicts.",
+    "Same construction as S706 in every respect (industry sample, WEQ/OOH/inventory/reserve adjustments, vintage); deviation is a one-line transform. No new data ingestion required beyond what S706 already loads. The S706 loader should emit both S706 (per-industry IROP) and S710 (per-industry IROP deviation) as joint outputs.",
+    "Year range: 1988-2005 (book caption for Fig 7.17 says 1987-2005, but IROP requires a lagged year so the first observation is 1988; Fig 7.18 small-multiple panels are also labeled '88 90 92 94 96 98 00 02 04').",
+    "CD2 dossier (S037) treated this as a simple post-processing of S036 (the CD2 ancestor of S706): 'Load S215 parsed data or S036 output; Compute deviation = industry_IROP - average_IROP per year.' RSCD inherits this construction.",
+    "Anti-degradation: do NOT splice the published deviation series. Any extension to 2006+ requires re-running S706 end-to-end and re-computing dev_i,t. Document any winsorization or HP-filter decisions explicitly - IROP deviations are intrinsically volatile and Phase 5 plotting must commit to a default presentation.",
+    "Closes the Phase 2 gap for Fig 7.18 per decision 0004 (Phase 2's 8-series Ch7 allotment included S706 for the IROP levels but not the deviation panel)."
+  ],
+  "open_questions": [
+    "Confirm the IROP_avg aggregation: aggregate-before-ratio ((sum_i delta PG_i) / sum_i IG_i(-1)) or unweighted mean of industry IROPs? Methodology-consistency argues for aggregate-before-ratio (same as ROP), but the Appendix 7.2 spreadsheet should be inspected to confirm.",
+    "Decide on a default presentation for extension deviations: raw (true to Shaikh), winsorized at percentile thresholds, or HP-filtered. CD2 S037 left them raw; Phase 4 should ratify.",
+    "Verify the 30-industry vs 38-panel ambiguity (same issue as S709): book text says 'thirty industries' but Fig 7.18 shows 38 sub-panels including sub-aggregates (Manufacturing, Manufacturing D, Manufacturing ND).",
+    "RESOLVED 2026-05-18 (B4): 31-industry exclusion list extracted from Shaikh (2008) Table 9.A1 to SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv. Use as drop key in the S706 loader from which S710 deviations are derived."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-s710",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from CD2 S037 dossier + book pp. 300, 305, 857-858 (PDF pp. 344, 895-897) verbatim. Decision 0004: closes Phase 2 gap for Fig 7.18 (US IROP deviations). Construction = formula (one-line algebraic transform of S706). Source = same as S706 (BEA GOS + FA T3.7ES + Shaikh 2008 adjustments). 4 quotes (definition, source, source, method), 3 components, 3 extension candidates, 8 methodology notes. Substantive companion to S709 - together they comprise the chapter's strongest empirical test of turbulent equalization."
+    },
+    {
+      "reviewer": "opus-subagent-batch1-A4-B4",
+      "date": "2026-05-18",
+      "status": "blocker-resolved",
+      "notes": "B4 resolved (shared with S705/S706/S709). 31-industry exclusion list at SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv."
+    }
+  ]
+}

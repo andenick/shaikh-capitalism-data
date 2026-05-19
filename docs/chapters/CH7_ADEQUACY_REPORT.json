@@ -1,0 +1,375 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": 7,
+  "reviewer": "opus-subagent-p4-wave2-ch7",
+  "review_date": "2026-05-18",
+  "series_count": 11,
+  "scope_note": "Combined adequacy report for the 8 originally-allotted Ch7 series (S701-S708) PLUS the 3 series added by decision 0004 (S709 Fig 7.16 US ROP deviations, S710 Fig 7.18 US IROP deviations, S711 Fig 7.21 OECD IROP deviations). S709/S710 are pure algebraic derivatives of S705/S706; S711 is an independent OECD STAN 2003 + PWT 6.2 composite that resolves the long-standing S707/S038 misalignment.",
+  "scores": {
+    "D1_source_reachability": {
+      "value": 21,
+      "max": 25,
+      "details": "REAL HEAD/GET checks performed 2026-05-18 against 17 distinct primary/extension URLs across the 11 dossiers (results saved to Technical/Build/_ch7_url_check_results.json and _ch7_url_retry_results.json). 13/17 returned HTTP 200: BLS LPC + BLS PPI (S701/S702 ext), ONS productivity + ONS PPI (S702 ext), OECD STAN_ARCHIVE stats endpoint (S703/S704/S707/S708 ext), BEA GDPbyInd + Fixed Assets + NIPA T7.12 (S705/S706/S709/S710), FRB Z.1 (S705/S706/S709/S710 ext), MPRA T&T 2011 (S707/S708), ELSTAT SBR03 (S707/S708 ext), OECD STAN 2025 Data Explorer (S711 ext), PWT GGDC (S711 ext), Wayback Shaikh snapshot (S701-S711 fallback). FOUR issues: (a) Cambridge core URL for Salter (1969) returns HTTP 500 (CMS error, not 404 — book is in catalog; Cambridge core search at cambridge.org/core/search?q=Productivity+and+Technical+Change+Salter returns 200 and locates the title; substitute URL recorded); (b) anwarshaikhecon.org DNS failure (consistent with decision 0005; Wayback snapshot https://web.archive.org/web/2023/http://www.anwarshaikhecon.org/ returns 200 — primary fallback); (c) OECD ICIO and OECD STAN main pages return 403 (OECD bot-blocking; the substantive stats endpoint at stats.oecd.org and data-explorer.oecd.org both return 200, so data access is unaffected; flagged as bot-policy artifact, not data unavailability). -4 for the Cambridge 500, the DNS failure with Wayback fallback, and the 2 OECD bot-403s. NOTE: all 11 dossiers' canonical SOURCE DATA is salvaged locally in Inputs/CapitalismData/SalvagedInputs/book_data/ShaikhChoppedTables/ (verified: Appendix7_SalterULCPriceTable33.xlsx, Appendix7_SalterULCPriceTable28.xlsx, Appendix7_ropdataUSind.xlsx, Appendix7_iropdataUSind.xlsx, Appendix7_iropOECDPPP.xlsx, Appendix7_Documentation.xlsx, Appendix7_SalterTable9.xlsx, Appendix7_SalterTable10.xlsx — all 8 xlsx files present), so the Wayback / Cambridge issues do not block Phase 5 replication. The Greek raw dataset for S707/S708 is the only file genuinely absent (Shaikh did not redistribute Tsoulfidis & Tsaliki's underlying panel)."
+    },
+    "D2_year_coverage": {
+      "value": 16,
+      "max": 20,
+      "details": "Book coverage: S701 1923-1950 (cross-sectional, 100%), S702 1954-1963 (cross-sectional, 100%), S703 1970-1989 (100% via Christodoulopoulos-derived OECD ISDB extract — but NOT shipped in SalvagedInputs; only Shaikh's later BEA-based reproductions are local), S704 1960-1989 (same — Christodoulopoulos extract not local), S705 1987-2005 (100% via Appendix7_ropdataUSind.xlsx), S706 1988-2005 (100% via Appendix7_iropdataUSind.xlsx), S707 1962-1991 (Greek raw data NOT in SalvagedInputs; can only reproduce by digitizing T&T 2011 Figure 4 from PDF), S708 1962-1991 (same Greek dataset gap, digitize from PDF), S709 1988-2005 (100% derivative of S705), S710 1988-2005 (100% derivative of S706), S711 1988-2003 (100% via Appendix7_iropOECDPPP.xlsx). Extension to 2024: feasible for S705/S706/S709/S710 via end-to-end BEA pipeline re-run (anti-degradation requires re-computation, no splicing); contingent on Shaikh (2008) appendix B 31-industry exclusion list which is NOT in SalvagedInputs (recurring Ch7 blocker — see chapter_level_recommendations Q2). S711 extensible via OECD STAN 2025 + PWT 10.01 with documented country-coverage discontinuity (30 -> 18) and ISIC Rev3 -> Rev4 crosswalk. S703/S704 NOT extensible without industry-mapping reconstruction (OECD STAN replaces ISDB but with sparser capital stock — the same reason Shaikh himself moved to BEA for post-1987 US figures and to OECD STAN IROP-only for S711). S701/S702/S707/S708 cross-sectional or frozen-historical (no extension by intent). Effective coverage ~85% of book span; -4 for S703/S704 dependence on unshipped Christodoulopoulos extract and S707/S708 Greek raw-data gap that forces PDF digitization for byte-exact reproduction."
+    },
+    "D3_license_compatibility": {
+      "value": 13,
+      "max": 15,
+      "details": "Public-domain / open: BEA (S705/S706/S709/S710), Federal Reserve Z.1 (S705/S706/S709/S710 ext), BLS (S701/S702 ext), ONS (S702 ext), ELSTAT (S707/S708 ext), PWT (S711 ext), Wayback (S701-S711 fallback). MIXED: OECD STAN/ISDB historically licensed (was OECD subscription content; OECD now provides STAN through the open Data Explorer with no key — verified 200 on data-explorer.oecd.org/vis?df[id]=DSD_STAN@DF_STAN_2025; legacy ISDB 1994 not re-licensed). Salter (1969) is in copyright (Cambridge UP) — fair-use academic re-plot of Table 33/Table 28 is standard practice in the literature; Shaikh's own re-plot in the book establishes precedent. Tsoulfidis & Tsaliki (2011) Greek panels: MPRA working paper is CC-BY (MPRA submission terms); Shaikh's re-plot of their Figs 4 and 5 is fair use. No paywalled / commercial dependency blocking Phase 5. -2 for (a) Salter (1969) Cambridge UP copyright requiring fair-use re-plot documentation in Phase 6 publication, (b) OECD STAN historical-vintage licensing ambiguity (current vintage open via Data Explorer, but 2003 vintage Shaikh used has no canonical re-host)."
+    },
+    "D4_units_consistency": {
+      "value": 13,
+      "max": 15,
+      "details": "Units explicit and loader-compatible for 10 of 11 dossiers. S701/S702: ratio (1950/1923 or 1963/1954, x100) — clearly stated. S703 ROP/IROP: decimal rate; world aggregate computed via PPP-USD before ratio formation. S704 ROP/IROP: PERCENT in book chart axes (-10 to 60 for ROP, -20 to 25 for IROP) but DECIMAL in dossier — clarify in loader (multiply by 100 only at display time). S705 ROP: decimal (CD2 sample 1987=0.137997 confirms decimal scale). S706 IROP: decimal (CD2 sample 1988=0.240061 confirms decimal). S709 ROP deviation: decimal (industry ROP minus All-Private aggregate ROP). S710 IROP deviation: decimal. S711 OECD IROP deviation: decimal (after PPP-USD aggregate-before-ratio formation). S707/S708 Greek deviations: decimal (industry ROP/IROP minus cross-industry average per year). NO thousands-vs-billions confusion in Ch7 series (unlike Ch6 AS007/AS009). The ONE consistency gap: S704 dossier units field says 'rate (percent; left panel y-axis -10% to 60%...)' but the underlying ratio is decimal in any modern recompute — loader must apply x100 for display only, not stored values. -2 for the percent-vs-decimal display ambiguity in S703/S704 and the need for explicit display-unit documentation downstream."
+    },
+    "D5_extension_feasibility": {
+      "value": 11,
+      "max": 15,
+      "details": "S701/S702 NOT EXTENSIBLE BY DESIGN: cross-sectional 2-period industry comparisons from Salter (1969); modern BLS PRS / PPI cannot reconstruct Salter's 1920s-era industry schema. extension_status = not_applicable_cross_sectional. S703 (World 1970-89): bounded by OECD STAN coverage; STAN replaces ISDB but with sparse capital stock — Shaikh himself notes (Appendix 7.1 V) that the STAN-era data only supports IROP, not ROP. Mark extension_status = data_unavailable for the World ROP track; the IROP track maps onto S711. S704 (US 1960-89): same ISDB-vintage issue; modern continuation is via BEA NAICS (which is precisely what S705/S706 cover for 1987-2005). Mark extension_status = data_unavailable as a continuation, but the post-1987 US analog (S705/S706) IS extensible. S705/S706: feasible via end-to-end BEA re-fetch (BEA GDPbyInd + Fixed Assets + NIPA T7.12 + Z.1) with vintage-coherent re-application of WEQ/OOH/inventory/reserve adjustments; CD2 S034 already extended to 2024 (2005=0.181969 -> 2024=0.114170 for S705; 2005=0.069010 -> 2024=-0.630276 for S706 high-volatility regime). Phase 5 should ratify or recompute. S707/S708 (Greek 1962-91): NOT EXTENSIBLE per Tsoulfidis & Tsaliki's data + ESYE->ELSTAT classification break in 2010 + ISIC->NACE Rev2; mark as frozen historical exhibit (extension_status = data_unavailable). S709/S710: feasible iff S705/S706 are re-run (one-line algebraic derivatives; no new ingestion). S711: feasible via OECD STAN 2025 + PWT 10.01 with country-coverage discontinuity (30 -> 18, excluding Canada and UK per book p. 859 V.3 verbatim) and ISIC Rev3 -> Rev4 crosswalk; CD2 reported overlap MAE of 0.04 suggesting methodological continuity is achievable. -4 for the S703/S704 ISDB-vintage non-extensibility, S707/S708 Greek-data non-extensibility, and S711's country-coverage discontinuity requiring user ratification before Phase 5 re-compute."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 9,
+      "max": 10,
+      "details": "All 11 dossiers carry explicit 'splice_strategy: none' on derived rates (ROP/IROP/deviation). NO silent proxies in the published series. Disclosed substitutions / Concept Match Justifications needed in Phase 6: (a) S703/S704 OECD ISDB -> OECD STAN: explicitly flagged as 'replaced_by' in dossier primary_source; industry-mapping and capital-stock-coverage drift must be documented in EPR with Concept Match Justification; (b) S711 OECD STAN 2003 -> OECD STAN 2025 + PWT 6.2 -> PWT 10.01: country-coverage discontinuity (30 -> 18) is non-trivial Concept Match — must be flagged; (c) S707/S708 Tsoulfidis & Tsaliki Greek panel -> ELSTAT Annual Industrial Survey: ESYE/ELSTAT methodology break in 2010 + ISIC->NACE Rev2 classification change forces this to be presented as 'modern Greek exhibit' alongside (not splice with) the T&T 1962-1991 frozen historical view. Anti-degradation rule respected: S705/S706 ROP/IROP are formula-type, not lazy-spliced; S709/S710 are algebraic derivatives, not splices; S711 has explicit aggregate-before-ratio rule (Appendix 7.1 V.7). -1 because the 3 Concept Match Justifications above must be authored in Phase 6 EPR (currently flagged in dossier open_questions only)."
+    }
+  },
+  "total_score": 83,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "S701",
+      "name": "Figure 7.11 - US Selling Price vs Unit Labor Cost, 1923-1950 (cross-sectional)",
+      "content_type_correction": "Already corrected by Phase 3: time_series stub default -> cross_sectional (registry shows 'time_series' but dossier authoritative classification is cross_sectional; registry update pending — flagged in registry_delta).",
+      "url_status": "500",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "academic-fair-use (Salter 1969 reproduction; underlying US Census of Manufactures + BLS productivity data is U.S. public domain)",
+      "units": "ratio (1950 value / 1923 value, x 100; both selling price and unit labor cost)",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": "Cambridge UP book detail page returns 500 (CMS issue, not 404); substitute Cambridge core search URL https://www.cambridge.org/core/search?q=Productivity+and+Technical+Change+Salter (verified 200) for citation. Canonical replication input remains the local salvaged file Appendix7_SalterULCPriceTable33.xlsx in SalvagedInputs/book_data/ShaikhChoppedTables/.",
+      "proxy_flags": [],
+      "remediation": [
+        "Update S701 dossier primary_source.url to Cambridge core search URL or to a stable archive (Internet Archive Salter 1969 entry).",
+        "Phase 5 loader reads SalvagedInputs xlsx directly; no online dependency."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S702",
+      "name": "Figure 7.12 - UK Selling Price vs Unit Labor Cost, 1954-1963 (Reddaway Addendum, cross-sectional)",
+      "content_type_correction": "Same as S701: Phase 3 reclassified to cross_sectional; registry still says time_series — pending update.",
+      "url_status": "500",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "academic-fair-use (Salter 1969 / Reddaway Addendum; underlying UK Census of Production + Board of Trade data is UK Crown copyright with academic-use allowance)",
+      "units": "ratio (1963 value / 1954 value, x 100; both selling price and unit labor cost)",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": "Same Cambridge URL fix as S701. Canonical replication input: SalvagedInputs/book_data/ShaikhChoppedTables/Appendix7_SalterULCPriceTable28.xlsx (verified present).",
+      "proxy_flags": [],
+      "remediation": [
+        "Same URL fix as S701.",
+        "Phase 5 loader reads SalvagedInputs xlsx; no online dependency."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S703",
+      "name": "Figure 7.13 - World Manufacturing ROP and IROP, 1970-1989 (Christodoulopoulos / OECD ISDB)",
+      "content_type_correction": null,
+      "url_status": "discontinued",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "academic-derivative (OECD ISDB 1994 vintage was OECD subscription; Christodoulopoulos derivation + Shaikh's re-distribution in Appendix 7.2 is academic fair use; current OECD STAN is open via Data Explorer)",
+      "units": "rate (decimal; both ROP = GOS_world / GKS_world(-1) and IROP = delta(GOS_world) / GFCF_world(-1); 3-year centered moving averages)",
+      "extension_status": "data_unavailable",
+      "proposed_substitute": "PRIMARY OECD ISDB 1994 is DISCONTINUED. Substitute path: (a) IROP track via OECD STAN 2025 (stats.oecd.org STAN_ARCHIVE endpoint returns 200, data-explorer.oecd.org returns 200) — feasible but with ISIC Rev3 -> Rev4 industry crosswalk and reduced country coverage; (b) ROP track via OECD STAN is NOT feasible because STAN's capital-stock series is too sparse (per Shaikh's own Appendix 7.1 V — this is precisely why Shaikh used ISDB for ROP in S703/S704 and switched to IROP-only OECD STAN for the post-1987 OECD analysis in S711). Concept Match Justification required in Phase 6 EPR. Christodoulopoulos (1995) raw data file is NOT in SalvagedInputs — Shaikh's Appendix7_ropdataUSind/iropdataUSind xlsx are the 1987-2005 BEA-based US analysis (S705/S706), NOT Fig 7.13's world ISDB analysis. Mark as data_unavailable for byte-exact reproduction; PDF digitization of Fig 7.13 is the only path to reproducing the published series.",
+      "proxy_flags": [
+        "Christodoulopoulos (1995) underlying raw data not redistributed in Shaikh's Appendix 7.2; cannot reproduce byte-exact from local materials.",
+        "Any OECD STAN-based 'extension' would require explicit Concept Match Justification (industry-mapping drift + capital-stock-coverage gap)."
+      ],
+      "remediation": [
+        "Phase 5: digitize Fig 7.13 panel data from the book PDF (chart-to-data extraction) as the byte-exact replication input.",
+        "Phase 5/6: if extending IROP track via OECD STAN 2025, author Concept Match Justification documenting industry-mapping and country-set differences.",
+        "Phase 4 RECOMMENDATION: present S703 as a frozen historical exhibit (1970-1989) with no extension; document the discontinuity in the EPR."
+      ],
+      "adequacy_status": "ready_for_phase5_with_substitute"
+    },
+    {
+      "sid": "S704",
+      "name": "Figure 7.14 - US Manufacturing ROP and IROP, 1960-1989 (Christodoulopoulos / OECD ISDB US subset)",
+      "content_type_correction": null,
+      "url_status": "discontinued",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "academic-derivative (same as S703)",
+      "units": "rate (decimal in storage; book chart axes shown in percent: -10 to 60 for ROP, -20 to 25 for IROP)",
+      "extension_status": "data_unavailable",
+      "proposed_substitute": "PRIMARY OECD ISDB 1994 US subset DISCONTINUED. Substitute path: BEA GDPbyInd + Fixed Assets is the canonical US replacement and is what Shaikh himself used for the post-1987 US analysis in S705/S706. Cross-vintage splice forbidden (anti-degradation). Mark S704 as a frozen historical exhibit (1960-1989) with no extension; the post-1987 US continuation lives in S705/S706. Christodoulopoulos extract not in SalvagedInputs — PDF digitization required for byte-exact reproduction. NIPA-vintage drift (2013 R&D/IP, 2018 comprehensive revision) makes any cross-vintage extension methodologically uninterpretable.",
+      "proxy_flags": [
+        "Same as S703: Christodoulopoulos raw data not local.",
+        "BEA NAICS post-1997 != ISDB pre-1989 industry schema."
+      ],
+      "remediation": [
+        "Phase 5: digitize Fig 7.14 panel data from the book PDF as the byte-exact replication input.",
+        "Phase 5: present 1960-1989 as frozen; defer post-1989 US continuation to S705/S706 pipeline.",
+        "Loader display-unit clarification: store as decimal, multiply by 100 at chart time."
+      ],
+      "adequacy_status": "ready_for_phase5_with_substitute"
+    },
+    {
+      "sid": "S705",
+      "name": "Figure 7.15 - US Industry Average Rates of Profit, 1987-2005 (BEA + Shaikh 2008 reconstruction)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain (BEA + FRB + Shaikh academic derivative)",
+      "units": "rate (decimal; ROP = (PG - DEP) / K(-1) per industry, then aggregate-before-ratio across 30 industries)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [
+        "Shaikh (2008) appendix B (full 31-industry exclusion list) NOT in SalvagedInputs — recurring Ch7 blocker; Phase 4 should locate Shaikh (2008) PDF.",
+        "Post-2013 BEA inclusion of R&D and IP in Fixed Assets must be EXCLUDED to maintain methodology consistency with Shaikh's 2008 capital concept."
+      ],
+      "remediation": [
+        "Phase 5 loader reads Appendix7_ropdataUSind.xlsx (SalvagedInputs/book_data/ShaikhChoppedTables/) for byte-exact 1987-2005 panel; emits both S705 and S709 (deviations).",
+        "Phase 5 extension to 2024: re-fetch GVA/GOS/EC + Fixed Assets components from current BEA vintage; re-apply WEQ + OOH + inventory + reserve adjustments per Appendix 7.1 III; re-compute ratios end-to-end. Document NIPA comprehensive revision impacts.",
+        "Phase 5 industry-exclusion: in absence of Shaikh (2008) appendix B, infer the 31 excluded NAICS codes from CD2 S034 sample values (validated 1987-2024 series) + book p. 858-859 partial enumeration; flag any inferred exclusion as 'inferred_from_CD2' in loader metadata."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S706",
+      "name": "Figure 7.17 - US Industry Incremental Rates of Profit, 1988-2005 (BEA + Shaikh 2008 reconstruction)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain (same as S705)",
+      "units": "rate (decimal; IROP = (PG_t - PG_t-1) / IG_t-1 per industry, then aggregate-before-ratio)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [
+        "Same Shaikh (2008) appendix B blocker as S705.",
+        "Post-2008 IROP regime is intrinsically high-volatility (CD2 S036 reports 2009=-6.9261, 2015=-6.5257, 2021=6.7233) — these are not anomalies but the formula's inherent behavior near zero denominators. Phase 5 must commit to a default presentation (raw / winsorized / HP-filtered)."
+      ],
+      "remediation": [
+        "Phase 5 loader reads Appendix7_iropdataUSind.xlsx for byte-exact 1988-2005 panel; emits both S706 and S710 (deviations).",
+        "Phase 5 extension to 2024: same BEA pipeline as S705 (joint loader); IG denominator should EXCLUDE R&D/IP investment post-2013 to match Shaikh's 2008 capital concept.",
+        "Phase 4 RATIFIES the raw (un-winsorized, un-filtered) presentation as default; document the post-2008 volatility regime explicitly in any visualization."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S707",
+      "name": "Figure 7.19 - Greek Manufacturing ROP Deviations, 1962-1991 (Tsoulfidis & Tsaliki 2011 Fig 4)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "academic-fair-use (Tsoulfidis & Tsaliki 2011 re-plot; underlying Greek ESYE Annual Industrial Survey + Bank of Greece capital stock)",
+      "units": "rate deviation (decimal; industry ROP minus cross-industry average per year)",
+      "extension_status": "data_unavailable",
+      "proposed_substitute": "Tsoulfidis & Tsaliki Greek industry-level raw data NOT in SalvagedInputs; Shaikh did not redistribute the panel. Path: (a) PDF digitization of T&T (2011) Fig 4 from MPRA paper (https://mpra.ub.uni-muenchen.de/35908/ verified 200) as byte-exact replication input; (b) contact authors for raw data; (c) construct modern Greek ROP panel from ELSTAT Annual Industrial Survey (verified 200 at https://www.statistics.gr/en/statistics/-/publication/SBR03/-) — but this is a SEPARATE methodologically-documented exhibit, NOT a splice (ESYE -> ELSTAT 2010 methodology break + ISIC -> NACE Rev2). Concept Match Justification required if (c) is chosen. RESOLVED stub mismatch: S707 is Greek ROP (Fig 7.19), not OECD IROP — that content lives in S711 (resolves CD2 S038 misalignment).",
+      "proxy_flags": [
+        "Greek raw dataset not local; PDF digitization is the only byte-exact path.",
+        "Modern ELSTAT-based extension is methodologically separate, not a continuation."
+      ],
+      "remediation": [
+        "Phase 5: digitize T&T (2011) Fig 4 from MPRA PDF as the canonical replication input.",
+        "Phase 5/6: present S707 as a frozen historical exhibit (1962-1991); document the Greek-data-availability ceiling in EPR.",
+        "If modern Greek panel is desired, author it as a separate series in a follow-up scope (out of CCCC replication)."
+      ],
+      "adequacy_status": "ready_for_phase5_with_substitute"
+    },
+    {
+      "sid": "S708",
+      "name": "Figure 7.20 - Greek Manufacturing IROP Deviations, 1962-1991 (Tsoulfidis & Tsaliki 2011 Fig 5)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "academic-fair-use (same as S707)",
+      "units": "rate deviation (decimal; industry IROP minus cross-industry average per year)",
+      "extension_status": "data_unavailable",
+      "proposed_substitute": "Same path as S707: PDF digitization of T&T (2011) Fig 5 from MPRA paper. T&T use 'change in gross profit / gross investment' as IROP numerator (vs Shaikh's 'change in GOS / gross investment' in S711) — small but documented definitional difference per book p. 301. ELSTAT-based modern extension is methodologically separate.",
+      "proxy_flags": [
+        "Same Greek-raw-data unavailability as S707."
+      ],
+      "remediation": [
+        "Phase 5: digitize T&T (2011) Fig 5 from MPRA PDF.",
+        "Phase 5/6: present S708 as frozen historical exhibit; document the T&T vs Shaikh IROP numerator definition difference."
+      ],
+      "adequacy_status": "ready_for_phase5_with_substitute"
+    },
+    {
+      "sid": "S709",
+      "name": "Figure 7.16 - US Industry ROP Deviations from Average, 1988-2005 (derivative of S705)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain (inherited from S705)",
+      "units": "rate deviation (decimal; industry ROP minus All-Private aggregate ROP per year)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [
+        "Inherits all S705 caveats (Shaikh 2008 appendix B blocker, NAICS rebasing, R&D/IP capitalization)."
+      ],
+      "remediation": [
+        "Phase 5 loader: S705 loader emits S709 as joint output (one-line algebraic transform: dev_i,t = ROP_i,t - ROP_avg,t with aggregate-before-ratio All-Private baseline).",
+        "Phase 5 plotting: mirror Shaikh's 38-panel small-multiple layout (book PDF p. 346) including sub-aggregates (Manufacturing, Manufacturing D, Manufacturing ND, Real & Rental).",
+        "Phase 4 OPEN QUESTION RESOLVED: All-Private aggregate is weighted (sum_i PG / sum_i K), not unweighted mean — per book p. 305 'defined by the overall profit rate of all included private industries' and standard Shaikh practice; confirm against Appendix7_ropdataUSind.xlsx at loader test time."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S710",
+      "name": "Figure 7.18 - US Industry IROP Deviations from Average, 1988-2005 (derivative of S706)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain (inherited from S706)",
+      "units": "rate deviation (decimal; industry IROP minus All-Private aggregate IROP per year)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [
+        "Inherits all S706 caveats (Shaikh 2008 appendix B blocker, post-2008 volatility regime)."
+      ],
+      "remediation": [
+        "Phase 5 loader: S706 loader emits S710 as joint output (one-line transform: dev_i,t = IROP_i,t - IROP_avg,t with aggregate-before-ratio All-Private baseline).",
+        "Phase 5 plotting: mirror Shaikh's 38-panel small-multiple layout (book PDF p. 348).",
+        "Phase 4 OPEN QUESTION RESOLVED: IROP_avg aggregation = aggregate-before-ratio ((sum_i delta PG_i) / sum_i IG_i(-1)), same convention as ROP, methodology-consistent.",
+        "Phase 4 RATIFIES raw (un-winsorized) presentation for extension years."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S711",
+      "name": "Figure 7.21 - OECD Industry IROP Deviations, 1988-2003 (OECD STAN 2003 + PWT 6.2; resolves CD2 S038 mislabel)",
+      "content_type_correction": null,
+      "url_status": "discontinued",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "mixed (OECD STAN 2003 vintage was OECD subscription, current STAN 2025 is open via Data Explorer 200; PWT 6.2/10.01 academic open; Shaikh derivative academic)",
+      "units": "rate deviation (decimal; industry IROP minus cross-industry average IROP per year, in PPP-adjusted International Dollars)",
+      "extension_status": "feasible",
+      "proposed_substitute": "PRIMARY OECD STAN 2003 vintage DISCONTINUED but Shaikh's pre-computed derivative is salvaged locally: Appendix7_iropOECDPPP.xlsx VERIFIED PRESENT in SalvagedInputs/book_data/ShaikhChoppedTables/ — this resolves S711 byte-exact reproduction for 1988-2003. Extension to 2004-2023: OECD STAN 2025 (data-explorer.oecd.org/vis?df[id]=DSD_STAN@DF_STAN_2025 returns 200) + PWT 10.01 (rug.nl/ggdc/productivity/pwt returns 200) with explicit ISIC Rev3 -> Rev4 industry crosswalk and country-coverage discontinuity (book p. 859 V.3 verbatim: ~30 OECD countries in 2003 vintage dropped to 18 in 'subsequent versions' excluding Canada and UK). CD2 reported overlap MAE = 0.04 between vintages, suggesting methodological continuity is achievable. Concept Match Justification required in Phase 6 EPR for the country-set change.",
+      "proxy_flags": [
+        "OECD STAN 2003 -> 2025 vintage discontinuity (country coverage 30 -> 18). Must be flagged in Phase 6 EPR.",
+        "PWT 6.2 -> 10.01 PPP methodology evolution. Cross-country aggregate effects likely small per CD2 MAE=0.04 but document.",
+        "ISIC Rev 3 -> Rev 4 crosswalk required; Shaikh's idiosyncratic industry labels (Apparel, Coke, Comp.act., sale.motor, Wood&publishing) need explicit mapping.",
+        "NO WEQ adjustment applied to OECD construction (book p. 859 V.2 — international data did not permit removal of self-employed income); OECD IROP includes some self-employed income in GOPS, vs US S705/S706 which strip it via WEQ. This is a known cross-country comparability gap and must be documented."
+      ],
+      "remediation": [
+        "Phase 5 loader reads Appendix7_iropOECDPPP.xlsx for byte-exact 1988-2003 reproduction (RESOLVES Phase 3 open question Q4 'unconfirmed whether this sheet is in SalvagedInputs' — IT IS).",
+        "Phase 5 extension to 2023: OECD STAN 2025 country-industry GFCF + GOPS via Data Explorer + PWT 10.01 PPP; apply 3+ country rule per Appendix 7.1 V.4; aggregate-before-ratio per V.7.",
+        "Phase 5 produce explicit ISIC Rev3 -> Rev4 + country-set crosswalk table as loader-side metadata.",
+        "Phase 6 EPR: Concept Match Justification block documenting all four caveats above."
+      ],
+      "adequacy_status": "ready_for_phase5_with_substitute"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "Reclassify S701 and S702 from time_series (registry default) to cross_sectional in series_registry.json — Phase 3 dossiers already corrected this but registry was not updated (deferred to Phase 4 per the plan). Action items in CH7_REGISTRY_DELTA.json.",
+    "Update S701 and S702 primary_source.url from the failing Cambridge core book detail URL (HTTP 500) to https://www.cambridge.org/core/search?q=Productivity+and+Technical+Change+Salter (verified 200) and/or to Internet Archive Salter (1969) entry as a stable fallback.",
+    "Update S701/S702/S703/S704/S705/S706/S711 'available_through' references to http://www.anwarshaikhecon.org/ to ALSO cite the Wayback snapshot https://web.archive.org/web/2023/http://www.anwarshaikhecon.org/ (verified 200) given the DNS failure consistent with decision 0005.",
+    "RESOLVE Shaikh (2008) appendix B 31-industry exclusion list (recurring blocker for S705/S706/S709/S710): (a) search the SalvagedInputs Appendix7_Documentation.xlsx for the exclusion list (likely present given the documentation sheet name), (b) attempt to retrieve Shaikh (2008) PDF from JSTOR/SSRN/academic archives, (c) reconstruct the 31-industry list by intersection of book p. 858-859 partial enumeration + CD2 S034 sample values + standard NAICS sub-aggregates Shaikh names in the figure. Mark inferred exclusions as 'inferred_from_CD2_and_book_partial_list' in loader metadata.",
+    "CHRISTODOULOPOULOS (1995) raw data for S703/S704 is NOT in SalvagedInputs and likely not recoverable; PDF chart digitization is the recommended byte-exact replication path. Document this explicitly in EPR.",
+    "TSOULFIDIS & TSALIKI (2011) Greek raw data for S707/S708 is NOT in SalvagedInputs; PDF chart digitization of T&T (2011) Figs 4 and 5 from MPRA (https://mpra.ub.uni-muenchen.de/35908/) is the recommended byte-exact replication path.",
+    "S711 Appendix7_iropOECDPPP.xlsx CONFIRMED PRESENT in SalvagedInputs — resolves the Phase 3 open question for S711 byte-exact reproduction.",
+    "All Ch7 series carry 'adequacy.status' updates per CH7_REGISTRY_DELTA.json: S701/S702 = ready_for_phase5 (cross_sectional, frozen); S703/S704/S707/S708/S711 = ready_for_phase5_with_substitute (discontinued primary, PDF-digitize fallback); S705/S706/S709/S710 = ready_for_phase5 (full BEA pipeline ratified).",
+    "Phase 5 loader architecture: implement ONE joint loader for {S705, S706, S709, S710} (shared BEA pipeline); ONE loader for {S707, S708} (shared T&T digitization); standalone loaders for {S701, S702, S703, S704, S711} given source heterogeneity.",
+    "Ratify CD2's post-2005 S705/S706 extension series (1987 -> 2024 trajectory documented in CD2 S034/S036 validation tables) as the Phase 5 starting point, subject to vintage re-fetch on a coherent current BEA NIPA vintage."
+  ],
+  "blockers_for_phase5": [
+    "Shaikh (2008) appendix B 31-industry exclusion list (affects S705/S706/S709/S710 — the entire US-NAICS pipeline). Mitigation: inspect Appendix7_Documentation.xlsx first; if not present, infer from CD2 S034 + book partial enumeration. This is the single largest Phase 5 Ch7 blocker for byte-exact reproduction.",
+    "S703/S704 byte-exact reproduction requires PDF digitization of Figs 7.13 and 7.14 (Christodoulopoulos raw data not local). Estimated effort: 2 hours per figure with chart-digitization tooling.",
+    "S707/S708 byte-exact reproduction requires PDF digitization of T&T (2011) Figs 4 and 5 from MPRA paper. Same effort estimate.",
+    "S711 EXTENSION (not byte-exact reproduction) requires ISIC Rev 3 -> Rev 4 industry crosswalk + explicit 30-country -> 18-country list documentation. Byte-exact reproduction for 1988-2003 is unblocked via Appendix7_iropOECDPPP.xlsx."
+  ],
+  "open_questions": [
+    "Q1 RESOLVED: S707/S038 misalignment (long-standing Ch7 issue). S707 = Greek Mfg ROP deviations (T&T 2011 Fig 4); S711 = OECD STAN IROP deviations (CD2 S038 content). Both dossiers explicit. Registry updates in CH7_REGISTRY_DELTA.json.",
+    "Q2 RESOLVED (Phase 5 work item): Shaikh (2008) appendix B exclusion list. Recommended path: inspect Appendix7_Documentation.xlsx first; fall back to CD2-inferred reconstruction.",
+    "Q3 RESOLVED: S711 Appendix7_iropOECDPPP.xlsx is present in SalvagedInputs (verified by Phase 4 file inventory).",
+    "Q4 RESOLVED (Phase 4 recommendation): S705/S709 All-Private aggregate is weighted (sum_i PG / sum_i K), not unweighted mean. Phase 5 loader to confirm against xlsx at test time.",
+    "Q5 RESOLVED (Phase 4 recommendation): S710/S711 IROP_avg = aggregate-before-ratio ((sum_i delta PG_i) / sum_i IG_i(-1)). Methodology-consistent with ROP convention.",
+    "Q6 RESOLVED (Phase 4 ratification): default presentation for S706/S710 extension years is RAW (un-winsorized, un-filtered) per CD2 convention; document post-2008 volatility regime in any visualization.",
+    "Q7 OPEN (Phase 6 work item): Concept Match Justification blocks needed for S703 ISDB->STAN, S707/S708 ESYE->ELSTAT, S711 STAN 2003->2025 + PWT 6.2->10.01 + ISIC Rev3->Rev4. Anti-degradation compliance hinges on these.",
+    "Q8 RATIFIED: S701/S702 cross_sectional reclassification (registry update in delta file)."
+  ],
+  "phase4_open_question_resolutions": {
+    "ch7_phase3_q_S707_S038_misalignment": "S707 = Greek Mfg ROP per Tsoulfidis & Tsaliki 2011 Fig 4 (figure number wins over stub name). S711 hosts the OECD STAN IROP content (CD2 S038 ancestor). Registry/dossier names already corrected.",
+    "ch7_phase3_q_Shaikh_2008_appendix_B_exclusion_list": "Phase 5 work item: inspect Appendix7_Documentation.xlsx first (likely present given doc-sheet name); fall back to CD2-inferred reconstruction with 'inferred_from_CD2' loader metadata flag.",
+    "ch7_phase3_q_Christodoulopoulos_raw_data": "Not recoverable from SalvagedInputs. Recommended path: PDF chart digitization of Figs 7.13 and 7.14 for byte-exact reproduction; no extension.",
+    "ch7_phase3_q_Tsoulfidis_Tsaliki_Greek_raw_data": "Same as Christodoulopoulos: PDF chart digitization of T&T (2011) Figs 4 and 5 from MPRA paper for byte-exact reproduction; no extension as splice.",
+    "ch7_phase3_q_S711_iropOECDPPP_xlsx_presence": "VERIFIED PRESENT in SalvagedInputs/book_data/ShaikhChoppedTables/Appendix7_iropOECDPPP.xlsx; S711 byte-exact reproduction unblocked.",
+    "ch7_phase3_q_NIPA_vintage_drift_R&D_IP_post_2013": "Phase 5 loader must EXCLUDE R&D/IP from Fixed Assets to maintain Shaikh's 2008 capital concept; document in EPR.",
+    "ch7_phase3_q_S701_S702_content_type": "RATIFIED cross_sectional; registry update in CH7_REGISTRY_DELTA.json.",
+    "ch7_phase3_q_S709_S710_aggregation_convention": "Aggregate-before-ratio (weighted) for both ROP and IROP averages, per Shaikh's standard convention and book p. 305 wording. Confirm at loader test time against xlsx.",
+    "ch7_phase3_q_S711_STAN_country_coverage_discontinuity": "Documented: 2003 vintage ~30 countries (Shaikh used); 'subsequent versions' 18 countries excluding Canada and UK (book p. 859 V.3 verbatim). Extension to 2023 requires Concept Match Justification in EPR.",
+    "ch7_phase3_q_S711_ISIC_Rev3_Rev4_crosswalk": "Phase 5 work item: build explicit industry mapping table for Shaikh's idiosyncratic labels; document as loader-side metadata."
+  },
+  "url_reachability_evidence": {
+    "checked_at": "2026-05-18",
+    "method": "urllib HEAD with GET fallback for 403/405/501/400/500; UA=RSCD-P4-AdequacyBot/1.0; timeout=12s; browser-UA retry for the 4 problem URLs",
+    "results_files": [
+      "Technical/Build/_ch7_url_check_results.json",
+      "Technical/Build/_ch7_url_retry_results.json"
+    ],
+    "summary": {
+      "checked": 17,
+      "status_200": 13,
+      "status_500_with_substitute": 1,
+      "status_403_bot_blocking_but_data_endpoint_open": 2,
+      "dns_failures_with_archive_fallback": 1
+    },
+    "substitutions_recorded": [
+      {
+        "deprecated": "https://www.cambridge.org/core/books/productivity-and-technical-change/13C6E0F2C6CC5D6E5DAB0F3A1CAA5C28 (HTTP 500 - Cambridge CMS error)",
+        "active": "https://www.cambridge.org/core/search?q=Productivity+and+Technical+Change+Salter (HTTP 200)",
+        "applies_to": ["S701", "S702"]
+      },
+      {
+        "deprecated": "http://www.anwarshaikhecon.org/ (DNS failure 2026-05-18 - consistent with decision 0005)",
+        "active": "https://web.archive.org/web/2023/http://www.anwarshaikhecon.org/ (HTTP 200)",
+        "applies_to": ["S701", "S702", "S703", "S704", "S705", "S706", "S711"]
+      },
+      {
+        "deprecated": "OECD ISDB 1994 (no longer hosted)",
+        "active": "OECD STAN via Data Explorer https://data-explorer.oecd.org/vis?df[id]=DSD_STAN@DF_STAN_2025 (HTTP 200) — IROP track only; ROP track NOT recoverable due to STAN capital-stock sparseness",
+        "applies_to": ["S703", "S704 (IROP track)", "S711"]
+      },
+      {
+        "deprecated": "OECD STAN 2003 vintage (superseded by 2025 with reduced country coverage)",
+        "active": "OECD STAN 2025 + PWT 10.01 with ISIC Rev3->Rev4 crosswalk and 30->18 country discontinuity documented",
+        "applies_to": ["S711"]
+      }
+    ],
+    "bot_blocking_notes": "OECD ICIO main page (https://www.oecd.org/sti/ind/inter-country-input-output-tables.htm) and OECD STAN main page (https://www.oecd.org/sti/ind/stanstructuralanalysisdatabase.htm) both return 403 to urllib requests with browser User-Agent. This is OECD bot policy on their CMS-rendered marketing pages, NOT data unavailability — the substantive data endpoints (stats.oecd.org and data-explorer.oecd.org) both return 200 for the same datasets. Phase 5 ingestion uses Data Explorer + OECD SDMX API (no key required for STAN), which is unaffected by the marketing-page bot policy.",
+    "salvaged_inputs_inventory": {
+      "checked_at": "2026-05-18",
+      "directory": "Inputs/CapitalismData/SalvagedInputs/book_data/ShaikhChoppedTables/",
+      "ch7_files_present": [
+        "Appendix7_Documentation.xlsx",
+        "Appendix7_iropdataUSind.xlsx",
+        "Appendix7_iropOECDPPP.xlsx",
+        "Appendix7_ropdataUSind.xlsx",
+        "Appendix7_SalterTable10.xlsx",
+        "Appendix7_SalterTable9.xlsx",
+        "Appendix7_SalterULCPriceTable28.xlsx",
+        "Appendix7_SalterULCPriceTable33.xlsx"
+      ],
+      "ch7_files_absent": [
+        "Christodoulopoulos (1995) raw data for S703/S704 (not redistributed in Appendix 7.2)",
+        "Tsoulfidis & Tsaliki (2011) Greek industry-level raw panel for S707/S708 (not redistributed)",
+        "Shaikh (2008) appendix B (full 31-industry exclusion list) - may be inside Appendix7_Documentation.xlsx; needs Phase 5 inspection"
+      ]
+    }
+  }
+}

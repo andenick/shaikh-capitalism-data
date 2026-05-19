@@ -1,0 +1,11 @@
+year,statistic,value,units,paper_anchor
+2002,avg_CI_lower_bound,0.03,dimensionless,"Section 5 p. 272 'Across all levels of aggregation in both benchmark years, the average CIs range between 0.03 to 0.06'"
+2002,avg_CI_upper_bound,0.06,dimensionless,"Section 5 p. 272 same passage"
+2007,avg_CI_lower_bound,0.03,dimensionless,"Section 5 p. 272 same passage"
+2007,avg_CI_upper_bound,0.06,dimensionless,"Section 5 p. 272 same passage"
+2002,n_prices_total,425,count,"Section 5 p. 272 '425 prices' in 2002"
+2002,n_prices_switching_value,26,count,"Section 5 p. 272 'only 26 (6.1 percent) of 425 prices switch from one side of their labor value to the other'"
+2002,n_prices_switching_value_pct,6.1,percent,"Section 5 p. 272 same passage"
+2002,n_prices_switching_bienenfeld,4,count,"Section 5 p. 272 'Only four (0.9 percent) switch with respect to the Bienenfeld line'"
+2002,n_prices_switching_bienenfeld_pct,0.9,percent,"Section 5 p. 272 same passage"
+2002,max_bienenfeld_deviation_pct,1.0,percent,"Section 5 p. 272 'none with a deviation greater than 1 percent'"

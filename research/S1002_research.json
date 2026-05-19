@@ -1,0 +1,94 @@
+{
+  "series_id": "S1002",
+  "name": "Interest Rate and Price Level",
+  "chapter": 10,
+  "figures": [
+    "Fig10.3",
+    "Fig10.6"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S052",
+    "cd2_id": "S052"
+  },
+  "book_quotes": [
+    {
+      "chapter": 10,
+      "page": 464,
+      "quote": "Tooke and Gibson long ago documented that market interest rates move with the price level. Figure 10.6 shows that from 1857 to 2011, the long bond yield index generally moved in the same direction as the producer price index",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 873,
+      "quote": "The long bond yield was created by splicing together two long series: the railroad bond yield from 1857 to 1937 was annualized monthly data on American bond yields taken from Macaulay (Macaulay 1938, Appendix Table 10, A142-A161) and made available in the NBER historical database at http://www.nber.org/databases/macrohistory/rectdata/13/m13019.dat, the corporate bond Aaa yield for 1936-2002 was from the Mini Historical Statistics taken from the Federal Reserve HS-39 and supplemented for 2003-2010 from the previously cited Economic Report of the President.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 873,
+      "quote": "The composite long bond yield was created by splicing the railroad bond rate to the corporate rate using the 1919-1937 average ratio of the latter to the former to re-scale the former. The US Producer Price Index (Wholesale Price Index) for 1857-1976 is from (Jastram 1977, 145-146, table 7) and updated thereafter from the BLS using growth rates of the PPI.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "NBER Macrohistory Database / Federal Reserve / BLS / Jastram",
+    "publication": "Macaulay (1938) Appendix Table 10; Federal Reserve HS-39; ERP 2012; Jastram (1977) Table 7; BLS PPI",
+    "table_or_series_id": "NBER m13019 (Macaulay railroad bond yield 1857-1937); Fed HS-39 corporate Aaa 1936-2002; BLS WPS00000000 / PPIACO",
+    "url": "http://www.nber.org/databases/macrohistory/rectdata/13/m13019.dat",
+    "frequency": "annual",
+    "units": "Percent (yield); index (price level)",
+    "license": "Public domain (US government / NBER historical)",
+    "available_through": "ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx; NBER Macrohistory",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "long_bond_yield_t = splice(Macaulay_railroad_1857-1937, FedHS39_AaaCorp_1936-2010) using 1919-1937 mean ratio; PPI_t = splice(Jastram_1857-1976, BLS_PPI growth-rates after 1976)",
+  "components": [
+    {"label": "Macaulay railroad bond yield", "source": "NBER m13019 (1857-1937)"},
+    {"label": "Moody's/Fed Aaa corporate bond yield", "source": "Federal Reserve HS-39 (1936-2002); ERP 2012 (2003-2010)"},
+    {"label": "PPI / WPI", "source": "Jastram (1977) Table 7 (1857-1976); BLS PPIACO growth-rates (1977-2011)"}
+  ],
+  "year_range_book": [1857, 2011],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "Moody's Seasoned Aaa Corporate Bond Yield",
+      "source": "FRED (Board of Governors of the Federal Reserve System)",
+      "url": "https://fred.stlouisfed.org/series/AAA",
+      "units": "Percent, annual average",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Identical concept to Fed HS-39; clean splice at 2011"]
+    },
+    {
+      "subseries_label": "PPI All Commodities",
+      "source": "BLS via FRED",
+      "url": "https://fred.stlouisfed.org/series/PPIACO",
+      "units": "Index 1982=100",
+      "splice_strategy": "growth_rate",
+      "concerns": ["Same as BLS WPS00000000 series used by Shaikh"]
+    }
+  ],
+  "methodology_notes": [
+    "Two distinct sub-series indexed to common 1947 base in Fig 10.6 (log scale).",
+    "Splice methodology: 1919-1937 average ratio used to rescale railroad bond to corporate Aaa level - documented verbatim in Appendix 10.1.",
+    "Figure 10.3 (separately) shows US short-term rates (3-mo CD, discount, Fed Funds, hi-grade munis, Aaa) 1940-2011 from Fed H.15 and ERP 2012; this stub flags Fig 10.3 because S1002 is the underlying long-rate series shown alongside.",
+    "Per Appendix 10.1 figs 10.2-10.4: 'Data for 3-month CD rates was from the US Federal Reserve, Historical Data H. 15: Selected Interest Rates at http://www.federalreserve.gov/, while data on the discount, federal funds, 3-month T-bill, hi-grade municipal bonds, and corporate Aaa bond rates is from the 2012 Economic Report of the President.'"
+  ],
+  "open_questions": [
+    "Should the Fig 10.3 short-rate panel be split into a separate series (currently bundled here)? Recommend Phase 4 decide.",
+    "Jastram 1977 series ends 1976; BLS WPI methodology revisions 1978/1986 mean growth-rate splice may carry small level discontinuities."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-b-ch10",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S052 ported; FRED AAA and PPIACO extensions verified; Appendix 10.1 quoted verbatim"
+    }
+  ]
+}

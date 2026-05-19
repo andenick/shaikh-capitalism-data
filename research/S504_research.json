@@ -1,0 +1,120 @@
+{
+  "series_id": "S504",
+  "name": "US WPI in Gold and US Gold Price",
+  "chapter": 5,
+  "figures": [
+    "Fig5.6"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S025",
+    "cd2_id": "S025"
+  },
+  "book_quotes": [
+    {
+      "chapter": 5,
+      "page": 199,
+      "quote": "Figure 5.6 examines the same two variables for the United States from 1800 to 2009. Here, in addition to the previously mentioned global shocks, we also have to contend with various US wars: the War of 1812, the Civil War beginning in 1861, the Korean War, the Vietnam War, and the two Gulf Wars. Despite all of this, the movements of p' over the whole period from 1800 to 2008 are relatively modest.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 5,
+      "page": 199,
+      "quote": "The United States had emerged from World War I with vast reserves of gold which allowed it to maintain a new dollar price of gold for almost forty years (Harrod 1969, 97-98; Galbraith 1975, 202). It effectively went off a national gold standard in 1933 (Jastram 1977, 51), leading to the 1934 jump in the gold price visible in figure 5.6.",
+      "role": "caveat",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 5,
+      "page": 788,
+      "quote": "For 1786-2010, the US gold price is the official price for 1786-1790 available from Measuring Worth.com at http://www.measuringworth.com/gold/, and the market price thereafter.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 5,
+      "page": 788,
+      "quote": "US WPI is available in Jastram (1977, 145-146, table 7) for 1800-1976. Data for 1706-1799 was interpolated using the US CPI (see sources for figure 2.5) rescaled by the 1800 ratio of WPI/CPI. The series was extended to 1977-2010 using implicit growth rates of US PPI available from the BLS as Variable WPS00000000 at http://www.bls.gov/ppi/data.htm#. UK and US WPI expressed in gold were then calculated as the ratio of WPI to the price of gold, 1930 = 100.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh (book companion); Jastram (1977); BLS; Officer & Williamson (MeasuringWorth)",
+    "publication": "Appendix 5.3 Data Tables for Chapter 5, sheet =DATALRprices (Shaikh, anwarshaikhecon.org); Jastram, The Golden Constant (1977), table 7; Officer & Williamson, 'The Price of Gold, 1257-2010'",
+    "table_or_series_id": "S010-H (US PPI in gold = USWPI / US gold price), S010-AA (US gold price in $)",
+    "url": "http://www.measuringworth.com/gold/",
+    "frequency": "annual",
+    "units": "index, 1930 = 100 (for both p' and pG, rebased)",
+    "license": "academic / MeasuringWorth permits scholarly use",
+    "available_through": "MeasuringWorth (gold price), Jastram (1977), Shaikh Appendix 5.3 spreadsheet",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "p_US = p'_US * pG_US, where pG_US = US gold price in $/oz (MeasuringWorth: official 1786-1790, market thereafter; for 1780-1785 estimated using 1786 US-UK gold price ratio applied to Jastram UK price), and p'_US = USWPI(1930=100) / pG_US(1930=100). Both pG and p' are rebased to 1930 = 100 prior to plotting.",
+  "components": [
+    {
+      "label": "USWPI 1800-2009",
+      "source": "S502 leg A (Jastram 1977 table 7 + BLS WPS00000000 1977-2010), 1930 = 100"
+    },
+    {
+      "label": "US gold price ($ per oz), 1786-2010",
+      "source": "MeasuringWorth (Officer & Williamson 'The Price of Gold, 1257-2010'): official price 1786-1790, market price thereafter; 1780-1785 imputed via 1786 US-UK gold price ratio applied to UK Jastram series"
+    }
+  ],
+  "year_range_book": [
+    1800,
+    2009
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "US gold price 2011-present ($/oz)",
+      "source": "LBMA Gold Price PM (London PM auction, USD per troy ounce)",
+      "url": "https://www.lbma.org.uk/prices-and-data/precious-metal-prices",
+      "units": "USD per troy ounce",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "MeasuringWorth's post-1968 series uses the London PM Fix; LBMA Gold Price PM is the continuation post-2015 reform.",
+        "Annual frequency requires averaging daily prices (Shaikh uses annual averages per Officer/Williamson convention)."
+      ]
+    },
+    {
+      "subseries_label": "US WPI in gold (p'), derived for 2011-present",
+      "source": "Computed: BLS WPU00000000 (PPI All Commodities) / (LBMA gold price $/oz), rebased to 1930 = 100 using the 2010 anchor from Shaikh's DATALRprices sheet",
+      "url": "https://download.bls.gov/pub/time.series/wp/wp.data.0.Current",
+      "units": "index, 1930 = 100",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Must compute as a ratio of extended components, not growth-splice on p' (No Lazy Splices on Derived Quantities).",
+        "BLS series identifier changed from WPS to WPU after the PPI reclassification; document the bridge."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "S504 is the empirical implementation of Shaikh's equation 5.9 (p = p' * pG) for the United States. As with S503, it is a 'formula' series and any extension must recompute the ratio from extended USWPI and extended US gold price.",
+    "The 1933/34 jump visible in figure 5.6 is the FDR devaluation (Gold Reserve Act 1934, $20.67/oz to $35.00/oz); this is a real feature of the series, not an artefact.",
+    "MeasuringWorth's official-vs-market regime for 1786-1790 is preserved as-is; the 1780-1785 segment is imputed by Shaikh from the UK price using a near-constant US/UK gold-price ratio (Appendix 5.2 explanation).",
+    "Both lines plotted in figure 5.6 are rebased to 1930 = 100, log-scale. The figure starts at 1800 (not 1790) per Shaikh's caption.",
+    "CD2 ancestor S025 listed 'COMEX/LBMA' for post-Jastram gold prices; Appendix 5.2 specifies MeasuringWorth as the canonical source (which itself uses London Fix/LBMA underlying). Corrected here to follow Shaikh's stated source."
+  ],
+  "open_questions": [
+    "Reconcile annual-average vs. year-end convention for the US gold price; Officer/Williamson document multiple frequencies on MeasuringWorth.",
+    "Validate the 1934 jump magnitude in the rebased index against the $20.67 -> $35.00 official revaluation.",
+    "anwarshaikhecon.org Appendix 5.3 URL not yet confirmed live; Phase 4 200-OK check item.",
+    "Figure caption says 1800-2009 but DATALRprices coverage extends to 1786-2010; ensure the plotted slice matches the caption."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch5",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from Ch5 p. 199 and Appendix 5.2 pp. 788-789; CD2 S025 dossier ported with source correction (MeasuringWorth as canonical, COMEX/LBMA as underlying)."
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": "ES",
+  "reviewer": "opus-subagent-p4-wave3-es",
+  "review_date": "2026-05-18",
+  "series_count": 4,
+  "scope_note": "External Studies (ES) chapter-equivalent covers the 4 Shaikh-adjacent 2020 follow-up papers ratified in decision 0001 (Option B): ES2001 (Shaikh 2020 Empirically Sufficient Form for Sraffa Prices), ES2101 (Shaikh-Coronado-Nassif-Pires 2020 EJEEP On the empirical regularities of Sraffa prices), ES2201 (Shaikh-Jacobo 2020 RBE Econophysics of Income Inequality), ES2301 (Weber-Shaikh 2020 IRAE US-China trade imbalance). ES2001/ES2101 share the BEA Benchmark IO + BLS labor-input pipeline (Sraffa-price family); ES2201 is the IRS SOI Pub 1304 econophysics extension of book Ch. 17; ES2301 is the international-trade / RMB-misalignment extension of book Ch. 11. This report also delivers the Phase 4 recommendation on pending decision 0006 (ES2301 5-way split). BLS pages (S207, ES2001/ES2101 secondary, and BLS ILC for ES2301 ES2306-optional) inherit the BLS ILC discontinuation substitution canonicalized in Ch11 wave2 (BIS PPI EER / OECD ULC / Conference Board ILC).",
+  "scores": {
+    "D1_source_reachability": {
+      "value": 21,
+      "max": 25,
+      "details": "REAL HEAD/GET checks performed 2026-05-18 against all 23 distinct primary/secondary/extension URLs across the 4 ES dossiers (see Technical/Build/_ches_url_check_results.json). Headline tally: 13/23 returned HTTP 200; the remaining 10 split into (a) 5 informational-only 403s caused by anti-bot HEAD blocking on bls.gov and doi.org host-resolvers (the underlying landing pages are reachable in a browser and the data is downloadable manually -- not data-blocking); (b) 1 hard 404 on the Brooks Notre Dame Gini-method notes URL (https://www3.nd.edu/~wbrooks/GiniNotes.pdf) cited by ES2201 -- replicators must use any open Gini-from-binned-income reference (e.g. Cowell 2011 chapter or Brooks's notes if archived to SalvagedInputs/); (c) 1 hard DNS failure on https://www.anwarshaikhecon.org/ used as the URL-of-record for the ES2001 working paper -- aligns with decision 0005's flag that anwarshaikhecon.org has uncertain 2026 status; substitute = treat ES2001 PDF in SalvagedInputs/Web Folders/Shaikh Publications/ as the canonical archival source; (d) 1 BLS sect300.xls 403 that is documented dead per Ch11 wave2 wave2 (paper-cited link was already stale by 2020); replace with current BLS Employment Projections industry data. All PRIMARY DATA-EXTRACTION URLs (BEA Benchmark IO, BEA Annual IO, IRS SOI, Census FT900, IMF WEO database, World Bank WDI for both FI.RES.TOTL.CD and FI.RES.XGLD.CD, IMF ESR, Treasury FX reports) returned HTTP 200. -4 because 4 cited URLs are dead and 1 host is unreachable, all with substitutes; no series is BLOCKED for data access."
+    },
+    "D2_year_coverage": {
+      "value": 16,
+      "max": 20,
+      "details": "Book/paper-window coverage: ES2001 (1947-2002 across Tables 1-2 + 2002 cross-section): 100% via BEA benchmark IO + Shaikh 1998/2012 data appendices held in SalvagedInputs/. ES2101 (1977-2007 benchmark years): 100% via BEA Benchmark IO 1977/1982/1987/1992/1997/2002/2007. ES2201 (2002-2016 annual): 100% via IRS SOI Pub 1304 Tables 1.4 + 1. ES2301 (1990-2017 across Figs 1-3): 100% via Census FT900 (1990-2017), IMF WEO (1997-2017), WDI reserves (1990-2016); Figs 4-5 (1999-2010 PPP, 1999-2012 macro-balance): frozen-snapshot literature compilations -- 100% within paper window but not extensible by construction. Post-book/paper extension: ES2001 extendable to 2017 via BEA Benchmark IO 2007/2012/2017 (mechanical given NAICS bridging); ES2101 extendable to 2017 via same; ES2201 extendable to ~2022-2023 (current IRS SOI release lag); ES2301 Figs 1-3 extendable cleanly to 2024 (Census FT900, IMF WEO, WDI all current), Figs 4-5 NOT extendable (frozen literature compilation by construction; IMF External Sector Reports from 2015+ are a CONCEPT-ADJACENT but methodologically distinct continuation); optional ES2306 (relative ULC) post-2013 requires BLS ILC -> Conference Board / OECD ULC substitution per Ch11 wave2 canonical resolution. -4 because (a) ES2301-D/-E literature compilations cannot be extended by their own methodology (this is intrinsic to the paper, not a data gap; we flag it as `not_applicable_literature_compilation` rather than penalize), (b) ES2306 (if approved via decision 0006) inherits the BLS ILC discontinuation gap, (c) NAICS revision bridging across BEA benchmark years 2002/2007/2012/2017 introduces partial concept drift in cross-year ES2001/ES2101 extensions."
+    },
+    "D3_license_compatibility": {
+      "value": 14,
+      "max": 15,
+      "details": "All primary sources permit research replication and redistribution: BEA Benchmark IO (US Federal Government work, public domain per 17 USC 105), BLS Employment Projections (US Federal Government public domain), Census Bureau FT900 / Foreign Trade (public domain), IRS Statistics of Income Pub 1304 (US Federal Government public domain per 17 USC 105), IMF WEO database (publicly downloadable; IMF terms permit research use with attribution -- non-blocking), World Bank WDI (CC-BY-4.0), US Treasury Reports to Congress (public domain). RBE journal article DOI for ES2201 (doi.org/10.1561/105.00000129) and Taylor & Francis journal article for ES2301 are subject to publisher copyright on the PAPER text but NOT the underlying data the papers describe. ES2301 Figs 4-5 literature compilations: the RAW estimates were published in 4 peer-reviewed literature reviews (Cline-Williamson 2007 PIIE; Dunaway-Li 2005 IMF; Cheung-Chinn-Fujii 2010a; Cheung 2012); replication requires re-extracting individual estimates per the paper's note-17 compilation rule, NOT redistributing copyrighted estimate tables -- this is a derivative-work issue handled by reconstruction, not by republication. -1 because Brooks Notre Dame Gini-method notes (ES2201 internal methodology citation) URL is 404; replicators should use any open Gini-from-binned-income methodology reference (e.g. Cowell 2011 ch.5) -- not a license issue per se but a closely linked licensability/archival issue."
+    },
+    "D4_units_consistency": {
+      "value": 13,
+      "max": 15,
+      "details": "ES2001: explicit units (BEA Use/Make tables in millions of current USD; derived A-matrix coefficients dimensionless; aggregate price/value ratios dimensionless 0-2; individual price-value curves p_i(r)/v_i normalized to 1.0 at r=0). ES2101: explicit units (same BEA inputs; Curvature Index CI dimensionless 0-1; Theil index dimensionless). ES2201: explicit units (AGI bin endpoints in current USD; return counts; bottom-section mean <w> in thousands USD per return; alpha dimensionless; G' dimensionless 0-1; f dimensionless 0-1). ES2301: explicit units per component (Fig 1 Billion USD; Fig 2 Billion USD level and percent of GDP; Fig 3 Billion USD reserves; Figs 4-5 percent misalignment). Open issues: (a) ES2201 top-bin midpoint convention is NOT explicitly stated in paper appendix -- Phase 5 must document a convention (e.g., Pareto-tail integral or fixed 1.5x lower-bound multiplier); (b) ES2301 Fig 2 dual y-axis (Billion USD AND percent of GDP) must be emitted as two distinct AnuData series rows (`ES2302_level` and `ES2302_pctgdp`) rather than one mixed-unit series; (c) if ES2306 is approved per decision 0006 below, BLS ILC manufacturing-only ULC vs OECD ULC_QUA whole-economy substitution carries a documented sectoral-coverage unit-narrowing concern (per Ch11 wave2). -2 for the ES2201 top-bin convention undocumented gap and the ES2301 dual-axis split requirement."
+    },
+    "D5_extension_feasibility": {
+      "value": 12,
+      "max": 15,
+      "details": "ES2001 / ES2101 extension to 2017: feasible via BEA Benchmark IO 2012 and 2017 detailed tables; mechanical given NAICS 2012/2017 crosswalks (paper used NAICS 2002); shared BEA-to-Sraffa pipeline implementation recommended (one module serves both series). ES2201 extension to 2023: feasible via IRS SOI Pub 1304 Tables 1.4 + 1 for 2017-2023 (release lag ~2-3 years; latest available as of 2026 likely 2022 or 2023); MUST re-fit per year using paper's MLE protocol per Anu Framework No Lazy Splices rule (Table 1's five parameters are jointly estimated, not separately splice-able). ES2301 Figs 1-3 extension to 2024: feasible (Census FT900, IMF WEO, WDI reserves all 200 OK). ES2301 Figs 4-5 (RMB misalignment scatter compilations): NOT extensible by paper's own methodology -- the 4 cited literature reviews were one-off academic surveys; the RMB-misalignment debate cooled post-2014 as China shifted to managed float; IMF since 2015 finds RMB 'broadly in line with fundamentals' per IMF External Sector Reports. Flag ES2301-D / -E (if decomposed per decision 0006) as `extension_status: not_applicable_literature_compilation` rather than `data_unavailable` (which is reserved for true blockers). Optional ES2306 (relative ULC): extension requires BLS ILC -> Conference Board / OECD ULC substitution per Ch11 wave2 canonical resolution. -3 because ES2301 has TWO components (Figs 4-5) that are intrinsically non-extensible (handled with documentation, not penalty-for-blocker) and ES2306 (if approved) carries the BLS ILC substitution complexity."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 8,
+      "max": 10,
+      "details": "ES2001/ES2101 have NO required substitutions -- BEA Benchmark IO and BLS Employment Projections both still active. Concept Match Justifications NOT required for v1.0 ES2001/ES2101 scope; Phase 5 must use exactly BEA Benchmark IO + BLS EP per Anu Framework No Proxies rule. ES2201 has NO required substitutions -- IRS SOI Pub 1304 still active; Brooks Gini-method URL 404 is a METHODOLOGY-reference link not a data-source proxy. ES2301 components ES2301-A/-B/-C (Census FT900, IMF WEO, WDI reserves) have NO required substitutions. ES2301 components ES2301-D/-E (RMB misalignment) cannot be substituted -- they are themselves literature compilations; concept-adjacent IMF ESR data from 2015+ is NOT an Anu-compatible substitute (different methodology, different inclusion criteria). Optional ES2306 inherits Ch11 wave2 BLS ILC discontinuation handling: BIS PPI EER (REER), OECD ULC (open-license), Conference Board ILC (high-fidelity), each with Concept Match Justifications written into the dossier per Anu Framework standard. -2 because (a) IF decision 0006 is approved per ES recommendation below AND IF optional ES2306 is included, the BLS ILC -> Conference Board/OECD ULC CMJ block must be written into the ES2306 dossier before Phase 5 loader execution, and (b) ES2301-D/-E literature compilations require a documented `compilation_methodology` block (not a proxy block) explaining why these are non-extensible by construction, not by data absence."
+    }
+  },
+  "total_score": 84,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "ES2001",
+      "name": "Shaikh (2020) - An Empirically Sufficient Form for Sraffa Prices (US 2002 403-order IO + 1947-1998 aggregates)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain (BEA, BLS, US Federal Gov)",
+      "units": "BEA Use/Make: millions of current USD; derived A-matrix dimensionless; aggregate price/value ratios dimensionless (0.95-1.05 range); individual price-value curves p_i(r)/v_i normalized to 1.0 at r=0",
+      "extension_status": "feasible",
+      "proposed_substitute": "anwarshaikhecon.org URL-of-record (DNS failed 2026-05-18) substituted with archival PDF in Inputs/Capitalism Data/Technical/data/raw/01_SOURCE_MATERIALS/Web Folders/Shaikh Publications/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf; festschrift volume metadata to be pinned in Phase 5. BLS Employment Projections /emp/ landing returns 403 to HEAD/GET bot but is reachable in browser -- use BLS NAICS-based industry labor input data current location.",
+      "proxy_flags": [
+        "anwarshaikhecon.org host DNS failure (decision 0005 flag) -- not a data proxy, a citation-link substitution to local archival PDF."
+      ],
+      "remediation": [
+        "Phase 5: implement shared BEA-Benchmark-IO-to-Sraffa-pipeline module that ES2001 and ES2101 both consume (avoid duplicating A-matrix construction).",
+        "Phase 5: acquire and archive Shaikh (1998) Appendix 15.2 and Shaikh (2012) Data Appendix to SalvagedInputs/ for replication of Tables 1-2 aggregate ratios 1947-1998.",
+        "Phase 5: regenerate 403-sector price-curve data (Figs 1-9) from 2002 BEA matrix using equations 6, 8, 10 -- per Anu Framework, do not digitize the figures.",
+        "Phase 5: confirm festschrift venue/DOI for citation completeness (paper currently has no DOI; anwarshaikhecon.org URL is dead).",
+        "Phase 6 EPR: document the BEA Benchmark IO 2002 -> 2007/2012/2017 NAICS bridging methodology for extension."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "ES2101",
+      "name": "Shaikh, Coronado, Nassif-Pires (2020) - Sraffa price curves from US BEA benchmark I-O tables (1977-2007, 295 matrices)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain (BEA, BLS, Census NAICS)",
+      "units": "BEA Use/Make: millions of current USD; A-matrix dimensionless; Curvature Index dimensionless 0-1; Theil index dimensionless; price-value ratios normalized to 1.0 at r=0",
+      "extension_status": "feasible",
+      "proposed_substitute": "BLS sect300.xls paper-cited URL (http://www.bls.gov/emp/classifications-crosswalks/sect300.xls) returns 403 (was already stale by 2020 per paper observation); replace with current BLS Employment Projections industry data crosswalk (https://www.bls.gov/emp/ -- 403 to bot but reachable in browser; Phase 5 must locate current sect300 successor file).",
+      "proxy_flags": [
+        "BLS sect300.xls crosswalk URL dead -- methodology substitution to current BLS Employment Projections industry crosswalk required."
+      ],
+      "remediation": [
+        "Phase 5: share BEA-Benchmark-IO-to-Sraffa-pipeline module with ES2001.",
+        "Phase 5: locate current BLS Employment Projections industry-by-industry compensation/employment data and document the crosswalk-version migration from sect300 to current naming.",
+        "Phase 5: confirm exclusion list in paper Appendix 1 (owner-occupied dwellings, scrap, used/secondhand goods, non-comparable imports, rest-of-world adjustment) is implemented in the A-matrix preprocessing step.",
+        "Phase 5: regenerate 295-matrix CI distribution and Theil indexes from BEA tables via equations A1-A3 -- per Anu Framework, do not digitize Figures 6-7.",
+        "Phase 5: cross-reference Shaikh (2012: 98) for the exact skill-adjusted labor coefficient normalization formula."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "ES2201",
+      "name": "Shaikh & Jacobo (2020) - US individual income distribution fitted to econophysics two-class model (IRS SOI 2002-2016, 5 fitted parameters)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain (IRS SOI Pub 1304); RBE journal article copyright restricts paper-text redistribution but not the underlying data the paper describes",
+      "units": "AGI bin endpoints in current USD; return counts; income temperature <w> in thousands USD per return; alpha dimensionless; Gini G' dimensionless 0-1; top-share f dimensionless 0-1; mean <r> in thousands USD",
+      "extension_status": "feasible",
+      "proposed_substitute": "Brooks Notre Dame Gini-method notes URL (https://www3.nd.edu/~wbrooks/GiniNotes.pdf) returns 404 -- replicator should (a) attempt to recover via Wayback Machine and archive to SalvagedInputs/, OR (b) use Cowell (2011) Measuring Inequality ch.5 Gini-from-binned-distribution formula as open methodology reference. Substitution is METHODOLOGY-reference, not data-source.",
+      "proxy_flags": [
+        "Brooks Gini methodology URL 404 -- methodology-reference substitution to Cowell (2011) or archived Brooks PDF."
+      ],
+      "remediation": [
+        "Phase 5: acquire IRS SOI Pub 1304 Tables 1.4 + 1 for tax years 2002-2016 (paper window) and 2017-2023 (extension); document bin-schedule changes per year.",
+        "Phase 5: implement MLE regression-based <w> estimator (NOT a direct sample mean from binned data; per paper appendix and Anu Framework No Proxies rule).",
+        "Phase 5: document top-bin midpoint convention (Pareto-tail integral preferred; fixed multiplier of lower-bound as fallback) -- paper does not specify.",
+        "Phase 5: re-fit five parameters (G', <r>, <w>, f, alpha) per year using same MLE protocol; do NOT growth-rate splice fitted parameters.",
+        "Phase 5: handle TCJA (2017+) and CARES (2020+) AGI definitional discontinuities -- confirm methodological continuity or document break.",
+        "Phase 5: archive Brooks Gini notes to SalvagedInputs/ if Wayback recoverable, else cite Cowell (2011) as open methodology reference."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "ES2301",
+      "name": "Weber & Shaikh (2020) - US-China trade imbalance, RMB misalignment, and real exchange rate (composite of Appendix Figs 1-5; ES2306 optional)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain (Census FT900, IMF WEO publicly downloadable); CC-BY-4.0 (World Bank WDI); literature-compilation derivative-work handled by reconstruction not republication for Figs 4-5",
+      "units": "composite per component: Fig 1 Billion USD trade balance; Fig 2 Billion USD level AND percent of GDP (dual axes -- emit as two AnuData rows); Fig 3 Billion USD reserves ex-gold; Figs 4-5 percent RMB misalignment; (optional ES2306) dimensionless ratio relative ULC",
+      "extension_status": "feasible_with_substitute",
+      "proposed_substitute": "RECOMMEND DECISION 0006 SPLIT (see chapter_level_recommendations). If split: ES2301-rescoped (Fig 1, Census FT900), ES2302 (Fig 2, IMF WEO), ES2303 (Fig 3, WDI reserves) are all directly extensible to 2024 with no substitutions needed -- all primary URLs 200 OK. ES2304/ES2305 (Figs 4-5 literature compilations) have NO single primary source by construction -- flag as `not_applicable_literature_compilation` with documented compilation methodology per paper note 17. ES2306 (optional, relative ULC) inherits Ch11 wave2 canonical BLS ILC discontinuation handling: Conference Board ILC (https://www.conference-board.org/topics/global-economy -- 200 via GET, slow) for high-fidelity continuation OR OECD ULC_QUA (CC-BY-4.0 open) -- both require Concept Match Justifications. If NOT split: ES2301 remains a composite series with the 5-way breakdown documented in this report and the dossier for v1.1 decomposition.",
+      "proxy_flags": [
+        "ES2304/ES2305 (if split) literature-compilation Figs 4-5: not a proxy in the substitution sense -- intrinsically non-extensible by paper construction. Document with `compilation_methodology: paper_note_17` flag.",
+        "ES2306 (if included): inherits Ch11 wave2 BLS ILC -> Conference Board / OECD ULC substitution and CMJ requirements.",
+        "Treasury FX reports URL (200 OK on parent) -- specific 2019-05-28 PDF referenced in paper may have been re-archived; use parent landing page as canonical reference."
+      ],
+      "remediation": [
+        "DECISION 0006: see chapter_level_recommendations below -- this report RECOMMENDS SPLIT (defer to v1.1 for ES2306, include ES2301-rescoped + ES2302 + ES2303 + ES2304 + ES2305 in v1.0).",
+        "Phase 5: implement ES2301-A (Census FT900 US-China bilateral balance 2002-2024) via Census Foreign Trade Division API or USA Trade Online download.",
+        "Phase 5: implement ES2301-B (IMF WEO China current account 1997-2024) via IMF WEO database CSV download (handle CA level and %-of-GDP as separate rows).",
+        "Phase 5: implement ES2301-C (WDI China FX reserves ex-gold 1990-2024) via WDI FI.RES.XGLD.CD API.",
+        "Phase 5: implement ES2301-D and ES2301-E by re-extracting individual RMB-misalignment estimates from Cline-Williamson 2007, Dunaway-Li 2005, Cheung-Chinn-Fujii 2010a, Cheung 2012 per paper note 17 compilation rule.",
+        "Phase 5: revise figure-vintage notation -- paper labels figures 'World Bank 2018' / 'IMF 2018' / 'Census 2018' which refers to DATA-ACCESS vintage, not period-covered; emit `data_vintage_year` and `period_covered` as distinct metadata fields.",
+        "If decision 0006 approved + ES2306 included: write BLS ILC -> Conference Board / OECD ULC CMJ block in ES2306 dossier before Phase 5 loader execution (inherit Ch11 wave2 canonical resolution)."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "DECISION 0006 RECOMMENDATION: RECOMMENDS_SPLIT (with v1.1 deferral of optional ES2306). Recommended v1.0 expansion: ES2301-rescoped = US-China bilateral trade balance (Fig 1, Census FT900) -- annual time series, extensible to 2024; ES2302 = China current account level + % of GDP (Fig 2, IMF WEO) -- annual time series, extensible to 2024, emit as two rows (level and %-of-GDP); ES2303 = China FX reserves excluding gold (Fig 3, World Bank WDI FI.RES.XGLD.CD) -- annual time series, extensible to 2024; ES2304 = RMB misalignment under extended PPP (Fig 4, literature compilation of Cline-Williamson 2007, Dunaway-Li 2005, Cheung-Chinn-Fujii 2010a, Cheung 2012) -- flag as `extension_status: not_applicable_literature_compilation`; ES2305 = RMB misalignment under macro-balance (Fig 5, same 4 literature reviews) -- same flag. RATIONALE: (a) the paper's empirical content is split across 5 figures with 5 DISTINCT primary sources (Census vs IMF vs WDI vs 2x literature compilations), making the dossier-per-figure pattern much cleaner than the composite-dossier pattern used for ES2001/ES2101/ES2201 (all three of which have a SINGLE underlying dataset); (b) the 3 directly-extensible components (Census, IMF WEO, WDI reserves) have radically different extension risk profiles vs the 2 non-extensible literature compilations -- single-dossier aggregation conceals this; (c) the literature-compilation components require hand-curation work (re-extracting estimates per paper note 17) which is logically separate from API-driven extension. DEFER ES2306 to v1.1 because: the optional ES2306 (relative ULC) is NOT figured in the paper, depends on BLS ILC discontinuation substitution complexity already canonicalized in Ch11 wave2, and adds ~5-10 hours of Phase 5/6/7 effort for a series that the paper itself treats as a body-text citation (Golub et al. 2018 7.8:1 ratio) rather than a graphical primary object. Including ES2306 in v1.1 with proper Conference Board ILC / OECD ULC sourcing under the Ch11 wave2 canonical resolution preserves the option without delaying v1.0.",
+    "ALTERNATIVE CONSIDERED: ship ES2301 as single composite (defer all 5-way split to v1.1). Rejected because: (a) the 4-vs-1 sources asymmetry vs ES2001/ES2101/ES2201 is significant -- composite-dossier loaders for those three are clean because there is one source pipeline; ES2301 composite would require 4 source pipelines hidden inside one dossier; (b) the post-2017 extension timeline differs sharply across components (Census/IMF/WDI go to 2024; Figs 4-5 are frozen in 2010/2012); (c) the literature-compilation methodology (paper note 17) is methodologically distinct from API-driven extension and deserves its own dossier prose to avoid silent methodology drift; (d) main thread can execute the 5-way registry expansion via `_phase3b_registry_expansion.py` extension in ~30 minutes followed by 1 subagent filling the 4 new dossiers in ~2 hours -- low marginal effort for substantial Phase 5/6 clarity gain.",
+    "ALTERNATIVE CONSIDERED: full 6-way split including ES2306 in v1.0. Rejected because: (a) BLS ILC discontinuation substitution chain (Conference Board ILC licensed + OECD ULC open) carries Concept Match Justification overhead already absorbed by Ch11 wave2 (S1102, S1103, S1104); duplicating it for ES2306 in v1.0 doubles the CMJ documentation cost; (b) Golub et al. (2018) 7.8:1 ratio is a 2000-2010 average -- it is not a time series in the paper; the paper does NOT plot a year-by-year relative ULC trajectory; reconstructing a year-by-year relative ULC TS for v1.0 introduces methodological choices Weber-Shaikh did not make; (c) v1.1 inclusion under the canonical Ch11 wave2 substitution preserves analytical value with cleaner sourcing.",
+    "ES2001 / ES2101 SHARED-PIPELINE RECOMMENDATION: Phase 5 should implement a single shared `BEA_benchmark_IO_to_Sraffa_pipeline` module that both ES2001 and ES2101 consume, rather than duplicating A-matrix construction in each. The two papers use the SAME 2002 403-order BEA matrix; ES2001 adds approximation-quality analysis at the single 403-order level, ES2101 varies aggregation level (295 matrices). Shared module saves ~3-5 hours Phase 5 implementation and ensures matrix-construction consistency across the two series.",
+    "ES2001 anwarshaikhecon.org URL-of-record DNS failure: substitute with archival PDF in Inputs/Capitalism Data/Technical/data/raw/01_SOURCE_MATERIALS/Web Folders/Shaikh Publications/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf as the canonical reference; pin festschrift volume metadata in Phase 5 (Velupillai ed., Palgrave Macmillan per paper's own reference list p.20).",
+    "ES2101 BLS sect300.xls crosswalk URL substitution: replace paper-cited http://www.bls.gov/emp/classifications-crosswalks/sect300.xls (403) with current BLS Employment Projections industry data crosswalk (Phase 5 locates current sect300 successor file from https://www.bls.gov/emp/).",
+    "ES2201 Brooks Gini-method notes URL substitution: replace https://www3.nd.edu/~wbrooks/GiniNotes.pdf (404) with Wayback-archived Brooks PDF (preferred, archive to SalvagedInputs/) OR Cowell (2011) Measuring Inequality ch.5 Gini-from-binned-distribution formula as open methodology reference. Methodology-reference substitution only; not a data-source proxy.",
+    "ES2301 (whether split or composite) figure-vintage notation: paper labels Figs 1/2/3 'Census 2018' / 'IMF 2018' / 'World Bank 2018' which is DATA-ACCESS vintage, NOT period-covered. Phase 5 must emit `data_vintage_year` and `period_covered` as distinct metadata to avoid downstream confusion.",
+    "ES2301-D / -E (if split, Figs 4-5 literature compilations): emit with `extension_status: not_applicable_literature_compilation` rather than `data_unavailable` (which is reserved for true blockers). Document `compilation_methodology: paper_note_17_verbatim` flag. These series are intrinsically non-extensible by construction -- this is not a data gap.",
+    "If decision 0006 approved: run `_phase3b_registry_expansion.py` extension to add ES2302, ES2303, ES2304, ES2305 (4 new ES series); dispatch 1 subagent to fill the 4 new Phase 3 dossiers (~2 hours); update PIPELINE_STATE.json scope-count from 114 to 118 series.",
+    "Add `adequacy.status: ready_for_phase5` to ES2001, ES2101, ES2201, ES2301 in series_registry.json (per registry_delta). If decision 0006 approved, ES2302-ES2305 get adequacy.status set during Phase 4 catchup wave after their Phase 3 dossiers are filled."
+  ],
+  "blockers_for_phase5": [
+    "None hard-blocking. Soft items: (1) Decision 0006 ratification needed -- if approved per this report's recommendation, ES2302-ES2305 require Phase 3 dossier fills (~2 hours) and Phase 4 catchup adequacy review (~1 hour) before Phase 5 can begin on the ES2301 family; if rejected, ES2301 ships as single composite with breakdown in dossier for v1.1; (2) ES2001 / ES2101 shared BEA pipeline architectural decision -- if main thread approves, factoring out the shared module should happen at Phase 5 start, not mid-implementation; (3) ES2201 top-bin midpoint convention must be documented in dossier before Phase 5 loader execution -- 5-minute fix."
+  ],
+  "open_questions": [
+    "Q1 -> RESOLVED: ES2301 decomposition decision 0006 -- RECOMMENDS_SPLIT to 5 series (ES2301-rescoped, ES2302, ES2303, ES2304, ES2305), defer optional ES2306 to v1.1.",
+    "Q2 -> RESOLVED: ES2001 anwarshaikhecon.org URL DNS failure -- substitute with archival PDF in SalvagedInputs/.",
+    "Q3 -> RESOLVED: ES2101 BLS sect300.xls crosswalk URL 403 -- substitute with current BLS Employment Projections industry data crosswalk.",
+    "Q4 -> RESOLVED: ES2201 Brooks Gini-notes URL 404 -- substitute with Wayback-archived Brooks PDF or Cowell (2011) ch.5.",
+    "Q5 -> RESOLVED: ES2001 / ES2101 shared BEA Benchmark IO pipeline -- Phase 5 should implement once and share.",
+    "Q6 -> DEFERRED to v1.1: optional ES2306 (US/China relative manufacturing ULC) inclusion -- defer to v1.1 under Ch11 wave2 canonical BLS ILC substitution.",
+    "Q7 -> OPEN for Phase 5: ES2001 festschrift volume venue/DOI confirmation (paper has no DOI; Palgrave Macmillan / Velupillai ed. cited in paper reference list).",
+    "Q8 -> OPEN for Phase 5: ES2201 top-bin midpoint convention (Pareto-tail integral vs fixed multiplier) -- must document before loader execution."
+  ],
+  "decision_0006_recommendation": {
+    "recommendation": "RECOMMENDS_SPLIT",
+    "scheme": "5-way split for v1.0 (ES2301-rescoped + ES2302 + ES2303 + ES2304 + ES2305); defer ES2306 (relative ULC) to v1.1 under Ch11 wave2 BLS ILC canonical substitution.",
+    "v1_0_new_series_count": 4,
+    "v1_0_new_series": [
+      {"sid": "ES2301", "rescope": "US-China bilateral merchandise trade balance (Census FT900); was composite parent, now Fig-1 component only", "primary_source": "U.S. Census Bureau FT900 / USA Trade Online", "url": "https://www.census.gov/foreign-trade/balance/c5700.html", "content_type": "time_series", "year_range": [2002, 2024], "extension_status": "feasible"},
+      {"sid": "ES2302", "topic": "China current account balance, level (Billion USD) AND percent of GDP -- emit as two rows", "primary_source": "IMF World Economic Outlook database", "url": "https://www.imf.org/en/Publications/WEO/weo-database", "content_type": "time_series", "year_range": [1997, 2024], "extension_status": "feasible"},
+      {"sid": "ES2303", "topic": "China official foreign exchange reserves excluding gold", "primary_source": "World Bank WDI FI.RES.XGLD.CD", "url": "https://data.worldbank.org/indicator/FI.RES.XGLD.CD", "content_type": "time_series", "year_range": [1990, 2024], "extension_status": "feasible"},
+      {"sid": "ES2304", "topic": "RMB misalignment estimates under extended PPP approach (scatter compilation)", "primary_source": "Literature compilation per paper note 17: Cline-Williamson 2007 PIIE, Dunaway-Li 2005 IMF WP, Cheung-Chinn-Fujii 2010a, Cheung 2012", "url": null, "content_type": "derived", "year_range": [1999, 2010], "extension_status": "not_applicable_literature_compilation"},
+      {"sid": "ES2305", "topic": "RMB misalignment estimates under macroeconomic balance approach (scatter compilation)", "primary_source": "Same 4 literature reviews as ES2304", "url": null, "content_type": "derived", "year_range": [1999, 2012], "extension_status": "not_applicable_literature_compilation"}
+    ],
+    "v1_1_deferred": [
+      {"sid": "ES2306", "topic": "US/China relative manufacturing unit labor cost (7.8:1 headline)", "primary_source": "Golub et al. 2018 / BLS ILC (terminated 2014) substituted per Ch11 wave2 canonical: Conference Board ILC (hi-fi, licensed) or OECD ULC_QUA (open CC-BY)", "rationale_for_deferral": "Not figured in paper (body-text citation only); BLS ILC substitution already canonicalized in Ch11 wave2; adds Concept Match Justification overhead doubling Ch11 wave2 work; v1.1 inclusion under canonical Ch11 substitution preserves analytical value with cleaner sourcing"}
+    ],
+    "rationale_summary": "5 distinct primary sources (Census, IMF, WDI, 2x literature compilations) make the dossier-per-figure pattern cleaner than the composite-dossier pattern that works for ES2001/ES2101/ES2201 (single-dataset papers). Post-2017 extension risk profiles differ sharply across components. Literature-compilation methodology (paper note 17) deserves its own dossier prose. Marginal effort is low (~3 hours Phase 3 dossier fills + ~1 hour Phase 4 catchup adequacy) for substantial Phase 5/6 clarity gain.",
+    "marginal_effort_estimate_hours": {"phase3_dossier_fills": 2, "phase4_catchup_adequacy": 1, "phase5_loader_impact": "+3-5 hours (4 distinct loaders vs 1 composite)", "phase6_epr_impact": "+1-2 hours (literature-compilation methodology block prose)", "total_marginal": "~8-10 hours for v1.0 inclusion of 5-way split"},
+    "decision_0006_status_update": "RECOMMENDS_SPLIT — main thread to ratify, then run _phase3b_registry_expansion.py for ES2302-ES2305 and dispatch Phase 3 catchup subagent"
+  },
+  "url_reachability_evidence": {
+    "checked_at": "2026-05-18 (see Build/_ches_url_check_results.json)",
+    "method": "urllib HEAD with GET fallback for 403/405/501/timeout, UA=RSCD-P4-AdequacyBot/1.0, timeout=15s",
+    "results_file": "Technical/Build/_ches_url_check_results.json",
+    "summary": {
+      "checked": 23,
+      "status_200": 13,
+      "status_403_bot_block_only_data_reachable": 5,
+      "status_404_hard": 2,
+      "status_dns_failure": 1,
+      "status_200_via_GET_slow": 1,
+      "status_200_via_HEAD_after_doi_redirect": 1
+    },
+    "substitutions_recorded": [
+      {"deprecated": "https://www.anwarshaikhecon.org/", "active": "Inputs/Capitalism Data/Technical/data/raw/01_SOURCE_MATERIALS/Web Folders/Shaikh Publications/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf", "applies_to": ["ES2001 URL-of-record"], "type": "archival_pdf_substitute_for_dead_host"},
+      {"deprecated": "http://www.bls.gov/emp/classifications-crosswalks/sect300.xls", "active": "https://www.bls.gov/emp/ (current BLS Employment Projections; Phase 5 locates current sect300 successor)", "applies_to": ["ES2101 paper-cited crosswalk"], "type": "url_migration_within_active_domain"},
+      {"deprecated": "https://www3.nd.edu/~wbrooks/GiniNotes.pdf", "active": "Wayback Machine archive OR Cowell (2011) Measuring Inequality ch.5", "applies_to": ["ES2201 methodology reference"], "type": "methodology_reference_substitute_dead_link"}
+    ],
+    "data_substitutions_recorded": [
+      {"concept": "ES2301 figures vs decomposed components -- not a data substitution; a decomposition decision recommended in chapter_level_recommendations and ratified in decision_0006_recommendation block above."},
+      {"concept": "ES2306 (optional v1.1) relative ULC", "discontinued_source": "BLS International Labor Comparisons Table 9 (manufacturing ULC, terminated 2013)", "canonical_substitute_hifi": "Conference Board International Labor Comparisons (https://www.conference-board.org/topics/global-economy)", "canonical_substitute_open": "OECD ULC_QUA (https://stats.oecd.org/Index.aspx?DataSetCode=ULC_QUA)", "inheritance": "Ch11 wave2 canonical resolution; CMJ block to be written in ES2306 dossier when v1.1 adds the series"}
+    ],
+    "auth_required_session_notes": "IRS SOI HEAD succeeds (200); Census FT900 HEAD succeeds (200); IMF WEO HEAD succeeds (200) but bulk download via WEO database CSV requires no auth; WDI HEAD succeeds (200) and WDI API is open. BLS Employment Projections landing returns 403 to HEAD/GET bot but browser-reachable -- BLS uses anti-bot heuristics on /emp/. DOI services (doi.org) return 403 to HEAD/GET bot for some publishers but resolve fully in browser to the publisher landing pages (paper PDFs are accessible). None blocking for Phase 5."
+  },
+  "phase4_open_question_resolutions": {
+    "ches_q1_decision_0006_es2301_split": "RECOMMENDS_SPLIT to 5 series for v1.0 (ES2301-rescoped + ES2302 + ES2303 + ES2304 + ES2305); ES2306 deferred to v1.1 under Ch11 wave2 BLS ILC canonical substitution.",
+    "ches_q2_es2001_anwarshaikhecon_url": "Substitute with archival PDF in SalvagedInputs/Web Folders/Shaikh Publications/.",
+    "ches_q3_es2101_bls_sect300_crosswalk": "Substitute with current BLS Employment Projections industry data crosswalk (Phase 5 locates current sect300 successor).",
+    "ches_q4_es2201_brooks_gini_notes": "Substitute with Wayback-archived Brooks PDF or Cowell (2011) Measuring Inequality ch.5.",
+    "ches_q5_es2001_es2101_shared_bea_pipeline": "Phase 5 implements shared BEA-Benchmark-IO-to-Sraffa-pipeline module consumed by both series.",
+    "ches_q6_es2306_v1_1_deferral": "Defer ES2306 (relative ULC) to v1.1 under Ch11 wave2 BLS ILC -> Conference Board / OECD ULC canonical substitution."
+  }
+}

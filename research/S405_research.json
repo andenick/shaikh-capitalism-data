@@ -1,0 +1,86 @@
+{
+  "series_id": "S405",
+  "name": "Automotive Marginal Labor Cost",
+  "chapter": 4,
+  "figures": [
+    "Fig4.20"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 4,
+      "page": 161,
+      "quote": "Marginal labor cost in figure 4.20 is therefore flat-bottomed, but with much larger spikes at shift beginnings: the peak of the highest spike in marginal labor cost is seven and a half times as high as the bottom (62)! This curve is decidedly not 'well behaved' (64).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 162,
+      "quote": "Figure 4.20 Automotive Marginal Labor Cost Source: Inman 1995, 62, fig. 4.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 161,
+      "quote": "Since average fixed cost (which includes the fixed portion of labor costs) always declines continuously with the scale of production, it is the variations in the variable portion of labor compensation which account for the particular shapes of his avc and mc curves. All cost curves are the averages of Monte-Carlo simulations of cost estimates which allow for random factors in actual production (56–57).",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Robert P. Inman (author); Shaikh reproduces in Capitalism (2016)",
+    "publication": "Inman 1995 (citation in Shaikh's bibliography); reproduced figure: Shaikh (2016), p. 162, fig. 4.20",
+    "table_or_series_id": "Inman (1995), figure 4 (simulated marginal labor cost, $ vs. annual vehicle production in thousands)",
+    "url": "https://www.google.com/books/edition/_/2bC3AAAAIAAJ",
+    "frequency": "synthetic (Monte-Carlo simulation across output levels)",
+    "units": "USD marginal cost per additional car vs. annual vehicle production (thousands)",
+    "license": "Copyright Inman 1995; reproduced under fair use",
+    "available_through": "Inman 1995 article; Shaikh (2016) reproduction",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "mlc(Q) = d(total labor cost)/dQ, where total labor cost = fixed labor cost + variable labor cost(Q). Computed via Monte-Carlo simulation of an automotive plant (Inman 1995).",
+  "components": [
+    {
+      "name": "Total labor cost as a function of Q",
+      "source": "Inman 1995, pp. 55-63 (cost decomposition)"
+    },
+    {
+      "name": "Output range (annual vehicle production)",
+      "source": "Inman 1995, fig. 4 (0 to ~450 thousand vehicles/year)"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "S405 is the marginal-cost counterpart of S404. Not a calendar time series - reclassified content_type to 'derived'.",
+    "Key empirical finding Shaikh quotes from Inman (p. 161): the highest marginal labor cost spike is 7.5x the flat-bottom level, demonstrating that mc curves are NOT smoothly U-shaped as standard textbooks assume.",
+    "Fig 4.20 y-axis range: $0-$1,000; same x-axis structure as Fig 4.19 (annual vehicle production 0-~450 thousand, with 'Add Second Shift' and 'Add Third Shift' markers).",
+    "extension_candidates intentionally empty: same reasoning as S404 (single-plant 1995 simulation, no 'next vintage' to pull)."
+  ],
+  "open_questions": [
+    "Same as S404: verify Inman 1995 full bibliographic citation; check whether underlying numerical series is published elsewhere or only as a figure."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch4",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Marginal-cost twin of S404. Same reclassification and same open question on bibliography."
+    }
+  ]
+}

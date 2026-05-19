@@ -1,0 +1,105 @@
+{
+  "series_id": "AS007",
+  "name": "GPIM Variant - IRS Adjusted",
+  "chapter": 6,
+  "figures": ["Appendix Figure 6.7.8"],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": "S212"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 849,
+      "quote": "The US Historical Statistics of Income (Census 1975, Series V 115, 924-926) contains data on the book value of net capital assets of all corporations derived from US Internal Revenue Service (IRS) statistics. Net assets as defined there include land, but we can use them to estimate the path of the historical net capital stock. Appendix figure 6.7.8 compares the movements of BEA 2011 historical net stock to that of IRS book value stock, each indexed to 100 in 1925. As one can see, the two have very differently from 1925 to 1945, but move in similar ways thereafter. By 1947 the IRS book value index has risen by just 20%, whereas the BEA historical capital stock index has risen by 52% (appendix table 6.8.II.4). This difference is not surprising, given that the BEA measure is based on the assumption that scrapping of fixed capital is entirely independent of economic conditions.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 849,
+      "quote": "Since current- and constant-cost capital stocks are based on the same depreciation rates as historical stocks, we can adjust all three for the effects of the interwar period by multiplying them by the IRS book value index from 1925 to 1947 and reverting to the GPIM calculation in equations (6.5.22) and (6.5.23) thereafter.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 849,
+      "quote": "This would bring the BEA historical cost measure into line with the IRS book value measure and would recalibrate the other two accordingly over the interwar period. In the latter case, this is the same as multiplying the adjusted historical cost capital stock by the ratio of current- or constant-cost capital stock to historical cost over this period. Appendix figure 6.7.9 compares the official BEA 2011 measure of corporate net current-cost to the adjusted measure. The latter starts out 28% lower in 1947 and hence grows faster until it ends up on more or less the same path as the official measure by 1977.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Internal Revenue Service / U.S. Census Bureau",
+    "publication": "U.S. Historical Statistics of Income (Census 1975, Series V 115, 924-926); IRS Statistics of Income corporate balance sheets (post-1990 via IRS SOI)",
+    "table_or_series_id": "Historical Statistics of the United States, Colonial Times to 1970, Series V 115 (book value of net capital assets of all corporations, IRS); post-1990: IRS SOI Corporation Source Book",
+    "url": "https://www.census.gov/library/publications/1975/compendia/hist_stats_colonial-1970.html",
+    "frequency": "annual",
+    "units": "Index (1925=100) for the adjustment ratio; absolute book values in current dollars",
+    "license": "Public domain (U.S. Government works)",
+    "available_through": "Census Bureau Historical Statistics archive; IRS SOI annual publications (post-1990)",
+    "discontinued": false,
+    "replaced_by": "IRS SOI Corporation Source Book provides current-year continuation"
+  },
+  "construction": "formula",
+  "formula": "Adjusted historical stock: KNHcorp_adj_t = KNHcorp_BEA_t * (IRS_index_t / BEA_historical_index_t) for 1925 <= t <= 1947, with both indexes anchored to 100 in 1925. Adjusted current-cost: KNCcorp_adj_t = KNHcorp_adj_t * (KNCcorp_BEA_t / KNHcorp_BEA_t). Adjusted constant-cost: KRcorp_adj_t = KNHcorp_adj_t * (KRcorp_BEA_t / KNHcorp_BEA_t). Post-1947, revert to standard GPIM accumulation (equations 6.5.22, 6.5.23).",
+  "components": [
+    {"label": "IRS book value index of net corporate capital assets, 1925-1947", "source": "Census 1975, Series V 115, pp. 924-926"},
+    {"label": "BEA 2011 historical-cost net stock, corporate", "source": "BEA FA Table 6.3 (historical-cost net stock); 2011 vintage"},
+    {"label": "BEA 2011 current-cost net stock, corporate (KNCcorpbea)", "source": "BEA FA Table 6.1, line 2"},
+    {"label": "Interwar adjustment multiplier index 1925-1947", "source": "Derived ratio (IRS / BEA historical), normalized to 1.0 in 1925"},
+    {"label": "Baseline GPIM accumulation 1947-2011", "source": "AS004 / equations 6.5.22, 6.5.23"}
+  ],
+  "year_range_book": [1925, 2011],
+  "year_range_extension": [2012, 2025],
+  "extension_candidates": [
+    {
+      "subseries_label": "IRS-adjusted GPIM corporate stock (extended)",
+      "source": "IRS book-value index 1925-1947 (frozen historical input) + BEA FA Tables post-2011",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "Billions of current dollars",
+      "splice_strategy": "growth_rate",
+      "concerns": ["IRS Historical Statistics adjustment is a one-time historical correction over 1925-1947; the extension to 2024 just continues the standard GPIM from a re-anchored 1947 starting point. The adjustment itself does NOT need to be re-extended.", "Post-1990 IRS SOI corporate balance sheet data continue to exist but Shaikh's correction depends specifically on the 1925-1947 differential"]
+    }
+  ],
+  "methodology_notes": [
+    "DELIBERATE COUNTERFACTUAL vs AS005 (and parallel to AS008): AS007 changes the interwar 1925-1947 trajectory by anchoring to IRS book-value data. This produces a 1947 starting point that is 28% lower than BEA 2011's (book p. 849). This is the OPERATIONAL Great Depression / WWII adjustment that AS004 (the preferred 'final' measure) incorporates.",
+    "Empirical effect (p. 849-851): By 1947 the IRS index has risen by only 20% from 1925 while the BEA historical-cost index has risen by 52%. After adjustment, the corporate net current-cost stock starts 28% lower in 1947, grows faster (per the convergence property documented in AS005), and converges back to the official BEA path by 1977.",
+    "Justification (book p. 849): 'BEA measure is based on the assumption that scrapping of fixed capital is entirely independent of economic conditions.' The Great Depression caused massive scrapping that the BEA model misses; IRS book-value data captures this because companies wrote down impaired assets on their balance sheets.",
+    "CD2 sample values for AS007 (S212 markdown): 1925=93,341.52 in some scale unit (likely raw IRS book value in thousand-dollars), with growth pattern matching the slow 1925-1947 path then faster 1947-1961 catch-up. The scale unit needs Phase 4 verification.",
+    "AS007 combines with AS006 (BEA 1993 depreciation) and AS008 (interwar adjustment ratio applied to depreciation rates) to produce the final 'preferred' KNCcorp (AS004); Shaikh on book p. 851 describes the combined adjustment as 'starting out 28% lower in 1947 ... but then narrows the gap because it grows faster.'"
+  ],
+  "open_questions": [
+    "CD2 S212 markdown sample values (e.g., 1925=93,341.52) are several orders of magnitude larger than the BEA-comparable corporate stock (~98 bill$ in 1925). Likely the raw IRS series is in thousands of dollars and CD2 didn't rescale; flag for Phase 4 implementation.",
+    "Post-1990 IRS SOI data could in principle be used to construct a parallel modern interwar-style adjustment for the 2008 financial crisis or 2020 COVID shock; but Shaikh does not do this. Flag as a possible Phase 5 research extension.",
+    "Order of operations with AS006 and AS008 must be specified: per book Appendix 6.7 Section V.5 (p. 851), 'The depletion (depreciation and retirement) rates are taken from BEA 1993' (= AS006), the adjustment for 'effects of the Great Depression and World War II' is layered on top (= AS007/AS008), and the initial value is BEA 2011. The combined result is AS004."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-as-ch6",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from CD2 S212 markdown + verbatim quotes from Appendix 6.7 Section V.4 (book pp. 849-851). Three book quotes (definition, source, method). Documents precise difference from AS005 baseline."
+    },
+    {
+      "reviewer": "rscd-a3-ch6-blocker-batch",
+      "date": "2026-05-18",
+      "status": "phase5_ready",
+      "notes": "Resolved Phase 5 Blocker B3 indirectly. AS007 consumes the BEA 1993 depreciation/retirement rates only via the AS004 baseline (post-1947 GPIM accumulation); the interwar IRS book-value index 1925-1947 is a separate input that already lives in CD2 S212 markdown. BEA 1993 rates staged at SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/ (see AS004/AS006 dossiers for full provenance). Note: AS007 also requires divide-by-1000 unit normalization for raw IRS Series V 115 values (Phase 4 D4 finding)."
+    }
+  ],
+  "phase5_recovered_inputs": {
+    "bea_1993_rates_dir": "SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/",
+    "consumed_via": "AS004 baseline (post-1947 GPIM accumulation)",
+    "interwar_input_status": "IRS Series V 115 index 1925-1947 already in CD2 S212 markdown",
+    "unit_normalization_required": "divide raw IRS values by 1000 (thousands -> billions)"
+  }
+}

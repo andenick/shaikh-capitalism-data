@@ -1,0 +1,129 @@
+{
+  "series_id": "S1503",
+  "name": "Growth Rates of Real Output, US Major Industries (Part 2)",
+  "chapter": 15,
+  "figures": [
+    "Fig15.2B"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S078",
+    "cd2_id": "S078"
+  },
+  "book_quotes": [
+    {
+      "chapter": 15,
+      "page": 700,
+      "quote": "Since the growth of any given industry requires concomitant growth in its inputs, no major industry can wander off on its own for long. This is evident in figure 15.2, which displays the",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 701,
+      "quote": "Figure 15.2B Growth Rates of Real Output, US Major Industries, 1987-2010",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 895,
+      "quote": "Figure 15.2A Growth Rates of Real Output, US Major Industries, 1987-2010 Figure 15.2B Growth Rates of Real Output, US Major Industries, 1987-2010 Bureau of Economic Analysis. GDP by Industry, http://www.bea.gov/industry/index.htm#annual",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (BEA)",
+    "publication": "GDP by Industry — Real Value Added by Industry (chained dollars)",
+    "table_or_series_id": "GDP-by-Industry: Real Value Added by Industry (NAICS major industries, panel B: Transportation, Information, Finance/Insurance/Real Estate, Professional & Business, Education/Health, Arts/Entertainment/Food, Other Services, Federal Gov, State & Local Gov)",
+    "url": "http://www.bea.gov/industry/index.htm#annual",
+    "frequency": "annual",
+    "units": "Rate (decimal) — annual growth rate of real value added",
+    "license": "U.S. Government work, public domain",
+    "available_through": "ShaikhChoppedTables/Appendix15_USGDPRByIndustry.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "g_i(t) = ln(YR_i(t)) - ln(YR_i(t-1)) where YR_i is BEA real value added for industry i (chained dollars)",
+  "components": [
+    {
+      "label": "All industries (bold reference)",
+      "source": "BEA GDP-by-Industry, All Industries real VA"
+    },
+    {
+      "label": "Transportation and warehousing",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Information",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Finance, insurance, real estate, rental, and leasing",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Professional and business services",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Educational services, health care, and social assistance",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Arts, entertainment, recreation, accommodation, and food services",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Other services, except government",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Federal government",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "State and local government",
+      "source": "BEA GDP-by-Industry"
+    }
+  ],
+  "year_range_book": [
+    1987,
+    2010
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA Real Value Added by Industry (NAICS, modern vintage)",
+      "source": "BEA Industry Economic Accounts — GDP by Industry, Real Value Added (chained dollars)",
+      "url": "https://www.bea.gov/data/gdp/gdp-industry",
+      "units": "Rate (decimal)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Same caveats as S1502.",
+        "FIRE category has been restructured in some vintages — use 'Finance, insurance, real estate, rental, leasing' aggregate to match book."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Companion panel to S1502; together they cover the 10+ major NAICS industries that comprise the BEA all-industry total.",
+    "Same construction as S1502 — annual log-difference of real value added.",
+    "CD2 predecessor S078 ported; CD2 validation: 1988 ~0.056."
+  ],
+  "open_questions": [
+    "Same as S1502 — reconcile start year and BEA aggregation level."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch15",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S078 ported; quotes verified against PDF p.701 and Appendix 15.1 p.895"
+    }
+  ]
+}

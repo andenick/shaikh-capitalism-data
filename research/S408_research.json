@@ -1,0 +1,89 @@
+{
+  "series_id": "S408",
+  "name": "Cost Curves Chosen by 94% of Business People Surveyed",
+  "chapter": 4,
+  "figures": [
+    "Fig4.23"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 4,
+      "page": 163,
+      "quote": "A second type of study takes a very different tack. Eiteman and Guthrie (1952, 832–836) ask business people to consider eight charts depicting three types of average cost curves: rising costs (charts 1–2); broadly U-shaped curves in which costs fall to a minimum and then rise significantly until capacity (charts 3–5); curves in which costs decline steadily until a point at or near capacity (charts 6–7); and a curve in which average costs decline at first but are essentially flat for most levels of output (chart 8).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 163,
+      "quote": "Figure 4.23 Cost Curves Chosen by 94% of Business People Surveyed Source: Eiteman and Guthrie 1952, 835.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 163,
+      "quote": "When classified by product, there were 1,082 responses, of which 94% opted for the steadily declining-cost curves depicted in figure 4.23 below, while only 5.7% chose the U-shaped curves commonly assumed in standard textbooks. Counting the two respondents who chose flat cost curves, 94.3% of the business people surveyed contradicted the fundamental postulate of neoclassical theory on cost curves (836–838, table 3).",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Wilford J. Eiteman and Glenn E. Guthrie (authors); American Economic Review (publisher)",
+    "publication": "Eiteman, W. J., & Guthrie, G. E. (1952). 'The Shape of the Average Cost Curve.' American Economic Review, 42(5), 832-838.",
+    "table_or_series_id": "Eiteman & Guthrie (1952), Table 3 (response distribution across 8 chart options, n = 1,082 product-responses); curves 6 and 7 reproduced in Shaikh fig. 4.23",
+    "url": "https://www.jstor.org/stable/1812527",
+    "frequency": "cross-sectional (single-survey responses, 1952)",
+    "units": "percentage of respondents (94% chose curves 6 or 7); curves themselves are conceptual cost vs. scale-of-output schematics",
+    "license": "JSTOR access; AER 1952 copyright; reproduced under fair use",
+    "available_through": "JSTOR (https://www.jstor.org/stable/1812527); American Economic Association journal archive",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [
+    {
+      "name": "Eiteman & Guthrie (1952) Table 3 response counts",
+      "source": "American Economic Review 42(5), pp. 836-838"
+    },
+    {
+      "name": "Charts 6 and 7 (steadily-declining average cost shapes)",
+      "source": "Eiteman & Guthrie (1952), p. 835"
+    }
+  ],
+  "year_range_book": [
+    1952,
+    1952
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "S408 is a cross-sectional snapshot of one survey (Eiteman & Guthrie 1952). Content_type set to 'cross_sectional' (not time_series).",
+    "What Fig 4.23 actually reproduces: two of the eight cost-curve charts shown to survey respondents (charts 6 and 7), which 94% of business people chose as best describing their firm's actual cost structure. Each chart is a conceptual schematic showing unit cost on the y-axis and scale of output on the x-axis, with a vertical 'Capacity' line at the right edge.",
+    "Shaikh uses this as empirical evidence against neoclassical U-shaped cost curves and in support of the classical/post-Keynesian view that average cost typically falls smoothly until engineering capacity (book pp. 163-164).",
+    "Note Shaikh's caveat (p. 164): the Eiteman & Guthrie survey did not allow for multiple shifts, which is why the chosen curves look like single-shift segments rather than the full multi-shift spiky pattern derived in S401-S407.",
+    "extension_candidates intentionally empty: one-shot 1952 survey, not a recurring data series. The 'extension' for this empirical finding is the literature-review summary in Miller (2000, 121-122, 125-126) which Shaikh cites - documenting that Bain 1948, Johnston 1960, Walters 1963, Dean 1976, Mansfield 1988, Kahn 1989, Lavoie 1992 all reach similar conclusions (book footnote 36, p. 164)."
+  ],
+  "open_questions": [
+    "JSTOR URL stable/1812527 to be confirmed: Eiteman & Guthrie 1952 AER vol. 42 no. 5 is the citation; the stable ID above is provisional and should be verified before Phase 4 sign-off.",
+    "If RSCD framework treats this as a 'data series' for replication, the chart values themselves (unit cost vs. scale) are conceptual not numerical - i.e., there is no numerical dataset to register, only a qualitative survey-distribution percentage (94%) and the two reproduced chart shapes.",
+    "Phase 4 may want to add a 'qualitative_finding' content_type or sub-category for evidence like this."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch4",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "1952 survey from Eiteman & Guthrie. Cross-sectional, not time series. JSTOR citation provisional."
+    }
+  ]
+}

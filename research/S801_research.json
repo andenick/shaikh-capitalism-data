@@ -1,0 +1,116 @@
+{
+  "series_id": "S801",
+  "name": "Wholesale Prices in Oligopolistic and Competitive Industries, 1965-73 (Eichner)",
+  "chapter": 8,
+  "figures": [
+    "Fig8.1"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S042",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 8,
+      "page": 372,
+      "quote": "Eichner (1973, 1187) presents data on the average price of concentrated and competitive industries, reproduced in figure 8.1, as evidence of the effect of price-setting due to oligopoly power.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 8,
+      "page": 372,
+      "quote": "Figure 8.1 Price Paths of Concentrated and Unconcentrated Industries\nSource: Eichner 1973, 1187.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 8,
+      "page": 372,
+      "quote": "But this does not provide any evidence that the smoother prices of the concentrated industries are associated with a higher level of profitability or a higher trend rate of growth.",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Eichner (academic author)",
+    "publication": "Eichner, Alfred S. (1973), 'A Theory of the Determination of the Mark-Up Under Oligopoly,' Economic Journal 83(332): 1184-1200",
+    "table_or_series_id": "Eichner 1973, p. 1187 (price-path chart for concentrated vs. competitive industries, 1965-73, base 1957-59=100)",
+    "url": "https://doi.org/10.2307/2230843",
+    "frequency": "annual",
+    "units": "Wholesale price index, 1957-59 = 100",
+    "license": "Copyrighted journal article (Wiley/RES); reproduce small extract under fair use for replication.",
+    "available_through": "JSTOR / Wiley Online Library",
+    "discontinued": true,
+    "replaced_by": "BLS Producer Price Index (PPI) by industry; closest modern analog is PPI series for 'concentrated' vs. 'competitive' industries reconstructed from BLS PPI commodity and industry tables."
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [],
+  "year_range_book": [
+    1965,
+    1973
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "BLS PPI by industry (NAICS) for high-CR vs low-CR industries",
+      "source": "U.S. Bureau of Labor Statistics, Producer Price Index Industry Data",
+      "url": "https://www.bls.gov/ppi/databases/",
+      "units": "Index (base year varies; can rebase to 1957-59=100 via splice)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Industry classification has changed (SIC -> NAICS) since Eichner's 1973 sample; requires concordance.",
+        "Definition of 'concentrated' vs. 'competitive' set depends on Census Bureau Concentration Ratios (latest 2017 Economic Census Concentration Ratios table); CR thresholds (e.g., CR4 or CR8 > 50) must be re-applied."
+      ]
+    },
+    {
+      "subseries_label": "U.S. Census Bureau Concentration Ratios (industry-level CR4/CR8/CR20/CR50)",
+      "source": "U.S. Census Bureau, Concentration Ratios in Manufacturing (Economic Census)",
+      "url": "https://www.census.gov/data/tables/2017/econ/concentration.html",
+      "units": "Percent of value of shipments by top N firms",
+      "splice_strategy": "none",
+      "concerns": [
+        "Used to re-identify 'concentrated' vs. 'unconcentrated' industries for the modern PPI extension; not a price series itself."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Shaikh reproduces Eichner's two price paths (concentrated and unconcentrated wholesale prices, monthly/annual index 1957-59=100) over 1965-1973. The chart spans the Nixon wage-price-control 'Phase I' and 'Phase II' periods, which are annotated in the figure.",
+    "The series is presented as part of Shaikh's empirical critique of the 'administered prices' hypothesis: he uses Eichner's own chart to argue the smoother prices of concentrated industries reflect higher fixed/entry costs (Stigler 1963, 70), not monopoly power.",
+    "The companion appendix file 'Appendix8_*' does not contain a digitized version of Figure 8.1 in ShaikhChoppedTables/ (only Figs 8.2-8.6 are tabulated). Underlying Eichner 1973 Table on p.1187 must be retrieved directly from the journal article for an exact replication.",
+    "Construction is 'direct': Shaikh reproduces Eichner's chart without further computation."
+  ],
+  "open_questions": [
+    "The stub's predecessor_ids (cd_id S042, cd2_id S042) point to a CD2 series titled 'US Long-Run Interest Rates and Prices' which is actually a Chapter 10 series. There is no genuine CD2 dossier for this Chapter 8 figure; cd2_id was nulled.",
+    "The numeric data for Figure 8.1 is not in the ShaikhChoppedTables/ Appendix8_* files; it must be re-extracted from Eichner (1973) Economic Journal p.1187.",
+    "The exact list of industries in Eichner's 'concentrated' and 'competitive' aggregates must be obtained from Eichner 1973 to allow a modern BLS PPI extension.",
+    "B6 RESOLVED 2026-05-18 as data_unavailable: Eichner 1973 Fig 8.1 has no underlying table in the source publication, and Shaikh did not transcribe values in his narrative. WebPlotDigitizer required, or BLS PPI reconstruction via Phase 6 proxy approval."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-b-ch8",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from book pp.371-372 and Eichner 1973 source citation. Corrected stub name (was incorrectly labeled 'US Long-Run Interest Rates and Prices' from a stale CD2 mapping). No formal Appendix 8 exists in the book (appendices skip from 7.1 to 9.1)."
+    },
+    {
+      "reviewer": "phase5-wave-a5-blocker-resolver",
+      "date": "2026-05-18",
+      "status": "blocked_data_unavailable",
+      "notes": "B6 BLOCKER RESOLUTION: data_unavailable. Eichner (1973) p.1187 publishes only a chart (no underlying table) for the concentrated vs competitive wholesale-price indices 1965-1973. No Eichner 1973 PDF in RSCD workspace (searched Inputs/Capitalism Data/ and Technical/data/raw/01_SOURCE_MATERIALS/, no match). Shaikh's book pp.371-373 reproduces the chart but transcribes no numeric values from it. The Appendix8_*.xlsx ChoppedTables files do NOT contain Fig 8.1 data (only Figs 8.2-8.6 are tabulated). Verbatim reconstruction is not possible from any source available in the workspace; the only remaining path is manual WebPlotDigitizer extraction from the Economic Journal published chart (out of scope for this agent). S801 is BLOCKED for Phase 5 ingestion until either (a) the Eichner 1973 Economic Journal PDF is added to Inputs/ and a manual WebPlotDigitizer pass is performed, or (b) a BLS PPI reconstruction is approved as an extension_candidate (note: this would be an Anu Framework PROXY substitution since the underlying industry sets differ between Eichner's 1965-73 sample and modern NAICS PPI; would require Phase 6 approval).",
+      "data_unavailable_reason": "source_only_chart_no_table",
+      "next_action_owner": "phase6_human_review"
+    }
+  ]
+}

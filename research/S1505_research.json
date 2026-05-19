@@ -1,0 +1,111 @@
+{
+  "series_id": "S1505",
+  "name": "Classical and Conventional Phillips-Type Curves, 1948-2010",
+  "chapter": 15,
+  "figures": [
+    "Fig15.7"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S083",
+    "cd2_id": "S083"
+  },
+  "book_quotes": [
+    {
+      "chapter": 15,
+      "page": 707,
+      "quote": "Figures 15.7-15.9 display the scatter between inflation and (1-sigma') for the whole postwar period 1951-2010 and for sub-periods 1951-1981 and 1982-2010. For the sake of comparison, the conventional Phillips curve in terms of the unemployment rate is also depicted.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 707,
+      "quote": "Figure 15.7 Classical and Conventional Phillip-Type Curves, 1948-2010",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 896,
+      "quote": "Figures 15.7-15.9: pi, 1 - sigma, uL",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 896,
+      "quote": "sigma = Growth Utilization Rate = Investment/Profit, where I = Investment = Nonresidential Private Fixed Investment, Table 5.3.5: Private Fixed Investment by Type, line 2, and Profit = Net Operating Surplus, Table 1.16. Sources and Uses of Private Enterprise Income, line 2 (taken from Handfas 2012)",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Composite: BEA NIPA + BLS + Shaikh derivations",
+    "publication": "Inflation pi = % change in GDP deflator (BEA NIPA T1.1.4); growth-utilization rate sigma = I/Profit (BEA NIPA T5.3.5 line 2 / T1.16 line 2); unemployment uL from BLS (Appendix 14.2)",
+    "table_or_series_id": "BEA NIPA T1.1.4 (pGDP), T5.3.5 line 2 (Nonresidential Private Fixed Investment), T1.16 line 2 (Net Operating Surplus); BLS unemployment via Appendix 14.2",
+    "url": "https://www.bea.gov/itable/national-gdp-and-personal-income",
+    "frequency": "annual",
+    "units": "Rate (decimal) for inflation, unemployment, and (1 - growth-utilization rate)",
+    "license": "U.S. Government work, public domain",
+    "available_through": "ShaikhChoppedTables/Appendix15_USInflation.xlsx and Appendix14_InflationULdata.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Classical curve: pi vs (1 - sigma'); Conventional curve: pi vs uL. pi = first log-difference of pGDP. sigma = I/Profit per Handfas (2012). (1 - sigma') is the unutilized growth capacity.",
+  "components": [
+    {
+      "label": "Inflation rate (pi)",
+      "source": "BEA NIPA T1.1.4 % change in GDP deflator"
+    },
+    {
+      "label": "Growth-utilization rate (sigma)",
+      "source": "BEA NIPA T5.3.5 line 2 (I) / T1.16 line 2 (Net Operating Surplus); construction per Handfas 2012"
+    },
+    {
+      "label": "Unemployment rate (uL)",
+      "source": "BLS Civilian Unemployment Rate (Appendix 14.2)"
+    }
+  ],
+  "year_range_book": [
+    1948,
+    2010
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA NIPA + BLS CPS modern series",
+      "source": "BEA NIPA + BLS via FRED (GDPDEF, PNFI, NOS proxy from corporate profits, UNRATE)",
+      "url": "https://fred.stlouisfed.org/series/GDPDEF",
+      "units": "Rate (decimal)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Handfas (2012) sigma uses net operating surplus; modern BEA T1.16 sectoring may have shifted.",
+        "Construction is a 4-variable composite — extension requires all four pipelines."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Figure 15.7 is a Phillips-curve scatter, not a time series in the usual sense; each point is one (year, inflation, x) triple where x is either (1-sigma') for the classical curve or uL for the conventional curve.",
+    "Book's appendix description (p.896) lists the variables explicitly as 'pi, 1 - sigma, uL' for Figures 15.7-15.9.",
+    "The classical curve uses Shaikh's growth-utilization rate as the demand-pressure variable (drawn from Handfas 2012); the conventional curve uses standard BLS unemployment.",
+    "Shaikh notes a footnote: 'Using unemployment intensity ... instead of the unemployment rate does not make the conventional Phillips curve any better.' (p.707)",
+    "CD2 predecessor S083 ported with same underlying source map."
+  ],
+  "open_questions": [
+    "Phase 4: confirm BEA NIPA Table 1.16 (Sources and Uses of Private Enterprise Income) is still published with this naming.",
+    "Decide whether to extend sigma using gross investment vs net operating surplus per Shaikh's footnote 1 in Appendix 15.1."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch15",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S083 ported; quotes verified against PDF p.707 and Appendix 15.1 p.896"
+    }
+  ]
+}

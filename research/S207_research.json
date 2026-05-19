@@ -1,0 +1,123 @@
+{
+  "series_id": "S207",
+  "name": "US Manufacturing Productivity and Production Worker Real Compensation",
+  "chapter": 2,
+  "figures": [
+    "Fig2.5"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S007",
+    "cd2_id": "S007"
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 59,
+      "quote": "The paths of indexes of manufacturing productivity (output per worker hour) and real employee compensation, as depicted in figure 2.5, bring new considerations to the fore. Productivity growth is essentially a measure of technical change, and its steady long-term rise speaks to the fundamental role of technological progress in capitalist development.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 764,
+      "quote": "Manufacturing productivity (yr) for 1860–1970 (1958 = 100) from BEA (1966, Series A173) and for 1950–2009 from BLS International Data, http://www.bls.gov/fls/#productivity, Table 1: Output per Hour in Manufacturing, 19 Countries or Areas (2007 = 100). Both series rebased to 1889 = 100 and spliced in 1950 with the earlier series rescaled to match in 1950. Production worker real compensation for 1774–2010 based on manufacturing production worker nominal compensation (ec) in $/hr and Consumer Price Index (CPI) for 1774–2010 from Measuring Worth.com, with sources and methods of the latter described in “Characteristics of the Production-Worker Compensation Series” and “What Was the Consumer Price Index Then? A Data Study,” respectively. Real compensation was derived as ec/CPI.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis + U.S. Bureau of Labor Statistics + MeasuringWorth",
+    "publication": "BEA (1966) Long Term Economic Growth Series A173; BLS International Labor Comparisons (Output per Hour in Manufacturing); MeasuringWorth Production-Worker Compensation and CPI",
+    "table_or_series_id": "BEA LTEG A173 (1860–1970) + BLS FLS Table 1 (1950–2009); MeasuringWorth ec & CPI (1774–2010)",
+    "url": "https://www.measuringworth.com/datasets/uscompensation/",
+    "frequency": "annual",
+    "units": "Index, 1889=100 (productivity); real $/hr (real compensation)",
+    "license": "Public domain (US govt) + MeasuringWorth academic license",
+    "available_through": "FRED OPHMFG (productivity extension); MeasuringWorth (CPI + compensation)",
+    "discontinued": false,
+    "replaced_by": "BLS International Comparisons program was discontinued in 2013; FRED OPHMFG is the modern productivity successor."
+  },
+  "construction": "composite",
+  "formula": "real_compensation = nominal_compensation_per_hour / CPI; productivity = spliced(BEA_A173, BLS_FLS_Table1)",
+  "components": [
+    {
+      "label": "BEA (1966) LTEG Series A173 (Mfg output per man-hour)",
+      "period": [
+        1860,
+        1970
+      ],
+      "native_units": "Index 1958=100"
+    },
+    {
+      "label": "BLS International Comparisons Table 1 (Output per Hour in Mfg, 19 countries)",
+      "period": [
+        1950,
+        2009
+      ],
+      "native_units": "Index 2007=100"
+    },
+    {
+      "label": "MeasuringWorth Production-Worker Nominal Compensation (ec)",
+      "period": [
+        1774,
+        2010
+      ],
+      "native_units": "$/hr"
+    },
+    {
+      "label": "MeasuringWorth CPI",
+      "period": [
+        1774,
+        2010
+      ],
+      "native_units": "Index 1982–84=100"
+    }
+  ],
+  "year_range_book": [
+    1889,
+    2010
+  ],
+  "year_range_extension": [
+    2010,
+    2025
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "FRED OPHMFG (Manufacturing Sector: Real Output Per Hour of All Persons)",
+      "source": "BLS Productivity and Costs (via FRED)",
+      "url": "https://fred.stlouisfed.org/series/OPHMFG",
+      "units": "Index 2017=100",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "BLS discontinued the FLS International Comparisons program in 2013; OPHMFG is the US-only manufacturing-sector continuation."
+      ]
+    },
+    {
+      "subseries_label": "MeasuringWorth Compensation + CPI (continuous update)",
+      "source": "MeasuringWorth",
+      "url": "https://www.measuringworth.com/datasets/uscompensation/",
+      "units": "$/hr; CPI 1982–84=100",
+      "splice_strategy": "none",
+      "concerns": [
+        "Same source as original; direct continuation."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Two co-plotted series: productivity (spliced BEA + BLS) and real compensation (derived as ec/CPI).",
+    "CD2 dossier S007 ported and validated. Note: CD2 known issue flagged sparse BEA coverage 1860–1889 — plot starts at 1889.",
+    "BLS FLS program was sunset in 2013; future extensions of productivity must transition to OPHMFG (US-only) per Appendix 2.1 fidelity."
+  ],
+  "open_questions": [
+    "BLS International Labor Comparisons URL (http://www.bls.gov/fls/) returns 404 in 2026; legacy data is archived at https://www.bls.gov/data/#productivity but the original table is no longer maintained. Flag for Phase 4."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

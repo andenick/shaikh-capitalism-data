@@ -1,0 +1,108 @@
+{
+  "series_id": "S401",
+  "name": "Average and Marginal Costs with Wage Paid per Worker, at Normal Intensity for 8-Hour Shifts up to Engineering Capacity (Two and a Half Shifts)",
+  "chapter": 4,
+  "figures": [
+    "Fig4.16"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 4,
+      "page": 154,
+      "quote": "Daily average total cost is ac = dpMKmkj(Hj, i) + pa¯a + jW/XRj(Hj, i). The first component declines steadily, the second is constant, and the third reaches the same minimum value at the end of first and second shifts. It follows that the overall average total cost curve will be lower at the end of the second shift than any point reached before.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 154,
+      "quote": "Table 4.4 summarizes the derivations of cost curves for both types of wage payments, and figures 4.16 and 4.17 depict the corresponding ac, avc, and mc curves for output ranges which allow us to see their characteristic shapes.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 153,
+      "quote": "If wages are paid per worker, then the total daily wage bill takes the form is j¯Ws, where j = 1, 2, 3 is the shift index and ¯Ws is the fixed wage bill per shift (the wage rate per worker times the number of workers in a shift).",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh (author construction)",
+    "publication": "Capitalism: Competition, Conflict, Crises (Oxford University Press, 2016), Appendix 4.2",
+    "table_or_series_id": "Appendix Table 4.2.4 (Cost Curves and Profit), wages-paid-per-worker columns",
+    "url": "https://global.oup.com/academic/product/capitalism-9780199390632",
+    "frequency": "synthetic",
+    "units": "money units per unit of output (illustrative; pa=10, wN=100, pMK*d giving fixed cost = 70, p=7)",
+    "license": "Copyright Oxford University Press; reproduced under fair use for research",
+    "available_through": "Shaikh book PDF (Inputs/Capitalism Data); Appendix 4.2 reconstructed verbatim from book PDF pp. 772-781 (PDF pp. 810-819) on 2026-05-18",
+    "discontinued": false,
+    "replaced_by": null,
+    "primary_source_local_fallback": "SalvagedInputs/book_data/Reconstructed/Appendix_4_2_Table4.csv (cost columns: XR, afc, ulc_prime, avc_prime, ac_prime, mc_prime) and SalvagedInputs/book_data/Reconstructed/Appendix_4_2_Table3.csv (xr/mk/l_prime inputs). README at SalvagedInputs/book_data/Reconstructed/Appendix_4_2_README.md"
+  },
+  "construction": "formula",
+  "formula": "afc = d*pMK*MK/XR = d*pMK*mk(H,i); ulc' = wN*l' = wN*N/XR (wages paid per worker); avc' = ulc' + pa*a; ac' = afc + avc'; tc' = ac'*XR (for XR>0); mc' = d(tc')/d(XR). Tabulated for hourly increments H = 1..20 across shifts of 8+8+4 hours at intensity i = 1.",
+  "components": [
+    {
+      "name": "Productivity schedule xr(h,i)",
+      "source": "Appendix 4.2 equation (4.2.1): xr = (a1 + a2*h - a3*h^2)*i (quadratic productivity-per-hour, peaking at h* = a2/(2*a3))"
+    },
+    {
+      "name": "Machine coefficient mk(H,i)",
+      "source": "Appendix Table 4.2.1, column 'Machine Coefficient'"
+    },
+    {
+      "name": "Wage per worker wN",
+      "source": "Appendix 4.2, p. 781: wN = 100"
+    },
+    {
+      "name": "Materials price and coefficient (pa, a)",
+      "source": "Appendix Tables 4.2.1 and 4.2.4: pa = 10, a = 0.30 (constant)"
+    },
+    {
+      "name": "Output price p",
+      "source": "Appendix 4.2, p. 781: p = 7"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "S401 is NOT an empirical time series. It is a numerical illustration computed by Shaikh from a quadratic productivity-of-labor specification (Appendix 4.2 eq. 4.2.1) plus stylized prices (pMK, pa, wN, p), tabulated for hourly increments H = 1..20 across three shifts (8+8+4 hours). Reclassified content_type from default 'time_series' (stub) to 'derived'.",
+    "Appendix 4.2 (book p. 781): 'In the case of wages paid per worker, unit labor cost ulc' = wN · N/XR = wN · l'... Average variable costs avc' = ulc' + paa... average (total) cost ac' = afc' + avc'. Total cost tc' equals fixed cost alone when there is no output... but otherwise can be derived from as tc' = ac' · XR. Marginal cost mc' = tc'/XR.'",
+    "Qualitative pattern visible in Fig 4.16: ac curve declines in a spiky manner across shifts with two near-equal minima at the end of shifts 1 and 2; mc curve is flat within each shift at the materials-cost level (pa*a) and jumps at shift boundaries because the wage bill jumps by Ws.",
+    "Appendix 4.2 chopped-table workbook is MISSING from SalvagedInputs/book_data/ShaikhChoppedTables/ (only Appendices 2, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17 are present). Reconstruction requires manual transcription of Appendix Tables 4.2.1-4.2.4 from the book PDF (physical pages 812-820) OR re-running the Appendix 4.2 formulas with the published parameter values.",
+    "extension_candidates intentionally empty: this is a closed-form numerical illustration with no real-world data counterpart - there is nothing to 'extend' beyond Shaikh's own tabulation."
+  ],
+  "open_questions": [
+    "Appendix 4.2 chopped table workbook is not in SalvagedInputs. Phase 5/6 must either (a) transcribe the printed tables from the book PDF, or (b) re-implement eq. 4.2.1 with back-solved parameters (xr(h=1)=3.55, xr(h=12)=9.60 peak from Appendix Table 4.2.1).",
+    "Productivity parameters a1, a2, a3 are not explicitly stated in the published text and must be back-solved from Appendix Table 4.2.1 boundary conditions.",
+    "Validator may flag content_type='derived' as needing extension_candidates; if so, escalate for Phase 4 to ratify the reclassification."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch4",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "First pass. No CD2 predecessor. Reclassified to 'derived' (formula construction). Appendix 4.2 chopped table missing - flagged for Phase 5/6."
+    },
+    {
+      "reviewer": "opus-subagent-batch1-a2",
+      "date": "2026-05-18",
+      "status": "blocker_resolved",
+      "notes": "CH4-B1 RESOLVED. Verbatim transcription of Appendix Tables 4.2.1-4.2.4 from book PDF (pp. 772-781) committed to SalvagedInputs/book_data/Reconstructed/. L01 loader for S401 should consume Appendix_4_2_Table4.csv (per-worker cost columns: XR, afc, ulc_prime, avc_prime, ac_prime, mc_prime). Validation: derived cost columns reproduce from Table 3 inputs to <=0.02 rounding noise; xr(h=1)=3.55 and xr(h=12)=9.60 peak confirmed."
+    }
+  ]
+}

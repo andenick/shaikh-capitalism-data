@@ -1,0 +1,121 @@
+{
+  "series_id": "S1102",
+  "name": "Real Effective Exchange Rates (PPI), US and Japan",
+  "chapter": 11,
+  "figures": [
+    "Fig11.3"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S061",
+    "cd2_id": "S061"
+  },
+  "book_quotes": [
+    {
+      "chapter": 11,
+      "page": 526,
+      "quote": "Figure 11.3 Real Effective Exchange Rates (PPI-Basis), United States and Japan, 1960-2009",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 11,
+      "page": 526,
+      "quote": "Figure 11.3 charts the real effective exchange rates in terms of producer prices for the United States and Japan. It is eminently clear that these are not stationary in either the short run or the long run.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 11,
+      "page": 526,
+      "quote": "Source: BLS and authors' calculations.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 11,
+      "page": 876,
+      "quote": "Trade weights (w) for a given country in a given year were calculated as the sum of exports and imports of the country over the sum of all exports and imports of all countries in our sample. These were used for the United States and Japan to calculate in each year the variables in equation (11.16) of the text: ppi · e/ppi*, where ppi = the producer price index of a country, ppi* = the producer price index of its trading partners, and e = the exchange rate of the country vis-à-vis its trading partners",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh and Antonopoulos (authors' calculations) on inputs from BLS / IMF IFS / World Bank WDI",
+    "publication": "Capitalism: Competition, Conflict, Crises (Oxford 2016), Appendix 11.1; method published in Shaikh and Antonopoulos (2012)",
+    "table_or_series_id": "rxr1 (REER PPI-basis) in Appendix11_USJPNdata.xlsx column C; built from BLS Intl. Comparisons Tables 9 and 11, World Bank WDI PPI, and IMF IFS X+M trade weights",
+    "url": "https://www.bls.gov/fls/ichcc.htm",
+    "frequency": "annual",
+    "units": "Index (2002 = 100)",
+    "license": "BLS and IMF/World Bank inputs are public; the composite REER is author-computed and distributed in Appendix 11.1 workbook",
+    "available_through": "ShaikhChoppedTables/Appendix11_USJPNdata.xlsx column 'rxr1'",
+    "discontinued": true,
+    "replaced_by": "BLS International Labor Comparisons program was DISCONTINUED in 2013 (no more Tables 9/11 updates). Modern equivalents: BIS Effective Exchange Rate (PPI-based) and IMF INS REER for US & Japan."
+  },
+  "construction": "formula",
+  "formula": "REER_PPI_{c,t} = (PPI_{c,t} · e_{c,t}) / PPI*_{c,t}, where PPI* = geometric average of trading partners' PPI weighted by w_j = (X_j + M_j) / sum(X_k + M_k) for partner countries j != c; e_{c,t} = trade-weighted nominal exchange rate (foreign/USD) index. All indices rebased so 2002 = 100.",
+  "components": [
+    {"label": "Japan REER PPI (S1102-A)", "source": "Appendix11_USJPNdata.xlsx, Japan rows, column 'rxr1'"},
+    {"label": "US REER PPI (S1102-B)", "source": "Appendix11_USJPNdata.xlsx, USA rows, column 'rxr1'"},
+    {"label": "Input: PPI by country", "source": "World Bank, World Development Indicators 2010 (Australia 1960-89 imputed via CPI · mean(PPI/CPI); Korea 1960-69 set to 1970 value)"},
+    {"label": "Input: nominal exchange rate e", "source": "BLS International Comparisons of Manufacturing, Table 11: Exchange Rates (foreign currency/USD), 19 countries, 1950-2009, 2002=100"},
+    {"label": "Input: trade weights w_j", "source": "IMF IFS Exports + Imports in USD, all sample countries"}
+  ],
+  "year_range_book": [1960, 2009],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "BIS Real Effective Exchange Rate, PPI-based (broad and narrow indices)",
+      "source": "Bank for International Settlements",
+      "url": "https://www.bis.org/statistics/eer.htm",
+      "units": "Index (2010 = 100; rebaseable to 2002)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "BIS REER is CPI-deflated by default; the PPI-deflated variant (narrow and broad) is available but uses different country baskets than Shaikh's 15-country sample.",
+        "Trade weights are updated dynamically by BIS (rolling 3-year window) vs Shaikh's static 15-country weights; small level differences expected."
+      ]
+    },
+    {
+      "subseries_label": "IMF INS Real Effective Exchange Rate, PPI-based",
+      "source": "IMF International Notification System",
+      "url": "https://data.imf.org/?sk=4c514d48-b6ba-49ed-8ab9-52b0c1a0179b",
+      "units": "Index (base year varies, rebaseable)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "IMF INS uses 'effective exchange rate' against trading partners weighted by trade in manufacturing; close to Shaikh's method.",
+        "Available for both US and JP through current date."
+      ]
+    },
+    {
+      "subseries_label": "FRED: Real Broad Effective Exchange Rate for United States (RBUSBIS)",
+      "source": "FRED / BIS",
+      "url": "https://fred.stlouisfed.org/series/RBUSBIS",
+      "units": "Index (2010=100)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "CPI-deflated by default; PPI version requires download from BIS portal not FRED."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "CD2 predecessor S061 ported: same components, same units. CD2 marked confidence 'medium' due to multiple imputed input series.",
+    "Definition is a composite multilateral REER, not a bilateral USD/JPY rate. Shaikh emphasizes that 'in international competition countries compete against others in the same league', hence the geometric-mean partner basket (Appendix 11.1.III).",
+    "All inputs rebased to 2002 = 100 before combining.",
+    "BLS International Labor Comparisons (ILC) program produced the original Tables 9 and 11 used by Shaikh; BLS DISCONTINUED ILC in 2013, so direct extension via the exact source is impossible. The Conference Board's International Labor Comparisons program took over some ILC outputs but with method changes.",
+    "Reference values (Shaikh appendix, 'rxr1' US row): 1960=63.39, 1972=73.73, 1984=91.52, 1996=102.34, 2008=69.31. Note these are Japan-row values in the registry; verify country labeling.",
+    "The construction is classified 'formula' (not 'direct') because the REER is computed from 3 primary inputs (PPI, e, trade weights) according to equation (11.16) of the book."
+  ],
+  "open_questions": [
+    "BLS ILC discontinuation: post-2013 extension requires switching to BIS or IMF INS, which both differ in weights/baskets. Should Phase 4 accept BIS PPI REER as the canonical extension, or rebuild Shaikh's formula from current World Bank PPI + IMF nominal e + IMF trade weights?",
+    "Validation: CD2 markdown reports Japan REER 1960=63.39; verify against Appendix11_USJPNdata.xlsx values for both countries across full 1960-2009.",
+    "China is in the trade-weights basket only after some year (not in Shaikh's 15? appendix says 15 countries excludes China). Confirm whether Shaikh's PPI* basket includes or excludes China."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch11",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S061 ported; quotes verified against PDF pp.526, 876; Appendix 11.1 sources identified (BLS ILC Tables 9 & 11, World Bank WDI PPI, IMF IFS trade weights); BLS ILC discontinuation flagged."
+    }
+  ]
+}

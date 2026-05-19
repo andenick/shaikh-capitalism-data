@@ -1,0 +1,117 @@
+{
+  "series_id": "S1605",
+  "name": "Household Debt-to-Income Ratio",
+  "chapter": 16,
+  "figures": [
+    "Fig16.9"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S100",
+    "cd2_id": "S100"
+  },
+  "book_quotes": [
+    {
+      "chapter": 16,
+      "page": 735,
+      "quote": "Households, whose real incomes had been squeezed by the slowdown in real wage growth, were offered ever-cheaper debt in order to maintain growth in consumer spending. In consequence, as shown in figure 16.9, the household debt-to-income ratio grew dramatically in the 1980s, which added fuel to the boom.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 16,
+      "page": 899,
+      "quote": "Figure 16.9 Household Debt-to-Income Ratio, United States, 1975-2011. HHDebt = Household Debt (Flow of Funds TD3, line 2); HHDispPersInc = Household Disposable Personal Income (T2.1, line 27); HHDebtIncRatio = Household Debt/Income Ratio = HHDebt/HHDispPersInc.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Federal Reserve Board (debt) and US BEA (income)",
+    "publication": "Federal Reserve Z.1 Flow of Funds (now Financial Accounts of the United States); BEA NIPA Table 2.1",
+    "table_or_series_id": "Numerator: Z.1 Table D.3 line 2 (Household debt); Denominator: BEA NIPA T2.1 line 27 (Disposable Personal Income)",
+    "url": "https://www.federalreserve.gov/releases/z1/",
+    "frequency": "quarterly (annual averages used)",
+    "units": "Ratio (percent in chart, 50%-140% range)",
+    "license": "Public domain (US Federal data)",
+    "available_through": "Federal Reserve Z.1 data download; BEA iTable; FRED",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "HHDebtIncRatio_t = HHDebt_t / HHDispPersInc_t (both in current USD)",
+  "components": [
+    "HHDebt: Federal Reserve Z.1 Table D.3 line 2 (Household sector total debt)",
+    "HHDispPersInc: BEA NIPA Table 2.1 line 27 (Disposable Personal Income)"
+  ],
+  "year_range_book": [
+    1975,
+    2011
+  ],
+  "year_range_extension": [
+    1975,
+    2024
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "Household debt (numerator)",
+      "source": "FRED CMDEBT (Households and Nonprofit Organizations; Credit Market Instruments; Liability)",
+      "url": "https://fred.stlouisfed.org/series/CMDEBT",
+      "units": "Billions USD",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Fed Z.1 was restructured 2013 (renamed Financial Accounts); pre/post split needs careful splice",
+        "CMDEBT excludes nonprofit-only debt vs Shaikh's D.3 line 2 which is household-only — minor level difference"
+      ]
+    },
+    {
+      "subseries_label": "Household debt (preferred - household only)",
+      "source": "FRED HCCSDODNS (Households; Debt Securities and Loans; Liability)",
+      "url": "https://fred.stlouisfed.org/series/HCCSDODNS",
+      "units": "Millions USD",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Better match to Shaikh's intended D.3 line 2 (household sector excl nonprofits)"
+      ]
+    },
+    {
+      "subseries_label": "Disposable Personal Income (denominator)",
+      "source": "FRED DPI (BEA NIPA T2.1 line 27)",
+      "url": "https://fred.stlouisfed.org/series/DPI",
+      "units": "Billions USD, SAAR",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Direct continuation; periodic BEA comprehensive revisions cause minor level shifts",
+        "CD2 used PI (Personal Income) as proxy in extension splice — wrong concept; we recommend DPI for fidelity to book"
+      ]
+    },
+    {
+      "subseries_label": "Composite ratio (alternative)",
+      "source": "FRED TDSP / consumer debt service from Fed",
+      "url": "https://fred.stlouisfed.org/series/TDSP",
+      "units": "Percent",
+      "splice_strategy": "none",
+      "concerns": [
+        "TDSP is debt SERVICE ratio not debt/income — different concept; documented here only as related family"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Direct two-series ratio; no transformation. Annual values are quarterly Z.1/NIPA series averaged to annual.",
+    "Per CD2 (S100), three subseries: S100-A (debt), S100-B (income), S100-C (ratio).",
+    "CD2 extension used FRED CMDEBT/PI; PI is Personal Income (broader than DPI) — Shaikh's spec is explicit on Disposable PI (T2.1 line 27). Recommend DPI not PI for Phase 5 to match book exactly.",
+    "Note book caption period is '1975-2011' but title at Fig 16.9 also reads 1975-2011 (line 462 of extract); CD2 says 1975-2012 — defer to book caption (1975-2011)."
+  ],
+  "open_questions": [
+    "CD2 used CMDEBT (household+nonprofit) and PI (broader than DPI) — both are slight wrong-concept proxies. Phase 4 must ratify whether to use HCCSDODNS+DPI for tighter fidelity at cost of code rewrite.",
+    "Fed Z.1 D.3 line 2 numbering may have shifted in restructured Financial Accounts — verify current FA table mapping."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch16",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Ported from CD2 S100 with verbatim quotes from p. 735 narrative and Appendix 16.1 p. 899."
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "series_id": "S017",
+  "series_name": "GDP per Capita (Maddison)",
+  "chapter": 2,
+  "figures": ["Fig 2.15", "Fig 2.16", "Fig 2.17"],
+  "research_date": "2026-03-07",
+  "researcher": "agent",
+  "kb_sources_searched": ["ch18_appendices.md", "ch02_turbulent_trends.md", "appendix_methodology_summary.json"],
+  "entries": [
+    {
+      "entry_type": "methodology_description",
+      "content": "Maddison (2003) historical GDP per capita data. Decennial observations (10-year intervals) from 1710 to 2000. 206 columns covering world regions and individual countries. Key derived series: RICHEST 4 and POOREST 4 country averages. Kuwait, Qatar, and Venezuela are excluded from the top four when their inclusion would dramatically overstate the average (oil-rich distortion). Asia includes Japan, South Korea, oil-rich countries; Africa includes South Africa and Egypt - understates true rich-poor divergence.",
+      "source_ref": "Appendix 2.1, appendix_methodology_summary"
+    },
+    {
+      "entry_type": "source_citation",
+      "content": "Maddison, A. (2003). The World Economy: Historical Statistics. Paris: OECD Development Centre. GDP per capita in 1990 international Geary-Khamis dollars. Decennial data for world regions and 200+ countries. Maddison Project Database extends and revises these estimates.",
+      "source_ref": "Maddison 2003"
+    },
+    {
+      "entry_type": "figure_context",
+      "content": "Figs 2.15-2.17 display global income divergence. Fig 2.15: world and regional GDP per capita. Fig 2.16: ratio of richest to poorest regions. Fig 2.17: RICHEST 4 vs POOREST 4 countries (with Kuwait, Qatar, Venezuela excluded when distorting). Wide-table format - 206 columns, no single final series. Last column 'formula check' can be ignored. Extension pending - requires Maddison Project Database 2023 parsing.",
+      "source_ref": "ch02 README"
+    }
+  ],
+  "citations": [
+    {
+      "id": "Maddison_2003",
+      "full": "Maddison, A. (2003). The World Economy: Historical Statistics. Paris: OECD Development Centre. https://www.rug.nl/ggdc/historicaldevelopment/maddison/",
+      "short": "Maddison (2003)"
+    },
+    {
+      "id": "Maddison_Project",
+      "full": "Maddison Project Database. Bolt, J. and van Zanden, J.L. (2020). Maddison Style Estimates of the Evolution of the World Economy. Journal of Economic Surveys.",
+      "short": "Maddison Project Database"
+    }
+  ],
+  "methodology_summary": "S017 uses Maddison (2003) GDP per capita in 1990 international Geary-Khamis dollars. Decennial data (1710-2000) for world, regions (Western Europe, Western Offshoots, Latin America, Asia, Africa), and 200+ countries. RICHEST 4 and POOREST 4 are calculated averages; Kuwait, Qatar, Venezuela excluded from top four when inclusion would overstate the average. Classified as wide_table format. No extension yet - Maddison Project Database 2023 parsing required.",
+  "known_issues": [
+    "GDP per capita for poorest countries may be misleading - 'distribution of income in poorer countries is appallingly skewed' (appendix_methodology_summary)",
+    "Asia includes Japan, South Korea, oil-rich countries; Africa includes South Africa, Egypt - understates true divergence",
+    "No extension - requires Maddison Project Database 2023 parsing (separate task)",
+    "Validator V9: No final series column - wide_table format, all IDs have letter suffixes"
+  ],
+  "cross_references": [
+    {"series_id": "S003", "relationship": "US GDP context - S003 is US GDP, S017 is global comparison"},
+    {"source": "Maddison Project Database 2023", "relationship": "Extension source - pending parsing"},
+    {"format": "wide_table", "relationship": "Not standard time_series - 206 columns, decennial"}
+  ]
+}

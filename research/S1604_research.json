@@ -1,0 +1,109 @@
+{
+  "series_id": "S1604",
+  "name": "Net Average and Real Incremental Rates of Profit",
+  "chapter": 16,
+  "figures": [
+    "Fig16.8"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S099",
+    "cd2_id": "S099"
+  },
+  "book_quotes": [
+    {
+      "chapter": 16,
+      "page": 734,
+      "quote": "Combining the two gives us the net rates of profit displayed in figure 16.8. We now see two things: first, that the Stagflation Crisis of the late 1960s was precipitated when both rates sank to unprecedented lows. The whole behavior of the system changed at this point: growth slowed, bankruptcies and business failures soared, unemployment rose sharply, real wages fell relative to productivity, and the stock market fell by over 56% in real terms - about the same as it did in the worst part of the Great Depression.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 16,
+      "page": 899,
+      "quote": "Figure 16.8 Net Average and Real Incremental Rates of Profit, US Corporations, 1947-2011. Average and current (real) incremental rates of profit from Appendix 6.8.II.7, minus the 3-month T-bill rate in Appendix 16.2 Data Tables for Chapter 16, sheet = Ch 16 Data.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "BEA NIPA + Fixed Assets (profit rate inputs) and US Treasury / FRB (3-month T-bill)",
+    "publication": "Shaikh Appendix 6.8.II.7 (corporate profit rates) minus 3-month T-bill from ERP Table 73",
+    "table_or_series_id": "Composite: rcorp + iroprcorp (Appendix 6.8.II.7) minus i_3mo (TB3MS annual)",
+    "url": "https://fred.stlouisfed.org/series/TB3MS",
+    "frequency": "annual",
+    "units": "Rate (decimal); percent in chart",
+    "license": "Public domain (US Federal data)",
+    "available_through": "BEA NIPA T1.14, T6.16D (corporate profits); BEA Fixed Assets T6.1, T6.3 (capital stock); FRED TB3MS",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "r_net = r_corp - i_3mo  AND  rI_HP100_net(-1) = HP100(iroprcorp)(-1) - i_3mo",
+  "components": [
+    "rcorp (US corporate average rate of profit, after-tax/Profit-share-adjusted) from Shaikh Appendix 6.8.II.7",
+    "iroprcorp = real corporate incremental rate of profit from Appendix 6.8.II.7",
+    "HP100-smoothed iroprcorp, lagged one period (rI HP100(-1))",
+    "3-month US Treasury bill rate (annual avg, FRED TB3MS / ERP Table 73 col 1)"
+  ],
+  "year_range_book": [
+    1947,
+    2011
+  ],
+  "year_range_extension": [
+    1947,
+    2024
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "Corporate profit rate (rcorp)",
+      "source": "BEA NIPA Table 1.14 (Gross Value Added of Corporate Business) / BEA Fixed Assets Table 6.1 (Net stock, corporate)",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=4&categories=flatfiles",
+      "units": "Rate (decimal)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "BEA periodic comprehensive revisions to NIPA and Fixed Assets; profit-share definitions sensitive to CCAdj/IVA treatment",
+        "Shaikh's exact rcorp formula needs reproduction from Appendix 6.8 sources"
+      ]
+    },
+    {
+      "subseries_label": "3-month T-bill (subtractor)",
+      "source": "FRED TB3MS",
+      "url": "https://fred.stlouisfed.org/series/TB3MS",
+      "units": "Percent (annual avg)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Direct continuation"
+      ]
+    },
+    {
+      "subseries_label": "Alternative: net incremental rate via discrete-Hodrick-Prescott filter",
+      "source": "Replicated from BEA inputs via S0612/S0617 in RSCD chain",
+      "url": "https://apps.bea.gov/iTable/",
+      "units": "Rate (decimal)",
+      "splice_strategy": "none",
+      "concerns": [
+        "HP filter lambda=100 (annual) endpoints shift on each extension; document as known fragility"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Series is a difference: profit rate minus 3-month T-bill rate. The two underlying components are S0608 (rcorp from Appendix 6.8.II.7, the chapter-6 profit rate dataset) and the US 3-month T-bill (Fig 16.6 series).",
+    "Per CD2 (S099), five subseries: S099-A (rcorp), S099-B (iroprcorp), S099-C (HP-filtered IROP), S099-D (HP-filtered IROP lagged 1), S099-E (rcorp adjusted for wage suppression, rcorpalt = rcorp*(Pcorpalt/Pcorp)).",
+    "The wage-suppression-adjusted variant rcorpalt directly leverages the counterfactual profit path constructed in S1604 (Fig 16.4) — internal cross-reference.",
+    "Network of dependencies: Fig 16.8 = Fig 16.5 (gross rates) - Fig 16.6 (T-bill), so any revision to chapter-6 profit rates (S0606-S0608) cascades here."
+  ],
+  "open_questions": [
+    "Confirm CD2 split between S099 dossier (this) and overlap with chapter 6 profit-rate dossiers (S0606-S0608) — avoid double-counting in cross-series uniqueness check.",
+    "HP-filter lambda for annual series: Shaikh uses lambda=100; some literature recommends lambda=6.25 for annual. Document choice in Phase 5.",
+    "rcorpalt construction requires replicating Fig 16.4 counterfactual; spec needed for Phase 5."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch16",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Ported from CD2 S099; verbatim quotes from p. 734 narrative and Appendix 16.1 p. 899."
+    }
+  ]
+}

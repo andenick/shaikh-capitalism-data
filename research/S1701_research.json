@@ -1,0 +1,138 @@
+{
+  "series_id": "S1701",
+  "name": "The Global Crisis of 2007 in Light of Past Long Waves (HP-smoothed US/UK gold-deflated price indexes)",
+  "chapter": 17,
+  "figures": [
+    "Fig17.1"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S102",
+    "cd2_id": "S102"
+  },
+  "book_quotes": [
+    {
+      "chapter": 17,
+      "page": 749,
+      "quote": "Consider long waves. Figure 17.1 depicts the HP-smoothed long wave data previously displayed in chapter 16, figure 16.1. From 1897 to 1983, the smoothed data shows two clear long waves: 1897–1939 (forty-two years) and 1939–1983 (forty-four years), trough-to-trough. General crises break out eight to nine years after each peak in the smoothed data and last to roughly eighteen years past it. In 2003, I began to display the average wave (the dashed line), lined up with the actual data peak in 2000 which had become visible by then, thereby projecting the next crisis as beginning in 2008–2009 and lasting until 2018.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 17,
+      "page": 749,
+      "quote": "Figure 17.1 The Global Crisis of 2007 in Light of Past Long Waves Source: Appendix 5.3 data tables.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 17,
+      "page": 900,
+      "quote": "Figure 17.1 The Global Crisis of 2007 in Light of Past Long Waves. The HP-smoothed data on US and UK price indexes expressed in ounces of gold is from the spreadsheet in Appendix 5.3 Data Tables for Chapter 5.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Anwar Shaikh personal archive (compiled from primary historical sources)",
+    "publication": "Shaikh, Anwar. 2016. Capitalism: Competition, Conflict, Crises. Appendix 5.3 Data Tables for Chapter 5 (online supplement at http://www.anwarshaikhecon.org/).",
+    "table_or_series_id": "Appendix 5.3 — US and UK Wholesale Price Indexes 1790–2010 (gold-deflated, HP(100)-smoothed), as reproduced in Figure 17.1 (p. 749) and previously as Figure 16.1.",
+    "url": "http://www.anwarshaikhecon.org/",
+    "frequency": "annual",
+    "units": "Index (US/UK wholesale price level expressed in ounces of gold), with HP filter smoothing parameter = 100; index level dimensionless (chart range ~0 to 180)",
+    "license": "Author-curated dataset distributed with the book at anwarshaikhecon.org",
+    "available_through": "SalvagedInputs/book_data/ShaikhChoppedTables/ (ch5 appendix data) and the linked spreadsheet at anwarshaikhecon.org",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Series_t = HP_filter(WPI_in_gold_t, lambda=100), where WPI_in_gold = wholesale price index divided by the gold price, computed separately for US and UK using the Appendix 5.3 source data tables; the 'average of past two waves' overlay is the mean of the smoothed US and UK series across the two completed long-wave intervals (1897–1939 and 1939–1983), trough-to-trough.",
+  "components": [
+    {
+      "label": "US WPI in gold (smoothed)",
+      "role": "input",
+      "description": "US wholesale price index, deflated by the US dollar price of gold, then HP-filtered with smoothing parameter 100. Same primary data as chapter 5 figures (S502/S504 lineage) and as Figure 16.1.",
+      "source": "Shaikh 2016, Appendix 5.3 Data Tables; chapter 5 narrative pp. 219–227"
+    },
+    {
+      "label": "UK WPI in gold (smoothed)",
+      "role": "input",
+      "description": "UK wholesale price index in pound sterling, converted to ounces of gold via the UK gold price, then HP-filtered (lambda = 100). Same primary data as Fig 5.5 / Fig 5.6 / S503.",
+      "source": "Shaikh 2016, Appendix 5.3 Data Tables"
+    },
+    {
+      "label": "Average of past two waves (dashed)",
+      "role": "derived_overlay",
+      "description": "Arithmetic mean of the smoothed US and UK series over the two completed long-wave intervals 1897–1939 and 1939–1983, used in the book to project the 2008–2018 crisis.",
+      "source": "Shaikh 2016, pp. 749; cf. Shaikh 1992 long-wave methodology"
+    }
+  ],
+  "year_range_book": [
+    1890,
+    2030
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "US WPI 1790-present",
+      "source": "MeasuringWorth (Lawrence H. Officer), 'Annual Wholesale Price Index for the United States, 1720-Present'",
+      "url": "https://www.measuringworth.com/datasets/uswholesaleprice/",
+      "units": "Index 1860=100 (recompose to gold by dividing by US dollar price of gold)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Must recompute the gold-deflation and HP(100) smoothing from raw WPI; cannot growth-rate splice a derived series.",
+        "Post-1971 gold price reflects market float (not Bretton Woods); the long-wave methodology assumes a price-of-gold series consistent with Shaikh's Appendix 5.3 construction."
+      ]
+    },
+    {
+      "subseries_label": "UK WPI long-run",
+      "source": "Bank of England 'A Millennium of Macroeconomic Data' (Sally Hills, Ryland Thomas, Nicholas Dimsdale)",
+      "url": "https://www.bankofengland.co.uk/statistics/research-datasets",
+      "units": "Index numbers; recompose to ounces of gold via UK gold price",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Different WPI basket coverage post-1980; must overlap-anchor to Shaikh's series in the 1960s-70s window."
+      ]
+    },
+    {
+      "subseries_label": "Gold price (USD and GBP)",
+      "source": "World Gold Council historical gold price series; MeasuringWorth 'Price of Gold, 1257-Present'",
+      "url": "https://www.measuringworth.com/datasets/gold/",
+      "units": "US dollars per troy ounce / GBP per troy ounce",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Required to recompute WPI-in-gold for any year not covered by Shaikh's Appendix 5.3 spreadsheet."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Figure 17.1 is NOT new chapter 17 data — it is a reuse of the same long-wave construction shown earlier in chapter 16 (Figure 16.1) and built from the chapter 5 Appendix 5.3 data tables (WPI deflated to ounces of gold). The chapter 17 contribution is the dashed 'average of past two waves' overlay used to project the 2008–2018 crisis interval.",
+    "HP filter smoothing parameter is explicitly stated on the chart as lambda = 100 (Hodrick-Prescott).",
+    "The chart annotates the two completed long waves as 1897–1939 (42 years) and 1939–1983 (44 years), trough-to-trough, with general crises breaking out 8–9 years after each peak and lasting roughly 18 years past it.",
+    "Chart x-axis runs 1890 to 2030; the post-2011 portion is projection only (the underlying gold-deflated WPI series in Appendix 5.3 ends at 2010-2011).",
+    "CD2 stub mapped S102 -> S1701 by ID lineage but the CD2 S102 entry is actually the IRS 2011 income distribution table (Figures 17.2/17.3), not Figure 17.1. The RSCD stub assigned figure Fig17.1 to S1701 — this dossier honours the stub's figure assignment (Figure 17.1 = long waves) and re-names the series accordingly. The IRS data lineage is fully captured in S1702 and S1703.",
+    "Related Shaikh methodology paper: Shaikh, A. (1992), 'The Falling Rate of Profit as the Cause of Long Waves: Theory and Empirical Evidence', in Kleinknecht/Mandel/Wallerstein (eds.), New Findings in Long-Wave Research, Macmillan."
+  ],
+  "open_questions": [
+    "Stub inherited the CD2 name 'IRS 2011 Income Distribution — Full Table' from the cd2_id=S102 mapping but assigned figure Fig17.1 (which is the long-wave figure). This dossier honours the figure assignment and renames; Phase 4 should ratify the rename or, alternatively, reassign the figure list to ['Fig17.2','Fig17.3'] and rebuild S1701 as the IRS full table.",
+    "Need to confirm the exact HP filter library / endpoint padding used by Shaikh; the smoothed series at the boundary years (pre-1900, post-2010) is sensitive to filter padding choices.",
+    "The 'projected' portion of the dashed average wave to 2018/2030 is a forecast, not data; Phase 4 should decide whether to retain it in the replication CSV or split it into a separate forecast series."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-c-ch13-17",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from printed p. 749 (PDF p. 787) and Appendix 17.1 (printed p. 900 / PDF p. 938). Renamed from stub: stub inherited CD2 S102 name (IRS table) but the assigned figure Fig17.1 is the long-wave chart. The IRS lineage is captured in S1702/S1703."
+    }
+  ]
+}

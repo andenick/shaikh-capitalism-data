@@ -1,0 +1,101 @@
+{
+  "series_id": "S701",
+  "name": "Figure 7.11 Change in Selling Price versus Change in Unit Labor Cost, US 1923-1950 (Ratio of Each Variable in 1950 to its 1923 Value)",
+  "chapter": 7,
+  "figures": [
+    "Fig7.11"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": "S030",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 7,
+      "page": 286,
+      "quote": "Salter himself does not compare the changes in relative prices to those in relative unit labor costs, but the necessary information is available in his book for two other data sets (164, table 28; 197, table 33). Figures 7.11 and 7.12 display this striking relationship for the United States comparing 1923 to 1950, and for the United Kingdom comparing 1954-1963 (the latter in an Addendum provided by W. B. Reddaway after Salter's untimely death in 1963).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 287,
+      "quote": "Figure 7.11 Change in Selling Price versus Change in Unit Labor Cost, US 1923-1950 (Ratio of Each Variable in 1950 to its 1923 Value) Source: Salter 1969, 197, table 33.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 286,
+      "quote": "At the level of industry as a whole, comparing 1924 to 1950 in the United Kingdom, Salter finds that large increases in productivity are associated with large increases in output and employment and substantial declines in relative prime costs and relative prices. He sees productivity growth as the driver: relative wages do not vary much since wage rates are determined in general markets for labor, so that unit labor costs decline in accord with increases in labor productivity; at the same time, relative material costs move in parallel with unit labor costs. Hence, overall prime costs are systematically lower in industries with higher productivities.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Salter, W. E. G. (Cambridge University Press)",
+    "publication": "Productivity and Technical Change, 2nd edition, 1969 (originally 1960; with addendum by W. B. Reddaway). Table 33 (US 1923-1950 industry selling price and unit labor cost indices, base 1923 = 100).",
+    "table_or_series_id": "Salter (1969) p. 197, Table 33",
+    "url": "https://www.cambridge.org/core/books/productivity-and-technical-change/13C6E0F2C6CC5D6E5DAB0F3A1CAA5C28",
+    "frequency": "cross_sectional (two-period industry comparison: 1923 vs 1950)",
+    "units": "ratio (1950 value / 1923 value, x 100; both selling price and unit labor cost indexed)",
+    "license": "Reproduced from Salter (1969); academic fair use. Underlying US source data is from US Census of Manufactures / BLS productivity studies of the 1950s as compiled by Salter.",
+    "available_through": "Cambridge University Press; transcribed into Appendix 7.2 file 'Appendix7_SalterULCPriceTable33.xlsx' on Shaikh's companion website http://www.anwarshaikhecon.org/",
+    "discontinued": true,
+    "replaced_by": "Salter's underlying 1923-1950 US industry tabulations are not maintained as a current series; for modern selling-price vs unit-labor-cost cross-sections see BLS Industry Productivity Program PRS series + BLS PPI by NAICS."
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [],
+  "year_range_book": [1923, 1950],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "BLS Industry Productivity Program - unit labor cost by NAICS industry (PRS series)",
+      "source": "U.S. Bureau of Labor Statistics, Productivity and Costs by Industry",
+      "url": "https://www.bls.gov/lpc/tables_by_industry.htm",
+      "units": "index, 2017 = 100",
+      "splice_strategy": "none",
+      "concerns": [
+        "Industry classification differs from Salter's 1920s-era schema; modern NAICS industries cannot be one-to-one matched to Salter's 28-industry table.",
+        "Salter's price index is industry-level wholesale selling price; modern equivalent would be BLS PPI by NAICS, not the BEA GDPbyIndustry deflator."
+      ]
+    },
+    {
+      "subseries_label": "BLS Producer Price Index by NAICS industry (PPI)",
+      "source": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/ppi/data.htm",
+      "units": "index, varies by industry",
+      "splice_strategy": "none",
+      "concerns": [
+        "PPI program does not cover all manufacturing pre-1947 and undergoes industry-coverage changes; cannot retrospectively extend Salter's 1923-1950 panel."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Cross-sectional scatter, not a time series. Each point is one US industry; x-axis is the ratio of that industry's unit labor cost in 1950 to its unit labor cost in 1923 (x 100), y-axis is the corresponding ratio of selling prices.",
+    "Source data is Salter (1969), Table 33 (p. 197), which Shaikh re-plots. Appendix 7.1 (book p. 856, PDF p. 894) states: 'Figures 7.1-7.12 are either illustrations or have their sources listed within the figure itself.' Salter built Table 33 from US Census of Manufactures data and BLS price indexes for ~28 US manufacturing industries spanning 1923-1950.",
+    "Shaikh's analytical point in plotting this is that approximately 77% of cross-industry variation in selling-price changes is explained by cross-industry variation in unit labor cost changes (book p. 286), supporting the classical/Marxian theory that prices of production are regulated by costs of production.",
+    "Replication strategy for RSCD: digitize Table 33 from Salter (1969) directly OR use Shaikh's transcribed Appendix 7.2 file SalterULCPriceTable33.xlsx in SalvagedInputs/book_data/ShaikhChoppedTables/. No modern 'extension' is meaningful because the figure is a historical cross-section, not a time-series."
+  ],
+  "open_questions": [
+    "Confirm whether SalvagedInputs/book_data/ShaikhChoppedTables/Appendix7_SalterULCPriceTable33.xlsx is a verbatim digitization of Salter (1969) Table 33, or whether Shaikh applied any transformation. If transformation, document.",
+    "Industry labels in Salter's Table 33 use 1920s SIC-precursor categories; for any Phase 4/5 visualization, decide whether to keep Salter's original labels or to crosswalk to modern NAICS (recommendation: keep original - this is a historical illustration).",
+    "Re-classify content_type from time_series (stub default) to cross_sectional in the chapter index; stub had this wrong."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-b-ch7",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from book Ch7 pp. 286-287 verbatim + Appendix 7.1 (book p. 856 / PDF p. 894) confirming Figs 7.1-7.12 are illustrations with sources listed within. Source is Salter (1969) Table 33; raw Excel transcription present in SalvagedInputs as Appendix7_SalterULCPriceTable33.xlsx. Cross-sectional, not extensible as time series. Re-classified content_type to cross_sectional."
+    }
+  ]
+}

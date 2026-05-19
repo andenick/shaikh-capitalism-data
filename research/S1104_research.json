@@ -1,0 +1,127 @@
+{
+  "series_id": "S1104",
+  "name": "US Balance of Trade, Real Exchange Rate, Relative GDP",
+  "chapter": 11,
+  "figures": [
+    "Fig11.7"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S063",
+    "cd2_id": "S063"
+  },
+  "book_quotes": [
+    {
+      "chapter": 11,
+      "page": 534,
+      "quote": "Figure 11.7 displays the main variables for the United States, and we see that the real exchange rate and relative GDP do indeed pull in opposite directions. It follows that the observed deterioration of the US trade balance is consistent with the observed improvement in its average competitive level.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 11,
+      "page": 534,
+      "quote": "Figure 11.7 US Balance of Trade, Real Exchange Rate, and Relative GDP, 1960-2009",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 11,
+      "page": 534,
+      "quote": "Given the limitations of our data we can only expect that a fall in a country's real exchange rate would improve its balance of trade, while a rise in its relative income would worsen it (Shaikh 2000/2001).",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 11,
+      "page": 875,
+      "quote": "Sum of Exports and Imports (EX+IM): From the International Monetary Fund (IMF), International Financial Statistics (IFS), exports and imports in US dollars.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh and Antonopoulos (authors' composite of IMF IFS, BLS, World Bank WDI inputs)",
+    "publication": "Capitalism: Competition, Conflict, Crises (Oxford 2016), Appendix 11.1; Shaikh and Antonopoulos (2012)",
+    "table_or_series_id": "US rows of Appendix11_USJPNdata.xlsx: trade balance (X-M)/(X+M), rxr1 (REER PPI), and relative GDP (US/EU12)",
+    "url": "https://www.bls.gov/fls/ichcc.htm",
+    "frequency": "annual",
+    "units": "Composite: trade balance in X/M ratio (or % of trade), REER in index (2002=100), relative GDP in index",
+    "license": "Public inputs (IMF/BLS/World Bank); composite distributed in Appendix 11.1 workbook",
+    "available_through": "ShaikhChoppedTables/Appendix11_USJPNdata.xlsx and Appendix11_XMData.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Multi-panel figure plotting three US series 1960-2009: (1) Trade Balance ratio = US X / US M (from IMF IFS, same as S1101-A); (2) Real Exchange Rate = US REER PPI-basis, same as S1102-B; (3) Relative Real GDP = US real GDP / EU12 real GDP (or aggregate trading partner real GDP), indexed.",
+  "components": [
+    {"label": "US Trade Balance (S1104-A)", "source": "IMF IFS US exports/imports, 1960-2009; same as S1101-A"},
+    {"label": "US Real Exchange Rate (S1104-B)", "source": "Composite REER PPI-basis (BLS + World Bank + IMF inputs); same as S1102-B"},
+    {"label": "US Relative Real GDP, US/EU12 (S1104-C)", "source": "Real GDP indices (presumably from OECD or World Bank WDI) for US and EU-12 aggregate, 1961-2009; computed as ratio and indexed"}
+  ],
+  "year_range_book": [1960, 2009],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "Trade balance component: IMF Direction of Trade Statistics, US exports & imports of goods, annual USD",
+      "source": "IMF DOTS / IFS",
+      "url": "https://data.imf.org/?sk=9d6028d4-f14a-464c-a2f2-59b2cd424b85",
+      "units": "USD millions; ratio (constructed)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Direct extension of S1101-A US component; no new concerns beyond those flagged there."
+      ]
+    },
+    {
+      "subseries_label": "REER component: BIS Real Broad Effective Exchange Rate for United States, PPI-deflated",
+      "source": "BIS",
+      "url": "https://www.bis.org/statistics/eer.htm",
+      "units": "Index (2010=100, rebaseable)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Direct extension of S1102-B; BLS ILC discontinuation discussed there."
+      ]
+    },
+    {
+      "subseries_label": "Relative GDP component: World Bank WDI real GDP (constant USD) for US and EU (or Euro Area)",
+      "source": "World Bank WDI",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD",
+      "units": "Constant 2015 USD",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "EU12 (pre-1995 EU membership) does not exist as a current statistical aggregate; modern extensions must use Euro Area (EA19/EA20) or EU27, which differ in composition.",
+        "Splice strategy: rebase ratio to 2002=100 using growth rates of US real GDP / Euro Area real GDP."
+      ]
+    },
+    {
+      "subseries_label": "Relative GDP alt: OECD Quarterly National Accounts, Real GDP, US and EU aggregate",
+      "source": "OECD.Stat QNA",
+      "url": "https://stats.oecd.org/Index.aspx?DataSetCode=QNA",
+      "units": "Index (varying base year)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "OECD provides EU aggregate with consistent historical reweighting; recommended for relative-GDP series."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "CD2 predecessor S063 ported. CD2 markdown's labeling of trade balance as 'Percent of GDP' is inconsistent with Figure 11.7's stated 'Exports/Imports' / 'Trade Balance' label and with the X/M ratio used in Figure 11.2. We retain X/M ratio interpretation; CD2's percent-of-GDP label is flagged as a possible typo or alternative scaling.",
+    "Figure 11.7 is a 3-line overlay chart, not a single derived index. Each line is sourced separately (and S1104-A and S1104-B duplicate S1101-A and S1102-B respectively). RSCD should ensure the production pipeline references the canonical series rather than recomputing.",
+    "Relative GDP (S1104-C) is a NEW data demand vs S1101 and S1102: requires US and EU12 real GDP series. Shaikh's Appendix 11.1 does not list relative GDP among the raw data inputs (CPI, ULC, pmfg, PPI, e, X+M, IntRate, RelGDPR), but RelGDPR appears in the raw-data list. Source for RelGDPR is not explicitly stated in Appendix 11.1.II - likely OECD or World Bank WDI.",
+    "Reference values (CD2 markdown, presumably US trade balance): 1960=-0.606, 1972=-0.924, 1984=0.468, 1996=0.489, 2008=-0.533. Negative values suggest these may actually be in (X-M)/(X+M) percent form rather than X/M ratio (which would never be negative). Confirm interpretation against ShaikhChoppedTables.",
+    "Per Shaikh (p.534): the chart demonstrates that REER and relative GDP 'pull in opposite directions' so that improving US competitiveness (declining REER, rising relative GDP) is consistent with deteriorating trade balance."
+  ],
+  "open_questions": [
+    "Trade balance units: CD2 markdown reports negative values (-0.606 etc.), inconsistent with X/M ratio (>0). Likely the series is actually (X-M)/(X+M) or net exports as % of trade, NOT pure X/M ratio. Resolve by inspecting Appendix11_USJPNdata.xlsx column F (rulcadjratio1 / trade balance column) directly.",
+    "Source of RelGDPR (relative real GDP, US/EU12) is not explicit in Appendix 11.1.II raw-data list. Phase 4 should identify whether Shaikh used OECD QNA, World Bank WDI, or IMF WEO for EU12 real GDP.",
+    "EU12 composition: Shaikh's EU12 likely refers to the pre-1995 EU members (Belgium, Denmark, France, Germany, Greece, Ireland, Italy, Luxembourg, Netherlands, Portugal, Spain, UK). Modern extension must decide whether to keep the historical EU12 basket (requires backfilling each country) or switch to Euro Area aggregate (concept break)."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch11",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S063 ported; quotes verified against PDF pp.534, 875; flagged units inconsistency in CD2 markdown (negative trade-balance values inconsistent with X/M ratio label); flagged missing RelGDPR source in Appendix 11.1."
+    }
+  ]
+}

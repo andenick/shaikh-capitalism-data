@@ -1,0 +1,11 @@
+Variable_Code,Name,Units,Source,Period,Chapter,FRED_Code,BEA_Table
+RGDPPC,Real GDP per capita,2012 dollars,MeasuringWorth.com,1790-2025,2,,
+INDPRO,Industrial Production Index,Index 2012=100,Federal Reserve,1860-2025,2,INDPRO,
+NOS,Net Operating Surplus,Billions of current dollars,BEA NIPA Table 1.10,1947-2025,6,A053RC1Q027SBEA,1.10
+CP,Corporate Profits with IVA and CCAdj,Billions of current dollars,BEA NIPA Table 1.12,1947-2025,6,A445RC1Q027SBEA,1.12
+GDI,Gross Domestic Income,Billions of current dollars,BEA NIPA Table 1.10,1947-2025,6,GDI,1.10
+K,Fixed Capital Stock,Billions of current dollars,BEA Fixed Assets Table 1.1,1947-2025,10,RKNANPUSA666NRUG,Fixed Assets 1.1
+GDPDEF,GDP Deflator,Index 2012=100,BEA NIPA Table 1.1.9,1947-2025,All,GDPDEF,1.1.9
+CPI,Consumer Price Index,Index 1982-84=100,Bureau of Labor Statistics,1774-2025,15,CPIAUCSL,
+UNRATE,Unemployment Rate,Percent,Bureau of Labor Statistics,1947-2025,14,UNRATE,
+PROFIT_RATE,Rate of Profit,Percent,Calculated: NOS/K,1947-2025,10,,

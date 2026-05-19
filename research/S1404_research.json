@@ -1,0 +1,98 @@
+{
+  "series_id": "S1404",
+  "name": "Rate of Change of Wage Share vs Unemployment Intensity (Raw)",
+  "chapter": 14,
+  "figures": [
+    "Fig14.13"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S071",
+    "cd2_id": "S071"
+  },
+  "book_quotes": [
+    {
+      "chapter": 14,
+      "page": 666,
+      "quote": "Figure 14.13 displays the scatter diagram of the rate of change of the wage share versus unemployment intensity. Unlike the conventional nominal-wage Phillips curve displayed previously in chapter 12, figure 12.8, the wage-share curve clearly displays a negative slope.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 892,
+      "quote": "Data for wage share, prices, wages, and productivity is from the Bureau of Economic Analysis (BEA) GDP and the National Income and Product Account (NIPA) Historical Tables, http://www.bea.gov/national/index.htm#gdp: wage share = EC/GDP, where EC = Compensation of employees, paid from Table 1.10, line 2; and GDP is from Table 1.10, line 1.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 663,
+      "quote": "If the general curve was homogeneous in the rate of change of nominal value added (i.e., in the sum of inflation and productivity change), then we would get the previously developed Classical curve in which the rate of change of the wage share was a function of unemployment intensity alone.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Composite (BEA + BLS)",
+    "publication": "Derived: growth rate of wage share (from S1401 components) and unemployment intensity (S1402)",
+    "table_or_series_id": "BEA NIPA Table 1.10 (lines 1 and 2); BLS LNS14000000 + LNS13008275",
+    "url": "https://www.bea.gov/itable/national-gdp-and-personal-income",
+    "frequency": "annual",
+    "units": "Wage share growth (decimal/yr); unemployment intensity (decimal)",
+    "license": "U.S. Government Work (public domain)",
+    "available_through": "BEA + BLS + FRED",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "direct",
+  "formula": "Scatter: x = unemployment_intensity_t (annual, raw); y = (wage_share_t / wage_share_{t-1}) - 1 (annual, raw)",
+  "components": [
+    {
+      "subseries_label": "Wage share growth (gwsh)",
+      "source": "Derived from S1401 wage share (annual, log/first-difference)",
+      "role": "y-axis of Fig 14.13"
+    },
+    {
+      "subseries_label": "Unemployment intensity (ulintensity)",
+      "source": "S1402 component",
+      "role": "x-axis of Fig 14.13"
+    }
+  ],
+  "year_range_book": [1949, 2011],
+  "year_range_extension": [1949, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "Wage share growth",
+      "source": "Derived from FRED A576RC1/GDP annual; first-difference of logs",
+      "url": "https://fred.stlouisfed.org/series/A576RC1",
+      "units": "Decimal annual rate",
+      "splice_strategy": "growth_rate",
+      "concerns": ["First observation lost to differencing (1948 -> 1949)"]
+    },
+    {
+      "subseries_label": "Unemployment intensity",
+      "source": "Derived from FRED UNRATE + UEMPMEAN (annual averages, duration index rebased to 1948-51=100)",
+      "url": "https://fred.stlouisfed.org/series/UEMPMEAN",
+      "units": "Decimal",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["See S1402 note re: UEMPMEAN 2011 top-coding break"]
+    }
+  ],
+  "methodology_notes": [
+    "Fig 14.13 is the raw (unfiltered) scatter of annual wage-share growth vs. annual unemployment intensity, 1949-2011. It motivates the Classical wage-share Phillips curve (Eq. 14.15) of Sec. V.",
+    "Shaikh observes a clear negative slope despite noise, contrasting with the conventional nominal-wage Phillips curve (Fig 12.8) which appears noisy. Fig 14.14 (S1405) then applies HP(100) filtering to extract the structural curve.",
+    "Annual frequency is implied by the data range 1949-2011 (63 observations) and consistency with Appendix 14.2 series naming (gwsh, ulintensity)."
+  ],
+  "open_questions": [
+    "Wage share growth: is it computed as log difference or simple growth rate? CD2 sample values suggest first-difference of natural log applied to ratio."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch14",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S071 ported. Quotes verified against PDF pp. 666 and 892."
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": 5,
+  "reviewer": "opus-subagent-p4-wave1-ch5",
+  "review_date": "2026-05-18",
+  "series_count": 4,
+  "scores": {
+    "D1_source_reachability": {
+      "value": 21,
+      "max": 25,
+      "details": "Real HTTP HEAD/GET checks performed 2026-05-18T19:43Z. anwarshaikhecon.org (cited as primary on all 4 series) DOES NOT RESOLVE: getaddrinfo failure on both http:// and https://. Internet Archive snapshot 2024-03-11 exists and a local copy of the underlying Appendix5_DATALRprices.xlsx is present in SalvagedInputs/book_data/ShaikhChoppedTables/. Per template, primary URL is reclassified as 'offline-archival' for adequacy purposes. MeasuringWorth: 200 OK (redirects /gold/ -> /datasets/gold/ and /exchangepound/ -> /datasets/exchangepound/; URLs in registry must be updated). BLS download.bls.gov: 200 OK; BLS public API confirms WPS00000000 frozen at 1974, WPU00000000 live through 2026-04. NBER macrohistory: 200 OK (auto-redirects to data.nber.org). LBMA: 200 OK. ONS PLLU (3 series): persistent 502 Bad Gateway from CDN on both HEAD and GET with multiple UAs -> marked 'unverified-rate-limited' (not failed; series is still published)."
+    },
+    "D2_year_coverage": {
+      "value": 18,
+      "max": 20,
+      "details": "Book-period coverage 100% for all 4 series (Jastram print tables + DATALRprices local fallback). Extension coverage: BLS WPU00000000 live through 2026-04 covers US WPI extension fully; MeasuringWorth covers gold through (at least) 2010 plus the WW2 wartime UK suspension is interpolated by MeasuringWorth and is acknowledged in S503 open_questions. ONS PLLU is currently 502 at our IP but is still actively published by ONS (the timeseries identifier exists); treat as recoverable. -2 reflects the ONS reachability uncertainty pending re-probe + the wartime UK gold interpolation needing explicit treatment at ingestion."
+    },
+    "D3_license_compatibility": {
+      "value": 15,
+      "max": 15,
+      "details": "All sources public/academic: Jastram (1977) print citation; MeasuringWorth (Officer & Williamson) explicit scholarly-use license; BLS PPI public-domain; NBER macrohistory public; UK ONS PLLU OGL-licensed; LBMA Gold Price PM published with non-commercial scholarly use permitted. No paywalled or Morningstar/Ibbotson-type commercial gates in scope. Shaikh's DATALRprices spreadsheet is academic posting by the author; local copy in SalvagedInputs/ is in-scope per project terms."
+    },
+    "D4_units_consistency": {
+      "value": 15,
+      "max": 15,
+      "details": "All 4 series carry explicit primary_source.units = 'index, 1930 = 100'. Extension candidates carry source units (BLS 1982=100, ONS 2015=100, MeasuringWorth currency/oz) with explicit rebase-to-1930=100 instructions. S503 and S504 are formula series with both p' (dimensionless ratio rebased to 1930=100) and pG (1930=100 index) plotted on the same log axis; units are internally consistent."
+    },
+    "D5_extension_feasibility": {
+      "value": 13,
+      "max": 15,
+      "details": "S502 extension feasible: BLS WPU00000000 live (covers US WPI 2011+); ONS PLLU still published (UK leg). S501 is a historical slice (1790-1940) -> no extension needed; covered by S502. S503/S504 are formula series -> Phase 3 dossiers correctly document the No-Lazy-Splices-on-Derived-Quantities rule and specify recomputation from extended WPI + extended gold price components. The 2 deducted points reflect that (a) the WPS->WPU code bridge is documented but not yet operationalized in a loader, and (b) the LBMA post-2015 Gold Price reform requires an overlap-anchor calibration not yet specified."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 10,
+      "max": 10,
+      "details": "All substitutions disclosed: BLS WPS->WPU code transition flagged in S502/S504 concerns; LBMA reform (March 2015) flagged in S503/S504; MeasuringWorth-as-canonical correction (over CD2's COMEX/LBMA mis-attribution for S504, and CD2's BLS-PPI mis-attribution for S503 UK gold price) explicitly documented in methodology_notes. Wartime UK gold-market suspension and possible MeasuringWorth interpolation flagged as an open question, not silently treated as raw data. No undisclosed proxies."
+    }
+  },
+  "total_score": 92,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "S501",
+      "name": "US and UK Wholesale Price Indexes, 1790-1940",
+      "content_type_correction": null,
+      "url_status": "offline-archival",
+      "url_status_checked_at": "2026-05-18T19:43:10Z",
+      "year_coverage_pct": 100,
+      "license": "academic-public",
+      "units": "index, 1930 = 100",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": {
+        "primary": "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix5_DATALRprices.xlsx (local copy) + Jastram (1977) print tables 2 and 7 as authoritative back-stop",
+        "wayback_snapshot": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+        "rationale": "anwarshaikhecon.org DNS does not resolve (verified 2026-05-18). Local copy of DATALRprices.xlsx and IA snapshot both confirmed reachable. Per decision 0005, anwarshaikhecon.org companion is to be hosted in SalvagedInputs/ with IA citation."
+      },
+      "proxy_flags": [],
+      "remediation": [
+        "Update primary_source.url in registry to local SalvagedInputs path + IA snapshot URL",
+        "S501 is a chronological slice of S502; tag in registry as derived-from-S502 to enforce single-loader policy"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S502",
+      "name": "US and UK Wholesale Price Indexes, 1790-2010",
+      "content_type_correction": null,
+      "url_status": "offline-archival",
+      "url_status_checked_at": "2026-05-18T19:43:10Z",
+      "year_coverage_pct": 100,
+      "license": "academic-public",
+      "units": "index, 1930 = 100",
+      "extension_status": "feasible",
+      "proposed_substitute": {
+        "primary": "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix5_DATALRprices.xlsx (local copy) + Jastram (1977) print tables 2 and 7",
+        "wayback_snapshot": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+        "extension_us": "BLS WPU00000000 via download.bls.gov/pub/time.series/wp/wp.data.0.Current (200 OK; legacy WPS00000000 is frozen at 1974 per BLS public API; confirmed 2026-05-18)",
+        "extension_uk": "ONS PLLU via ons.gov.uk/economy/inflationandpriceindices/timeseries/pllu (currently returning 502 from CDN; series remains officially published — retry from a non-blocked IP)",
+        "rationale": "Companion site dead; underlying sources live (US) and recoverable (UK)."
+      },
+      "proxy_flags": [],
+      "remediation": [
+        "Update registry URLs: drop http://www.bls.gov/ppi/data.htm# (redirects to /ppi/home.htm) in favor of api.bls.gov/publicAPI/v2/timeseries/data/WPU00000000",
+        "Replace WPS00000000 -> WPU00000000 identifier in S502 extension_candidates (Phase 3 already flagged in concerns)",
+        "Document ONS PLLU 502 condition; flag for re-probe before Phase 5 ingestion (server-side rate-limiting is intermittent)"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S503",
+      "name": "UK WPI in Gold and UK Gold Price",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T19:43:10Z",
+      "year_coverage_pct": 100,
+      "license": "academic-public",
+      "units": "index, 1930 = 100",
+      "extension_status": "feasible",
+      "proposed_substitute": {
+        "primary": "MeasuringWorth gold price at https://www.measuringworth.com/datasets/gold/ (final URL after /gold/ -> /datasets/gold/ redirect; 200 OK 2026-05-18)",
+        "fx_bridge": "Officer & Williamson dollar-pound exchange rate at https://www.measuringworth.com/datasets/exchangepound/ (200 OK; URL reorganised same way)",
+        "wpi_uk": "ONS PLLU (502 transient; series still published)",
+        "wartime_caveat": "MeasuringWorth UK gold price 1939-1945 is documented by Officer/Williamson as interpolated due to wartime market suspension; flag at ingestion with provenance marker, do NOT treat as raw observations.",
+        "extension_post_2010": "Compute p'_UK = ONS_PLLU / pG_UK with pG_UK from LBMA Gold Price PM (USD) / BoE XUDLGBD spot FX (200 OK on LBMA); recompute the ratio per No-Lazy-Splices rule, do not splice p' directly."
+      },
+      "proxy_flags": [
+        "1939-1945 UK gold price likely interpolated by MeasuringWorth (Officer/Williamson note); must be marked as imputed at ingestion, not raw"
+      ],
+      "remediation": [
+        "Update primary_source.url in registry: http://www.measuringworth.com/gold/ -> https://www.measuringworth.com/datasets/gold/",
+        "Add exchangepound dataset URL as a second primary_source entry (FX is structural to S503, not just an extension concern)",
+        "Add wartime-interpolation provenance flag to 1939-1945 observations in the loader"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S504",
+      "name": "US WPI in Gold and US Gold Price",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T19:43:10Z",
+      "year_coverage_pct": 100,
+      "license": "academic-public",
+      "units": "index, 1930 = 100",
+      "extension_status": "feasible",
+      "proposed_substitute": {
+        "primary": "MeasuringWorth gold price at https://www.measuringworth.com/datasets/gold/ (200 OK; redirect from /gold/)",
+        "wpi_us": "BLS WPU00000000 via api.bls.gov/publicAPI/v1/timeseries/data/WPU00000000 (verified live; latest obs 2026-04, val=283.764)",
+        "extension_post_2010": "Compute p'_US = BLS_WPU00000000 / pG_US with pG_US from LBMA Gold Price PM USD (200 OK); recompute ratio per No-Lazy-Splices rule.",
+        "comex_lbma_clarification": "CD2 listed COMEX/LBMA as primary; corrected per Appendix 5.2 to MeasuringWorth as canonical (which uses LBMA London Fix as underlying). Phase 3 dossier corrects this. Confirmed."
+      },
+      "proxy_flags": [],
+      "remediation": [
+        "Update primary_source.url: http://www.measuringworth.com/gold/ -> https://www.measuringworth.com/datasets/gold/",
+        "Replace BLS extension identifier WPS00000000 -> WPU00000000 (WPS is verified frozen at 1974 via BLS API 2026-05-18)",
+        "Document LBMA Gold Price reform (March 2015) as a splice-point requiring overlap-anchor calibration in the extension loader"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "Ratify Phase 3 S503 source correction: UK gold-price extension is MeasuringWorth + Officer FX, NOT BLS PPI (CD2 S024 had this wrong).",
+    "Ratify Phase 3 S504 source correction: canonical source is MeasuringWorth (Officer & Williamson 'The Price of Gold, 1257-2010'), with COMEX/LBMA acknowledged as the underlying London Fix only.",
+    "anwarshaikhecon.org companion site is verified DEAD (DNS does not resolve, 2026-05-18); promote the local SalvagedInputs DATALRprices.xlsx to canonical primary file for all 4 Ch5 series with Internet Archive snapshot 2024-03-11 as web citation. This matches decision 0005 reference guidance.",
+    "BLS WPS00000000 identifier is verified frozen at 1974 via BLS public API; the WPS->WPU bridge is no longer optional — registry must point to WPU00000000 for S502 and S504 extensions.",
+    "MeasuringWorth URL reorganisation: /gold/ -> /datasets/gold/ and /exchangepound/ -> /datasets/exchangepound/ (server-side 301/auto-redirect); update registry primary_source.url for S503 and S504.",
+    "S501 should be tagged in the registry as a chronological view of S502 to enforce a single-loader policy and prevent divergent re-pulls."
+  ],
+  "blockers_for_phase5": [],
+  "open_questions": [
+    "ONS PLLU returns persistent 502 from our checker IP. Series is still actively published by ONS; recommend re-probe from a different network before Phase 5 ingestion, or fall back to ONS bulk MM22 dataset download.",
+    "1939-1945 UK gold-price observations in MeasuringWorth are interpolated due to wartime market suspension; need explicit provenance marker in loader output (not silent).",
+    "Frequency convention (annual average vs. year-end) is not specified in Shaikh's Appendix 5.2; Officer/Williamson default (annual averages) is the working assumption — confirm at ingestion against DATALRprices.xlsx values.",
+    "Decide 'Jastram-faithful' vs. 'modern best-vintage' (Officer/Williamson historical) variant policy for pre-1900 segments — see S501 open_question; defer to ingestion design."
+  ]
+}

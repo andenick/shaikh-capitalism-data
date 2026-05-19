@@ -1,0 +1,90 @@
+{
+  "series_id": "S406",
+  "name": "Automotive Average Cost",
+  "chapter": 4,
+  "figures": [
+    "Fig4.21"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 4,
+      "page": 161,
+      "quote": "Average (total) cost as in figure 4.21 is the sum of a steadily declining average fixed cost, a constant average material cost, and the variable portion of labor costs. The overall shape is that of an asymmetric U, with a minimum point somewhere in the third shift.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 162,
+      "quote": "Figure 4.21 Automotive Average Cost Source: Inman 1995, 64, fig. 5.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 161,
+      "quote": "Inman's empirical results were anticipated in the theoretical discussion in section V because his actual automotive cost curves reproduced in figure 4.21 are strikingly similar to the theoretical curves previously depicted in figures 4.16 and 4.17. The key factor is the spike in costs at the beginning of a new shift.",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Robert P. Inman (author); Shaikh reproduces in Capitalism (2016)",
+    "publication": "Inman 1995 (citation in Shaikh's bibliography); reproduced figure: Shaikh (2016), p. 162, fig. 4.21",
+    "table_or_series_id": "Inman (1995), figure 5 (simulated average cost $/car vs. annual vehicle production in thousands)",
+    "url": "https://www.google.com/books/edition/_/2bC3AAAAIAAJ",
+    "frequency": "synthetic (Monte-Carlo simulation across output levels)",
+    "units": "USD per car ($/car) vs. annual vehicle production (thousands)",
+    "license": "Copyright Inman 1995; reproduced under fair use",
+    "available_through": "Inman 1995 article; Shaikh (2016) reproduction",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "ac(Q) = afc(Q) + amc + alc(Q), where afc = fixed_cost/Q (steadily declining), amc = average material cost (constant by assumption), alc(Q) = average labor cost from S404. Output Q = annual vehicle production.",
+  "components": [
+    {
+      "name": "Average fixed cost afc(Q)",
+      "source": "Inman 1995, fixed cost / Q (includes capital, property taxes, overhead, plus fixed labor component)"
+    },
+    {
+      "name": "Average material cost (constant assumption)",
+      "source": "Inman 1995, p. 57"
+    },
+    {
+      "name": "Average labor cost (S404 series)",
+      "source": "Inman 1995, fig. 3 (= our S404)"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "S406 is the total average cost curve, summing S404 (average labor cost) + constant average material cost + declining average fixed cost. Reclassified content_type to 'derived'.",
+    "Fig 4.21 y-axis range: $5,100-$5,500 (showing that the variation in average cost is small relative to the level, dominated by material+overhead, with labor cost fluctuations adding the visible spikes).",
+    "Shaikh's key inference (p. 161): the empirical curve from Inman is 'strikingly similar' to the theoretical curves in S401/S402, confirming that the shift-spike pattern derived from first principles is observed in real-world simulated data.",
+    "extension_candidates intentionally empty: same reasoning as S404."
+  ],
+  "open_questions": [
+    "Same as S404: verify Inman 1995 bibliography and underlying-data availability."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch4",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Average-cost component of Inman series. Same reclassification."
+    }
+  ]
+}

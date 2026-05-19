@@ -1,0 +1,108 @@
+{
+  "series_id": "S1401",
+  "name": "Nominal GDP Growth and Level of Wage Share",
+  "chapter": 14,
+  "figures": [
+    "Fig14.10"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S068",
+    "cd2_id": "S068"
+  },
+  "book_quotes": [
+    {
+      "chapter": 14,
+      "page": 664,
+      "quote": "Figure 14.10 displays the actual growth rate of nominal output (a proxy for aggregate demand) and the level of the wage share in the US economy from 1948 to 2011, along with their respective HP-filtered values. A broad concordance between the trends of the two variables is evident.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 892,
+      "quote": "Data for wage share, prices, wages, and productivity is from the Bureau of Economic Analysis (BEA) GDP and the National Income and Product Account (NIPA) Historical Tables, http://www.bea.gov/national/index.htm#gdp: wage share = EC/GDP, where EC = Compensation of employees, paid from Table 1.10, line 2; and GDP is from Table 1.10, line 1.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 664,
+      "quote": "Appendix 14.1 details the sources and methods for data utilized in this chapter. In what follows, the term HP(n) indicates Hodrick-Prescott filtered data with a fitting parameter = n, where n is some number (e.g. 100) so on.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "BEA",
+    "publication": "NIPA Historical Tables (GDP and Compensation of employees)",
+    "table_or_series_id": "NIPA Table 1.10 line 1 (GDP); NIPA Table 1.10 line 2 (Compensation of employees)",
+    "url": "https://www.bea.gov/itable/national-gdp-and-personal-income",
+    "frequency": "annual",
+    "units": "Billions of current USD (GDP); percent (wage share, growth rate)",
+    "license": "U.S. Government Work (public domain)",
+    "available_through": "BEA iTable, FRED",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "wage_share = COE / GDP; nominal_GDP_growth = (GDP_t / GDP_{t-1}) - 1; HP(100) filter applied to both",
+  "components": [
+    {
+      "subseries_label": "Nominal GDP",
+      "source": "BEA NIPA Table 1.10 line 1",
+      "role": "numerator/level for nominal GDP growth",
+      "fred_proxy": "GDP"
+    },
+    {
+      "subseries_label": "Compensation of Employees (EC)",
+      "source": "BEA NIPA Table 1.10 line 2",
+      "role": "numerator of wage share",
+      "fred_proxy": "A576RC1 / W209RC1 (compensation of employees, paid)"
+    },
+    {
+      "subseries_label": "Wage share",
+      "source": "Derived: EC/GDP",
+      "role": "level series for Fig 14.10 right axis",
+      "fred_proxy": null
+    }
+  ],
+  "year_range_book": [1948, 2011],
+  "year_range_extension": [1948, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "Nominal GDP",
+      "source": "FRED (BEA NIPA)",
+      "url": "https://fred.stlouisfed.org/series/GDP",
+      "units": "Billions of dollars, seasonally adjusted annual rate",
+      "splice_strategy": "growth_rate",
+      "concerns": ["Aggregate to annual frequency by averaging quarterly observations to match Shaikh's annual chart"]
+    },
+    {
+      "subseries_label": "Compensation of employees, paid",
+      "source": "FRED (BEA NIPA Table 1.10 line 2)",
+      "url": "https://fred.stlouisfed.org/series/A576RC1",
+      "units": "Billions of dollars",
+      "splice_strategy": "growth_rate",
+      "concerns": ["A576RC1 corresponds to NIPA Table 1.10 line 2 (Compensation of employees, paid: domestic) used by Shaikh"]
+    }
+  ],
+  "methodology_notes": [
+    "Composite of two BEA NIPA series plus a derived wage share. Both levels and HP(100)-filtered values are plotted in Fig 14.10 (Shaikh notes broad concordance between nominal GDP growth and wage share).",
+    "Shaikh's wage share denominator is nominal GDP (Y), not net domestic product or value added; numerator is total Compensation of Employees paid (NIPA Table 1.10 line 2).",
+    "HP filter parameter = 100 (annual data), per Shaikh's convention stated on book p. 664: 'the term HP(n) indicates Hodrick-Prescott filtered data with a fitting parameter = n'.",
+    "Underlying appendix dataset (Appendix 14.3 Data Tables) was hosted at http://www.anwarshaikhecon.org/; local copy at SalvagedInputs/book_data/ShaikhChoppedTables/Appendix14_InflationULdata.xlsx provides the published values for replication validation."
+  ],
+  "open_questions": [
+    "Confirm whether Shaikh used annual averages of quarterly NIPA data or annual-frequency NIPA tables (results should be near-identical, but flag for Phase 5 replication).",
+    "BEA periodically revises NIPA series; replication should freeze a vintage (FRED ALFRED) for reproducibility."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch14",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S068 ported; book quotes verified verbatim against PDF pp. 664 and 892 (Appendix 14.2). FRED extension keys identified."
+    }
+  ]
+}

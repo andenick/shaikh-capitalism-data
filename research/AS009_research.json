@@ -1,0 +1,102 @@
+{
+  "series_id": "AS009",
+  "name": "IRS Corporate Inventories and Total Capital Stock",
+  "chapter": 6,
+  "figures": ["Appendix Figure 6.7.10"],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": "S214"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 851,
+      "quote": "The remaining step is to estimate corporate inventories so as to add them to the adjusted gross current-cost capital stock. NIPA has industry data on private industries (NIPA table 5.8.5), but it is not by legal form. The Federal Reserve Board (FRB) Flow of Funds has current cost data on corporate inventories and capital stock but only for non-financial corporations.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 852,
+      "quote": "However, the IRS publishes corporate balance sheets beginning in 1926 and these contain data on inventories, and from 1990 to 2011 also data on net historical capital stock. The IRS data is based on samples, so we cannot apply it directly to the NIPA corporate sector. The procedure therefore has two steps: first, estimation of the ratio of inventories to historical cost fixed capital for the whole period from 1947 to 2011; second, rescale the implicit inventory levels to those of the corrected capital stocks in appendix 6.8.II.5 by multiplying the preceding inventory by the ratio of adjusted historical to current-cost fixed capital stock.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 852,
+      "quote": "On the first step, the ratio of the IRS net book value stock to the BEA net historical stock in 1990-2011 turns out to be essentially a linear function of time, so it was extrapolated back to 1949-1989 and then multiplied by the BEA net historical stock to yield an estimate of the corresponding IRS book value stock. This is used to construct the IRS ratio of inventories to net book value over the whole period from 1947 to 2011, which completes the first step. Multiplying this ratio by the BEA corporate net historical stock essentially scales up IRS inventory levels to match NIPA data, which completes the second step.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Internal Revenue Service",
+    "publication": "IRS Statistics of Income, Corporation Source Book / Corporate Income Tax Returns (corporate balance sheets, beginning 1926; net historical capital stock 1990-2011)",
+    "table_or_series_id": "IRS SOI corporate balance sheets - inventories (1926+); IRS SOI corporate balance sheets - net historical capital assets (1990-2011); BEA FA Table 6.3 (corporate historical-cost net stock); BEA FA Table 6.1 (corporate current-cost net stock) for ratio rescaling",
+    "url": "https://www.irs.gov/statistics/soi-tax-stats-corporation-source-book-of-statistics-of-income",
+    "frequency": "annual",
+    "units": "Billions of current dollars; ratio (inventories / net book value)",
+    "license": "Public domain (U.S. Government work)",
+    "available_through": "IRS SOI publications (Corporation Source Book); BEA iTable for cross-walk denominators",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Step 1 - estimate IRS book value stock 1947-2011: IRS_book_t = BEA_KNH_corp_t * irs_to_bea_ratio_t, where irs_to_bea_ratio_t is the linear-time fit to observed IRS/BEA ratios 1990-2011 extrapolated back to 1947. Step 2 - inventory ratio: inv_ratio_t = IRS_inventories_t / IRS_book_t (using IRS-reported inventories 1947-2011). Step 3 - scaled inventories: INVcorp_t = inv_ratio_t * BEA_KNH_corp_t (rescaling to BEA-comparable level). Step 4 - total capital stock: KTCcorp_t = KGCcorp_t + INVcorp_t. Post-2011 extension: INVcorp_t = (INVcorp_2011 / KGCcorp_2011) * KGCcorp_t (constant 2011 inventory-to-fixed-capital ratio).",
+  "components": [
+    {"label": "IRS corporate inventories (raw)", "source": "IRS SOI Corporation Source Book, inventories line, 1926-present"},
+    {"label": "IRS net historical capital stock 1990-2011", "source": "IRS SOI corporate balance sheets, net depreciable assets at historical cost"},
+    {"label": "BEA corporate net historical-cost stock", "source": "BEA FA Table 6.3"},
+    {"label": "BEA corporate current-cost net stock (for adjustment ratio)", "source": "BEA FA Table 6.1, line 2"},
+    {"label": "Adjusted gross current-cost fixed capital (KGCcorp)", "source": "AS004 output"},
+    {"label": "IRS/BEA ratio linear time fit", "source": "OLS fit to observed 1990-2011 IRS-to-BEA ratios, extrapolated to 1947-1989"}
+  ],
+  "year_range_book": [1946, 2011],
+  "year_range_extension": [2012, 2025],
+  "extension_candidates": [
+    {
+      "subseries_label": "IRS corporate inventories continuation",
+      "source": "IRS SOI Corporation Source Book (current annual releases)",
+      "url": "https://www.irs.gov/statistics/soi-tax-stats-corporation-source-book-of-statistics-of-income",
+      "units": "Billions of current dollars",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["IRS discontinued reporting net historical capital stock after 2011; per CD2 markdown, post-2011 extension uses constant 2011 inventory-to-fixed-capital ratio rather than re-estimating from current IRS data. This is a documented PROXY and must be flagged.", "IRS SOI publication lag is 3-4 years; current-vintage extension typically lags BEA by 2-3 years", "IRS data is sample-based; year-on-year volatility larger than NIPA aggregates"]
+    },
+    {
+      "subseries_label": "Total corporate capital stock KTCcorp extension",
+      "source": "AS004 (KGCcorp) + scaled inventories",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "Billions of current dollars",
+      "splice_strategy": "growth_rate",
+      "concerns": ["Post-2011 inventory proxy (constant ratio) is a discontinuity worth flagging in any final profit-rate plot using KTCcorp"]
+    }
+  ],
+  "methodology_notes": [
+    "Total capital stock KTCcorp = corporate fixed capital (KGCcorp, from AS004) + corporate inventories (INVcorp, derived in AS009). This is the denominator of the FINAL corrected corporate profit rate used in Ch6 Section VIII equation (6.10): r = (P + NMINT)/(KGC_{-1} + INV_{-1}) (book p. 248).",
+    "Why this is hard: NIPA T5.8.5 has inventories by industry but not by legal form (corporate vs noncorporate); FRB Flow of Funds has corporate inventories but only for non-financial; only IRS reports inventories for ALL corporations (including financial) but on a sample basis from corporate tax returns. Shaikh's two-step procedure bridges IRS sample data to NIPA-comparable levels (book pp. 851-852).",
+    "Empirical scale (book p. 247-248): Inventories are roughly stable as a fraction of fixed capital (ratio x2 in equation 6.11), so adding them does not materially change the trend of the corrected profit rate but does affect its level. The book reports that this correction 'has only a small effect on value added (less than 2%)' but is required for analytical completeness.",
+    "Post-2011 proxy disclosure: CD2 markdown explicitly notes 'Post-2011: IRS inventories proxied at constant 2011 ratio.' This is a deliberate PROXY (not actual IRS data) and must be flagged in S6xx series that consume AS009 for years > 2011.",
+    "Note on inventory valuation (book p. 852): IRS inventory data is 'a mixture of two valuation methods: at their historical cost at the time of acquisition (First In First Out, FIFO) or at their current costs (Last In First Out, LIFO).' Because inventory turnover is rapid, even FIFO inventories are 'valued at fairly recent costs while LIFO ones are at current costs,' so the aggregate is treated as approximately current-cost without further adjustment."
+  ],
+  "open_questions": [
+    "Post-2011 proxy: the constant-ratio assumption is a documented expedient. Phase 4 should consider whether to (a) keep the proxy with explicit visualization break, (b) recover current IRS SOI inventory data (which exists, just not net historical capital stock) and re-estimate the ratio, or (c) substitute FRB Z.1 non-financial corporate inventories as a defensible alternative.",
+    "AS009 feeds the FINAL corrected corporate profit rate via KTCcorp; this is likely the primary input to S601 (corrected corporate profit rate) and possibly S603 (Ch16 profitability dynamics). Confirm in S6xx crosswalk.",
+    "CD2 sample values for S214 are in thousand-dollar scale (e.g., 1946=36,965,000) suggesting the raw IRS series is in thousands. Phase 4 should verify unit normalization before downstream use."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-as-ch6",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from CD2 S214 markdown + verbatim quotes from Appendix 6.7 Section VI (book pp. 851-852). Three book quotes (definition, source, method). Post-2011 proxy explicitly disclosed."
+    }
+  ]
+}

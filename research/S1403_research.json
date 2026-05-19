@@ -1,0 +1,100 @@
+{
+  "series_id": "S1403",
+  "name": "Wage Share vs Unemployment Intensity (Empirical Spiral)",
+  "chapter": 14,
+  "figures": [
+    "Fig14.12"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S070",
+    "cd2_id": "S070"
+  },
+  "book_quotes": [
+    {
+      "chapter": 14,
+      "page": 666,
+      "quote": "The empirical equivalent shown in figure 14.12 is in terms of quarterly HP(100) filtered data for the US wage share and unemployment intensity from 1948 to 2011. It is strikingly similar to the theoretical path of the classical model—despite major “disturbances” from the Vietnam War boom in the 1960s, the Great Stagflation of the 1970s, the neoliberal anti-labor campaign of the 1980s, the dot.com bubble of the 1990s, and the Global Crisis beginning in 2006.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 892,
+      "quote": "Data for wage share, prices, wages, and productivity is from the Bureau of Economic Analysis (BEA) GDP and the National Income and Product Account (NIPA) Historical Tables, http://www.bea.gov/national/index.htm#gdp: wage share = EC/GDP, where EC = Compensation of employees, paid from Table 1.10, line 2; and GDP is from Table 1.10, line 1.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 893,
+      "quote": "Rates of change of w, wr, σW as well as the unemployment rate and intensity were filtered by the Hodrick–Prescott (HP) filter with the default parameter of 100.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Composite (BEA + BLS)",
+    "publication": "Derived from S1401 (wage share) and S1402 (unemployment intensity); plotted on quarterly HP(100) basis",
+    "table_or_series_id": "BEA NIPA Table 1.10 (lines 1 and 2); BLS LNS14000000 + LNS13008275",
+    "url": "https://www.bea.gov/itable/national-gdp-and-personal-income",
+    "frequency": "quarterly",
+    "units": "Wage share (decimal); unemployment intensity (decimal, rebased to 1948-51 duration = 100)",
+    "license": "U.S. Government Work (public domain)",
+    "available_through": "BEA + BLS + FRED",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "direct",
+  "formula": "Phase plot: x = HP100(unemployment_intensity_quarterly), y = HP100(wage_share_quarterly)",
+  "components": [
+    {
+      "subseries_label": "HP(100) wage share (quarterly)",
+      "source": "Derived from S1401 components, quarterly frequency",
+      "role": "y-axis of phase diagram"
+    },
+    {
+      "subseries_label": "HP(100) unemployment intensity (quarterly)",
+      "source": "Derived from S1402 components, quarterly frequency",
+      "role": "x-axis of phase diagram"
+    }
+  ],
+  "year_range_book": [1948, 2011],
+  "year_range_extension": [1948, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "Wage share (quarterly)",
+      "source": "FRED W270RE1Q156NBEA (Shares of GDI: Compensation of employees, paid) or constructed as A576RC1/GDP",
+      "url": "https://fred.stlouisfed.org/series/W270RE1Q156NBEA",
+      "units": "Percent of GDI (quarterly)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Shaikh denominator is GDP, not GDI; if using W270RE1Q156NBEA verify conceptual match or build A576RC1/GDP directly"]
+    },
+    {
+      "subseries_label": "Quarterly unemployment intensity",
+      "source": "FRED UNRATE and UEMPMEAN aggregated to quarterly means",
+      "url": "https://fred.stlouisfed.org/series/UNRATE",
+      "units": "Percent (rate); weeks (duration)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Re-base duration index to 1948Q1-1951Q4 average to remain consistent with annual Fig 14.11 base"]
+    }
+  ],
+  "methodology_notes": [
+    "Fig 14.12 is the empirical analogue of the theoretical spiral in Fig 14.9: it plots the wage share against unemployment intensity in (x,y) space with time implicit. Both axes are HP(100)-filtered quarterly observations.",
+    "Footnote 10 (p. 666) explicitly states: 'Unemployment intensity was not available at the quarterly level. HP-filtered annual data also shows a clockwise spiral but since it is much smoother it loses the zigs and zags in the quarterly data.' This means Shaikh interpolated/constructed quarterly duration data or used the annual intensity time-aligned to quarterly wage share — the precise procedure is not stated in the text and is an open question.",
+    "Direction of travel is clockwise, consistent with classical Goodwin-type dynamics: wage share rises when intensity is low, falls when intensity is high.",
+    "The wage share and intensity series are the same underlying data feeding S1401 and S1402; S1403 is a relational/phase plot only."
+  ],
+  "open_questions": [
+    "Replicate Shaikh's quarterly unemployment intensity construction: BLS LNS13008275 is published monthly; was duration index built quarterly from monthly means, or was annual data interpolated? Footnote 10 hints at a non-trivial step.",
+    "Confirm whether wage share denominator at quarterly frequency is GDP (NIPA T1.1.5) or GDI — Appendix 14.2 specifies GDP for annual data."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch14",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S070 ported. Note that CD2 markdown contained tangential quotes from Section II; replaced with the actual Fig 14.12 description from p. 666."
+    }
+  ]
+}

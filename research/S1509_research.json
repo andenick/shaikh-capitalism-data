@@ -1,0 +1,119 @@
+{
+  "series_id": "S1509",
+  "name": "World Inflation vs Growth of Total Credit, 1988-2011",
+  "chapter": 15,
+  "figures": [
+    "Fig15.13"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": "S089",
+    "cd2_id": "S089"
+  },
+  "book_quotes": [
+    {
+      "chapter": 15,
+      "page": 719,
+      "quote": "Figure 15.13 displays an updated version of Harberger's data for an extended sample of thirty-nine countries over 1988 to 2011, produced by Ramamurthy (2014, ch. 3). The upper range of the two variables is ten times higher in the second chart but the two charts still display remarkably similar patterns.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 719,
+      "quote": "Figure 15.13 World Inflation versus Growth of Total Private and Public Credit, 1988-2011 Source: Ramamurthy 2014.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 897,
+      "quote": "Figure 15.13 World Inflation versus Growth of Total Private and Public Credit, 1988-2011 pi, gDC is an update of Harberger's data for an extended sample of thirty-nine countries over 1988-2011, produced by Ramamurthy (2014, ch. 3), where DC is from the same source, pi = consumer price inflation from IMF IFS Monetary Survey, line 64.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Ramamurthy (2014) — PhD dissertation, ch. 3; underlying data IMF IFS",
+    "publication": "Ramamurthy, S. (2014), PhD dissertation (New School for Social Research) chapter 3, updating Harberger (1988); IMF IFS Monetary Survey lines 32 (Domestic Claims) and 64 (CPI)",
+    "table_or_series_id": "Ramamurthy (2014) ch.3 dataset; 39 countries, 1988-2011; pi from IFS line 64, gDC from IFS line 32",
+    "url": "https://data.imf.org/IFS",
+    "frequency": "annual averages over the panel (cross-sectional scatter)",
+    "units": "Rate (percent) — inflation pi and growth of Domestic Claims gDC",
+    "license": "Author dissertation; IMF IFS data subscription/limited public access",
+    "available_through": "ShaikhChoppedTables/Appendix15_WorldInflationDataByCountry.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Same as S1508 (pi vs gDC scatter); panel extended to 39 countries and updated to 1988-2011.",
+  "components": [
+    {
+      "label": "Inflation rate (pi) by country",
+      "source": "IMF IFS Monetary Survey line 64 (CPI inflation), via Ramamurthy (2014)"
+    },
+    {
+      "label": "Growth of Domestic Claims (gDC)",
+      "source": "IMF IFS Monetary Survey line 32 (Domestic Claims), via Ramamurthy (2014)"
+    }
+  ],
+  "year_range_book": [
+    1988,
+    2011
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "IMF IFS modern Domestic Claims + CPI — Ramamurthy 39-country panel re-pulled",
+      "source": "IMF International Financial Statistics monetary survey + CPI",
+      "url": "https://data.imf.org/IFS",
+      "units": "Rate (decimal)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "IFS line numbers reorganized post-2009 SDDS+ migration; original lines 32 and 64 are no longer direct identifiers.",
+        "The 39-country sample includes recent entrants (Russia, Belarus, Kazakhstan, etc.) with shorter time series.",
+        "Ramamurthy's dissertation methodology should be honored by holding the country panel constant for any forward update."
+      ]
+    },
+    {
+      "subseries_label": "World Bank WDI CPI inflation",
+      "source": "World Bank World Development Indicators (FP.CPI.TOTL.ZG)",
+      "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG",
+      "units": "Rate (percent)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "WB WDI inflation rate may differ from IFS line 64 due to base-year reweighting and country-specific revisions."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Cross-sectional companion to S1508; same construction logic but with a larger 39-country sample and longer 1988-2011 window.",
+    "Country list (Appendix 15.1 footnote 2, p.897): Algeria, Angola, Armenia, Australia, Azerbaijan, Belarus, Brazil, Canada, Colombia, Dominican Republic, Ecuador, Ghana, Haiti, Iraq, Jamaica, Kazakhstan, Korea, Malaysia, Mozambique, Myanmar, Nigeria, Norway, Panama, Paraguay, Romania, Russia, Serbia, Sudan, Suriname, Tanzania, Thailand, Turkey, Ukraine, United States, Uruguay, Venezuela, Zambia, Zimbabwe.",
+    "Note country list shows 'Romania' twice in the source — likely a typesetting artifact; effective N is 39 (or 38 with Romania de-duplicated).",
+    "Both charts (15.12 and 15.13) display the same Harberger-style three-regime pattern.",
+    "CD2 predecessor S089 ported."
+  ],
+  "open_questions": [
+    "Resolve the duplicate 'Romania' entry in the country list — typo or two separate sub-period observations?",
+    "Locate Ramamurthy (2014) dissertation to verify exact construction and country list."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch15",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S089 ported; quotes verified against PDF p.719 and Appendix 15.1 p.897"
+    },
+    {
+      "reviewer": "phase5-wave-a5-blocker-resolver",
+      "date": "2026-05-18",
+      "status": "blocker_resolved_ready_for_phase5",
+      "notes": "B7 BLOCKER RESOLUTION: IMF IFS line resolver implemented at Technical/code/loaders/_imf_ifs_resolver.py. Documentation at Technical/docs/methodology/IFS_line_to_SDMX_remap.md. The CH15 Phase 4 plan used the pre-2024 data.imf.org/IFS portal SRF codes (FOSAOP_XDC family); those codes were retired ca. 2024 when IMF migrated to the SDMX 3.0 REST API at api.imf.org. The resolver maps Shaikh's legacy lines through both eras: line 31 -> CBANK_NETAL_NCO_S1311MIXED (MFS_CBS); line 32 -> DCORP_N_DC (MFS_DC, canonical Net Domestic Claims); line 64 -> PCPI_IX (CPI); line 78 -> ODCORP_A_ACO_S1311MIXED (MFS_DC); line 79 -> ODCORP_A_ACO_S13M1 (MFS_DC); line 81 -> DCORP_A_ACO_PS (MFS_DC); line 88 -> ODCORP_L_LT_S1311MIXED (MFS_DC). Smoke test verified 2026-05-18: fetched DCORP_N_DC for USA 2018-2022 via api.imf.org SDMX 3.0 REST, HTTP 200, returned 5/5 years (2018=$21.16T, 2019=$22.42T, 2020=$25.76T, 2021=$30.12T, 2022=$29.91T). Phase 5 loader can now ingest this concept directly. Recommended Phase 5 fetch: DCORP_N_DC + PCPI_IX for 38 Ramamurthy countries 1988-2011 (Romania de-duplicated). MFS_DC publishes from 2001+; pre-2001 values must come from IMF archive bulk download.",
+      "resolver_file": "Technical/code/loaders/_imf_ifs_resolver.py",
+      "methodology_doc": "Technical/docs/methodology/IFS_line_to_SDMX_remap.md"
+    }
+  ]
+}

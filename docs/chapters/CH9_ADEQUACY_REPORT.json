@@ -1,0 +1,141 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": 9,
+  "reviewer": "opus-subagent-p4-wave2-ch9",
+  "review_date": "2026-05-18",
+  "series_count": 3,
+  "scores": {
+    "D1_source_reachability": {
+      "value": 22,
+      "max": 25,
+      "details": "Real HTTP HEAD/GET checks performed 2026-05-18T19:57Z. BEA Industry IO main URL (https://www.bea.gov/industry/input-output-accounts-data) = 200 OK; covers Use Tables 1997-2023+ and is the canonical successor to the book-cited http://www.bea.gov/iTable/index_industry_io.cfm which now returns 404 (legacy iTable application retired). BEA Fixed Asset iTable (https://www.bea.gov/itable/fixed-assets) = 200 OK; serves Fixed Asset Tables 3.1ES and 3.4ES. PWT 7.1 release archive at https://www.rug.nl/ggdc/productivity/pwt/pwt-releases/pwt-7.1 = 200 OK (book vintage still hosted). PWT root https://www.rug.nl/ggdc/productivity/pwt/ = 200 OK (now hosts PWT 10.01). anwarshaikhecon.org DNS does NOT resolve on either http:// or https:// (getaddrinfo failure, same DNS condition observed for Ch5 review on same date) — but all 14 Appendix9_*.xlsx companion workbooks are present locally in SalvagedInputs/book_data/ShaikhChoppedTables/, so the offline-archival fallback is fully populated. -3 reflects: (1) book-cited iTable URL is dead and registry needs updating for all 3 series, (2) anwarshaikhecon.org companion site unreachable, and (3) BEA capital flow benchmark matrix has not been republished since 1997 (open issue for any post-1998 fixed-capital extension)."
+    },
+    "D2_year_coverage": {
+      "value": 18,
+      "max": 20,
+      "details": "Book-period coverage: 100% for all 3 series. Six benchmark years (1947, 1958, 1963, 1967, 1972, 1998) are each backed by either Ochoa (1984)/Shaikh (1998a) 71-order IO tables (1947-1972, archived in Appendix9_1947fixed.xlsx through Appendix9_1972fixed.xlsx) or BEA 1998 65-order Use Table (archived in Appendix9_1998Circ.xlsx + Appendix9_1998Fixed.xlsx + verifiable against BEA iTable). PWT 7.1 (S903) variables for 1947-1998 are archived in Appendix9_PennWorldTables.xlsx and Appendix9_PennWorldTables2.xlsx. Extension feasibility (post-1998): BEA Use Tables now annual 1997-2023+ are live but NAICS-vintage breaks (2007, 2012, 2017) prevent splice-into-panel; cross-sectional series naturally extends by adding benchmark years one at a time. -2 reflects the post-1997 capital flow benchmark gap (must be approximated from BEA Detailed Fixed Asset Tables by type x industry for any new fixed-capital benchmark) and the NAICS/SIC industry-classification mismatch between 1947-1972 (Ochoa SIC-vintage) and 1998+ (BEA NAICS-vintage) — both are real technical obstacles to any extension, but neither blocks book-period replication."
+    },
+    "D3_license_compatibility": {
+      "value": 15,
+      "max": 15,
+      "details": "All sources public/academic. BEA Industry Economic Accounts and Fixed Asset Accounts are US federal public-domain. PWT (both 7.1 and 10.01) is released by GGDC / University of Groningen under CC BY 4.0 with academic-use terms (and is widely used as a free academic dataset). Ochoa (1984) NSSR dissertation is a published academic work. Shaikh (1998a) is a published Cambridge Journal of Economics paper; the underlying compiled IO tables are book companion materials. No commercial gates, no Morningstar/Ibbotson-equivalent issues, no FRED-key dependency. The anwarshaikhecon.org site (when reachable) was free academic hosting; local SalvagedInputs copies are in-scope per project terms."
+    },
+    "D4_units_consistency": {
+      "value": 14,
+      "max": 15,
+      "details": "All 3 series have explicit primary_source.units fields. S901: log-scale normalized prices (unit-length, dimensionless) and four distance measures (%MAWD, delta_c, CV, delta_e — all dimensionless). S902: integrated output-capital ratios VR(r)_j (dimensionless), standard prices p(r)_j/v_j (dimensionless, normalized at p(0)=v), r/R (dimensionless ratio). S903: wage share sigma_W (dimensionless), real wage curve wr(r)_t = sigma_W(r)_t * (yr_t/yr_0) (productivity index, dimensionless), maximum profit rates R_t in decimal. -1 reflects one ambiguity: S903's PWT 7.1 'real GDP per worker' variable name is truncated at 'Real' in the PDF (p.869) — likely RGDPL2 or RGDPCH but must be confirmed against Appendix9_PennWorldTables.xlsx at ingestion (Phase 5 task), as the units of the productivity index multiplier depend on which PWT variable is used (chain-weighted vs Laspeyres-chained)."
+    },
+    "D5_extension_feasibility": {
+      "value": 13,
+      "max": 15,
+      "details": "All 3 series are cross_sectional (Phase 3 classification, ratified). Extension is conceptually 'add another benchmark year' rather than 'splice a time series'. For S901 and S902: BEA Use Tables (annual 1997-2023+) + BEA Fixed Asset Tables are live, so a 2007/2012/2017 benchmark could in principle be computed — but requires full A', K, D, KT matrix reconstruction with fresh OOH correction and an eigenvalue decomposition for R per year. For S903: same plus PWT 10.01 productivity-index extension via growth-rate splice (PWT 7.1 vs 10.01 use different base years and PPP-reference rounds; only growth-rate splice is safe). NAICS classification breaks (2007/2012/2017 vintages) prevent splicing into the historical 65/71-industry mapping; each new benchmark would be a separate cross-section. Scored generously per task instructions for cross_sectional series. -2 reflects the structural obstacles: (a) capital flow benchmark matrix unpublished post-1997, (b) NAICS-vs-SIC mismatch, (c) no continuous panel possible."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 9,
+      "max": 10,
+      "details": "No undisclosed proxies in any of the 3 dossiers. All substitution candidates are explicitly flagged: S903 extension_candidates documents PWT 7.1 -> PWT 10.01 splice with explicit growth-rate strategy and noted base-year/PPP-round differences. BEA legacy iTable URL deprecation is acknowledged. Owner-Occupied Housing (OOH) correction (NIPA 7.12 lines 133-134) is documented in S901 and S902 methodology_notes as a non-silent correction. Skill-adjusted labor coefficient methodology (Shaikh's deviation from Ochoa 1984 using NIPA Tables 1.10/6.4D wage normalization) is explicitly noted in S901. -1 reflects one residual lazy-splice risk: Phase 5 must enforce that the wage-profit curve extension does NOT splice w(r) directly across PWT vintages — the productivity multiplier must be applied to each year's freshly-computed sigma_W(r), not to a previously-computed wr(r) curve (this is the No-Lazy-Splices-on-Derived-Quantities rule, already documented but flagged for ingestion enforcement)."
+    }
+  },
+  "total_score": 91,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "S901",
+      "name": "Market Prices vs Direct Prices, 71 Industries",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T19:57:07Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain (BEA) + academic (Ochoa/Shaikh local archive)",
+      "units": "log-scale normalized prices (dimensionless); distance measures %MAWD, delta_c, CV, delta_e (dimensionless)",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": {
+        "primary_modern": "https://www.bea.gov/industry/input-output-accounts-data (200 OK) — canonical successor to book-cited http://www.bea.gov/iTable/index_industry_io.cfm (404, retired)",
+        "historical_offline": "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1947fixed.xlsx, _1958fixed.xlsx, _1963fixed.xlsx, _1967fixed.xlsx, _1972fixed.xlsx (Ochoa 1984/Shaikh 1998a archived locally)",
+        "benchmark_1998_offline": "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1998Circ.xlsx + Appendix9_1998Fixed.xlsx",
+        "wayback_for_anwarshaikhecon": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+        "rationale": "Book-cited BEA iTable URL retired (404 verified 2026-05-18). New canonical BEA URL is reachable and serves the same Use Table data. Companion site (anwarshaikhecon.org) DNS does not resolve; all 14 Ch9 appendix workbooks are present in SalvagedInputs/ and used as primary archival source."
+      },
+      "proxy_flags": [],
+      "remediation": [
+        "Update registry primary_source.url: drop http://www.bea.gov/iTable/index_industry_io.cfm in favor of https://www.bea.gov/industry/input-output-accounts-data",
+        "Add SalvagedInputs file paths for the five historical Appendix9_*fixed.xlsx workbooks as canonical archival sources for the 1947-1972 IO tables (Ochoa/Shaikh 1998a)",
+        "Trim per-series figures list: keep Fig 9.1, 9.2, 9.16 only — Fig 9.16 stays because data substrate is S901 even though production-price construction is S902",
+        "Document OOH (NIPA Table 7.12 lines 133-134) correction as a required Phase 5 loader step, not a silent transformation"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S902",
+      "name": "Integrated Output-Capital Ratios and Standard Prices",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T19:57:07Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain (BEA) + academic (Ochoa/Shaikh local archive)",
+      "units": "VR(r)_j (dimensionless); standard prices p(r)_j/v_j (dimensionless); r/R (dimensionless); distance measures delta_c, CV, delta_e (dimensionless)",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": {
+        "primary_modern": "https://www.bea.gov/industry/input-output-accounts-data (200 OK) + https://www.bea.gov/itable/fixed-assets (200 OK) for Fixed Asset Tables 3.1ES and 3.4ES",
+        "capital_flow_caveat": "BEA last published the full asset-by-industry benchmark capital flow matrix for the 1997 benchmark; any post-1998 fixed-capital extension must reconstruct the capital composition from BEA Detailed Fixed Asset Tables (by type x industry) under the same g_j-uniform-growth assumption (Appendix 9.2 Sec IV.1), or use BEA's Detailed Estimates by industry and asset type",
+        "benchmark_1998_offline": "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1998Fixed.xlsx + Appendix9_1998Circ.xlsx + Appendix9_pvdevexample.xlsx (worked example for the price-of-production calculation)",
+        "historical_offline": "Same five Appendix9_*fixed.xlsx workbooks as S901, used for the 1947-1972 multi-year distance summaries in Fig 9.13-9.15",
+        "wayback_for_anwarshaikhecon": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+        "rationale": "All required sources are either live at BEA or archived locally. The discontinued capital flow benchmark matrix is a noted structural extension obstacle but does NOT block book-period replication (the 1997 benchmark IS what Shaikh used for 1998)."
+      },
+      "proxy_flags": [],
+      "remediation": [
+        "Update registry primary_source.url: drop legacy iTable URL in favor of canonical BEA IO + Fixed Assets URLs",
+        "Add capital flow benchmark file reference: SalvagedInputs path to the 1997 benchmark capital flow matrix (Annual_IOUse_Before_Redefinitions_1998-2010.xls per Phase 3 dossier) if locally archived; otherwise document the BEA archive location",
+        "Trim per-series figures list: assign Fig 9.4, 9.5, 9.6, 9.7, 9.9, 9.10, 9.11, 9.13, 9.14, 9.15, 9.18 exclusively to S902 (these are all eigensystem/standard-price outputs from the same 1998 BEA computation, with 9.13-9.15 extending to historical benchmarks)",
+        "Phase 5: verify dominant-eigenvalue solve recovers Shaikh's reported R_t values (Table 9.18: R_1947=1.088, R_1958=0.9734, R_1963=0.8547, R_1967=0.7644, R_1972=0.7033, R_1998=0.7317)"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S903",
+      "name": "Actual Wage-Profit Curves, United States, 1947-1998",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T19:57:07Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain (BEA) + CC BY 4.0 academic (PWT, GGDC/Groningen) + academic (Ochoa/Shaikh local archive)",
+      "units": "wage share sigma_W (dimensionless); real wage curve wr(r)_t = sigma_W(r)_t * (yr_t/yr_0) (productivity-index ratio, dimensionless); r and R_t in decimal profit rate",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": {
+        "primary_modern_bea": "https://www.bea.gov/industry/input-output-accounts-data (200 OK) + https://www.bea.gov/itable/fixed-assets (200 OK)",
+        "pwt_book_vintage": "https://www.rug.nl/ggdc/productivity/pwt/pwt-releases/pwt-7.1 (200 OK) — book vintage still hosted by GGDC",
+        "pwt_current": "https://www.rug.nl/ggdc/productivity/pwt/ (200 OK) — current PWT 10.01 (Feenstra/Inklaar/Timmer 2023)",
+        "pwt_splice_strategy": "PWT 7.1 -> PWT 10.01 growth-rate splice ONLY (different base years and PPP-reference rounds); productivity index enters as scalar multiplier of wage-share curve, so splice is on yr_t/yr_0 ratio, not on the wage curve itself (No-Lazy-Splices-on-Derived-Quantities rule)",
+        "pwt_offline": "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_PennWorldTables.xlsx + Appendix9_PennWorldTables2.xlsx (archived PWT 7.1 extracts used by Shaikh)",
+        "historical_offline": "Same five Appendix9_*fixed.xlsx workbooks as S901/S902, used for 1947-1972 wage-profit curves (Fig 9.19); Appendix9_ObservedProfitRates.xlsx for Table 9.18 R_t verification",
+        "wayback_for_anwarshaikhecon": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+        "rationale": "All three input streams (BEA IO + Fixed Assets, PWT, Ochoa/Shaikh historical) are reachable or locally archived. PWT 7.1 specifically still hosted at GGDC release archive (verified 2026-05-18) — no substitution needed for book-period replication. Extension to post-2010 wage-profit curves uses PWT 10.01 with documented growth-rate splice."
+      },
+      "proxy_flags": [],
+      "remediation": [
+        "Update registry primary_source.url: keep PWT 7.1 release URL as primary; add PWT root URL as extension reference",
+        "Confirm the exact PWT 7.1 variable Shaikh uses (PDF p.869 truncated at 'Real') by opening Appendix9_PennWorldTables.xlsx — most likely RGDPL2 (Real GDP per worker, chain-weighted) or RGDPCH; this is a Phase 5 ingestion task",
+        "Trim per-series figures list: keep Fig 9.8 (1998 circ w-p curve), Fig 9.12 (1998 fixed w-p curve), Fig 9.19 (1947-1998 panel of real wage curves) as core S903 content. Move Fig 9.6, 9.7, 9.13, 9.14, 9.15, 9.18 to S902 and Fig 9.16 to S901 per chapter-level figure mapping below.",
+        "Enforce No-Lazy-Splices rule in Phase 5: any post-1998 wage-profit curve must recompute sigma_W(r) from a freshly-extracted IO+Fixed-Asset benchmark, not by re-scaling the 1998 curve with new productivity"
+      ],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "RATIFY Phase 3 keep-at-3 recommendation: 17 empirical Ch9 figures collapse to 3 composite series because the empirical engine is a single integrated computation (one IO dataset + one eigensystem solve + one wage-share identity). Expanding to 17 series would multiply dossier count without adding source-distinct provenance; collapsing to 1 series would lose methodological structure needed for Phase 5.",
+    "ADOPT figure-list cleanup partition (per per-series remediation above and per CH9_RESEARCH_SUMMARY.md proposed mapping):\\n  S901: Fig 9.1, 9.2, 9.16\\n  S902: Fig 9.4, 9.5, 9.6, 9.7, 9.9, 9.10, 9.11, 9.13, 9.14, 9.15, 9.18\\n  S903: Fig 9.8, 9.12, 9.19\\n  EXCLUDED FROM ALL S9xx (non-empirical): Fig 9.3 (numerical example), Fig 9.17 (numerical), Fig 9.20-9.22 (theoretical)\\n  All 17 empirical figures accounted for; no overlap remains.",
+    "RATIFY content_type='cross_sectional' for all 3 series (no Phase 3 corrections needed); extension is benchmark-addition not time-series-splice.",
+    "Update primary_source.url for all 3 series: drop http://www.bea.gov/iTable/index_industry_io.cfm (404 verified) in favor of https://www.bea.gov/industry/input-output-accounts-data; add https://www.bea.gov/itable/fixed-assets for S902/S903 Fixed Asset Tables.",
+    "Promote SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_*.xlsx (14 files) to canonical archival sources for the historical 1947-1972 IO tables and PWT 7.1 extracts (anwarshaikhecon.org DNS does not resolve 2026-05-18; same condition observed by Ch5 review). This matches decision 0005's reference guidance for anwarshaikhecon.org series.",
+    "Document the post-1997 capital flow benchmark matrix gap as a Phase 5/6 ingestion concern: BEA stopped publishing this benchmark after 1997. Book-period replication is unaffected (1997 benchmark IS what Shaikh used for 1998); post-1998 extension would require either (a) reconstructing from BEA Detailed Fixed Asset Tables by type x industry under the g_j-uniform-growth assumption, or (b) accepting that no further fixed-capital benchmark years can be added without methodological substitution.",
+    "Document the NAICS-vs-SIC industry classification break as a hard limit on splicing 1947-1972 (Ochoa 71-order SIC) with 1998+ (BEA 65-order NAICS) — these are necessarily separate cross-sections, not a continuous panel."
+  ],
+  "blockers_for_phase5": [],
+  "open_questions": [
+    "PWT 7.1 variable name confirmation: PDF p.869 truncated at 'Real' (likely RGDPL2 or RGDPCH); must be verified against Appendix9_PennWorldTables.xlsx at Phase 5 ingestion. Does not block Phase 4 adequacy.",
+    "OOH (NIPA Table 7.12 lines 133-134) correction for 1998 real-estate column must be coded as an explicit loader step, not a silent transformation. Phase 5 task.",
+    "Capital flow benchmark file path: Phase 3 dossier cites Annual_IOUse_Before_Redefinitions_1998-2010.xls but no file by that exact name is in SalvagedInputs; needs Phase 5 locate-or-download (BEA Detailed Use Tables Before Redefinitions are publicly downloadable from the BEA Industry IO page that returned 200).",
+    "Eigenvalue verification: Phase 5 must check that dominant-eigenvalue solve of KT recovers Shaikh's R_t values in Table 9.18 (1947=1.088, 1958=0.9734, 1963=0.8547, 1967=0.7644, 1972=0.7033, 1998=0.7317) to within numerical tolerance. This is the canonical replication check for the entire Ch9 pipeline."
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "series_id": "S1603",
+  "name": "US and OECD Short-Term Interest Rates",
+  "chapter": 16,
+  "figures": [
+    "Fig16.7"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S098",
+    "cd2_id": "S098"
+  },
+  "book_quotes": [
+    {
+      "chapter": 16,
+      "page": 733,
+      "quote": "Figure 16.7 shows the US interest rate to alongside a weighted average of major OECD countries from 1960 to 2011, demonstrating that from the 1980s onward policy-induced decreases in interest rates were characteristic of the whole capitalist center. With short-term interest rates hovering around zero there is no further room to maneuver on this front.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 16,
+      "page": 899,
+      "quote": "The US interest rate has been described previously. ioecd = US trading partner interest rates. US trading partner weights taken from the Federal Reserve Board Indexes of the Foreign Exchange Value of the Dollar (http://www.federalreserve.gov/releases/h10/Weights/) were used to derive a weighted average of interest rates taken from the International Financial Statistics (IFS) of the International Monetary Fund (IMF). I am greatly indebted to Amr Ragab for these calculations.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 16,
+      "page": 899,
+      "quote": "Figure 16.6 US Rate of Interest, 1947-2011 (3-Month T-Bill). The interest rate is the 3-month T-bill rate, available in table 73, first data column in The Economic Report of the President published by the BEA, http://www.gpoaccess.gov/eop/tables10.html.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "IMF (OECD weighted average) and US Treasury / Federal Reserve (US rate)",
+    "publication": "IMF International Financial Statistics (IFS) for trading-partner rates; Economic Report of the President table 73 for US 3-month T-bill",
+    "table_or_series_id": "IMF IFS 'Money Market Rate' / 'Treasury Bill Rate' (multiple country codes); ERP Table 73 col 1 = 3-month T-bill",
+    "url": "https://data.imf.org/IFS",
+    "frequency": "annual (annual averages of monthly data)",
+    "units": "Percent per annum (decimal in some subseries)",
+    "license": "IMF data: subscription / public access for headline series; US federal data: public domain",
+    "available_through": "IMF IFS database; FRED (US); OECD.Stat MEI Short-Term Interest Rates",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "i_OECD = sum_c(w_c * i_c), where w_c = Fed H.10 trade weights (broad index) and i_c = country c short-term rate from IMF IFS",
+  "components": [
+    "US 3-month Treasury Bill rate (FRED TB3MS / Economic Report of President Table 73)",
+    "Federal Reserve H.10 trading partner weights (https://www.federalreserve.gov/releases/h10/Weights/)",
+    "IMF IFS country-level short-term interest rates (Money Market Rate / Treasury Bill Rate)"
+  ],
+  "year_range_book": [
+    1960,
+    2011
+  ],
+  "year_range_extension": [
+    1960,
+    2024
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "US 3-month Treasury bill",
+      "source": "FRED TB3MS",
+      "url": "https://fred.stlouisfed.org/series/TB3MS",
+      "units": "Percent",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Direct continuation; no methodology change since 1934"
+      ]
+    },
+    {
+      "subseries_label": "OECD short-term interest rates (composite alternative)",
+      "source": "OECD MEI 'Short-term interest rates' (IRSTCI01...)",
+      "url": "https://data-explorer.oecd.org/vis?fs[0]=Topic%2C0%7CFinance%23FIN%23&pg=0&fc=Topic&bp=true&snb=21&df[ds]=dsDisseminateFinalDMZ&df[id]=DSD_MEI_FIN%40DF_KEI&df[ag]=OECD.SDD.STES",
+      "units": "Percent per annum",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "OECD aggregate uses different weighting than Fed H.10 broad index (GDP-PPP vs trade weights); methodology mismatch with Shaikh's bespoke construction.",
+        "Per CD2 S098, replication requires Fed H.10 weights + IMF IFS country series, not OECD pre-aggregated"
+      ]
+    },
+    {
+      "subseries_label": "Euro Area short-term rate (for EU fill-in subseries S094D)",
+      "source": "ECB EURIBOR 3-month / FRED IR3TIB01EZM156N",
+      "url": "https://fred.stlouisfed.org/series/IR3TIB01EZM156N",
+      "units": "Percent",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Pre-1999 euro area requires synthetic ECU rate"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Per CD2 S098, the composite Shaikh series has five subseries (S094-A through S094-E in CD2 = S098-A through S098-E): A = OECD-wide annual rate; B = US rate from Appendix 6.8 profit rate file; C = OECD MEI alt; D = ratio OECD/EU; E = combined OECD% with EU fill-in.",
+    "The OECD weighted average is a Shaikh-original construction credited to Amr Ragab — direct re-replication needs IMF IFS country rates + Fed H.10 weights. Modern replacements: FRED IR3TBB01...M156N family or OECD MEI IRSTCI01... give similar but not identical series.",
+    "The US 3-month T-bill in Fig 16.6 (covered as background context for Fig 16.7) is taken from ERP Table 73 col 1, equivalent to FRED TB3MS annual.",
+    "The ERP URL (gpoaccess.gov/eop/tables10.html) has been replaced by https://www.govinfo.gov/app/collection/erp; legacy URL is no longer maintained."
+  ],
+  "open_questions": [
+    "Replicating Ragab's weighted OECD average requires reconstructing Fed H.10 trade weights for each year — these weights have themselves been revised; choose latest revision or vintage-as-of weights?",
+    "Should extension switch to OECD MEI pre-aggregated short-term rate for simplicity, sacrificing methodological fidelity? Phase 4 adequacy decision.",
+    "Original ERP URL is dead — extension must use FRED TB3MS or current govinfo.gov ERP."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch16",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Ported from CD2 S098 with verbatim quotes from p. 733 (Fig 16.7 narrative) and Appendix 16.1 p. 899."
+    }
+  ]
+}

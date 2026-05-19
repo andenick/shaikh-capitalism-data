@@ -1,0 +1,232 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": "ES_v2",
+  "reviewer": "opus-subagent-batch1-a1-decision-0006-catchup",
+  "review_date": "2026-05-18",
+  "series_count": 4,
+  "scope_note": "Phase 4 CATCHUP adequacy report covering the 4 NEW/RESCOPED ES series resulting from APPROVED decision 0006 (5-way split of original ES2301 Weber-Shaikh 2020 composite). Series covered: ES2301-rescoped (Fig 1 US bilateral trade balance vs World and China, Census FT900), ES2302 (Fig 2 China current account level + percent of GDP, IMF WEO -- dual-unit two-row series), ES2303 (Fig 3 China FX reserves ex-gold, World Bank WDI FI.RES.XGLD.CD), ES2304 (Fig 4 RMB misalignment extended PPP, literature compilation per paper note 17 of 4 reviews), ES2305 (Fig 5 RMB misalignment macro-balance, same 4 reviews filtered to MB methodology). ES2304/ES2305 carry extension_status=not_applicable_literature_compilation by paper construction (intrinsically non-extensible, not a data gap). Companion to original CHES_ADEQUACY_REPORT.json which covered ES2001/ES2101/ES2201/ES2301-composite and ratified decision 0006 RECOMMENDS_SPLIT.",
+  "scores": {
+    "D1_source_reachability": {
+      "value": 25,
+      "max": 25,
+      "details": "REAL HEAD/GET checks performed 2026-05-18 against 18 distinct URLs covering ES2301-rescoped/ES2302/ES2303 primary + extension paths and ES2304/ES2305 literature-compilation source PDFs (see Technical/Build/_ches_v2_url_check_results.json). Headline tally: 16/18 returned HTTP 200; 2/18 returned HTTP 202 Accepted (Lafollette School working paper PDF for Cheung-Chinn-Fujii 2010a -- 202 indicates successful server acceptance, equivalent to 200 for our purposes). ZERO 403/404/DNS-failure outcomes. Coverage: (a) ES2301 Census FT900 primary (https://www.census.gov/foreign-trade/balance/c5700.html) 200 OK + extension URLs (Census /foreign-trade/data/ and USA Trade Online) both 200 OK. (b) ES2302 IMF WEO primary (https://www.imf.org/en/Publications/WEO/weo-database) 200 OK + Datamapper deep-link to BCA@WEO/CHN 200 OK. (c) ES2303 WDI primary (https://data.worldbank.org/indicator/FI.RES.XGLD.CD) 200 OK + WDI API endpoint (https://api.worldbank.org/v2/country/CHN/indicator/FI.RES.XGLD.CD?format=json) 200 OK + companion FI.RES.TOTL.CD 200 OK. (d) ES2304/ES2305 all 4 cited literature-review PDFs reachable: PIIE Cline-Williamson 2007 PB07-4 200 OK, IMF Dunaway-Li 2005 WP/05/202 200 OK, Lafollette Cheung-Chinn-Fujii 2010a 202, CESifo Cheung 2012 WP3797 200 OK. (e) IMF ESR (concept-adjacent post-2012 successor for ES2305 context) 200 OK. FULL score 25/25 -- best reachability profile of any chapter-equivalent in the v1.0 ES catalog."
+    },
+    "D2_year_coverage": {
+      "value": 18,
+      "max": 20,
+      "details": "ES2301 (rescoped, 2002-2017 Census FT900): 100% coverage of paper window via FT900 Exhibit 14 (China-specific, monthly) summed to annual; 100% extensibility to 2024 via current FT900 releases. ES2302 (1997-2017 IMF WEO BCA + BCA_NGDPD): 100% paper-window coverage via IMF WEO 2018 vintage; 100% extensibility to 2024 via current WEO vintage (October 2024 has 2024 estimate + 2025 forecast); minor concern that IMF revises historical CA values across vintages so 1997-2017 values from current vintage may differ slightly from paper's 2018 vintage. ES2303 (1990-2016 WDI FI.RES.XGLD.CD): 100% paper-window coverage via World Bank WDI; 100% extensibility to 2023 (WDI typically lags 6-12 months; 2024 may require IMF IFS supplement). ES2304 (1999-2010 scatter, ext-PPP literature compilation): 100% paper-window coverage via re-extraction from 4 cited reviews per paper note 17; extension_status=not_applicable_literature_compilation -- not extensible by construction (NOT penalized as data gap). ES2305 (1999-2012 scatter, MB literature compilation): same as ES2304; 100% paper-window, not extensible. -2 because (a) IMF WEO vintage-revision causes minor 1997-2017 historical-value drift requiring `data_vintage_year` metadata to distinguish paper-vintage from current-vintage values, (b) WDI 2024 latest-year coverage may lag 6-12 months pending Q1 2025 update -- not blocking but worth noting."
+    },
+    "D3_license_compatibility": {
+      "value": 15,
+      "max": 15,
+      "details": "ES2301 Census FT900: U.S. Federal Government public domain (17 USC 105) -- no restrictions on research/replication/redistribution. ES2302 IMF WEO: publicly downloadable from IMF.org with attribution; IMF terms permit research use; non-blocking. ES2303 World Bank WDI: Creative Commons Attribution 4.0 International (CC-BY-4.0) per World Bank Open Data Terms of Use -- explicit open license, full redistribution permitted with attribution. ES2304/ES2305 cited literature reviews: PIIE Cline-Williamson 2007 (PIIE freely distributed Policy Brief PB07-4); Dunaway-Li 2005 IMF Working Paper (IMF WP series publicly downloadable); Cheung-Chinn-Fujii 2010a (La Follette School working paper publicly available); Cheung 2012 (CESifo WP publicly downloadable). Replication of ES2304/ES2305 scatter is a derivative-work transformation following fair-use/academic-quotation norms -- not verbatim redistribution of cited tables. Weber-Shaikh 2020 paper itself is journal-copyright (Taylor & Francis) but the paper's TEXT is not what we replicate; we replicate the underlying DATA the paper describes. FULL score 15/15 -- cleanest license posture of any ES chapter-equivalent."
+    },
+    "D4_units_consistency": {
+      "value": 13,
+      "max": 15,
+      "details": "ES2301 Census FT900: explicit units 'Billion current USD trade balance' (Census-basis = Total Exports Value minus Customs Import Value per figure asterisk note); consistent with FT900 Exhibit 1 (US-World) and Exhibit 14 (US-China) source. ES2303 WDI: explicit units 'Billion current USD reserves ex-gold' (WDI raw FI.RES.XGLD.CD is in current USD; divide by 1e9 for paper-display). ES2304/ES2305: explicit units 'percent RMB misalignment' (positive = undervalued vs equilibrium; negative = overvalued) -- dimensionless. ES2302 has KNOWN DUAL-UNIT REQUIREMENT: Fig 2 is a dual-axis chart with LEFT axis 'Billion USD' (BCA series) and RIGHT axis 'Percentage' (BCA_NGDPD series). Phase 5 MUST emit ES2302 as TWO distinct AnuData series rows (ES2302_level with units='Billion USD' and ES2302_pctgdp with units='Percent of GDP'), NOT a single row with mixed units. This requirement was a primary motivation for decision 0006's 5-way split (dossier-per-figure makes the dual-axis emission requirement explicit). -2 because (a) ES2302 dual-axis split requires explicit two-row implementation in Phase 5 loader (documented in dossier methodology_notes; tracked here as a remediation item not a defect), (b) ES2301 paper plots Fig 1 with TWO lines (World Total and China) on a single y-axis -- Phase 5 must decide whether to emit as two AnuData rows (ES2301_world, ES2301_china) or one row with a country dimension (current recommendation: two rows for downstream filter compatibility)."
+    },
+    "D5_extension_feasibility": {
+      "value": 12,
+      "max": 15,
+      "details": "ES2301 (Census FT900 US-China bilateral trade balance): FULLY EXTENSIBLE to 2024 via Census Foreign Trade Division. Section 301 tariffs (2018-) and COVID 2020 introduce documented structural breaks but do NOT block extension; the Census series continues uninterrupted. ES2302 (IMF WEO BCA + BCA_NGDPD): FULLY EXTENSIBLE to 2024 via current WEO vintage; vintage-revision concern (above) requires `data_vintage_year` metadata convention. ES2303 (WDI FI.RES.XGLD.CD): FULLY EXTENSIBLE to 2023, possibly 2024 via WDI API; IMF IFS monthly supplement available for higher-frequency or more-current updates. ES2304 (ext-PPP misalignment, literature compilation): NOT EXTENSIBLE BY PAPER CONSTRUCTION. The 4 cited literature reviews are one-off academic surveys dated 2005-2012; the RMB-misalignment debate cooled post-2014 as China shifted to managed float; IMF since 2015 finds RMB 'broadly in line with fundamentals' per ESR. Flagged extension_status=not_applicable_literature_compilation (NOT data_unavailable, which is reserved for true blockers; this is intrinsic to the paper's construction, not a defect). ES2305 (MB misalignment, literature compilation): SAME as ES2304 -- not extensible by paper construction; IMF ESR EBA model produces post-2012 estimates but uses methodologically distinct framework that would constitute a NEW figure, not a continuation of Fig 5. -3 because 2 of 5 series (ES2304/ES2305) are intrinsically non-extensible by paper construction; we document this with `extension_status=not_applicable_literature_compilation` rather than penalize as if it were a data gap, but the dimension still nets -3 for the asymmetric extension profile across the 5-series family."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 9,
+      "max": 10,
+      "details": "ES2301 (Census FT900): NO substitution required -- Census FT900 series active and primary; Phase 5 must use Census-basis (not BoP-basis) goods trade balance to match paper Fig 1 footnote. ES2302 (IMF WEO BCA + BCA_NGDPD): NO substitution required -- IMF WEO active and primary; vintage-pin metadata required (not a proxy issue). ES2303 (WDI FI.RES.XGLD.CD): NO substitution required -- WDI active and primary; ensure FI.RES.XGLD.CD (excludes gold per paper title) is used, NOT companion FI.RES.TOTL.CD (includes gold). ES2304/ES2305 (literature compilations): NOT a proxy in the substitution sense -- they ARE literature compilations by paper construction; no single primary source to substitute. Must carry `compilation_methodology: paper_note_17_verbatim` documentation flag in Phase 5 to make the compilation rule explicit (not a CMJ block in the BLS-ILC-substitution sense, but a methodology-block per Anu Framework standard). IMF ESR EBA model is concept-adjacent for post-2012 RMB misalignment context but explicitly NOT used as a substitution for Fig 5 -- recorded in ES2305 dossier methodology_notes as a non-splice candidate to preserve methodological clarity. -1 because ES2304/ES2305 require Phase 5 to write `compilation_methodology` documentation blocks (~30 min each) before loader execution; not blocking but a remediation item."
+    }
+  },
+  "total_score": 92,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "ES2301",
+      "name": "Weber-Shaikh (2020) Fig 1 - US Trade Balance vs World Total and China, 2002-2017 (rescoped per decision 0006)",
+      "content_type_correction": "Rescoped from composite parent of Figs 1-5 to Fig-1-only US bilateral trade balance per APPROVED decision 0006 (2026-05-18). content_type remains time_series. Figs 2/3/4/5 content moved to new ES2302/ES2303/ES2304/ES2305 dossiers.",
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "U.S. Federal Government public domain (17 USC 105)",
+      "units": "Billion current USD trade balance (Census-basis = Total Exports Value minus Customs Import Value per figure asterisk note)",
+      "extension_status": "feasible",
+      "proposed_substitute": "None required -- Census FT900 active and primary. Phase 5 must (a) use Census-basis goods trade balance (NOT BoP-basis) for splice consistency with paper window, (b) document Section 301 tariff regime structural break (2018-) and COVID 2020 compression in extension narrative, (c) decide emit as two AnuData rows (ES2301_world + ES2301_china) for downstream filter compatibility.",
+      "proxy_flags": [
+        "None. Census FT900 is the direct primary source; no substitutions required."
+      ],
+      "remediation": [
+        "Phase 5: implement Census FT900 Exhibit 14 (US-China) and Exhibit 1 (US-World) loaders summing monthly Total Exports Value minus Customs Import Value to annual.",
+        "Phase 5: emit as two AnuData rows (ES2301_world for World Total line, ES2301_china for China line) per current recommendation.",
+        "Phase 5 metadata: emit data_vintage_year='2018' (paper) or current distinctly from period_covered=[2002,2017] (paper) or extended range.",
+        "Phase 5 extension narrative: document Section 301 tariffs (2018-) and COVID 2020 compression as interpretive structural breaks; not data gaps."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "ES2302",
+      "name": "Weber-Shaikh (2020) Fig 2 - China Current Account Balance 1997-2017 (level USD AND percent of GDP)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "publicly downloadable from IMF.org with attribution (IMF terms permit research use; non-blocking)",
+      "units": "DUAL: Billion current USD (BCA) AND Percent of GDP (BCA_NGDPD) -- emit as two AnuData rows",
+      "extension_status": "feasible",
+      "proposed_substitute": "None required -- IMF WEO database active and primary. Phase 5 must pin vintage (recommend 2024 October for extension to 2024) and document any revisions to 1997-2017 values vs paper's 2018 vintage. IMF Datamapper (https://www.imf.org/external/datamapper/BCA@WEO/CHN) provides deep-link to series; IMF External Sector Report provides cross-validation (not splice).",
+      "proxy_flags": [
+        "None primary-data; vintage-pin metadata convention required (not a proxy issue)."
+      ],
+      "remediation": [
+        "Phase 5: implement WEO loader pulling BCA and BCA_NGDPD for country CHN, emit as TWO separate AnuData rows (ES2302_level and ES2302_pctgdp).",
+        "Phase 5: pin specific WEO vintage (e.g. 2024 October) and document any 1997-2017 historical revisions vs paper's 2018 vintage.",
+        "Phase 5: cross-check 2007-2008 peak values against IMF Datamapper / WEO query (paper Fig 2 shows BCA ~420 USD bn 2008, BCA_NGDPD ~10% 2007).",
+        "Phase 5 metadata: data_vintage_year, period_covered, weo_subject_code (BCA / BCA_NGDPD) as explicit fields."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "ES2303",
+      "name": "Weber-Shaikh (2020) Fig 3 - China FX Reserves ex-Gold 1990-2016 (World Bank WDI FI.RES.XGLD.CD)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "Creative Commons Attribution 4.0 International (CC-BY-4.0) per World Bank Open Data Terms of Use",
+      "units": "Billion current USD (WDI raw in current USD; divide by 1e9 for paper-display)",
+      "extension_status": "feasible",
+      "proposed_substitute": "None required -- WDI active and primary. Phase 5 must use FI.RES.XGLD.CD (excludes gold, matches paper title) and NOT companion FI.RES.TOTL.CD (includes gold). WDI API endpoint (https://api.worldbank.org/v2/country/CHN/indicator/FI.RES.XGLD.CD?format=json) recommended programmatic path. IMF IFS provides higher-frequency monthly supplement; SAFE provides Chinese-national-source cross-validation.",
+      "proxy_flags": [
+        "None. WDI FI.RES.XGLD.CD is the direct primary source matching paper title 'without Gold'.",
+        "Must NOT include CIC or other SWF assets (not part of FI.RES.XGLD.CD scope)."
+      ],
+      "remediation": [
+        "Phase 5: implement WDI loader pulling FI.RES.XGLD.CD for country CHN via API.",
+        "Phase 5: QA against paper-text quantitative anchors: ~17-fold increase 2000-2010 (168 to 2914 USD bn); 2013 ~3.6 trillion; 2014 peak ~3.84 trillion; 2016 trough ~3.03 trillion.",
+        "Phase 5 metadata: wdi_indicator='FI.RES.XGLD.CD', country='CHN', wdi_vintage as explicit fields.",
+        "Phase 5: consider providing FI.RES.TOTL.CD (with-gold) as an OPTIONAL related-series comparator for users (clearly labeled as not-the-paper-series)."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "ES2304",
+      "name": "Weber-Shaikh (2020) Fig 4 - RMB Misalignment under Extended PPP (scatter compilation 1999-2010 from 4 literature reviews)",
+      "content_type_correction": "content_type set to 'derived' (not time_series) to reflect literature-compilation scatter nature per paper construction.",
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "Source PDFs publicly downloadable (PIIE, IMF WP, La Follette WP, CESifo WP all open); replication is derivative-work extraction following fair-use/academic-quotation norms",
+      "units": "percent RMB misalignment (positive = undervalued vs equilibrium; negative = overvalued); dimensionless ratio",
+      "extension_status": "not_applicable_literature_compilation",
+      "proposed_substitute": "NO SUBSTITUTE BY PAPER CONSTRUCTION. The 4 cited literature reviews (Cline-Williamson 2007 PIIE PB07-4, Dunaway-Li 2005 IMF WP/05/202, Cheung-Chinn-Fujii 2010a La Follette WP 2010-010, Cheung 2012 CESifo WP 3797) are one-off academic surveys. Replication: re-extract each individual ext-PPP-methodology estimate per paper note 17 verbatim rule. No splice candidate -- post-2012 RMB misalignment work has migrated to IMF ESR EBA model which is methodologically distinct (NOT a continuation of Fig 4).",
+      "proxy_flags": [
+        "Not a proxy in substitution sense -- IS a literature compilation by paper construction.",
+        "Phase 5 must write `compilation_methodology: paper_note_17_verbatim` documentation block explaining the extraction rule (range -> 2 endpoint points; multiple estimates -> separate points; methodology filter = extended PPP only)."
+      ],
+      "remediation": [
+        "Phase 5: implement extraction worksheet recording (study, year, misalignment_pct, methodology_label='ext_PPP', original_table_or_page) for each of the ~35-40 scatter points in Fig 4.",
+        "Phase 5: archive PDFs of the 4 cited literature reviews to SalvagedInputs/ for replication-pack completeness (URL stability concern over 2026-2030 horizon).",
+        "Phase 5: cross-verify each extracted estimate against the ORIGINAL underlying paper cited by the review (the 4 reviews are themselves compilations of earlier primary studies).",
+        "Phase 5: write `compilation_methodology` documentation block per paper note 17 verbatim rule (shared structure with ES2305).",
+        "Phase 6 EPR: document why ES2304 is intrinsically non-extensible by paper construction (not a data defect)."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "ES2305",
+      "name": "Weber-Shaikh (2020) Fig 5 - RMB Misalignment under Macroeconomic Balance (scatter compilation 1999-2012 from same 4 reviews)",
+      "content_type_correction": "content_type set to 'derived' (not time_series) to reflect literature-compilation scatter nature per paper construction.",
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "Same as ES2304 -- source PDFs publicly downloadable; replication is derivative-work extraction following fair-use/academic-quotation norms",
+      "units": "percent RMB misalignment (positive = undervalued vs MB-defined equilibrium; negative = overvalued); dimensionless ratio",
+      "extension_status": "not_applicable_literature_compilation",
+      "proposed_substitute": "NO SUBSTITUTE BY PAPER CONSTRUCTION. Same 4 cited literature reviews as ES2304, filtered to MB-methodology estimates per paper note 17. Replication: re-extract each individual MB-methodology estimate. IMF External Sector Report (https://www.imf.org/en/Publications/ESR) provides concept-adjacent post-2012 RMB-misalignment estimates via EBA model but is methodologically distinct from MB approach -- NOT linked as splice candidate; would constitute a NEW figure not a continuation.",
+      "proxy_flags": [
+        "Not a proxy in substitution sense -- IS a literature compilation by paper construction.",
+        "Phase 5 must write `compilation_methodology: paper_note_17_verbatim` documentation block (shared structure with ES2304 with methodology filter = MB approach only).",
+        "Paper footnote 18 reads 'See footnote 12' -- this is a paper typo; the canonical compilation methodology for BOTH Fig 4 and Fig 5 is note 17."
+      ],
+      "remediation": [
+        "Phase 5: implement extraction worksheet recording (study, year, misalignment_pct, methodology_label='MB', original_table_or_page) for each of the ~30-35 scatter points in Fig 5.",
+        "Phase 5: re-use the 4 PDFs archived for ES2304 (no incremental cost).",
+        "Phase 5: methodology-filter discipline -- each of the 4 reviews covers BOTH ext-PPP and MB methodologies; correct labeling per estimate is critical to avoid mis-assignment between ES2304 and ES2305.",
+        "Phase 5: cross-check Bayoumi-Gagnon-Saborowski 2015 extreme -100% outlier (2011 data point) and Goldstein 2004 high-end +40% estimate per paper Section 4.4 narrative.",
+        "Phase 5: document `compilation_methodology` shared block with ES2304.",
+        "Phase 6 EPR: same as ES2304 -- intrinsic non-extensibility by construction."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "DECISION 0006 EXECUTION COMPLETE (this report): All 5 dossiers (ES2301-rescoped, ES2302, ES2303, ES2304, ES2305) now exist with Phase 3 content fully populated and validated; this catchup Phase 4 adequacy report covers all 5 with 92/100 gate-pass (vs original CHES report's 84/100, reflecting the cleaner per-figure dossier structure delivered by the split).",
+    "ES2301 (rescoped) Phase 5 implementation: Use Census FT900 Exhibit 14 (China-specific) + Exhibit 1 (US-World total) summed monthly to annual; Census-basis (Total Exports Value minus Customs Import Value); emit two AnuData rows ES2301_world and ES2301_china.",
+    "ES2302 Phase 5 implementation: IMF WEO query for BCA and BCA_NGDPD subjects, country CHN; emit TWO AnuData rows (ES2302_level units='Billion USD' and ES2302_pctgdp units='Percent of GDP'); pin vintage and document.",
+    "ES2303 Phase 5 implementation: World Bank WDI API for FI.RES.XGLD.CD country CHN; divide raw current-USD by 1e9 for paper-Billion-USD display; QA against paper anchors (~17-fold 2000-2010; 2013 ~3.6T; 2014 peak ~3.84T).",
+    "ES2304/ES2305 Phase 5 implementation: write parallel extraction worksheets (study/year/misalignment/methodology/page) for the ~35-40 (ES2304) and ~30-35 (ES2305) scatter points from the 4 shared literature reviews; archive review PDFs to SalvagedInputs/; write `compilation_methodology: paper_note_17_verbatim` documentation block in each dossier before loader execution.",
+    "Dual-unit emission convention: ES2302 demonstrates the dual-axis-figure -> two-AnuData-row pattern. Phase 5 framework should formalize this as a standard pattern: any figure with N distinct unit-types becomes N distinct AnuData rows with a `figure_companion_series` cross-link.",
+    "Data-vintage convention: ES2301 (Census 2018), ES2302 (IMF 2018), ES2303 (WDI 2018) all use '2018' as data-access-vintage labels on paper figures. Phase 5 must emit `data_vintage_year` distinctly from `period_covered` to avoid downstream confusion -- already documented in CHES_ADEQUACY_REPORT.json chapter-level-recommendations, ratified again here.",
+    "ES2304/ES2305 non-extensibility convention: extension_status=not_applicable_literature_compilation is the correct flag (NOT data_unavailable which is reserved for true blockers). This pattern may recur in future external-studies dossiers where the paper itself is a compilation of other people's estimates -- formalize as standard handling in Phase 5/6 framework.",
+    "v1.1 BACKLOG (per decision 0006 deferral): ES2306 (US/China relative manufacturing ULC, Golub et al. 2018 7.8:1 headline) deferred to v1.1 under Ch11 wave2 canonical BLS ILC -> Conference Board ILC / OECD ULC substitution. Not in scope for this report.",
+    "ES2302 figure_companion_series cross-link: emit ES2302_level and ES2302_pctgdp with mutual `figure_companion_series` metadata pointing to each other plus to the source Fig 2 in the paper.",
+    "Cross-series adequacy block in series_registry: add `adequacy.status: ready_for_phase5` and `adequacy.score_contribution: 18 (ES2301) | 18 (ES2302) | 19 (ES2303) | 18 (ES2304) | 19 (ES2305)` per series (5-way distribution of 92 total weighted by series weight)."
+  ],
+  "blockers_for_phase5": [
+    "None hard-blocking. Soft items: (1) ES2304/ES2305 `compilation_methodology` documentation block must be written in Phase 5 before loader execution -- ~30 minutes each; (2) ES2302 dual-row emission requires Phase 5 framework support for figure_companion_series cross-link metadata convention; (3) ES2301 two-row emission decision (ES2301_world + ES2301_china) needs Phase 5 ratification of two-rows-vs-one-row-with-country-dimension convention."
+  ],
+  "open_questions": [
+    "Q1 -> RESOLVED: Decision 0006 ES2301 5-way split -- APPROVED 2026-05-18; this report ratifies execution.",
+    "Q2 -> RESOLVED: ES2302 dual-axis units -- emit as TWO AnuData rows (ES2302_level, ES2302_pctgdp) with figure_companion_series cross-link.",
+    "Q3 -> RESOLVED: ES2303 indicator selection -- FI.RES.XGLD.CD (ex-gold, matches paper title) NOT FI.RES.TOTL.CD (with-gold).",
+    "Q4 -> RESOLVED: ES2304/ES2305 extension status -- not_applicable_literature_compilation (intrinsic, not a defect).",
+    "Q5 -> RESOLVED: ES2301 emission shape -- two AnuData rows (world + china) for downstream filter compatibility.",
+    "Q6 -> OPEN for Phase 5: WEO vintage pinning policy (recommend 2024 October for extension to 2024); ES2302 historical-revision documentation.",
+    "Q7 -> OPEN for Phase 5: ES2304/ES2305 extraction worksheet schema and SalvagedInputs/ PDF archival paths.",
+    "Q8 -> OPEN for Phase 5: ES2305 ESR-EBA non-splice documentation (concept-adjacent but methodologically distinct -- explicitly NOT linked as splice).",
+    "Q9 -> DEFERRED to v1.1: ES2306 (relative ULC, Golub et al. 2018 7.8:1 headline) under Ch11 wave2 canonical BLS ILC substitution."
+  ],
+  "decision_0006_execution_status": {
+    "decision_status": "APPROVED 2026-05-18",
+    "execution_status": "COMPLETE 2026-05-18",
+    "v1_0_series_added_or_rescoped": [
+      {"sid": "ES2301", "action": "rescoped from composite Figs 1-5 to Fig-1-only (Census FT900 US-World + US-China)", "phase3_dossier_status": "filled+validated", "phase4_adequacy_status": "ready_for_phase5 (this report)"},
+      {"sid": "ES2302", "action": "new", "phase3_dossier_status": "filled+validated", "phase4_adequacy_status": "ready_for_phase5 (this report)"},
+      {"sid": "ES2303", "action": "new", "phase3_dossier_status": "filled+validated", "phase4_adequacy_status": "ready_for_phase5 (this report)"},
+      {"sid": "ES2304", "action": "new", "phase3_dossier_status": "filled+validated", "phase4_adequacy_status": "ready_for_phase5 (this report)"},
+      {"sid": "ES2305", "action": "new", "phase3_dossier_status": "filled+validated", "phase4_adequacy_status": "ready_for_phase5 (this report)"}
+    ],
+    "registry_scope_count": "114 -> 118 (per decision 0006 mechanical expansion)",
+    "v1_1_deferred": [{"sid": "ES2306", "topic": "US/China relative manufacturing ULC (Golub et al. 2018 7.8:1)", "rationale": "per decision 0006 deferral; inherits Ch11 wave2 BLS ILC canonical substitution"}]
+  },
+  "url_reachability_evidence": {
+    "checked_at": "2026-05-18",
+    "method": "urllib HEAD with GET fallback for 403/405/501/URLError, UA=RSCD-P4-AdequacyBot/1.0, timeout=10s",
+    "results_file": "Technical/Build/_ches_v2_url_check_results.json",
+    "summary": {
+      "checked": 18,
+      "status_200": 16,
+      "status_202_accepted": 2,
+      "status_403": 0,
+      "status_404": 0,
+      "status_dns_failure": 0
+    },
+    "per_series_url_status": {
+      "ES2301": "Census FT900 primary 200 OK; Census /foreign-trade/data/ 200 OK; USA Trade Online 200 OK",
+      "ES2302": "IMF WEO database 200 OK; WEO landing 200 OK; IMF Datamapper BCA@WEO/CHN 200 OK",
+      "ES2303": "WDI FI.RES.XGLD.CD 200 OK; WDI API endpoint 200 OK; companion FI.RES.TOTL.CD 200 OK",
+      "ES2304": "PIIE Cline-Williamson 2007 PB07-4 200 OK; IMF WP05/202 200 OK; Lafollette Cheung-Chinn-Fujii 2010a 202 Accepted; CESifo WP 3797 200 OK",
+      "ES2305": "All 4 ES2304 literature URLs (same sources) 200/202 OK; IMF ESR concept-adjacent 200 OK"
+    },
+    "substitutions_recorded": [],
+    "data_substitutions_recorded": [
+      {"concept": "ES2304/ES2305 literature compilations", "discontinued_source": "n/a", "canonical_substitute": "n/a -- intrinsically non-extensible by paper construction", "handling": "extension_status=not_applicable_literature_compilation; compilation_methodology=paper_note_17_verbatim documentation block in Phase 5"}
+    ]
+  },
+  "phase4_open_question_resolutions": {
+    "ches_v2_q1_decision_0006_execution": "COMPLETE 2026-05-18; this report ratifies all 5 dossiers as ready_for_phase5.",
+    "ches_v2_q2_es2302_dual_axis_emission": "TWO AnuData rows (ES2302_level + ES2302_pctgdp) with figure_companion_series cross-link.",
+    "ches_v2_q3_es2303_indicator_selection": "FI.RES.XGLD.CD (matches paper title 'without Gold').",
+    "ches_v2_q4_es2304_es2305_non_extensibility": "extension_status=not_applicable_literature_compilation (intrinsic to paper construction, not data gap).",
+    "ches_v2_q5_es2301_emission_shape": "Two AnuData rows (ES2301_world + ES2301_china) for downstream filter compatibility."
+  }
+}

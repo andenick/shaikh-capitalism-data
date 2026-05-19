@@ -1,0 +1,107 @@
+{
+  "series_id": "S1508",
+  "name": "World Inflation vs Growth of Private and Public Credit, 1970-1988",
+  "chapter": 15,
+  "figures": [
+    "Fig15.12"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": "S088",
+    "cd2_id": "S088"
+  },
+  "book_quotes": [
+    {
+      "chapter": 15,
+      "page": 718,
+      "quote": "Harberger (1988, table 12.11, 223) was concerned to explain inflation as a consequence of private and public credit induced by fiscal deficits. To this end, he collected three explanatory variables averaged in various periods within 1972-1988 for twenty-nine countries ranging from Argentina to Tunisia. Of his variables, the one that comes closest to relative new purchasing power is his measure of the growth of Domestic Claims (public and private credit).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 719,
+      "quote": "Figure 15.12 World Inflation versus Growth of Private and Public Credit, 1970-1988 Source: Harberger 1988, table 12.1.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 897,
+      "quote": "Figure 15.12 World Inflation versus Growth of Private and Public Credit, 1970-1988 pi, gDC from Harberger (1988, table 12.11), for twenty-nine countries from Harberger (1988, table 12.11), where DC = Total Domestic Claims, IMF IFS Monetary Survey, line 32, which represents total public and private credit and its growth rate gDC is the same as Harberger's variable lambda.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Harberger (1988) — table reproduced from journal article",
+    "publication": "Harberger, A.C. (1988), 'World Inflation Revisited', as reproduced/reanalyzed; original data from IMF International Financial Statistics Monetary Survey line 32 (Domestic Claims)",
+    "table_or_series_id": "Harberger 1988 table 12.11 (also cited as table 12.1 in Shaikh's figure source line); 29 countries, period averages within 1972-1988",
+    "url": "https://data.imf.org/IFS",
+    "frequency": "annual averages over sub-periods (cross-sectional points)",
+    "units": "Rate (percent) — inflation rate pi and growth of Domestic Claims gDC (= Harberger's lambda)",
+    "license": "Harberger / NBER / journal terms for original table; IMF IFS subscription terms for underlying credit data",
+    "available_through": "ShaikhChoppedTables/Appendix15_WorldInflationDataByCountry.xlsx, Appendix15_WorldInflationDataLambda.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [
+    {
+      "label": "Inflation rate (pi) by country-period",
+      "source": "Harberger (1988) table 12.11"
+    },
+    {
+      "label": "Growth of Domestic Claims (gDC = lambda)",
+      "source": "Harberger (1988) table 12.11; original source IMF IFS Monetary Survey line 32"
+    }
+  ],
+  "year_range_book": [
+    1970,
+    1988
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "IMF IFS Domestic Claims (modern line) — direct reconstruction over 1970-1988",
+      "source": "IMF International Financial Statistics monetary survey, Domestic Claims (formerly line 32)",
+      "url": "https://data.imf.org/IFS",
+      "units": "Rate (decimal)",
+      "splice_strategy": "none",
+      "concerns": [
+        "This is a cross-sectional historical figure; extension means re-pulling the same 29-country sample over 1970-1988 from current IFS vintage.",
+        "IFS line numbers reorganized post-2009; modern code is sectoral Domestic Claims aggregates."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Cross-sectional scatter: each point is a country-period pair (29 countries, multiple period-averages each).",
+    "Shaikh shades the chart by inflation regime: <20%, 20-40%, >40% — the >40% regime is where the credit-inflation correlation becomes near 1:1.",
+    "Note discrepancy in source citation: figure caption says 'table 12.1', narrative text on p.718 says 'table 12.11'; Appendix 15.1 p.897 confirms table 12.11.",
+    "CD2 predecessor S088 ported; CD2 markdown cross-references Harberger FPR015 chopped tables."
+  ],
+  "open_questions": [
+    "Resolve table-12.1 vs table-12.11 citation discrepancy by checking the original Harberger (1988) chapter (likely a typo in figure caption).",
+    "Verify Harberger (1988) full bibliographic citation — likely from World Bank Discussion Paper / Inflation policy volume edited by Helmut Frisch."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch15",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S088 ported; quotes verified against PDF pp.718-719 and Appendix 15.1 p.897"
+    },
+    {
+      "reviewer": "phase5-wave-a5-blocker-resolver",
+      "date": "2026-05-18",
+      "status": "blocker_resolved_ready_for_phase5",
+      "notes": "B7 BLOCKER RESOLUTION: IMF IFS line resolver implemented at Technical/code/loaders/_imf_ifs_resolver.py. Documentation at Technical/docs/methodology/IFS_line_to_SDMX_remap.md. The CH15 Phase 4 plan used the pre-2024 data.imf.org/IFS portal SRF codes (FOSAOP_XDC family); those codes were retired ca. 2024 when IMF migrated to the SDMX 3.0 REST API at api.imf.org. The resolver maps Shaikh's legacy lines through both eras: line 31 -> CBANK_NETAL_NCO_S1311MIXED (MFS_CBS); line 32 -> DCORP_N_DC (MFS_DC, canonical Net Domestic Claims); line 64 -> PCPI_IX (CPI); line 78 -> ODCORP_A_ACO_S1311MIXED (MFS_DC); line 79 -> ODCORP_A_ACO_S13M1 (MFS_DC); line 81 -> DCORP_A_ACO_PS (MFS_DC); line 88 -> ODCORP_L_LT_S1311MIXED (MFS_DC). Smoke test verified 2026-05-18: fetched DCORP_N_DC for USA 2018-2022 via api.imf.org SDMX 3.0 REST, HTTP 200, returned 5/5 years (2018=$21.16T, 2019=$22.42T, 2020=$25.76T, 2021=$30.12T, 2022=$29.91T). Phase 5 loader can now ingest this concept directly. Recommended Phase 5 fetch: DCORP_N_DC for 29 Harberger countries 1970-1988 (per-country; some pre-2001 data not in MFS_DC, may require pre-2001 archive supplementation).",
+      "resolver_file": "Technical/code/loaders/_imf_ifs_resolver.py",
+      "methodology_doc": "Technical/docs/methodology/IFS_line_to_SDMX_remap.md"
+    }
+  ]
+}

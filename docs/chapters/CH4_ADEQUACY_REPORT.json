@@ -1,0 +1,285 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": 4,
+  "reviewer": "opus-subagent-p4-wave1-ch4",
+  "review_date": "2026-05-18",
+  "series_count": 8,
+  "scores": {
+    "D1_source_reachability": {
+      "value": 22,
+      "max": 25,
+      "details": "Live HEAD checks performed 2026-05-18. OUP book product page (S401-S403): 202 OK. Google Books edition page for Inman 1995 (S404-S407 placeholder URL): 200 OK. JSTOR stable/1812527 (S408): HTTP 403 — JSTOR uniformly blocks scripted access (also blocks /action/doBasicSearch with 403); per Phase 4 plan risk row, marked 'unverified-rate-limited' rather than 'failed'. Authoritative bibliographic verification of the actual Inman 1995 citation was performed via Crossref API: confirmed as Robert R. Inman, 'Shape Characteristics of Cost Curves Involving Multiple Shifts in Automotive Assembly Plants,' The Engineering Engineer 41(1), 53-67, 1995, DOI 10.1080/00137919508967475 — DOI proxy also returned 403 (Tandfonline anti-bot), so reachability is documented-only via the indexer record. The four S404-S407 dossiers currently carry a *placeholder* Google Books URL for an unrelated Brookings volume; this is a Phase 5 remediation item, not a reachability failure for the verified canonical source."
+    },
+    "D2_year_coverage": {
+      "value": 18,
+      "max": 20,
+      "details": "S401-S407 are synthetic/derived (no calendar-year axis); year_range_book is correctly null-null for each. S408 has a single point-in-time anchor (1952) which is 100% covered by the single Eiteman & Guthrie survey snapshot. Per Phase 4 plan guidance, derived/cross_sectional series score generously here; the only minor deduction reflects that S401-S403 cannot be re-derived end-to-end without the Appendix 4.2 table values (see blockers)."
+    },
+    "D3_license_compatibility": {
+      "value": 14,
+      "max": 15,
+      "details": "S401-S403 cite Shaikh (2016) Appendix 4.2 — Oxford University Press copyright, reproduced under fair use for research. S404-S407 cite Inman (1995) The Engineering Economist — Taylor & Francis copyright, scholarly use under fair use. S408 cites Eiteman & Guthrie (1952) American Economic Review — AEA/JSTOR archive, scholarly use under fair use. No CC-BY sources; all are publication-archive sources, scholarly-reproducible. No commercial-data flagging required. Minor deduction because none are openly licensed (all are fair-use reproductions from copyrighted scholarship)."
+    },
+    "D4_units_consistency": {
+      "value": 14,
+      "max": 15,
+      "details": "All 8 dossiers carry an explicit primary_source.units field. S401-S403: 'money units per unit of output (illustrative; pa=10, wN=100, wh=12.5, p=7)' — units are abstract but explicitly parameterized. S404, S406: 'USD per car ($/car) vs. annual vehicle production (thousands)'. S405, S407: 'USD marginal cost per additional car vs. annual vehicle production (thousands)'. S408: 'percentage of respondents (94% chose curves 6 or 7); curves themselves are conceptual cost vs. scale-of-output schematics'. Minor deduction because S408 mixes two unit types (response-percentage AND conceptual cost-curve shape) in one field; Phase 5 may want to split."
+    },
+    "D5_extension_feasibility": {
+      "value": 14,
+      "max": 15,
+      "details": "Ratifying Phase 3 reclassifications: none of the 8 series is a time_series, so extension feasibility is not_applicable for the entire chapter. S401-S407: 7 series, extension_status='not_applicable_theoretical' (numerical illustrations / simulated cost curves with no calendar-time axis to extend). S408: extension_status='not_applicable_cross_sectional' (one-shot 1952 survey snapshot). All 8 dossiers correctly have extension_candidates=[]; no fictitious extension series were invented. Generous full-credit score per Phase 4 plan; 1-point deduction held back to reflect that Shaikh's chapter footnote 36 (p. 164) cites a literature lineage (Bain 1948, Johnston 1960, Walters 1963, Dean 1976, Mansfield 1988, Kahn 1989, Lavoie 1992) that could be a literature-review extension for S408 in Phase 6, currently noted only as open question."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 10,
+      "max": 10,
+      "details": "Zero proxies introduced. Every series cites its exact named source. S401-S403 cite Shaikh's own Appendix 4.2 (author construction). S404-S407 cite Inman 1995 directly (with the canonical citation now corrected to Robert R. Inman, The Engineering Economist 41(1):53-67). S408 cites Eiteman & Guthrie 1952 AER directly. No CD2 predecessors exist for any Ch4 series, so no CD2-substitution justification is required. Full credit."
+    }
+  },
+  "total_score": 92,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "S401",
+      "name": "Average and Marginal Costs with Wage Paid per Worker (Fig 4.16)",
+      "content_type_correction": {
+        "from": "time_series",
+        "to": "derived",
+        "ratified": true,
+        "ratification_note": "Phase 3 reclassification CONFIRMED. S401 is a numerical illustration computed from Appendix 4.2 eq. 4.2.1 plus stylized prices, tabulated for H=1..20 across three shifts. No calendar-time axis exists."
+      },
+      "url_status": "202",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": null,
+      "license": "OUP copyright; fair-use research reproduction",
+      "units": "money units per unit of output (illustrative; pa=10, wN=100, p=7)",
+      "extension_status": "not_applicable_theoretical",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Phase 5 blocker: Appendix 4.2 chopped-table workbook MISSING from SalvagedInputs/book_data/ShaikhChoppedTables/ — must be transcribed from book pp. 770-781 OR back-solved by re-implementing eq. 4.2.1 (xr = (a1 + a2*h - a3*h^2)*i) with parameters fit to Appendix Table 4.2.1 boundary conditions (xr(h=1)=3.55, xr(h=12)=9.60 peak)."
+      ],
+      "adequacy_status": "ready_for_phase5_with_blocker"
+    },
+    {
+      "sid": "S402",
+      "name": "Average and Marginal Costs with Wage Paid per Hour (Fig 4.17)",
+      "content_type_correction": {
+        "from": "time_series",
+        "to": "derived",
+        "ratified": true,
+        "ratification_note": "Phase 3 reclassification CONFIRMED. Same Appendix 4.2 numerical scaffold as S401, with the wages-per-hour columns of Table 4.2.4 instead of per-worker."
+      },
+      "url_status": "202",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": null,
+      "license": "OUP copyright; fair-use research reproduction",
+      "units": "money units per unit of output (illustrative; wh=12.5, pa=10, p=7)",
+      "extension_status": "not_applicable_theoretical",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Phase 5 blocker: Shares the missing Appendix 4.2 workbook with S401. Same back-solve / transcription path applies."
+      ],
+      "adequacy_status": "ready_for_phase5_with_blocker"
+    },
+    {
+      "sid": "S403",
+      "name": "Total Profit with Different Wage Arrangements (Fig 4.18)",
+      "content_type_correction": {
+        "from": "time_series",
+        "to": "derived",
+        "ratified": true,
+        "ratification_note": "Phase 3 reclassification CONFIRMED. Profit = p*XR - tc(per-worker) and p*XR - tc(per-hour); derives directly from S401 + S402 with p=7. No time axis."
+      },
+      "url_status": "202",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": null,
+      "license": "OUP copyright; fair-use research reproduction",
+      "units": "money units (illustrative; p=7)",
+      "extension_status": "not_applicable_theoretical",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Phase 5: S403 is fully reproducible IF S401 and S402 are reconstructed. Cross-reference link to S401, S402 should be recorded in registry."
+      ],
+      "adequacy_status": "ready_for_phase5_with_blocker"
+    },
+    {
+      "sid": "S404",
+      "name": "Automotive Unit Labor Cost (Fig 4.19)",
+      "content_type_correction": {
+        "from": "time_series",
+        "to": "derived",
+        "ratified": true,
+        "ratification_note": "Phase 3 reclassification CONFIRMED. Cost-vs-output curve from Inman 1995 fig. 3, not a calendar time series."
+      },
+      "url_status": "unverified-rate-limited",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "url_check_notes": "Currently-recorded URL is a placeholder Google Books edition for an unrelated Brookings volume (returned HTTP 200 but is the WRONG source). Canonical Inman 1995 citation has been authoritatively verified via Crossref API: Robert R. Inman, 'Shape Characteristics of Cost Curves Involving Multiple Shifts in Automotive Assembly Plants,' The Engineering Economist, 41(1), 53-67 (1995), DOI 10.1080/00137919508967475. The Tandfonline DOI proxy returned 403 (anti-bot, not invalid URL).",
+      "year_coverage_pct": null,
+      "license": "Taylor & Francis copyright; fair-use research reproduction",
+      "units": "USD per car ($/car) vs. annual vehicle production (thousands)",
+      "extension_status": "not_applicable_theoretical",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Phase 5 MUST update primary_source.publication to: Inman, R. R. (1995). 'Shape Characteristics of Cost Curves Involving Multiple Shifts in Automotive Assembly Plants.' The Engineering Economist 41(1), 53-67.",
+        "Phase 5 MUST update primary_source.url to: https://doi.org/10.1080/00137919508967475",
+        "Phase 5 MUST correct primary_source.agency from 'Robert P. Inman' to 'Robert R. Inman'.",
+        "Phase 5 MUST update available_through to reflect Taylor & Francis (Engineering Economist), not Brookings.",
+        "Source figure (Inman fig. 3) is paywalled; data values for replication must be digitized from the Shaikh book reproduction (book p. 162) using a figure-digitizer (e.g., WebPlotDigitizer) — document this in the L## loader."
+      ],
+      "adequacy_status": "ready_for_phase5_with_blocker"
+    },
+    {
+      "sid": "S405",
+      "name": "Automotive Marginal Labor Cost (Fig 4.20)",
+      "content_type_correction": {
+        "from": "time_series",
+        "to": "derived",
+        "ratified": true,
+        "ratification_note": "Phase 3 reclassification CONFIRMED. Marginal labor cost curve from Inman 1995 fig. 4; no calendar-time axis."
+      },
+      "url_status": "unverified-rate-limited",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "url_check_notes": "Same as S404 — placeholder URL incorrect; canonical Inman 1995 citation verified via Crossref.",
+      "year_coverage_pct": null,
+      "license": "Taylor & Francis copyright; fair-use research reproduction",
+      "units": "USD marginal cost per additional car vs. annual vehicle production (thousands)",
+      "extension_status": "not_applicable_theoretical",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Phase 5 MUST update Inman 1995 citation fields as listed for S404 (same source, fig. 4 at p. 62 instead of fig. 3 at p. 61).",
+        "Figure digitization required from book p. 162."
+      ],
+      "adequacy_status": "ready_for_phase5_with_blocker"
+    },
+    {
+      "sid": "S406",
+      "name": "Automotive Average Cost (Fig 4.21)",
+      "content_type_correction": {
+        "from": "time_series",
+        "to": "derived",
+        "ratified": true,
+        "ratification_note": "Phase 3 reclassification CONFIRMED. Derives from S404 + constant average material cost."
+      },
+      "url_status": "unverified-rate-limited",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "url_check_notes": "Same as S404 — placeholder URL incorrect; canonical Inman 1995 citation verified via Crossref (fig. 5 at p. 64).",
+      "year_coverage_pct": null,
+      "license": "Taylor & Francis copyright; fair-use research reproduction",
+      "units": "USD per car ($/car) vs. annual vehicle production (thousands)",
+      "extension_status": "not_applicable_theoretical",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Phase 5 MUST update Inman 1995 citation fields as listed for S404.",
+        "Cross-reference link S406 -> S404 (S406 is constructed from S404 + amc constant)."
+      ],
+      "adequacy_status": "ready_for_phase5_with_blocker"
+    },
+    {
+      "sid": "S407",
+      "name": "Automotive Marginal Cost (Fig 4.22)",
+      "content_type_correction": {
+        "from": "time_series",
+        "to": "derived",
+        "ratified": true,
+        "ratification_note": "Phase 3 reclassification CONFIRMED. Derives from S405 + constant marginal material cost."
+      },
+      "url_status": "unverified-rate-limited",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "url_check_notes": "Same as S404 — placeholder URL incorrect; canonical Inman 1995 citation verified via Crossref (fig. 6 at p. 64).",
+      "year_coverage_pct": null,
+      "license": "Taylor & Francis copyright; fair-use research reproduction",
+      "units": "USD marginal cost per additional car vs. annual vehicle production (thousands)",
+      "extension_status": "not_applicable_theoretical",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Phase 5 MUST update Inman 1995 citation fields as listed for S404.",
+        "Cross-reference link S407 -> S405 (S407 is constructed from S405 + marginal material cost constant)."
+      ],
+      "adequacy_status": "ready_for_phase5_with_blocker"
+    },
+    {
+      "sid": "S408",
+      "name": "Cost Curves Chosen by 94% of Business People Surveyed (Fig 4.23)",
+      "content_type_correction": {
+        "from": "time_series",
+        "to": "cross_sectional",
+        "ratified": true,
+        "ratification_note": "Phase 3 reclassification CONFIRMED. Single-year (1952) survey snapshot from Eiteman & Guthrie; appropriately classified cross_sectional."
+      },
+      "url_status": "unverified-rate-limited",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "url_check_notes": "JSTOR stable/1812527 returned HTTP 403 on both HEAD and GET with browser User-Agent (also returned 403 for jstor.org/action/doBasicSearch). JSTOR uniformly blocks scripted requests; per Phase 4 plan risk row 1, marked 'unverified-rate-limited' rather than failed. Bibliographic citation (Eiteman, W. J., & Guthrie, G. E., 1952, 'The Shape of the Average Cost Curve,' American Economic Review 42(5), 832-838) is well-established in the cost-curve literature; the stable_id 1812527 remains provisional pending an interactive (browser) JSTOR check or library DOI lookup.",
+      "year_coverage_pct": 100,
+      "license": "AEA / JSTOR archive; fair-use research reproduction",
+      "units": "percentage of respondents (94%) plus two conceptual cost-curve schematics",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Phase 5: Manually verify JSTOR stable ID 1812527 via interactive browser visit (the citation itself is solid; only the stable ID is provisional).",
+        "Phase 5/6: Consider implementing the literature-review extension cited in Shaikh footnote 36, p. 164 (Bain 1948, Johnston 1960, Walters 1963, Dean 1976, Mansfield 1988, Kahn 1989, Lavoie 1992) as a corroborating evidence block."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "RATIFY all 8 Phase 3 content_type reclassifications: S401-S407 -> 'derived' (correct; numerical illustrations and cost-vs-output curves with no calendar-time axis); S408 -> 'cross_sectional' (correct; 1952 single-survey snapshot). Validator's time_series -> extension_candidates rule does not apply to any series in this chapter.",
+    "CORRECT Inman 1995 citation for S404-S407 in Phase 5: change agency 'Robert P. Inman' -> 'Robert R. Inman'; change publication to 'Shape Characteristics of Cost Curves Involving Multiple Shifts in Automotive Assembly Plants,' The Engineering Economist 41(1), 53-67; change url to 'https://doi.org/10.1080/00137919508967475'. Crossref-authoritative.",
+    "Add cross_reference fields to registry: S403 derives from S401+S402; S406 derives from S404+amc; S407 derives from S405+marginal material cost.",
+    "Consider adding a 'qualitative_finding' content_type (open question from Phase 3) to better classify S408's survey-percentage evidence.",
+    "Author-construction series (S401-S403) currently use primary_source.agency='Shaikh (author construction)'; this convention is acceptable but Phase 4 records it for future formalization.",
+    "Add `adequacy` block to all 8 Ch4 series in series_registry.json with status 'ready_for_phase5_with_blocker' for S401-S407 and 'ready_for_phase5' for S408."
+  ],
+  "blockers_for_phase5": [
+    {
+      "blocker_id": "CH4-B1",
+      "severity": "resolved",
+      "status": "RESOLVED",
+      "resolved_on": "2026-05-18",
+      "resolved_by": "Batch 1 Agent A2 (opus-subagent)",
+      "affected_series": ["S401", "S402", "S403"],
+      "description": "Appendix 4.2 chopped-table workbook is MISSING from SalvagedInputs/book_data/ShaikhChoppedTables/. Only Appendices 2, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17 are present (4 not in the list).",
+      "resolution": "Verbatim transcription of Appendix Tables 4.2.1, 4.2.2, 4.2.3, 4.2.4 from book PDF pp. 772-781 (PDF pp. 810-819) produced at SalvagedInputs/book_data/Reconstructed/Appendix_4_2_Table{1,2,3,4}.csv. README at SalvagedInputs/book_data/Reconstructed/Appendix_4_2_README.md documents source pages, columns, parameters, and a derived-column validation matrix (all derived costs/profits in Table 4.2.4 reproduce from Table 4.2.3 inputs to within rounding noise <=0.02). Validation values: xr(h=1)=3.55 and xr(h=12)=9.60 (peak) confirmed in Table 4.2.1. Note: published eq. 4.2.1 parameters (a1=2, a2=1.2, a3=0.05) do NOT reproduce the tabulated xr values (offset +0.40); the tabulated values back-solve to a1~=2.40 with same a2, a3. The CSVs are the canonical source for L01 loaders; if formula re-derivation is preferred, use a1=2.40 (subject to Phase 5 ratification).",
+      "remediation_paths": [
+        "(a) Manually transcribe Appendix Tables 4.2.1-4.2.4 from the book PDF (physical book pages 770-781). [DONE]",
+        "(b) Re-implement Appendix 4.2 equation (xr = (a1 + a2*h - a3*h^2)*i) with parameters a1, a2, a3 back-solved from Appendix Table 4.2.1 boundary conditions: xr(h=1)=3.55, xr(h=12)=9.60 peak. [BACK-SOLVED a1=2.40; recorded in README as fallback]"
+      ],
+      "phase5_owner": "P-script implementer for S401-S403 (now unblocked)"
+    },
+    {
+      "blocker_id": "CH4-B2",
+      "severity": "medium",
+      "affected_series": ["S404", "S405", "S406", "S407"],
+      "description": "Phase 3 dossiers carry the WRONG canonical citation and placeholder URL for Inman 1995. The correct source — verified via Crossref API on 2026-05-18 — is Robert R. Inman, 'Shape Characteristics of Cost Curves Involving Multiple Shifts in Automotive Assembly Plants,' The Engineering Economist 41(1), 53-67 (1995), DOI 10.1080/00137919508967475. The current Google Books URL points to an unrelated Brookings volume.",
+      "remediation_paths": [
+        "Update primary_source.agency, primary_source.publication, primary_source.url, and primary_source.available_through fields in S404-S407 dossiers before Phase 5 ingestion.",
+        "Source PDF is paywalled (Taylor & Francis); replication data must be obtained either by article purchase/library access OR by digitizing the four figures from the book reproduction at pp. 162-163 using a figure-digitizer."
+      ],
+      "phase5_owner": "Registry maintainer + L## loader implementer"
+    },
+    {
+      "blocker_id": "CH4-B3",
+      "severity": "low",
+      "affected_series": ["S408"],
+      "description": "JSTOR stable ID 1812527 for Eiteman & Guthrie (1952) is provisional and not script-verifiable (JSTOR returns 403 for all programmatic requests). Bibliographic citation itself (AER 42(5), 832-838, 'The Shape of the Average Cost Curve') is well-established.",
+      "remediation_paths": [
+        "Phase 5 maintainer performs manual interactive browser visit to https://www.jstor.org/stable/1812527 to confirm article title/authors match.",
+        "Alternative: lookup via institutional library catalog or AEA archive."
+      ],
+      "phase5_owner": "Registry maintainer"
+    }
+  ],
+  "open_questions": [
+    "Should the RSCD framework introduce a 'qualitative_finding' content_type for evidence like S408 (a survey-distribution percentage plus two reproduced schematic curves) where the 'data' is genuinely non-numerical?",
+    "Should derived series (S401-S407) carry explicit cross_reference links in the registry (e.g., S403.cross_references = ['S401', 'S402'])? Recommended yes; mechanism for Phase 5.",
+    "Should the literature-review lineage in Shaikh footnote 36 (Bain 1948, Johnston 1960, Walters 1963, Dean 1976, Mansfield 1988, Kahn 1989, Lavoie 1992) be implemented as a sibling-evidence block alongside S408 in Phase 6?",
+    "Inman 1995 article PDF is paywalled at Taylor & Francis. Should the project purchase a copy for replication purposes, or rely on figure-digitization from the book reproduction?"
+  ]
+}

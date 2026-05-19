@@ -1,0 +1,98 @@
+{
+  "series_id": "S1405",
+  "name": "HP(100)-Filtered Rate of Change of Wage Share vs Unemployment Intensity",
+  "chapter": 14,
+  "figures": [
+    "Fig14.14"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S072",
+    "cd2_id": "S072"
+  },
+  "book_quotes": [
+    {
+      "chapter": 14,
+      "page": 666,
+      "quote": "Figure 14.14 displays the dramatic effect of a simple HP(100) filter applied to the scatter data in figure 14.13. The arrows indicate the direction of travel, and the dashed lines represent two fitted curves of the form used by Phillips himself corresponding to the two distinct eras 1949–1982 and 1994–2011.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 892,
+      "quote": "Data for wage share, prices, wages, and productivity is from the Bureau of Economic Analysis (BEA) GDP and the National Income and Product Account (NIPA) Historical Tables, http://www.bea.gov/national/index.htm#gdp: wage share = EC/GDP, where EC = Compensation of employees, paid from Table 1.10, line 2; and GDP is from Table 1.10, line 1.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 894,
+      "quote": "Fitted curves displayed in figure 14.4 of chapter 14 were fitted to the two eras 1949–1982 and 1994–2011 using Phillips's original functional form y = a+bxc, where the dependent variable y = ˙σW /σW = GWSHHP100, the independent variable x = unemployment intensity = ULINTENSITYHP100, and a, b, c are fitted parameters.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Composite (BEA + BLS)",
+    "publication": "Derived: HP(100)-filtered wage-share growth (GWSHHP100) and unemployment intensity (ULINTENSITYHP100)",
+    "table_or_series_id": "BEA NIPA Table 1.10 (lines 1 and 2); BLS LNS14000000 + LNS13008275",
+    "url": "https://www.bea.gov/itable/national-gdp-and-personal-income",
+    "frequency": "annual",
+    "units": "Decimal (wage-share growth rate); decimal (unemployment intensity)",
+    "license": "U.S. Government Work (public domain)",
+    "available_through": "BEA + BLS + FRED",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "direct",
+  "formula": "x = HP100(unemployment_intensity); y = HP100(growth_rate(wage_share)); fitted with Phillips form y = a + b * x^c on 1949-1982 and 1994-2011",
+  "components": [
+    {
+      "subseries_label": "GWSHHP100",
+      "source": "HP(100)-filtered growth rate of wage share",
+      "role": "y-axis"
+    },
+    {
+      "subseries_label": "ULINTENSITYHP100",
+      "source": "HP(100)-filtered unemployment intensity",
+      "role": "x-axis"
+    },
+    {
+      "subseries_label": "Phillips-form fitted curves",
+      "source": "Two-era regressions reported in Appendix 14.2 (1949-1982: R^2=0.931; 1994-2011: R^2=0.965)",
+      "role": "Dashed structural curves overlaid on the filtered scatter"
+    }
+  ],
+  "year_range_book": [1949, 2011],
+  "year_range_extension": [1949, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "Re-estimated Phillips-form curve, post-2011",
+      "source": "Apply HP(100) to extended S1401 + S1402 components and re-fit y = a + b * x^c on rolling/extended windows",
+      "url": "https://fred.stlouisfed.org/series/UEMPMEAN",
+      "units": "Decimal",
+      "splice_strategy": "none",
+      "concerns": ["Endpoint bias of HP filter: extending the sample changes filtered values near 2011; Phase 5 should re-filter the full extended series rather than appending"]
+    }
+  ],
+  "methodology_notes": [
+    "Fig 14.14 is the central empirical result of Chapter 14: a stable Classical wage-share Phillips curve in two segments, with the post-1983 segment shifted DOWN (lower critical intensity) consistent with the neoliberal attack on labor.",
+    "Critical unemployment intensities: ~9% for 1949-1982 era; ~5-6% for 1994-2011 era (book p. 668).",
+    "Translated to actual unemployment rates: 5.9% (first era) and 4.2% (second era) as the 'normal' rates of unemployment under each labor-strength regime (book p. 668).",
+    "Phillips functional form: y = a + b * x^c, fitted via nonlinear least squares; Appendix 14.2 reports a=-1.026431, c=-0.010677 (1949-1982) and a=-1.010996, c=-0.003709 (1994-2011).",
+    "HP filter parameter = 100 (annual data, Hodrick-Prescott default for annual)."
+  ],
+  "open_questions": [
+    "Replicate the b coefficient: Appendix 14.2 only reports a (C(1)) and c (C(3)); the b coefficient is absorbed because the published fits use the form y = C(1) + x^C(3) with implicit b=1. Phase 5 should verify replication.",
+    "1983-1993 gap between the two fitted eras corresponds to the regime-shift period; how should the curve be interpreted in this transitional window?"
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch14",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S072 ported; Appendix 14.2 regression details added (Phillips form, R^2, era windows)."
+    }
+  ]
+}

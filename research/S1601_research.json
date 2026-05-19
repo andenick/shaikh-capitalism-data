@@ -1,0 +1,113 @@
+{
+  "series_id": "S1601",
+  "name": "US and UK Golden Waves, 1786-2010",
+  "chapter": 16,
+  "figures": [
+    "Fig16.1"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S093",
+    "cd2_id": "S093"
+  },
+  "book_quotes": [
+    {
+      "chapter": 16,
+      "page": 727,
+      "quote": "Figure 16.1 charts the de-trended paths of the golden price of commodities in the United States and United Kingdom from 1790 to 2010. Superimposed on this chart are the timings of various general crises and Great Depressions which are seen to typically begin in the middle of long downturns.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 16,
+      "page": 727,
+      "quote": "Figure 16.1 US and UK Golden Waves, 1786-2010 (1930 = 100) Deviations from Cubic Time Trends Source: Appendix 5.3 data tables.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 16,
+      "page": 898,
+      "quote": "Figure 16.1 US and UK Golden Waves, 1786-2010 (1930 = 100) Deviations from Cubic Time Trends. Data and the chart itself are in Appendix 5.3 Data Tables for Chapter 5.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "BLS / Bank of England (via Appendix 5.3)",
+    "publication": "Shaikh Appendix 5.3 Data Tables for Chapter 5 (PPI/WPI in gold)",
+    "table_or_series_id": "Appendix 5.3 (US WPI = BLS WPS00000000; UK WPI from Bank of England / O'Donoghue; gold price 1930=100)",
+    "url": "https://www.bls.gov/ppi/data.htm",
+    "frequency": "annual",
+    "units": "Index, deviation from cubic time trend (1930=100 base)",
+    "license": "Public domain (US Federal data); Bank of England historical series",
+    "available_through": "BLS PPI database; Bank of England 'A Millennium of Macroeconomic Data'",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "GoldenPrice_t = WPI_t / P_gold_t (1930=100); then residuals from OLS cubic time trend on ln(GoldenPrice)",
+  "components": [
+    "US WPI (BLS WPS00000000) 1947-2010; pre-1947 from NBER macrohistory / historical CPI splice",
+    "UK WPI (O'Donoghue, Goulding, Allen 2004; Bank of England 'A Millennium of Macroeconomic Data')",
+    "Gold price (London PM fix, troy oz; pre-1968 from official gold parity)"
+  ],
+  "year_range_book": [
+    1786,
+    2010
+  ],
+  "year_range_extension": [
+    1786,
+    2024
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "US WPI / PPI extension",
+      "source": "BLS PPI (Wholesale Price Index / Producer Price Index, All Commodities)",
+      "url": "https://fred.stlouisfed.org/series/PPIACO",
+      "units": "Index 1982=100",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "WPI/PPI methodology revisions in 1978 and 2014; minor level shifts"
+      ]
+    },
+    {
+      "subseries_label": "Gold price extension",
+      "source": "LBMA Gold Price PM fix (USD/oz)",
+      "url": "https://fred.stlouisfed.org/series/GOLDPMGBD228NLBM",
+      "units": "USD per troy ounce",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Floating gold price post-1971 introduces high volatility relative to pre-Bretton-Woods era"
+      ]
+    },
+    {
+      "subseries_label": "UK WPI extension",
+      "source": "ONS Producer Price Index — Output of manufactured products",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/k646/ppi",
+      "units": "Index 2010=100",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "UK WPI discontinued in favor of PPI in 1989; level shifts at splice points"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Shaikh's golden price = WPI expressed in ounces of gold (WPI / P_gold). De-trended via residuals from a fitted cubic time trend, then rebased to 1930 = 100. See Chapter 5, Figures 5.5 and 5.6 for the un-detrended series.",
+    "Construction follows Kondratieff's gold-denominated tabular series (Kondratieff 1984, 134-135, table 1), which shows long waves persisting after 1939 when nominal-currency series do not (Shaikh 2016, p. 727).",
+    "Per CD2 (S093), six subseries S093-A through S093-F decompose into US/UK residuals plus rescaled variants anchored at the 1983 trough and latest peak.",
+    "Historical chain: US pre-1947 WPI from NBER macrohistory; UK long-run series from O'Donoghue, Goulding & Allen (2004) 'Consumer Price Inflation Since 1750', updated by Bank of England Millennium dataset."
+  ],
+  "open_questions": [
+    "Confirm whether Shaikh's UK historical WPI source is O'Donoghue et al. (2004) or the Mitchell historical statistics — Appendix 5.3 likely specifies.",
+    "Cubic-trend de-trending is sensitive to endpoint year; extending to 2024 may shift the entire residual path. Phase 4 should assess re-estimation vs. growth-rate splice on residuals."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch16",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Ported from CD2 S093 with verbatim book quotes from p. 727 (figure caption + narrative) and p. 898 (Appendix 16.1)."
+    }
+  ]
+}

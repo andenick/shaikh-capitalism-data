@@ -1,0 +1,101 @@
+{
+  "series_id": "S212",
+  "name": "US and UK Wholesale Prices in Ounces of Gold, 1790–2010 (1930=100, Log Scale)",
+  "chapter": 2,
+  "figures": [
+    "Fig2.10"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S012",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 64,
+      "quote": "It is therefore instructive to consider UK and US prices not in terms of their respective national currencies, but in terms of the common international standard of gold. To do this, one only needs to divide the price level in each country by the price of gold in that same currency. Figure 2.10 displays the UK and US price levels in these terms. The resulting “golden waves” show us something quite fascinating.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 764,
+      "quote": "Gold prices from 1780 to 1785 are available for the United Kingdom in Jastram (1977) and were estimated for the United States for the same interval using the 1786 ratio of US/UK gold prices (which is essentially constant until 1800). For 1786–2010, the US gold price is the official price for 1786–1790 available from Measuring Worth.com, http://www.measuringworth.com/gold/, and the market price thereafter. The same source has the UK market gold price in UK£ from 1786–1949, and in US$ thereafter, so the latter segment was converted to UK£ using the US$–UK£ exchange from the same site. Sources and methods for 1786–1945 appear in Lawrence H. Officer and Samuel H. Williamson, “The Price of Gold, 1257–2010,” http://www.measuringworth.com/gold/, and in Lawrence H. Officer, “Dollar–Pound Exchange Rate From 1791,” http://www.measuringworth.com/exchangepound/, respectively. The UK Wholesale Price Index (WPI) is available in Jastram (1977, table 2) from 1560 to 1976 (1930 = 100), except for missing values in 1939–1945, which were filled in using implicit annual growth rates in the NBER monthly for the UK PPI, All commodities Variable ID = m04053.dat, http://www.nber.org/databases/macrohistory/rectdata/04/. This was extended for 1977–2010 using the implicit growth rates of the UK Producer Price Index available from http://www.statistics.gov.uk/statbase/, variable named PLLU, Price Index of UK Output of Mfg Goods. US WPI is available in Jastram (1977, 145–146, table 7) for 1800–1976. Data for 1706–1799 was interpolated using the US CPI (see sources for figure 2.5) rescaled by the 1800 ratio of WPI/CPI. The series was extended to 1977–2010 using implicit growth rates of US PPI available from the BLS as Variable WPS00000000 at http://www.bls.gov/ppi/data.htm#.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Jastram (1977) + MeasuringWorth + BLS + UK ONS",
+    "publication": "Shaikh (2016) Appendix 2.1 (derived); gold prices from MeasuringWorth (Officer & Williamson)",
+    "table_or_series_id": "Derived: WPI ÷ gold_price for US and UK respectively",
+    "url": "https://www.measuringworth.com/datasets/gold/",
+    "frequency": "annual",
+    "units": "Index, 1930=100 (log scale); units are ounces of gold per unit of constant nominal basket",
+    "license": "Derived; underlying sources public/academic",
+    "available_through": "MeasuringWorth (gold) + FRED PPIACO (US WPI) + ONS PLLU (UK PPI)",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "WPI_in_gold[country, t] = WPI[country, t] / gold_price[country, t]; both rebased to 1930=100",
+  "components": [
+    {
+      "label": "US WPI (S210 component) and UK WPI (S210 component)",
+      "period": [
+        1790,
+        2010
+      ]
+    },
+    {
+      "label": "US gold price (MeasuringWorth, official 1786–1790 then market) in US$",
+      "period": [
+        1790,
+        2010
+      ]
+    },
+    {
+      "label": "UK gold price (MeasuringWorth) in UK£, converted from US$ post-1949",
+      "period": [
+        1790,
+        2010
+      ]
+    }
+  ],
+  "year_range_book": [
+    1790,
+    2010
+  ],
+  "year_range_extension": [
+    2011,
+    2025
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "Recompute formula with extended WPI + extended gold price",
+      "source": "BLS PPIACO + ONS PLLU + MeasuringWorth gold",
+      "url": "https://www.measuringworth.com/datasets/gold/",
+      "units": "Index 1930=100",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Per anu-framework no-lazy-splice rule for derived quantities, the ratio must be recomputed from extended components rather than splicing the ratio directly."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Formula series: WPI divided by gold price for each country, then both indexed to 1930=100.",
+    "Shares underlying components with S210; primary innovation is the gold-denominator transformation that exposes “golden waves”."
+  ],
+  "open_questions": [
+    "Verify MeasuringWorth still updates the gold price series through 2025; their last visible update should be checked."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "series_id": "S216",
+  "name": "Normalized Total Prices of Production Profit versus Total Unit Labor Costs, US 1972 (71 Industries)",
+  "chapter": 2,
+  "figures": [
+    "Fig2.14"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": "S016",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 67,
+      "quote": "Figure 2.14 displays the relation between observed market prices and prices proportional to vertically integrated unit labor costs (direct prices), for each of seventy-one sectors of the US input–output table for 1972. The vertical axis represents the market value of each sector’s total output (i.e., its unit market price times its total output), while the horizontal axis represents the corresponding direct money value of the same outputs.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 764,
+      "quote": "Figure 2.14 Normalized Total Prices of Production Profit versus Total Unit Labor Costs, US 1972 (Seventy-One Industries). Discussed in chapter 9 in relation to figure 9.1. Appendix 9.3 Data Tables for Chapter 9 (available online at http://www.anwarshaikhecon.org/).",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (Input–Output Accounts)",
+    "publication": "BEA Benchmark Input–Output Tables for 1972; Shaikh (2016) Chapter 9 (tables 9.9 and 9.13)",
+    "table_or_series_id": "BEA 1972 benchmark I–O, 71-sector aggregation; derived prices of production vs vertically integrated unit labor costs",
+    "url": "https://apps.bea.gov/iTable/?reqid=151",
+    "frequency": "single-year cross-section (1972 benchmark)",
+    "units": "Normalized dollars (axes scaled so both sets of prices have the same total)",
+    "license": "Public domain (US federal government)",
+    "available_through": "BEA Industry Accounts Historical Input–Output Tables",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "Prices of production from Sraffian system computed at observed average profit rate; vertically integrated unit labor cost = (I - A)^(-1) * l vector",
+  "components": [
+    {
+      "label": "BEA 1972 Use table (71-sector aggregation)",
+      "period": [
+        1972,
+        1972
+      ]
+    },
+    {
+      "label": "BEA 1972 Make table",
+      "period": [
+        1972,
+        1972
+      ]
+    },
+    {
+      "label": "Sectoral labor coefficients (employment / output)",
+      "period": [
+        1972,
+        1972
+      ]
+    }
+  ],
+  "year_range_book": [
+    1972,
+    1972
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA Benchmark I–O 1977, 1982, 1987, 1992, 1997, 2002, 2007, 2012 — cross-section replications",
+      "source": "BEA Industry Accounts",
+      "url": "https://apps.bea.gov/industry/Release/XLS/IOUse_Before_Redefinitions_Summary.zip",
+      "units": "Millions of dollars",
+      "splice_strategy": "none",
+      "concerns": [
+        "Cross-sectional series — not a time series. Each benchmark year is a separate scatter plot, not extendable in the time-series sense. Reclassified to cross_sectional per anu-framework content_type rule."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Cross-sectional scatter for a single benchmark year (1972). Not a time series in the strict sense; year_range_book reflects this.",
+    "Test of Ricardo's '93% theory': from Shaikh's measurement, 87% of long-run competitive prices are accounted for by direct + indirect unit labor costs (book p. 67).",
+    "Reclassified content_type from time_series (stub default) to cross_sectional per anu-framework rule (single-year I–O scatter cannot be 'extended' in time)."
+  ],
+  "open_questions": [
+    "Stub had content_type=time_series and year_range=[null,null]; corrected to cross_sectional with year_range_book=[1972,1972]. Confirm in Phase 4 that this reclassification matches Phase 2 taxonomy intent."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

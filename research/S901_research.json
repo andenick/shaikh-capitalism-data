@@ -1,0 +1,130 @@
+{
+  "series_id": "S901",
+  "name": "Market Prices vs Direct Prices, 71 Industries",
+  "chapter": 9,
+  "figures": [
+    "Fig9.1",
+    "Fig9.2",
+    "Fig9.16"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": "S047",
+    "cd2_id": "S047"
+  },
+  "book_quotes": [
+    {
+      "chapter": 9,
+      "page": 395,
+      "quote": "Figures 9.1 and 9.2 compare each of sixty-ﬁve industry normalized total market prices to the corresponding total direct prices, using log scales for both. Normalization reduces each price set to unit length, since it divides the original price vectors by their respective norms. This gives both sets the same mean, so we can use a dotted 45-degree line in the graph as a visual reference (it is not a ﬁtted regression line).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 9,
+      "page": 395,
+      "quote": "Figure 9.1 presents US data for input–output tables in 1998 (65-order) and 1972 (71-order). Table 9.9 reports the four unweighted distance measures, CV and δe and the two weighted ones %MAWD and δc (the two weighted measures being the same when comparing market and direct prices).",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 9,
+      "page": 396,
+      "quote": "All further details are in appendix 9.2.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 9,
+      "page": 867,
+      "quote": "The following data was taken from the US Bureau of Economics, http://www.bea.gov/iTable/index_industry_io.cfm: industry-by-industry sixty-ﬁve-order total requirements input–output tables B′, after redeﬁnitions designed to match commodity ﬂows to industries; the vector of direct sectoral wage bills W constructed from the Employee Compensation portions of value-added ﬂows in the use tables, after redeﬁnitions; and the market values of industry gross outputs X′ from the same use tables. All data is available for 1997–2009, but here we use 1998 to illustrate the general patterns.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 9,
+      "page": 868,
+      "quote": "Input–output tables and labor coefﬁcients for 1947–1972 were taken from Shaikh (1998a) as compiled in (Ochoa 1984). These tables were rebalanced to exclude the real estate sector, the great bulk of which is from OOH (Ochoa 1984, 252).",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "US Bureau of Economic Analysis (BEA) + Shaikh (1998a)/Ochoa (1984) historical compilation",
+    "publication": "BEA Industry-by-Industry Input-Output Use Tables (after redefinitions) for 1998 (65 industries); historical 71-industry input-output tables and labor coefficients for 1947, 1958, 1963, 1967, 1972 from Shaikh (1998a) as compiled in Ochoa (1984)",
+    "table_or_series_id": "BEA Use Tables 1997-2009 (sixty-five-order total requirements B′, Employee Compensation rows of the value-added block, gross output vector X′); historical IO tables for 1947/1958/1963/1967/1972 (71-order); appendix workbook Appendix9_1947fixed.xlsx, Appendix9_1958fixed.xlsx, Appendix9_1963fixed.xlsx, Appendix9_1967fixed.xlsx, Appendix9_1972fixed.xlsx, Appendix9_1998Circ.xlsx, Appendix9_1998Fixed.xlsx (SalvagedInputs/book_data/ShaikhChoppedTables/)",
+    "url": "https://www.bea.gov/industry/input-output-accounts-data",
+    "frequency": "benchmark cross-section (1947, 1958, 1963, 1967, 1972, 1998)",
+    "units": "log-scale normalized prices (unit-length, dimensionless); price-direct-price ratios (dimensionless); distance measures %MAWD, δc, CV, δe (dimensionless)",
+    "license": "BEA public domain; Shaikh appendix workbooks are book-companion supplementary materials (anwarshaikhecon.org)",
+    "available_through": "BEA iTable / Industry Economic Accounts; Shaikh's online appendix at http://www.anwarshaikhecon.org/",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "q_i ≡ (p_i·X_i / Σ p_i·X_i) / (vulc_i·X_i / Σ vulc_i·X_i) = p_i / d_i where d_i = μ·w_i·v_i (direct price); distance measures δc = Σ |q_i - 1|·w_i, CV = stdev(q_i)/mean(q_i), δe = Euclidean distance of normalized price vs direct-price vectors (book eqs 9.9-9.13)",
+  "components": [
+    {
+      "label": "BEA 1998 65-order Use Table (B′)",
+      "role": "market prices and gross outputs"
+    },
+    {
+      "label": "BEA Employee Compensation vector",
+      "role": "direct wage bill -> labor coefficients (skill-adjusted)"
+    },
+    {
+      "label": "(I - A)^-1 derived from B′",
+      "role": "Leontief inverse -> vertically integrated labor coefficients vulc = l′(I - A′)^-1"
+    },
+    {
+      "label": "Ochoa (1984) / Shaikh (1998a) historical 71-order IO tables",
+      "role": "1947, 1958, 1963, 1967, 1972 cross-sections (real estate excluded)"
+    },
+    {
+      "label": "Owner-Occupied Housing (OOH) correction (NIPA Table 7.12 lines 133-134)",
+      "role": "removes imputed homeowner gross output and intermediate inputs from the 1998 real estate column"
+    }
+  ],
+  "year_range_book": [
+    1947,
+    1998
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA post-1998 use tables (1997-2023+)",
+      "source": "BEA Industry Economic Accounts - Industry-by-Industry Total Requirements (after redefinitions)",
+      "url": "https://www.bea.gov/industry/input-output-accounts-data",
+      "units": "BEA NAICS-based industry codes (post-1997 vintage)",
+      "splice_strategy": "none",
+      "concerns": [
+        "BEA NAICS revisions (especially the 2007/2012/2017 vintages) break the 65/71-industry crosswalk; would require fresh OOH correction and new labor-coefficient construction",
+        "Series is cross-sectional by construction; only natural extension is adding more benchmark years (e.g., 2007, 2012) rather than splicing a time series"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Cross-sectional series: each datapoint is a (price, direct-price) pair for one of 65 (1998) or 71 (1947-1972) industries. The series has no within-year time dimension; the 'panel' is across the six benchmark years.",
+    "Direct prices d_i = μ·w_i·v_i are constructed using vertically integrated unit labor costs (vulc) and the endogenous monetary equivalent of total labor time μ = TP/TV (sum of market prices divided by sum of total labor times); see book eq. 9.11.",
+    "Four distance measures are reported per benchmark year (Table 9.9): %MAWD (Ochoa 1984 percentage mean absolute weighted deviation), classical δc (Shaikh's scale-free analogue), CV (coefficient of variation of q_i), and δe (Euclidean distance of normalized vectors). %MAWD and δc coincide in the market-price/direct-price case because the weighted-measure μ is the same in both.",
+    "Fig 9.16 reuses the same dataset to compare market prices to prices of production (rather than to direct prices), using the fixed-capital model for 1947, 1972, and 1998 - so S901 implicitly carries the underlying IO data, while the production-price construction belongs to S902.",
+    "Owner-Occupied Housing (OOH) correction is essential and book-specific: real estate column in A′ and X′ is rescaled by a/x where x = non-imputed/listed gross output ratio and a = non-imputed/listed intermediate input ratio. Without this correction, the real estate sector's market-direct-price distance is artificially huge.",
+    "Skill-adjusted labor coefficients: l′_j = w_j·(L_j/X′_j) where w_j is the jth-sector wage relative to the economy-wide wage from NIPA Tables 1.10/6.4D (1998); this differs from Ochoa (1984, 225) who uses the lowest sectoral wage as deflator (footnote 2, p. 868)."
+  ],
+  "open_questions": [
+    "Series count correctness (per Phase 3 Ch9 mandate): S901 currently bundles all Fig 9.1, 9.2, 9.16 deviations into one cross-sectional 'series', but the underlying object is really 6 benchmark cross-sections (1947, 58, 63, 67, 72, 1998) of 65-71 industry pairs each. See CH9_RESEARCH_SUMMARY.md for the decomposition recommendation.",
+    "Should the 1947-1972 71-industry tables (Ochoa 1984 compilation) be treated as a separate provenance from the 1998 65-industry BEA-direct table? They use different industry classifications (BEA SIC-vintage vs BEA NAICS-vintage) and cannot be spliced into a continuous panel.",
+    "Validate that Shaikh's anwarshaikhecon.org appendix workbooks (Appendix9_*) match the BEA iTable numbers we would reconstruct in 2026; BEA has revised the 1998 vintage tables since 2010."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-b-ch9",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Verbatim quotes lifted from PDF pp.395-396 (Sec V) and Appendix 9.2 pp.867-868. Source confirmed: BEA Use Tables (1998) + Ochoa (1984)/Shaikh (1998a) for 1947-1972. Series count is the open issue - see chapter summary."
+    }
+  ]
+}

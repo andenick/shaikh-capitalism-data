@@ -1,0 +1,97 @@
+{
+  "series_id": "S201",
+  "name": "US Industrial Production Index",
+  "chapter": 2,
+  "figures": [
+    "Fig2.1"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S001",
+    "cd2_id": "S001"
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 56,
+      "quote": "We begin with the long view. Figures 2.1–2.3 depict the paths of US industrial production, real investment, and real GNP per capita, respectively, over periods of about 150 years. The system’s apparently inexorable tendency toward growth is immediately evident.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 763,
+      "quote": "Figure 2.1 US Industrial Production Index, 1860–2010. All Industries, 1860–1959 (1913 = 100) are from the BEA (1966, table A15), and 1919–2010 (2007 = 100) from the Board of Governors of the Federal Reserve System at http://www.federalreserve.gov/. The two series were rebased to 1958 = 100 and spliced at 1919.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (historical) + Federal Reserve Board (modern)",
+    "publication": "BEA Long Term Economic Growth, 1860–1970 (1966); Federal Reserve Board Statistical Release G.17 Industrial Production",
+    "table_or_series_id": "BEA LTEG Table A15 (1860–1959) spliced with FRB G.17 INDPRO (1919–2010)",
+    "url": "https://www.federalreserve.gov/releases/g17/",
+    "frequency": "annual",
+    "units": "Index, 1958=100 (rebased and spliced at 1919)",
+    "license": "Public domain (US federal government)",
+    "available_through": "FRED INDPRO",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": null,
+  "components": [
+    {
+      "label": "BEA LTEG (1966) Table A15",
+      "period": [
+        1860,
+        1959
+      ],
+      "native_units": "Index 1913=100"
+    },
+    {
+      "label": "FRB G.17 Industrial Production Index",
+      "period": [
+        1919,
+        2010
+      ],
+      "native_units": "Index 2007=100"
+    }
+  ],
+  "year_range_book": [
+    1860,
+    2010
+  ],
+  "year_range_extension": [
+    2011,
+    2025
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "FRED INDPRO (Industrial Production: Total Index)",
+      "source": "Federal Reserve Economic Data (St. Louis Fed)",
+      "url": "https://fred.stlouisfed.org/series/INDPRO",
+      "units": "Index 2017=100",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "FRED INDPRO is the same underlying FRB G.17 series; re-index to 1958=100 at overlap year (e.g., 2010) before splicing."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Composite of two BEA/FRB historical series rebased to 1958=100 and spliced at 1919 per Appendix 2.1 (book p. 763).",
+    "CD2 dossier (S001) confirmed both components: BEA (1966, table A15, p. 185) for 1860–1959 and FRB G-17 for 1919–2010.",
+    "Extension uses FRED INDPRO, which is the contemporary continuation of the FRB G.17 series; same agency, same concept."
+  ],
+  "open_questions": [
+    "BEA (1966) Long Term Economic Growth is out of print; confirm whether GPO offers a digital reprint URL beyond library archives."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

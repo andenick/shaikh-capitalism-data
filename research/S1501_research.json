@@ -1,0 +1,98 @@
+{
+  "series_id": "S1501",
+  "name": "Consumer Price Level, US, 1774-2011",
+  "chapter": 15,
+  "figures": [
+    "Fig15.1"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S076",
+    "cd2_id": "S076"
+  },
+  "book_quotes": [
+    {
+      "chapter": 15,
+      "page": 696,
+      "quote": "figure 15.1 displays the actual path of the consumer price level in the United States from 1774 to 2012, with the shaded area corresponding to the period after 1933 when the United States is said to have effectively gone off a national gold standard and become subject to the laws of modern fiat money (Jastram 1977, 51).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 696,
+      "quote": "Figure 15.1 Consumer Price Level, United States, 1774-2011",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 895,
+      "quote": "Figure 15.1 Consumer Price Level, United States, 1774-2011 http://www.measuringworth.com/datasets/uscpi/result.php.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "MeasuringWorth (Officer & Williamson)",
+    "publication": "MeasuringWorth.com — Annual Consumer Price Index for the United States, 1774-Present",
+    "table_or_series_id": "USCPI",
+    "url": "http://www.measuringworth.com/datasets/uscpi/result.php",
+    "frequency": "annual",
+    "units": "Index (base 1982-84 = 100)",
+    "license": "MeasuringWorth permitted-academic-use license; cite Officer & Williamson",
+    "available_through": "ShaikhChoppedTables/Appendix15_MeasuringWorthCPI.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [],
+  "year_range_book": [
+    1774,
+    2011
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "MeasuringWorth USCPI updated annual series",
+      "source": "MeasuringWorth Officer & Williamson Annual CPI for the United States",
+      "url": "https://www.measuringworth.com/datasets/uscpi/",
+      "units": "Index (base 1982-84 = 100)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Same MeasuringWorth source used by Shaikh; level continuity expected to be essentially exact."
+      ]
+    },
+    {
+      "subseries_label": "BLS CPI-U All Urban Consumers (modern segment 1913-present)",
+      "source": "U.S. Bureau of Labor Statistics, Consumer Price Index for All Urban Consumers",
+      "url": "https://fred.stlouisfed.org/series/CPIAUCNS",
+      "units": "Index (1982-84 = 100)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "BLS CPI-U starts 1913; pre-1913 must be MeasuringWorth historical reconstruction."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Direct load of the MeasuringWorth USCPI series — the exact source cited in Appendix 15.1.",
+    "Shaikh's Figure 15.1 highlights with shading the period after 1933 when the US effectively left the national gold standard; this is a presentational overlay, not a data transformation.",
+    "MeasuringWorth's pre-1913 segment combines multiple historical CPI reconstructions (Warren-Pearson, BLS retrospective, etc.); the Officer-Williamson editorial decisions are inherited.",
+    "CD2 predecessor S076 ported; CD2 validation values: 1774=7.82, 1899=8.04, 1949=23.85, 1999=166.60."
+  ],
+  "open_questions": [
+    "Decide in Phase 4 whether to retain MeasuringWorth's pre-1913 splice or substitute Warren-Pearson directly for transparency."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch15",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S076 ported; quote verified against PDF p.696 and Appendix 15.1 p.895"
+    }
+  ]
+}

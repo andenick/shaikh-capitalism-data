@@ -1,0 +1,78 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": 13,
+  "reviewer": "opus-subagent-p4-wave3-ch13",
+  "review_date": "2026-05-18",
+  "series_count": 1,
+  "scores": {
+    "D1_source_reachability": {
+      "value": 25,
+      "max": 25,
+      "details": "S1301 is a purely theoretical schematic (Fig 13.7, p. 633). Real HTTP HEAD performed 2026-05-18: primary_source.url https://global.oup.com/academic/product/capitalism-9780199390632 returned 202 Accepted (book product page is live; OUP applies a 202 anti-bot wrapper for HEAD which resolves to 200 on browser GET). The 'source' for a theoretical figure is the book itself — both the OUP product page and the local PDF in Inputs/Capitalism Data/ are reachable, so D1 scores full credit."
+    },
+    "D2_year_coverage": {
+      "value": 20,
+      "max": 20,
+      "details": "Figure 13.7 has no calendar axis (unlabelled time index 0-75) and no empirical observations — equation 13.43 is an analytical realisation. Per the template, year_coverage_pct is N/A for theoretical content_type (extension_status = not_applicable_theoretical), so D2 is scored generously at full credit as instructed in the assignment brief and consistent with the Phase 4 plan's treatment of non-time-series series."
+    },
+    "D3_license_compatibility": {
+      "value": 15,
+      "max": 15,
+      "details": "The 'source' is Shaikh (2016) Capitalism, Oxford UP. Reproducing a single schematic figure for replication purposes is fair use; no commercial / proprietary data is involved. Equation 13.43 itself is public mathematical knowledge (Nelson and Plosser 1982; Enders 2004). No licensing risk."
+    },
+    "D4_units_consistency": {
+      "value": 15,
+      "max": 15,
+      "details": "primary_source.units field is explicit and populated: 'ln Y on vertical axis (model units, 8.0 to 12.5); arbitrary time index on horizontal axis (0 to 75)'. Construction is 'formula' with components (ln Y0, alpha, epsilon_t). All units are dimensionless model units of log output, consistent with the equation 13.43 derivation. No loader-units mismatch possible since there is no observed data to load."
+    },
+    "D5_extension_feasibility": {
+      "value": 15,
+      "max": 15,
+      "details": "Theoretical content_type: extensions do not apply per Anu Framework rule ('Extensions ONLY apply to time_series type'). extension_status = not_applicable_theoretical. Scored generously per assignment brief. Phase 5 task is to render the schematic for a chosen illustrative parameter set (ln Y0, alpha, sigma_epsilon, seed) — the parameters are not published by Shaikh and any faithful replica must declare its choice in the EPR."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 10,
+      "max": 10,
+      "details": "No proxies possible — the figure is an analytical construction, not a measurement. The Phase 3 dossier explicitly notes that any rendered curve must declare its illustrative parameter values, satisfying the No-Proxies-Without-Disclosure rule by construction."
+    }
+  },
+  "total_score": 100,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "S1301",
+      "name": "Actual and Equilibrium Paths of Output",
+      "content_type_correction": {
+        "from": "cross_sectional",
+        "to": "theoretical",
+        "ratified": true,
+        "rationale": "Figure 13.7 has no calendar time axis and no observed data; the curve is a realisation of eq. 13.43 (ln Y_t = ln Y0 + alpha*t + eta_t with eta_t = sum epsilon_i), a deterministic linear trend plus a random-walk-with-drift error. The companion Figures 13.8/13.9/13.10 in the same passage are analytical variants of the same construction. No empirical data file exists in SalvagedInputs/book_data/ShaikhChoppedTables/ for this figure — consistent with theoretical content_type. Phase 3 reclassification ratified."
+      },
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T20:10Z",
+      "year_coverage_pct": null,
+      "license": "academic-public (Shaikh 2016, OUP; eq. 13.43 itself is public mathematical knowledge per Nelson and Plosser 1982 / Enders 2004)",
+      "units": "ln Y on vertical axis (model units, 8.0 to 12.5); arbitrary time index on horizontal axis (0 to 75)",
+      "extension_status": "not_applicable_theoretical",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "In series_registry.json, set content_type='theoretical' (was 'cross_sectional' in Phase 2 stub).",
+        "Phase 5 replicator must declare illustrative parameter values (ln Y0, alpha, sigma_epsilon, RNG seed) in the EPR — Shaikh does not publish them.",
+        "No data extension; figure rendered analytically only."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "Ratify Phase 3 reclassification of S1301 from 'cross_sectional' to 'theoretical'. Figure 13.7 is an analytical schematic of eq. 13.43 with no calendar time axis and no observed data.",
+    "Apply registry update: series_registry.json S1301 content_type -> 'theoretical', construction stays 'formula', extension_candidates stays [].",
+    "Chapter 13 entire body (figures 13.1–13.10) plus Appendix 13.1 (figures 13.1.A, 13.1.B) is theoretical; the Phase 2 classifier correctly limited the registry to only S1301 representing Fig 13.7. No additional series to register.",
+    "Phase 5 replicator must publish a parameter-disclosure note in the EPR (initial level, drift, shock variance, seed) since Shaikh does not state them."
+  ],
+  "blockers_for_phase5": [],
+  "open_questions": [
+    "Phase 5 should choose illustrative parameter values (e.g., ln Y0 = 8, alpha = 0.03, sigma_epsilon = 0.015, seed=42) and produce a single rendered version with full parameter disclosure. No data-driven calibration is possible since Fig 13.7 is not fit to any historical series.",
+    "Companion figures 13.8 / 13.9 / 13.10 in the same passage are analytically identical constructions (different shock configurations). The registry intentionally captures only Fig 13.7 as the canonical schematic; should Phase 5 also render 13.8-13.10 as bonus replications? Recommend yes — same loader, parameter-only change — but not in scope for Ch13 adequacy."
+  ]
+}

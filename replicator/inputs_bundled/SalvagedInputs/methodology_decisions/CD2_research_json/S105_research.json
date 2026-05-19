@@ -1,0 +1,51 @@
+{
+  "series_id": "S105",
+  "series_name": "Corporate Incremental Rate of Profit (IROP)",
+  "chapter": 6,
+  "figures": [
+    "Fig 6.7"
+  ],
+  "research_date": "2026-03-07",
+  "researcher": "agent",
+  "kb_sources_searched": [
+    "CH06_DOCUMENTATION.md",
+    "ch06/README.md"
+  ],
+  "entries": [
+    {
+      "entry_type": "methodology_description",
+      "content": "The incremental rate of profit (IROP) measures the return on new investment. Nominal adjusted IROP = delta_GOScorp / (IGcorpbea + delta_INVcorp) - 1, where delta is the first difference, GOS is gross operating surplus, IG is gross private fixed investment, and INV is inventories. The NIPA variant uses conventional corporate profits instead of adjusted GOS. IROP is inherently more volatile than the average rate of profit.",
+      "source_ref": "Appendix 6.8, Table II-7, Shaikh (2016) pp. 269-275"
+    },
+    {
+      "entry_type": "source_citation",
+      "content": "BEA NIPA Tables 1.14 (corporate GVA, profits), 5.3.5 (gross private fixed investment by type). BEA Fixed Asset Tables (depreciation). IRS Statistics of Income (corporate inventories). The IROP concept originates in classical economics (Ricardo, Marx) and is formalized in Shaikh's framework as the key profit signal for turbulent equalization.",
+      "source_ref": "BEA NIPA, FA, IRS SOI"
+    },
+    {
+      "entry_type": "figure_context",
+      "content": "Fig 6.7 shows the adjusted and NIPA incremental profit rates 1948-2011. Both are highly volatile but trend downward from ~0.4 in the early postwar period toward zero and negative values by the 2000s. The IROP captures the profit signal that drives investment decisions in Shaikh's theory of turbulent arbitrage, as new investment flows toward sectors with higher incremental returns.",
+      "source_ref": "Shaikh 2016, Ch. 6"
+    }
+  ],
+  "citations": [
+    {
+      "id": "BEA_NIPA_T114",
+      "full": "Bureau of Economic Analysis. NIPA Table 1.14: Gross Value Added of Domestic Corporate Business."
+    },
+    {
+      "id": "BEA_NIPA_T535",
+      "full": "Bureau of Economic Analysis. NIPA Table 5.3.5: Private Fixed Investment by Type."
+    }
+  ],
+  "methodology_summary": "S105 extracts two IROP columns from S013 (Table II-7): S013AO (adjusted nominal corporate IROP) and S013AP (NIPA nominal corporate IROP). The adjusted measure uses imputed-interest-corrected gross operating surplus and includes inventory changes in the investment denominator. Both measures capture the profitability of marginal investment rather than the average return on existing capital.",
+  "known_issues": [
+    "IROP is inherently volatile due to first-differencing; wide validation tolerance (5%) required",
+    "Extension limited by availability of corporate inventory data from IRS post-2011"
+  ],
+  "cross_references": [
+    "Appendix6_Table68II7.csv",
+    "BEA NIPA T1.14",
+    "BEA NIPA T5.3.5"
+  ]
+}

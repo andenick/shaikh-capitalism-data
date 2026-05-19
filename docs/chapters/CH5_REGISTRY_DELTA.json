@@ -1,0 +1,127 @@
+{
+  "schema_version": "rscd-registry-delta-v1.0",
+  "chapter": 5,
+  "generated_by": "opus-subagent-p4-wave1-ch5",
+  "generated_at": "2026-05-18",
+  "applies_to_registry": "Technical/series_registry.json",
+  "operations": [
+    {
+      "sid": "S501",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 23,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Open question 1 (Phase 3): anwarshaikhecon.org reachability — RESOLVED as DEAD; local fallback confirmed at SalvagedInputs/book_data/ShaikhChoppedTables/Appendix5_DATALRprices.xlsx + IA snapshot 2024-03-11."
+        ],
+        "issues_outstanding": [
+          "Tag S501 as chronological view of S502 to enforce single-loader policy."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "http://www.anwarshaikhecon.org/",
+          "to": "file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix5_DATALRprices.xlsx",
+          "web_citation": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/"
+        }
+      ]
+    },
+    {
+      "sid": "S502",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 23,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Open question 2 (Phase 3): BLS WPS->WPU bridge — RESOLVED: WPS00000000 verified frozen at 1974 via BLS public API; WPU00000000 verified live through 2026-04.",
+          "Open question 1 (Phase 3): anwarshaikhecon.org reachability — RESOLVED as DEAD; local fallback confirmed."
+        ],
+        "issues_outstanding": [
+          "ONS PLLU returning 502 from our IP; recoverable but needs re-probe from non-blocked network before ingestion."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "http://www.anwarshaikhecon.org/",
+          "to": "file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix5_DATALRprices.xlsx",
+          "web_citation": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/"
+        },
+        {
+          "field": "extension_candidates[0].url",
+          "from": "https://download.bls.gov/pub/time.series/wp/wp.data.0.Current",
+          "to": "https://api.bls.gov/publicAPI/v2/timeseries/data/WPU00000000",
+          "note": "Identifier change WPS00000000 -> WPU00000000; bulk-file URL still works but API endpoint is the recommended source."
+        }
+      ]
+    },
+    {
+      "sid": "S503",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 23,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Open question 3 (Phase 3): MeasuringWorth post-2010 endpoint reorganisation — RESOLVED: /gold/ -> /datasets/gold/ (auto-redirect, 200 OK); /exchangepound/ -> /datasets/exchangepound/ (200 OK).",
+          "CD2 S024 source-correction (BLS PPI -> MeasuringWorth + Officer FX) — RATIFIED."
+        ],
+        "issues_outstanding": [
+          "Open question 4 (Phase 3): 1939-1945 UK wartime gold market — MeasuringWorth interpolates this segment; must be flagged as imputed at ingestion (not silent)."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "http://www.measuringworth.com/gold/",
+          "to": "https://www.measuringworth.com/datasets/gold/"
+        },
+        {
+          "field": "primary_source.additional_url_for_fx",
+          "from": null,
+          "to": "https://www.measuringworth.com/datasets/exchangepound/",
+          "note": "FX bridge is structural to UK gold-price composition (post-1949 segment quoted in USD), not just an extension concern."
+        }
+      ]
+    },
+    {
+      "sid": "S504",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 23,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Open question 3 (Phase 3): MeasuringWorth post-2010 endpoint reorganisation — RESOLVED.",
+          "CD2 S025 source-correction (COMEX/LBMA -> MeasuringWorth canonical) — RATIFIED.",
+          "BLS WPS00000000 verified frozen at 1974; extension identifier must be WPU00000000."
+        ],
+        "issues_outstanding": [
+          "LBMA Gold Price reform (March 2015) requires overlap-anchor calibration in extension loader."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "http://www.measuringworth.com/gold/",
+          "to": "https://www.measuringworth.com/datasets/gold/"
+        },
+        {
+          "field": "extension_candidates[1].url",
+          "from": "https://download.bls.gov/pub/time.series/wp/wp.data.0.Current",
+          "to": "https://api.bls.gov/publicAPI/v2/timeseries/data/WPU00000000",
+          "note": "WPS->WPU identifier change confirmed via BLS public API."
+        }
+      ]
+    }
+  ],
+  "chapter_recommendations_for_main_thread": [
+    "Apply the four sets of url_updates above to series_registry.json before Phase 5.",
+    "Append the adequacy block under each of S501-S504 (status: ready_for_phase5, score_contribution: 23 each = 92 total for Ch5).",
+    "Promote SalvagedInputs/book_data/ShaikhChoppedTables/Appendix5_DATALRprices.xlsx to canonical primary file for all four Ch5 series and add the IA snapshot URL as the web citation — consistent with decision 0005's reference guidance for anwarshaikhecon.org.",
+    "Schedule an ONS PLLU re-probe (from a different IP / via Tor / via ONS bulk download) before Phase 5 ingestion of S502/S503."
+  ]
+}

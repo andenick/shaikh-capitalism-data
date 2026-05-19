@@ -1,0 +1,150 @@
+{
+  "series_id": "S706",
+  "name": "US Industry Incremental Rates of Profit (Figure 7.17), 1988-2005",
+  "chapter": 7,
+  "figures": [
+    "Fig7.17"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S036",
+    "cd2_id": "S036"
+  },
+  "book_quotes": [
+    {
+      "chapter": 7,
+      "page": 305,
+      "quote": "Figures 7.17 and 7.18 examine the incremental rate of profit in the same manner. Figure 7.17 shows that unlike average profit rates, incremental rates of profit do \"cross over\" a great deal. This is most clear in figure 7.18, which displays the deviations of individual industry incremental profit rates from the overall average. In every single case, individual incremental rates of profit cross back and forth relative to the average incremental rate: the smallest number of such crossing is four (Fabricated Metals), while the largest is twelve (Broadcast). This is a radically different picture from that presented by average rates of profit in the same sample.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 857,
+      "quote": "Since the US BEA now only calculates net capital stock, the rate of profit on total capital is defined here as the ratio of nominal net profits (gross profits minus depreciation) to current-cost net capital stock. On the other hand, since gross investment figures are widely available and are independent of the debatable assumptions needed to estimate capital stocks, the incremental rate of profit is defined as the ratio of the change in nominal gross profits to lagged nominal gross investment.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 300,
+      "quote": "The incremental rate of profit has two major virtues. First of all, it is easily estimated because its two components, gross profit and gross investment, are widely available across countries and through time: gross profit is defined as gross operating surplus, while gross investment is directly observed, unlike the laboriously constructed measures of the capital stock required to calculate the average rate of profit. Second, it has a direct interpretation as the \"marginal\" return on capital (Elton and Gruber 1991, 454; Damodaran 2001, 695), provided one understands that like all real \"marginals,\" it is turbulent, spiky, and discontinuous.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (BEA) + Shaikh (2008) reconstruction",
+    "publication": "BEA GDP-by-Industry tables (GDPbyInd_VA_NAICS 1947-97 and 1998-2005) for Gross Operating Surplus; BEA Fixed Asset Table 3.7ES for Historical-Cost Investment by Industry; with same WEQ, OOH, inventory, reserve adjustments as S705. Appendix 7.2 data table sheet = iropdataUSind on http://www.anwarshaikhecon.org/.",
+    "table_or_series_id": "Derived from BEA GDPbyInd_VA_NAICS (GOS by NAICS industry) + BEA Fixed Asset Table 3.7ES (Historical-Cost Investment in Private Fixed Assets by Industry); shipped as Appendix7_iropdataUSind.xlsx in SalvagedInputs",
+    "url": "https://apps.bea.gov/iTable/?reqid=150&step=2&isuri=1&categories=gdpxind",
+    "frequency": "annual",
+    "units": "rate (decimal/percent; ratio of change in nominal gross profit to lagged nominal gross investment)",
+    "license": "U.S. public domain (BEA primary data); Shaikh adjusted dataset is academic/derivative.",
+    "available_through": "BEA iTable; Shaikh companion site Appendix 7.2 (iropdataUSind sheet); local copy at SalvagedInputs/book_data/ShaikhChoppedTables/Appendix7_iropdataUSind.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "For each included industry i in each year t (1988-2005): IROP_i,t = (PG_i,t - PG_i,t-1) / IG_i,t-1, where PG_i,t = GOS_i,t - WEQ_i,t (gross profit = gross operating surplus minus wage equivalent), IG_i,t-1 = lagged historical-cost gross investment in private fixed assets (BEA Fixed Asset Table 3.7ES), with the same OOH removal (NIPA T7.12 + FA T5.7), inventory additions (NIPA T1BU/T2AUI), and bank/insurance reserve additions (Flow of Funds L.109, L.114-117) applied to both PG and IG. Both PG and IG are invariant to the Capital Consumption Adjustment, making IROP independent of debatable depreciation assumptions and capital stock estimates - this is the chief virtue of the IROP measure (book p. 300).",
+  "components": [
+    {
+      "label": "PG = GOS - WEQ (gross profit by industry, wage-equivalent-adjusted)",
+      "source": "BEA GDPbyInd_VA_NAICS",
+      "role": "numerator-delta source"
+    },
+    {
+      "label": "IG (historical-cost gross investment in private fixed assets by industry, lagged)",
+      "source": "BEA Fixed Asset Table 3.7ES",
+      "role": "denominator"
+    },
+    {
+      "label": "OOH imputation removal (Real Estate)",
+      "source": "NIPA Table 7.12 + FA T5.7 (Historical-Cost Investment in Residential Fixed Assets by Type of Owner, lines 15-16)",
+      "role": "real-estate cleaning of IG"
+    },
+    {
+      "label": "Normal inventory investment additions",
+      "source": "NIPA T1BU + T2AUI; Economic Census of Construction Table 3 for Construction-specific inventories",
+      "role": "inventory-investment addition to IG"
+    },
+    {
+      "label": "Insurance and Banking reserve flows (normal investment in reserves)",
+      "source": "US Flow of Funds Tables L.109, L.114, L.115, L.116, L.117",
+      "role": "reserve-investment addition to IG for financial sectors"
+    },
+    {
+      "label": "Industry exclusion list (31 of 61 NAICS private industries dropped, same as S705)",
+      "source": "Shaikh (2008) Table 9.A1, book p. 190 (PDF p. 16). Extracted to SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv (31 rows).",
+      "role": "sample restriction to 30 industries"
+    }
+  ],
+  "year_range_book": [1988, 2005],
+  "year_range_extension": [1988, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA GDP-by-Industry (Gross Operating Surplus by NAICS)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=150&step=2&isuri=1&categories=gdpxind",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Same NAICS rebasing concerns as S705; do not splice the derived rate, re-compute from current GOS and IG components.",
+        "IROP is intrinsically volatile (small denominator changes can flip sign). Post-2008 financial crisis values for some industries swing to large negative/positive magnitudes (CD2 S036 validation: 2009 = -6.9261, 2012 = -0.320958, 2015 = -6.5257, 2021 = 6.7233, 2024 = -0.630276); these are not anomalies but inherent to the formula."
+      ]
+    },
+    {
+      "subseries_label": "BEA Fixed Asset Table 3.7ES (historical-cost investment by industry)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "billions of USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Same industry-boundary aggregation issues as S705 (sectors 50-51 and 69-70 must be combined to match GDPbyIndustry definitions)."
+      ]
+    },
+    {
+      "subseries_label": "Federal Reserve Flow of Funds (Z.1)",
+      "source": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/releases/z1/",
+      "units": "billions of USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Same line-number drift concerns as S705."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "IROP is one of the two central measures of the chapter (alongside ROP). Per book p. 300, it is the empirical proxy for the rate of profit on the most recent investment - the rate that genuinely drives capital-mobility decisions and hence equalization. The book derives the approximation IROP ~= delta(PR_t) / IR_t-1 ~= GOSR_t / IGR_t-1 in equations 7.5-7.7 (pp. 299-300) after assuming the ratio of older-capital profits to lagged total profits is close to 1.",
+    "Per CD2 S036 validation values (1988-2005 in-book range): 1988 = 0.240061, 1991 = -0.019775, 1994 = 0.187307, 1997 = 0.177094, 2000 = 0.018605, 2003 = 0.069010. Extension to 2024 in CD2 (2006 = 3.4233, 2009 = -6.9261, etc.) shows the high-volatility regime post-financial-crisis; document this for Phase 5 plotting.",
+    "Same industry sample and adjustments as S705 (30 NAICS industries, WEQ adjustment, OOH removal, inventory and reserve additions). The two series are joint outputs of the same loader - implement together.",
+    "Aggregate IROP per year = (sum_i PG_i,t - sum_i PG_i,t-1) / sum_i IG_i,t-1 (aggregate before ratio), NOT an unweighted average of industry IROPs.",
+    "CD2 dossier construction step: Load S215 parsed data -> select 30 industry IROP columns -> compute cross-sectional average per year. In RSCD, the loader reads Appendix7_iropdataUSind.xlsx (in SalvagedInputs/book_data/ShaikhChoppedTables/).",
+    "Anti-degradation: do NOT splice the published IROP series across NIPA vintages. The 2013 R&D/IP capitalization changes IG levels materially. Re-run the formula end-to-end using a single coherent vintage; document the vintage date in any output."
+  ],
+  "open_questions": [
+    "CD2 S036 validation shows post-2005 IROP values with extreme magnitudes (e.g., 2009 = -6.9261, 2015 = -6.5257, 2021 = 6.7233). Verify whether these are computed faithfully from the formula or whether CD2 applied any winsorization. Phase 4 should decide on a default presentation (raw, HP-filtered, or truncated) for extension series.",
+    "Confirm whether IG denominator should include or exclude R&D/IP investment post-2013 BEA revision. Strictest methodology-consistency answer: exclude (to match Shaikh's 2008 capital concept), but this requires extracting non-R&D IG from current Fixed Asset Tables.",
+    "RESOLVED 2026-05-18 (B4): Shaikh (2008) Table 9.A1 located in Capitalism Data PDF and extracted to SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv. The 30 retained industries are the NAICS rows NOT in that CSV."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-b-ch7",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from CD2 S036 dossier + book pp. 299-300, 305 + Appendix 7.1 III (book pp. 857-859) verbatim. Source = BEA GDPbyInd GOS + Fixed Asset Table 3.7ES + WEQ/OOH/inventory/reserve adjustments per Shaikh (2008). Appendix7_iropdataUSind.xlsx in SalvagedInputs is the canonical extract. 3 quotes (definition, source, method), 6 components, 3 extension candidates. Note: book range 1988-2005 (vs stub's 1987-2005) because IROP requires a lagged year."
+    },
+    {
+      "reviewer": "opus-subagent-batch1-A4-B4",
+      "date": "2026-05-18",
+      "status": "blocker-resolved",
+      "notes": "B4 resolved (shared with S705). Shaikh (2008) Table 9.A1 extracted to SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv. Use this CSV as the 31-industry drop key when building the 30-industry IROP panel."
+    }
+  ]
+}

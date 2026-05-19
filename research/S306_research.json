@@ -1,0 +1,120 @@
+{
+  "series_id": "S306",
+  "name": "Empirical Expenditure Share on Food (Working Class Budgets, United Kingdom, 1904)",
+  "chapter": 3,
+  "figures": [
+    "Fig3.8"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "One of the best known empirical findings in microeconomics is that people buy proportionately less of necessary goods, and hence proportionately more of other (luxury) goods, as their income increases (Allen and Bowley 1935, 7; Houthakker 1987, 143–144). That is to say, the income elasticity of necessary goods is less than one, while that of luxury goods is greater than one. This is known as Engel’s Law of consumer demand.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "Figures 3.3–3.5 display the results of the case in which x1min rises more slowly than income, figures 3.6–3.7 the case in which c declines with income, and figures 3.8 and 3.9 the characteristic patterns in actual data.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 95,
+      "quote": "Figure 3.8 Empirical Expenditure Share on Food (Working Class Budgets, United Kingdom, 1904)",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Board of Trade (United Kingdom), as compiled in Allen & Bowley (1935)",
+    "publication": "Allen, R. G. D., and A. L. Bowley. 1935. Family Expenditures: A Study of Its Variation. London: P. S. King & Son / Staples Press.",
+    "table_or_series_id": "UK Board of Trade 1904 Working Class Family Budgets, as tabulated in Allen & Bowley (1935), Table 1 (food-expenditure share by income class)",
+    "url": "https://archive.org/details/familyexpenditur0000alle",
+    "frequency": "annual",
+    "units": "Share of household expenditure on food (percent of total weekly expenditure), 56%–70%; horizontal axis Average Income in shillings, 0–60",
+    "license": "Crown Copyright (Board of Trade); Allen & Bowley monograph in public domain (UK, >70 years post mortem)",
+    "available_through": "Internet Archive scan of Allen & Bowley 1935; original Board of Trade enquiry: Cd. 3864 (1908) 'Report of an Enquiry by the Board of Trade into Working Class Rents, Housing and Retail Prices ... in the Principal Industrial Towns of the United Kingdom'",
+    "discontinued": true,
+    "replaced_by": "UK Office for National Statistics Living Costs and Food Survey (LCF) / Family Expenditure Survey (FES, 1957–2001) → Family Spending series"
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [
+    {
+      "label": "Food expenditure share",
+      "role": "output",
+      "description": "Share of weekly expenditure spent on food, by working-class income class.",
+      "source": "Allen & Bowley 1935, derived from UK Board of Trade 1904 Cost-of-Living Enquiry"
+    },
+    {
+      "label": "Average weekly income (shillings)",
+      "role": "input",
+      "description": "Mean weekly income in shillings within each working-class income band.",
+      "source": "Allen & Bowley 1935"
+    }
+  ],
+  "year_range_book": [
+    1904,
+    1904
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "UK Family Expenditure Survey / Living Costs and Food Survey, food expenditure share by income decile",
+      "source": "UK Office for National Statistics (ONS), Family Spending releases (1957–present); microdata via UK Data Service",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/bulletins/familyspendingintheuk/latest",
+      "units": "Percent of household expenditure on food and non-alcoholic drink, by gross-income decile",
+      "splice_strategy": "none",
+      "concerns": [
+        "Not a continuous splice — 1904 data is a single cross-section. Modern LCF gives a comparable concept but the cross-section is anchored differently (households ranked by gross income decile, not by shilling income bands).",
+        "Concept consistency: Allen-Bowley restricted to working-class urban households; LCF covers full population. Phase 4 must decide whether to publish as one comparable concept across two regimes."
+      ]
+    },
+    {
+      "subseries_label": "US BLS Consumer Expenditure Survey, food share by income quintile",
+      "source": "U.S. Bureau of Labor Statistics",
+      "url": "https://www.bls.gov/cex/tables.htm",
+      "units": "Share of total expenditures on food, by income quintile",
+      "splice_strategy": "none",
+      "concerns": [
+        "Cross-country, not a temporal extension of UK 1904. Useful only as a separate confirmation that Engel's law holds in modern data."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Fig 3.8 is the only genuinely empirical cross-section in the Ch 3 figure set (together with the matching Fig 3.9 for absolute expenditure). The source citation Shaikh gives in the surrounding text is 'Allen and Bowley 1935, 7'.",
+    "Allen & Bowley (1935) re-tabulate the UK Board of Trade 1904 Cost-of-Living Enquiry into working-class budgets. Shaikh uses the food-share series (56%–70%) as a function of average weekly income (0–60 shillings).",
+    "Despite the stub's content_type='time_series', this is a 1904 cross-section of households, so we re-typed to 'cross_sectional'. The validator requires extension_candidates only for time_series, so this is consistent.",
+    "Companion to S307 (Fig 3.9), which plots the absolute Engel curve (expenditure on food in shillings) from the same source."
+  ],
+  "open_questions": [
+    "Stub content_type was 'time_series'; re-typed to 'cross_sectional' (single year 1904).",
+    "Allen & Bowley (1935) need to be consulted directly to confirm the exact tabulation used; HDARP_SERIES_LINKAGE flags Fig 3.8 with mapping_status='theoretical_no_data', so no chopped-table source was loaded into SalvagedInputs/.",
+    "URL given for Internet Archive should be re-checked at retrieval time; if absent, fall back to a library shelfmark."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-a-ch3",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from Shaikh 2016 p. 93 (Allen & Bowley citation) and p. 95 caption. Re-typed time_series → cross_sectional."
+    }
+  ]
+}

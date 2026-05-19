@@ -1,0 +1,103 @@
+{
+  "series_id": "S302",
+  "name": "Expenditure Share of Necessaries, Case I",
+  "chapter": 3,
+  "figures": [
+    "Fig3.4"
+  ],
+  "content_type": "theoretical",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "p1x1/y = (1 – c) (p1x1min/y) + c (expenditure share, necessaries)",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "It is evident that the expenditure share on necessities declines as income increases, while that of luxuries rises. In the same vein, the income elasticity of necessaries is less than one, while that of luxuries is greater than one.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "Figures 3.3–3.5 display the results of the case in which x1min rises more slowly than income, figures 3.6–3.7 the case in which c declines with income, and figures 3.8 and 3.9 the characteristic patterns in actual data.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Oxford University Press",
+    "publication": "Shaikh, Anwar. 2016. Capitalism: Competition, Conflict, Crises. New York: Oxford University Press.",
+    "table_or_series_id": "Figure 3.4 (p. 94)",
+    "url": "https://global.oup.com/academic/product/capitalism-9780199390632",
+    "frequency": "annual",
+    "units": "expenditure share p1x1/y (dimensionless ratio, 0–1.2) plotted against income y (0–60)",
+    "license": "Book figure; reproduction governed by OUP permissions",
+    "available_through": "Book PDF in Inputs/Capitalism Data/",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "p1*x1/y = (1 - c) * (p1*x1min/y) + c  (eq. 3.11), with x1min rising more slowly than y so that the share of necessaries declines monotonically in y (Case I).",
+  "components": [
+    {
+      "label": "p1x1/y",
+      "role": "output",
+      "description": "Expenditure share on the necessary good as a fraction of income.",
+      "source": "Shaikh 2016, eq. 3.11 p. 93"
+    },
+    {
+      "label": "c",
+      "role": "parameter",
+      "description": "Discretionary propensity to consume necessaries (eq. 3.4).",
+      "source": "Shaikh 2016, p. 91"
+    },
+    {
+      "label": "x1min",
+      "role": "parameter",
+      "description": "Minimum level of necessary good; here a function of income with elasticity <1.",
+      "source": "Shaikh 2016, p. 93"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "Fig 3.4 is the analytical expenditure-share curve under Case I (x1min(y) sub-linear). The series is illustrative output of equation (3.11); it carries no historical time dimension and is not derived from any survey or national accounts.",
+    "HDARP_SERIES_LINKAGE.json classifies Fig3.4 as documentation_type='theoretical', is_empirical=false; we maintain that classification.",
+    "Stub set content_type='cross_sectional'; revised to 'theoretical' because the chart traces a single analytic function over a synthetic income grid, not a sample of households at a point in time.",
+    "Empirical counterparts of this same theoretical object are S306 (Fig 3.8) and S307 (Fig 3.9), which use UK 1904 working-class budgets from Allen & Bowley (1935)."
+  ],
+  "open_questions": [
+    "Stub content_type was 'cross_sectional'; we re-typed to 'theoretical'. Phase 4 should confirm.",
+    "Specific calibration of the c and x1min(y) profile used by Shaikh in producing Fig 3.4 is not stated in the text; only the axis ranges (y: 0–60; share: 0–1.2) are known."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-a-ch3",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from book p. 93 (printed). Re-typed cross_sectional → theoretical: Fig 3.4 is an analytical curve from eq. (3.11)."
+    }
+  ]
+}

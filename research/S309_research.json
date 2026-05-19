@@ -1,0 +1,117 @@
+{
+  "series_id": "S309",
+  "name": "Luxury Good (x2) Demand Curves, Four Different Micro Foundations",
+  "chapter": 3,
+  "figures": [
+    "Fig3.11"
+  ],
+  "content_type": "theoretical",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 3,
+      "page": 99,
+      "quote": "Figures 3.10 and 3.11 compare the theoretically expected demand curves of the necessary and luxury goods to the actual curves in the four simulation models. In the interest of saving space, cross demand curves and Engel curves are not displayed. All actual elasticities are listed in table 3.1. It is evident that the very different micro foundations of the various models have essentially no effect on the aggregate results.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 100,
+      "quote": "Note: Initial settings and parameter values: y = 200; π = 0.50, x1min = 10, p1 = 1, p2 = 2.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 99,
+      "quote": "All simulations were undertaken in NetLogo, and the programs for the various models can be made available on request. For the sake of comparison, all models have the same fixed total income ($1,000,000), population (5,000), minimum level of necessary consumption ($10) average income per capita ($200), and initial prices p1 = 1 and p2 = 2.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Oxford University Press",
+    "publication": "Shaikh, Anwar. 2016. Capitalism: Competition, Conflict, Crises. New York: Oxford University Press.",
+    "table_or_series_id": "Figure 3.11 (p. 100) and Table 3.1 (p. 100) — NetLogo simulation output, luxury-good demand curves across four micro-foundations models",
+    "url": "https://global.oup.com/academic/product/capitalism-9780199390632",
+    "frequency": "annual",
+    "units": "p2 ∈ [1.50, 3.25] vs x2 ∈ [30, 50] (model-currency price; model-units quantity)",
+    "license": "Book figure; NetLogo programs 'available on request' (footnote 21); reproduction governed by OUP permissions",
+    "available_through": "Book PDF in Inputs/Capitalism Data/; NetLogo source code not publicly archived as of 2026",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": null,
+  "components": [
+    {
+      "label": "Theoretical curve",
+      "role": "input",
+      "description": "Analytic luxury-good demand from eq. (3.6) with c = 0.5, x1min = 10, p1 = 1, y = 200; price p2 swept 2.0 → 3.0.",
+      "source": "Shaikh 2016 pp. 91, 99"
+    },
+    {
+      "label": "Neoclassical Homogeneous Agent simulation",
+      "role": "input",
+      "description": "Identical Cobb-Douglas agents, c = 0.5; 5,000 agents.",
+      "source": "Shaikh 2016 pp. 96–97"
+    },
+    {
+      "label": "Neoclassical Heterogeneous Agent simulation",
+      "role": "input",
+      "description": "Cobb-Douglas with c ~ Uniform[0,1] across agents; repeats identical behaviour each period.",
+      "source": "Shaikh 2016 pp. 97–98"
+    },
+    {
+      "label": "Whimsical Agent simulation",
+      "role": "input",
+      "description": "Each agent re-draws c ~ Uniform[0,1] each period (Becker 1962 impulsive consumer).",
+      "source": "Shaikh 2016 p. 98"
+    },
+    {
+      "label": "Imitate-Innovate Agent simulation",
+      "role": "input",
+      "description": "80% imitators (adapt c to neighbourhood mean), 20% innovators (random mutation of c).",
+      "source": "Shaikh 2016 p. 98 and footnote 20"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "Fig 3.11 overlays five luxury-good demand curves (one theoretical, four NetLogo simulations). Series is simulation output; no real-world counterpart.",
+    "Companion to S308 (Fig 3.10 for the necessary good x1) and Table 3.1 (average elasticities for both goods across all four micro foundations).",
+    "Table 3.1 reports demand elasticity ex2,p2 ≈ −1.00 to −1.04 across all four models and the theoretical baseline — the central illustration of Shaikh's 'micro insensitivity' claim.",
+    "Stub content_type='time_series' is incorrect; re-typed to 'theoretical'.",
+    "Construction = 'composite' because five distinct generating processes are overlaid on one figure."
+  ],
+  "open_questions": [
+    "Stub content_type was 'time_series'; re-typed to 'theoretical'. Phase 4 should confirm.",
+    "Same as S308: NetLogo source code is described as 'available on request' (footnote 21) and is not publicly archived; reproduction requires re-implementation.",
+    "Random seeds and exact iteration counts for each Monte-Carlo run are not stated."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-a-ch3",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from book pp. 96–100. NetLogo simulation output; re-typed time_series → theoretical."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+# AS007 — GPIM Variant - IRS Adjusted (Extension Provenance Record)
+
+**Classification:** not_applicable_historical_correction  **Tolerance for extended values:** 1.5%
+
+## Method
+
+Per the Ch6 GPIM construction pipeline (see `Technical/docs/chapters/CH6_GPIM_SUMMARY.md`) and the Anu Framework anti-degradation rule, **extension does NOT splice the published AS007 values**. Instead, the extension re-fetches the underlying NIPA / BEA Fixed Asset / IRS / Census components and re-runs the formula end-to-end at the current vintage.
+
+Extension is NOT applicable — AS007 is a 1925-1947 historical correction. Source data (Census 1975 Series V 115) is itself a one-time historical compilation.
+
+## Worked Example
+
+For AS007, the Phase 5 round-trip validation reads `AS007_raw.parquet` from the Appendix 6.8 workbook and confirms bit-for-bit reproduction of the published series for the book period 1925-2011. A worked-example year (typically 2009 per book p. 842, or 2011 per Shaikh's last published vintage) verifies headline values.
+
+## No-Proxy Disclosure
+
+No proxies are used in the book period. Book period is fully sourced from primary BEA / IRS / Census; no proxies.
+
+## No-Synthetic Disclosure
+
+No synthetic values, interpolations, or freezes are used. All values are verbatim from Shaikh's posted Appendix 6.8 chopped tables (MD5-verified per `SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/README.md` for the BEA 1993 staged inputs).
+
+## Failure Mode Table
+
+| Failure | Detection | Response |
+|---------|-----------|----------|
+| Appendix workbook missing or corrupted | `_ch6_appendix_loader` raises `FileNotFoundError` or empty DataFrame | L01 returns `status: FAIL` with explicit path |
+| Variable name not in workbook | `load_variables` returns empty DataFrame | L01 records 0 rows for that subseries; V03 flags as missing |
+| BEA / IRS vintage drift during extension | EPR-documented re-fetch script logs vintage_year; V03 tolerance widens for extension rows | Documented per-year; no silent overwrite of book period |
+| FISIM T7.11 line revision (AS003) | `_nipa_t711_line_resolver` falls back to nearest pinned vintage with logged warning | Re-mapped by stub label; vintage logged in resolver output |
+| BEA 1993 depreciation rate not available post-2011 | AS004/AS006/AS007 freeze depreciation rate inputs at 2011-vintage projection | Documented in `BEA_1993_FA_methodology/README.md` |
+
+## CD2 Divergence Pre-Disclosure
+
+CD2 S212 raw values are ~1000x larger than expected (thousands vs billions). Loader normalizes via scale = 1/1000.
+
+## Anti-Degradation Compliance
+
+Per Anu Framework: extension MUST re-fetch the BEA / IRS / FRB component series and re-compute the formula end-to-end. Splicing the published series is FORBIDDEN. Loader caches BEA / FRED responses per `S00_cache` with 30-day TTL (book-period values: TTL=None).

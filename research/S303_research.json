@@ -1,0 +1,97 @@
+{
+  "series_id": "S303",
+  "name": "Engel Curve of Necessaries, Case I",
+  "chapter": 3,
+  "figures": [
+    "Fig3.5"
+  ],
+  "content_type": "theoretical",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "Even though the simple case examined above is sufficient to derive Engel’s Law, the resulting relation between the income and the expenditure on either good (the Engel curve) is linear as long as c and x1min are constant across income classes. For instance, equation (3.11) translates into the expenditure function p1x1 = (1 – c) p1x1min + cy, which has the slope d(p1x1)/dy = c, so that the expenditure function is linear in income.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "But it is very plausible that the minimum level of necessaries, which is always socially defined (Trigg 2004), rises as real income (y/p1) rises but not as fast as income, so that it declines as a share of income. In that case, the slope of the Engel curve becomes d(p1x1)/dy = (1 – c) d(p1x1min)/dy + c, which is still positive but declining as income rises. In other words, the Engel curve for necessary goods will exhibit saturation.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "Figures 3.3–3.5 display the results of the case in which x1min rises more slowly than income, figures 3.6–3.7 the case in which c declines with income, and figures 3.8 and 3.9 the characteristic patterns in actual data.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Oxford University Press",
+    "publication": "Shaikh, Anwar. 2016. Capitalism: Competition, Conflict, Crises. New York: Oxford University Press.",
+    "table_or_series_id": "Figure 3.5 (p. 94)",
+    "url": "https://global.oup.com/academic/product/capitalism-9780199390632",
+    "frequency": "annual",
+    "units": "Expenditure on Necessaries (0–40 model units) plotted against income y (0–60 model units)",
+    "license": "Book figure; reproduction governed by OUP permissions",
+    "available_through": "Book PDF in Inputs/Capitalism Data/",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "p1*x1 = (1 - c) * p1*x1min(y) + c*y, with x1min(y) elasticity <1 so the Engel curve curves downward at higher y (saturation).",
+  "components": [
+    {
+      "label": "y",
+      "role": "input",
+      "description": "Per-capita nominal income, 0–60 model units.",
+      "source": "Author simulation"
+    },
+    {
+      "label": "p1*x1",
+      "role": "output",
+      "description": "Expenditure on the necessary good.",
+      "source": "Eq. (3.5)–(3.11), Shaikh 2016 p. 91, 93"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "Fig 3.5 plots the theoretical Engel curve for necessaries under Case I (x1min(y) sub-linear in y). It is the integrated counterpart of the marginal-share curve in Fig 3.3.",
+    "Series is the analytical curve of expenditure on necessaries vs income, exhibiting saturation. Not an empirical observation.",
+    "HDARP_SERIES_LINKAGE.json: Fig3.5 is documentation_type='theoretical', is_empirical=false.",
+    "Stub set content_type='time_series'; re-typed to 'theoretical' because the abscissa is a synthetic income grid, not historical time."
+  ],
+  "open_questions": [
+    "Stub content_type was 'time_series'; re-typed to 'theoretical'. Phase 4 should confirm.",
+    "Exact path of x1min(y) used to render Fig 3.5 is not stated in the text."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-a-ch3",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from book p. 93. Theoretical curve from eq. (3.5)."
+    }
+  ]
+}

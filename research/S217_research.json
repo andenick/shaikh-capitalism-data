@@ -1,0 +1,81 @@
+{
+  "series_id": "S217",
+  "name": "GDP per Capita of World Regions (Maddison)",
+  "chapter": 2,
+  "figures": [
+    "Fig2.15"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S017",
+    "cd2_id": "S017"
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 69,
+      "quote": "We end this chapter with a global perspective on long-term economic development, based on data from the monumental work of Maddison (2003). Figure 2.15 tracks the trends in real GDP per capita from 1600 to the present, in five major regions of the world: Western Europe, Western Offshoots (United States, Canada, Australia, and New Zealand), Latin America (including the Caribbean), Asia (both East and West), and Africa.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 765,
+      "quote": "Figure 2.15 GDP per Capita of World Regions, 1990, International Geary–Khamis Dollars (Log Scale). Figure 2.16 GDP per Capita Richest Four and Poorest Four Countries, International Geary–Khamis Dollars (Log Scale). Derived from Maddison (2003, http://www.ggdc.net/maddison/maddison-project/home.htm, Per Capita GDP: PIB par habitant, 1990 International Geary–Khamis dollars).",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Angus Maddison / Maddison Project (Groningen Growth and Development Centre)",
+    "publication": "Maddison, A. (2003). The World Economy: Historical Statistics. Paris: OECD Development Centre.",
+    "table_or_series_id": "Maddison (2003), Per Capita GDP (PIB par habitant), 1990 International Geary–Khamis dollars; regional aggregates: Western Europe, Western Offshoots, Latin America, Asia, Africa",
+    "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/",
+    "frequency": "annual (decennial sampling for older periods)",
+    "units": "1990 International Geary–Khamis dollars per capita (log scale on figure)",
+    "license": "Maddison Project license (CC BY 4.0 since 2018)",
+    "available_through": "Groningen GGDC Maddison Project Database",
+    "discontinued": false,
+    "replaced_by": "Maddison Project Database 2023 (Bolt & van Zanden update)"
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [],
+  "year_range_book": [
+    1600,
+    2008
+  ],
+  "year_range_extension": [
+    2009,
+    2022
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "Maddison Project Database 2023",
+      "source": "Bolt, J. and van Zanden, J. L. (2024). Maddison Style Estimates of the Evolution of the World Economy: A New 2023 Update. Maddison Project Working Paper WP-15.",
+      "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023",
+      "units": "2011 International dollars (note: base year changed from 1990 GK to 2011 PPP)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "MPD 2023 uses 2011 PPPs instead of 1990 GK — splice requires rebasing. Regional aggregations also revised in MPD 2018 and 2020.",
+        "CD2 dossier notes wide_table format with 206 columns; classification as time_series is regional aggregates, not the full country-level table."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Direct from Maddison (2003) for the regional aggregates plotted in Fig 2.15.",
+    "CD2 S017 dossier covers Figs 2.15, 2.16, 2.17 jointly; RSCD splits 2.15 (regions, here) from 2.16/2.17 (richest/poorest four, in S218).",
+    "Ratio of richest to poorest region: 2.2 in 1600, 2.4 in 1700, 2.8 in 1820, 6.7 in 1900, 18.5 in 2000 (book p. 69)."
+  ],
+  "open_questions": [
+    "Maddison Project 2023 has revised regional aggregates and base year (2011 PPP); document the methodological discontinuity if extending."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

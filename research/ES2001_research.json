@@ -1,0 +1,169 @@
+{
+  "series_id": "ES2001",
+  "name": "Shaikh (2020) - An Empirically Sufficient Form for Sraffa Prices (US 2002 403-order IO + 1947-1998 aggregates)",
+  "chapter": null,
+  "paper_metadata": {
+    "title": "An Empirically Sufficient Form for Sraffa Prices",
+    "authors": ["Anwar Shaikh"],
+    "year": 2020,
+    "journal": "Festschrift essay in honor of Luigi Pasinetti (companion to Shaikh, Coronado, Nassif-Pires 2020 EJEEP)",
+    "venue_note": "Working paper / festschrift essay; explicitly references its companion paper Shaikh, Coronado, Nassif-Pires (2020) 'On the empirical regularities of Sraffa prices', EJEEP 17(2): 265-275, for the construction of the 2002 403-order matrix (Appendix I).",
+    "doi": null,
+    "url": "https://www.anwarshaikhecon.org/"
+  },
+  "figures": [
+    "Table 1 - Ratios of Price and Value Aggregates at Observed Rates of Profit, Circulating Capital (1947, 1958, 1963, 1967, 1972, 1998) (paper p. 10)",
+    "Table 2 - Ratios of Price and Value Aggregates at Observed Rates of Profit, Fixed Capital (1947, 1958, 1963, 1967, 1972, 1998) (paper p. 10)",
+    "Figure 1 - Illustrative near-linear price-value curves, US 2002 403-order IO table (paper p. 11)",
+    "Figure 2 - Illustrative non-linear price-value curves, US 2002 403-order IO table (paper p. 12)",
+    "Figure 3 - Illustrative near-linear and non-linear price-curves on the same scale, US 2002 403-order IO table (paper p. 13)",
+    "Figure 4 - Illustrative 'wiggly' price-value curves, US 2002 403-order IO table (paper p. 14)",
+    "Figure 5 - Near-linear price-value curves and Bienenfeld linear/quadratic approximations, US 2002 403-order IO table (paper p. 15)",
+    "Figure 6 - Non-linear price-value curve and approximations (PV328), US 2002 403-order IO table (paper p. 16)",
+    "Figure 7 - Wiggly price-value curve and approximations (PV238), US 2002 403-order IO table (paper p. 17)",
+    "Figure 8 - Wage-profit curve and quadratic approximation, US 2002 403-order IO table (paper p. 18)",
+    "Figure 9 - Output-capital ratio and approximations, US 2002 403-order IO table (paper p. 19)"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null,
+    "related_rscd_series": ["ES2101", "S901", "S902"],
+    "related_book_chapters": ["Ch9 (wage-profit curves, Sraffa prices, transformation problem) in Shaikh 2016 Capitalism"]
+  },
+  "book_quotes": [
+    {
+      "chapter": "Paper Section 5 - An empirically sufficient form for Sraffa prices",
+      "page": 7,
+      "quote": "Assuming that wages are not advanced so that only the materials costs appears as circulating capital, the price vector p can be written as total cost (wl + pA) plus profit on material costs: p(r) = wl + p(r)A + rp(r)A = (1 - r/R) l + p(r)A + rp(r)A. From equation 2, v = l(I - A)^-1, and defining H = A(I - A)^-1 we get a condensed form of Sraffa prices (equation 6) ... 6) p(r) = (1 - r/R) v + r p(r) H ... Bienenfeld (1988) proposes to replace this second term with r p(R) H. Since p(R) is fixed, equation 8 is a linear approximation that starts and ends at the same point as actual price curves. 8) p(r)^(1) = (1 - r/R) v + r p(R) H ... 10) p(r)^(2) = p(r)^(1) + r(p(r)^(1) - p(R)) H",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Section 4 - Empirical properties of Sraffa prices",
+      "page": 5,
+      "quote": "In the present paper, I extend this investigation to a much larger matrix, the 403-order 2002 US input-output (IO) table. An underlying question is whether a much larger matrix will exhibit very different patterns. The answer is that going from a 65-order to 403-order does not make much of a difference. 329 (82 percent) of the price-curves are near-linear of the forms depicted in Figure 1. ... Figure 2 displays an illustrative sample of the 24 (6 percent) non-linear curves ... Figure 4 shows the only 4 (1 percent) curves qualify as 'wiggly'.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Section 3 - The Sraffa stochastic effect (SSE)",
+      "page": 4,
+      "quote": "In the circulating capital case, average price-value ratios for various aggregates range between 0.95 and 1.03 (Table 1), while in the fixed capital case they range between 0.97 and 1.05 (Table 2). As Marx and Sraffa had both understood, there is no effective difference between actual aggregates (Shaikh 2020).",
+      "role": "caveat",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Section 5 and Section 6 - Conclusions",
+      "page": 8,
+      "quote": "All told, the quadratic approximation is an excellent fit for 99 percent of the 403 price curves. Similar results have been found across five European countries, but on the much smaller scale of 51-58 order tables (Iliadi, Mariolis et al. 2014). ... I would therefore argue, on geometric and empirical grounds, that Bienenfeld's simple nonlinear expression is an empirically sufficient general form of Sraffa prices.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (BEA)",
+    "publication": "Benchmark Input-Output Data (Make and Use tables, detailed industry level) + historical 71-order tables (1947, 1958, 1963, 1967, 1972) and 65-order 1998 table",
+    "table_or_series_id": "BEA Benchmark IO 2002 (403-order, detailed level, post-exclusions); historical 71-order tables for 1947, 1958, 1963, 1967, 1972; 65-order 1998 table",
+    "url": "https://www.bea.gov/industry/benchmark-input-output-data",
+    "frequency": "irregular (benchmark years 1947, 1958, 1963, 1967, 1972, 1998, 2002)",
+    "units": "millions of current USD (Use/Make tables); dimensionless (derived A-matrix coefficients, price-value ratios, profit-rate ratios)",
+    "license": "U.S. Federal Government public domain (no copyright)",
+    "available_through": "BEA Industry Economic Accounts portal",
+    "discontinued": false,
+    "replaced_by": null,
+    "secondary_sources_used": [
+      {
+        "agency": "U.S. Bureau of Labor Statistics (BLS)",
+        "purpose": "Compensation of employees and employment, used to construct skill-adjusted sectoral labor coefficients (same methodology as companion paper ES2101)",
+        "url_hint": "https://www.bls.gov/emp/"
+      },
+      {
+        "agency": "Shaikh (1998) Appendix 15.2 and Shaikh (2012) Data Appendix",
+        "purpose": "Sources and methods for the 1947-1972 historical aggregate calculations (physical vectors of intermediate input, workers consumption, surplus product, net output, capital stock) and 1998 calculations",
+        "url_hint": null
+      },
+      {
+        "agency": "Shaikh, Coronado, Nassif-Pires (2020) Appendix I",
+        "purpose": "Construction of the 2002 403-order matrix used for all Figures 1-9 (acknowledged on p. 5 fn 4)",
+        "url_hint": "https://doi.org/10.4337/ejeep.2020.0069"
+      }
+    ]
+  },
+  "construction": "composite",
+  "formula": "Sraffa prices: p(r) = (1 - r/R) v + r p(r) H, where H = A(I - A)^{-1}; v = l(I - A)^{-1}; R = 1/lambda_1(H) is the maximum profit rate; p(R) = R p(R) H is the dominant left-eigenvector of H. Bienenfeld linear approximation (first iterate): p(r)^(1) = (1 - r/R) v + r p(R) H. Bienenfeld quadratic approximation (second iterate, the 'empirically sufficient form'): p(r)^(2) = p(r)^(1) + r (p(r)^(1) - p(R)) H. Both approximations start at v at r=0 and end at p(R) at r=R, matching the boundary conditions of the true Sraffa price curve. Aggregate price/value ratios in Tables 1-2 are computed as the ratio of bundle valuation at observed-r prices of production to bundle valuation at direct prices (labor values).",
+  "components": [
+    "A matrix - BEA industry-by-industry direct requirements table (2002 403-order; historical 71-order for 1947-1972; 65-order for 1998)",
+    "l vector - skill-adjusted labor coefficients (BLS compensation-of-employees normalized by aggregate compensation per worker)",
+    "Physical bundles - vectors of intermediate input, workers consumption, surplus product, net output, capital stock (per Shaikh 1998 Appendix 15.2, Shaikh 2012 Data Appendix)",
+    "Aggregate price-value ratios at r_obs (Tables 1-2) - constant capital, variable capital, surplus value, value added, rate of surplus value, rate of profit, maximum profit rate R, both circulating and fixed capital models",
+    "Individual price curves p_i(r)/v_i for r/R in [0, 1] step 0.05, all 403 sectors (Figures 1-7)",
+    "Bienenfeld linear and quadratic approximations to each of 403 price curves (Figures 5-7), wage-profit curve (Figure 8), output-capital ratio (Figure 9)"
+  ],
+  "year_range_book": [1947, 2002],
+  "year_range_extension": [1947, 2017],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA Benchmark I-O 2007 (387-order)",
+      "source": "BEA Industry Economic Accounts",
+      "url": "https://www.bea.gov/industry/benchmark-input-output-data",
+      "units": "millions of current USD",
+      "splice_strategy": "none",
+      "concerns": ["Already used in companion paper ES2101 (Shaikh-Coronado-Nassif-Pires 2020); direct extension of ES2001's price-curve and approximation analysis from 2002 -> 2007 is mechanical"]
+    },
+    {
+      "subseries_label": "BEA Benchmark I-O 2012 (405-order, NAICS 2012)",
+      "source": "BEA Industry Economic Accounts",
+      "url": "https://www.bea.gov/industry/benchmark-input-output-data",
+      "units": "millions of current USD",
+      "splice_strategy": "none",
+      "concerns": ["NAICS 2012 revisions vs paper's NAICS 2002; bridging required for cross-year comparability of A matrices and price curves"]
+    },
+    {
+      "subseries_label": "BEA Benchmark I-O 2017 (latest detailed benchmark)",
+      "source": "BEA Industry Economic Accounts",
+      "url": "https://www.bea.gov/industry/benchmark-input-output-data",
+      "units": "millions of current USD",
+      "splice_strategy": "none",
+      "concerns": ["NAICS 2017 revisions; latest available benchmark for extending Tables 1-2 aggregate-ratio time series forward from 1998"]
+    },
+    {
+      "subseries_label": "Additional historical aggregate-ratio years (1977, 1982, 1987, 1992)",
+      "source": "BEA Benchmark IO at detailed level (used in ES2101)",
+      "url": "https://www.bea.gov/industry/benchmark-input-output-data",
+      "units": "dimensionless ratios",
+      "splice_strategy": "none",
+      "concerns": ["Paper's Tables 1-2 are sparse (only 1947, 1958, 1963, 1967, 1972, 1998); filling 1977/1982/1987/1992 from BEA benchmarks would make the price/value-aggregate-ratio series a near-quinquennial time series 1947-2017"]
+    }
+  ],
+  "methodology_notes": [
+    "This festschrift essay extends Shaikh's earlier 71-order and 65-order Sraffa price-curve evidence (Shaikh 1998; Ochoa 1984, 1989) to a much larger 403-order 2002 US IO matrix, and confirms three Sraffa-Marx-Pasinetti propositions: (1) aggregate price/value ratios are near-unity (0.95-1.05) across 1947-1998; (2) individual price-value curves are mostly near-linear (82% near-linear, 6% non-linear, 1% wiggly at 403-order); (3) Bienenfeld's (1988) second-iterate quadratic form is an empirically sufficient approximation to true Sraffa prices (99% fit on the 403 curves; max error ~2%).",
+    "Sraffa price equation 6: p(r) = (1 - r/R) v + r p(r) H, with H = A(I-A)^-1. Bienenfeld linear (first iterate, equation 8): p(r)^(1) = (1 - r/R) v + r p(R) H. Bienenfeld quadratic (second iterate, equation 10): p(r)^(2) = p(r)^(1) + r (p(r)^(1) - p(R)) H. Both start at v at r=0 and end at p(R) at r=R, and share the initial slope with the true curve (Bienenfeld 1988, p. 251). The 'empirically sufficient form' claim of the title refers specifically to equation 10.",
+    "Tables 1-2 aggregate price/value ratios (constant capital, variable capital, surplus value, value added, rate of surplus value, rate of profit, maximum profit rate R) at observed r_obs for both circulating-capital and fixed-capital models, computed for 1947, 1958, 1963, 1967, 1972 (71-order) and 1998 (65-order). All ratios are between 0.95 and 1.05 across both tables, confirming Sraffa's Stochastic Effect (SSE): statistical compensation of large numbers makes price and labor-value aggregates essentially identical.",
+    "Figures 1-7 use 8500+ price-curve observations (~21 sample points x 403 sectors) generated from the 2002 403-order matrix (constructed in Shaikh-Coronado-Nassif-Pires 2020 Appendix I). Step size for r/R is 0.05. Curve classification: 329 near-linear (82%), 24 non-linear (6%), 4 wiggly (1%) -- the residual ~11% are intermediate / boundary cases not separately tabulated. Note: the abstract says 'less than five percent' for aggregate deviations and the body text says 95-105% for individual aggregates (Tables 1-2), consistent.",
+    "Companion-paper crosswalk: ES2001 (this paper) uses the SAME 2002 matrix as ES2101 (Shaikh-Coronado-Nassif-Pires 2020 EJEEP) but at a SINGLE aggregation level (403-order) and adds approximation-quality analysis. ES2101 varies aggregation level (295 matrices across 2002+2007) to study Curvature Index distribution. The two papers are complementary, share most primary inputs, and should be jointly catalogued.",
+    "Smallest representative model: Shaikh argues on p. 4 that representative small models need at least 3 sectors (basic good + consumption good + capital good), giving K(I-A)^-1 zero subdominant eigenvalues and hence linear Sraffa prices -- this matches the structure of Marx's Volume II Schemes of Reproduction (Marx 1967, Chs 20-21). This is theoretical context, not a separately datable empirical series."
+  ],
+  "open_questions": [
+    "DECOMPOSITION RECOMMENDATION: ES2001 should be kept as a SINGLE composite series. The paper has two empirical objects -- (a) the time-series aggregate price/value ratios in Tables 1-2 (years 1947, 1958, 1963, 1967, 1972, 1998) and (b) the cross-sectional 2002 403-order price-curve / approximation analysis in Figures 1-9 -- but they share the same underlying methodology (Sraffa prices from BEA Use/Make + BLS labor inputs) and the same conclusion (Sraffa Stochastic Effect: prices and values are empirically near-identical at aggregate level and well-approximated by Bienenfeld's quadratic at sector level). Splitting into ES2001a (aggregate ratios) and ES2001b (price curves) would create a brittle dependency on the same underlying A-matrix pipeline. RECOMMEND: keep as SINGLE ES2001. If a finer split is later required, the natural split is ES2001 = aggregate price/value ratios time-series (Tables 1-2) and ES2002 = 2002 403-order Sraffa price curves + Bienenfeld approximations (Figures 1-9).",
+    "ES2001 and ES2101 share the 2002 BEA matrix and labor-input pipeline. Phase 4 implementation should factor out a common 'BEA_benchmark_IO_to_Sraffa_pipeline' module that both series consume, rather than duplicating A-matrix construction in each.",
+    "The published venue/DOI of this essay is ambiguous in the PDF (no journal masthead). It is referenced as 'Shaikh (2020). Marx and the Other Sraffa ... in K. Velupillai (ed.), Palgrave Macmillan' in the paper's own reference list (p. 20). Phase 4 should confirm the exact festschrift volume and pin a stable DOI/URL.",
+    "Tables 1-2 are SPARSE in time (1947, 1958, 1963, 1967, 1972, 1998). Filling the 1977/1982/1987/1992/2002/2007 BEA benchmark years (already used in ES2101) would convert this into a quinquennial 1947-2017 time series -- a substantial Phase 4 enrichment opportunity.",
+    "Figures 1-9 are not tabulated -- the underlying 403-sector price-curve data must be regenerated from the 2002 BEA matrix (per equations 6, 8, 10), not digitized. The Bienenfeld quadratic approximation (equation 10) is the central artifact and should be a first-class output of the Phase 4 implementation.",
+    "Footnote 2 (p. 4): 'Sources and methods for the 1947-1972 data are in Shaikh (1998) Appendix 15.2, and for 1998 are in Shaikh (2012) Data Appendix.' These appendices are essential dependencies for replicating Tables 1-2 and should be acquired/scanned during Phase 4 if not already in the project KB."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-es2001-retry",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from full paper read (20 PDF pages, all figures and tables observed). 4 verbatim quotes (definition + source + caveat + method). Primary source = BEA Benchmark IO (2002 403-order + historical 71/65-order 1947-1998) + BLS labor compensation + Shaikh 1998/2012 data appendices for aggregates. Construction=composite (equations 6, 8, 10 = Sraffa price + Bienenfeld linear + Bienenfeld quadratic 'empirically sufficient' form). Recommend KEEP AS SINGLE SERIES; shares pipeline with ES2101 and should be co-implemented. Extension candidates: BEA 2007/2012/2017 benchmarks + fill missing 1977/1982/1987/1992 aggregate-ratio years."
+    }
+  ]
+}

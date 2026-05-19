@@ -1,0 +1,118 @@
+{
+  "series_id": "AS004",
+  "name": "GPIM Corporate Capital Stock",
+  "chapter": 6,
+  "figures": ["Appendix Figure 6.7.10"],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": "S209"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 820,
+      "quote": "With this, we can express the Generalized PIM (GPIM) accumulation rules for aggregate historical, current, and constant cost stocks previously stated in equations (6.5.17) and (6.5.18) as ... KNH = INH + KNH(-1) where INH = IGC - DEPH, DEPH = historical cost depreciation ... KCt = IGt + (1 - zt) (pK't/pK'(t-1)) KC(t-1) ... KRt = (pIt'/pKt') IGRt + (1 - zt) KR(t-1) = IGt/pKt' + (1 - zt) KR(t-1).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 845,
+      "quote": "Appendix table 6.7.13 lists three different 1925 values of current-cost corporate net stock available in various BEA publications (with the latter two also expressed as percentages of the BEA 2011 initial value). ... Different Initial Values in 1925, Current-Cost Corporate Net Stock ... BEA 2011 ... Fixed Asset Table 6.1, line 1 ... 98.1 ... BEA 1993 ... Table A.13, 294 (BEA 1993) ... 77.7 (79%) ... SCB 1985 ... Table 6, 56 (Gorman, Musgrav, Silverstein, and Comins 1985) ... 67.1 (68%).",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 851,
+      "quote": "We can now create new estimates of gross and net capital stocks. The depletion (depreciation and retirement) rates are taken from BEA 1993. So too are the initial values for each type of stock, because these are typically estimated on the basis of assumed depletion rates. The estimated capital stocks are then adjusted in the previously described manner to allow for the effects of the Great Depression and World War II.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "BEA",
+    "publication": "Fixed Asset Accounts (FA)",
+    "table_or_series_id": "BEA FA Table 6.1 (Current-Cost Net Stock of Private Fixed Assets by Industry Group and Legal Form, corporate line); FA Table 6.4 (Chain-Type Quantity Indexes); FA Table 6.7 (Investment); FA Table 6.8 (Current-Cost Depreciation); BEA 1993 vintage tables (for depreciation/retirement rates and initial values)",
+    "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+    "frequency": "annual",
+    "units": "Billions of current dollars (KC); billions of chained dollars (KR)",
+    "license": "Public domain (U.S. Government work)",
+    "available_through": "BEA iTable Fixed Asset Accounts; historical vintages via BEA archives",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "Current-cost: KC_t = IG_t + (1 - z_t) * (pK'_t / pK'_{t-1}) * KC_{t-1}; Real (chain): KR_t = (pI'_t / pK'_t) * IGR_t + (1 - z_t) * KR_{t-1} = IG_t / pK'_t + (1 - z_t) * KR_{t-1}; Historical: KNH_t = INH_t + KNH_{t-1}, INH_t = IGC_t - DEPH_t. z_t = Z_t / (pK'_{Kt} * KR_{t-1}) = depletion rate.",
+  "components": [
+    {"label": "IG - gross investment (current cost)", "source": "BEA FA Table 6.7 (investment, corporate)"},
+    {"label": "IGR - real gross investment (chain)", "source": "BEA FA Table 6.7 deflated by pI'"},
+    {"label": "pK' - capital stock chain price index", "source": "Derived: KC / KR"},
+    {"label": "pI' - investment chain price index", "source": "BEA FA Table 6.4 / 6.7 ratio"},
+    {"label": "z - depletion (depreciation + retirement) rate", "source": "Estimated from BEA 1993 depreciation rates plus retirement rate rho"},
+    {"label": "Initial 1925 KC value", "source": "BEA FA Table 6.1, line 1, 1925 (AS005 = 98.1); also AS006 (BEA 1993 = 77.7), AS007 (IRS-adjusted), AS008 (Interwar-adjusted)"},
+    {"label": "BEA 1993 depreciation and retirement rates", "source": "BEA 1993 Table A.13, p. 294 (Gorman, Musgrav, Silverstein, and Comins 1985 for SCB 1985 variant)"}
+  ],
+  "year_range_book": [1925, 2011],
+  "year_range_extension": [2012, 2025],
+  "extension_candidates": [
+    {
+      "subseries_label": "Baseline GPIM corporate net stock (KNCcorp) post-2011",
+      "source": "BEA FA Tables 6.1, 6.4, 6.7, 6.8 (current vintage) + author's GPIM iteration with pre-1997 BEA 1993 depreciation rates",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "Billions of current dollars",
+      "splice_strategy": "growth_rate",
+      "concerns": ["BEA 1993 depreciation/retirement rates not directly published in current BEA releases; must be recovered from BEA archive or from Shaikh's posted 2011 spreadsheet (Appendix6_Table68II1.xlsx)", "Post-2011 IPP reclassification changes the level and composition of corporate fixed capital; extension must specify whether to include or exclude R&D and entertainment originals to match Shaikh's 2011 definition"]
+    },
+    {
+      "subseries_label": "Corporate gross investment (IG)",
+      "source": "BEA FA Table 6.7 (current vintage)",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2&isuri=1&table_list=139",
+      "units": "Billions of current dollars",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Vintage drift; line-number stability across BEA revisions"]
+    }
+  ],
+  "methodology_notes": [
+    "The GPIM (Generalized Perpetual Inventory Method) is Shaikh's response to a measurement problem: post-1997 BEA capital stocks are chain-weighted aggregates that do not obey the simple PIM rule, making it impossible to construct alternate measures by varying depreciation, retirement, or initial-value assumptions. Shaikh derives a chain-weighted accumulation rule (equations 6.5.22, 6.5.23 on book p. 821) that does apply to aggregates and uses it to regenerate alternate corporate capital stock measures.",
+    "Demonstrated accuracy: 99.5-99.6% match between GPIM-generated KNCcorp and official BEA KNCcorpbea (Appendix Table 6.7.12, p. 844). This validates the methodology before any sensitivity variants are applied.",
+    "The baseline (AS004) uses BEA 1993 depreciation and retirement rates (pre-1997 methodology that assumed finite useful lives, rather than current BEA's infinite-life geometric assumption); initial 1925 value taken from BEA 2011 vintage (98.1 bill$). Variants AS005-AS008 perturb these assumptions.",
+    "The final AS004 capital stock is then adjusted for Great Depression / WWII via the IRS book value index 1925-1947 (AS007 mechanism); see Appendix 6.7 Section V.4 (p. 849).",
+    "Output: KNCcorp (corporate net fixed capital), KGCcorp (corporate gross fixed capital). These feed into AS003 (sectoral profit rates), AS009 (total capital stock including inventories), and ultimately the 'corrected' corporate profit rate in S601-S604. Per Appendix 6.7 Section VII (p. 855): the baseline KNCcorp 'starts out lower in 1947 ... but then narrows the gap because it grows faster.'"
+  ],
+  "open_questions": [
+    "BEA's 1993-vintage depreciation/retirement rates are not in current iTable downloads. Need a documented source (BEA archive, Shaikh's posted xlsx, or reconstruction from 1993 SCB articles) to make extension reproducible.",
+    "Post-2011 IPP reclassification (R&D, entertainment originals as fixed assets) changes the definition of 'corporate fixed capital.' Shaikh's 2011-vintage tables exclude IPP. Extension must take an explicit stance; recommend matching the 2011 definition for continuity, then constructing an IPP-inclusive parallel series.",
+    "AS004 is the baseline; AS005-AS008 are variants. Confirm S601-S604 dossiers cite AS004 as the operational capital stock and reference variants only for sensitivity reporting."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-as-ch6",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from CD2 S209 markdown + verbatim quotes from Appendix 6.5 Section V.3 and Appendix 6.7 Sections V.1-V.5 (book pp. 820-821, 843-851). Three book quotes (definition, source, method). GPIM accumulation rules in equations 6.5.21-6.5.23."
+    },
+    {
+      "reviewer": "rscd-a3-ch6-blocker-batch",
+      "date": "2026-05-18",
+      "status": "phase5_ready",
+      "notes": "Resolved Phase 5 Blocker B3 (BEA 1993 depreciation/retirement rates recovery). Source found in SalvagedInputs/book_data/ShaikhChoppedTables/Appendix6_Table68II3.xlsx; staged in machine-readable form at SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/ with full provenance (README.md, CSV, JSON sidecar with source MD5). Key inputs for AS004: dcorpnew (depreciation rate, 1926-2011) and rho_corpnew (retirement rate, 1926-2011). 1990-2011 values are linear projections by Shaikh from BEA 1993 raw data 1925-1989."
+    }
+  ],
+  "phase5_recovered_inputs": {
+    "bea_1993_rates_dir": "SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/",
+    "primary_csv": "SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/BEA_1993_depreciation_retirement_rates.csv",
+    "source_xlsx": "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix6_Table68II3.xlsx",
+    "source_md5": "9cdbdf5628837e07856b92925c89599a",
+    "variables_used": ["dcorpnew", "rho_corpnew"],
+    "year_coverage": [1925, 2011],
+    "extension_caveat": "1990-2011 are linear projections by Shaikh; for years 2012+ recommend freezing at 2011 value with data_unavailable_after: 2011 flag"
+  }
+}

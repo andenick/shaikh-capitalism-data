@@ -1,0 +1,44 @@
+{
+  "schema_version": "rscd-registry-delta-v1.0",
+  "chapter": 13,
+  "generated_by": "opus-subagent-p4-wave3-ch13",
+  "generated_at": "2026-05-18",
+  "applies_to_registry": "Technical/series_registry.json",
+  "operations": [
+    {
+      "sid": "S1301",
+      "op": "set_adequacy_and_content_type",
+      "content_type_update": {
+        "from": "cross_sectional",
+        "to": "theoretical",
+        "rationale": "Phase 3 reclassification ratified. Figure 13.7 has no calendar time axis and no observed data; it is an analytical realisation of eq. 13.43."
+      },
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 100,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Open question 1 (Phase 3): content_type re-type to 'theoretical' — RATIFIED.",
+          "primary_source.url OUP product page verified live (202 HEAD on anti-bot wrapper)."
+        ],
+        "issues_outstanding": [
+          "Phase 5 must declare illustrative parameter values (ln Y0, alpha, sigma_epsilon, RNG seed) in the EPR since Shaikh does not publish them."
+        ]
+      },
+      "url_updates": [],
+      "field_updates": [
+        {
+          "field": "content_type",
+          "from": "cross_sectional",
+          "to": "theoretical"
+        }
+      ]
+    }
+  ],
+  "chapter_recommendations_for_main_thread": [
+    "Apply content_type update to S1301 in series_registry.json (cross_sectional -> theoretical).",
+    "Append the adequacy block under S1301 (status: ready_for_phase5, score_contribution: 100).",
+    "No URL updates required — primary source is the book itself (OUP).",
+    "No new registry rows; S1301 remains the sole Ch13 series."
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "series_id": "S208",
+  "name": "US Manufacturing Real Unit Production Labor Cost Index",
+  "chapter": 2,
+  "figures": [
+    "Fig2.6"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S008",
+    "cd2_id": "S008"
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 60,
+      "quote": "real unit labor cost, the ratio of real wages to productivity, is of paramount importance to business.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 764,
+      "quote": "Figure 2.6 US Manufacturing Real Unit Production Labor Cost Index, 1889–2010. Derived as the ratio of manufacturing real compensation and productivity in the previous chart.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Derived (Shaikh 2016) from BEA + BLS + MeasuringWorth components used in Fig 2.5",
+    "publication": "Shaikh (2016), Capitalism: Competition, Conflict, Crises, Appendix 2.1 (p. 764)",
+    "table_or_series_id": "Derived: real_compensation / productivity (both from S207 components)",
+    "url": "https://www.bls.gov/lpc/",
+    "frequency": "annual",
+    "units": "Index, 1889=100",
+    "license": "Derived; underlying sources are public domain + MeasuringWorth academic license",
+    "available_through": "FRED ULCMFG (modern BLS manufacturing unit labor cost) as a partial analogue",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "RULC_index = (real_compensation_per_hour / productivity_index) * 100, normalized to 1889 = 100",
+  "components": [
+    {
+      "label": "Real compensation per hour (S207 component)",
+      "source": "MeasuringWorth ec / CPI",
+      "period": [
+        1889,
+        2010
+      ]
+    },
+    {
+      "label": "Manufacturing productivity index (S207 component)",
+      "source": "BEA LTEG A173 + BLS FLS Table 1",
+      "period": [
+        1889,
+        2010
+      ]
+    }
+  ],
+  "year_range_book": [
+    1889,
+    2010
+  ],
+  "year_range_extension": [
+    2010,
+    2025
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "FRED ULCMFG (Manufacturing Sector: Unit Labor Cost)",
+      "source": "BLS Productivity and Costs (via FRED)",
+      "url": "https://fred.stlouisfed.org/series/ULCMFG",
+      "units": "Index 2017=100",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "ULCMFG is nominal ULC (compensation/output), not the deflated ratio Shaikh computes. For faithful extension, build the ratio from extended OPHMFG (productivity) and real compensation (FRED COMPRMS or MeasuringWorth)."
+      ]
+    },
+    {
+      "subseries_label": "Reconstruct from extended components",
+      "source": "FRED OPHMFG (productivity) + MeasuringWorth ec/CPI (real compensation)",
+      "url": "https://fred.stlouisfed.org/series/OPHMFG",
+      "units": "Index 1889=100 after rebasing",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Honors anu-framework no-lazy-splice rule for derived quantities — recompute formula with extended components rather than splicing the ratio directly."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Formula series: explicit ratio of S207's two components (real compensation ÷ productivity).",
+    "CD2 S008 dossier provides the multi-column construction; final series is the index of the ratio.",
+    "Anu Framework principle: extension must recompute the formula with extended components, not splice the ratio."
+  ],
+  "open_questions": [
+    "Confirm post-2013 BLS series for manufacturing real hourly compensation (CD2 noted BLS PRS30006152); some manufacturing-sector PRS series are discontinued."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

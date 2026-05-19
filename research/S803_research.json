@@ -1,0 +1,116 @@
+{
+  "series_id": "S803",
+  "name": "Rate of Profit on Equity vs. CR8, Bain 42-Industry Sample, 1936-40 (Figures 8.3 and 8.4)",
+  "chapter": 8,
+  "figures": [
+    "Fig8.3",
+    "Fig8.4"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": "S041",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 8,
+      "page": 373,
+      "quote": "Bain tried to show that persistent excess profit rates were associated with monopoly power. Since his available data was in terms of rates of profit on equity, that is, actual profit gross relative to net worth (assets - liabilities), he implicitly assumed that different industries have the same ratio of liabilities to assets (i.e., the same degree of financial leverage). His central hypothesis was that in the long run concentrated industries have significantly higher profit rates (Bain 1951, 294-296). He carefully constructed a sample of profit rates on equity (ROE) and eight-firm concentration ratios (CR8) for forty-two industries comprising 335 firms over 1936-1940 (310).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 8,
+      "page": 374,
+      "quote": "Figure 8.3 Rate of Profit on Equity versus CR8, Forty-Two Industries Source: Bain 1951, 312, table 1.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 8,
+      "page": 375,
+      "quote": "Figure 8.4 Rate of Profit on Equity versus CR8, Grouped Data Source: Bain 1951, Table 1, 313.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 8,
+      "page": 374,
+      "quote": "Figure 8.3 plots the period averages for ROE versus CR8, which he presents in his table I (309, 312). His central difficulty is immediately apparent: there is no evidence of a positive correlation between concentration and profitability. For instance, a simple linear regression of ROE versus CR8 yields beta = 0.0521 and R^2 = 0.0781.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 8,
+      "page": 374,
+      "quote": "Bain arrives at the same argument in a different manner. He first groups the CR8 data into deciles as depicted in figure 8.4 based on the subsequent corrections (Demsetz 1973b, 12) to the data originally listed in his table II (Bain 1951, 313). He still finds a very weak positive linear relation (the corrected data yields R^2 = 0.033) which he rightly dismisses because the 'fit . . . is obviously so poor that the inference of a rectilinear or other simple relationship of concentration to profits is not warranted.'",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Bain (academic author)",
+    "publication": "Bain, Joe S. (1951), 'Relation of Profit Rate to Industry Concentration: American Manufacturing, 1936-1940,' Quarterly Journal of Economics 65(3): 293-324. Corrections in Demsetz, Harold (1973b), 'Industry Structure, Market Rivalry, and Public Policy,' Journal of Law and Economics 16(1): 1-9.",
+    "table_or_series_id": "Bain 1951, Table I, pp. 309 & 312 (42 industries, scatter for Fig. 8.3); Bain 1951, Table II, p. 313 with Demsetz 1973b, p. 12 corrections (decile grouping for Fig. 8.4).",
+    "url": "https://doi.org/10.2307/1882217",
+    "frequency": "cross_sectional (one 1936-40 average per industry)",
+    "units": "Rate of profit on equity (percent); CR8 (percent of value-product supplied by top 8 firms).",
+    "license": "Copyrighted academic data; reproducible under fair use for replication.",
+    "available_through": "JSTOR (Bain 1951 QJE; Demsetz 1973b JLE).",
+    "discontinued": true,
+    "replaced_by": "No direct modern replacement at the 42-industry / CR8 / 1936-40 level; closest analogs are IRS SOI Corporate-Source-Book industry profit rates combined with U.S. Census Bureau Concentration Ratios in Manufacturing for current Economic Census years."
+  },
+  "construction": "composite",
+  "formula": "ROE_industry,1936-40 = average of firm-level (profit after taxes / net worth) over 1936-1940 within industry; CR8_industry,1935 = share of value product supplied by top 8 firms (Census 1935).",
+  "components": [
+    "Figure 8.3 (scatter): 42 (industry, CR8, ROE) triples from Bain 1951 Table I pp. 309 & 312 — digitized in ShaikhChoppedTables/Appendix8_Bain42IndustryProfit.xlsx (43-column wide table).",
+    "Figure 8.4 (grouped data): 10 CR8-decile averages from Bain 1951 Table II p. 313 with Demsetz 1973b p. 12 corrections — digitized in ShaikhChoppedTables/Appendix8_Bain42IndustryAggregates.xlsx and ShaikhChoppedTables/Appendix8_CorrectedBainData.xlsx."
+  ],
+  "year_range_book": [
+    1936,
+    1940
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "IRS SOI Corporation Source Book (industry profit rates) + U.S. Census Concentration Ratios in Manufacturing",
+      "source": "IRS Statistics of Income / U.S. Census Bureau",
+      "url": "https://www.irs.gov/statistics/soi-tax-stats-corporation-source-book-of-statistics-of-income",
+      "units": "Profit on equity / Concentration Ratio (CR4 or CR8) by industry",
+      "splice_strategy": "none",
+      "concerns": [
+        "Industry classifications differ (1935 Census codes vs. modern NAICS).",
+        "Bain's sample excluded industries with <3 firms or limited data; replication requires matching exclusion criteria."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Figure 8.3 and Figure 8.4 share the same underlying Bain 1951 study; the stub correctly groups them under one series ID (S803).",
+    "Figure 8.3 plots 42 (industry, CR8 1935, ROE 1936-40 average) points; Bain's industry list and exact values are in ShaikhChoppedTables/Appendix8_Bain42IndustryProfit.xlsx.",
+    "Figure 8.4 groups the same 42 industries into CR8 deciles (0-9.9, 10-19.9, ..., 90-100) using Demsetz 1973b's corrected values; data in ShaikhChoppedTables/Appendix8_Bain42IndustryAggregates.xlsx (10 rows) and ShaikhChoppedTables/Appendix8_CorrectedBainData.xlsx (CR8 midpoints with corrected profit rates).",
+    "Shaikh uses both panels to argue that even Bain's own data and decile grouping show no robust positive correlation between concentration and ROE (R^2 = 0.0781 for the scatter; 0.033 for the corrected grouped data). He further notes a non-monotonic U-shape (R^2 = 0.1896 with quadratic CR8 term, critical CR8* = 49.24).",
+    "Construction is 'composite' because two distinct table panels (Bain Table I and Bain Table II as corrected by Demsetz 1973b) jointly constitute the series; the Demsetz correction is integral, not optional."
+  ],
+  "open_questions": [
+    "Stub originally named this series 'Interest Rates, Prices, and Equity Data' (carried over from CD2 S041, which is a Chapter 10 series). That name is wrong for Chapter 8; renamed to reflect the actual Figure 8.3/8.4 content. cd2_id nulled because the CD2 S041 dossier is not a true predecessor.",
+    "Bain's original Table I (firm-level data underlying the 42 industry averages) is not digitized in ShaikhChoppedTables; only the per-industry averages are available.",
+    "Whether to extend this cross-section to a modern (e.g., 2017 Economic Census) replication is a Phase 4 decision."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-b-ch8",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from book pp.373-375 and Bain 1951 / Demsetz 1973b citations. Corrected stub name (was stale from CD2 S041 Ch10 mapping). Classified content_type as cross_sectional. Two figures (8.3, 8.4) consolidated under one series consistent with stub figures[] field."
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "series_id": "S703",
+  "name": "Figure 7.13 World Manufacturing Average and Incremental Rates of Profit, 1970-1989",
+  "chapter": 7,
+  "figures": [
+    "Fig7.13"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S032",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 7,
+      "page": 302,
+      "quote": "The 1994 International Sectoral Database (ISDB) (OECD 1994) contained annual data, now discontinued, from which it was possible to derive measures of gross profit (gross operating surplus, i.e., GDP minus Indirect Business Taxes [net of subsidies] minus Employee Compensation), gross capital stock, and gross investment for various OECD countries. This was used by Christodoulopoulos (1995) to derive measures of average and incremental rates of profit by world industry. In order to achieve comparability and consistency across countries and industries, the analysis was limited to the period 1970-1990 and focused on the profitability of eight manufacturing industries (Food, Textiles, Paper, Chemicals, Minerals, Metals and Metal Products, Machinery and Equipment, and Other Manufacturing products) across eight countries (United States, Japan, Canada, Germany, France, Italy, Belgium, and Norway).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 856,
+      "quote": "II. Original world and US manufacturing profit rates 1960-1989 (Christodoulopoulos 1995). Figure 7.13 World Manufacturing Average and Incremental Rates of Profit, 1970-1989 [...] The 1994 International Sectoral Database (ISDB) (OECD 1994) contained annual data, now discontinued, from which it was possible to derive measures of gross operating surplus, that is, GDP minus Indirect Business Taxes (net of subsidies) minus Employee Compensation, gross capital stock, and gross investment for various OECD countries. [...] World totals for gross operating surplus, gross capital stock, and gross investment were calculated for each industry, using PPP exchange rates to make the translation into US$. This data was then used to calculate average and incremental profit rates for each industry at the (developed) world level.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 302,
+      "quote": "The first panel in figure 7.13 displays average rates of profit on total capital for world manufacturing industries from 1970 to 1990, expressed as three-year centered moving averages to smooth the data. As is often the case with average rates, most of them cluster around a common level, but some remain persistently above or below. [...] The second panel displays the three-year moving averages of the corresponding incremental rates of profit. We now see a very different pattern, with the rates crossing back and forth in exactly the manner anticipated by the classical theory of profit rate equalization.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "OECD (data discontinued); Christodoulopoulos (1995) reconstruction",
+    "publication": "OECD International Sectoral Database (ISDB), 1994 vintage; computations from George Christodoulopoulos (1995); documented in Shaikh (2008) Appendix 1.",
+    "table_or_series_id": "OECD ISDB 1994 variables GOS (gross operating surplus = GDP - IBT - Employee Compensation), GKS (gross capital stock), GFCF (gross fixed capital formation), for 8 manufacturing industries x 8 OECD countries, 1970-1990, PPP-converted to USD.",
+    "url": "http://www.anwarshaikhecon.org/",
+    "frequency": "annual",
+    "units": "rate (decimal; both ROP = GOS / lagged GKS and IROP = delta(GOS) / lagged GFCF)",
+    "license": "OECD ISDB was a licensed OECD product, now discontinued; Christodoulopoulos reconstruction and Shaikh's redistribution at www.anwarshaikhecon.org are derivative/academic.",
+    "available_through": "Shaikh companion site (http://www.anwarshaikhecon.org/) Appendix 7.2 data tables. Original OECD ISDB 1994 is no longer offered by OECD - superseded first by OECD STAN, then by the OECD Inter-Country Input-Output (ICIO) / TiVA databases.",
+    "discontinued": true,
+    "replaced_by": "OECD STAN (Structural Analysis) database - https://stats.oecd.org/Index.aspx?DataSetCode=STAN_ARCHIVE - and OECD ANBERD; however neither perfectly reproduces ISDB's industry definitions or its inclusion of all 8 original countries."
+  },
+  "construction": "composite",
+  "formula": "ROP_i,t = GOS_world,i,t / GKS_world,i,t-1 ; IROP_i,t = (GOS_world,i,t - GOS_world,i,t-1) / GFCF_world,i,t-1. World aggregate = sum across 8 countries of each variable, after PPP conversion to USD. Both ROP and IROP displayed as 3-year centered moving averages.",
+  "components": [
+    {
+      "label": "GOS_world,i,t (industry gross operating surplus aggregated across 8 countries via PPP)",
+      "source": "OECD ISDB 1994 (discontinued), per-country GDP - IBT - Employee Compensation, PPP-converted to USD",
+      "role": "numerator (both ROP and delta for IROP)"
+    },
+    {
+      "label": "GKS_world,i,t-1 (industry gross capital stock, lagged, world aggregate)",
+      "source": "OECD ISDB 1994 (discontinued), PPP-converted",
+      "role": "denominator (ROP)"
+    },
+    {
+      "label": "GFCF_world,i,t-1 (industry gross fixed capital formation, lagged, world aggregate)",
+      "source": "OECD ISDB 1994 (discontinued), PPP-converted",
+      "role": "denominator (IROP)"
+    },
+    {
+      "label": "3-year centered moving average smoother",
+      "source": "Christodoulopoulos (1995) methodology",
+      "role": "display transform"
+    }
+  ],
+  "year_range_book": [1970, 1989],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "OECD STAN database (industry gross operating surplus, gross investment, capital stock)",
+      "source": "OECD",
+      "url": "https://stats.oecd.org/Index.aspx?DataSetCode=STAN_ARCHIVE",
+      "units": "PPP-adjusted USD",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "STAN replaced ISDB but uses ISIC Rev 3 -> Rev 4 industry definitions; the 8 Christodoulopoulos industries need a documented mapping crosswalk.",
+        "STAN coverage of capital stock is sparser than ISDB; for many country-industry cells gross capital stock is missing, which is why Appendix 7.1 V notes that the later OECD data could only support IROP (not ROP) calculations.",
+        "Country panel: STAN coverage of Belgium and Norway for early years is partial; world aggregation must be transparent about country composition changes."
+      ]
+    },
+    {
+      "subseries_label": "OECD Inter-Country Input-Output (ICIO) tables (gross output, value added, fixed capital formation by industry-country)",
+      "source": "OECD",
+      "url": "https://www.oecd.org/sti/ind/inter-country-input-output-tables.htm",
+      "units": "current USD",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "ICIO does not directly provide capital stock; would need to be paired with EU KLEMS or PWT national capital stocks for ROP construction.",
+        "Industry granularity differs (ICIO ~45 industries; ISDB Christodoulopoulos used 8 broad manufacturing categories)."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Per book p. 302 and Appendix 7.1 II (p. 856, PDF 894), the data are world (8-country) totals for 8 manufacturing industries plus the cross-industry average, smoothed as 3-year centered moving averages. Shaikh thanks George Christodoulopoulos for the data and refers the reader to Shaikh (2008) Appendix 1 for full derivation.",
+    "ISDB has been discontinued by OECD; Shaikh's Appendix 7.2 redistributes the working files on his companion site. CD2 had no S032 dossier - this is a first-pass research entry.",
+    "The 8 countries are: United States, Japan, Canada, Germany, France, Italy, Belgium, Norway. The 8 manufacturing industries are: Food, Textiles, Paper, Chemicals, Minerals, Metals and Metal Products, Machinery and Equipment, Other Manufacturing products. World totals computed via PPP-adjusted USD before ratio formation, not as weighted average of country ratios.",
+    "Both panels (ROP and IROP) appear in the same figure; the figure legend in the book uses ISDB industry codes (FOOD, TEXTILE, PAPER, CHEM, MINERALS, METALS, MACHEQP, OTHERMAN) plus WORLDAVG.",
+    "Anti-degradation: do NOT splice or interpolate the published rates. Any RSCD extension must re-fetch GOS/GKS/GFCF components from OECD STAN, re-aggregate via PPP, and re-compute the ratio. The ISDB-to-STAN industry mapping introduces irreducible methodology drift; document carefully."
+  ],
+  "open_questions": [
+    "Locate the actual Christodoulopoulos (1995) raw data file (or its Shaikh (2008) Appendix 1 reconstruction) that produced Figure 7.13. The Appendix 7.2 files in SalvagedInputs (Appendix7_iropdataUSind.xlsx, Appendix7_ropdataUSind.xlsx) are for the 1987-2005 BEA-based US analysis (Figs 7.15-7.18), NOT the world ISDB-based data behind Fig 7.13.",
+    "ISDB 1994 vintage is no longer downloadable from OECD. Decide whether RSCD will reconstruct from OECD STAN (with documented drift) or treat S703 as a frozen historical illustration that we re-plot from the saved Christodoulopoulos file without extension.",
+    "Verify PPP source used by Christodoulopoulos (1995) - likely Penn World Table 5.6 or OECD PPP conversions; document for any reconstruction."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-b-ch7",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from book Ch7 pp. 301-303 and Appendix 7.1 II (book p. 856 / PDF p. 894) verbatim. Source is Christodoulopoulos (1995) reconstruction from OECD ISDB 1994 (discontinued). Extension via OECD STAN possible but with documented industry-mapping and capital-stock-coverage caveats. CD2 had no dossier for S032."
+    },
+    {
+      "reviewer": "opus-subagent-batch1-A4-B5",
+      "date": "2026-05-18",
+      "status": "data_unavailable",
+      "notes": "B5 underlying-data search: Christodoulopoulos (1995) PDF is not in Inputs/Capitalism Data and is not publicly hosted (unpublished NSSR working paper). Shaikh (2008) Appendix 1 (PDF p. 14-15) describes the methodology but does not tabulate the underlying world-aggregate series. SalvagedInputs Appendix7_*.xlsx files are for the 1987-2005 BEA-NAICS construction (S705/S706), not for Fig 7.13's 1970-1989 ISDB world reconstruction. Marked data_unavailable; full provenance and recovery options documented at SalvagedInputs/book_data/Reconstructed/Christodoulopoulos_1995_data_unavailable.md. Recommended Phase 5 path: include book figure as image; Phase 6 may digitize via WebPlotDigitizer."
+    }
+  ]
+}

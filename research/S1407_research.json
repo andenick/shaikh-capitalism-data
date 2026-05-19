@@ -1,0 +1,98 @@
+{
+  "series_id": "S1407",
+  "name": "HP(100)-Filtered Rate of Change of Real Wages vs Unemployment Intensity",
+  "chapter": 14,
+  "figures": [
+    "Fig14.16"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S074",
+    "cd2_id": "S074"
+  },
+  "book_quotes": [
+    {
+      "chapter": 14,
+      "page": 670,
+      "quote": "Given the empirical strength of the Classical curve, it is clear that the real wage curve in equation (14.18) would be parallel to the two segments of the classical wage-share curve only if productivity growth was stable. Yet we see from figure 14.15 that productivity growth begins to fall from 1960 until the late 1970s and then gradually rises back to its original level by 2000 or so. This is precisely the reason that the real wage curve in figure 14.16 departs from 1948 to 1982 fitted wage-share function in 1960 only to end up back on the new 1994–2011 fitted function in 1999.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 892,
+      "quote": "w = the nominal wage = EC*100/FEE, where FEE = full-time equivalent employment from Tables 6.5A-D; wr = w/p = the real wage; yr = productivity = (GDP*100/p)/(FEE/1000).",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 893,
+      "quote": "Rates of change of w, wr, σW as well as the unemployment rate and intensity were filtered by the Hodrick–Prescott (HP) filter with the default parameter of 100.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Composite (BEA + BLS)",
+    "publication": "Derived: HP(100)-filtered real-wage growth (GRWAGEHP100) and unemployment intensity (ULINTENSITYHP100)",
+    "table_or_series_id": "BEA NIPA Table 1.10 line 2 (EC); NIPA Table 1.1.9 line 1 (deflator); NIPA Tables 6.5A-D (FEE); BLS LNS14000000 + LNS13008275",
+    "url": "https://www.bea.gov/itable/national-gdp-and-personal-income",
+    "frequency": "annual",
+    "units": "Decimal (real-wage growth rate); decimal (unemployment intensity)",
+    "license": "U.S. Government Work (public domain)",
+    "available_through": "BEA + BLS + FRED",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "direct",
+  "formula": "x = HP100(unemployment_intensity); y = HP100(growth_rate(real_wage)) where real_wage = (EC*100/FEE)/p",
+  "components": [
+    {
+      "subseries_label": "GRWAGEHP100",
+      "source": "HP(100)-filtered growth rate of real wage (wr = w/p)",
+      "role": "y-axis of Fig 14.16"
+    },
+    {
+      "subseries_label": "ULINTENSITYHP100",
+      "source": "HP(100)-filtered unemployment intensity",
+      "role": "x-axis"
+    }
+  ],
+  "year_range_book": [1949, 2011],
+  "year_range_extension": [1949, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "Real wage growth",
+      "source": "Derived from FRED: (A576RC1 / B4701C0A222NBEA) / GDPDEF, first-differenced",
+      "url": "https://fred.stlouisfed.org/series/A576RC1",
+      "units": "Decimal annual rate",
+      "splice_strategy": "growth_rate",
+      "concerns": ["Three BEA inputs needed; verify Shaikh's nominal-wage construction (EC/FEE) replicates against published Appendix 14.3 values before extending"]
+    },
+    {
+      "subseries_label": "Unemployment intensity",
+      "source": "S1402 extension",
+      "url": "https://fred.stlouisfed.org/series/UEMPMEAN",
+      "units": "Decimal",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Inherits UEMPMEAN 2011 top-coding break (see S1402)"]
+    }
+  ],
+  "methodology_notes": [
+    "Fig 14.16 is the 'real-wage Phillips curve' analogue of Fig 14.14. Per Eq. 14.18: ˙wr/wr = ˙yr/yr + f(uInt_L), so the real-wage curve = wage-share curve + productivity growth.",
+    "Because productivity growth was not stable over 1949-2011 (Fig 14.15), the real-wage curve does NOT simply translate the wage-share curve; it shows visible departures during the 1960-1999 productivity downswing/upswing cycle.",
+    "Same HP(100) filter and same two-era fitting windows as Fig 14.14 (1949-1982, 1994-2011)."
+  ],
+  "open_questions": [
+    "Are the dashed fitted curves in Fig 14.16 re-fitted to real-wage growth directly, or derived as wage-share-fit + (HP-filtered productivity growth)? Text suggests the latter conceptually but the empirical implementation should be verified."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch14",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S074 ported. CD2 markdown had a fragmentary Intro quote; replaced with the substantive Fig 14.16 description from p. 670."
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "series_id": "S1504",
+  "name": "Growth of Nominal GDP and Relative New Purchasing Power",
+  "chapter": 15,
+  "figures": [
+    "Fig15.3",
+    "Fig15.4"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S079",
+    "cd2_id": "S079"
+  },
+  "book_quotes": [
+    {
+      "chapter": 15,
+      "page": 704,
+      "quote": "Figures 15.3 and 15.4 show that there is indeed a strong correlation between the nominal GDP growth and new purchasing power (1951-1952 is the Korean War), and table 15.1 confirms a robust econometric relation between the two with dummy variables for the Korean War, the Volcker Shock",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 704,
+      "quote": "Figure 15.3 Growth of Nominal GDP and Relative New Purchasing Power, 1950-2010",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 895,
+      "quote": "GDP = Gross Domestic Product, Nominal, BEA, NIPA Table 1.15 (http://www.bea.gov/) pgdp = Gross Domestic Product Deflator Index, 2005 = 100, Seasonally Adjusted, BEA, NIPA Table 1.1.4, (http://www.bea.gov/)",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 896,
+      "quote": "CR = Total Domestic Credit = Monetary Authority Claims on Central or General Government + (Other Deposit Corp Claims on Central or General Government - Central or General Government Deposits in Other Deposit Corps) + Other Deposit Corp Claims on State and Local Government or Official Entities + Other Deposit Corp Claims on Private Sector = IMF, IFS Financial 1948-2011, lines 31 + (78 - 88) + 79 + 81 CA = BEA Balance on Current Account, Table 4.1. Foreign Transactions in the National Income and Product Accounts, line 29. PP = New purchasing power = CR + CA pp = Relative new purchasing power = PP/GDP",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Composite: BEA NIPA + IMF IFS",
+    "publication": "BEA NIPA Tables 1.1.5 (Nominal GDP), 1.1.4 (GDP Deflator), 4.1 (Foreign Transactions); IMF International Financial Statistics monetary survey lines 31, 78, 88, 79, 81",
+    "table_or_series_id": "BEA NIPA T1.1.5 line 1 (GDP), T1.1.4 line 1 (pGDP), T4.1 line 29 (CA); IMF IFS Financial lines 31+(78-88)+79+81 (CR)",
+    "url": "https://www.bea.gov/itable/national-gdp-and-personal-income",
+    "frequency": "annual",
+    "units": "Rate (decimal) for gGDP and pp = PP/GDP",
+    "license": "BEA public domain; IMF IFS subscription/limited public access",
+    "available_through": "ShaikhChoppedTables/Appendix15_USInflation.xlsx",
+    "discontinued": false,
+    "replaced_by": "IMF IFS monetary survey line numbers reorganized post-2009 SDDS+ migration"
+  },
+  "construction": "formula",
+  "formula": "gGDP_t = ln(GDP_t/GDP_{t-1}); PP_t = CR_t + CA_t (Total Domestic Credit + Current Account Balance); pp_t = PP_t / GDP_t",
+  "components": [
+    {
+      "label": "Nominal GDP growth (gGDP)",
+      "source": "BEA NIPA T1.1.5 line 1 first log-difference"
+    },
+    {
+      "label": "Total Domestic Credit (CR)",
+      "source": "IMF IFS Financial monetary-survey lines 31 + (78 - 88) + 79 + 81"
+    },
+    {
+      "label": "Current Account Balance (CA)",
+      "source": "BEA NIPA T4.1 line 29"
+    },
+    {
+      "label": "Relative new purchasing power (pp)",
+      "source": "(CR + CA) / GDP"
+    }
+  ],
+  "year_range_book": [
+    1948,
+    2010
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA NIPA + IMF IFS modern aggregates",
+      "source": "BEA NIPA Tables 1.1.5 / 4.1 + IMF IFS monetary survey",
+      "url": "https://www.bea.gov/itable/national-gdp-and-personal-income",
+      "units": "Rate (decimal)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "IMF IFS line-numbering changed post-2009; total Domestic Claims is now the more natural single-line aggregate.",
+        "Vintage revisions to NIPA GDP and current account can shift levels slightly."
+      ]
+    },
+    {
+      "subseries_label": "FRED Total Domestic Nonfinancial Debt (TCMDO replacement)",
+      "source": "Federal Reserve Z.1 Financial Accounts; FRED",
+      "url": "https://fred.stlouisfed.org/series/TCMDO",
+      "units": "Billions USD",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Z.1 Domestic Nonfinancial Debt is a sectorally similar but not identical aggregate to IFS Total Domestic Credit."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "'New purchasing power' is Shaikh's central inflation-theory variable: the sum of net new domestic credit creation and the current account balance, normalized by GDP.",
+    "Construction is multi-source — primary BEA NIPA for GDP and CA, IMF IFS for credit aggregates.",
+    "Figures 15.3 and 15.4 share underlying data; 15.4 is the scatter, 15.3 is the time-series.",
+    "CD2 predecessor S079 ported; CD2 cross-references S073-Q and S073-G as the upstream Appendix 15.2 series IDs."
+  ],
+  "open_questions": [
+    "Phase 4: confirm IMF IFS line-number stability post-2009 and identify modern equivalent.",
+    "Phase 4: validate that BEA NIPA T1.15 reference in book (Appendix 15.1) is a typo for T1.1.5 (Nominal GDP) — book p.895 shows 'NIPA Table 1.15'; standard NIPA does not have a 1.15."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch15",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S079 ported; quotes verified against PDF pp.703-704 and Appendix 15.1 pp.895-896"
+    },
+    {
+      "reviewer": "phase5-wave-a5-blocker-resolver",
+      "date": "2026-05-18",
+      "status": "blocker_resolved_ready_for_phase5",
+      "notes": "B7 BLOCKER RESOLUTION: IMF IFS line resolver implemented at Technical/code/loaders/_imf_ifs_resolver.py. Documentation at Technical/docs/methodology/IFS_line_to_SDMX_remap.md. The CH15 Phase 4 plan used the pre-2024 data.imf.org/IFS portal SRF codes (FOSAOP_XDC family); those codes were retired ca. 2024 when IMF migrated to the SDMX 3.0 REST API at api.imf.org. The resolver maps Shaikh's legacy lines through both eras: line 31 -> CBANK_NETAL_NCO_S1311MIXED (MFS_CBS); line 32 -> DCORP_N_DC (MFS_DC, canonical Net Domestic Claims); line 64 -> PCPI_IX (CPI); line 78 -> ODCORP_A_ACO_S1311MIXED (MFS_DC); line 79 -> ODCORP_A_ACO_S13M1 (MFS_DC); line 81 -> DCORP_A_ACO_PS (MFS_DC); line 88 -> ODCORP_L_LT_S1311MIXED (MFS_DC). Smoke test verified 2026-05-18: fetched DCORP_N_DC for USA 2018-2022 via api.imf.org SDMX 3.0 REST, HTTP 200, returned 5/5 years (2018=$21.16T, 2019=$22.42T, 2020=$25.76T, 2021=$30.12T, 2022=$29.91T). Phase 5 loader can now ingest this concept directly. Recommended Phase 5 fetch: DCORP_N_DC USA annual USD via api.imf.org; validate against Appendix15_USInflation.xlsx overlap 1948-2010 at +-2% tolerance using validate_against_shaikh().",
+      "resolver_file": "Technical/code/loaders/_imf_ifs_resolver.py",
+      "methodology_doc": "Technical/docs/methodology/IFS_line_to_SDMX_remap.md"
+    }
+  ]
+}

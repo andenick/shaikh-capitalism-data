@@ -1,0 +1,94 @@
+{
+  "series_id": "S215",
+  "name": "Incremental Rates of Profit in US Manufacturing, 1960–1989",
+  "chapter": 2,
+  "figures": [
+    "Fig2.13"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S015",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 66,
+      "quote": "But the picture changes substantially when we consider the profit rates on new investment, that is, the incremental rate of return on capital (figure 2.13). This is measured here as the change in gross profits divided by the gross investment in the previous year (Christodoulopoulos 1995, 138–140; Shaikh 1998b, 395).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 764,
+      "quote": "Figure 2.13 Incremental Rates of Profit in US Manufacturing, 1960–1989. Discussed in chapter 7 in relation to figure 7.14. Appendix 7.2 Data Tables for Chapter 7 (available online at http://www.anwarshaikhecon.org/)",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Constructed (Shaikh / Christodoulopoulos) from OECD / BEA industry-level data",
+    "publication": "Christodoulopoulos (1995, 138–140); Shaikh (1998b, 395); Shaikh (2016) Appendix 7.2",
+    "table_or_series_id": "Incremental profit rate r* = ΔPG / IG(–1) by manufacturing sub-sector",
+    "url": "https://stats.oecd.org/Index.aspx?DataSetCode=STAN",
+    "frequency": "annual",
+    "units": "Percent",
+    "license": "Mixed (OECD + BEA public)",
+    "available_through": "Appendix 7.2 data tables (book companion site)",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "r* = PG / IG(-1) where PG = gross profits, IG = gross investment in previous year (per footnote 6, p. 67)",
+  "components": [
+    {
+      "label": "Gross profits (PG) by sector",
+      "period": [
+        1960,
+        1989
+      ]
+    },
+    {
+      "label": "Gross investment (IG) lagged one year by sector",
+      "period": [
+        1959,
+        1988
+      ]
+    }
+  ],
+  "year_range_book": [
+    1960,
+    1989
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "AMECO Marginal Efficiency of Capital (MEC) — analogous concept",
+      "source": "European Commission DG ECFIN AMECO Database",
+      "url": "https://economy-finance.ec.europa.eu/economic-research-and-databases/economic-databases/ameco-database_en",
+      "units": "Percent",
+      "splice_strategy": "none",
+      "concerns": [
+        "Per Shaikh's own footnote 6 on p. 68, AMECO MEC follows essentially the same procedure (Δgross output / lagged investment). Concept-similar successor but defined on output rather than profits — not a direct equivalent."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Formula explicitly given in footnote 6 (book p. 68): r* = PG / IG(-1). Both numerator and denominator invariant to CCAdj (capital consumption adjustment) and to estimates of capital stock or useful life.",
+    "Shaikh prefers this measure for arbitrage analysis because incremental rates 'cross over' frequently across sectors — 'profit rate equalization in its true form'."
+  ],
+  "open_questions": [
+    "AMECO MEC uses gross output instead of profits in the numerator; if used for extension, document this concept difference per anu-framework no-proxy rule."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

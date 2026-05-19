@@ -1,0 +1,43 @@
+{
+  "series_id": "S001",
+  "series_name": "Industrial Production",
+  "chapter": 2,
+  "figures": ["Fig 2.1"],
+  "research_date": "2026-03-07",
+  "researcher": "agent",
+  "kb_sources_searched": ["ch18_appendices.md", "ch02_turbulent_trends.md", "appendix_methodology_summary.json"],
+  "entries": [
+    {
+      "entry_type": "methodology_description",
+      "content": "Industrial production index constructed from two spliced sources: (1) BEA Long Term Economic Growth (1966, table A15) covering 1860-1959, originally indexed to 1913=100; (2) Federal Reserve Board G-17 Industrial Production Index covering 1919-2010, originally indexed to 2007=100 (later rebased to 2017=100 in FRED). Both series were rebased to 1958=100 and spliced at 1919 to create a continuous index from 1860 to present.",
+      "source_ref": "Appendix 2.1"
+    },
+    {
+      "entry_type": "source_citation",
+      "content": "BEA Long Term Economic Growth, Table A15, p. 185. Historical Statistics of the United States series for industrial production 1860-1918. Federal Reserve Board G-17 Industrial Production Index, All Industries, 1919-2010. Extension via FRED INDPRO (same underlying FRB G-17 series).",
+      "source_ref": "BEA TA15, FRB G-17"
+    },
+    {
+      "entry_type": "figure_context",
+      "content": "Fig 2.1 displays the spliced U.S. industrial production index (1958=100) from 1860 to present. The chart illustrates long-run growth and cyclical volatility in manufacturing and industrial output, including the Civil War, late 19th-century expansions, the Great Depression collapse, and postwar recovery.",
+      "source_ref": "Shaikh 2016, Ch. 2"
+    }
+  ],
+  "citations": [
+    {
+      "id": "BEA_1966_TA15",
+      "full": "U.S. Bureau of Economic Analysis. Long Term Economic Growth, 1860-1970. Washington, DC: U.S. Government Printing Office, 1966. Table A15, p. 185."
+    },
+    {
+      "id": "FRB_G17",
+      "full": "Board of Governors of the Federal Reserve System. Industrial Production Index (G.17). Washington, DC: Federal Reserve Board. https://www.federalreserve.gov/releases/g17/"
+    },
+    {
+      "id": "FRED_INDPRO",
+      "full": "Federal Reserve Economic Data (FRED). Industrial Production: Total Index (INDPRO). St. Louis Fed. https://fred.stlouisfed.org/series/INDPRO"
+    }
+  ],
+  "methodology_summary": "S001 combines BEA historical statistics (1860-1959, 1913=100) with Federal Reserve G-17 industrial production (1919-2010). Both series were rebased to 1958=100 and spliced at 1919. The splice point was chosen where both series overlap; the FRB G-17 series continues the BEA series with minimal discontinuity. Extension data uses FRED INDPRO (identical underlying series) re-indexed to 1958=100 at the overlap year.",
+  "known_issues": [],
+  "cross_references": ["Appendix2_IndustrialProduction.csv", "FRED INDPRO"]
+}

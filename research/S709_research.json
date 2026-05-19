@@ -1,0 +1,144 @@
+{
+  "series_id": "S709",
+  "name": "US Industry ROP Deviations from Average (Figure 7.16), 1988-2005",
+  "chapter": 7,
+  "figures": [
+    "Fig7.16"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S035",
+    "cd2_id": "S035"
+  },
+  "book_quotes": [
+    {
+      "chapter": 7,
+      "page": 305,
+      "quote": "This is clearer in figure 7.16, which displays the deviations of individual sectoral profit rates from the average rate of profit. Industries whose profit rates cross the average rate have deviations that change sign, as evidenced by the fact that these deviations cross the zero line shown on the corresponding charts. Of the thirty industries in this sample, eighteen display this tendency, while twelve do not (seven remain persistently above and five persistently below). It is instructive to note in industries whose deviations are highly trended, such as Nonmetallic Minerals, Machinery, Printing, and Rentals, their period-average deviations can be bad proxies for their econometrically estimated long-term values even though their deviations do cross over at least once.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 857,
+      "quote": "Since the US BEA now only calculates net capital stock, the rate of profit on total capital is defined here as the ratio of nominal net profits (gross profits minus depreciation) to current-cost net capital stock. [...] 1. The basic flow variables were taken from the US Bureau of Economic Analysis (BEA) Gross-Domestic-Product-(GDP)-by-Industry tables 1947-97 GDPbyInd_VA_NAICS and 1998-2005 GDPbyInd_VA_NAICS, available at http://www.bea.gov/industry/gdpbyind_data.htm.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 858,
+      "quote": "Appendix 7.2 Data Tables for Chapter 7 (available online at http://www.anwarshaikhecon.org/), Sheets = ropdataUSind, iropdataUSind",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 858,
+      "quote": "Particular care was taken focus on industries that were dominated by profit-driven enterprises and were also competitive on a world scale. This led to the exclusion of thirty-one of the original sixty-one private industries, with a concomitant redefinition of the overall rate of profit and incremental rate of profit.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (BEA) + Shaikh (2008) reconstruction",
+    "publication": "Derived from S705 (US Industry Average Rates of Profit, Fig 7.15). Underlying data: BEA GDP-by-Industry tables (GDPbyInd_VA_NAICS 1947-97 and 1998-2005) + BEA Fixed Asset Tables 3.1ES, 3.4ES, 3.7ES, 3.8ES + NIPA Table 7.12 + US Flow of Funds Tables L.109, L.114-117. Aggregated and adjusted per Shaikh (2008). Shipped in Appendix 7.2 ropdataUSind sheet at http://www.anwarshaikhecon.org/.",
+    "table_or_series_id": "Per-industry deviation = ROP_i,t - ROP_avg,t computed from the same Appendix 7.2 ropdataUSind worksheet used for S705 (Fig 7.15). The book displays 38 industry sub-panels (small-multiple) - Accom, Accom.food, Admn&Waste, Amusement, Arts, Banks, Broadcast., Chemicals, Constr., Electr.Equ., Fab.Metal., Finance, Food, Food.serv., Furniture, Info, Info.serv., Insurance, Mach., Manuf.Misc., Manufacturing, Manufacturing D, Manufacturing ND, Movies, Nonmettalic, Paper, Petroleum, Plastic, Printing, Real, Real & Rental, Rental, Retail, Truck.trans, Utilit., Warehouse, Waste, Wholesale, Wood.",
+    "url": "https://apps.bea.gov/iTable/?reqid=150&step=2&isuri=1&categories=gdpxind",
+    "frequency": "annual",
+    "units": "rate deviation (decimal; industry ROP minus All-Private aggregate ROP, year by year)",
+    "license": "U.S. public domain (BEA primary data); Shaikh adjusted dataset is academic/derivative.",
+    "available_through": "Derived from Appendix 7.2 ropdataUSind sheet (Shaikh companion site http://www.anwarshaikhecon.org/) and from local copy at SalvagedInputs/book_data/ShaikhChoppedTables/Appendix7_ropdataUSind.xlsx. BEA primary tables remain on the BEA iTable interactive system.",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "For each included industry i in each year t (1988-2005, since deviations are reported on the 1988-2005 x-axis even though ROP_i,t for S705 starts in 1987): dev_i,t = ROP_i,t - ROP_avg,t, where ROP_i,t is the industry-i average rate of profit computed per S705 (ROP_i = (PG_i - DEP_i) / K_i(-1), with PG = GOS - WEQ and the OOH/inventory/reserve adjustments per Appendix 7.1 III), and ROP_avg,t = sum_i(PG_i - DEP_i) / sum_i K_i(-1) across the 30 included industries (the 'All Private' aggregate computed from sectoral totals, NOT an unweighted mean of industry rates). Note: book caption says 1987-2005 but the small-multiple panels are labeled 88..04, so deviations are plotted 1988-2005.",
+  "components": [
+    {
+      "label": "Industry ROP_i,t for 30 NAICS industries (1987-2005)",
+      "source": "S705 output (BEA GDPbyInd_VA_NAICS + Fixed Asset Tables + WEQ/OOH/inventory/reserve adjustments)",
+      "role": "minuend - per-industry profit rate"
+    },
+    {
+      "label": "All-Private aggregate ROP_avg,t (1987-2005)",
+      "source": "Computed as sum_i(PG_i - DEP_i) / sum_i K_i(-1) across the 30 included industries (S705 'All Private' line)",
+      "role": "subtrahend - cross-industry baseline"
+    },
+    {
+      "label": "Appendix7_ropdataUSind.xlsx",
+      "source": "Local copy at SalvagedInputs/book_data/ShaikhChoppedTables/Appendix7_ropdataUSind.xlsx (Shaikh Appendix 7.2)",
+      "role": "canonical source: contains industry ROP panel and All-Private aggregate from which dev_i,t is directly computed"
+    }
+  ],
+  "year_range_book": [1988, 2005],
+  "year_range_extension": [1988, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA GDP-by-Industry (Value Added components, by NAICS) - re-run S705 pipeline, then re-compute deviations",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=150&step=2&isuri=1&categories=gdpxind",
+      "units": "rate deviation (decimal)",
+      "splice_strategy": "none",
+      "concerns": [
+        "Deviations are a direct algebraic transform of S705 - any S705 extension issue (NAICS rebasing, 2013 R&D/IP capitalization, post-2005 NIPA comprehensive revisions) propagates one-for-one to S709.",
+        "If S705 is re-run end-to-end on a current NIPA vintage, S709 must be re-computed from that re-run (do not splice deviations across vintages)."
+      ]
+    },
+    {
+      "subseries_label": "BEA Fixed Asset Tables 3.1ES, 3.4ES, 3.7ES (current-cost net stock, depreciation, historical-cost investment by industry)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Post-2013 inclusion of R&D and IP in Fixed Assets alters capital stock levels; must use the same vintage of K as the corresponding S705 extension."
+      ]
+    },
+    {
+      "subseries_label": "Federal Reserve Flow of Funds (Z.1 release) - bank and insurance reserves",
+      "source": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/releases/z1/",
+      "units": "billions of USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Flow of Funds table numbering has shifted since 2008; verify L.109/L.114-117 against current Z.1 line numbering before re-running."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Pure algebraic derivative of S705: each industry's ROP_i minus the cross-industry All-Private aggregate ROP_avg, plotted as a small-multiple panel of 38 sub-charts (book PDF p. 346 / printed p. 307). This is the empirical exhibit that operationalizes Shaikh's 'turbulent equalization' claim for AVERAGE profit rates.",
+    "Per book p. 305 (verbatim): of the 30 industries, 18 cross the zero line (deviations change sign), 7 stay persistently above, 5 stay persistently below. Highly-trended deviations (Nonmetallic Minerals, Machinery, Printing, Rentals) make their period-average deviations a poor proxy for their econometric long-term values.",
+    "Same construction as S705 in every respect (industry sample, WEQ/OOH/inventory/reserve adjustments, vintage); deviation is a one-line transform. No new data ingestion required beyond what S705 already loads.",
+    "Year range note: book caption for Fig 7.15 says 1987-2005, but the Fig 7.16 small-multiple panels are labeled '88 90 92 94 96 98 00 02 04' (book PDF p. 346) - so the plotted deviation range is 1988-2005. The 1987 ROP value exists in S705 but is not plotted in the deviation panel (likely because the aggregate baseline is computed across the 1988-2005 window for visual stability).",
+    "CD2 dossier (S035) treated this as a simple post-processing of S034 (the CD2 ancestor of S705): 'Load S217 parsed data or S034 output; Compute deviation = industry_ROP - average_ROP per year.' RSCD inherits this construction; the loader is the S705 loader plus a one-step deviation calculation.",
+    "Anti-degradation: do NOT splice the published deviation series. Any extension to 2006+ requires re-running S705 end-to-end (re-fetching GVA/GOS/EC + Fixed Asset components from current BEA vintages, re-applying all adjustments) and then re-computing dev_i,t = ROP_i,t - ROP_avg,t on the re-run output.",
+    "The Phase 2 builder missed this series because the 8-series Ch7 allotment (S701-S708) did not include the deviation panels; this dossier closes that gap per decision 0004."
+  ],
+  "open_questions": [
+    "Confirm the precise All-Private aggregate methodology used to compute ROP_avg in the published Fig 7.16: weighted aggregate (sum_i PG / sum_i K) or unweighted mean of industry rates? Book p. 305 says the average is 'defined by the overall profit rate of all included private industries', which suggests the weighted aggregate, but the Appendix 7.2 spreadsheet should be inspected to confirm.",
+    "Verify by loading Appendix7_ropdataUSind.xlsx (in SalvagedInputs) whether the deviation columns are pre-computed or must be derived. CD2 S035 hint suggests 'S217 deviation columns (or computed as industry_ROP - avg_ROP)' - both are acceptable; choose pre-computed if available for byte-exact reproduction.",
+    "Resolve the 30-industry vs 31-industry vs 38-panel ambiguity: book p. 305 says 'thirty industries' but Fig 7.16 shows 38 small-multiple panels (including sub-aggregates like Manufacturing, Manufacturing D, Manufacturing ND, Real & Rental). Phase 5 plotting must mirror Shaikh's exact panel set, including sub-aggregates.",
+    "RESOLVED 2026-05-18 (B4): Shaikh (2008) Table 9.A1 extracted to SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv (31 rows). Use this as the drop key in the S705 loader from which S709 deviations are derived."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-s709",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from CD2 S035 dossier + book pp. 305 and 857-859 (PDF pp. 344, 895-897) verbatim. Decision 0004: this series closes the Phase 2 gap for Fig 7.16 (US ROP deviations). Construction = formula (one-line algebraic transform of S705). Source = same as S705 (BEA GDPbyInd + Fixed Assets + WEQ/OOH/inv/reserve per Shaikh 2008). 4 quotes (definition, source, source, method), 3 components, 3 extension candidates, 7 methodology notes."
+    },
+    {
+      "reviewer": "opus-subagent-batch1-A4-B4",
+      "date": "2026-05-18",
+      "status": "blocker-resolved",
+      "notes": "B4 resolved (shared with S705/S706). 31-industry exclusion list at SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv."
+    }
+  ]
+}

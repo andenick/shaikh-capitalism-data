@@ -1,0 +1,118 @@
+{
+  "series_id": "S501",
+  "name": "US and UK Wholesale Price Indexes, 1790-1940",
+  "chapter": 5,
+  "figures": [
+    "Fig5.3"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S022",
+    "cd2_id": "S022"
+  },
+  "book_quotes": [
+    {
+      "chapter": 5,
+      "page": 188,
+      "quote": "Figure 5.3 displays the wholesale price indexes of the two leading countries of the capitalist world (United States and United Kingdom) from 1790 to 1940 as previously displayed in chapter 2, figure 2.9. Three things are notable: the overall similarity in the movements of the two country price indexes; the presence of long cycles in these indexes from which the theory of long waves derives (van Duijn 1983, ch. 5); and the striking fact that there is no long-run trend in these price indexes for the whole 150-year interval.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 5,
+      "page": 188,
+      "quote": "Indeed, Jastram (1977, 189) reports that in the United Kingdom the purchasing power of gold \"in the middle of the twentieth century was remarkably the same as in the midst of the seventeenth century.\"",
+      "role": "caveat",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 5,
+      "page": 788,
+      "quote": "The UK Wholesale Price Index (WPI) is available in Jastram (1977, table 2) from 1560 to 1976 (1930 = 100), except for missing values in 1939-1945, which were filled in using implicit annual growth rates in the NBER monthly for the UK PPI, All commodities Variable ID = m04053.dat, at http://www.nber.org/databases/macrohistory/rectdata/04/. This was extended for 1977-2010 using the implicit growth rates of the UK Producer Price Index available from http://www.statistics.gov.uk/statbase/, variable named PLLU, Price Index of UK Output of Manufactured Goods.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 5,
+      "page": 788,
+      "quote": "US WPI is available in Jastram (1977, 145-146, table 7) for 1800-1976. Data for 1706-1799 was interpolated using the US CPI (see sources for figure 2.5) rescaled by the 1800 ratio of WPI/CPI. The series was extended to 1977-2010 using implicit growth rates of US PPI available from the BLS as Variable WPS00000000 at http://www.bls.gov/ppi/data.htm#.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh (book companion); Jastram (1977); BLS; NBER Macrohistory; UK ONS",
+    "publication": "Appendix 5.3 Data Tables for Chapter 5, sheet =DATALRprices (Shaikh, anwarshaikhecon.org); Jastram, The Golden Constant (1977), tables 2 and 7",
+    "table_or_series_id": "S010-F (US WPI), S010-R (UK WPI), 1790-1940 slice",
+    "url": "http://www.anwarshaikhecon.org/",
+    "frequency": "annual",
+    "units": "index, 1930 = 100",
+    "license": "academic / publicly posted by author",
+    "available_through": "Shaikh website Appendix 5.3 spreadsheet (DATALRprices)",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "USWPI(t) = Jastram(1977, table 7) for 1800-1976, with 1790-1799 interpolated via US CPI rescaled by 1800 WPI/CPI ratio; UKWPI(t) = Jastram(1977, table 2) for 1790-1939 + NBER m04053 monthly UK PPI growth rates for 1939-1945; both indexes rebased to 1930 = 100; series sliced to 1790-1940 for Figure 5.3.",
+  "components": [
+    {
+      "label": "USWPI 1790-1940",
+      "source": "Jastram (1977, table 7) for 1800-1976; US CPI rescaled for 1790-1799"
+    },
+    {
+      "label": "UKWPI 1790-1940",
+      "source": "Jastram (1977, table 2) for 1560-1976; NBER m04053 for 1939-1945 gap fill"
+    }
+  ],
+  "year_range_book": [
+    1790,
+    1940
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "US WPI (historical splice)",
+      "source": "BLS PPI Commodity Data (WPS00000000 / WPU00000000) for 1947-present; Warren & Pearson / NBER historical WPI for pre-1947",
+      "url": "https://download.bls.gov/pub/time.series/wp/",
+      "units": "index, 1982 = 100 (rebase to 1930=100 for splice)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Pre-1947 historical splice depends on NBER macrohistory series (e.g., m04048a 'Wholesale Price Index, All Commodities, U.S.') which Shaikh did not explicitly cite for the US leg.",
+        "BLS PPI replaced the older 'WPI' label in 1978; conceptual continuity is BLS's official position but base-period rebasing is required."
+      ]
+    },
+    {
+      "subseries_label": "UK WPI (historical splice)",
+      "source": "UK ONS Producer Price Index (series PLLU, Output Prices: Manufactured Products); Jastram (1977, table 2) for pre-1947",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/pllu",
+      "units": "index, 2010 = 100 (rebase to 1930=100 for splice)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "ONS rebased PPI multiple times since Shaikh's 2010 data pull; PLLU is still published under the 'Output of Manufactured Products' name.",
+        "1939-1945 wartime gap was originally filled with NBER m04053; for re-extension, an alternative gap filler may be required if NBER macrohistory series remain frozen."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Shaikh ports the WPI directly from Jastram (1977) tables 2 (UK) and 7 (US), both rebased to 1930 = 100, with documented splice rules for the pre-1800 (US) and 1939-1945 (UK) gaps and post-1976 BLS/ONS extensions. See Appendix 5.2, pp. 788-789.",
+    "S501 is a chronological slice of the long-run S502 series, restricted to 1790-1940 to highlight the absence of secular trend prior to the post-1939/40 fiat-money epoch.",
+    "Figure 5.3 is reproduced from chapter 2 figure 2.9 (Shaikh notes this on p. 188). Linkage: S501 shares its source with the relevant S2xx chapter 2 long-run price series.",
+    "CD2 ancestor S022 documented validation reference values (e.g., 1790 = 74.40, 1850 = 66.6, 1940 = 90.8) from the DATALRprices spreadsheet; these should be regression-tested after re-loading."
+  ],
+  "open_questions": [
+    "Jastram's underlying compilation predates many modern revisions of nineteenth-century US/UK price data (e.g., Officer/Williamson MeasuringWorth series); is a 'Jastram-faithful' vs. 'modern best-vintage' variant warranted?",
+    "Confirm the printed-page citation for the US WPI 1790-1799 interpolation rule against Appendix 2.1 (which Shaikh cross-references via 'see sources for figure 2.5').",
+    "anwarshaikhecon.org Appendix 5.3 spreadsheet URL has not been independently confirmed to resolve; flag as a 200-OK check item for Phase 4."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch5",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from PDF pp. 188-189 (Ch5) and Appendix 5.2 (pp. 788-789); CD2 S022 dossier ported via Salvage Map."
+    }
+  ]
+}

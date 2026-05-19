@@ -1,0 +1,104 @@
+{
+  "series_id": "S1301",
+  "name": "Actual and Equilibrium Paths of Output",
+  "chapter": 13,
+  "figures": [
+    "Fig13.7"
+  ],
+  "content_type": "theoretical",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 13,
+      "page": 632,
+      "quote": "Since the slope of the path of ln Yt is the growth rate of output, a constant growth rate implies a constant slope (i.e., a straight-line path). Figure 13.7 depicts the log of actual output around one equilibrium path. As indicated by the other dotted lines, lines parallel to this one also have the same slope and hence represent the same growth rate.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 13,
+      "page": 632,
+      "quote": "Now consider the illustrative special case in which f(t) = α = constant. Starting from some initial net output Y0, we get ln Y1 = ln Y0 + α + ε1, ln Y2 = ln Y0 + 2 · α + (ε2 + ε1), and so on, so that ln Yt = ln Y0 + α · t + ηt, where ηt ≡ Σ(i=1..t) εi (13.43)",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 13,
+      "page": 632,
+      "quote": "If the error term εt in equation (13.42) was pure white noise, the path in equation (13.43) would be a random walk with drift, that is, a unit root process (Nelson and Plosser 1982; Enders 2004, 186).",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Oxford University Press",
+    "publication": "Shaikh, Anwar. 2016. Capitalism: Competition, Conflict, Crises. New York: Oxford University Press.",
+    "table_or_series_id": "Figure 13.7 (p. 633)",
+    "url": "https://global.oup.com/academic/product/capitalism-9780199390632",
+    "frequency": "annual",
+    "units": "ln Y on vertical axis (model units, 8.0 to 12.5); arbitrary time index on horizontal axis (0 to 75)",
+    "license": "Book figure; reproduction governed by OUP permissions",
+    "available_through": "Book PDF in Inputs/Capitalism Data/",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "ln Yt = ln Y0 + alpha * t + eta_t, where eta_t = sum_{i=1..t} epsilon_i (eq. 13.43). Implements the classical view in which actual log output fluctuates around a deterministic linear trend ln Y0 + alpha * t with stochastic component eta_t (a random walk with drift if epsilon is white noise).",
+  "components": [
+    {
+      "label": "ln Y0",
+      "role": "initial_condition",
+      "description": "Initial log output level setting the height of the trend line.",
+      "source": "Shaikh 2016, eq. 13.43, p. 632"
+    },
+    {
+      "label": "alpha",
+      "role": "parameter",
+      "description": "Constant equilibrium growth rate of output (the slope of the trend line in log space). Defined via f(t) = α = constant in equation 13.42.",
+      "source": "Shaikh 2016, p. 632"
+    },
+    {
+      "label": "epsilon_t",
+      "role": "stochastic_input",
+      "description": "Period-by-period shock term; if white noise then eta_t is a random walk with drift.",
+      "source": "Shaikh 2016, eq. 13.42 and footnote 19, p. 632"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "Fig 13.7 is a purely illustrative/theoretical schematic. The horizontal axis is an unlabelled time index 0-75 (no calendar years); the vertical axis is ln Y in model units 8.0-12.5. The plotted curves are realisations of equation 13.43 (deterministic trend plus random walk error term) used to motivate the classical proposition that actual output fluctuates around an equilibrium growth path determined by net profitability and the capacity-capital ratio (eqs. 13.41-13.42).",
+    "Phase 2 classifier flagged this series as 'cross_sectional'; this dossier re-types it to 'theoretical' to match the underlying analytical character. The companion figures 13.8, 13.9, and 13.10 in the same passage are analytically identical (different shock configurations) and are not in scope for this dossier.",
+    "Appendix 13.1 (Stability of Multiplier Processes, printed pp. 883-888 / PDF pp. 921-926) develops the algebra of the generalised multiplier and contains the only other Chapter 13 figures (Appendix Figures 13.1.A and 13.1.B), but does NOT supply numerical inputs or simulated time series corresponding to Figure 13.7. No empirical data file backs this figure.",
+    "Construction is classed 'formula' (derived from eq. 13.43) rather than 'direct' because the plotted line is an analytical realisation, not a record of observed output.",
+    "Cited literature for the random-walk-with-drift interpretation: Nelson and Plosser (1982); Enders (2004) pp. 186-187."
+  ],
+  "open_questions": [
+    "Series was stubbed as content_type='cross_sectional' but is in fact a theoretical/illustrative schematic curve. Phase 4 should confirm the re-type to 'theoretical'.",
+    "Shaikh does not state the parameter values (Y0, alpha, variance of epsilon, random seed) used to draw Figure 13.7. A faithful replication would require choosing illustrative parameters; the curve in the book is not intended to match any historical series."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-c-ch13-17",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from printed pp. 631-635 (PDF pp. 669-673) and Appendix 13.1 (printed pp. 883-888). Re-typed from cross_sectional to theoretical: Fig 13.7 has no calendar time axis and no empirical observations; it is a model realisation of eq. 13.43."
+    }
+  ]
+}

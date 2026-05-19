@@ -1,52 +1,57 @@
-# Installation Guide
+# RSCD — Install Guide
 
-## Prerequisites
+## Requirements
 
-- **Python 3.10+**
-- **pip** (Python package manager)
+- Python 3.11 or later
+- ~5 GB free disk for raw API caches
+- ~500 MB for chopped outputs and extenbooks
+- API keys: FRED (free), BEA (free), BLS (free, optional)
 
-## Step 1: Clone the repository
-
-```bash
-git clone https://github.com/andenick/shaikh-capitalism-data.git
-cd shaikh-capitalism-data
-```
-
-## Step 2: Install dependencies
+## Setup
 
 ```bash
+cd D:/Arcanum/Projects/RSCD/Technical
+python -m venv .venv
+.venv/Scripts/activate    # Windows
 pip install -r requirements.txt
 ```
 
-## Step 3: API keys (optional)
+## API Keys
 
-API keys are needed only for fetching live data from government statistical agencies. All keys are free.
-
-```bash
-cp config/api_keys.env.example config/api_keys.env
-```
-
-Edit `config/api_keys.env` with your keys:
-
-| API | Register | Used For |
-|-----|----------|----------|
-| **FRED** | [fred.stlouisfed.org/docs/api/api_key.html](https://fred.stlouisfed.org/docs/api/api_key.html) | Industrial production, unemployment, interest rates, compensation |
-| **BEA** | [apps.bea.gov/api/signup](https://apps.bea.gov/api/signup/) | Profit rates, GDP by industry, fixed assets |
-
-The World Bank, OECD, and Maddison APIs do not require keys.
-
-## Step 4: Run the pipeline
+Copy the template and fill in your keys:
 
 ```bash
-python replicate.py                    # Full pipeline
-python replicate.py --chapter 2       # Single chapter
-python replicate.py --dry-run         # Show plan without executing
+cp config/api_keys.env.template config/api_keys.env
+# then edit config/api_keys.env to add your FRED_API_KEY, BEA_API_KEY etc.
 ```
 
-## Troubleshooting
+Alternatively, set them as environment variables — `S00_config.load()` reads
+`api_keys.env` without overwriting anything already in the process environment.
 
-**Import errors**: Ensure you're using Python 3.10+. Check with `python --version`.
+| API | Register (Free) | Required For |
+|-----|----------------|--------------|
+| **FRED** | https://fred.stlouisfed.org/docs/api/api_key.html | Ch2 extensions (INDPRO, UNRATE, M1, M2, etc.) |
+| **BEA** | https://apps.bea.gov/api/signup/ | Ch5–6 profit rate chain (NIPA tables) |
+| **BLS** | https://data.bls.gov/registrationEngine/ | Optional (industry-level) |
+| **World Bank** | No key | International comparisons |
+| **MeasuringWorth** | No key | Pre-1860 historical |
 
-**API timeouts**: FRED and BEA APIs occasionally have maintenance windows. Retry after a few minutes. The pipeline degrades gracefully — it warns but doesn't crash if a key is missing.
+The pipeline degrades gracefully if optional keys are missing.
 
-**Missing data files**: The `data/inputs/` directory contains all source data. If files are missing, re-clone the repository.
+## Health Check
+
+```bash
+python code/run.py --health
+```
+
+Expected output: all imports succeed, all API keys present, `Inputs/` paths
+resolve, `series_registry.json` parses, ANU_LEDGER schema valid.
+
+## First Run
+
+```bash
+python code/run.py --list                 # enumerate every script
+python code/run.py --validate-only        # run all V03 validators
+python code/run.py --series S201          # single series end-to-end
+python code/run.py --chapter 2            # all series in chapter 2
+```

@@ -1,0 +1,110 @@
+{
+  "series_id": "S802",
+  "name": "Percentage of Prices Increases or No Decreases during Contractions, in Relation to Concentration",
+  "chapter": 8,
+  "figures": [
+    "Fig8.2"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": "S043",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 8,
+      "page": 372,
+      "quote": "In the study by Weston et al. (1974), shown in Semmler (1984, 95, table 3.2), the first contraction (July 1957 to April 1958) shows a positive relation between relative price increases and concentration, the second (January 1960 to January 1961) shows a negative relation, and the third (November 1969 to November 1970) shows essentially no relation. Figure 8.2 depicts this pattern.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 8,
+      "page": 372,
+      "quote": "Figure 8.2 Percentage of Prices Increases or No Decreases during Contractions, in Relation to Concentration",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 8,
+      "page": 372,
+      "quote": "According to the administered price hypothesis, high concentration should inhibit price falls in recessions so the relative price increases and should equally inhibit price increases in an expansion so relative price should fall: hence, the coefficient should be significant and positive in a recession, and significant and negative in an expansion (Semmler 1984, 91, 94). But even here, the results are inconclusive.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Weston, Lustgarten, and Grottke (academic study), reported by Semmler (1984)",
+    "publication": "Weston, J.F., S. Lustgarten, and N. Grottke (1974), 'The Administered Price Thesis Denied: Note,' American Economic Review 64(1): 232-234; data reproduced as Table 3.2 in Semmler, Willi (1984), Competition, Monopoly, and Differential Profit Rates (New York: Columbia University Press), p. 95.",
+    "table_or_series_id": "Semmler 1984, Table 3.3, p. 95 (chart digitized in ShaikhChoppedTables/Appendix8_Semmler19843.3.xlsx); also Weston et al. 1974 underlying data.",
+    "url": "https://www.jstor.org/stable/1814892",
+    "frequency": "event-based (per contraction)",
+    "units": "Percent of firms with price increases or no decreases during contraction; CR4 midpoint (percent)",
+    "license": "Cross-sectional summary statistics from academic publications; reproducible under fair use.",
+    "available_through": "JSTOR (Weston et al. 1974); Columbia University Press (Semmler 1984).",
+    "discontinued": true,
+    "replaced_by": "No modern equivalent published as a single table. Could be reconstructed using BLS PPI industry data + Census Concentration Ratios for any chosen NBER-dated contraction (e.g., 1990-91, 2001, 2007-09, 2020)."
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [
+    "CR4 midpoint (20, 50, 80) — three concentration bins from Weston et al. via Semmler 1984 Tbl 3.3",
+    "Percent of firms with price increases or no decreases over each of three contractions: 1957-07 to 1958-04, 1960-01 to 1961-01, 1969-11 to 1970-11 (NBER recession datings)"
+  ],
+  "year_range_book": [
+    1957,
+    1970
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "BLS Producer Price Index (PPI) industry detail for NBER-dated recessions",
+      "source": "U.S. Bureau of Labor Statistics, PPI Industry Data",
+      "url": "https://www.bls.gov/ppi/databases/",
+      "units": "Index; convert to share of industries with monthly PPI change >= 0",
+      "splice_strategy": "none",
+      "concerns": [
+        "Requires NAICS-level concentration data from Census; SIC->NAICS bridge needed for any pre-1997 comparison.",
+        "Definition of 'no decrease' depends on observation frequency (monthly vs. quarterly) and on choice of contraction window."
+      ]
+    },
+    {
+      "subseries_label": "NBER Business Cycle Reference Dates",
+      "source": "National Bureau of Economic Research",
+      "url": "https://www.nber.org/research/business-cycle-dating",
+      "units": "Dates of peaks and troughs",
+      "splice_strategy": "none",
+      "concerns": [
+        "Provides recession windows used to define each cross-section; no data overlap concern."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "The series is cross-sectional (industries grouped by CR4 midpoint), repeated for three NBER-dated recessions (1957-58, 1960-61, 1969-70). It is plotted as three lines in Figure 8.2.",
+    "Numeric values are digitized in SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_Semmler19843.3.xlsx: three CR4 midpoints (20, 50, 80) crossed with three contractions; six (3x3=9) data points total.",
+    "Shaikh uses this chart and the underlying Semmler table to refute the 'administered prices' hypothesis: the sign of the price-concentration relation flips across the three contractions, contrary to the monopoly-power prediction.",
+    "content_type set to cross_sectional (not time_series) because each contraction is a cross-section of industries; the three contractions are not a continuous time index."
+  ],
+  "open_questions": [
+    "The Weston et al. (1974) underlying micro data (per-industry CR4 and price-change percentages) is not provided in the book or chopped tables; only the three-by-three summary table is available.",
+    "Stub had cd_id S043; there is no corresponding CD2 dossier (cd2_id remains null).",
+    "Extension would require choosing modern recessions (e.g., 2007-09) and reconstructing the same statistic; flagged for Phase 4 to decide whether to extend or treat this as a historical illustration."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-b-ch8",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from book p.372 and Semmler 1984 Tbl 3.3 via ShaikhChoppedTables/Appendix8_Semmler19843.3.xlsx. Classified as cross_sectional (three recession-specific cross-sections), not time_series."
+    }
+  ]
+}

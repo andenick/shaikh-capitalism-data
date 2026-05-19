@@ -1,0 +1,93 @@
+{
+  "series_id": "S404",
+  "name": "Automotive Unit Labor Cost",
+  "chapter": 4,
+  "figures": [
+    "Fig4.19"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 4,
+      "page": 161,
+      "quote": "Unit labor cost as shown in figure 4.19, includes both the fixed and variable components of labor cost. The fixed portion of labor compensation creates a falling component which becomes less influential at higher scales of production, while overtime creates rising components with spikes at each successive shift. Engineering capacity is accommodated by adding a final vertical segment to the curve. The overall result is a deformed U-shape with spikes at the beginning of each shift and roughly similar minimum points for each shift.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 162,
+      "quote": "Figure 4.19 Automotive Unit Labor Cost Source: Inman 1995, 61, fig. 3.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 160,
+      "quote": "Inman (1995) provides one of the most striking illustrations of actual cost curves. He estimates the cost of an automotive plant based on a detailed study of its operations (53–55). Fixed costs include capital invested, property taxes, and overhead. They also include a component of labor cost which is fixed because workers on 'lay-off ... are entitled to almost all of their benefits and 95% of their after tax pay less $17.50 a week' (55, 59).",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Robert P. Inman (author); Brookings Papers on Economic Activity (publisher)",
+    "publication": "Inman, R. P. (1995). 'How to Have a Fiscal Crisis: Lessons from Philadelphia.' (Actually: Shaikh cites Inman 1995 — the specific citation in the book reference list should be verified for the exact title; reproduced figure is from Inman 1995, p. 61, fig. 3.)",
+    "table_or_series_id": "Inman (1995), figure 3 (automotive plant simulated average labor cost, $/car vs. annual vehicle production in thousands)",
+    "url": "https://www.google.com/books/edition/_/2bC3AAAAIAAJ",
+    "frequency": "synthetic (Monte-Carlo simulation across output levels 0 to ~450 thousand vehicles/year)",
+    "units": "USD per car ($/car) vs. annual vehicle production (thousands)",
+    "license": "Copyright Inman (1995); reproduced in Shaikh (2016) under fair use; RSCD use also fair use for research",
+    "available_through": "Inman 1995 article (Shaikh's bibliography); also available as reproduced figure in Shaikh (2016), p. 162",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "ulc(Q) = (fixed_labor_cost + variable_labor_cost(Q)) / Q, where variable_labor_cost includes overtime, full-time, under-time, and second/third-shift premia; Q = annual vehicle production. Cost values are averages of Monte-Carlo simulations of cost estimates allowing for random factors in actual production (Inman 1995, 56–57).",
+  "components": [
+    {
+      "name": "Fixed labor cost (layoff pay = 95% of after-tax pay - $17.50/week)",
+      "source": "Inman 1995, pp. 55, 59"
+    },
+    {
+      "name": "Variable labor cost (overtime, full-time, under-time, shift premia)",
+      "source": "Inman 1995, pp. 57-60, 63"
+    },
+    {
+      "name": "Output range (annual vehicle production)",
+      "source": "Inman 1995, fig. 3 (0 to ~450 thousand vehicles/year)"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "S404 is NOT a time series in the calendar sense - it is a cross-sectional cost curve plotted against annual production (output level), based on Inman's (1995) Monte-Carlo simulation of an automotive plant. Reclassified content_type from default 'time_series' (stub) to 'derived'.",
+    "The figure shows simulated average labor cost ($/car) against annual vehicle production (thousands), with explicit 'Add Second Shift' and 'Add Third Shift' markers, and a vertical segment at engineering capacity. Y-axis range $0-$500.",
+    "Shaikh's narrative emphasis (p. 161): the simulated unit labor cost curve exhibits a 'deformed U-shape with spikes at the beginning of each shift and roughly similar minimum points for each shift' - directly confirming the theoretical pattern derived in S401-S402.",
+    "extension_candidates intentionally empty: this is a reproduction of a single 1995 study's simulated cost curve for one automotive plant. There is no 'next vintage' of the same data; the empirical pattern is what matters. If Phase 4 wants to extend, the candidate would be re-running Inman's Monte-Carlo with current automotive data - a research project, not a data pull.",
+    "Original source (Inman 1995) bibliographic details should be verified against Shaikh's reference list in the book - specifically whether it appears in the back matter as Inman, R. P. (1995). Shaikh's footnote pattern '(Inman 1995, 53-55)' is consistent across pp. 160-163."
+  ],
+  "open_questions": [
+    "Verify Inman 1995 full citation against Shaikh's bibliography (back of book). The 'How to Have a Fiscal Crisis' attribution above is provisional - I do not have Shaikh's reference list confirmed.",
+    "Inman's underlying paper is paywalled / library-only; need to check whether the underlying numerical series is published. If not, the chopped figure values themselves would need to be reconstructed via figure digitization.",
+    "Phase 4 should decide whether reproduced single-plant simulated cost curves count as 'data' for the RSCD framework or as 'illustrative theoretical evidence'."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch4",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Reproduced from Inman 1995. Cross-sectional cost curve, not a calendar time series. Reclassified to 'derived'. Bibliography lookup deferred."
+    }
+  ]
+}

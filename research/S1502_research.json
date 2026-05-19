@@ -1,0 +1,135 @@
+{
+  "series_id": "S1502",
+  "name": "Growth Rates of Real Output, US Major Industries (Part 1)",
+  "chapter": 15,
+  "figures": [
+    "Fig15.2A"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S077",
+    "cd2_id": "S077"
+  },
+  "book_quotes": [
+    {
+      "chapter": 15,
+      "page": 700,
+      "quote": "Since the growth of any given industry requires concomitant growth in its inputs, no major industry can wander off on its own for long. This is evident in figure 15.2, which displays the",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 701,
+      "quote": "Figure 15.2A Growth Rates of Real Output, US Major Industries, 1987-2010",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 702,
+      "quote": "growth rates of real output for major US sectors from 1987 to 2010 in comparison the economy-wide average rate (in bold).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 895,
+      "quote": "Figure 15.2A Growth Rates of Real Output, US Major Industries, 1987-2010 Figure 15.2B Growth Rates of Real Output, US Major Industries, 1987-2010 Bureau of Economic Analysis. GDP by Industry, http://www.bea.gov/industry/index.htm#annual",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (BEA)",
+    "publication": "GDP by Industry — Real Value Added by Industry (chained dollars)",
+    "table_or_series_id": "GDP-by-Industry: Real Value Added by Industry (NAICS major industries, panel A: Agriculture, Mining, Utilities, Construction, Durable Mfg., Nondurable Mfg., Wholesale, Retail)",
+    "url": "http://www.bea.gov/industry/index.htm#annual",
+    "frequency": "annual",
+    "units": "Rate (decimal) — annual growth rate of real value added",
+    "license": "U.S. Government work, public domain",
+    "available_through": "ShaikhChoppedTables/Appendix15_USGDPRByIndustry.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "g_i(t) = ln(YR_i(t)) - ln(YR_i(t-1)) where YR_i is BEA real value added for industry i (chained dollars)",
+  "components": [
+    {
+      "label": "All industries (bold reference)",
+      "source": "BEA GDP-by-Industry, All Industries real VA"
+    },
+    {
+      "label": "Agriculture, forestry, fishing, and hunting",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Mining",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Utilities",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Construction",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Durable Mfg. goods",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Nondurable Mfg. goods",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Wholesale trade",
+      "source": "BEA GDP-by-Industry"
+    },
+    {
+      "label": "Retail trade",
+      "source": "BEA GDP-by-Industry"
+    }
+  ],
+  "year_range_book": [
+    1987,
+    2010
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA Real Value Added by Industry (NAICS, modern vintage)",
+      "source": "BEA Industry Economic Accounts — GDP by Industry, Real Value Added (chained dollars)",
+      "url": "https://www.bea.gov/data/gdp/gdp-industry",
+      "units": "Rate (decimal)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "Growth rates are invariant to base year (reference year reweighting only shifts levels).",
+        "Vintage revisions introduce small differences in overlap periods.",
+        "BEA SIC-to-NAICS transition pre-1997 may break long-history splices for some sectors."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Figure 15.2A shows the goods-producing and trade industries; 15.2B (S1503) shows the services and government industries.",
+    "Real output growth = first log-difference of BEA real value added; 'All industries' is overlaid in bold as the economy-wide reference.",
+    "Note discrepancy between Shaikh's figure caption ('1987-2010') and CD2 predecessor S077 which used 1988-2011 reflecting the first valid growth-rate year given a 1987-2011 levels series.",
+    "CD2 validation: 1988 all-industry growth ~0.047."
+  ],
+  "open_questions": [
+    "Reconcile exact start year (1987 vs 1988) — book caption vs first valid growth-rate year.",
+    "BEA's industry detail level (sector vs subsector NAICS) for the modern extension."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch15",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S077 ported; quotes verified against PDF pp.700-702 and Appendix 15.1 p.895"
+    }
+  ]
+}

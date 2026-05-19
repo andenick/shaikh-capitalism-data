@@ -1,0 +1,3462 @@
+{
+  "schema_version": "anu-ledger-v1.0",
+  "project": "rscd-shaikh-2016-replication",
+  "generated_at": "2026-05-18T12:00:00+00:00",
+  "last_updated": "2026-05-19T00:22:18.990557+00:00",
+  "series": {
+    "S201": {
+      "name": "US Industrial Production Index",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S201_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S201_DPR.md",
+        "epr": "Technical/docs/series/S201_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S201_load.py",
+        "processor": "Technical/code/P02_processors/P02_S201_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S201_validate.py",
+        "raw_bea": "Technical/data/raw/S201_BEA_LTEG_A173.parquet",
+        "raw_frb": "Technical/data/raw/S201_FRB_G17_BOOK.parquet",
+        "raw_fred": "Technical/data/raw/S201_FRED_INDPRO.parquet",
+        "processed": "Technical/data/processed/S201.parquet",
+        "chopped_csv": "Technical/chopped/S201.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S201_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S201-A",
+        "S201-B",
+        "S201-C"
+      ],
+      "subsource_ids": [
+        "BEA_LTEG_1966",
+        "FRB_G17_INDPRO",
+        "FRED_INDPRO"
+      ]
+    },
+    "S301": {
+      "name": "Change in expenditure relative to change in income, Case I",
+      "chapter": 3,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S301_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH3_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S301_DPR.md",
+        "epr": "Technical/docs/series/S301_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S301_load.py",
+        "processor": "Technical/code/P02_processors/P02_S301_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S301_validate.py",
+        "processed": "Technical/data/processed/S301.parquet",
+        "chopped_csv": "Technical/chopped/S301.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S301_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S301-A"
+      ],
+      "subsource_ids": [
+        "SHAIKH_2016_EQ_3_4_3_11"
+      ]
+    },
+    "S302": {
+      "name": "Expenditure Share of Necessaries, Case I",
+      "chapter": 3,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S302_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH3_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S302_DPR.md",
+        "epr": "Technical/docs/series/S302_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S302_load.py",
+        "processor": "Technical/code/P02_processors/P02_S302_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S302_validate.py",
+        "processed": "Technical/data/processed/S302.parquet",
+        "chopped_csv": "Technical/chopped/S302.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S302_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S302-A"
+      ],
+      "subsource_ids": [
+        "SHAIKH_2016_EQ_3_4_3_11"
+      ]
+    },
+    "S303": {
+      "name": "Engel Curve of Necessaries, Case I",
+      "chapter": 3,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S303_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH3_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S303_DPR.md",
+        "epr": "Technical/docs/series/S303_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S303_load.py",
+        "processor": "Technical/code/P02_processors/P02_S303_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S303_validate.py",
+        "processed": "Technical/data/processed/S303.parquet",
+        "chopped_csv": "Technical/chopped/S303.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S303_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S303-A"
+      ],
+      "subsource_ids": [
+        "SHAIKH_2016_EQ_3_4_3_11"
+      ]
+    },
+    "S304": {
+      "name": "Discretionary Propensity to Consume, Case II",
+      "chapter": 3,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S304_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH3_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S304_DPR.md",
+        "epr": "Technical/docs/series/S304_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S304_load.py",
+        "processor": "Technical/code/P02_processors/P02_S304_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S304_validate.py",
+        "processed": "Technical/data/processed/S304.parquet",
+        "chopped_csv": "Technical/chopped/S304.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S304_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S304-A"
+      ],
+      "subsource_ids": [
+        "SHAIKH_2016_EQ_3_4_3_11"
+      ]
+    },
+    "S305": {
+      "name": "Engel Curve of Necessaries, Case II",
+      "chapter": 3,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S305_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH3_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S305_DPR.md",
+        "epr": "Technical/docs/series/S305_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S305_load.py",
+        "processor": "Technical/code/P02_processors/P02_S305_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S305_validate.py",
+        "processed": "Technical/data/processed/S305.parquet",
+        "chopped_csv": "Technical/chopped/S305.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S305_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S305-A"
+      ],
+      "subsource_ids": [
+        "SHAIKH_2016_EQ_3_4_3_11"
+      ]
+    },
+    "S306": {
+      "name": "Empirical Expenditure Share on Food (Working Class Budgets, United Kingdom, 1904)",
+      "chapter": 3,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S306_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH3_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S306_DPR.md",
+        "epr": "Technical/docs/series/S306_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S306_load.py",
+        "processor": "Technical/code/P02_processors/P02_S306_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S306_validate.py",
+        "processed": "Technical/data/processed/S306.parquet",
+        "chopped_csv": "Technical/chopped/S306.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S306_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S306-A"
+      ],
+      "subsource_ids": [
+        "ALLEN_BOWLEY_1935_TABLE1",
+        "UK_BoT_1908_CD3864"
+      ]
+    },
+    "S307": {
+      "name": "Empirical Engel Curve for Food (Working Class Budgets, United Kingdom, 1904)",
+      "chapter": 3,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S307_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH3_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S307_DPR.md",
+        "epr": "Technical/docs/series/S307_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S307_load.py",
+        "processor": "Technical/code/P02_processors/P02_S307_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S307_validate.py",
+        "processed": "Technical/data/processed/S307.parquet",
+        "chopped_csv": "Technical/chopped/S307.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S307_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S307-A"
+      ],
+      "subsource_ids": [
+        "ALLEN_BOWLEY_1935_TABLE1",
+        "UK_BoT_1908_CD3864"
+      ]
+    },
+    "S308": {
+      "name": "Necessary Good (x1) Demand Curves, Four Different Micro Foundations",
+      "chapter": 3,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S308_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH3_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S308_DPR.md",
+        "epr": "Technical/docs/series/S308_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S308_load.py",
+        "processor": "Technical/code/P02_processors/P02_S308_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S308_validate.py",
+        "processed": "Technical/data/processed/S308.parquet",
+        "chopped_csv": "Technical/chopped/S308.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S308_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S308-A",
+        "S308-B",
+        "S308-C",
+        "S308-D",
+        "S308-E"
+      ],
+      "subsource_ids": [
+        "SHAIKH_2016_EQ_3_4_3_11",
+        "SHAIKH_2016_NETLOGO_SIMS"
+      ]
+    },
+    "S309": {
+      "name": "Luxury Good (x2) Demand Curves, Four Different Micro Foundations",
+      "chapter": 3,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S309_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH3_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S309_DPR.md",
+        "epr": "Technical/docs/series/S309_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S309_load.py",
+        "processor": "Technical/code/P02_processors/P02_S309_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S309_validate.py",
+        "processed": "Technical/data/processed/S309.parquet",
+        "chopped_csv": "Technical/chopped/S309.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S309_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S309-A",
+        "S309-B",
+        "S309-C",
+        "S309-D",
+        "S309-E"
+      ],
+      "subsource_ids": [
+        "SHAIKH_2016_EQ_3_4_3_11",
+        "SHAIKH_2016_NETLOGO_SIMS"
+      ]
+    },
+    "S401": {
+      "name": "Derived numerical illustration of Fig 4.16 (per-worker wage cost curves). XR-axi",
+      "chapter": 4,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S401_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH4_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S401_DPR.md",
+        "epr": "Technical/docs/series/S401_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S401_load.py",
+        "processor": "Technical/code/P02_processors/P02_S401_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S401_validate.py",
+        "processed": "Technical/data/processed/S401.parquet",
+        "chopped_csv": "Technical/chopped/S401.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S401_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T21:57:52.480731+00:00"
+    },
+    "S402": {
+      "name": "Per-hour-wage twin of S401 (Fig 4.17).",
+      "chapter": 4,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S402_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH4_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S402_DPR.md",
+        "epr": "Technical/docs/series/S402_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S402_load.py",
+        "processor": "Technical/code/P02_processors/P02_S402_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S402_validate.py",
+        "processed": "Technical/data/processed/S402.parquet",
+        "chopped_csv": "Technical/chopped/S402.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S402_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T21:57:52.480731+00:00"
+    },
+    "S403": {
+      "name": "Profit derivation from S401 (tc') + S402 (tc) at output price p=7 (Fig 4.18).",
+      "chapter": 4,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S403_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH4_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S403_DPR.md",
+        "epr": "Technical/docs/series/S403_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S403_load.py",
+        "processor": "Technical/code/P02_processors/P02_S403_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S403_validate.py",
+        "processed": "Technical/data/processed/S403.parquet",
+        "chopped_csv": "Technical/chopped/S403.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S403_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T21:57:52.480731+00:00"
+    },
+    "S404": {
+      "name": "Automotive Unit Labor Cost (Inman 1995 fig 3) — data_unavailable",
+      "chapter": 4,
+      "status": "data_unavailable",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S404_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH4_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S404_DPR.md",
+        "epr": "Technical/docs/series/S404_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S404_load.py",
+        "processor": "Technical/code/P02_processors/P02_S404_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S404_validate.py"
+      },
+      "updated_at": "2026-05-18T21:57:52.480731+00:00"
+    },
+    "S405": {
+      "name": "Automotive Marginal Labor Cost (Inman 1995 fig 4) — data_unavailable",
+      "chapter": 4,
+      "status": "data_unavailable",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S405_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH4_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S405_DPR.md",
+        "epr": "Technical/docs/series/S405_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S405_load.py",
+        "processor": "Technical/code/P02_processors/P02_S405_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S405_validate.py"
+      },
+      "updated_at": "2026-05-18T21:57:52.480731+00:00"
+    },
+    "S406": {
+      "name": "Automotive Average Cost (Inman 1995 fig 5) — data_unavailable",
+      "chapter": 4,
+      "status": "data_unavailable",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S406_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH4_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S406_DPR.md",
+        "epr": "Technical/docs/series/S406_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S406_load.py",
+        "processor": "Technical/code/P02_processors/P02_S406_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S406_validate.py"
+      },
+      "updated_at": "2026-05-18T21:57:52.480731+00:00"
+    },
+    "S407": {
+      "name": "Automotive Marginal Cost (Inman 1995 fig 6) — data_unavailable",
+      "chapter": 4,
+      "status": "data_unavailable",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S407_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH4_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S407_DPR.md",
+        "epr": "Technical/docs/series/S407_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S407_load.py",
+        "processor": "Technical/code/P02_processors/P02_S407_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S407_validate.py"
+      },
+      "updated_at": "2026-05-18T21:57:52.480731+00:00"
+    },
+    "S408": {
+      "name": "Eiteman & Guthrie 1952 cost-curve survey (cross_sectional)",
+      "chapter": 4,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S408_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH4_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S408_DPR.md",
+        "epr": "Technical/docs/series/S408_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S408_load.py",
+        "processor": "Technical/code/P02_processors/P02_S408_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S408_validate.py",
+        "processed": "Technical/data/processed/S408.parquet",
+        "chopped_csv": "Technical/chopped/S408.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S408_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T21:57:52.480731+00:00"
+    },
+    "S701": {
+      "name": "Figure 7.11 — US Selling Price vs Unit Labor Cost (cross-section), 1923–1950",
+      "chapter": 7,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S701_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH7_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S701_DPR.md",
+        "epr": "Technical/docs/series/S701_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S701_load.py",
+        "processor": "Technical/code/P02_processors/P02_S701_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S701_validate.py",
+        "processed": "Technical/data/processed/S701.parquet",
+        "chopped_csv": "Technical/chopped/S701.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S701_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S701-A"
+      ],
+      "subsource_ids": [
+        "SALTER_1969_TABLE28_US"
+      ],
+      "content_type": "cross_sectional",
+      "extension_status": "not_applicable_cross_sectional"
+    },
+    "S702": {
+      "name": "Figure 7.12 — UK Selling Price vs Unit Labor Cost (cross-section), 1954–1963 (Reddaway Addendum)",
+      "chapter": 7,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S702_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH7_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S702_DPR.md",
+        "epr": "Technical/docs/series/S702_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S702_load.py",
+        "processor": "Technical/code/P02_processors/P02_S702_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S702_validate.py",
+        "processed": "Technical/data/processed/S702.parquet",
+        "chopped_csv": "Technical/chopped/S702.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S702_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S702-A"
+      ],
+      "subsource_ids": [
+        "SALTER_1969_TABLE33_UK"
+      ],
+      "content_type": "cross_sectional",
+      "extension_status": "not_applicable_cross_sectional"
+    },
+    "S703": {
+      "name": "Figure 7.13 — World Manufacturing ROP and IROP, 1970–1989 (Christodoulopoulos/ISDB)",
+      "chapter": 7,
+      "status": "data_unavailable_documented",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S703_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH7_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S703_DPR.md",
+        "epr": "Technical/docs/series/S703_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S703_load.py (returns SKIPPED)",
+        "validator": "Technical/code/V03_validators/V03_S703_validate.py (returns PASS_DATA_UNAVAILABLE)",
+        "extenbook_xlsx": "Technical/extenbooks/S703_extenbook.xlsx (DPR + EPR + Source pages only)"
+      },
+      "subseries_ids": [],
+      "subsource_ids": [
+        "CHRISTODOULOPOULOS_1995_FIG7_13"
+      ],
+      "content_type": "data_unavailable",
+      "extension_status": "data_unavailable"
+    },
+    "S704": {
+      "name": "Figure 7.14 — US Manufacturing ROP and IROP, 1960–1989 (Christodoulopoulos/ISDB US subset)",
+      "chapter": 7,
+      "status": "data_unavailable_documented",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S704_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH7_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S704_DPR.md",
+        "epr": "Technical/docs/series/S704_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S704_load.py (returns SKIPPED)",
+        "validator": "Technical/code/V03_validators/V03_S704_validate.py (returns PASS_DATA_UNAVAILABLE)",
+        "extenbook_xlsx": "Technical/extenbooks/S704_extenbook.xlsx (DPR + EPR + Source pages only)"
+      },
+      "subseries_ids": [],
+      "subsource_ids": [
+        "CHRISTODOULOPOULOS_1995_FIG7_14"
+      ],
+      "content_type": "data_unavailable",
+      "extension_status": "data_unavailable"
+    },
+    "S705": {
+      "name": "Figure 7.15 — US Industry Average Rates of Profit, 1987–2005 (BEA/Shaikh 2008)",
+      "chapter": 7,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S705_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH7_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S705_DPR.md",
+        "epr": "Technical/docs/series/S705_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S705_load.py",
+        "processor": "Technical/code/P02_processors/P02_S705_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S705_validate.py",
+        "processed": "Technical/data/processed/S705.parquet",
+        "chopped_csv": "Technical/chopped/S705.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S705_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S705-A"
+      ],
+      "subsource_ids": [
+        "SHAIKH_2008_APPENDIX_7_2_ROP"
+      ],
+      "content_type": "time_series",
+      "extension_status": "feasible_deferred"
+    },
+    "S706": {
+      "name": "Figure 7.17 — US Industry Incremental Rates of Profit, 1988–2005 (BEA/Shaikh 2008)",
+      "chapter": 7,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S706_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH7_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S706_DPR.md",
+        "epr": "Technical/docs/series/S706_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S706_load.py",
+        "processor": "Technical/code/P02_processors/P02_S706_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S706_validate.py",
+        "processed": "Technical/data/processed/S706.parquet",
+        "chopped_csv": "Technical/chopped/S706.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S706_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S706-A"
+      ],
+      "subsource_ids": [
+        "SHAIKH_2008_APPENDIX_7_2_IROP"
+      ],
+      "content_type": "time_series",
+      "extension_status": "feasible_deferred"
+    },
+    "S707": {
+      "name": "Figure 7.19 — Greek Manufacturing ROP Deviations, 1962–1991 (Tsoulfidis & Tsaliki 2011 Fig 4)",
+      "chapter": 7,
+      "status": "data_unavailable_documented",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S707_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH7_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S707_DPR.md",
+        "epr": "Technical/docs/series/S707_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S707_load.py (returns SKIPPED)",
+        "validator": "Technical/code/V03_validators/V03_S707_validate.py (returns PASS_DATA_UNAVAILABLE)",
+        "extenbook_xlsx": "Technical/extenbooks/S707_extenbook.xlsx (DPR + EPR + Source pages only)"
+      },
+      "subseries_ids": [],
+      "subsource_ids": [
+        "TSOULFIDIS_TSALIKI_2011_FIG4"
+      ],
+      "content_type": "data_unavailable",
+      "extension_status": "data_unavailable"
+    },
+    "S708": {
+      "name": "Figure 7.20 — Greek Manufacturing IROP Deviations, 1962–1991 (Tsoulfidis & Tsaliki 2011 Fig 5)",
+      "chapter": 7,
+      "status": "data_unavailable_documented",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S708_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH7_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S708_DPR.md",
+        "epr": "Technical/docs/series/S708_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S708_load.py (returns SKIPPED)",
+        "validator": "Technical/code/V03_validators/V03_S708_validate.py (returns PASS_DATA_UNAVAILABLE)",
+        "extenbook_xlsx": "Technical/extenbooks/S708_extenbook.xlsx (DPR + EPR + Source pages only)"
+      },
+      "subseries_ids": [],
+      "subsource_ids": [
+        "TSOULFIDIS_TSALIKI_2011_FIG5"
+      ],
+      "content_type": "data_unavailable",
+      "extension_status": "data_unavailable"
+    },
+    "S709": {
+      "name": "Figure 7.16 — US Industry ROP Deviations from Average, 1987–2005 (derivative of S705)",
+      "chapter": 7,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S709_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH7_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S709_DPR.md",
+        "epr": "Technical/docs/series/S709_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S709_load.py",
+        "processor": "Technical/code/P02_processors/P02_S709_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S709_validate.py",
+        "processed": "Technical/data/processed/S709.parquet",
+        "chopped_csv": "Technical/chopped/S709.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S709_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S709-A"
+      ],
+      "subsource_ids": [
+        "SHAIKH_2008_APPENDIX_7_2_ROP"
+      ],
+      "content_type": "time_series",
+      "extension_status": "feasible_deferred"
+    },
+    "S710": {
+      "name": "Figure 7.18 — US Industry IROP Deviations from Average, 1988–2005 (derivative of S706)",
+      "chapter": 7,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S710_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH7_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S710_DPR.md",
+        "epr": "Technical/docs/series/S710_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S710_load.py",
+        "processor": "Technical/code/P02_processors/P02_S710_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S710_validate.py",
+        "processed": "Technical/data/processed/S710.parquet",
+        "chopped_csv": "Technical/chopped/S710.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S710_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S710-A"
+      ],
+      "subsource_ids": [
+        "SHAIKH_2008_APPENDIX_7_2_IROP"
+      ],
+      "content_type": "time_series",
+      "extension_status": "feasible_deferred"
+    },
+    "S711": {
+      "name": "Figure 7.21 — OECD Industry IROP Deviations, 1988–2003 (PPP-adjusted; OECD STAN 2003 + PWT 6.2)",
+      "chapter": 7,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S711_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH7_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S711_DPR.md",
+        "epr": "Technical/docs/series/S711_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S711_load.py",
+        "processor": "Technical/code/P02_processors/P02_S711_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S711_validate.py",
+        "processed": "Technical/data/processed/S711.parquet",
+        "chopped_csv": "Technical/chopped/S711.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S711_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S711-A"
+      ],
+      "subsource_ids": [
+        "SHAIKH_2008_APPENDIX_7_2_OECD_IROP"
+      ],
+      "content_type": "time_series",
+      "extension_status": "feasible_deferred"
+    },
+    "S1501": {
+      "name": "Chapter 15 series S1501",
+      "chapter": 15,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1501_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH15_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1501_DPR.md",
+        "epr": "Technical/docs/series/S1501_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1501_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1501_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1501_validate.py",
+        "processed": "Technical/data/processed/S1501.parquet",
+        "chopped_csv": "Technical/chopped/S1501.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1501_extenbook.xlsx"
+      }
+    },
+    "S1502": {
+      "name": "Chapter 15 series S1502",
+      "chapter": 15,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1502_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH15_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1502_DPR.md",
+        "epr": "Technical/docs/series/S1502_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1502_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1502_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1502_validate.py",
+        "processed": "Technical/data/processed/S1502.parquet",
+        "chopped_csv": "Technical/chopped/S1502.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1502_extenbook.xlsx"
+      }
+    },
+    "S1503": {
+      "name": "Chapter 15 series S1503",
+      "chapter": 15,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1503_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH15_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1503_DPR.md",
+        "epr": "Technical/docs/series/S1503_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1503_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1503_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1503_validate.py",
+        "processed": "Technical/data/processed/S1503.parquet",
+        "chopped_csv": "Technical/chopped/S1503.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1503_extenbook.xlsx"
+      }
+    },
+    "S1504": {
+      "name": "Chapter 15 series S1504",
+      "chapter": 15,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1504_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH15_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1504_DPR.md",
+        "epr": "Technical/docs/series/S1504_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1504_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1504_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1504_validate.py",
+        "processed": "Technical/data/processed/S1504.parquet",
+        "chopped_csv": "Technical/chopped/S1504.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1504_extenbook.xlsx"
+      }
+    },
+    "S1505": {
+      "name": "Chapter 15 series S1505",
+      "chapter": 15,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1505_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH15_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1505_DPR.md",
+        "epr": "Technical/docs/series/S1505_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1505_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1505_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1505_validate.py",
+        "processed": "Technical/data/processed/S1505.parquet",
+        "chopped_csv": "Technical/chopped/S1505.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1505_extenbook.xlsx"
+      }
+    },
+    "S1506": {
+      "name": "Chapter 15 series S1506",
+      "chapter": 15,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1506_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH15_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1506_DPR.md",
+        "epr": "Technical/docs/series/S1506_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1506_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1506_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1506_validate.py",
+        "processed": "Technical/data/processed/S1506.parquet",
+        "chopped_csv": "Technical/chopped/S1506.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1506_extenbook.xlsx"
+      }
+    },
+    "S1507": {
+      "name": "Chapter 15 series S1507",
+      "chapter": 15,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1507_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH15_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1507_DPR.md",
+        "epr": "Technical/docs/series/S1507_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1507_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1507_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1507_validate.py",
+        "processed": "Technical/data/processed/S1507.parquet",
+        "chopped_csv": "Technical/chopped/S1507.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1507_extenbook.xlsx"
+      }
+    },
+    "S1508": {
+      "name": "Chapter 15 series S1508",
+      "chapter": 15,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1508_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH15_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1508_DPR.md",
+        "epr": "Technical/docs/series/S1508_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1508_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1508_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1508_validate.py",
+        "processed": "Technical/data/processed/S1508.parquet",
+        "chopped_csv": "Technical/chopped/S1508.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1508_extenbook.xlsx"
+      }
+    },
+    "S1509": {
+      "name": "Chapter 15 series S1509",
+      "chapter": 15,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1509_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH15_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1509_DPR.md",
+        "epr": "Technical/docs/series/S1509_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1509_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1509_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1509_validate.py",
+        "processed": "Technical/data/processed/S1509.parquet",
+        "chopped_csv": "Technical/chopped/S1509.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1509_extenbook.xlsx"
+      }
+    },
+    "S1001": {
+      "name": "Bank vs Private Industry IROP",
+      "chapter": 10,
+      "status": "ingested",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1001_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH10_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1001_DPR.md",
+        "epr": "Technical/docs/series/S1001_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1001_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1001_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1001_validate.py",
+        "processed": "Technical/data/processed/S1001.parquet",
+        "chopped_csv": "Technical/chopped/S1001.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1001_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S1001-A",
+        "S1001-B"
+      ],
+      "subsource_ids": [
+        "SHAIKH_APP72_ALLPRIV",
+        "SHAIKH_APP72_BANKS"
+      ]
+    },
+    "S1002": {
+      "name": "Interest Rate and Price Level",
+      "chapter": 10,
+      "status": "ingested",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1002_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH10_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1002_DPR.md",
+        "epr": "Technical/docs/series/S1002_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1002_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1002_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1002_validate.py",
+        "processed": "Technical/data/processed/S1002.parquet",
+        "chopped_csv": "Technical/chopped/S1002.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1002_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S1002-A",
+        "S1002-B",
+        "S1002-C",
+        "S1002-D"
+      ],
+      "subsource_ids": [
+        "FRED_AAA",
+        "FRED_PPIACO",
+        "USLR_USWPI",
+        "USLR_iblong"
+      ]
+    },
+    "S1003": {
+      "name": "Relative Price of Finance",
+      "chapter": 10,
+      "status": "ingested",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1003_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH10_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1003_DPR.md",
+        "epr": "Technical/docs/series/S1003_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1003_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1003_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1003_validate.py",
+        "processed": "Technical/data/processed/S1003.parquet",
+        "chopped_csv": "Technical/chopped/S1003.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1003_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S1003-A",
+        "S1003-B"
+      ],
+      "subsource_ids": [
+        "S1002_components_book",
+        "S1002_components_extended"
+      ]
+    },
+    "S1004": {
+      "name": "Real Interest Rate HP-filtered",
+      "chapter": 10,
+      "status": "ingested",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1004_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH10_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1004_DPR.md",
+        "epr": "Technical/docs/series/S1004_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1004_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1004_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1004_validate.py",
+        "processed": "Technical/data/processed/S1004.parquet",
+        "chopped_csv": "Technical/chopped/S1004.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1004_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S1004-A",
+        "S1004-B",
+        "S1004-C",
+        "S1004-D"
+      ],
+      "subsource_ids": [
+        "HP_filter_lambda_3",
+        "HP_filter_lambda_6.25",
+        "S1002_components"
+      ]
+    },
+    "S1005": {
+      "name": "Dividend Yield vs Bond Yield",
+      "chapter": 10,
+      "status": "ingested",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1005_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH10_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1005_DPR.md",
+        "epr": "Technical/docs/series/S1005_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1005_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1005_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1005_validate.py",
+        "processed": "Technical/data/processed/S1005.parquet",
+        "chopped_csv": "Technical/chopped/S1005.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1005_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S1005-A",
+        "S1005-A-ext",
+        "S1005-B",
+        "S1005-B-ext",
+        "S1005-C",
+        "S1005-C-ext"
+      ],
+      "subsource_ids": [
+        "FRED_AAA",
+        "FRED_GS10",
+        "SHILLER_ie_data",
+        "USLR_ib10yr",
+        "USLR_iblong",
+        "USLR_ys"
+      ]
+    },
+    "S1006": {
+      "name": "Bond and Equity Returns",
+      "chapter": 10,
+      "status": "ingested",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1006_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH10_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1006_DPR.md",
+        "epr": "Technical/docs/series/S1006_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1006_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1006_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1006_validate.py",
+        "processed": "Technical/data/processed/S1006.parquet",
+        "chopped_csv": "Technical/chopped/S1006.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1006_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S1006-A",
+        "S1006-A-ext",
+        "S1006-B",
+        "S1006-B-ext",
+        "S1006-B-ext-damodaran",
+        "S1006-C",
+        "S1006-C-ext"
+      ],
+      "subsource_ids": [
+        "DAMODARAN_rbcorplt_Baa",
+        "DAMODARAN_rbgovlt",
+        "DAMODARAN_rslarge",
+        "FRED_AAA_proxy_LTcorp",
+        "IBBOTSON_SBBI_rbcorplt",
+        "IBBOTSON_SBBI_rbgovlt",
+        "IBBOTSON_SBBI_rslarge"
+      ]
+    },
+    "S1007": {
+      "name": "Equity Rate vs Corporate IROP",
+      "chapter": 10,
+      "status": "ingested",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1007_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH10_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1007_DPR.md",
+        "epr": "Technical/docs/series/S1007_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1007_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1007_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1007_validate.py",
+        "processed": "Technical/data/processed/S1007.parquet",
+        "chopped_csv": "Technical/chopped/S1007.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1007_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S1007-A",
+        "S1007-B",
+        "S1007-C"
+      ],
+      "subsource_ids": [
+        "INTROPPRICE_iropcorp",
+        "INTROPPRICE_iropcorpnipa",
+        "INTROPPRICE_rreq"
+      ]
+    },
+    "S1008": {
+      "name": "Actual vs Warranted Stock Price",
+      "chapter": 10,
+      "status": "ingested",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1008_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH10_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1008_DPR.md",
+        "epr": "Technical/docs/series/S1008_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1008_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1008_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1008_validate.py",
+        "processed": "Technical/data/processed/S1008.parquet",
+        "chopped_csv": "Technical/chopped/S1008.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1008_extenbook.xlsx"
+      },
+      "subseries_ids": [
+        "S1008-A",
+        "S1008-B",
+        "S1008-C"
+      ],
+      "subsource_ids": [
+        "INTROPPRICE_preq",
+        "INTROPPRICE_prstarshiller1",
+        "eq_10.31_recursion"
+      ]
+    },
+    "AS001": {
+      "name": "GDP/GDI Decomposition and Business NOS",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/AS001_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/AS001_DPR.md",
+        "epr": "Technical/docs/series/AS001_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_AS001_load.py",
+        "processor": "Technical/code/P02_processors/P02_AS001_construct.py",
+        "validator": "Technical/code/V03_validators/V03_AS001_validate.py",
+        "processed": "Technical/data/processed/AS001.parquet",
+        "chopped_csv": "Technical/chopped/AS001.csv",
+        "extenbook_xlsx": "Technical/extenbooks/AS001_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "AS002": {
+      "name": "Wage Equivalent and Corp/Noncorp Split",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/AS002_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/AS002_DPR.md",
+        "epr": "Technical/docs/series/AS002_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_AS002_load.py",
+        "processor": "Technical/code/P02_processors/P02_AS002_construct.py",
+        "validator": "Technical/code/V03_validators/V03_AS002_validate.py",
+        "processed": "Technical/data/processed/AS002.parquet",
+        "chopped_csv": "Technical/chopped/AS002.csv",
+        "extenbook_xlsx": "Technical/extenbooks/AS002_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "AS003": {
+      "name": "Imputed Interest Adjustment and Sectoral Profit Rates",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/AS003_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/AS003_DPR.md",
+        "epr": "Technical/docs/series/AS003_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_AS003_load.py",
+        "processor": "Technical/code/P02_processors/P02_AS003_construct.py",
+        "validator": "Technical/code/V03_validators/V03_AS003_validate.py",
+        "processed": "Technical/data/processed/AS003.parquet",
+        "chopped_csv": "Technical/chopped/AS003.csv",
+        "extenbook_xlsx": "Technical/extenbooks/AS003_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "AS004": {
+      "name": "GPIM Corporate Capital Stock (Operational Baseline)",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/AS004_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/AS004_DPR.md",
+        "epr": "Technical/docs/series/AS004_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_AS004_load.py",
+        "processor": "Technical/code/P02_processors/P02_AS004_construct.py",
+        "validator": "Technical/code/V03_validators/V03_AS004_validate.py",
+        "processed": "Technical/data/processed/AS004.parquet",
+        "chopped_csv": "Technical/chopped/AS004.csv",
+        "extenbook_xlsx": "Technical/extenbooks/AS004_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "AS005": {
+      "name": "GPIM Variant - BEA 2011 Reference (Pure GPIM Regenerator)",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/AS005_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/AS005_DPR.md",
+        "epr": "Technical/docs/series/AS005_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_AS005_load.py",
+        "processor": "Technical/code/P02_processors/P02_AS005_construct.py",
+        "validator": "Technical/code/V03_validators/V03_AS005_validate.py",
+        "processed": "Technical/data/processed/AS005.parquet",
+        "chopped_csv": "Technical/chopped/AS005.csv",
+        "extenbook_xlsx": "Technical/extenbooks/AS005_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "AS006": {
+      "name": "GPIM Variant - BEA 1993 Depreciation Rates",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/AS006_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/AS006_DPR.md",
+        "epr": "Technical/docs/series/AS006_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_AS006_load.py",
+        "processor": "Technical/code/P02_processors/P02_AS006_construct.py",
+        "validator": "Technical/code/V03_validators/V03_AS006_validate.py",
+        "processed": "Technical/data/processed/AS006.parquet",
+        "chopped_csv": "Technical/chopped/AS006.csv",
+        "extenbook_xlsx": "Technical/extenbooks/AS006_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "AS007": {
+      "name": "GPIM Variant - IRS Adjusted",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/AS007_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/AS007_DPR.md",
+        "epr": "Technical/docs/series/AS007_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_AS007_load.py",
+        "processor": "Technical/code/P02_processors/P02_AS007_construct.py",
+        "validator": "Technical/code/V03_validators/V03_AS007_validate.py",
+        "processed": "Technical/data/processed/AS007.parquet",
+        "chopped_csv": "Technical/chopped/AS007.csv",
+        "extenbook_xlsx": "Technical/extenbooks/AS007_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "AS008": {
+      "name": "GPIM Variant - Interwar Adjustment Multiplier",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/AS008_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/AS008_DPR.md",
+        "epr": "Technical/docs/series/AS008_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_AS008_load.py",
+        "processor": "Technical/code/P02_processors/P02_AS008_construct.py",
+        "validator": "Technical/code/V03_validators/V03_AS008_validate.py",
+        "processed": "Technical/data/processed/AS008.parquet",
+        "chopped_csv": "Technical/chopped/AS008.csv",
+        "extenbook_xlsx": "Technical/extenbooks/AS008_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "AS009": {
+      "name": "IRS Corporate Inventories and Total Capital Stock",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/AS009_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/AS009_DPR.md",
+        "epr": "Technical/docs/series/AS009_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_AS009_load.py",
+        "processor": "Technical/code/P02_processors/P02_AS009_construct.py",
+        "validator": "Technical/code/V03_validators/V03_AS009_validate.py",
+        "processed": "Technical/data/processed/AS009.parquet",
+        "chopped_csv": "Technical/chopped/AS009.csv",
+        "extenbook_xlsx": "Technical/extenbooks/AS009_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "S601": {
+      "name": "Corporate and Non-Corporate Profit Rates",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S601_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S601_DPR.md",
+        "epr": "Technical/docs/series/S601_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S601_load.py",
+        "processor": "Technical/code/P02_processors/P02_S601_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S601_validate.py",
+        "processed": "Technical/data/processed/S601.parquet",
+        "chopped_csv": "Technical/chopped/S601.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S601_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "S602": {
+      "name": "Corrected vs Conventional Corporate Profitability",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S602_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S602_DPR.md",
+        "epr": "Technical/docs/series/S602_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S602_load.py",
+        "processor": "Technical/code/P02_processors/P02_S602_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S602_validate.py",
+        "processed": "Technical/data/processed/S602.parquet",
+        "chopped_csv": "Technical/chopped/S602.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S602_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "S603": {
+      "name": "Component Ratios x1, x2, x3",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S603_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S603_DPR.md",
+        "epr": "Technical/docs/series/S603_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S603_load.py",
+        "processor": "Technical/code/P02_processors/P02_S603_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S603_validate.py",
+        "processed": "Technical/data/processed/S603.parquet",
+        "chopped_csv": "Technical/chopped/S603.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S603_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "S604": {
+      "name": "Corporate Incremental Rate of Profit (IROP)",
+      "chapter": 6,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S604_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S604_DPR.md",
+        "epr": "Technical/docs/series/S604_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S604_load.py",
+        "processor": "Technical/code/P02_processors/P02_S604_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S604_validate.py",
+        "processed": "Technical/data/processed/S604.parquet",
+        "chopped_csv": "Technical/chopped/S604.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S604_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:43:17.420354+00:00"
+    },
+    "ES2001": {
+      "phases_completed": [
+        5,
+        6,
+        7
+      ],
+      "artifacts": {
+        "dpr": "Technical/docs/series/ES2001_DPR.md",
+        "epr": "Technical/docs/series/ES2001_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_ES2001_load.py",
+        "processor": "Technical/code/P02_processors/P02_ES2001_construct.py",
+        "validator": "Technical/code/V03_validators/V03_ES2001_validate.py"
+      },
+      "last_updated": "2026-05-18",
+      "author": "opus-fanout-ES"
+    },
+    "ES2101": {
+      "phases_completed": [
+        5,
+        6,
+        7
+      ],
+      "artifacts": {
+        "dpr": "Technical/docs/series/ES2101_DPR.md",
+        "epr": "Technical/docs/series/ES2101_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_ES2101_load.py",
+        "processor": "Technical/code/P02_processors/P02_ES2101_construct.py",
+        "validator": "Technical/code/V03_validators/V03_ES2101_validate.py"
+      },
+      "last_updated": "2026-05-18",
+      "author": "opus-fanout-ES"
+    },
+    "ES2201": {
+      "phases_completed": [
+        5,
+        6,
+        7
+      ],
+      "artifacts": {
+        "dpr": "Technical/docs/series/ES2201_DPR.md",
+        "epr": "Technical/docs/series/ES2201_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_ES2201_load.py",
+        "processor": "Technical/code/P02_processors/P02_ES2201_construct.py",
+        "validator": "Technical/code/V03_validators/V03_ES2201_validate.py"
+      },
+      "last_updated": "2026-05-18",
+      "author": "opus-fanout-ES"
+    },
+    "ES2301": {
+      "phases_completed": [
+        5,
+        6,
+        7
+      ],
+      "artifacts": {
+        "dpr": "Technical/docs/series/ES2301_DPR.md",
+        "epr": "Technical/docs/series/ES2301_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_ES2301_load.py",
+        "processor": "Technical/code/P02_processors/P02_ES2301_construct.py",
+        "validator": "Technical/code/V03_validators/V03_ES2301_validate.py"
+      },
+      "last_updated": "2026-05-18",
+      "author": "opus-fanout-ES"
+    },
+    "ES2302": {
+      "phases_completed": [
+        5,
+        6,
+        7
+      ],
+      "artifacts": {
+        "dpr": "Technical/docs/series/ES2302_DPR.md",
+        "epr": "Technical/docs/series/ES2302_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_ES2302_load.py",
+        "processor": "Technical/code/P02_processors/P02_ES2302_construct.py",
+        "validator": "Technical/code/V03_validators/V03_ES2302_validate.py"
+      },
+      "last_updated": "2026-05-18",
+      "author": "opus-fanout-ES"
+    },
+    "ES2303": {
+      "phases_completed": [
+        5,
+        6,
+        7
+      ],
+      "artifacts": {
+        "dpr": "Technical/docs/series/ES2303_DPR.md",
+        "epr": "Technical/docs/series/ES2303_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_ES2303_load.py",
+        "processor": "Technical/code/P02_processors/P02_ES2303_construct.py",
+        "validator": "Technical/code/V03_validators/V03_ES2303_validate.py"
+      },
+      "last_updated": "2026-05-18",
+      "author": "opus-fanout-ES"
+    },
+    "ES2304": {
+      "phases_completed": [
+        5,
+        6,
+        7
+      ],
+      "artifacts": {
+        "dpr": "Technical/docs/series/ES2304_DPR.md",
+        "epr": "Technical/docs/series/ES2304_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_ES2304_load.py",
+        "processor": "Technical/code/P02_processors/P02_ES2304_construct.py",
+        "validator": "Technical/code/V03_validators/V03_ES2304_validate.py"
+      },
+      "last_updated": "2026-05-18",
+      "author": "opus-fanout-ES"
+    },
+    "ES2305": {
+      "phases_completed": [
+        5,
+        6,
+        7
+      ],
+      "artifacts": {
+        "dpr": "Technical/docs/series/ES2305_DPR.md",
+        "epr": "Technical/docs/series/ES2305_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_ES2305_load.py",
+        "processor": "Technical/code/P02_processors/P02_ES2305_construct.py",
+        "validator": "Technical/code/V03_validators/V03_ES2305_validate.py"
+      },
+      "last_updated": "2026-05-18",
+      "author": "opus-fanout-ES"
+    },
+    "S1101": {
+      "name": "Trade Balances in Major Countries (Fig 11.2)",
+      "chapter": 11,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1101_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH11_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1101_DPR.md",
+        "epr": "Technical/docs/series/S1101_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1101_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1101_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1101_validate.py",
+        "processed": "Technical/data/processed/S1101.parquet",
+        "chopped_csv": "Technical/chopped/S1101.csv"
+      },
+      "updated_at": "2026-05-18T22:56:16.880881+00:00"
+    },
+    "S1102": {
+      "name": "REER PPI US/Japan (Fig 11.3)",
+      "chapter": 11,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1102_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH11_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1102_DPR.md",
+        "epr": "Technical/docs/series/S1102_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1102_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1102_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1102_validate.py",
+        "processed": "Technical/data/processed/S1102.parquet",
+        "chopped_csv": "Technical/chopped/S1102.csv"
+      },
+      "updated_at": "2026-05-18T22:56:16.880881+00:00"
+    },
+    "S1103": {
+      "name": "LOP at Aggregate Level US/Japan (Fig 11.6)",
+      "chapter": 11,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1103_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH11_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1103_DPR.md",
+        "epr": "Technical/docs/series/S1103_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1103_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1103_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1103_validate.py",
+        "processed": "Technical/data/processed/S1103.parquet",
+        "chopped_csv": "Technical/chopped/S1103.csv"
+      },
+      "updated_at": "2026-05-18T22:56:16.880881+00:00"
+    },
+    "S1104": {
+      "name": "US Trade/REER/RelGDP overlay (Fig 11.7)",
+      "chapter": 11,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1104_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH11_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1104_DPR.md",
+        "epr": "Technical/docs/series/S1104_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1104_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1104_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1104_validate.py",
+        "processed": "Technical/data/processed/S1104.parquet",
+        "chopped_csv": "Technical/chopped/S1104.csv"
+      },
+      "updated_at": "2026-05-18T22:56:16.880881+00:00"
+    },
+    "S1301": {
+      "name": "Actual and Equilibrium Paths of Output (Fig 13.7 theoretical)",
+      "chapter": 13,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1301_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH13_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1301_DPR.md",
+        "epr": "Technical/docs/series/S1301_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1301_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1301_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1301_validate.py",
+        "processed": "Technical/data/processed/S1301.parquet",
+        "chopped_csv": "Technical/chopped/S1301.csv"
+      },
+      "updated_at": "2026-05-18T22:56:16.880881+00:00"
+    },
+    "S1701": {
+      "name": "Global Crisis 2007 in light of Past Long Waves (Fig 17.1)",
+      "chapter": 17,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1701_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH17_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1701_DPR.md",
+        "epr": "Technical/docs/series/S1701_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1701_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1701_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1701_validate.py",
+        "processed": "Technical/data/processed/S1701.parquet",
+        "chopped_csv": "Technical/chopped/S1701.csv"
+      },
+      "updated_at": "2026-05-18T22:56:16.880881+00:00"
+    },
+    "S1702": {
+      "name": "Personal Income Dist below $200k (Fig 17.2)",
+      "chapter": 17,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1702_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH17_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1702_DPR.md",
+        "epr": "Technical/docs/series/S1702_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1702_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1702_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1702_validate.py",
+        "processed": "Technical/data/processed/S1702.parquet",
+        "chopped_csv": "Technical/chopped/S1702.csv"
+      },
+      "updated_at": "2026-05-18T22:56:16.880881+00:00"
+    },
+    "S1703": {
+      "name": "Personal Income Dist above $200k (Fig 17.3)",
+      "chapter": 17,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1703_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH17_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1703_DPR.md",
+        "epr": "Technical/docs/series/S1703_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1703_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1703_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1703_validate.py",
+        "processed": "Technical/data/processed/S1703.parquet",
+        "chopped_csv": "Technical/chopped/S1703.csv"
+      },
+      "updated_at": "2026-05-18T22:56:16.880881+00:00"
+    },
+    "S1401": {
+      "name": "Nominal GDP Growth and Level of Wage Share",
+      "chapter": 14,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1401_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH14_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1401_DPR.md",
+        "epr": "Technical/docs/series/S1401_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1401_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1401_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1401_validate.py",
+        "processed": "Technical/data/processed/S1401.parquet",
+        "chopped_csv": "Technical/chopped/S1401.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1401_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:58:43.529185+00:00"
+    },
+    "S1402": {
+      "name": "Unemployment Measures US 1948-2011",
+      "chapter": 14,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1402_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH14_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1402_DPR.md",
+        "epr": "Technical/docs/series/S1402_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1402_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1402_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1402_validate.py",
+        "processed": "Technical/data/processed/S1402.parquet",
+        "chopped_csv": "Technical/chopped/S1402.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1402_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:58:43.529185+00:00"
+    },
+    "S1403": {
+      "name": "Wage Share vs Unemployment Intensity (Empirical Spiral)",
+      "chapter": 14,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1403_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH14_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1403_DPR.md",
+        "epr": "Technical/docs/series/S1403_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1403_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1403_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1403_validate.py",
+        "processed": "Technical/data/processed/S1403.parquet",
+        "chopped_csv": "Technical/chopped/S1403.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1403_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:58:43.529185+00:00"
+    },
+    "S1404": {
+      "name": "Rate of Change of Wage Share vs Unemployment Intensity (Raw)",
+      "chapter": 14,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1404_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH14_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1404_DPR.md",
+        "epr": "Technical/docs/series/S1404_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1404_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1404_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1404_validate.py",
+        "processed": "Technical/data/processed/S1404.parquet",
+        "chopped_csv": "Technical/chopped/S1404.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1404_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:58:43.529185+00:00"
+    },
+    "S1405": {
+      "name": "HP(100)-Filtered Rate of Change of Wage Share vs Unemployment Intensity",
+      "chapter": 14,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1405_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH14_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1405_DPR.md",
+        "epr": "Technical/docs/series/S1405_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1405_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1405_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1405_validate.py",
+        "processed": "Technical/data/processed/S1405.parquet",
+        "chopped_csv": "Technical/chopped/S1405.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1405_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:58:43.529185+00:00"
+    },
+    "S1406": {
+      "name": "Inflation and Productivity Growth",
+      "chapter": 14,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1406_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH14_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1406_DPR.md",
+        "epr": "Technical/docs/series/S1406_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1406_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1406_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1406_validate.py",
+        "processed": "Technical/data/processed/S1406.parquet",
+        "chopped_csv": "Technical/chopped/S1406.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1406_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:58:43.529185+00:00"
+    },
+    "S1407": {
+      "name": "HP(100)-Filtered Rate of Change of Real Wages vs Unemployment Intensity",
+      "chapter": 14,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1407_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH14_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1407_DPR.md",
+        "epr": "Technical/docs/series/S1407_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1407_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1407_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1407_validate.py",
+        "processed": "Technical/data/processed/S1407.parquet",
+        "chopped_csv": "Technical/chopped/S1407.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1407_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:58:43.529185+00:00"
+    },
+    "S1408": {
+      "name": "HP(100)-Filtered Rate of Change of Nominal Wages vs Unemployment Intensity",
+      "chapter": 14,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1408_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH14_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1408_DPR.md",
+        "epr": "Technical/docs/series/S1408_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1408_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1408_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1408_validate.py",
+        "processed": "Technical/data/processed/S1408.parquet",
+        "chopped_csv": "Technical/chopped/S1408.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1408_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T22:58:43.529185+00:00"
+    },
+    "S202": {
+      "name": "BEA 1977 Table B4 (Investment in Fixed Nonres Bus Capital)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S202_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S202_DPR.md",
+        "epr": "Technical/docs/series/S202_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S202_load.py",
+        "processor": "Technical/code/P02_processors/P02_S202_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S202_validate.py",
+        "processed": "Technical/data/processed/S202.parquet",
+        "chopped_csv": "Technical/chopped/S202.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S202_extenbook.xlsx"
+      }
+    },
+    "S203": {
+      "name": "MeasuringWorth Real GDP per Capita (book period)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S203_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S203_DPR.md",
+        "epr": "Technical/docs/series/S203_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S203_load.py",
+        "processor": "Technical/code/P02_processors/P02_S203_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S203_validate.py",
+        "processed": "Technical/data/processed/S203.parquet",
+        "chopped_csv": "Technical/chopped/S203.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S203_extenbook.xlsx"
+      }
+    },
+    "S204": {
+      "name": "Ayres (1939) Index 1831-1866 (monthly)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S204_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S204_DPR.md",
+        "epr": "Technical/docs/series/S204_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S204_load.py",
+        "processor": "Technical/code/P02_processors/P02_S204_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S204_validate.py",
+        "processed": "Technical/data/processed/S204.parquet",
+        "chopped_csv": "Technical/chopped/S204.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S204_extenbook.xlsx"
+      }
+    },
+    "S205": {
+      "name": "Ayres (1939) Index 1867-1902 (monthly)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S205_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S205_DPR.md",
+        "epr": "Technical/docs/series/S205_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S205_load.py",
+        "processor": "Technical/code/P02_processors/P02_S205_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S205_validate.py",
+        "processed": "Technical/data/processed/S205.parquet",
+        "chopped_csv": "Technical/chopped/S205.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S205_extenbook.xlsx"
+      }
+    },
+    "S206": {
+      "name": "Ayres (1939) Index 1903-1939 (monthly)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S206_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S206_DPR.md",
+        "epr": "Technical/docs/series/S206_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S206_load.py",
+        "processor": "Technical/code/P02_processors/P02_S206_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S206_validate.py",
+        "processed": "Technical/data/processed/S206.parquet",
+        "chopped_csv": "Technical/chopped/S206.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S206_extenbook.xlsx"
+      }
+    },
+    "S207": {
+      "name": "US Mfg Productivity (BEA LTEG A173 + BLS FLS spliced 1950)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S207_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S207_DPR.md",
+        "epr": "Technical/docs/series/S207_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S207_load.py",
+        "processor": "Technical/code/P02_processors/P02_S207_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S207_validate.py",
+        "processed": "Technical/data/processed/S207.parquet",
+        "chopped_csv": "Technical/chopped/S207.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S207_extenbook.xlsx"
+      }
+    },
+    "S208": {
+      "name": "Book RULC (Shaikh derived, 1889-2010)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S208_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S208_DPR.md",
+        "epr": "Technical/docs/series/S208_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S208_load.py",
+        "processor": "Technical/code/P02_processors/P02_S208_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S208_validate.py",
+        "processed": "Technical/data/processed/S208.parquet",
+        "chopped_csv": "Technical/chopped/S208.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S208_extenbook.xlsx"
+      }
+    },
+    "S209": {
+      "name": "BEA LTEG B1-B2 unemployment (1890-1947)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S209_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S209_DPR.md",
+        "epr": "Technical/docs/series/S209_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S209_load.py",
+        "processor": "Technical/code/P02_processors/P02_S209_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S209_validate.py",
+        "processed": "Technical/data/processed/S209.parquet",
+        "chopped_csv": "Technical/chopped/S209.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S209_extenbook.xlsx"
+      }
+    },
+    "S210": {
+      "name": "US WPI (Jastram 1977 T7 + BLS PPI extension)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S210_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S210_DPR.md",
+        "epr": "Technical/docs/series/S210_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S210_load.py",
+        "processor": "Technical/code/P02_processors/P02_S210_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S210_validate.py",
+        "processed": "Technical/data/processed/S210.parquet",
+        "chopped_csv": "Technical/chopped/S210.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S210_extenbook.xlsx"
+      }
+    },
+    "S211": {
+      "name": "US WPI 1780-1940 (Jastram 1977 T7)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S211_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S211_DPR.md",
+        "epr": "Technical/docs/series/S211_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S211_load.py",
+        "processor": "Technical/code/P02_processors/P02_S211_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S211_validate.py",
+        "processed": "Technical/data/processed/S211.parquet",
+        "chopped_csv": "Technical/chopped/S211.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S211_extenbook.xlsx"
+      }
+    },
+    "S212": {
+      "name": "US WPI in gold ounces (Jastram T1 + MW)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S212_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S212_DPR.md",
+        "epr": "Technical/docs/series/S212_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S212_load.py",
+        "processor": "Technical/code/P02_processors/P02_S212_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S212_validate.py",
+        "processed": "Technical/data/processed/S212.parquet",
+        "chopped_csv": "Technical/chopped/S212.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S212_extenbook.xlsx"
+      }
+    },
+    "S213": {
+      "name": "Book corporate profit rate (1947-2011)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S213_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S213_DPR.md",
+        "epr": "Technical/docs/series/S213_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S213_load.py",
+        "processor": "Technical/code/P02_processors/P02_S213_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S213_validate.py",
+        "processed": "Technical/data/processed/S213.parquet",
+        "chopped_csv": "Technical/chopped/S213.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S213_extenbook.xlsx"
+      }
+    },
+    "S214": {
+      "name": "Chapter 2 series S214",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S214_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S214_DPR.md",
+        "epr": "Technical/docs/series/S214_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S214_load.py",
+        "processor": "Technical/code/P02_processors/P02_S214_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S214_validate.py",
+        "processed": "Technical/data/processed/S214.parquet",
+        "chopped_csv": "Technical/chopped/S214.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S214_extenbook.xlsx"
+      }
+    },
+    "S215": {
+      "name": "Chapter 2 series S215",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S215_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S215_DPR.md",
+        "epr": "Technical/docs/series/S215_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S215_load.py",
+        "processor": "Technical/code/P02_processors/P02_S215_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S215_validate.py",
+        "processed": "Technical/data/processed/S215.parquet",
+        "chopped_csv": "Technical/chopped/S215.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S215_extenbook.xlsx"
+      }
+    },
+    "S216": {
+      "name": "Total Production Prices (normalized), 71 industries, 1972",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S216_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S216_DPR.md",
+        "epr": "Technical/docs/series/S216_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S216_load.py",
+        "processor": "Technical/code/P02_processors/P02_S216_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S216_validate.py",
+        "processed": "Technical/data/processed/S216.parquet",
+        "chopped_csv": "Technical/chopped/S216.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S216_extenbook.xlsx"
+      }
+    },
+    "S217": {
+      "name": "World",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S217_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S217_DPR.md",
+        "epr": "Technical/docs/series/S217_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S217_load.py",
+        "processor": "Technical/code/P02_processors/P02_S217_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S217_validate.py",
+        "processed": "Technical/data/processed/S217.parquet",
+        "chopped_csv": "Technical/chopped/S217.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S217_extenbook.xlsx"
+      }
+    },
+    "S218": {
+      "name": "RICHEST 4 average (Maddison, Shaikh exclusion rule)",
+      "chapter": 2,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S218_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH2_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S218_DPR.md",
+        "epr": "Technical/docs/series/S218_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S218_load.py",
+        "processor": "Technical/code/P02_processors/P02_S218_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S218_validate.py",
+        "processed": "Technical/data/processed/S218.parquet",
+        "chopped_csv": "Technical/chopped/S218.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S218_extenbook.xlsx"
+      }
+    },
+    "S501": {
+      "name": "US and UK Wholesale Price Indexes, 1790-1940",
+      "chapter": 5,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S501_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH5_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S501_DPR.md",
+        "epr": "Technical/docs/series/S501_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S501_load.py",
+        "processor": "Technical/code/P02_processors/P02_S501_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S501_validate.py",
+        "processed": "Technical/data/processed/S501.parquet",
+        "chopped_csv": "Technical/chopped/S501.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S501_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:02:50.662623+00:00"
+    },
+    "S502": {
+      "name": "US and UK Wholesale Price Indexes, 1790-2010",
+      "chapter": 5,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S502_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH5_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S502_DPR.md",
+        "epr": "Technical/docs/series/S502_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S502_load.py",
+        "processor": "Technical/code/P02_processors/P02_S502_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S502_validate.py",
+        "processed": "Technical/data/processed/S502.parquet",
+        "chopped_csv": "Technical/chopped/S502.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S502_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:02:50.662623+00:00"
+    },
+    "S503": {
+      "name": "UK WPI in Gold and UK Gold Price",
+      "chapter": 5,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S503_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH5_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S503_DPR.md",
+        "epr": "Technical/docs/series/S503_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S503_load.py",
+        "processor": "Technical/code/P02_processors/P02_S503_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S503_validate.py",
+        "processed": "Technical/data/processed/S503.parquet",
+        "chopped_csv": "Technical/chopped/S503.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S503_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:02:50.662623+00:00"
+    },
+    "S504": {
+      "name": "US WPI in Gold and US Gold Price",
+      "chapter": 5,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S504_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH5_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S504_DPR.md",
+        "epr": "Technical/docs/series/S504_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S504_load.py",
+        "processor": "Technical/code/P02_processors/P02_S504_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S504_validate.py",
+        "processed": "Technical/data/processed/S504.parquet",
+        "chopped_csv": "Technical/chopped/S504.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S504_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:02:50.662623+00:00"
+    },
+    "S901": {
+      "name": "Market Prices vs Direct Prices, 71 Industries",
+      "chapter": 9,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S901_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH9_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S901_DPR.md",
+        "epr": "Technical/docs/series/S901_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S901_load.py",
+        "processor": "Technical/code/P02_processors/P02_S901_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S901_validate.py",
+        "processed": "Technical/data/processed/S901.parquet",
+        "chopped_csv": "Technical/chopped/S901.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S901_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T23:56:32.581279+00:00"
+    },
+    "S902": {
+      "name": "Integrated Output-Capital Ratios and Standard Prices",
+      "chapter": 9,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S902_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH9_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S902_DPR.md",
+        "epr": "Technical/docs/series/S902_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S902_load.py",
+        "processor": "Technical/code/P02_processors/P02_S902_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S902_validate.py",
+        "processed": "Technical/data/processed/S902.parquet",
+        "chopped_csv": "Technical/chopped/S902.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S902_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T23:56:32.581279+00:00"
+    },
+    "S903": {
+      "name": "Actual Wage-Profit Curves, US 1947-1998",
+      "chapter": 9,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S903_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH9_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S903_DPR.md",
+        "epr": "Technical/docs/series/S903_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S903_load.py",
+        "processor": "Technical/code/P02_processors/P02_S903_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S903_validate.py",
+        "processed": "Technical/data/processed/S903.parquet",
+        "chopped_csv": "Technical/chopped/S903.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S903_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-18T23:56:32.581279+00:00"
+    },
+    "S1601": {
+      "name": "US and UK Golden Waves, 1786-2010",
+      "chapter": 16,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension_deferred",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1601_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH16_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1601_DPR.md",
+        "epr": "Technical/docs/series/S1601_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1601_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1601_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1601_validate.py",
+        "processed": "Technical/data/processed/S1601.parquet",
+        "chopped_csv": "Technical/chopped/S1601.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1601_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:17:23.977169+00:00"
+    },
+    "S1602": {
+      "name": "Hourly Real Wages and Productivity, US Business Sector",
+      "chapter": 16,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension_deferred",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1602_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH16_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1602_DPR.md",
+        "epr": "Technical/docs/series/S1602_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1602_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1602_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1602_validate.py",
+        "processed": "Technical/data/processed/S1602.parquet",
+        "chopped_csv": "Technical/chopped/S1602.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1602_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:17:23.977169+00:00"
+    },
+    "S1603": {
+      "name": "US and OECD Short-Term Interest Rates",
+      "chapter": 16,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension_deferred",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1603_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH16_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1603_DPR.md",
+        "epr": "Technical/docs/series/S1603_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1603_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1603_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1603_validate.py",
+        "processed": "Technical/data/processed/S1603.parquet",
+        "chopped_csv": "Technical/chopped/S1603.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1603_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:17:23.977169+00:00"
+    },
+    "S1604": {
+      "name": "Net Average and Real Incremental Rates of Profit",
+      "chapter": 16,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension_deferred",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1604_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH16_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1604_DPR.md",
+        "epr": "Technical/docs/series/S1604_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1604_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1604_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1604_validate.py",
+        "processed": "Technical/data/processed/S1604.parquet",
+        "chopped_csv": "Technical/chopped/S1604.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1604_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:17:23.977169+00:00"
+    },
+    "S1605": {
+      "name": "Household Debt-to-Income Ratio, United States",
+      "chapter": 16,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension_deferred",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1605_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH16_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1605_DPR.md",
+        "epr": "Technical/docs/series/S1605_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1605_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1605_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1605_validate.py",
+        "processed": "Technical/data/processed/S1605.parquet",
+        "chopped_csv": "Technical/chopped/S1605.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1605_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:17:23.977169+00:00"
+    },
+    "S1606": {
+      "name": "Household Debt-Service Ratio",
+      "chapter": 16,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension_deferred",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S1606_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH16_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S1606_DPR.md",
+        "epr": "Technical/docs/series/S1606_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S1606_load.py",
+        "processor": "Technical/code/P02_processors/P02_S1606_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S1606_validate.py",
+        "processed": "Technical/data/processed/S1606.parquet",
+        "chopped_csv": "Technical/chopped/S1606.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S1606_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:17:23.977169+00:00"
+    },
+    "S801": {
+      "name": "Wholesale Prices, Concentrated vs Unconcentrated Industries 1965-73 (Eichner)",
+      "chapter": 8,
+      "status": "data_unavailable",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion_blocked"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S801_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH8_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S801_DPR.md",
+        "epr": "Technical/docs/series/S801_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S801_load.py",
+        "validator": "Technical/code/V03_validators/V03_S801_validate.py"
+      },
+      "data_unavailable_reason": "source_only_chart_no_table",
+      "updated_at": "2026-05-19T00:22:18.990557+00:00"
+    },
+    "S802": {
+      "name": "Share of Price Increases by Concentration, NBER Contractions (Semmler/Weston)",
+      "chapter": 8,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S802_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH8_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S802_DPR.md",
+        "epr": "Technical/docs/series/S802_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S802_load.py",
+        "processor": "Technical/code/P02_processors/P02_S802_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S802_validate.py",
+        "processed": "Technical/data/processed/S802.parquet",
+        "chopped_csv": "Technical/chopped/S802.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S802_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:22:18.990557+00:00"
+    },
+    "S803": {
+      "name": "Rate of Profit on Equity vs CR8, Bain 42-Industry Sample 1936-40",
+      "chapter": 8,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S803_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH8_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S803_DPR.md",
+        "epr": "Technical/docs/series/S803_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S803_load.py",
+        "processor": "Technical/code/P02_processors/P02_S803_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S803_validate.py",
+        "processed": "Technical/data/processed/S803.parquet",
+        "chopped_csv": "Technical/chopped/S803.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S803_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:22:18.990557+00:00"
+    },
+    "S804": {
+      "name": "Rate of Profit on Assets, Concentrated vs Unconcentrated 1939-57 (Stigler)",
+      "chapter": 8,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S804_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH8_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S804_DPR.md",
+        "epr": "Technical/docs/series/S804_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S804_load.py",
+        "processor": "Technical/code/P02_processors/P02_S804_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S804_validate.py",
+        "processed": "Technical/data/processed/S804.parquet",
+        "chopped_csv": "Technical/chopped/S804.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S804_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:22:18.990557+00:00"
+    },
+    "S805": {
+      "name": "Rates of Return and Concentration (CR4), 1963 and 1969 (Demsetz)",
+      "chapter": 8,
+      "status": "extenbook_published",
+      "phases_completed": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "artifacts": {
+        "research_json": "Technical/research/S805_research.json",
+        "adequacy_report": "Technical/docs/chapters/CH8_ADEQUACY_REPORT.json",
+        "dpr": "Technical/docs/series/S805_DPR.md",
+        "epr": "Technical/docs/series/S805_EPR.md",
+        "loader": "Technical/code/L01_loaders/L01_S805_load.py",
+        "processor": "Technical/code/P02_processors/P02_S805_construct.py",
+        "validator": "Technical/code/V03_validators/V03_S805_validate.py",
+        "processed": "Technical/data/processed/S805.parquet",
+        "chopped_csv": "Technical/chopped/S805.csv",
+        "extenbook_xlsx": "Technical/extenbooks/S805_extenbook.xlsx"
+      },
+      "updated_at": "2026-05-19T00:22:18.990557+00:00"
+    }
+  },
+  "subseries": {
+    "S201-A": {
+      "parent": "S201",
+      "subsource": "BEA_LTEG_1966",
+      "period": [
+        1860,
+        1918
+      ]
+    },
+    "S201-B": {
+      "parent": "S201",
+      "subsource": "FRB_G17_INDPRO",
+      "period": [
+        1919,
+        2010
+      ]
+    },
+    "S201-C": {
+      "parent": "S201",
+      "subsource": "FRED_INDPRO",
+      "period": [
+        2011,
+        2025
+      ]
+    },
+    "S301-A": {
+      "parent": "S301",
+      "subsource": "SHAIKH_2016_EQ_3_4_3_11",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S302-A": {
+      "parent": "S302",
+      "subsource": "SHAIKH_2016_EQ_3_4_3_11",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S303-A": {
+      "parent": "S303",
+      "subsource": "SHAIKH_2016_EQ_3_4_3_11",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S304-A": {
+      "parent": "S304",
+      "subsource": "SHAIKH_2016_EQ_3_4_3_11",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S305-A": {
+      "parent": "S305",
+      "subsource": "SHAIKH_2016_EQ_3_4_3_11",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S306-A": {
+      "parent": "S306",
+      "subsource": "ALLEN_BOWLEY_1935_TABLE1",
+      "period": [
+        1904,
+        1904
+      ]
+    },
+    "S307-A": {
+      "parent": "S307",
+      "subsource": "ALLEN_BOWLEY_1935_TABLE1",
+      "period": [
+        1904,
+        1904
+      ]
+    },
+    "S308-A": {
+      "parent": "S308",
+      "subsource": "SHAIKH_2016_EQ_3_4_3_11",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S308-B": {
+      "parent": "S308",
+      "subsource": "SHAIKH_2016_NETLOGO_SIMS",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S308-C": {
+      "parent": "S308",
+      "subsource": "SHAIKH_2016_NETLOGO_SIMS",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S308-D": {
+      "parent": "S308",
+      "subsource": "SHAIKH_2016_NETLOGO_SIMS",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S308-E": {
+      "parent": "S308",
+      "subsource": "SHAIKH_2016_NETLOGO_SIMS",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S309-A": {
+      "parent": "S309",
+      "subsource": "SHAIKH_2016_EQ_3_4_3_11",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S309-B": {
+      "parent": "S309",
+      "subsource": "SHAIKH_2016_NETLOGO_SIMS",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S309-C": {
+      "parent": "S309",
+      "subsource": "SHAIKH_2016_NETLOGO_SIMS",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S309-D": {
+      "parent": "S309",
+      "subsource": "SHAIKH_2016_NETLOGO_SIMS",
+      "period": [
+        null,
+        null
+      ]
+    },
+    "S309-E": {
+      "parent": "S309",
+      "subsource": "SHAIKH_2016_NETLOGO_SIMS",
+      "period": [
+        null,
+        null
+      ]
+    }
+  },
+  "subsources": {
+    "BEA_LTEG_1966": {
+      "used_by_series": [
+        "S201"
+      ]
+    },
+    "FRB_G17_INDPRO": {
+      "used_by_series": [
+        "S201"
+      ]
+    },
+    "FRED_INDPRO": {
+      "used_by_series": [
+        "S201"
+      ]
+    },
+    "SHAIKH_2016_EQ_3_4_3_11": {
+      "used_by_series": [
+        "S301",
+        "S302",
+        "S303",
+        "S304",
+        "S305",
+        "S308",
+        "S309"
+      ]
+    },
+    "ALLEN_BOWLEY_1935_TABLE1": {
+      "used_by_series": [
+        "S306",
+        "S307"
+      ]
+    },
+    "UK_BoT_1908_CD3864": {
+      "used_by_series": [
+        "S306",
+        "S307"
+      ]
+    },
+    "SHAIKH_2016_NETLOGO_SIMS": {
+      "used_by_series": [
+        "S308",
+        "S309"
+      ]
+    }
+  },
+  "artifacts": {
+    "research": {
+      "S201": "Technical/research/S201_research.json",
+      "S301": "Technical/research/S301_research.json",
+      "S302": "Technical/research/S302_research.json",
+      "S303": "Technical/research/S303_research.json",
+      "S304": "Technical/research/S304_research.json",
+      "S305": "Technical/research/S305_research.json",
+      "S306": "Technical/research/S306_research.json",
+      "S307": "Technical/research/S307_research.json",
+      "S308": "Technical/research/S308_research.json",
+      "S309": "Technical/research/S309_research.json"
+    },
+    "DPR": {
+      "S201": "Technical/docs/series/S201_DPR.md",
+      "S301": "Technical/docs/series/S301_DPR.md",
+      "S302": "Technical/docs/series/S302_DPR.md",
+      "S303": "Technical/docs/series/S303_DPR.md",
+      "S304": "Technical/docs/series/S304_DPR.md",
+      "S305": "Technical/docs/series/S305_DPR.md",
+      "S306": "Technical/docs/series/S306_DPR.md",
+      "S307": "Technical/docs/series/S307_DPR.md",
+      "S308": "Technical/docs/series/S308_DPR.md",
+      "S309": "Technical/docs/series/S309_DPR.md"
+    },
+    "EPR": {
+      "S201": "Technical/docs/series/S201_EPR.md",
+      "S301": "Technical/docs/series/S301_EPR.md",
+      "S302": "Technical/docs/series/S302_EPR.md",
+      "S303": "Technical/docs/series/S303_EPR.md",
+      "S304": "Technical/docs/series/S304_EPR.md",
+      "S305": "Technical/docs/series/S305_EPR.md",
+      "S306": "Technical/docs/series/S306_EPR.md",
+      "S307": "Technical/docs/series/S307_EPR.md",
+      "S308": "Technical/docs/series/S308_EPR.md",
+      "S309": "Technical/docs/series/S309_EPR.md"
+    },
+    "loader": {
+      "S201": "Technical/code/L01_loaders/L01_S201_load.py",
+      "S301": "Technical/code/L01_loaders/L01_S301_load.py",
+      "S302": "Technical/code/L01_loaders/L01_S302_load.py",
+      "S303": "Technical/code/L01_loaders/L01_S303_load.py",
+      "S304": "Technical/code/L01_loaders/L01_S304_load.py",
+      "S305": "Technical/code/L01_loaders/L01_S305_load.py",
+      "S306": "Technical/code/L01_loaders/L01_S306_load.py",
+      "S307": "Technical/code/L01_loaders/L01_S307_load.py",
+      "S308": "Technical/code/L01_loaders/L01_S308_load.py",
+      "S309": "Technical/code/L01_loaders/L01_S309_load.py"
+    },
+    "processor": {
+      "S201": "Technical/code/P02_processors/P02_S201_construct.py",
+      "S301": "Technical/code/P02_processors/P02_S301_construct.py",
+      "S302": "Technical/code/P02_processors/P02_S302_construct.py",
+      "S303": "Technical/code/P02_processors/P02_S303_construct.py",
+      "S304": "Technical/code/P02_processors/P02_S304_construct.py",
+      "S305": "Technical/code/P02_processors/P02_S305_construct.py",
+      "S306": "Technical/code/P02_processors/P02_S306_construct.py",
+      "S307": "Technical/code/P02_processors/P02_S307_construct.py",
+      "S308": "Technical/code/P02_processors/P02_S308_construct.py",
+      "S309": "Technical/code/P02_processors/P02_S309_construct.py"
+    },
+    "validator": {
+      "S201": "Technical/code/V03_validators/V03_S201_validate.py",
+      "S301": "Technical/code/V03_validators/V03_S301_validate.py",
+      "S302": "Technical/code/V03_validators/V03_S302_validate.py",
+      "S303": "Technical/code/V03_validators/V03_S303_validate.py",
+      "S304": "Technical/code/V03_validators/V03_S304_validate.py",
+      "S305": "Technical/code/V03_validators/V03_S305_validate.py",
+      "S306": "Technical/code/V03_validators/V03_S306_validate.py",
+      "S307": "Technical/code/V03_validators/V03_S307_validate.py",
+      "S308": "Technical/code/V03_validators/V03_S308_validate.py",
+      "S309": "Technical/code/V03_validators/V03_S309_validate.py"
+    },
+    "chopped": {
+      "S201": "Technical/chopped/S201.csv",
+      "S301": "Technical/chopped/S301.csv",
+      "S302": "Technical/chopped/S302.csv",
+      "S303": "Technical/chopped/S303.csv",
+      "S304": "Technical/chopped/S304.csv",
+      "S305": "Technical/chopped/S305.csv",
+      "S306": "Technical/chopped/S306.csv",
+      "S307": "Technical/chopped/S307.csv",
+      "S308": "Technical/chopped/S308.csv",
+      "S309": "Technical/chopped/S309.csv"
+    },
+    "extenbook": {
+      "S201": "Technical/extenbooks/S201_extenbook.xlsx",
+      "S301": "Technical/extenbooks/S301_extenbook.xlsx",
+      "S302": "Technical/extenbooks/S302_extenbook.xlsx",
+      "S303": "Technical/extenbooks/S303_extenbook.xlsx",
+      "S304": "Technical/extenbooks/S304_extenbook.xlsx",
+      "S305": "Technical/extenbooks/S305_extenbook.xlsx",
+      "S306": "Technical/extenbooks/S306_extenbook.xlsx",
+      "S307": "Technical/extenbooks/S307_extenbook.xlsx",
+      "S308": "Technical/extenbooks/S308_extenbook.xlsx",
+      "S309": "Technical/extenbooks/S309_extenbook.xlsx"
+    }
+  },
+  "notes": "Populated incrementally as each phase produces artifacts. S201 pilot completed 2026-05-18; pattern is the reference for the remaining 112 series."
+}

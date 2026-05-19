@@ -1,0 +1,384 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": 6,
+  "reviewer": "opus-subagent-p4-wave1-ch6",
+  "review_date": "2026-05-18",
+  "series_count": 13,
+  "scope_note": "Combined adequacy report for Ch6 published series (S601-S604) PLUS the 9 AS-prefixed analytical-support series (AS001-AS009) that document the Ch6 GPIM construction internals per decision 0002.",
+  "scores": {
+    "D1_source_reachability": {
+      "value": 24,
+      "max": 25,
+      "details": "REAL HEAD checks performed 2026-05-18 against all 18 distinct primary/extension URLs across the 13 dossiers. 17/18 returned HTTP 200 (BEA iTable root + 8 NIPA table_list deep links, BEA Fixed Assets root + 2 table deep links, IRS SOI sector-or-industry page, FRB G.17, Census 1975 Historical Statistics, Wayback Machine root, Wayback snapshot of anwarshaikhecon.org). Only the canonical IRS 'Corporation Source Book of Statistics of Income' slug used in AS009 returned 404; alternate IRS Corporation Complete Report page (https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report) returns 200 and is the active home for the same data. Substitute URL recorded for AS009. Live anwarshaikhecon.org DNS fails (consistent with decision 0005); Wayback snapshot reachable as fallback. BEA iTable downloads still require interactive session for series export — flagged 'auth_required_session'."
+    },
+    "D2_year_coverage": {
+      "value": 17,
+      "max": 20,
+      "details": "Book range 1947-2011 (1925-2011 for GPIM internals) covered by all 13 series via BEA NIPA + Fixed Asset Accounts back to 1925 (FA) and 1929 (NIPA). Extension to 2024: feasible for AS001/AS002/AS003 with line-number remap; bounded by NMINT data completeness for x1 component of S602/S603 and for the adjusted IROP in S604 (CD2 known issue, freeze at last complete year rather than forward-fill). AS009 post-2011 inventory is the explicit 3-point hit: covered only by constant-ratio proxy because IRS discontinued reporting corporate net historical capital stock after 2011 — flagged for keep/re-estimate/substitute decision below. AS006 sample value reconciliation outstanding (see open question Q1). Coverage assessed as ~94% of effective book span; -3 for AS009 proxy and -1 for NMINT-bounded x1."
+    },
+    "D3_license_compatibility": {
+      "value": 15,
+      "max": 15,
+      "details": "All 13 series sourced from U.S. federal agencies (BEA, IRS, FRB, Census). All public domain (U.S. Government work). No commercial / paywalled dependencies in Ch6. Wayback Machine archive snapshots are fair-use and CC-compatible for retrieval. No license-blocking issues."
+    },
+    "D4_units_consistency": {
+      "value": 12,
+      "max": 15,
+      "details": "S601-S604 published series and AS001-AS005, AS008 all carry explicit units consistent with loader expectations (billions of current USD or decimal rates/ratios). Three series have unit-mismatch issues flagged by Phase 3 that must be resolved before Phase 5: (a) AS006 — sample values in CD2 S211 markdown match the BEA 1993 *initial* value 77.7, conflicting with the dossier's stated 'BEA 2011 initial value held fixed, only depreciation rate varied' methodology; (b) AS007 — CD2 S212 sample values in thousands of dollars, not billions, requires divide-by-1000 normalization before joining with BEA-billions; (c) AS009 — same thousand-vs-billion issue in raw IRS source. Loaders must apply unit-normalization step in Phase 5. -3 for these three series needing pre-load normalization."
+    },
+    "D5_extension_feasibility": {
+      "value": 13,
+      "max": 15,
+      "details": "S601 (corp + noncorp rates), S602 (corrected vs NIPA), AS001-AS004 all extensible by re-fetching component series and re-running the formula end-to-end (anti-degradation rule: no profit-rate splicing). S603 x1 component freezes at last complete NMINT year. S604 adjusted IROP bounded by IRS inventory + NMINT availability; iropcorpnipa variant fully extensible. AS005-AS008 are reference/sensitivity variants — extension is methodologically cosmetic for AS005, requires BEA 1993 depreciation-rate recovery for AS006 (decision needed: BEA archive vs Shaikh's posted xlsx vs reconstruction from 1993 SCB), and AS008 terminates 1947 by construction (interwar window only). AS009 post-2011 currently constant-ratio proxy. -2 for combined effect of these constraints. Note: AS001-AS009 score_contribution to D5 acknowledged — they all extend by the same BEA-vintage refresh as S601-S604, just with stronger vintage-drift exposure given the GPIM chain depends on historical depreciation rates."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 8,
+      "max": 10,
+      "details": "All 12 of 13 series have explicit 'splice_strategy: none' on the headline construction (no lazy splices on formula/composite GPIM variants — confirmed). Anti-degradation compliance: S601/S602/S603/S604 dossiers all forbid splicing the derived profit rates and require re-computation from components; AS series component-source labels explicitly cite the underlying BEA/IRS tables. ONE disclosed proxy: AS009 post-2011 inventory uses constant 2011 inventory-to-fixed-capital ratio — this is documented in the AS009 methodology_notes and must remain flagged in any downstream S6xx output that consumes it for years >2011. -2 because the AS009 proxy needs an explicit Concept Match Justification block before Phase 6 publication (currently flagged in open_questions only)."
+    }
+  },
+  "total_score": 89,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "S601",
+      "name": "Corporate and Non-Corporate Profit Rates",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "rate (decimal); component sources in billions of current USD",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Phase 5 loader must re-fetch NIPA T1.14 + T7.11 + FA T6.1 by current line-number stub-label mapping, not 2011 vintage line ids."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S602",
+      "name": "Corrected vs Conventional Corporate Profitability",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "rate and share (decimal); component sources in billions of current USD",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "GPIM KGC denominator inherits AS004 dependency — confirm AS004 baseline reconstruction first.",
+        "IRS SOI inventory must be sourced via the active SOI Corporation Complete Report page (https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report), not the deprecated Source Book slug."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S603",
+      "name": "Component Ratios x1, x2, x3",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 95,
+      "license": "public-domain",
+      "units": "ratio (dimensionless)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [
+        "x1 bounded by NMINT_corp completeness in BEA T7.11; freeze at last complete year rather than forward-fill (CD2 known issue, preserved)"
+      ],
+      "remediation": [
+        "Phase 5 must encode the x1-freeze rule in the loader, not in the visualization layer."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S604",
+      "name": "Corporate Incremental Rate of Profit (IROP)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 95,
+      "license": "public-domain",
+      "units": "rate (decimal; first-difference ratio)",
+      "extension_status": "feasible",
+      "proposed_substitute": "For post-2011 extension, designate iropcorpnipa as canonical extended series; iropcorp held at book vintage. Substitute IRS Corporation Complete Report URL for the Source Book slug.",
+      "proxy_flags": [
+        "Adjusted iropcorp depends on NMINT_corp (BEA T7.11) and IRS inventories — both extension-bounded. iropcorpnipa variant has no such constraint."
+      ],
+      "remediation": [
+        "Phase 5 loader emits two series labels (iropcorp and iropcorpnipa) with explicit extension-window metadata."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "AS001",
+      "name": "GDP/GDI Decomposition and Business NOS",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "billions of current USD",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Re-map T1.10 and T7.12 line numbers by NIPA stub label, not 2011 line ids (BEA reordering documented in dossier)."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "AS002",
+      "name": "Wage Equivalent and Corporate/Noncorporate Split",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "billions of current USD (PropInc, EC, NOS); ratio (sigma); thousands of persons (SEP)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Loader must keep sigma well-defined (Pcorp > 0 check)."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "AS003",
+      "name": "Imputed Interest Adjustment and Sectoral Profit Rates",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 95,
+      "license": "public-domain",
+      "units": "billions of current USD (NOS, NMINT); decimal (rates)",
+      "extension_status": "feasible",
+      "proposed_substitute": "BEA T7.11 line recipe (4+44+73)-(28+52+91) and (74+75)-(53+54) requires re-mapping for current vintage post-FISIM revisions (2013, 2018). Re-map by stub label.",
+      "proxy_flags": [
+        "FISIM methodology revisions in 2013 and 2018 change imputation magnitudes; vintage-drift must be documented, not silently absorbed."
+      ],
+      "remediation": [
+        "Phase 5 loader emits T7.11 line-mapping table that survives BEA vintage changes; this is the single biggest Phase 5 blocker for Ch6."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "AS004",
+      "name": "GPIM Corporate Capital Stock",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "billions of current USD (KC); billions of chained dollars (KR)",
+      "extension_status": "feasible_with_recovered_inputs",
+      "proposed_substitute": "BEA 1993 depreciation/retirement rates not in current iTable. Three recovery paths: (a) Wayback Machine snapshot of BEA Fixed Assets methodology circa 2000-2005 (Wayback root returns 200; specific PDF reachable via search), (b) Shaikh's posted Appendix6_Table68II1.xlsx in SalvagedInputs/book_data/, (c) reconstruction from 1993 SCB articles via NBER/HathiTrust. Recommend (b) as the authoritative source; (a) as fallback.",
+      "proxy_flags": [],
+      "remediation": [
+        "Confirm Appendix6_Table68II1.xlsx is in SalvagedInputs/book_data/ during Phase 5 prep; if not, fetch from Wayback Machine snapshot of BEA Fixed Assets methodology.",
+        "S601-S604 dossiers explicitly cite AS004 as operational baseline; AS005 is the reference / mechanical case. Crosswalk confirmed."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "AS005",
+      "name": "GPIM Variant - BEA 2011 Initial Value",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "billions of current USD",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "AS005 is the REFERENCE GPIM regenerator (no perturbations); AS004 is the operational baseline (with BEA 1993 depreciation + interwar adjustment). Confirmed in Phase 4."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "AS006",
+      "name": "GPIM Variant - BEA 1993 vs 2011",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "billions of current USD (after unit-reconciliation — see remediation)",
+      "extension_status": "feasible_with_recovered_inputs",
+      "proposed_substitute": "BEA 1993 depreciation rates: same recovery path as AS004 (SalvagedInputs xlsx primary, Wayback BEA methodology secondary).",
+      "proxy_flags": [
+        "CD2 sample 1925=77.769 matches BEA 1993 *initial* value 77.7, not BEA 2011 (98.1) which the dossier text specifies. Interpretation conflict: CD2 may have conflated 'BEA 1993 vs 2011' variant labeling. Phase 4 recommendation: TWO sub-variants are needed — AS006a (BEA 1993 depreciation rate ONLY, BEA 2011 initial value, per dossier text) and AS006b (BEA 1993 depreciation rate AND BEA 1993 initial value, per CD2 sample data). Implement both; mark which Shaikh actually plots in Appendix Figure 6.7.5/6.7.6 during Phase 5 figure replication QA."
+      ],
+      "remediation": [
+        "Phase 5 loader must produce two AS006 columns labeled AS006_depr_only and AS006_depr_plus_init.",
+        "Unit reconciliation: CD2 raw values appear billions-of-USD-comparable; confirm during loader testing against Appendix Table 6.7.13 row values (98.1, 77.7, 67.1)."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "AS007",
+      "name": "GPIM Variant - IRS Adjusted",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "billions of current USD (after divide-by-1000 normalization — see remediation)",
+      "extension_status": "not_applicable_historical_correction",
+      "proposed_substitute": null,
+      "proxy_flags": [
+        "CD2 sample 1925=93,341.52 is approximately 1000× the expected ~93 bill$ scale (BEA-comparable corporate stock 1925=98.1 bill$). Raw IRS series is in thousands of dollars; unit normalization (divide by 1000) required before downstream use."
+      ],
+      "remediation": [
+        "Phase 5 loader applies /1000 to raw IRS Series V 115 values to convert thousands-of-dollars to billions-of-dollars.",
+        "Validate post-normalization 1925 value lands within 5-10% of BEA 1925 corporate stock 98.1 bill$ (allowing for IRS-vs-BEA definitional gap)."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "AS008",
+      "name": "GPIM Variant - Interwar Adjusted",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "dimensionless ratio (1925=1.0)",
+      "extension_status": "not_applicable_historical_correction",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "AS008 is intrinsically 1925-1947 only; no extension. Year coverage 100% within natural range.",
+        "Validate 1927-1929 multiplier values >1.0 against original Census Series V 115 entries; flag as known IRS-vs-BEA asset-revaluation gap if confirmed."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "AS009",
+      "name": "IRS Corporate Inventories and Total Capital Stock",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "year_coverage_pct": 85,
+      "license": "public-domain",
+      "units": "billions of current USD (after thousand-to-billion normalization)",
+      "extension_status": "feasible_with_proxy_or_substitute",
+      "proposed_substitute": "Three options for post-2011 inventory: (a) KEEP constant-ratio proxy with explicit visualization break and Concept Match Justification block (lowest effort), (b) RE-ESTIMATE inventory ratio using current IRS SOI Corporation Complete Report data (medium effort; IRS still publishes inventories, just not net historical capital stock), (c) SUBSTITUTE FRB Z.1 non-financial corporate inventories (highest fidelity for the non-financial subset but excludes financial corp). RECOMMENDATION: option (b) — keep IRS-consistent methodology by re-deriving the ratio from current IRS SOI inventory line, dropping the net-historical-capital denominator step (use BEA FA T6.3 corporate historical-cost stock directly as the denominator from 2012 onward).",
+      "proxy_flags": [
+        "Post-2011 constant-ratio proxy currently in place. Requires Concept Match Justification block in dossier OR migration to option (b) substitute before Phase 6 publication.",
+        "CD2 sample 1946=36,965,000 confirms raw IRS scale is thousands-of-dollars; same normalization as AS007.",
+        "IRS Corporation Source Book canonical slug (https://www.irs.gov/statistics/soi-tax-stats-corporation-source-book-of-statistics-of-income) returns 404. Active page: https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report (verified 2026-05-18, HTTP 200). Update AS009 primary_source.url."
+      ],
+      "remediation": [
+        "Update AS009 dossier primary_source.url to the active IRS Corporation Complete Report page.",
+        "Phase 5: emit AS009 with explicit `extension_method: constant_ratio_proxy_2012_onwards` metadata flag; downstream KTCcorp consumers must render proxy break visually.",
+        "Phase 6: lift the proxy to option (b) above; document Concept Match Justification."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "Update AS009 primary_source.url from the dead Corporation Source Book slug to the active IRS Corporation Complete Report page.",
+    "Confirm SalvagedInputs/book_data/ contains Shaikh's Appendix6_Table68II1.xlsx (or equivalent) with BEA 1993 depreciation/retirement rates; fetch from Wayback Machine BEA methodology snapshot if missing. This input is shared by AS004, AS006, AS007.",
+    "Encode the 'AS006 two-variant split' (depr-rate-only vs depr-rate-plus-initial-value) in the Phase 5 loader so the CD2 sample-value/text disagreement is preserved as a documented sensitivity rather than buried.",
+    "Add `unit_normalization: divide_by_1000` flag to AS007 and AS009 loader configs; raw IRS Series V 115 and IRS SOI inventory line are in thousands of dollars.",
+    "Add `extension_freeze_on: NMINT_corp_last_complete_year` flag to S603.x1 and S604.iropcorp loader configs; do NOT forward-fill NMINT.",
+    "T7.11 line recipe (AS003: lines 4,28,44,52,53,54,73,74,75,91) is 2011-vintage; build a stub-label-to-line-id mapping table that the loader resolves at fetch time, surviving FISIM 2013/2018 revisions.",
+    "Add `adequacy.status: ready_for_phase5` to all 13 series in series_registry.json.",
+    "Decision 0002 already actioned (9 AS series registered) — no further registry expansion needed for Ch6."
+  ],
+  "blockers_for_phase5": [
+    {
+      "id": "CH6-B2",
+      "title": "NIPA T7.11 line-number remap (AS003)",
+      "status": "RESOLVED",
+      "resolution_date": "2026-05-18",
+      "resolver_agent": "rscd-a3-ch6-blocker-batch",
+      "deliverables": {
+        "code": "Technical/code/L01_loaders/_nipa_t711_line_resolver.py",
+        "methodology_doc": "Technical/docs/methodology/NIPA_T711_FISIM_remap.md",
+        "dossier_updates": ["Technical/research/AS003_research.json"]
+      },
+      "summary": "Stub-label resolver covering all 10 CD2-2011 T7.11 lines. Pinned vintages 2011/2018/2024; 2018+ shows the +1 line shift documented in BEA's Comprehensive Update release notes. BEA Data API path included for live LineDescription-based resolution. Self-test passes."
+    },
+    {
+      "id": "CH6-B3",
+      "title": "BEA 1993 depreciation rates recovery (AS004/AS006/AS007)",
+      "status": "RESOLVED",
+      "resolution_date": "2026-05-18",
+      "resolver_agent": "rscd-a3-ch6-blocker-batch",
+      "deliverables": {
+        "staged_data_dir": "SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/",
+        "files": [
+          "SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/README.md",
+          "SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/BEA_1993_depreciation_retirement_rates.csv",
+          "SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/BEA_1993_depreciation_retirement_rates.json"
+        ],
+        "dossier_updates": ["Technical/research/AS004_research.json", "Technical/research/AS006_research.json", "Technical/research/AS007_research.json"]
+      },
+      "source_layer": "Shaikh Appendix Table 6.8.II.3 (Appendix6_Table68II3.xlsx, MD5 9cdbdf5628837e07856b92925c89599a) which itself cites BEA 1993 Tables A.12/A.13 as upstream provenance",
+      "year_coverage": [1925, 2011],
+      "extension_caveat": "1990-2011 values are linear projections by Shaikh from BEA 1993 raw data 1925-1989. Extension to 2012+ recommended as frozen-at-2011 for AS004 baseline; sensitivity-only for AS006/AS007 variants.",
+      "summary": "Recovery path (a) succeeded: Shaikh's posted spreadsheet contains the BEA 1993 depreciation rate (dcorpnew), retirement rate (rho_corpnew), and 1925 initial value (KNCbea93=77.769) needed by AS004 / AS006a / AS006b / AS007. Wayback Machine fallback was not needed."
+    }
+  ],
+  "phase5_blocker_resolution_summary": {
+    "total_blockers_at_phase4": 2,
+    "resolved": 2,
+    "partially_resolved": 0,
+    "deferred": 0,
+    "ch6_phase5_ready": true
+  },
+  "open_questions": [
+    "Q1 RESOLVED: AS006 sample/text conflict — Phase 4 recommendation is to ship TWO variants (AS006_depr_only following dossier text; AS006_depr_plus_init following CD2 sample values). User can confirm by inspection of Appendix Figure 6.7.5 and 6.7.6 in Phase 5 figure-replication QA.",
+    "Q2 RESOLVED: AS007 unit mismatch — confirmed thousands-of-dollars in raw IRS Series V 115. Phase 5 loader divides by 1000.",
+    "Q3 RESOLVED (recommendation pending Phase 6): AS009 post-2011 constant-ratio proxy — recommend option (b) re-estimate using current IRS SOI inventory data with BEA FA T6.3 historical-cost stock as denominator. Keep proxy for Phase 5; lift to substitute in Phase 6.",
+    "Q4 RESOLVED (workaround): BEA 1993 depreciation/retirement rates not in current iTable. Recovery path: SalvagedInputs xlsx primary, Wayback Machine BEA methodology snapshot fallback (Wayback root reachable HTTP 200).",
+    "Q5 RESOLVED (work item identified): NIPA T7.11 FISIM line-number remap — Phase 5 loader builds stub-label resolver. Effort estimated.",
+    "Q6 RESOLVED: AS004 vs AS005 baseline confusion — AS004 is the OPERATIONAL baseline used by S601-S604 (includes BEA 1993 depreciation + Great Depression / WWII adjustment via AS008 mechanism); AS005 is the PURE REFERENCE GPIM regenerator (no perturbations, used only to verify 99.6% match against official BEA KNCcorpbea per Appendix Table 6.7.12). Crosswalk and dossier text both confirm AS004 = operational."
+  ],
+  "phase4_open_question_resolutions": {
+    "ch6_phase3_q1_AS006_sample_value_conflict": "Ship two sub-variants AS006_depr_only and AS006_depr_plus_init.",
+    "ch6_phase3_q2_AS007_units_thousands_vs_billions": "Apply /1000 unit normalization at load time.",
+    "ch6_phase3_q3_AS009_post2011_constant_ratio_proxy": "Keep proxy for Phase 5 with explicit metadata flag; migrate to re-estimated ratio (current IRS SOI inventories / BEA FA T6.3 historical-cost stock) in Phase 6.",
+    "ch6_phase3_q4_BEA1993_depreciation_rates_not_in_current_iTable": "Use SalvagedInputs/book_data Shaikh xlsx (primary) or Wayback Machine BEA Fixed Assets methodology document (fallback).",
+    "ch6_phase3_q5_NIPA_T711_line_number_remap_FISIM": "Phase 5 loader resolves by NIPA stub label (not 2011 line id); ~4h effort during ingestion sprint.",
+    "ch6_phase3_q6_AS004_vs_AS005_baseline_confusion": "AS004 = operational baseline (used by S601-S604); AS005 = pure reference GPIM regenerator for the 99.6% accuracy verification only."
+  },
+  "url_reachability_evidence": {
+    "checked_at": "2026-05-18T (see Build/_ch6_url_check_results.json)",
+    "method": "urllib HEAD with GET fallback for 403/405/501, UA=RSCD-P4-AdequacyBot/1.0, timeout=12s",
+    "results_file": "Technical/Build/_ch6_url_check_results.json",
+    "summary": {
+      "checked": 18,
+      "status_200": 17,
+      "status_404_with_substitute": 1,
+      "dns_failures_with_archive_fallback": 1
+    },
+    "substitutions_recorded": [
+      {
+        "deprecated": "https://www.irs.gov/statistics/soi-tax-stats-corporation-source-book-of-statistics-of-income",
+        "active": "https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report",
+        "applies_to": ["AS009"]
+      },
+      {
+        "deprecated": "http://www.anwarshaikhecon.org/ (DNS failure 2026-05-18)",
+        "active": "https://web.archive.org/web/2023/http://www.anwarshaikhecon.org/",
+        "applies_to": ["S601 available_through", "S602 available_through", "S603 available_through", "S604 available_through"]
+      }
+    ],
+    "auth_required_session_notes": "BEA iTable deep links return 200 on HEAD but require interactive session (cookie) for actual data export. Phase 5 ingestion either uses BEA Data API (api key required, free) or web-scrapes via session cookie. This is documented but not a Phase 4 blocker."
+  },
+  "bea_1993_archive_status": {
+    "wayback_root_reachable": true,
+    "wayback_root_status": 200,
+    "specific_methodology_pdf_2003": "404 on direct BEA URL; retrievable via Wayback snapshots circa 2005-2010 (manual selection required)",
+    "recommendation": "Primary: SalvagedInputs/book_data/Appendix6_Table68II1.xlsx (Shaikh's posted spreadsheet contains the BEA 1993 depreciation/retirement rate tables he used). Fallback: Wayback Machine retrieval of BEA Fixed Assets methodology document circa 2000-2010. Both reachable as of 2026-05-18. NOT blocking Phase 5 start."
+  }
+}

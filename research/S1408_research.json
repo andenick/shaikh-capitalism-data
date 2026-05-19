@@ -1,0 +1,100 @@
+{
+  "series_id": "S1408",
+  "name": "HP(100)-Filtered Rate of Change of Nominal Wages vs Unemployment Intensity",
+  "chapter": 14,
+  "figures": [
+    "Fig14.17"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S075",
+    "cd2_id": "S075"
+  },
+  "book_quotes": [
+    {
+      "chapter": 14,
+      "page": 670,
+      "quote": "The nominal wage Phillips curve in equation (14.19) is then pulled downward by the decline in productivity growth and pulled upward by the rise in the inflation rate depicted in figure 14.15. Since inflation initially rises more than productivity growth falls, the net effect is to raise the nominal wage Phillips curve above the first fitted function from 1960 to 1977. However, as the inflation rate falls and productivity growth rises thereafter, the curve falls until the sum of these two is back to its initial levels in the 1950s and the curve becomes parallel to the second fitted function after 1999. This explains the pattern in the nominal wage Phillips curve in figure 14.17.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 892,
+      "quote": "w = the nominal wage = EC*100/FEE, where FEE = full-time equivalent employment from Tables 6.5A-D; wr = w/p = the real wage; yr = productivity = (GDP*100/p)/(FEE/1000).",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 672,
+      "quote": "What is particularly striking is that from 1948 to 1982, which encompasses the Great Stagflation of the 1970s, the coefficient on inflation in the first period is only slightly below one. This implies that nominal wages were almost able to keep up with inflation in this period. On the other hand, the coefficient on productivity growth is 0.82 which means that nominal wages lost substantial ground relative to productivity growth (i.e., unit labor costs continued to decline over time).",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Composite (BEA + BLS)",
+    "publication": "Derived: HP(100)-filtered nominal-wage growth (GMWAGEHP100) and unemployment intensity (ULINTENSITYHP100)",
+    "table_or_series_id": "BEA NIPA Table 1.10 line 2 (EC); NIPA Tables 6.5A-D (FEE); BLS LNS14000000 + LNS13008275",
+    "url": "https://www.bea.gov/itable/national-gdp-and-personal-income",
+    "frequency": "annual",
+    "units": "Decimal (nominal-wage growth rate); decimal (unemployment intensity)",
+    "license": "U.S. Government Work (public domain)",
+    "available_through": "BEA + BLS + FRED",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "direct",
+  "formula": "x = HP100(unemployment_intensity); y = HP100(growth_rate(nominal_wage)) where nominal_wage w = EC*100/FEE",
+  "components": [
+    {
+      "subseries_label": "GMWAGEHP100",
+      "source": "HP(100)-filtered growth rate of nominal wage w = EC*100/FEE",
+      "role": "y-axis of Fig 14.17"
+    },
+    {
+      "subseries_label": "ULINTENSITYHP100",
+      "source": "HP(100)-filtered unemployment intensity",
+      "role": "x-axis"
+    }
+  ],
+  "year_range_book": [1949, 2011],
+  "year_range_extension": [1949, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "Nominal wage (EC per FTE worker)",
+      "source": "Derived: FRED A576RC1 / B4701C0A222NBEA (annual), first-difference of logs for growth rate",
+      "url": "https://fred.stlouisfed.org/series/A576RC1",
+      "units": "Dollars per worker; decimal annual growth rate",
+      "splice_strategy": "growth_rate",
+      "concerns": ["Verify Shaikh's nominal wage construction (EC/FEE * 100) replicates the published Appendix 14.3 series before splicing"]
+    },
+    {
+      "subseries_label": "Unemployment intensity",
+      "source": "S1402 extension",
+      "url": "https://fred.stlouisfed.org/series/UEMPMEAN",
+      "units": "Decimal",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Inherits UEMPMEAN 2011 top-coding break (see S1402)"]
+    }
+  ],
+  "methodology_notes": [
+    "Fig 14.17 is the 'nominal-wage Phillips curve' analogue (Eq. 14.19: ˙w/w = ˙p/p + ˙y/y + f(uInt_L)). It is the original Phillips relation but plotted against unemployment INTENSITY rather than the unemployment rate alone.",
+    "The curve shifts MORE than the real-wage curve because it is buffeted by both inflation and productivity-growth trends.",
+    "Table 14.3 in the chapter regresses the residual (excess nominal-wage growth above the fitted wage-share function) on inflation and productivity growth, yielding coefficients near 1 in 1948-1982 and substantially below 1 in 1994-2011, evidence of weakened labor.",
+    "Same HP(100) filter and same two-era windows as Figs 14.14 and 14.16."
+  ],
+  "open_questions": [
+    "Like S1407, whether the two fitted dashed lines are re-fitted to nominal wages or constructed from the wage-share fit plus (HP-filtered inflation + productivity growth).",
+    "The Table 14.3 regression sample windows are 1948-1982 / 1994-2011 (per chapter text) but Appendix 14.2 shows the Stata/EViews output windows as 1949-1982 / 1994-2011. Off-by-one to flag for replication."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch14",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S075 ported. Definitional quote from p. 670 is the substantive text on Fig 14.17; CD2's quote was a fragment, replaced."
+    }
+  ]
+}

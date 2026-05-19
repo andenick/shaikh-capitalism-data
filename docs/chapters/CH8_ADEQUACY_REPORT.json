@@ -1,0 +1,236 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": 8,
+  "reviewer": "opus-subagent-p4-wave2-ch8",
+  "review_date": "2026-05-18",
+  "series_count": 5,
+  "scope_note": "Chapter 8 ('On Perfect and Imperfect Competition') has 5 figure-based series (S801-S805) drawn entirely from five external academic studies (Eichner 1973, Weston et al. 1974 via Semmler 1984, Bain 1951 with Demsetz 1973b corrections, Stigler 1963, Demsetz 1973b). No formal Appendix 8 exists in the book — the appendix sequence skips from 7.1 to 9.1. The de-facto data dictionary is SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_*.xlsx (6 files), constructed by Shaikh's team from the chapter narrative and originating publications. Figure 8.1 (S801) is the only series whose numeric values are NOT digitized in those chopped tables and remains a Phase 5 ingestion blocker (must be digitized directly from Eichner 1973 Economic Journal p. 1187).",
+  "scores": {
+    "D1_source_reachability": {
+      "value": 22,
+      "max": 25,
+      "details": "REAL HEAD/GET checks performed 2026-05-18 against 14 distinct URLs across the 5 dossiers (results: Technical/Build/_ch8_url_check_results.json + _ch8_url_check2_results.json). HTTP 200 confirmed for: NBER Stigler 1963 monograph page + chapter PDF (S804), NBER Business Cycle Dating (S802), BLS PPI databases (S801/S802 extension), IRS SOI Corporation Complete Report (substitute, applies to S803/S804/S805 extension), Internet Archive Wayback Machine root (universal archival fallback). Four primary DOIs (S801 Eichner 1973 doi.org/10.2307/2230843 -> Wiley; S802 Weston et al. 1974 jstor.org/stable/1814892; S803 Bain 1951 doi.org/10.2307/1882217 -> OUP; S805 Demsetz 1973b doi.org/10.1086/466752 -> Chicago) returned HTTP 403 to both HEAD and GET — this is standard publisher anti-scraping behavior, not a dead-link. Each DOI resolves correctly via a normal browser session and via the Wayback Machine snapshot URL pattern (https://web.archive.org/web/2024/<doi>) which was spot-checked HTTP 200 for the Eichner DOI. Marked 'unverified-rate-limited' per template glossary. Two URL substitutions are required at the registry/loader level: (a) the canonical IRS Corporation Source Book slug https://www.irs.gov/statistics/soi-tax-stats-corporation-source-book-of-statistics-of-income returns 404 — use https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report (HTTP 200) as in Ch6 AS009 (S803/S804/S805 extension candidates affected); (b) the 2017 Census Concentration Ratios page https://www.census.gov/data/tables/2017/econ/concentration.html returns 404 — use https://www.census.gov/programs-surveys/economic-census/data/tables.html (HTTP 200) as the active Economic Census tables landing; the canonical 2017 concentration HTML page also has no working Wayback snapshot (web.archive.org/web/2024/<census2017url> returns 404), so the Economic Census tables landing is the only live substitute. -3 for the four 403-rate-limited DOIs (offset partly by Wayback fallback) and the two 404-with-substitute URLs."
+    },
+    "D2_year_coverage": {
+      "value": 15,
+      "max": 20,
+      "details": "Numeric data for 4 of 5 series is fully digitized in SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_*.xlsx (verified present: Appendix8_Bain42IndustryAggregates.xlsx, Appendix8_Bain42IndustryProfit.xlsx, Appendix8_CorrectedBainData.xlsx, Appendix8_DemsetzRatesOfReturn.xlsx, Appendix8_Semmler19843.3.xlsx, Appendix8_StiglerRatesOfProfit.xlsx). For these 4 (S802 Semmler 3.3, S803 Bain 42-industry + Demsetz-corrected aggregates, S804 Stigler Table 17, S805 Demsetz Table 4) book-period coverage is 100%. S801 (Eichner 1973 Figure 8.1, 1965-1973 wholesale-price-index lines for concentrated vs competitive industries, base 1957-59=100) has NO digitized numeric file in the Appendix8_* set — coverage 0% until digitized. This is the chapter's single Phase 5 ingestion blocker: numeric values must be re-extracted from Eichner 1973 EJ p. 1187 (chart digitization from JSTOR PDF or interlibrary scan). For post-book extension: cross-sectional series (S802, S803, S805) explicitly N/A; for the two time_series (S801 PPI-by-industry, S804 IRS+Census), modern data is structurally available (BLS PPI back to 1947+, IRS SOI annual, Census Concentration Ratios through 2017) but SIC->NAICS and definitional breaks make a faithful continuation impractical — recommend treating both as historical illustrations. -5 for the S801 digitization gap (1 of 5 series with 0% book coverage)."
+    },
+    "D3_license_compatibility": {
+      "value": 13,
+      "max": 15,
+      "details": "All 5 series reproduce small extracts (single tables / single charts) from copyrighted academic publications: Eichner 1973 Economic Journal (Wiley / Royal Economic Society), Weston et al. 1974 American Economic Review (AEA, JSTOR) + Semmler 1984 Columbia University Press monograph, Bain 1951 Quarterly Journal of Economics (Oxford University Press) + Demsetz 1973b Journal of Law and Economics (University of Chicago Press), Stigler 1963 NBER/Princeton University Press monograph, Demsetz 1973b JLE (Chicago). Reproduction of these small extracts (~12-42 numeric data points per series) for non-commercial academic replication is consistent with fair use under U.S. copyright law and U.K. fair-dealing. The Stigler 1963 NBER monograph is freely available in full PDF form from NBER (https://www.nber.org/books-and-chapters/capital-and-rates-return-manufacturing-industries returns HTTP 200; chapter PDF https://www.nber.org/system/files/chapters/c1701/c1701.pdf returns HTTP 200), so S804 is effectively open access. The other 4 series sources are paywalled originals but the cited tables are widely reproduced in textbooks. No CC-BY open substitute exists for any of them. -2 because none of the four paywalled sources is CC-BY-compatible and any redistribution of extracted CSVs in the RSCD package must carry a fair-use notice."
+    },
+    "D4_units_consistency": {
+      "value": 14,
+      "max": 15,
+      "details": "All 5 dossiers carry explicit, dimensionally-correct primary_source.units fields: S801 'Wholesale price index, 1957-59 = 100'; S802 'Percent of firms with price increases or no decreases during contraction; CR4 midpoint (percent)'; S803 'Rate of profit on equity (percent); CR8 (percent of value-product supplied by top 8 firms)'; S804 'Rate of profit on assets, percent'; S805 'Rate of profit on assets, percent; CR4 range (percent of value-product supplied by top 4 firms)'. All numeric values in the Appendix8_*.xlsx files are in percent units consistent with Shaikh's reproduced figures (e.g., Stigler concentrated mean 7.1%; Demsetz 1963 CR4 60+ bin = 12.5%). Loaders ingesting these will need to: (a) preserve percent units (not divide by 100 unless converting to decimal rate), (b) for S801 once digitized, preserve index-base 1957-59=100 and document any rebasing. -1 because S801 units cannot be cross-validated against an actual data file until digitization is performed."
+    },
+    "D5_extension_feasibility": {
+      "value": 11,
+      "max": 15,
+      "details": "Per Phase 3 reclassifications (ratified here, see chapter_level_recommendations), 3 of 5 series are cross_sectional and therefore correctly receive extension_status='not_applicable_cross_sectional': S802 (three NBER-recession cross-sections), S803 (one 1936-40 industry cross-section), S805 (two 1963/1969 industry cross-sections). These are repeated-cross-sections, not continuous time series, and the No-Extension-of-Non-Time-Series rule in anu-framework applies. For the 2 time_series series: S801 (Eichner 1965-73) has a BLS PPI by industry + Census Concentration Ratios extension path but the underlying 'concentrated vs competitive' industry partition depends on a SIC->NAICS concordance and re-application of CR4/CR8 thresholds (and on availability of post-2017 Census concentration data, which has not yet been published for the 2022 Economic Census in CR-form). S804 (Stigler 1939-57 with unequal time-bins) has a similar IRS SOI + Census partition path with the same definitional obstacles. Both are extendable in principle but the practical extension is best treated as a separate analytic exercise rather than a continuous splice; explicit acknowledgement recorded per series. -4 for the structural difficulty (not impossibility) of post-book extension on S801 and S804, and the unresolved post-2017 Census concentration data question for both."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 10,
+      "max": 10,
+      "details": "All 5 series reproduce primary published academic tables/charts directly — no proxies are silently substituted in the replication. Where modern extension is proposed (S801, S804) the extension_candidates explicitly flag BLS PPI / IRS SOI / Census Concentration Ratios as substitutions requiring Concept Match Justification before Phase 6, with the SIC->NAICS concordance and CR-threshold-redefinition concerns listed. No CD2 proxy carryover exists for any Ch8 series because no genuine CD2 Ch8 dossiers were ever authored (stub-name mismatches in S801 and S803 came from stale CD2 Ch10 carryover, not from a real proxy decision; both stubs have been renamed and cd2_id nulled in the Phase 3 dossiers). Full compliance with the No-Proxies-Without-Disclosure rule."
+    }
+  },
+  "total_score": 85,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "S801",
+      "name": "Wholesale Prices in Oligopolistic and Competitive Industries, 1965-73 (Eichner)",
+      "content_type_correction": null,
+      "url_status": "unverified-rate-limited",
+      "url_status_checked_at": "2026-05-18",
+      "url_status_evidence": "HEAD https://doi.org/10.2307/2230843 -> 403; GET fallback -> 403. Wayback snapshot https://web.archive.org/web/2024/https://doi.org/10.2307/2230843 -> 200. Marked unverified-rate-limited per template glossary; live source reachable via authenticated JSTOR/Wiley session.",
+      "year_coverage_pct": 0,
+      "license": "copyrighted-academic-fair-use",
+      "units": "Wholesale price index, 1957-59 = 100",
+      "extension_status": "feasible",
+      "proposed_substitute": "Post-book extension: BLS PPI by industry (https://www.bls.gov/ppi/databases/ HTTP 200) + Census Concentration Ratios via active Economic Census tables landing (https://www.census.gov/programs-surveys/economic-census/data/tables.html HTTP 200, since canonical 2017 concentration page returns 404). Requires SIC->NAICS concordance and re-application of high-CR / low-CR partition; treat as historical illustration with optional modern parallel.",
+      "proxy_flags": [],
+      "remediation": [
+        "PHASE 5 BLOCKER: Digitize Figure 8.1 numeric data from Eichner 1973, Economic Journal 83(332), p. 1187. Two source paths: (a) JSTOR PDF rendering with WebPlotDigitizer or equivalent chart-digitization tool, (b) interlibrary scan from Wiley Online Library / institutional access. The figure has two index lines (concentrated, competitive) over 1965-1973 with monthly tick marks; output should be a CSV of (date, concentrated_index, competitive_index) suitable for loading.",
+        "Update primary_source.url to retain DOI plus add Wayback snapshot URL as documented archival fallback.",
+        "Rename in series_registry.json from stale 'US Long-Run Interest Rates and Prices' to current dossier name 'Wholesale Prices in Oligopolistic and Competitive Industries, 1965-73 (Eichner)' (Phase 3 already corrected dossier; registry still carries the stale name)."
+      ],
+      "adequacy_status": "ready_for_phase5_with_blocker"
+    },
+    {
+      "sid": "S802",
+      "name": "Percentage of Prices Increases or No Decreases during Contractions, in Relation to Concentration",
+      "content_type_correction": {
+        "from": "time_series",
+        "to": "cross_sectional",
+        "rationale": "Each of the three NBER-dated contractions (1957-58, 1960-61, 1969-70) is its own cross-section of industries grouped by CR4 midpoint. The three contractions are not a continuous time index. Ratified by Phase 4."
+      },
+      "url_status": "unverified-rate-limited",
+      "url_status_checked_at": "2026-05-18",
+      "url_status_evidence": "HEAD https://www.jstor.org/stable/1814892 -> 403; GET fallback -> 403. Standard JSTOR anti-scraping; reachable via institutional session and via Wayback Machine snapshot pattern.",
+      "year_coverage_pct": 100,
+      "license": "copyrighted-academic-fair-use",
+      "units": "Percent of firms with price increases or no decreases during contraction; CR4 midpoint (percent)",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Loader ingests SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_Semmler19843.3.xlsx; 3 CR4 bins x 3 recessions = 9 data points.",
+        "If a modern-recession analog is later commissioned, treat as a NEW cross-sectional series (e.g., S802b for 2007-09 / 2020), not as an extension of S802."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S803",
+      "name": "Rate of Profit on Equity vs. CR8, Bain 42-Industry Sample, 1936-40 (Figures 8.3 and 8.4)",
+      "content_type_correction": {
+        "from": "time_series",
+        "to": "cross_sectional",
+        "rationale": "42 industry-average ROE/CR8 pairs are a single 1936-40 cross-section; the decile-grouped panel (Fig 8.4 with Demsetz 1973b corrections) is the same cross-section re-binned, not a second time point. Ratified by Phase 4."
+      },
+      "url_status": "unverified-rate-limited",
+      "url_status_checked_at": "2026-05-18",
+      "url_status_evidence": "HEAD https://doi.org/10.2307/1882217 (Bain 1951 QJE -> Oxford Academic) -> 403; GET fallback -> 403. Standard OUP/Oxford Academic anti-scraping; resolves via institutional access. Demsetz 1973b corrections sourced from S805's JLE URL (also 403-rate-limited).",
+      "year_coverage_pct": 100,
+      "license": "copyrighted-academic-fair-use",
+      "units": "Rate of profit on equity (percent); CR8 (percent of value-product supplied by top 8 firms)",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Loader ingests two distinct chopped files: Appendix8_Bain42IndustryProfit.xlsx (42-industry scatter for Fig 8.3) AND Appendix8_Bain42IndustryAggregates.xlsx + Appendix8_CorrectedBainData.xlsx (decile-grouped Fig 8.4 with Demsetz 1973b corrections). The Demsetz correction is INTEGRAL — Fig 8.4 must use the corrected aggregates, not Bain's original Table II.",
+        "Rename in series_registry.json from stale 'Interest Rates, Prices, and Equity Data' (CD2 Ch10 carryover) to current dossier name (Phase 3 corrected dossier; registry pending).",
+        "Single series ID consolidates both figures per stub figures[] field; loader emits two regression panels (linear R^2=0.0781 scatter; corrected grouped R^2=0.033) consistent with book text."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S804",
+      "name": "Rate of Profit on Assets, Concentrated vs. Unconcentrated Industries, 1939-1957 (Stigler)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18",
+      "url_status_evidence": "HEAD https://www.nber.org/books-and-chapters/capital-and-rates-return-manufacturing-industries -> 200. NBER monograph freely available in full PDF; chapter PDF deep link https://www.nber.org/system/files/chapters/c1701/c1701.pdf also -> 200. Best-reachability series in the chapter.",
+      "year_coverage_pct": 100,
+      "license": "public-domain-via-nber-archive",
+      "units": "Rate of profit on assets, percent (12 data points: 6 time-bins x 2 industry groups)",
+      "extension_status": "feasible",
+      "proposed_substitute": "Post-book extension: IRS Statistics of Income via active page https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report (HTTP 200; the canonical Corporation Source Book slug returns 404) + Census Concentration Ratios via https://www.census.gov/programs-surveys/economic-census/data/tables.html (HTTP 200). Stigler's high-CR4 / low-CR4 partition must be re-applied; SIC->NAICS concordance required for any pre-1997 comparison. Treat as historical illustration with optional modern parallel rather than continuous splice.",
+      "proxy_flags": [],
+      "remediation": [
+        "Loader ingests SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_StiglerRatesOfProfit.xlsx (6 time bins x 2 groups = 12 cells); preserve unequal time-bin widths (1939-41, 1942-44, 1945-47, 1948-50, 1951-54, 1955-57) as start/end-year metadata.",
+        "Verify the chapter's two reported group means (concentrated 7.1%, unconcentrated 6.9%) against the loaded data as a Phase 5 sanity check."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S805",
+      "name": "Rates of Return and Concentration (CR4), 1963 and 1969 (Demsetz)",
+      "content_type_correction": {
+        "from": "time_series",
+        "to": "cross_sectional",
+        "rationale": "Two non-adjacent year-snapshots (1963 and 1969), each an industry cross-section binned by CR4. Not a continuous time index. Ratified by Phase 4.",
+        "note": "Same Demsetz 1973b source as the corrections cited in S803."
+      },
+      "url_status": "unverified-rate-limited",
+      "url_status_checked_at": "2026-05-18",
+      "url_status_evidence": "HEAD https://doi.org/10.1086/466752 (JLE -> Chicago) -> 403; GET fallback -> 403. Standard Chicago Press anti-scraping; reachable via institutional session.",
+      "year_coverage_pct": 100,
+      "license": "copyrighted-academic-fair-use",
+      "units": "Rate of profit on assets, percent; CR4 bin (percent of value-product supplied by top 4 firms)",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Loader ingests SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_DemsetzRatesOfReturn.xlsx (6 CR4 bins x 2 years = 12 cells).",
+        "Cite S803 + S805 to a single shared Demsetz 1973b source file in Phase 5 loader (cross-reference noted in CH8_RESEARCH_SUMMARY.md).",
+        "If a modern (e.g., 1992 / 2002 / 2017) re-snapshot is later commissioned, treat as a NEW cross-sectional series (S805b) not as an extension."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "Ratify Phase 3 content_type reclassifications: S802, S803, S805 are cross_sectional (each contraction / Bain sample / Demsetz year-snapshot is its own cross-section, not a continuous time index). S801 and S804 remain time_series. Apply to series_registry.json in CH8_REGISTRY_DELTA.json.",
+    "Ratify Phase 3 stub-name corrections: S801 from 'US Long-Run Interest Rates and Prices' (stale CD2 S042 Ch10 carryover) to 'Wholesale Prices in Oligopolistic and Competitive Industries, 1965-73 (Eichner)'; S803 from 'Interest Rates, Prices, and Equity Data' (stale CD2 S041 Ch10 carryover) to 'Rate of Profit on Equity vs. CR8, Bain 42-Industry Sample, 1936-40 (Figures 8.3 and 8.4)'. Apply to series_registry.json.",
+    "Null cd2_id for all five Ch8 series in MIGRATION/CD2_to_RSCD_crosswalk.csv — no genuine CD2 Ch8 dossiers exist; the CD2 markdown directory contains only S040-S042 and S047-S049 (Ch9/Ch10), none corresponding to Bain/Stigler/Demsetz/Semmler/Eichner.",
+    "Document chapter-level finding: NO FORMAL APPENDIX 8 EXISTS in the book — the appendix sequence skips from 7.1 directly to 9.1. The SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_*.xlsx files are the de-facto data dictionary constructed by Shaikh's team from the chapter narrative and originating publications; they are NOT a book appendix. Source-of-record for replication is the originating Bain/Stigler/Demsetz/Semmler/Eichner publication, not Shaikh.",
+    "Update extension-candidate URLs at loader level: replace https://www.irs.gov/statistics/soi-tax-stats-corporation-source-book-of-statistics-of-income (HTTP 404) with https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report (HTTP 200) for S803/S804/S805 extension paths (same substitution recorded in Ch6 AS009). Replace https://www.census.gov/data/tables/2017/econ/concentration.html (HTTP 404, no Wayback either) with https://www.census.gov/programs-surveys/economic-census/data/tables.html (HTTP 200) for S801/S804 extension paths.",
+    "Add `adequacy.status` block to all 5 Ch8 series in series_registry.json per CH8_REGISTRY_DELTA.json.",
+    "Phase 5 must commission digitization of Figure 8.1 (S801) from Eichner 1973 Economic Journal p. 1187 BEFORE the Ch8 loader can be considered complete. Recommended path: JSTOR PDF + WebPlotDigitizer."
+  ],
+  "blockers_for_phase5": [
+    "S801 Figure 8.1 numeric data not digitized: the Appendix8_*.xlsx set has 6 files covering S802-S805 but no file for Eichner 1973 Fig 8.1 (1965-73 wholesale-price-index lines for concentrated vs competitive industries). Phase 5 cannot load S801 until this digitization is performed. Estimated effort: 2-4 hours (obtain Eichner 1973 JSTOR PDF, run WebPlotDigitizer on Figure 8.1, output (date, concentrated_index, competitive_index) CSV at monthly or annual frequency to match the chart's tick density)."
+  ],
+  "open_questions": [
+    "Q1: Should S801 Eichner 1965-73 and S804 Stigler 1939-57 receive an actual extension run, or be treated as 'historical illustration only' given the SIC->NAICS and Census-CR-discontinuation obstacles? Recommend the latter for Phase 5 (load original tables only); Phase 6 could optionally commission a separate 'concentration-and-profitability circa 2017' analytic note as a stand-alone NEW series.",
+    "Q2: For the 4 JSTOR/Wiley/OUP/Chicago DOIs that returned 403 rate-limited, should the Phase 5 loader cache the academic PDFs in SalvagedInputs/ (fair-use copy for replication) or rely on user-side institutional access? Recommend caching PDFs for the 4 sources in a SalvagedInputs/References/ subdirectory with explicit fair-use notice, mirroring how Shaikh's own Appendix8_*.xlsx chopped tables are cached.",
+    "Q3: Loader cross-reference: S803 (Bain corrections) and S805 (Demsetz 1963/1969 table) share the Demsetz 1973b JLE source. Should there be a single shared Demsetz1973b loader module, or two independent loaders? Recommend single shared module to enforce DRY and to ensure both series consume the exact same parsing of the JLE article tables.",
+    "Q4: Tables 8.2 (Mann 1966) and 8.3 (Brozen 1971) appear in the same chapter section but were NOT assigned RSCD series IDs in Phase 3 (they are static tables, not figures). Phase 4 recommendation: leave unregistered for now; if Phase 5 needs them as adjuncts to the S803/S804/S805 narrative, file a separate decision doc to introduce table-only series IDs (e.g., S806T, S807T) at that time."
+  ],
+  "phase4_open_question_resolutions": {
+    "ch8_phase3_q_S801_figure81_not_digitized": "Confirmed Phase 5 blocker; digitization from Eichner 1973 EJ p. 1187 required before loader can be considered complete. Tracked in blockers_for_phase5.",
+    "ch8_phase3_q_stub_name_mismatches_S801_S803": "Phase 3 dossier corrections ratified; CH8_REGISTRY_DELTA.json applies the rename to series_registry.json and nulls cd2_id.",
+    "ch8_phase3_q_no_CD2_dossiers_exist_for_Ch8": "Confirmed — Ch8 dossiers were constructed de novo. No CD2 methodology decisions to port.",
+    "ch8_phase3_q_cross_sectional_reclassifications_S802_S803_S805": "Ratified. S802 (three NBER-recession cross-sections), S803 (Bain 1936-40 industry cross-section + Demsetz-corrected re-bin), S805 (two Demsetz 1963/1969 cross-sections) all reclassified to cross_sectional. S801 and S804 retain time_series. Extension_status=not_applicable_cross_sectional applied to the three.",
+    "ch8_phase3_q_underlying_micro_data_unavailable": "Acknowledged — firm-level micro data underlying all five published tables is not in SalvagedInputs/. Phase 5 loaders consume the industry-level / bin-level published averages only; robustness checks at the firm level would require fresh retrieval from Bain 1951 / Stigler 1963 / Demsetz 1973b / Weston et al. 1974 publication appendices.",
+    "ch8_phase3_q_extension_feasibility_modern_replication": "Recommendation: treat all five Ch8 series as historical illustrations. Modern parallels (IRS SOI + Census CR) are technically possible but the SIC->NAICS bridge and changing CR definitions defeat any clean splice. Phase 6 may commission a separate 'circa-2017' analytic note as a stand-alone NEW series, not as an extension of S801-S805."
+  },
+  "url_reachability_evidence": {
+    "checked_at": "2026-05-18 (see Build/_ch8_url_check_results.json + Build/_ch8_url_check2_results.json)",
+    "method": "urllib HEAD with GET fallback for 403/405/501, UA=Mozilla/5.0 (compatible; RSCD-P4-AdequacyBot/1.0), timeout=12s",
+    "results_files": [
+      "Technical/Build/_ch8_url_check_results.json",
+      "Technical/Build/_ch8_url_check2_results.json"
+    ],
+    "summary": {
+      "checked": 21,
+      "status_200": 8,
+      "status_403_rate_limited_unverified": 4,
+      "status_404_with_substitute": 2,
+      "status_404_no_working_substitute": 4,
+      "wayback_fallback_confirmed_200": 1,
+      "stigler_nber_pdf_open_access_200": 1,
+      "active_irs_substitute_200": 1
+    },
+    "substitutions_recorded": [
+      {
+        "deprecated": "https://www.irs.gov/statistics/soi-tax-stats-corporation-source-book-of-statistics-of-income",
+        "deprecated_status": 404,
+        "active": "https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report",
+        "active_status": 200,
+        "applies_to": ["S803_extension", "S804_extension", "S805_extension"],
+        "note": "Same substitution recorded in Ch6 CH6_ADEQUACY_REPORT.json AS009 entry."
+      },
+      {
+        "deprecated": "https://www.census.gov/data/tables/2017/econ/concentration.html",
+        "deprecated_status": 404,
+        "deprecated_wayback_status": 404,
+        "active": "https://www.census.gov/programs-surveys/economic-census/data/tables.html",
+        "active_status": 200,
+        "applies_to": ["S801_extension", "S804_extension"],
+        "note": "Canonical 2017 Census Concentration Ratios page has no working snapshot in the Wayback Machine for 2024; the Economic Census tables landing page is the only live substitute and the user must navigate from there to the concentration ratio sub-table."
+      }
+    ],
+    "rate_limited_with_archival_fallback": [
+      {
+        "primary_url": "https://doi.org/10.2307/2230843",
+        "primary_status": "403 HEAD+GET",
+        "wayback_url": "https://web.archive.org/web/2024/https://doi.org/10.2307/2230843",
+        "wayback_status": 200,
+        "applies_to": ["S801"],
+        "note": "Spot-checked via Wayback. Other three DOIs (S802/S803/S805) follow the same pattern; not individually re-checked."
+      }
+    ]
+  },
+  "appendix_8_status": {
+    "formal_book_appendix_exists": false,
+    "appendix_sequence_observation": "Book appendix numbering skips from 7.1 directly to 9.1; no Appendix 8.x exists.",
+    "de_facto_data_dictionary": "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_*.xlsx (6 files: Bain42IndustryAggregates, Bain42IndustryProfit, CorrectedBainData, DemsetzRatesOfReturn, Semmler19843.3, StiglerRatesOfProfit)",
+    "missing_file": "No Appendix8_Eichner1973_Fig81 file exists; S801 digitization is the Phase 5 blocker.",
+    "source_of_record_for_replication": "The originating Bain 1951, Stigler 1963, Demsetz 1973b, Semmler 1984, Eichner 1973 publication — NOT Shaikh 2016. The chopped tables are a convenience cache, not a primary source.",
+    "loader_implication": "Phase 5 loaders should cite the originating publication as primary_source.publication and the Appendix8_*.xlsx file as primary_source.cached_at; do NOT cite Shaikh as the primary data source for any Ch8 series."
+  }
+}

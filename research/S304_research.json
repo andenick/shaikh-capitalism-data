@@ -1,0 +1,96 @@
+{
+  "series_id": "S304",
+  "name": "Discretionary Propensity to Consume, Case II",
+  "chapter": 3,
+  "figures": [
+    "Fig3.6"
+  ],
+  "content_type": "theoretical",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 3,
+      "page": 91,
+      "quote": "c ≡ (x1 – x1min)/(x1max – x1min) = (p1x1 – p1x1min)/(y – p1x1min), so that 0 ≤ c ≤ 1.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "The same result obtains if instead c declines with discretionary income. To see this, we rewrite equation (3.4) as (p1x1 – p1x1min) = c (y – p1x1min), which is a linear relationship between discretionary expenditure on necessary goods and discretionary income. Since c is the slope of this curve, as c falls the curve gets flatter.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "Figures 3.3–3.5 display the results of the case in which x1min rises more slowly than income, figures 3.6–3.7 the case in which c declines with income, and figures 3.8 and 3.9 the characteristic patterns in actual data.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Oxford University Press",
+    "publication": "Shaikh, Anwar. 2016. Capitalism: Competition, Conflict, Crises. New York: Oxford University Press.",
+    "table_or_series_id": "Figure 3.6 (p. 94)",
+    "url": "https://global.oup.com/academic/product/capitalism-9780199390632",
+    "frequency": "annual",
+    "units": "discretionary propensity c (dimensionless 0–0.8) plotted against income y (0–60 model units)",
+    "license": "Book figure; reproduction governed by OUP permissions",
+    "available_through": "Book PDF in Inputs/Capitalism Data/",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "c(y) declining function of y, illustrating Case II (alternative path to Engel-curve saturation in which c itself falls with income while x1min is held constant).",
+  "components": [
+    {
+      "label": "c",
+      "role": "output",
+      "description": "Discretionary propensity to consume necessaries.",
+      "source": "Shaikh 2016, eq. 3.4 p. 91"
+    },
+    {
+      "label": "y",
+      "role": "input",
+      "description": "Income, 0–60 model units.",
+      "source": "Author simulation"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "Fig 3.6 illustrates Case II: c declines with income while x1min is constant. It is the partner to Fig 3.7 (the resulting Engel curve).",
+    "HDARP_SERIES_LINKAGE.json: Fig3.6 documentation_type='theoretical', is_empirical=false.",
+    "Stub set content_type='time_series'; re-typed to 'theoretical'. The abscissa is a synthetic income grid, not historical time."
+  ],
+  "open_questions": [
+    "Stub content_type was 'time_series'; re-typed to 'theoretical'. Phase 4 should confirm.",
+    "Exact functional form of c(y) used to render Fig 3.6 is not stated."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-a-ch3",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from book pp. 91 & 93. Theoretical illustration of c(y) under Case II."
+    }
+  ]
+}

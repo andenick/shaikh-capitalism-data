@@ -1,0 +1,99 @@
+{
+  "series_id": "S403",
+  "name": "Total Profit with Different Wage Arrangements, at Normal Intensity for 8-Hour Shifts up to Engineering Capacity (Two and a Half Shifts)",
+  "chapter": 4,
+  "figures": [
+    "Fig4.18"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 4,
+      "page": 157,
+      "quote": "We can, of course, calculate total profit directly at some given price, and find its maximum point, as illustrated in figure 4.18. Then, we see that the highest profit point in the case of wages paid per worker is at the end of the second shift, while that for wages paid per hour is at engineering capacity.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 781,
+      "quote": "Finally, total profit for each type of wage payment is derived as total revenue (p · XR) minus the corresponding total costs (tc' or tc). Appendix table 4.2.4 summarizes this data from which figures 4.16–4.18 are derived.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 157,
+      "quote": "The difference between the neoclassical short-run profit-maximizing output and the classical cost-minimizing output will become crucial in discussion of their respective theories of competition (chapters 7 and 8).",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh (author construction)",
+    "publication": "Capitalism: Competition, Conflict, Crises (Oxford University Press, 2016), Appendix 4.2",
+    "table_or_series_id": "Appendix Table 4.2.4 (Profit columns: π' = p*XR - tc'; π = p*XR - tc)",
+    "url": "https://global.oup.com/academic/product/capitalism-9780199390632",
+    "frequency": "synthetic",
+    "units": "money units (illustrative; p = 7)",
+    "license": "Copyright Oxford University Press; reproduced under fair use for research",
+    "available_through": "Shaikh book PDF; Appendix 4.2 reconstructed verbatim from book PDF pp. 772-781 (PDF pp. 810-819) on 2026-05-18",
+    "discontinued": false,
+    "replaced_by": null,
+    "primary_source_local_fallback": "SalvagedInputs/book_data/Reconstructed/Appendix_4_2_Table4.csv (profit columns: XR, PL, PH). README at SalvagedInputs/book_data/Reconstructed/Appendix_4_2_README.md"
+  },
+  "construction": "formula",
+  "formula": "Profit (per-worker wages): π' = p*XR - tc' = p*XR - (afc + ulc' + pa*a)*XR. Profit (per-hour wages): π = p*XR - tc = p*XR - (afc + ulc + pa*a)*XR. Tabulated for H = 1..20.",
+  "components": [
+    {
+      "name": "Total cost tc' (per-worker wages)",
+      "source": "Derived in S401 (Appendix Table 4.2.4)"
+    },
+    {
+      "name": "Total cost tc (per-hour wages)",
+      "source": "Derived in S402 (Appendix Table 4.2.4)"
+    },
+    {
+      "name": "Total revenue p*XR",
+      "source": "p = 7; XR from Appendix Table 4.2.1"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "S403 plots the profit profile derived from the cost calculations in S401 (per-worker wages) and S402 (per-hour wages) at output price p = 7. Reclassified content_type from default 'time_series' (stub) to 'derived'.",
+    "Key qualitative result that Fig 4.18 is designed to demonstrate: maximum-profit output occurs at the end of shift 2 under per-worker wages and at engineering capacity under per-hour wages. This contradicts the neoclassical p = mc decision rule because p = mc admits multiple solutions (see book p. 157, p. 159).",
+    "Two series are plotted on shared axes: 'Profits with Wages Paid per Worker' and 'Profits with Wages Paid per Hour'. Vertical reference lines mark Shift 1, Shift 2, Shift 3, and Engineering Capacity (H = 20).",
+    "Y-axis spans roughly -200 to 250 in Fig 4.18, showing that profits are negative at low output (revenue does not yet cover fixed cost).",
+    "extension_candidates intentionally empty: theoretical/numerical illustration only."
+  ],
+  "open_questions": [
+    "Same Appendix 4.2 chopped-table reconstruction issue as S401/S402.",
+    "Phase 4 may want to add cross_references in the schema to explicitly link S403 -> {S401, S402} (same numerical input scaffold)."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch4",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Profit-curve derivation from S401/S402. Same Appendix 4.2 reconstruction issue."
+    },
+    {
+      "reviewer": "opus-subagent-batch1-a2",
+      "date": "2026-05-18",
+      "status": "blocker_resolved",
+      "notes": "CH4-B1 RESOLVED. Verbatim Appendix 4.2 tables transcribed; L01 loader should consume Appendix_4_2_Table4.csv profit columns (XR, PL=per-worker profit, PH=per-hour profit). Validation: PL(XR=2.84)=-158.64 (book) vs 7*2.84-178.52=-158.64 (recomputed) - exact."
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "series_id": "S602",
+  "name": "Corrected vs Conventional Corporate Profitability",
+  "chapter": 6,
+  "figures": [
+    "Fig6.2",
+    "Fig6.6"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S027",
+    "cd2_id": "S027"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 248,
+      "quote": "Equations (6.8)-(6.10) lay out the basic accounting relations involved in the corrected corporate measures. Let VA = value added, NOS = net operating surplus, P = NIPA profit, NMINT = net monetary interest paid, EC = employee compensation, KGC = gross current fixed capital (plant and equipment stock), INV = inventories, KTC = KGC + INV = total capital stock, R = the maximum rate of profit, σ_P = the expanded (NOS) share in value added, and r = the average rate of profit. Then it is clear that the share of NOS in value added is the dual of the corresponding share of employee compensation (equation (6.9)), while the share of NIPA profit also depends on the net interest payments. VA = NOS + EC, NOS = P + NMINT (6.8); σ_P = NOS/VA = 1 - EC/VA (6.9); r ≡ NOS/KTC(-1) = (P + NMINT)/(KGC(-1) + INV(-1)) (6.10).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 248,
+      "quote": "Figure 6.2 displays new corporate profitability measures with value added and profit adjusted for imputed interest and with inventories included in the capital stock, along with the corresponding NIPA measures. At the top of the chart, we see that the corrected maximum profit rate (value added over total capital stock) falls more, and more steadily, than the NIPA one. Since the correction for imputed interest has only a small effect on value added (less than 2%), and since the ratio of inventories to the capital stock is fairly stable, this difference is primarily due to the new measures of gross fixed capital (appendix 6.8.II.5). In the middle of the chart, we find that the corrected corporate profit (NOS) share is higher than its NIPA counterpart because the imputed interest adjustment has greater impact on net operating surplus (raising it by about 10%) than it does on value added.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 253,
+      "quote": "Figure 6.6 shows that the first set of variables are the important ones: Rcorp'_n and rcorp'_n represent measures corrected for both sets of variables, while Rcorp''_n and rcorp''_n represent those corrected only for the first set. The corrected and proxy measures are fairly similar, which indicates that the capital stock and capacity utilization corrections are the crucial ones for long-run analysis.",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (BEA) + Internal Revenue Service (IRS) Statistics of Income",
+    "publication": "BEA NIPA + Fixed Asset Tables + IRS SOI Corporation Income Tax Returns; Shaikh (2016) Appendix 6.7 and Appendix Table 6.8.II.7",
+    "table_or_series_id": "NIPA T1.14 (corporate VA, EC, P), NIPA T7.11 (NMINT), Fixed Asset T6.1-6.8 (KGC, KNC), IRS SOI corporate inventories; aggregated in Shaikh Appendix 6.8 Table II-7 columns S013J (rcorp = NOS/KTC(-1)), S013O (rcorpnipa = P/KNCcorpbea(-1)), S013I (corrected profit share NOS/VA), S013N (NIPA profit share P/VA)",
+    "url": "https://apps.bea.gov/iTable/iTable.cfm?reqid=19&step=2",
+    "frequency": "annual",
+    "units": "rate and share (decimal)",
+    "license": "U.S. public domain (BEA, IRS data)",
+    "available_through": "BEA iTable, BEA Fixed Assets interactive, IRS SOI publications and Tax Stats; Shaikh appendix tables at www.anwarshaikhecon.org",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "Four series plotted together: (1) Corrected maximum profit rate Rcorp = VA_corp / KTC_corp(-1); (2) NIPA maximum profit rate Rcorpnipa = VA_corpnipa / KNC_corpbea(-1); (3) Corrected average profit rate rcorp = NOS_corp / KTC_corp(-1) = (P + NMINT) / (KGC(-1) + INV(-1)); (4) NIPA average profit rate rcorpnipa = P_corpnipa / KNC_corpbea(-1); (5) Corrected profit share profshcorp = NOS_corp / VA_corp = 1 - EC/VA; (6) NIPA profit share profshcorpnipa = P_corpnipa / VA_corpnipa. KTC = KGC + INV (Shaikh's GPIM total capital including IRS inventories); KNC_corpbea is the official BEA net fixed capital stock. Fig 6.6 plots the same six concepts normalized for capacity utilization using Shaikh's u_K and a 'proxy' variant using FRB capacity utilization for the post-1967 subperiod.",
+  "components": [
+    {
+      "label": "VA_corp (corrected corporate value added, imputed-interest-adjusted)",
+      "source": "NIPA Table 1.14 corporate gross value added + NMINT adjustment from T7.11",
+      "role": "numerator of Rcorp; denominator of profshcorp"
+    },
+    {
+      "label": "VA_corpnipa (NIPA corporate value added, unadjusted)",
+      "source": "NIPA Table 1.14",
+      "role": "numerator of Rcorpnipa; denominator of profshcorpnipa"
+    },
+    {
+      "label": "NOS_corp = P + NMINT (imputed-interest-adjusted net operating surplus)",
+      "source": "NIPA T1.14 (P) + NIPA T7.11 (NMINT)",
+      "role": "numerator of rcorp and profshcorp"
+    },
+    {
+      "label": "P_corpnipa (NIPA corporate profits, net of net interest)",
+      "source": "NIPA Table 1.14",
+      "role": "numerator of rcorpnipa and profshcorpnipa"
+    },
+    {
+      "label": "KGC_corp (GPIM current-cost gross fixed capital stock, corporate)",
+      "source": "Shaikh GPIM (Generalized Perpetual Inventory Method) applied to BEA Fixed Asset investment flows; appendix 6.7.V and 6.8.II.5",
+      "role": "fixed-capital component of denominator KTC"
+    },
+    {
+      "label": "INV_corp (IRS-based corporate inventories at current cost)",
+      "source": "IRS Statistics of Income corporate balance sheets (1926-2011); scaled from historical-cost via ratio to corrected fixed capital",
+      "role": "inventory component of denominator KTC"
+    },
+    {
+      "label": "KNC_corpbea (BEA official current-cost net stock, corporate fixed assets)",
+      "source": "BEA Fixed Asset Table 6.1",
+      "role": "conventional denominator"
+    },
+    {
+      "label": "EC_corp (corporate employee compensation)",
+      "source": "NIPA Table 1.14",
+      "role": "used in σ_P = 1 - EC/VA"
+    },
+    {
+      "label": "Capacity utilization u_K and FRB rate u_FRB (Fig 6.6 only)",
+      "source": "Shaikh appendix 6.6 cointegration measure; Federal Reserve G.17",
+      "role": "normalization for normal-capacity proxies"
+    }
+  ],
+  "year_range_book": [1947, 2011],
+  "year_range_extension": [1947, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA NIPA Table 1.14 (Gross Value Added of Domestic Corporate Business)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&nipa_table_list=42",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Re-fetch and re-compute corrected and NIPA measures from primary components; do not splice the derived profit rates."
+      ]
+    },
+    {
+      "subseries_label": "BEA Fixed Asset Tables 6.1-6.8 (current-cost gross and net stocks by legal form)",
+      "source": "U.S. Bureau of Economic Analysis Fixed Assets Accounts",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Quality-adjusted chain-weighted measures depart from PIM rule (book p. 244); Shaikh's GPIM correction must be reapplied to new vintages.",
+        "Initial 1925 values used in PIM matter — changing vintage may shift the level of KGC by ~28% (book p. 247, appendix 6.7.V.4)."
+      ]
+    },
+    {
+      "subseries_label": "IRS Statistics of Income corporate balance sheets (inventories)",
+      "source": "Internal Revenue Service",
+      "url": "https://www.irs.gov/statistics/soi-tax-stats-corporation-data-by-sector-or-industry",
+      "units": "billions of current USD (mixed FIFO/LIFO; scaled to current cost)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "IRS SOI is sample-based and not directly comparable to NIPA corporate sector (book p. 247); two-step scaling to corrected fixed capital required.",
+        "IRS publication lag and reporting changes post-2011 may complicate extension; verify availability through current year."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Composite series plotting six curves (3 corrected, 3 NIPA) for both maximum profit rate R, average profit rate r, and profit share σ_P. Fig 6.2 is uncorrected for capacity; Fig 6.6 normalizes for capacity utilization with two variants (corrected only for capital-stock+capacity, and corrected for all three adjustments).",
+    "Three sources of divergence between corrected and NIPA (book p. 249): (1) new gross fixed capital measure KGC vs. NIPA KNC_corpbea via GPIM (capital-stock adjustment); (2) inclusion of net monetary interest in profit, NOS = P + NMINT (imputed-interest adjustment); (3) inclusion of inventories in capital base, KTC = KGC + INV (inventory adjustment). These three components are formalized in the decomposition r/r_nipa = (x1/x2)·x3 (eq. 6.11) which is the subject of S603.",
+    "Key empirical finding (book pp. 252-253, Table 6.23): corrected normal-capacity profit rate declines −2.20% per year in 1947-1982 and −0.35% per year in 1982-2011; conventional NIPA normal rate behaves quite differently (only available 1967 onward via FRB capacity), declining −3.71% per year in 1967-1982 then *rising* +1.05% per year in 1982-2011. The corrected measure shows the persistent secular decline; the conventional masks it.",
+    "Both NMINT correction and GPIM capital correction are essential; CD2 known issue (S028) flags that NMINT_corp data from BEA T7.11 is incomplete for recent years, which constrains the extension window for the corrected measures.",
+    "Fig 6.6 'proxy' variant (Rcorp''_n, rcorp''_n) is intended as the international/inter-sectoral analog: when imputed-interest and inventory data are unavailable (e.g., OECD industries), the capital-stock + capacity-utilization corrections alone produce measures very close to the fully corrected ones — supporting use of these proxies in Ch7 and Ch9 industry-level work.",
+    "Extension strategy: re-fetch all components (VA, NOS, P, NMINT, EC, KGC, KNC, INV, EC) and re-run formulas. Profit-rate splicing is explicitly prohibited because the construction is multi-step and any direct overlap_anchor splice on the final rate would silently bury vintage drift in any of the seven underlying series."
+  ],
+  "open_questions": [
+    "GPIM variants disposition (cross-cutting Ch6 question): CD2 tracked S210 (GPIM with BEA 2011 initial value), S211 (BEA 1993 vs 2011 comparison), S212 (IRS-adjusted GPIM), and S213 (interwar-adjusted GPIM) as separate series in Ch6. In RSCD these are sensitivity analyses around the KGC component of S602's denominator. Decision needed: register as AS analytical-support series or as subseries S602-G1…S602-G4 or only as named output columns in the processor? Recommendation: AS-series with cross_references back to S602, because Shaikh treats them as standalone diagnostics in Appendix 6.7.V.",
+    "WEQ wage-equivalent series for proprietors/partners (appendix 6.7.I.2) does not appear directly in S602 (which is corporate-only) but does enter the business-aggregate profit rate plotted alongside in Fig 6.1; ensure cross-reference to S601 in components.",
+    "Decision needed: whether Fig 6.6 'proxy' variant deserves its own dossier or stays as a within-S602 column; Phase 4 should review whether downstream Ch7/Ch9 industry-rate construction uses these proxies directly.",
+    "IRS SOI inventory data post-2011 may have changed format/availability; verify with current Tax Stats before extension."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-a-ch6",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from CD2 S027 dossier + verbatim equations and Fig 6.2/6.6 narrative from book pp. 247-253. Components include all three adjustment axes (NMINT, GPIM, inventories). GPIM-variants disposition flagged."
+    },
+    {
+      "reviewer": "opus-subagent-ch6-retry",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Retry pass after Ch6 content-filter incident. Confirmed all acceptance criteria met (3 quotes with definition+source+caveat roles, BEA+IRS primary source identified, formula construction with 9 components covering all 6 plotted curves, extension candidates for NIPA T1.14 + FA T6.1-6.8 + IRS SOI, 6 methodology notes). No content changes required."
+    }
+  ]
+}

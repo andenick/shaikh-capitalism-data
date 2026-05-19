@@ -1,0 +1,3 @@
+study,study_year,estimate_year,misalignment_pct,source_paper,methodology,paper_text_anchor,extraction_note
+Goldstein,2004,2004,40.0,Cline-Williamson 2007 PIIE,macroeconomic_balance,"paper p. 443 ('to +40% (Goldstein 2004)')",headline_high_named_in_paper_text
+Bayoumi_Gagnon_Saborowski,2015,2011,-100.0,Cheung 2012 CESifo WP 3797,macroeconomic_balance,"paper p. 443 ('range from -100% (Bayoumi, Gagnon, and Saborowski 2015)')",headline_low_named_in_paper_text

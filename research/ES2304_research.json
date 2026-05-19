@@ -1,0 +1,132 @@
+{
+  "series_id": "ES2304",
+  "name": "Weber & Shaikh (2020) Fig 4 - Estimates of RMB misalignment based on extended PPP approach (scatter compilation 1999-2010 from 4 literature reviews)",
+  "chapter": null,
+  "paper_metadata": {
+    "title": "The U.S.-China trade imbalance and the theory of free trade: debunking the currency manipulation argument",
+    "authors": ["Isabella Weber", "Anwar Shaikh"],
+    "year": 2020,
+    "journal": "International Review of Applied Economics",
+    "volume_issue_pages": "Vol. 35 Nos. 3-4, pp. 432-455",
+    "doi": "10.1080/02692171.2020.1814221",
+    "url": "https://doi.org/10.1080/02692171.2020.1814221"
+  },
+  "figures": [
+    "Figure 4 (Appendix p. 454) - 'Estimates of RMB misalignment based on extended PPP approach'; scatter plot, x-axis years 1999-2010, y-axis 'Estimated RMB misalignment in percent' (range -40 to +60); approximately 35-40 individual estimates plotted as black dots; estimates range from ~-36% to ~+50%; figure superscript '17' references footnote 17 (paper p. 448) which contains the explicit compilation methodology"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null,
+    "related_rscd_series": ["ES2301", "ES2302", "ES2303", "ES2305"],
+    "related_book_chapters": ["Ch11 (real exchange rate; Balassa-Samuelson; PPP critique pp. 517-527)"]
+  },
+  "decomposition_context": {
+    "decision": "0006",
+    "scheme": "5-way split of original ES2301 composite",
+    "this_dossier_scope": "Figure 4 only (RMB misalignment estimates compiled under extended-PPP approach, scatter plot 1999-2010, literature-compilation methodology per paper note 17)",
+    "status": "APPROVED 2026-05-18"
+  },
+  "book_quotes": [
+    {
+      "chapter": "Paper Section 4.3 (extended PPP misalignment review)",
+      "page": 442,
+      "quote": "Even if PPP is acknowledged not to be a trade-balancing equilibrium exchange rate, the extended PPP approaches give wildly different estimates. The estimated degrees of RMB misalignment from extended PPP approaches range from a high of 50% (Coudert and Couharde 2007) to a low of -36% (Cheung 2012) (Cline and Williamson 2007; Dunaway and Li 2005; Cheung, Chinn, and Fujii 2010a; Cheung 2012). The variation in the results within these studies depends on the underlying conceptualization of the equilibrium real exchange rate, the chosen explanatory variables, the country sample selection and the time period of estimation (see Figure 4).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Note 17 (compilation methodology -- verbatim)",
+      "page": 448,
+      "quote": "Figure 4 and Figure 5 are compiled based on the selection of studies contained in the four literature reviews (Cline and Williamson 2007; Dunaway and Li 2005; Cheung, Chinn, and Fujii 2010a; Cheung 2012). If a source reported more than one estimate of the RMB misalignment, each estimate was treated as a separate data point in the scatter plots. If the estimate of the RMB misalignment is reported as a range, the maximum and minimum value are reported in the scatter plots as two separate estimates.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Section 4.3 (extended PPP definition)",
+      "page": 442,
+      "quote": "The IMF calls a similar approach 'reduced form equilibrium real exchange rate' in its 'Methodology for CGER Exchange Rate Assessments' (2006). Ahmed (2009) subsumes what Cline and Williamson (2007) call BEER under the label extended PPP approaches.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Authors (Weber & Shaikh 2020) -- literature compilation; no single agency source",
+    "publication": "Compilation per paper note 17 from four literature reviews: Cline & Williamson (2007) PIIE 'Estimates of the Equilibrium Exchange Rate of the Renminbi'; Dunaway & Li (2005) IMF WP/05/202 'Estimating China's Equilibrium Real Exchange Rate'; Cheung, Chinn & Fujii (2010a) 'Measuring Misalignment: Latest Estimates for the Chinese Yuan'; Cheung (2012) CESifo WP 3797 'Exchange Rate Misalignment - The Case of the Chinese Renminbi'",
+    "table_or_series_id": "Scatter compilation per paper note 17 verbatim rule -- each individual estimate from each cited study treated as a separate (year, percent-misalignment) data point; ranges reported as two endpoint data points",
+    "url": "https://www.piie.com/sites/default/files/publications/pb/pb07-4.pdf",
+    "frequency": "irregular (point estimates at study-year resolution; some studies report multi-year ranges)",
+    "units": "Estimated RMB misalignment in percent (positive = RMB undervalued vs equilibrium; negative = RMB overvalued)",
+    "license": "Each individual estimate is published in its respective peer-reviewed paper or working paper; replication requires re-extraction of estimates per paper note 17 (not redistribution of cited tables verbatim). Cline-Williamson 2007 PIIE Policy Brief is CC-licensed by PIIE for non-commercial use; Dunaway-Li IMF WP and Cheung CESifo WP are publicly downloadable; Cheung-Chinn-Fujii 2010a is a La Follette School working paper publicly available.",
+    "available_through": "Direct PDF download from each cited literature-review source (4 URLs documented in secondary_sources_used)",
+    "discontinued": false,
+    "replaced_by": null,
+    "secondary_sources_used": [
+      {
+        "agency": "Peterson Institute for International Economics (PIIE)",
+        "publication": "Cline, W.R. & Williamson, J. (2007) 'Estimates of the Equilibrium Exchange Rate of the Renminbi: Is There a Consensus And, if Not, Why Not?' Conference paper",
+        "url": "https://www.piie.com/sites/default/files/publications/pb/pb07-4.pdf",
+        "note": "Cited in paper References p. 449. URL HEAD 200 OK 2026-05-18. Provides comprehensive 2007-vintage survey of RMB equilibrium-exchange-rate estimates across multiple methodologies including extended PPP."
+      },
+      {
+        "agency": "International Monetary Fund (IMF)",
+        "publication": "Dunaway, S. & Li, X. (2005) 'Estimating China's Equilibrium Real Exchange Rate' IMF Working Paper WP/05/202",
+        "url": "https://www.imf.org/external/pubs/ft/wp/2005/wp05202.pdf",
+        "note": "Cited in paper References p. 450. URL HEAD 200 OK 2026-05-18. Reviews multiple RMB equilibrium estimates and demonstrates wide range from -36% to +50%."
+      },
+      {
+        "agency": "La Follette School of Public Affairs, University of Wisconsin-Madison",
+        "publication": "Cheung, Y., Chinn, M.D. & Fujii, E. (2010a) 'Measuring Misalignment: Latest Estimates for the Chinese Yuan' Working Paper No. 2010-010",
+        "url": "https://www.lafollette.wisc.edu/images/publications/workingpapers/cheung2010-010.pdf",
+        "note": "Cited in paper References p. 449. URL HEAD 202 (Accepted) OK 2026-05-18. Updates Cheung-Chinn-Fujii 2007 survey with 2010 estimates."
+      },
+      {
+        "agency": "CESifo",
+        "publication": "Cheung, Y. (2012) 'Exchange Rate Misalignment: The Case of the Chinese Renminbi' CESifo Working Paper No. 3797",
+        "url": "https://www.cesifo.org/DocDL/cesifo1_wp3797.pdf",
+        "note": "Cited in paper References p. 449. URL HEAD 200 OK 2026-05-18. Most recent of the four cited reviews, includes 2010+ estimates."
+      }
+    ]
+  },
+  "construction": "composite",
+  "formula": "For each cited literature-review study s in {Cline-Williamson 2007, Dunaway-Li 2005, Cheung-Chinn-Fujii 2010a, Cheung 2012}: extract every reported RMB misalignment estimate as a triple (study_s, year_y, misalignment_pct_m). Treat each estimate as one scatter data point (year_y, m). If study s reports a RANGE [m_lo, m_hi] for year_y, emit TWO data points: (year_y, m_lo) and (year_y, m_hi). Plot all data points 1999-2010 on a scatter chart. NO weighting, NO averaging, NO aggregation -- the figure IS the raw scatter of literature estimates.",
+  "components": [
+    "Component A: Cline & Williamson (2007) PIIE -- extended PPP estimates extracted per paper note 17",
+    "Component B: Dunaway & Li (2005) IMF WP/05/202 -- extended PPP estimates extracted per paper note 17",
+    "Component C: Cheung, Chinn & Fujii (2010a) -- extended PPP estimates extracted per paper note 17",
+    "Component D: Cheung (2012) CESifo WP 3797 -- extended PPP estimates extracted per paper note 17"
+  ],
+  "year_range_book": [1999, 2010],
+  "year_range_extension": [1999, 2010],
+  "extension_candidates": [],
+  "extension_status": "not_applicable_literature_compilation",
+  "methodology_notes": [
+    "LITERATURE COMPILATION: Figure 4 is NOT a new empirical estimate by Weber & Shaikh. It is a scatter compilation of RMB misalignment estimates published by OTHER authors in 4 literature reviews. Replication requires re-extracting individual estimates from those 4 reviews and the original papers they cite, following the explicit compilation rule in paper note 17 (verbatim quoted above).",
+    "EXTENSION IS NOT APPLICABLE BY PAPER CONSTRUCTION: The 4 cited literature reviews were one-off academic surveys produced 2005, 2007, 2010, 2012. The RMB-misalignment debate cooled substantially post-2014 as China shifted to a managed-float regime; IMF since 2015 generally finds RMB 'broadly in line with fundamentals' (per IMF External Sector Reports). Extending Fig 4 post-2010 would require either (a) waiting for new literature reviews that may never be produced under the same methodology, or (b) substituting a methodologically-distinct source (IMF ESR EBA model), which would NOT be a continuation of Weber-Shaikh Fig 4 -- it would be a new figure. Phase 4 marks this `extension_status: not_applicable_literature_compilation` rather than `data_unavailable` (which is reserved for true blockers).",
+    "Paper note 17 verbatim compilation rule (paper p. 448) MUST be honored by Phase 5 replicators: '(1) If a source reported more than one estimate of the RMB misalignment, each estimate was treated as a separate data point in the scatter plots. (2) If the estimate of the RMB misalignment is reported as a range, the maximum and minimum value are reported in the scatter plots as two separate estimates.' This is the canonical replication rule for ES2304 and ES2305.",
+    "Reading the scatter plot (Fig 4, p. 454): visible point cloud spans approximately 1999-2010 on x-axis with concentration in 2003-2009; y-axis values range from approximately -36% (Cheung 2012 low end) to +50% (Coudert-Couharde 2007 high end per p. 442 narrative); approximately 35-40 individual points visible.",
+    "Phase 4/5 must distinguish ES2304 (extended PPP approach, Fig 4) from ES2305 (macroeconomic balance approach, Fig 5). Both use the same 4 literature reviews as source compilations, but the extracted estimates differ because the underlying equilibrium-real-exchange-rate METHODOLOGY differs -- Fig 4 extracts estimates that used extended-PPP / BEER methodologies; Fig 5 extracts estimates that used current-account-balance / MB methodologies.",
+    "Paper Section 4.3 frames Fig 4 as evidence AGAINST the currency-manipulation argument: the extreme range (-36% to +50%) demonstrates that economists using extended-PPP methods cannot even agree on the SIGN of RMB misalignment, undermining any policy claim that requires a precise misalignment estimate.",
+    "License/derivative-work consideration: re-extracting individual estimates from the 4 cited papers and publishing the resulting scatter is a derivative work transformation, NOT verbatim redistribution of the cited papers' tables. Replication follows fair-use/academic-quotation norms; each cited paper retains its own copyright on its own text/tables."
+  ],
+  "open_questions": [
+    "Phase 5: implement an extraction worksheet that records, for each of the ~35-40 data points in Fig 4, (study, year, misalignment_pct, methodology_label, original_table_or_page) so the scatter can be audit-trail reconstructed.",
+    "Phase 5: decide whether to also archive PDFs of the 4 cited literature reviews to SalvagedInputs/ for replication-pack completeness (URL stability across 2026-2030 horizon).",
+    "Phase 6 EPR: write a `compilation_methodology` block explaining why ES2304 is intrinsically non-extensible by paper construction; this is documentation, not a defect.",
+    "Cross-check with Fig 5 (ES2305): which specific estimates from each of the 4 reviews are categorized as extended-PPP (Fig 4) vs macro-balance (Fig 5)? The 4 reviews each cover MULTIPLE methodologies; Phase 5 extraction must apply the methodology label correctly per each estimate."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-batch1-a1-decision-0006-fill",
+      "date": "2026-05-18",
+      "status": "reviewed",
+      "notes": "Filled per APPROVED decision 0006. Scope = Fig 4 only (RMB misalignment under extended PPP, literature compilation per paper note 17 of 4 reviews). content_type=derived (not time_series) to reflect compilation/scatter nature; extension_candidates=[] with extension_status=not_applicable_literature_compilation -- intrinsically non-extensible by construction. All 4 cited literature-review URLs HEAD 200/202 OK 2026-05-18. All quotes verbatim from PDF (Section 4.3 p. 442, Note 17 p. 448)."
+    }
+  ]
+}

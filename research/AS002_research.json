@@ -1,0 +1,103 @@
+{
+  "series_id": "AS002",
+  "name": "Wage Equivalent and Corporate/Noncorporate Split",
+  "chapter": 6,
+  "figures": ["Appendix Figure 6.7.1", "Appendix Figure 6.7.2"],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": "S207"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 831,
+      "quote": "A second problem is that the NIPA measure of business flows embodies a curious asymmetry. Consider two firms, one a corporation and the other an unincorporated enterprise (proprietorship or partnership), each with a value added of $100 million out of which each pays $50 million to regular employees and charges $10 million as depreciation, leaving $40 million in each coffer. In the case of the corporation, NIPA accounts would record a further $10 million in salaries, bonuses, and certain stock option exercises as part of corporate employee compensation, so that the corporate business NOS would be $30 million. But in the case of the unincorporated business, NIPA would record all of the value added in excess of regular employee compensation (i.e., all $40 million) as personal earnings of proprietors and partners—officially designated as part of Domestic Personal Income under the designation \"proprietors' income\" (Seskin and Parker 1998, M-8). No allowance would be made for the fact that some part of this sum is really the profit of unincorporated enterprises.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 832,
+      "quote": "Proprietorships and Partnerships Income w/IVA and CCAdj ... T 1.13, line 23 ... PropInc ... Corporate Wage–Profit Ratio ... T1.14, line 4 ÷ line 11 ... Estimated Wage Equivalent of Prop & Partner's Income using Corp Wage/Profit ratio ... (σ·PropInc - ECprop)/(1+σ) ... WEQ2 ... Non-corporate Profit Estimate 2 ... PropInc - WEQ2 ... Pnoncorp.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 833,
+      "quote": "WEQ2, on the other hand, yields a much more plausible result. Its corresponding non-corporate rate of profit tracks the corporate rate quite closely, but is a bit smaller. ... I use WEQ2 in all subsequent calculations. Hence, the overall business rate of profit shown in appendix table 6.7.4 and appendix figure 6.7.2 is defined as the sum of corporate profit and the non-corporate profit corresponding to WEQ2, divided by the sum of corporate and non-corporate current-cost capital stocks.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "BEA",
+    "publication": "NIPA",
+    "table_or_series_id": "NIPA Table 1.13, line 23 (Proprietors' Income w/ IVA and CCAdj); NIPA Table 1.14, lines 4 and 11 (Corporate Employee Compensation and NOS); NIPA Table 6.2 / 6.3 line 3 (Private Sector EC per FTE); NIPA Table 6.7 line 1 (Self-Employed Persons)",
+    "url": "https://apps.bea.gov/iTable/?reqid=19&step=2&isuri=1&categories=survey",
+    "frequency": "annual",
+    "units": "Billions of current dollars (PropInc, EC, NOS); ratio (sigma); thousands of persons (SEP)",
+    "license": "Public domain (U.S. Government work)",
+    "available_through": "BEA iTable",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "sigma = ECcorp / Pcorp = (NIPA T1.14, line 4) / (NIPA T1.14, line 11); WEQ2 = (sigma * PropInc - ECprop) / (1 + sigma); Pnoncorp = PropInc - WEQ2. WEQ1 (alternative, not preferred) = ecpriv * SEP, where ecpriv = private-sector employee compensation per FTE and SEP = self-employed persons.",
+  "components": [
+    {"label": "PropInc - proprietors' and partnerships' income w/ IVA and CCAdj", "source": "NIPA T1.13, line 23"},
+    {"label": "Pcorp - corporate NOS", "source": "NIPA T1.14, line 11"},
+    {"label": "ECcorp - corporate employee compensation", "source": "NIPA T1.14, line 4"},
+    {"label": "ECprop - employee compensation of proprietorships and partnerships", "source": "ECbusnipa (Appendix Table 7.1A) - ECcorpnipa (T1.14, line 4); also referenced as Ecbusnipa (Appendix 7.1 Profbig) - Eccorpnipa"},
+    {"label": "sigma - corporate wage-profit ratio", "source": "Derived: ECcorp/Pcorp"},
+    {"label": "SEP - self-employed persons", "source": "NIPA T6.7, line 1 (thousands)"},
+    {"label": "ecpriv - private-sector EC per FTE", "source": "NIPA T6.2 line 3 / T6.3 line 3"}
+  ],
+  "year_range_book": [1947, 2011],
+  "year_range_extension": [2012, 2025],
+  "extension_candidates": [
+    {
+      "subseries_label": "Corporate wage-profit ratio sigma (post-2011)",
+      "source": "BEA NIPA Tables 1.14 (current vintage)",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&nipa_table_list=58",
+      "units": "Ratio",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Line numbering in T1.14 may shift across vintages; map by stub label", "Vintage drift from CCAdj/IVA methodology revisions"]
+    },
+    {
+      "subseries_label": "Proprietors' income (PropInc) extension",
+      "source": "BEA NIPA Table 1.13, line 23 (current vintage)",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&nipa_table_list=53",
+      "units": "Billions of current dollars",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["IVA and CCAdj revisions"]
+    }
+  ],
+  "methodology_notes": [
+    "WEQ2 is preferred over WEQ1 because (a) it explicitly imposes the corporate wage-profit ratio sigma on the noncorporate sector, generating a sectoral profit rate that 'tracks the corporate rate quite closely, but is a bit smaller' (p. 833); (b) WEQ1, which simply multiplies private-sector EC-per-FTE by self-employed-persons count, produces a noncorporate rate that drifts implausibly above the corporate rate after the 1990s as officer salaries inflate ecpriv (p. 833).",
+    "Appendix Table 6.7.4 (p. 832) is the canonical worked example for 2009: PropInc = 979.4, ECpriv = 761.4, SEP = 9,829, ecpriv = 60,920.9, WEQ1 = 598.8, Pnoncorp1 = 380.6, sigma = 4.76, WEQ2 = 677.2, Pnoncorp (preferred) = 302.2. The corresponding business rate is rbus = 7.7%, corporate = 7.5%, noncorporate via WEQ2 (moncorp) = 8.1%, noncorporate via WEQ1 (rnoncorp1) = 10.2%.",
+    "The derivation assumes 'the full wage/profit share is the same in the two sectors' (p. 832), which Shaikh defends as more reasonable than NIPA's implicit assumption that all proprietors' income is labor compensation.",
+    "Closely related to the Shaikh-Tonak (1994, 304-305) wage-equivalent methodology; Jorgenson and Landeeld (2004, 15) propose an alternative BLS-style split which Shaikh discusses but rejects in favor of WEQ2.",
+    "Output of this step (WEQ2 and Pnoncorp) feeds AS003 (which corrects all sectoral NOS for imputed interest)."
+  ],
+  "open_questions": [
+    "AS002 feeds AS003 (imputed interest correction applied to corrected noncorporate NOS). Confirm that downstream S6xx series cite AS002 for the WEQ2 methodology vs. directly invoking PropInc.",
+    "WEQ2 calculation assumes sigma is well-defined; in years when Pcorp is small or negative (none in postwar US but possible internationally), the formula breaks. Flag for any non-US extension.",
+    "CCAdj and IVA components of PropInc are revised across BEA vintages; vintage-anchored splice required."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-as-ch6",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from CD2 S207 markdown + verbatim quotes from Appendix 6.7 Section III and Appendix Table 6.7.4 (book pp. 831-833). Three book quotes (definition, source, method)."
+    }
+  ]
+}

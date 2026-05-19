@@ -1,0 +1,6 @@
+year,partner,balance_billion_usd,source_anchor
+2002,World,-474.0,"Fig 1 Appendix p. 453 World Total line 2002 start"
+2017,World,-810.0,"Fig 1 Appendix p. 453 World Total line 2017 endpoint"
+2002,China,-103.0,"Fig 1 Appendix p. 453 China line 2002 start"
+2017,China,-376.0,"Fig 1 Appendix p. 453 China line 2017 endpoint"
+2018,China,-419.0,"paper Section 1 p. 432 '2018 record at USD 419 billion' (US Treasury 2019)"

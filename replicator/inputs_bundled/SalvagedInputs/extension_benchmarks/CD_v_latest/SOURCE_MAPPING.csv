@@ -1,0 +1,7 @@
+Source_Code,Full_Name,URL,Tables_Used,Variables,Vintage_Required,Access_Method,Series_Used
+BEA_NIPA,Bureau of Economic Analysis - National Income and Product Accounts,https://apps.bea.gov/iTable/,"['1.1.5', '1.1.9', '1.10', '1.12', '2.1', '5.1']","['GDP', 'GDI', 'NOS', 'CP', 'COE', 'PROPINC']",2011Q4,Direct download or API,
+BEA_FA,Bureau of Economic Analysis - Fixed Assets,https://apps.bea.gov/iTable/index_FA.cfm,"['1.1', '1.3', '2.1']","['Capital Stock', 'Depreciation', 'Investment']",2011,Direct download,
+FRED,Federal Reserve Economic Data,https://fred.stlouisfed.org/,,Most macroeconomic series,Various,API or direct download,"['INDPRO', 'UNRATE', 'CPIAUCSL', 'GDPDEF', 'GDI', 'CP']"
+BLS,Bureau of Labor Statistics,https://www.bls.gov/,,"['CPI', 'UNRATE', 'Real Wages', 'Labor Productivity']",2011-2012,API or direct download,"['CPI', 'PPI', 'Employment', 'Wages', 'Productivity']"
+Philadelphia_Fed_RTDSM,Philadelphia Fed Real-Time Data Set for Macroeconomists,https://www.philadelphiafed.org/surveys-and-data/real-time-data-research,,"['Real GDP', 'GDI', 'NOS']",2011Q4,Excel download,"['ROUTPUT', 'GDI vintages', 'NOS vintages']"
+MeasuringWorth,MeasuringWorth.com,https://measuringworth.com/,,['Historical GDP 1790-2010'],2010-2012,CSV download,"['US GDP', 'US GDP per capita', 'CPI']"

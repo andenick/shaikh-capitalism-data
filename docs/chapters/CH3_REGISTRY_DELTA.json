@@ -1,0 +1,135 @@
+{
+  "schema_version": "rscd-registry-delta-v1.0",
+  "chapter": 3,
+  "generated_by": "opus-subagent-p4-wave1-ch3",
+  "generated_at": "2026-05-18",
+  "note": "Per-series adequacy block to be merged into series_registry.json entries S301-S309. Also includes content_type confirmations for the 7 Phase 3 re-typings.",
+  "per_series_updates": [
+    {
+      "sid": "S301",
+      "content_type": "theoretical",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 11,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Phase 3 content_type re-typing (time_series -> theoretical) ratified"],
+        "issues_outstanding": ["Exact x1min(y) calibration parameters not stated in book; loader must reverse-engineer to match printed Fig 3.3"]
+      }
+    },
+    {
+      "sid": "S302",
+      "content_type": "theoretical",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 11,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Phase 3 content_type re-typing (cross_sectional -> theoretical) ratified"],
+        "issues_outstanding": ["c and x1min(y) calibration not stated; reverse-engineer from axis ranges"]
+      }
+    },
+    {
+      "sid": "S303",
+      "content_type": "theoretical",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 11,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Phase 3 content_type re-typing (time_series -> theoretical) ratified"],
+        "issues_outstanding": []
+      }
+    },
+    {
+      "sid": "S304",
+      "content_type": "theoretical",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 11,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Phase 3 content_type re-typing (time_series -> theoretical) ratified"],
+        "issues_outstanding": ["c(y) functional form not stated; calibrate to match printed Fig 3.6"]
+      }
+    },
+    {
+      "sid": "S305",
+      "content_type": "theoretical",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 11,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Phase 3 content_type re-typing (time_series -> theoretical) ratified"],
+        "issues_outstanding": []
+      }
+    },
+    {
+      "sid": "S306",
+      "content_type": "cross_sectional",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 10,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Phase 3 content_type re-typing (time_series -> cross_sectional) ratified"],
+        "issues_outstanding": [
+          "primary_source.url (archive.org/details/familyexpenditur0000alle) returned HTTP 404; not on Internet Archive. Update dossier URL.",
+          "Underlying tabulation must be transcribed from Allen & Bowley (1935) Table 1 OR from upstream Cd. 3864 (1908). Neither is currently in SalvagedInputs/.",
+          "Phase 5 decision: publish 1904-only cross-section vs paired 1904 + modern ONS LCF cross-sections"
+        ]
+      },
+      "primary_source_url_update": {
+        "from": "https://archive.org/details/familyexpenditur0000alle",
+        "to": "https://catalog.hathitrust.org/Record/000395810 (placeholder: Cd. 3864 Board of Trade 1908; verify exact HathiTrust record id when sourcing)",
+        "reason": "Existing URL returned HTTP 404; Internet Archive does not have Allen & Bowley (1935). Pivot to upstream UK Board of Trade Cd. 3864 (1908) which is Crown-Copyright PD and available on HathiTrust full-view."
+      }
+    },
+    {
+      "sid": "S307",
+      "content_type": "cross_sectional",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 10,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Phase 3 content_type re-typing (time_series -> cross_sectional) ratified"],
+        "issues_outstanding": [
+          "Same archive.org 404 as S306; update primary_source.url",
+          "Need transcription of absolute (income, food-expenditure) pairs from Allen & Bowley (1935) or Cd. 3864 (1908)"
+        ]
+      },
+      "primary_source_url_update": {
+        "from": "https://archive.org/details/familyexpenditur0000alle",
+        "to": "(same Cd. 3864 record as S306 once verified)",
+        "reason": "Same as S306."
+      }
+    },
+    {
+      "sid": "S308",
+      "content_type": "theoretical",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 9,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Phase 3 content_type re-typing (time_series -> theoretical) ratified"],
+        "issues_outstanding": [
+          "NetLogo source code 'available on request' (footnote 21, Amr Ragab); not in public archive. Re-implementation from verbal specs (Shaikh 2016 pp. 96-99) is feasible.",
+          "Random seeds not stated; only statistical (not exact) reproduction possible"
+        ]
+      }
+    },
+    {
+      "sid": "S309",
+      "content_type": "theoretical",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 9,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": ["Phase 3 content_type re-typing (time_series -> theoretical) ratified"],
+        "issues_outstanding": ["Same as S308 (paired figure)"]
+      }
+    }
+  ],
+  "url_check_provenance": {
+    "checked_at": "2026-05-18",
+    "checker_script": "Technical/Build/_ch3_url_checks.py",
+    "raw_results": "Technical/Build/_ch3_url_checks.json",
+    "user_agent": "Mozilla/5.0 (compatible; RSCD-Phase4-Adequacy/1.0; +https://github.com/rscd)",
+    "timeout_sec": 10
+  }
+}

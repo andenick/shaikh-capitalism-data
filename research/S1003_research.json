@@ -1,0 +1,84 @@
+{
+  "series_id": "S1003",
+  "name": "Relative Price of Finance",
+  "chapter": 10,
+  "figures": [
+    "Fig10.3",
+    "Fig10.7"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": "S053",
+    "cd2_id": "S053"
+  },
+  "book_quotes": [
+    {
+      "chapter": 10,
+      "page": 466,
+      "quote": "Figure 10.7 tracks the relative price of finance (i/p), both variables now being indexed to 1947 as the base year. As a relative price of provision, this would be expected to essentially reflect the real cost of finance as in equation (10.8).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 466,
+      "quote": "From 1857 to 1927 this ratio is relatively stable even through the Great Depression of 1873-1893, and its subsequent modest downward trend into the early 1920s is consistent with rapid innovations in finance.",
+      "role": "caveat",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 873,
+      "quote": "The long bond yield was created by splicing together two long series: the railroad bond yield from 1857 to 1937 was annualized monthly data on American bond yields taken from Macaulay (Macaulay 1938, Appendix Table 10, A142-A161) ... The US Producer Price Index (Wholesale Price Index) for 1857-1976 is from (Jastram 1977, 145-146, table 7) and updated thereafter from the BLS using growth rates of the PPI.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh derived (from S1002 components)",
+    "publication": "Capitalism (Oxford 2016) Appendix 10.2 'Data Tables for Chapter 10'",
+    "table_or_series_id": "Appendix 10.2 spreadsheet, i/p ratio (1947 base)",
+    "url": "http://www.anwarshaikhecon.org/",
+    "frequency": "annual",
+    "units": "Ratio, 1947=1",
+    "license": "Author-distributed",
+    "available_through": "ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "rpf_t = (i_t / i_1947) / (p_t / p_1947), where i = composite long bond yield (S1002-A) and p = composite PPI (S1002-B)",
+  "components": [
+    {"label": "Composite long bond yield", "source": "S1002-A (Macaulay + Fed HS-39 + ERP spliced)"},
+    {"label": "Composite PPI", "source": "S1002-B (Jastram + BLS PPI)"}
+  ],
+  "year_range_book": [1857, 2011],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "Same FRED-based extensions as S1002 (AAA / PPIACO) then re-form ratio",
+      "source": "FRED",
+      "url": "https://fred.stlouisfed.org/series/AAA",
+      "units": "Ratio (1947=1)",
+      "splice_strategy": "growth_rate",
+      "concerns": ["No independent source; extension follows S1002 mechanics"]
+    }
+  ],
+  "methodology_notes": [
+    "Pure transformation of S1002 sub-series; no new data ingest.",
+    "1947 chosen as base year (matches Shaikh's other current-cost benchmarks in Ch6/7).",
+    "Theoretical anchor: equation (10.8) ties i/p to real banking costs and the general rate of profit.",
+    "Per book p.466: ratio is relatively stable 1857-1927, then declines; structural break post-Greenspan attributed to active monetary policy keeping i down while p rises."
+  ],
+  "open_questions": [
+    "Phase 4 to decide whether to re-index to a more recent base (e.g., 2010) for cross-comparison with modern series."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-b-ch10",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S053 ported; quotes verified pp.466, 873"
+    }
+  ]
+}

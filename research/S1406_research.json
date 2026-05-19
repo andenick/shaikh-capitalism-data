@@ -1,0 +1,112 @@
+{
+  "series_id": "S1406",
+  "name": "Inflation and Productivity Growth",
+  "chapter": 14,
+  "figures": [
+    "Fig14.15"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S073",
+    "cd2_id": "S073"
+  },
+  "book_quotes": [
+    {
+      "chapter": 14,
+      "page": 670,
+      "quote": "Figure 14.15 displays the paths of inflation and productivity since 1948 and figures 14.16 and 14.17 depict the corresponding HP(100) real wage and nominal wage Phillips curves.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 892,
+      "quote": "p = the price level = the GDP Deflator from Table 1.1.9, line 1; w = the nominal wage = EC*100/FEE, where FEE = full-time equivalent employment from Tables 6.5A-D; wr = w/p = the real wage; yr = productivity = (GDP*100/p)/(FEE/1000).",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 669,
+      "quote": "The wage share is the ratio of the real wage to productivity, and the real wage is the ratio of the money wage and the price level. Hence, the rate of change of the wage share can be algebraically decomposed into the rate of change of real wage (the Goodwin component) plus productivity growth.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "BEA",
+    "publication": "NIPA Historical Tables (GDP Deflator and Full-Time Equivalent Employment)",
+    "table_or_series_id": "NIPA Table 1.1.9 line 1 (GDP deflator); NIPA Tables 6.5A-D (Full-Time Equivalent Employees)",
+    "url": "https://www.bea.gov/itable/national-gdp-and-personal-income",
+    "frequency": "annual",
+    "units": "Index 2009=100 (deflator); thousands of jobs (FEE); decimal growth rates",
+    "license": "U.S. Government Work (public domain)",
+    "available_through": "BEA iTable, FRED",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "inflation_t = (p_t / p_{t-1}) - 1; productivity_t = (GDP_t * 100 / p_t) / (FEE_t / 1000); productivity_growth_t = (productivity_t / productivity_{t-1}) - 1",
+  "components": [
+    {
+      "subseries_label": "GDP deflator (p)",
+      "source": "BEA NIPA Table 1.1.9 line 1",
+      "role": "Used for inflation rate (inflrate) and real GDP",
+      "fred_proxy": "GDPDEF"
+    },
+    {
+      "subseries_label": "Inflation rate (inflrate) and HP(100) trend (inflrateHP100)",
+      "source": "Derived from GDP deflator",
+      "role": "First series plotted in Fig 14.15"
+    },
+    {
+      "subseries_label": "Full-time equivalent employees (FEE)",
+      "source": "BEA NIPA Tables 6.5A-D",
+      "role": "Denominator of productivity",
+      "fred_proxy": "B4701C0A222NBEA (full-time equivalent employees, all industries)"
+    },
+    {
+      "subseries_label": "Productivity growth (GPRODVTY)",
+      "source": "Derived: yr = (GDP*100/p)/(FEE/1000); first-differenced",
+      "role": "Second series plotted in Fig 14.15"
+    }
+  ],
+  "year_range_book": [1948, 2011],
+  "year_range_extension": [1948, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "GDP deflator",
+      "source": "FRED (BEA NIPA Table 1.1.9)",
+      "url": "https://fred.stlouisfed.org/series/GDPDEF",
+      "units": "Index 2017=100 (current vintage); quarterly",
+      "splice_strategy": "growth_rate",
+      "concerns": ["Annual average of quarterly observations; rebase or use growth rate to avoid base-year mismatch"]
+    },
+    {
+      "subseries_label": "Full-time equivalent employees",
+      "source": "FRED (BEA NIPA Table 6.5)",
+      "url": "https://fred.stlouisfed.org/series/B4701C0A222NBEA",
+      "units": "Thousands of jobs, annual",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Verify that the FRED FEE series matches NIPA Tables 6.5A-D coverage (domestic industries)"]
+    }
+  ],
+  "methodology_notes": [
+    "Productivity is constructed as real GDP per full-time equivalent worker, NOT real GDP per hour worked (BLS productivity). This is a key distinction: Shaikh's productivity definition (yr = (GDP*100/p)/(FEE/1000)) is a labor-productivity-per-worker measure.",
+    "Both series are plotted as levels in Fig 14.15 and also enter Appendix 14.2's regressions as HP(100)-filtered series (inflrateHP100, GPRODVTYHP100).",
+    "Productivity growth begins falling from 1960, hits its low in the late 1970s, then gradually rises back to its original level by 2000 (book p. 670). Inflation rises through the 1970s then declines.",
+    "These two series together explain why the real-wage Phillips curve (Fig 14.16) and the nominal-wage Phillips curve (Fig 14.17) shift relative to the underlying Classical wage-share curve (Fig 14.14)."
+  ],
+  "open_questions": [
+    "Replication: confirm whether Shaikh uses chain-type GDP price index (current BEA standard) or fixed-weighted deflator for the full 1948-2011 sample.",
+    "FEE coverage: should it be total full-time equivalents (NIPA Table 6.5 line 1) or private/business-sector subset?"
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch14",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S073 ported; productivity formula extracted from Appendix 14.2 p. 892 verbatim."
+    }
+  ]
+}

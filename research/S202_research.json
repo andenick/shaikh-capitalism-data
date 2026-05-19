@@ -1,0 +1,107 @@
+{
+  "series_id": "S202",
+  "name": "US Real Investment Index",
+  "chapter": 2,
+  "figures": [
+    "Fig2.2"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S002",
+    "cd2_id": "S002"
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 56,
+      "quote": "Finally, it is obvious that growth is always turbulent, and that the path of investment is far more turbulent than that of output. Any adequate theory of growth must address patterns such as these.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 763,
+      "quote": "Figure 2.2 US Real Investment Index, 1832–2010. Investment in Fixed Nonresidential Business Capital, 1832–1975 (1970 = 100) from BEA (1977, table B4) and 1901–2010 from BEA, Wealth Table 4.8, line 1 at http://www.bea.gov/iTable/index_FA.cfm. The two series were rebased to 1958 = 100 and spliced at 1901.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis",
+    "publication": "BEA Fixed Reproducible Tangible Wealth of the United States, 1925–1975 (1977); BEA Fixed-Asset Wealth Tables (Table 4.8)",
+    "table_or_series_id": "BEA (1977) Table B4 spliced with BEA FA Wealth Table 4.8, line 1",
+    "url": "https://apps.bea.gov/iTable/?reqid=10",
+    "frequency": "annual",
+    "units": "Index, 1958=100 (rebased and spliced at 1901)",
+    "license": "Public domain (US federal government)",
+    "available_through": "BEA Fixed Assets section",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": null,
+  "components": [
+    {
+      "label": "BEA (1977) Fixed Reproducible Tangible Wealth Table B4",
+      "period": [
+        1832,
+        1975
+      ],
+      "native_units": "Index 1970=100"
+    },
+    {
+      "label": "BEA Wealth Table 4.8, line 1 (Investment in Fixed Nonresidential Capital)",
+      "period": [
+        1901,
+        2010
+      ],
+      "native_units": "Constant dollars"
+    }
+  ],
+  "year_range_book": [
+    1832,
+    2010
+  ],
+  "year_range_extension": [
+    2011,
+    2024
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "FRED GPDIC1 (Real Gross Private Domestic Investment)",
+      "source": "Federal Reserve Economic Data (St. Louis Fed) / BEA NIPA Table 1.1.6",
+      "url": "https://fred.stlouisfed.org/series/GPDIC1",
+      "units": "Billions of chained 2017 dollars",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "GPDIC1 includes residential investment; Shaikh's series is nonresidential business capital only. Prefer BEA NIPA Table 1.1.6 line 9 (Nonresidential fixed investment) for a concept match."
+      ]
+    },
+    {
+      "subseries_label": "BEA NIPA Table 1.1.6 line 9 (Real Nonresidential Fixed Investment)",
+      "source": "BEA NIPA",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=2&isuri=1&categories=survey",
+      "units": "Billions of chained 2017 dollars",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Exact concept match to Shaikh's series."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Composite splice of BEA (1977) Table B4 with BEA Wealth Table 4.8 line 1 at 1901, both rebased to 1958=100 per Appendix 2.1 (p. 763).",
+    "CD2 dossier S002 also identified GPDIC1 as a fallback but acknowledged the concept mismatch with residential investment.",
+    "Investment in fixed nonresidential business capital = equipment + structures excluding housing."
+  ],
+  "open_questions": [
+    "Verify that BEA's Fixed-Asset Wealth Table 4.8 line 1 has the same definition in 2026 as it did in 2011 (CD2 accessed it 9/2/2011)."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

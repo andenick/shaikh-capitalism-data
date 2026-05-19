@@ -1,0 +1,80 @@
+{
+  "series_id": "S203",
+  "name": "US Real GDP per Capita (MeasuringWorth)",
+  "chapter": 2,
+  "figures": [
+    "Fig2.3"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S003",
+    "cd2_id": "S003"
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 56,
+      "quote": "We begin with the long view. Figures 2.1–2.3 depict the paths of US industrial production, real investment, and real GNP per capita, respectively, over periods of about 150 years.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 763,
+      "quote": "Figure 2.3 US Real GDP per Capita, 1889–2010. 1790–2010, from Measuring Worth.com at http://measuringworth.com/usgdp/. Their sources and methods are described in their link “Source and Techniques Used in the Construction of Annual GDP, 1790 – Present.”",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "MeasuringWorth (Officer & Williamson)",
+    "publication": "MeasuringWorth, “Annual GDP of the United States, 1790–Present”",
+    "table_or_series_id": "USGDP (Real GDP per capita variant)",
+    "url": "https://www.measuringworth.com/datasets/usgdp/",
+    "frequency": "annual",
+    "units": "Real GDP per capita, constant dollars (per MeasuringWorth methodology)",
+    "license": "MeasuringWorth terms (free for academic use with attribution)",
+    "available_through": "https://www.measuringworth.com/",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [],
+  "year_range_book": [
+    1889,
+    2010
+  ],
+  "year_range_extension": [
+    2011,
+    2024
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "MeasuringWorth USGDP (continuous update)",
+      "source": "MeasuringWorth",
+      "url": "https://www.measuringworth.com/datasets/usgdp/",
+      "units": "Real GDP per capita, constant dollars",
+      "splice_strategy": "none",
+      "concerns": [
+        "Same source as original; direct continuation with re-indexing only if dollar base year changes."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Direct port of MeasuringWorth's real GDP per capita series per Appendix 2.1 (p. 763).",
+    "Note caption discrepancy: Appendix 2.1 says 1790–2010 but Fig 2.3 plots 1889–2010 (year_range_book reflects plotted range).",
+    "MeasuringWorth synthesizes Kuznets, Balke-Gordon, and BEA NIPA estimates."
+  ],
+  "open_questions": [
+    "MeasuringWorth occasionally revises historical estimates; document the access date when extending."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

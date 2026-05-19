@@ -1,0 +1,255 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": 10,
+  "reviewer": "opus-subagent-p4-wave2-ch10",
+  "review_date": "2026-05-18",
+  "series_count": 8,
+  "scores": {
+    "D1_source_reachability": {
+      "value": 22,
+      "max": 25,
+      "details": "Real HTTP checks performed 2026-05-18T19:57Z and 20:01Z (HEAD with GET fallback; UA=RSCDPhase4Checker/1.0; timeout 15-60s). Reachable (200 OK): NBER macrohistory m13019.dat (redirects to data.nber.org, OK), Federal Reserve H.15 release page, Shiller data.htm AND the underlying ie_data.xls binary (live), Damodaran NYU histretSP.html, BEA NIPA iTable + Section1All_xls.xlsx, MeasuringWorth (not used here but verified in Ch5), Multpl.com, BEA Industry portal (redirects to apps.bea.gov/iTable). FRED series pages timed out on HEAD but the canonical fredgraph.csv download endpoint returned 200 OK with valid data for AAA (from 1919), PPIACO (from 1913), GS10 (from 1953), SP500, A006RD3A086NBEA (BEA gross investment deflator, from 1929), W260RC1A027NBEA (nonfinancial NOS, from 1929) — FRED series confirmed live. anwarshaikhecon.org DNS does not resolve (consistent with Ch5 finding 2026-05-18); IA snapshot 2024-03-11 confirmed 200 OK and local copies of Appendix10_*.xlsx workbooks present in SalvagedInputs/book_data/ShaikhChoppedTables/. Morningstar/Ibbotson product page returned 202 Accepted (CDN challenge, not a true 200) — irrelevant since Ibbotson is being substituted by Damodaran for licensing reasons. -3 reflects: (a) anwarshaikhecon.org companion site dead (affects S1001, S1003, S1004, S1007, S1008 primary URLs), (b) FRED HEAD rate-limiting required fallback to csv endpoint, (c) BEA iTable deep-link is fragile (the #fragment query was 404; root iTable is 200)."
+    },
+    "D2_year_coverage": {
+      "value": 18,
+      "max": 20,
+      "details": "Book-period coverage 100% for all 8 series via local Appendix10_*.xlsx workbooks (Documentation, Ibbotson, IntroPPrice, USLR). Modern extension coverage: S1002 (FRED AAA + PPIACO) live to current month, full splice possible; S1003/S1004 inherit from S1002 (formula series, fully extensible); S1005 (Shiller ie_data.xls) updated continuously; S1006 (Damodaran) updated annually to year T-1; S1007 (FRED W260RC1A027NBEA + A006RD3A086NBEA + Shiller) fully extensible; S1008 inherits from S1007 + Shiller. S1001 has the most uncertain extension because Shaikh's appendix-7.2 corrected capital stock for the banking industry is not directly published by BEA (NAICS 52 vs 5221 issue; see open questions). -2 for: (a) S1001 banking-IROP extension requires re-deriving Shaikh's appendix-7.2 capital correction under post-2018 BEA NAICS revisions, (b) HP filter endpoint issue on S1004 (adding new years shifts the smoothed trend at the splice point — analytical concern, not a data gap)."
+    },
+    "D3_license_compatibility": {
+      "value": 14,
+      "max": 15,
+      "details": "Public-domain/open: NBER (US govt sponsorship), Federal Reserve H.15, BEA NIPA, BLS PPI, FRED redistribution permitted under FRED Terms, Shiller (academic free use), Damodaran NYU (free posted by author). Ibbotson SBBI 2004 (S1006) is now Morningstar commercial — flagged as substitution: Damodaran's open NYU dataset replaces Ibbotson for the modern panel; the original 1926-2010 Ibbotson 2004 reproduction in SalvagedInputs is academic-use under the Shaikh dataset distribution. anwarshaikhecon.org companion site is author-distributed (academic). -1 reflects the Ibbotson reproduction in SalvagedInputs — if RSCD publishes the underlying CSV, must attribute to Ibbotson 2004 (table 2-2) and document that any post-2010 extension uses Damodaran's open reconstruction, not Morningstar SBBI."
+    },
+    "D4_units_consistency": {
+      "value": 15,
+      "max": 15,
+      "details": "All 8 series carry explicit primary_source.units: S1001 rate (decimal), S1002 percent (yield) + index (PPI), S1003 ratio 1947=1, S1004 percent, S1005 percent, S1006 percent (total return nominal), S1007 rate (decimal, displayed as percent), S1008 index (real, BEA gross investment deflator base). All FRED extension candidates carry consistent units (AAA percent, PPIACO index 1982=100, GS10 percent, A006RD3A086NBEA index 2017=100, W260RC1A027NBEA billions of dollars). Re-baseline transformations (PPI from 1982=100 to 1947=1; BEA deflator from 2017=100 to Shaikh's base) are documented in methodology_notes. Shiller P* re-deflation (S1008: P* * Shiller_CPI / BEA_invest_deflator) is explicit per footnote 25. Equity return convention (S1006 nominal; S1007 real via BEA deflator NOT CPI) is explicit per book p.874 verbatim quote."
+    },
+    "D5_extension_feasibility": {
+      "value": 13,
+      "max": 15,
+      "details": "Feasible: S1002 (FRED AAA + PPIACO clean), S1003 (formula, follows S1002), S1004 (formula, follows S1002; HP filter must be recomputed end-to-end per No-Lazy-Splices-on-Derived-Quantities), S1005 (Shiller updated; FRED GS10 1953+ overlap available), S1006 (Damodaran NYU replaces Ibbotson; verified 200 OK 2026-05-18), S1007 (FRED W260RC1A027NBEA + A006RD3A086NBEA + Shiller; all verified live; recomputed from components, no splice on the rate), S1008 (formula from S1007 rI + Shiller P/dv/CPI; full recomputation with footnote-24 same-mean normalization on extended interval). Partially-feasible: S1001 banking IROP extension — BEA Industry Economic Accounts publish Finance & Insurance NOS and investment, but Shaikh's appendix-7.2 capital-stock correction (Marx-equivalent corrected stock) is not directly published; modern extension requires either (a) accept BEA published net stocks with concept disclosure, or (b) re-derive Shaikh's correction (analytically heavy; out of scope for Phase 5 first pass). -2 reflects: S1001 banking extension concept gap + S1004 HP-filter endpoint problem that affects extension consistency."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 9,
+      "max": 10,
+      "details": "Substitutions disclosed: S1006 Ibbotson SBBI -> Damodaran NYU explicitly flagged in extension_candidates with concerns about small definitional differences in the corporate bond index — concept match documented (large-cap stocks, LT corp bonds, LT govt bonds match Ibbotson categories; Damodaran openly notes Ibbotson-derived methodology). S1001 banking proxy under NAICS reclassification: must be flagged as concept-bridge (NAICS 52 broader, NAICS 5221 narrower than Shaikh's 'banking' from 1988-2005 SIC era); Phase 4 recommends NAICS 5221 (Depository Credit Intermediation) as the primary mapping with NAICS 52 as a sensitivity check. S1003/S1004 formula-type — must be recomputed from extended components, not growth-rate-spliced (No-Lazy-Splices rule explicitly documented in S1004 methodology_notes). S1008 warranted-price equation (10.31) recursion with footnote-24 same-mean normalization must be recomputed end-to-end on any extended interval — explicit in dossier. -1 reflects S1001's NAICS bridge not having a Concept Match Justification block in the Phase 3 dossier yet (must be added before Phase 5 ingestion)."
+    }
+  },
+  "total_score": 91,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "S1001",
+      "name": "Bank vs Private Industry IROP",
+      "content_type_correction": null,
+      "url_status": "offline-archival",
+      "url_status_checked_at": "2026-05-18T19:57:44Z",
+      "year_coverage_pct": 100,
+      "license": "academic-public",
+      "units": "Rate (decimal)",
+      "extension_status": "feasible",
+      "proposed_substitute": {
+        "primary": "file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_Documentation.xlsx + Appendix7_iropdataUSind.xlsx (local copy of Shaikh's Appendix 7.2 panel)",
+        "wayback_snapshot": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+        "rationale": "anwarshaikhecon.org DNS does not resolve (verified 2026-05-18, consistent with Ch5 finding). Per decision 0005, local SalvagedInputs copy + IA snapshot is the documented fallback.",
+        "extension_strategy": "BEA Industry Economic Accounts GDP-by-industry: NAICS 5221 (Depository Credit Intermediation) for banking; cross-industry average over all-private for the comparator. NAICS 52 (Finance & Insurance) reported as a sensitivity case (broader-scope alternative)."
+      },
+      "proxy_flags": [
+        "NAICS 5221 vs NAICS 52 banking definition is a concept bridge across the SIC->NAICS reclassification; must be flagged with Concept Match Justification in the Phase 5 registry before extension."
+      ],
+      "remediation": [
+        "Update primary_source.url in registry: http://www.anwarshaikhecon.org/ -> file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_Documentation.xlsx with IA snapshot as web citation.",
+        "Add NAICS 5221 as the primary banking mapping in the extension subseries; document NAICS 52 as the broader-scope sensitivity case.",
+        "Document that BEA published net capital stocks differ from Shaikh's appendix-7.2 corrected stock; either accept the BEA convention with a Concept Match Justification or schedule re-derivation of the appendix-7.2 correction (out of scope for Phase 5 first pass)."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1002",
+      "name": "Interest Rate and Price Level",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T20:01:15Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "Percent (yield); index (price level)",
+      "extension_status": "feasible",
+      "proposed_substitute": {
+        "primary": "NBER macrohistory m13019.dat for 1857-1937 Macaulay railroad bond yield (200 OK; auto-redirects http://www.nber.org -> https://data.nber.org); Federal Reserve HS-39 / ERP for 1936-2010 Aaa corporate; FRED AAA (https://fred.stlouisfed.org/graph/fredgraph.csv?id=AAA, verified live 2026-05-18 with data from 1919) for modern extension; PPI via Jastram 1977 print + FRED PPIACO (verified live from 1913).",
+        "rationale": "Primary NBER URL is reachable and unchanged. FRED canonical download endpoint verified 200 OK (FRED series pages rate-limit HEAD/GET on /series/<id>, but fredgraph.csv?id=<id> returns valid CSV reliably and is the recommended programmatic endpoint).",
+        "extension_strategy": "Same splice methodology as the book: 1919-1937 mean ratio rescales Macaulay -> Aaa; for post-2011 extension, PPIACO covers PPI extension and AAA covers corporate bond extension. No new splice point introduced."
+      },
+      "proxy_flags": [],
+      "remediation": [
+        "Update registry: primary_source.url for the NBER component to https://data.nber.org/databases/macrohistory/rectdata/13/m13019.dat (the redirect target).",
+        "Document in registry that FRED extension uses the fredgraph.csv?id=<id> programmatic endpoint, NOT the /series/<id> HTML page (which rate-limits scraping and is unreliable for HEAD checks).",
+        "Decide on Fig 10.3 split (open question 5): recommend KEEP BUNDLED in S1002 because the underlying long-rate series is the same; the short-rate panel comparison can be a separate visualization in Phase 6 without registering a new series. This avoids inflating the series count for what is effectively a multi-line plot of existing rate concepts."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1003",
+      "name": "Relative Price of Finance",
+      "content_type_correction": null,
+      "url_status": "offline-archival",
+      "url_status_checked_at": "2026-05-18T19:57:44Z",
+      "year_coverage_pct": 100,
+      "license": "academic-public",
+      "units": "Ratio, 1947=1",
+      "extension_status": "feasible",
+      "proposed_substitute": {
+        "primary": "file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx (i/p ratio column, 1947 base)",
+        "wayback_snapshot": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+        "rationale": "Companion site dead; underlying components live (S1002).",
+        "extension_strategy": "FORMULA series: recompute as (AAA_t / AAA_1947) / (PPIACO_t / PPIACO_1947). Do NOT growth-rate-splice the ratio (No-Lazy-Splices-on-Derived-Quantities rule)."
+      },
+      "proxy_flags": [],
+      "remediation": [
+        "Update registry: primary_source.url for anwarshaikhecon.org -> local SalvagedInputs + IA snapshot.",
+        "Enforce in S1003 loader: recompute ratio from extended S1002 components, never splice the ratio itself.",
+        "Re-baseline open question: KEEP 1947=1 base (matches Shaikh Ch6/7 convention and figures 10.7) for replication; a 2010-base view is a Phase 6 visualization choice, not a registry change."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1004",
+      "name": "Real Interest Rate HP-filtered",
+      "content_type_correction": null,
+      "url_status": "offline-archival",
+      "url_status_checked_at": "2026-05-18T19:57:44Z",
+      "year_coverage_pct": 100,
+      "license": "academic-public",
+      "units": "Percent",
+      "extension_status": "feasible",
+      "proposed_substitute": {
+        "primary": "file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx (iblongreal and iblongrealHP3 columns)",
+        "wayback_snapshot": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+        "rationale": "Companion site dead; components live via S1002.",
+        "extension_strategy": "FORMULA series: real rate = AAA - PPIACO_growth_rate; re-apply HP filter end-to-end on the FULL extended panel (do not splice the smoothed series). Report BOTH lambda=3 (Shaikh's choice, primary) AND lambda=6.25 (Ravn-Uhlig 2002 standard for annual data) as a sensitivity output."
+      },
+      "proxy_flags": [],
+      "remediation": [
+        "Update registry: primary_source.url for anwarshaikhecon.org -> local SalvagedInputs + IA snapshot.",
+        "Phase 5 loader produces TWO smoothed columns: iblongrealHP3 (lambda=3, book replication) and iblongrealHP6.25 (lambda=6.25, sensitivity). Both annotated in the registry as derivatives of the same nominal iblongreal series.",
+        "Document HP filter endpoint convention (Phase 3 open question 1): use two-sided HP filter with default padding (matches Shiller-style smoothing implementations); confirm against Shaikh's DATAintropprice sheet values at known intervals."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1005",
+      "name": "Dividend Yield vs Bond Yield",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T20:01:15Z",
+      "year_coverage_pct": 100,
+      "license": "academic-public",
+      "units": "Percent",
+      "extension_status": "feasible",
+      "proposed_substitute": {
+        "primary": "Shiller http://www.econ.yale.edu/~shiller/data.htm (verified 200 OK 2026-05-18) and http://www.econ.yale.edu/~shiller/data/ie_data.xls (binary verified, OLE2 header present) — continuously updated by author. Composite corporate yield inherited from S1002-A.",
+        "rationale": "Shiller's primary URL is unchanged and live; both the landing page and the xls binary are reachable. Multpl.com mirror also reachable (200 OK) as redundant source.",
+        "extension_strategy": "Pull latest ie_data.xls (annual conversion from monthly); compute D/P from columns D and P; pull GS10 from the same workbook for govt 10yr; inherit composite corporate yield from S1002 extension."
+      },
+      "proxy_flags": [],
+      "remediation": [
+        "Document in registry that ie_data.xls is the canonical Shiller download (xls, not xlsx; OLE2 binary format requires xlrd for legacy support or LibreOffice conversion).",
+        "Document Shiller monthly->annual aggregation convention (use January value vs. annual average — Shaikh's DATAintropprice sheet implies annual average; confirm at ingestion)."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1006",
+      "name": "Bond and Equity Returns",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T19:57:44Z",
+      "year_coverage_pct": 100,
+      "license": "open-substitute-replaces-commercial",
+      "units": "Percent (total return)",
+      "extension_status": "feasible",
+      "proposed_substitute": {
+        "primary": "Damodaran NYU 'Historical Returns: Stocks, T.Bonds & T.Bills with Premiums' at https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html (verified 200 OK 2026-05-18). Open license, free academic distribution, updated annually by Aswath Damodaran.",
+        "replaces": "Ibbotson SBBI 2004 Yearbook table 2-2 (now Morningstar commercial product at https://www.morningstar.com/products/ibbotson-sbbi — returned 202 Accepted CDN challenge, gated behind login). Per decision 0005, Damodaran is the recommended open substitute.",
+        "rationale": "(1) Ibbotson is now Morningstar SBBI commercial product; redistribution prohibited. (2) Damodaran's NYU reconstruction is the standard academic open substitute, covers 1928-present (Damodaran starts 1928 vs Ibbotson 1926, so 1926-1927 must be retained from the SalvagedInputs Appendix10_Ibbotson.xlsx local copy — a 2-year overlap with the book is fine; Shaikh's table 10.1 averages start in 1926 so the historical book figures are not affected by the extension). (3) David Stubbs's 2004-2010 extension acknowledged in the book is reproducible from Damodaran's pre-2010 panel.",
+        "concept_match_justification": "Damodaran's three series — S&P 500 total return (1928+), LT Treasury Bond (1928+), 3-month Treasury Bill — match Ibbotson SBBI Yearbook's 'Large Company Stocks (S&P 500)', 'Long-Term Government Bonds', and a partially-different bill series. The LT corporate bond series in Ibbotson is NOT directly replicated by Damodaran; for that one component, use Moody's Aaa total return reconstructed from FRED AAA yield + duration assumption, OR Bloomberg US Long Credit Index (commercial). For RSCD Phase 5: retain the original Ibbotson 2004 historical values from SalvagedInputs/Appendix10_Ibbotson.xlsx and extend via Damodaran (LT Gov, large-cap) + Moody's Aaa derived (LT Corp proxy with explicit Concept Match Justification)."
+      },
+      "proxy_flags": [
+        "LT Corporate Bond total return: Damodaran does not directly publish this series. Phase 5 must either (a) use commercial Bloomberg US Long Credit Index (paid) with disclosure, or (b) derive a total-return proxy from FRED AAA yield + duration assumption (5-7 year modified duration typical for 20yr Aaa) and flag as Concept Match Justification: 'AAA yield-based total return reconstruction vs. Ibbotson's underlying ~20yr Aaa/AA corporate index total return; concept is annual total return on LT investment-grade corporate debt'."
+      ],
+      "remediation": [
+        "Update registry primary_source: agency from 'Ibbotson Associates (now Morningstar)' to 'Damodaran NYU + SalvagedInputs (historical Ibbotson 2004)'; url from https://www.morningstar.com/products/ibbotson-sbbi to https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html; license from 'Commercial' to 'Open academic (Damodaran) + SalvagedInputs historical reference (Ibbotson 2004 Yearbook table 2-2)'.",
+        "Retain SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_Ibbotson.xlsx as authoritative for 1926-2010 reproduction of book table 10.1; Damodaran panel attached as the modern extension subseries.",
+        "Add proxy:true flag with Concept Match Justification for the LT Corporate Bond total return component in any post-2010 extension."
+      ],
+      "adequacy_status": "ready_for_phase5_with_substitute"
+    },
+    {
+      "sid": "S1007",
+      "name": "Equity Rate vs Corporate IROP",
+      "content_type_correction": null,
+      "url_status": "offline-archival",
+      "url_status_checked_at": "2026-05-18T19:57:44Z",
+      "year_coverage_pct": 100,
+      "license": "academic-public",
+      "units": "Rate (decimal); displayed as percent",
+      "extension_status": "feasible",
+      "proposed_substitute": {
+        "primary": "Composite: Shiller ie_data.xls (peq, dv) + BEA NIPA via FRED A006RD3A086NBEA (gross investment deflator, verified live from 1929) + FRED W260RC1A027NBEA (nonfinancial corporate NOS, verified live from 1929) + BEA NIPA Tables 5.2.3/5.6.3 for real gross investment (apps.bea.gov/iTable verified 200 OK). Local copy in SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx for book replication.",
+        "wayback_snapshot": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+        "rationale": "All BEA + Shiller primary components verified live 2026-05-18. anwarshaikhecon.org dead; local copy + IA snapshot per decision 0005.",
+        "extension_strategy": "COMPOSITE series: recompute end-to-end (a) rreq from Shiller P,D + BEA gross investment deflator (NOT CPI — book p.874 verbatim), (b) iropcorp adjusted = delta(NOS + Monetary Interest Paid by Nonfinancial Sector) / (IG + INV)_{t-1} from BEA NIPA, (c) iropcorpnipa = delta NIPA gross profits / IG_{t-1}. Do NOT splice the rates; recompute from extended components."
+      },
+      "proxy_flags": [
+        "BEA 'Monetary Interest Paid by Nonfinancial Sector' (used to undo NIPA's interest-as-cost convention) requires exact NIPA line lookup; the FRED ticker for this specific imputation is not stable across BEA comprehensive revisions; flag for explicit table-line citation in Phase 5 loader."
+      ],
+      "remediation": [
+        "Update registry: primary_source.url for anwarshaikhecon.org -> local SalvagedInputs + IA snapshot.",
+        "Document in registry the exact BEA NIPA table lines: Table 1.14 (NOS nonfinancial corporate), Table 5.2.3/5.6.3 (gross investment), Table 1.1.9 (price deflators), and the specific NIPA line for 'Monetary Interest Paid by Nonfinancial Sector' (likely Table 1.14 line ~19 or NIPA Table 7.11; confirm at ingestion).",
+        "Pin BEA NIPA vintage for replication: book uses pre-2018 vintage; modern extension should report against current vintage with vintage stamp in the loader output for reproducibility."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S1008",
+      "name": "Actual vs Warranted Stock Price",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T20:01:15Z",
+      "year_coverage_pct": 100,
+      "license": "academic-public",
+      "units": "Index (real, BEA gross investment deflator base)",
+      "extension_status": "feasible",
+      "proposed_substitute": {
+        "primary": "Shiller ie_data.xls (P, P*, CPI columns; verified live binary 2026-05-18) + BEA gross investment deflator via FRED A006RD3A086NBEA + S1007 rI series. Local copy in SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx (DATAintropprice sheet) for book replication.",
+        "rationale": "Shiller and BEA primary sources verified live; warranted-price recursion (eq 10.31) is a closed-form formula depending only on rI (S1007) and dvr.",
+        "extension_strategy": "FORMULA series: recompute prweq_t = prweq_{t-1} * (1 + rI_t) - dvr_t end-to-end on extended panel; choose initial value so prweq has same mean as preq over 1948-2011 (footnote 24); do NOT change the initial-value convention on extension (re-anchor on 1948-2011 mean to preserve book replication, NOT on extended panel mean — that would change all historical values). For Shiller P* re-deflation: prstarshiller1 = (P* * Shiller_CPI / 100) / BEA_invest_deflator (footnote 25 verbatim)."
+      },
+      "proxy_flags": [],
+      "remediation": [
+        "Update registry: primary_source.url for anwarshaikhecon.org -> Shiller direct (http://www.econ.yale.edu/~shiller/data.htm) is already the dossier's primary; add local SalvagedInputs/Appendix10_IntroPPrice.xlsx as the offline-archival fallback for DATAintropprice sheet values used in test anchors.",
+        "Pin footnote-24 initialization to 1948-2011 mean of preq; extension MUST NOT re-anchor on extended interval.",
+        "Pin Shiller P* methodology vintage to 2014 (r=7.6%); verify the current ie_data.xls P* column matches this discount rate by spot-check against book values."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "Ratify the Phase 3 dossiers for all 8 series; no content_type corrections needed (S1001/S1002/S1005/S1006/S1007 = time_series, S1003/S1004/S1008 = derived).",
+    "Ratify Ibbotson SBBI -> Damodaran NYU substitution for S1006 modern extension; retain SalvagedInputs/Appendix10_Ibbotson.xlsx as authoritative for 1926-2010 book reproduction. Flag LT Corporate Bond total return as a residual proxy (Damodaran doesn't publish; AAA-yield-based reconstruction required with Concept Match Justification).",
+    "Resolve open question 6 (NAICS banking, S1001): adopt NAICS 5221 (Depository Credit Intermediation) as the primary modern mapping with NAICS 52 (Finance & Insurance) as a sensitivity case. Concept Match Justification: Shaikh's 1988-2005 'banking' from SIC commercial banking ~= NAICS 5221; the broader NAICS 52 includes securities/insurance which Shaikh did not.",
+    "Resolve open question 2 (HP filter lambda, S1004): produce BOTH lambda=3 (book replication) AND lambda=6.25 (Ravn-Uhlig standard) outputs.",
+    "Resolve open question 5 (Fig 10.3 short-rate split): KEEP BUNDLED in S1002. Fig 10.3 is a multi-line plot of existing rate concepts; a Phase 6 visualization can render it without expanding the registry.",
+    "Resolve open question 4 (warranted-price init, S1008): pin to 1948-2011 mean per footnote 24; extension MUST NOT re-anchor on extended interval (would alter all historical values).",
+    "anwarshaikhecon.org companion site is verified DEAD (DNS does not resolve, same finding as Ch5 wave 1). Promote local SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_*.xlsx workbooks to canonical primary files for S1001, S1003, S1004, S1007, S1008 (which all cite the companion site as primary url); Internet Archive snapshot 2024-03-11 serves as web citation.",
+    "Document in registry that FRED extension uses fredgraph.csv?id=<id> programmatic endpoint, not /series/<id> HTML pages (which rate-limit and timed out on this checker's HEAD requests despite the underlying data being live).",
+    "S1007: pin BEA NIPA vintage for book replication (pre-2018) and stamp current vintage on extension loader output; document the specific NIPA table line for 'Monetary Interest Paid by Nonfinancial Sector' before Phase 5 ingestion."
+  ],
+  "blockers_for_phase5": [],
+  "open_questions": [
+    "S1001 banking IROP: confirm whether modern extension accepts BEA published net capital stocks (with concept disclosure) or re-derives Shaikh's appendix-7.2 corrected stock. Recommendation: accept BEA published with disclosure for Phase 5 first pass; schedule re-derivation as a Phase 6 sensitivity analysis.",
+    "S1006 LT Corporate Bond total return for post-2010 extension: AAA-yield + duration reconstruction vs. paid Bloomberg US Long Credit Index. Recommendation: AAA-yield-based reconstruction with explicit Concept Match Justification to keep RSCD fully open-license.",
+    "S1007 Monetary Interest Paid by Nonfinancial Sector: confirm exact BEA NIPA table line under current vintage; verify it equals book's 'adjusted' NOS reconstruction at a few known sample years (e.g., 1988, 2000, 2007) against DATAintropprice sheet.",
+    "S1005/S1007/S1008 Shiller monthly->annual convention: confirm annual average vs January-of-year vs end-of-year against DATAintropprice sheet at ingestion."
+  ]
+}

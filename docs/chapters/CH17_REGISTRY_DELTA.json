@@ -1,0 +1,110 @@
+{
+  "schema_version": "rscd-registry-delta-v1.0",
+  "chapter": 17,
+  "generated_by": "opus-subagent-p4-wave3-ch17",
+  "generated_at": "2026-05-18",
+  "applies_to_registry": "Technical/series_registry.json",
+  "operations": [
+    {
+      "sid": "S1701",
+      "op": "set_adequacy_and_rename",
+      "name_update": {
+        "from": "(stub) IRS 2011 Income Distribution — Full Table",
+        "to": "The Global Crisis of 2007 in Light of Past Long Waves (HP-smoothed US/UK gold-deflated price indexes)",
+        "rationale": "Stub inherited CD2 S102 name but assigned figure Fig17.1 is the long-wave chart from Appendix 5.3, not the IRS table. Figure assignment wins; CD2 S102 IRS lineage is captured in S1702 and S1703."
+      },
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 30,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Open question 1 (Phase 3): name-vs-figure mismatch (CD2 S102 IRS vs Fig17.1 long waves) — RESOLVED by rename to match figure.",
+          "Primary URL anwarshaikhecon.org reachability — RESOLVED as DEAD (DNS does not resolve, 2026-05-18); local Appendix5_DATALRprices.xlsx is canonical (same file backs Ch5 series).",
+          "Extension URL BoE Millennium dataset verified live (200 OK)."
+        ],
+        "issues_outstanding": [
+          "MeasuringWorth US Wholesale Price URL 404 (2026-05-18); Officer WPI dataset no longer published at MeasuringWorth. Substitute documented (NBER m04051a + BLS WPU00000000) but not yet operationalised in a loader.",
+          "HP filter endpoint padding choice undocumented in Shaikh (pre-1900 and post-2010 boundaries); Phase 5 loader must declare.",
+          "Projection layer (post-2011 dashed line to 2018/2030) treatment pending: in-CSV 'forecast' flag vs separate registry row."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "http://www.anwarshaikhecon.org/",
+          "to": "file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix5_DATALRprices.xlsx",
+          "web_citation": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/"
+        },
+        {
+          "field": "extension_candidates[0].url",
+          "from": "https://www.measuringworth.com/datasets/uswholesaleprice/",
+          "to": "https://api.bls.gov/publicAPI/v2/timeseries/data/WPU00000000",
+          "note": "MeasuringWorth WPI dataset URL returned 404 (2026-05-18). Substitute: NBER macrohistory m04051a (pre-1947, Warren-Pearson WPI) spliced to BLS WPU00000000 (post-1947). Same bridge used for Ch5 S502/S504."
+        }
+      ],
+      "field_updates": [
+        {
+          "field": "name",
+          "from": "IRS 2011 Income Distribution — Full Table",
+          "to": "The Global Crisis of 2007 in Light of Past Long Waves (HP-smoothed US/UK gold-deflated price indexes)"
+        }
+      ]
+    },
+    {
+      "sid": "S1702",
+      "op": "set_adequacy_and_validation_fix",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 30,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Open question 1 (Phase 3): CD2 reference_values column ambiguity — RESOLVED by direct .xlsx inspection. CD2 values are column D (Frequency), not column F (Cumulative-from-Above). Replication target column is F.",
+          "Open question 2 (Phase 3): top open-ended bin midpoint convention — RESOLVED. $10M+ has no midpoint in Appendix17_USIRS2011.xlsx and is dropped from the plot."
+        ],
+        "issues_outstanding": []
+      },
+      "url_updates": [],
+      "field_updates": [
+        {
+          "field": "reference_values_column",
+          "from": "FPR017_C3 (Frequency)",
+          "to": "FPR017_C5 (Cumulative Frequency from Above)",
+          "note": "Replace CD2 reference values 1000->0.044637; 22500->0.070239; 62500->0.130352; 150000->0.101505 with the column-F values: 1000->0.95536; 22500->0.58350; 62500->0.21588; 150000->0.03233 (from local Appendix17_USIRS2011.xlsx)."
+        }
+      ]
+    },
+    {
+      "sid": "S1703",
+      "op": "set_adequacy_and_validation_fix",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 31,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Open question 2 (Phase 3): CD2 reference_values column ambiguity — RESOLVED by direct .xlsx inspection. CD2 values are column D (Frequency), not column F (Cumulative-from-Above).",
+          "Open question 2 (Phase 3): open-bin midpoints — RESOLVED ($500k-$1M -> 750,000; $1M-$1.5M -> 1,250,000; $1.5M-$2M -> 1,750,000; $2M-$5M -> 3,500,009 verbatim; $5M-$10M -> 7,500,000; $10M+ dropped)."
+        ],
+        "issues_outstanding": [
+          "Open question 1 (Phase 3): Pareto exponent alpha not published by Shaikh; must be recovered numerically by OLS in Phase 5 and reported."
+        ]
+      },
+      "url_updates": [],
+      "field_updates": [
+        {
+          "field": "reference_values_column",
+          "from": "FPR017_C3 (Frequency)",
+          "to": "FPR017_C5 (Cumulative Frequency from Above)",
+          "note": "Replace CD2 reference values 350000->0.026151; 750000->0.004110; 1250000->0.000928; 1750000->0.000385; 3500009->0.000546; 7500000->0.000132 with the column-F values: 350000->0.00618; 750000->0.00207; 1250000->0.001142; 1750000->0.000757; 3500009->0.000211; 7500000->0.0000787 (from local Appendix17_USIRS2011.xlsx)."
+        }
+      ]
+    }
+  ],
+  "chapter_recommendations_for_main_thread": [
+    "Apply rename of S1701 in series_registry.json (stub name -> figure-matching name).",
+    "Apply URL updates for S1701 (primary -> local file with IA snapshot; extension[0] -> BLS WPU bridge).",
+    "Apply reference_values column correction for S1702 and S1703 (FPR017_C3 frequency -> FPR017_C5 survival), with the explicit value mappings above.",
+    "Append the adequacy block under each of S1701/S1702/S1703 (score_contributions 30/30/31 = 91 total for Ch17, matches CH17_ADEQUACY_REPORT.total_score).",
+    "No registry-row count change; the existing 3-row Ch17 inventory is preserved.",
+    "Phase 5 decision: whether to add a 'forecast' column to the S1701 CSV for the dashed projection line, OR split into a separate registry row. Recommend in-CSV flag to keep row count stable."
+  ]
+}

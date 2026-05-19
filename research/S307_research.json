@@ -1,0 +1,109 @@
+{
+  "series_id": "S307",
+  "name": "Empirical Engel Curve for Food (Working Class Budgets, United Kingdom, 1904)",
+  "chapter": 3,
+  "figures": [
+    "Fig3.9"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "One of the best known empirical findings in microeconomics is that people buy proportionately less of necessary goods, and hence proportionately more of other (luxury) goods, as their income increases (Allen and Bowley 1935, 7; Houthakker 1987, 143–144). That is to say, the income elasticity of necessary goods is less than one, while that of luxury goods is greater than one. This is known as Engel’s Law of consumer demand.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "Figures 3.3–3.5 display the results of the case in which x1min rises more slowly than income, figures 3.6–3.7 the case in which c declines with income, and figures 3.8 and 3.9 the characteristic patterns in actual data.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 95,
+      "quote": "Figure 3.9 Empirical Engel Curve for Food (Working Class Budgets, United Kingdom, 1904)",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Board of Trade (United Kingdom), as compiled in Allen & Bowley (1935)",
+    "publication": "Allen, R. G. D., and A. L. Bowley. 1935. Family Expenditures: A Study of Its Variation. London: P. S. King & Son / Staples Press.",
+    "table_or_series_id": "UK Board of Trade 1904 Working Class Family Budgets, as tabulated in Allen & Bowley (1935), Table 1 (absolute food expenditure by income class)",
+    "url": "https://archive.org/details/familyexpenditur0000alle",
+    "frequency": "annual",
+    "units": "Expenditure on Food (shillings per week), 0–35; horizontal axis Average Income in shillings, 0–60",
+    "license": "Crown Copyright (Board of Trade); Allen & Bowley monograph in public domain",
+    "available_through": "Internet Archive scan of Allen & Bowley 1935; original Board of Trade enquiry: Cd. 3864 (1908)",
+    "discontinued": true,
+    "replaced_by": "UK ONS Living Costs and Food Survey (LCF), Family Spending detailed tables — average weekly household expenditure on food by income decile"
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [
+    {
+      "label": "Food expenditure (shillings/week)",
+      "role": "output",
+      "description": "Average weekly food expenditure of working-class households within each income band.",
+      "source": "Allen & Bowley 1935, derived from UK Board of Trade 1904 Cost-of-Living Enquiry"
+    },
+    {
+      "label": "Average weekly income (shillings)",
+      "role": "input",
+      "description": "Mean weekly income within each working-class income band.",
+      "source": "Allen & Bowley 1935"
+    }
+  ],
+  "year_range_book": [
+    1904,
+    1904
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "UK Family Expenditure Survey / Living Costs and Food Survey: average weekly household expenditure on food by income decile",
+      "source": "UK Office for National Statistics, Family Spending publications",
+      "url": "https://www.ons.gov.uk/peoplepopulationandcommunity/personalandhouseholdfinances/expenditure/datasets/familyspendingworkbook1detailedexpenditureandtrends",
+      "units": "£/week food expenditure by income decile (modern); requires deflation if compared to 1904 shillings",
+      "splice_strategy": "none",
+      "concerns": [
+        "Cross-section in 1904 vs cross-section in 2020s — not a splice but a comparison; population coverage and concept of 'food' differ (e.g., eating out treated differently).",
+        "Currency conversion needed (shillings → £); Phase 4 must decide whether to publish as comparable cross-sections."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Fig 3.9 is the absolute-expenditure Engel curve companion to Fig 3.8's share curve; same underlying Board of Trade 1904 sample.",
+    "Source citation in surrounding text is 'Allen and Bowley 1935, 7'; HDARP_SERIES_LINKAGE.json classifies Fig 3.9 as mapping_status='theoretical_no_data' (no chopped-table loaded), but the figure is empirical in concept.",
+    "Stub content_type='time_series' is incorrect — this is a single 1904 cross-section; re-typed to 'cross_sectional'."
+  ],
+  "open_questions": [
+    "Stub content_type was 'time_series'; re-typed to 'cross_sectional'.",
+    "Need to digitise or re-tabulate the underlying Allen & Bowley (1935) figures to obtain the actual (income, food-expenditure) pairs Shaikh used.",
+    "Allen & Bowley URL on Internet Archive should be verified at retrieval time; original 1908 Board of Trade report Cd. 3864 may also be available via BL or HathiTrust."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-a-ch3",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from Shaikh 2016 p. 93 (Allen & Bowley citation) and p. 95 caption. Re-typed time_series → cross_sectional."
+    }
+  ]
+}

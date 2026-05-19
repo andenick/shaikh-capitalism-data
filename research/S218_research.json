@@ -1,0 +1,108 @@
+{
+  "series_id": "S218",
+  "name": "GDP per Capita Richest Four and Poorest Four Countries (Maddison)",
+  "chapter": 2,
+  "figures": [
+    "Fig2.16",
+    "Fig2.17"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S018",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 70,
+      "quote": "Figure 2.16 therefore displays the GDPs per capita of the richest and poorest four countries in the world in 1600, 1700, 1820, and every decade thereafter (appendix 2.1 Data Sources and Methods). A notable feature is the large drop of the poor-country GDP per capita in the postwar period, and again during the neoliberal era (after 1980). Figure 2.17 tracks the corresponding rich-to-poor ratio, which stands at 2.8 in 1600, 3.4 in 1700, 3.8 in 1820, 7.1 in 1900, and 64.2 in 2000.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 765,
+      "quote": "Derived from Maddison (2003, http://www.ggdc.net/maddison/maddison-project/home.htm, Per Capita GDP: PIB par habitant, 1990 International Geary–Khamis dollars). Kuwait, Qutar, and so on were removed from the top four when they show up in 1950, because their inclusion dramatically overstates the average. Venezuela shows up in the top four in 1980, but was removed on grounds of symmetry with Kuwait, even though its effect is small. And regions such as “16 Asians” were used when there was no data on the individual countries.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Angus Maddison / Maddison Project (Groningen Growth and Development Centre)",
+    "publication": "Maddison (2003); Shaikh (2016) Appendix Table 2.1.1 (book p. 766) provides the constructed richest-4 / poorest-4 averages",
+    "table_or_series_id": "Appendix Table 2.1.1: Richest 4 Average / Poorest 4 Average GDP per capita; decennial 1600, 1700, 1820, 1840, 1860, 1880, 1900, 1920, 1940, 1960, 1980, 2000",
+    "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/",
+    "frequency": "decennial (1600, 1700, 1820, then every 20 years)",
+    "units": "1990 International Geary–Khamis dollars per capita",
+    "license": "Maddison Project license (CC BY 4.0 since 2018)",
+    "available_through": "Maddison Project Database (country-level source)",
+    "discontinued": false,
+    "replaced_by": "Maddison Project Database 2023 — ranking must be recomputed because identities of richest/poorest change with revisions"
+  },
+  "construction": "formula",
+  "formula": "richest4_avg[t] = mean(top 4 country GDP/cap at t, excluding Kuwait/Qatar/Venezuela per Shaikh's adjustment); poorest4_avg[t] = mean(bottom 4); ratio[t] = richest4_avg[t] / poorest4_avg[t]",
+  "components": [
+    {
+      "label": "Maddison (2003) country-level GDP per capita panel",
+      "period": [
+        1600,
+        2000
+      ]
+    },
+    {
+      "label": "Shaikh-defined exclusions: Kuwait, Qatar, Venezuela from top 4",
+      "period": [
+        1950,
+        2000
+      ]
+    },
+    {
+      "label": "Regional aggregates ('15 Latin American', '16 Asian', etc.) used where no country-level data exists",
+      "period": [
+        1600,
+        1900
+      ]
+    }
+  ],
+  "year_range_book": [
+    1600,
+    2000
+  ],
+  "year_range_extension": [
+    2001,
+    2022
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "Maddison Project Database 2023 — recompute Richest 4 / Poorest 4 with same exclusion rule",
+      "source": "Bolt & van Zanden (2024)",
+      "url": "https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-project-database-2023",
+      "units": "2011 International dollars (base year change)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Anu-framework no-lazy-splice: must recompute the rankings from country panel, not splice averages.",
+        "Shaikh's exclusion rule (Kuwait/Qatar/Venezuela) must be reapplied; modern data may also need exclusions for Macao, Luxembourg, etc. — document any new exclusions in the EPR.",
+        "Base year change from 1990 GK to 2011 PPP affects levels; for the ratio it should not matter (numerator and denominator scale together)."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Formula series: averages over a re-ranked country panel each decade, with explicit Shaikh exclusion rule for oil-rich outliers.",
+    "Appendix Table 2.1.1 (book p. 766) lists the actual top-4 and bottom-4 country identities by year — invaluable cross-check.",
+    "Figs 2.16 and 2.17 share the same underlying computation (Fig 2.17 is just the ratio of the two means).",
+    "Ratio values per book p. 70: 2.8 (1600), 3.4 (1700), 3.8 (1820), 7.1 (1900), 64.2 (2000)."
+  ],
+  "open_questions": [
+    "Note typo in original Appendix 2.1: 'Qutar' should be 'Qatar' (book p. 765) — preserved verbatim in quote.",
+    "Maddison Project 2023 may produce different country identities in the top/bottom 4; future replications must document changes.",
+    "CD2 had no dedicated S018 dossier (S017 covered all three figures jointly); this is a fresh dossier."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

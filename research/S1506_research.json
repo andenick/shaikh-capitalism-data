@@ -1,0 +1,101 @@
+{
+  "series_id": "S1506",
+  "name": "Classical and Conventional Phillips-Type Curves, 1948-1981",
+  "chapter": 15,
+  "figures": [
+    "Fig15.8"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S084",
+    "cd2_id": "S084"
+  },
+  "book_quotes": [
+    {
+      "chapter": 15,
+      "page": 708,
+      "quote": "The contrast between the classical and conventional Phillips curves becomes even starker when we look separately at the pre- and post-neoliberal eras of 1948-1981 and 1982-2010, respectively.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 708,
+      "quote": "Figure 15.8 Classical and Conventional Phillip-Type Curves, 1948-1981",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 15,
+      "page": 896,
+      "quote": "Figures 15.7-15.9: pi, 1 - sigma, uL",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Composite: BEA NIPA + BLS",
+    "publication": "Same as S1505 (Inflation pi from BEA NIPA T1.1.4; sigma from BEA T5.3.5 / T1.16; uL from BLS)",
+    "table_or_series_id": "Subset of S1505 series, restricted to years 1948-1981 (pre-Volcker / pre-neoliberal era)",
+    "url": "https://www.bea.gov/itable/national-gdp-and-personal-income",
+    "frequency": "annual",
+    "units": "Rate (decimal)",
+    "license": "U.S. Government work, public domain",
+    "available_through": "ShaikhChoppedTables/Appendix15_USInflation.xlsx and Appendix14_InflationULdata.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Sub-period restriction of S1505 to 1948-1981. Variables: pi, (1 - sigma'), uL.",
+  "components": [
+    {
+      "label": "Inflation rate (pi), 1948-1981",
+      "source": "BEA NIPA T1.1.4 % change in GDP deflator"
+    },
+    {
+      "label": "Growth-utilization rate (sigma), 1948-1981",
+      "source": "BEA NIPA T5.3.5 line 2 / T1.16 line 2 (Handfas 2012)"
+    },
+    {
+      "label": "Unemployment rate (uL), 1948-1981",
+      "source": "BLS via Appendix 14.2"
+    }
+  ],
+  "year_range_book": [
+    1948,
+    1981
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "Same as S1505; this sub-period series will not be re-extended (historical break)",
+      "source": "BEA + BLS",
+      "url": "https://fred.stlouisfed.org/series/GDPDEF",
+      "units": "Rate (decimal)",
+      "splice_strategy": "none",
+      "concerns": [
+        "This series is defined as a historical sub-period for analytical contrast; no forward extension is meaningful."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Pre-neoliberal sub-period of S1505 — same data, restricted to 1948-1981.",
+    "Shaikh argues this period shows a clear downward-sloping classical curve and is the period in which Phillips's original empirical relation roughly held.",
+    "Endpoint 1981 chosen as the last year before the Volcker-shock-initiated regime change (1982+ becomes Fig 15.9 = S1507).",
+    "CD2 predecessor S084 ported."
+  ],
+  "open_questions": [
+    "None additional beyond S1505's open questions."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch15",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S084 ported; quotes verified against PDF p.708 and Appendix 15.1 p.896"
+    }
+  ]
+}

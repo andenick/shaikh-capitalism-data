@@ -1,0 +1,1000 @@
+{
+  "schema_version": "rscd-correspondence-v1.0",
+  "generated_at": "2026-05-18T12:30:00+00:00",
+  "description": "For each new RSCD series ID, the corresponding predecessor IDs in CD and CD2.",
+  "by_rscd_id": {
+    "S201": {
+      "name": "US Industrial Production Index",
+      "chapter": 2,
+      "cd_id": "S001",
+      "cd2_id": "S001",
+      "status": "mapped"
+    },
+    "S202": {
+      "name": "US Real Investment",
+      "chapter": 2,
+      "cd_id": "S002",
+      "cd2_id": "S002",
+      "status": "mapped"
+    },
+    "S203": {
+      "name": "US GDP (MeasuringWorth)",
+      "chapter": 2,
+      "cd_id": "S003",
+      "cd2_id": "S003",
+      "status": "mapped"
+    },
+    "S204": {
+      "name": "Ayres Business Cycle Index",
+      "chapter": 2,
+      "cd_id": "S004",
+      "cd2_id": "S004",
+      "status": "mapped"
+    },
+    "S205": {
+      "name": "Business Cycles, 1867–1902",
+      "chapter": 2,
+      "cd_id": "S005",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S206": {
+      "name": "Business Cycles, 1903–1939",
+      "chapter": 2,
+      "cd_id": "S006",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S207": {
+      "name": "Manufacturing Productivity and Real Wages",
+      "chapter": 2,
+      "cd_id": "S007",
+      "cd2_id": "S007",
+      "status": "mapped"
+    },
+    "S208": {
+      "name": "Manufacturing Real Compensation",
+      "chapter": 2,
+      "cd_id": "S008",
+      "cd2_id": "S008",
+      "status": "mapped"
+    },
+    "S209": {
+      "name": "US Unemployment Rate",
+      "chapter": 2,
+      "cd_id": "S009",
+      "cd2_id": "S009",
+      "status": "mapped"
+    },
+    "S210": {
+      "name": "Gold Prices and Wholesale Price Indexes (Source Table)",
+      "chapter": 2,
+      "cd_id": "S010",
+      "cd2_id": "S010",
+      "status": "mapped"
+    },
+    "S211": {
+      "name": "US and UK Wholesale Price Indexes, 1780–1940 (1930 = 100, Log Scale)",
+      "chapter": 2,
+      "cd_id": "S011",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S212": {
+      "name": "US and UK Wholesale Prices in Ounces of Gold, 1790–2010 (1930 = 100, Log Scale)",
+      "chapter": 2,
+      "cd_id": "S012",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S213": {
+      "name": "Final Profit Rate Measures",
+      "chapter": 2,
+      "cd_id": "S013",
+      "cd2_id": "S013",
+      "status": "mapped"
+    },
+    "S214": {
+      "name": "Average Rates of Profit in US Manufacturing 1960–1989",
+      "chapter": 2,
+      "cd_id": "S014",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S215": {
+      "name": "Incremental Rates of Profit in US Manufacturing 1960–1989",
+      "chapter": 2,
+      "cd_id": "S015",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S216": {
+      "name": "Normalized Total Prices of Production Profit versus Total Unit Labor Costs, US 1972 (Seventy-One Industries)",
+      "chapter": 2,
+      "cd_id": "S016",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S217": {
+      "name": "GDP per Capita (Maddison)",
+      "chapter": 2,
+      "cd_id": "S017",
+      "cd2_id": "S017",
+      "status": "mapped"
+    },
+    "S218": {
+      "name": "GDP per Capita Richest Four and Poorest Four Countries, International Geary–Khamis Dollars (Log Scale)",
+      "chapter": 2,
+      "cd_id": "S018",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S501": {
+      "name": "US and UK Wholesale Price Indexes, 1790-1940",
+      "chapter": 5,
+      "cd_id": "S022",
+      "cd2_id": "S022",
+      "status": "mapped"
+    },
+    "S502": {
+      "name": "US and UK Wholesale Price Indexes, 1790-2010",
+      "chapter": 5,
+      "cd_id": "S023",
+      "cd2_id": "S023",
+      "status": "mapped"
+    },
+    "S503": {
+      "name": "UK WPI in Gold and UK Gold Price",
+      "chapter": 5,
+      "cd_id": "S024",
+      "cd2_id": "S024",
+      "status": "mapped"
+    },
+    "S504": {
+      "name": "US WPI in Gold and US Gold Price",
+      "chapter": 5,
+      "cd_id": "S025",
+      "cd2_id": "S025",
+      "status": "mapped"
+    },
+    "S601": {
+      "name": "Corporate and Non-Corporate Profit Rates",
+      "chapter": 6,
+      "cd_id": "S026",
+      "cd2_id": "S026",
+      "status": "mapped"
+    },
+    "S602": {
+      "name": "Corrected vs Conventional Corporate Profitability",
+      "chapter": 6,
+      "cd_id": "S027",
+      "cd2_id": "S027",
+      "status": "mapped"
+    },
+    "S603": {
+      "name": "Component Ratios x1, x2, x3",
+      "chapter": 6,
+      "cd_id": "S028",
+      "cd2_id": "S028",
+      "status": "mapped"
+    },
+    "S604": {
+      "name": "Corporate Incremental Rate of Profit (IROP)",
+      "chapter": 6,
+      "cd_id": "S105",
+      "cd2_id": "S105",
+      "status": "mapped"
+    },
+    "S701": {
+      "name": "Figure 7.11 Change in Selling Price versus Change in Unit Labor Cost, US 1923-1950 (Ratio of Each Variable in 1950 to its 1923 Value)",
+      "chapter": 7,
+      "cd_id": "S030",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S702": {
+      "name": "Figure 7.12 Change in Selling Price versus Change in Unit Labor Cost, UK 1954-1963 (Ratio of Each Variable in 1963 to its 1954 Value)",
+      "chapter": 7,
+      "cd_id": "S031",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S703": {
+      "name": "Figure 7.13 World Manufacturing Average and Incremental Rates of Profit, 1970-1989",
+      "chapter": 7,
+      "cd_id": "S032",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S704": {
+      "name": "Figure 7.14 US Manufacturing Average and Incremental Rates of Profit, 1960-1989",
+      "chapter": 7,
+      "cd_id": "S033",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S705": {
+      "name": "US Industry Average Rates of Profit",
+      "chapter": 7,
+      "cd_id": "S034",
+      "cd2_id": "S034",
+      "status": "mapped"
+    },
+    "S706": {
+      "name": "US Industry Incremental Rates of Profit",
+      "chapter": 7,
+      "cd_id": "S036",
+      "cd2_id": "S036",
+      "status": "mapped"
+    },
+    "S707": {
+      "name": "OECD Industry IROP Deviations (PPP-adjusted)",
+      "chapter": 7,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S708": {
+      "name": "Figure 7.20 Deviations of Greek Manufacturing Incremental Profit Rates from Average Incremental Rate, 1962-1991",
+      "chapter": 7,
+      "cd_id": "S039",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S801": {
+      "name": "US Long-Run Interest Rates and Prices",
+      "chapter": 8,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S802": {
+      "name": "Percentage of Prices Increases or No Decreases during Contractions, in Relation to Concentration",
+      "chapter": 8,
+      "cd_id": "S043",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S803": {
+      "name": "Interest Rates, Prices, and Equity Data",
+      "chapter": 8,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S804": {
+      "name": "Rate of Profit on Assets (%)",
+      "chapter": 8,
+      "cd_id": "S044",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S805": {
+      "name": "Rates of Return and Concentration (CR4), 1963 and 1969",
+      "chapter": 8,
+      "cd_id": "S045",
+      "cd2_id": null,
+      "status": "mapped"
+    },
+    "S901": {
+      "name": "Market Prices vs Direct Prices, 71 Industries",
+      "chapter": 9,
+      "cd_id": "S047",
+      "cd2_id": "S047",
+      "status": "mapped"
+    },
+    "S902": {
+      "name": "Integrated Output-Capital Ratios and Standard Prices",
+      "chapter": 9,
+      "cd_id": "S048",
+      "cd2_id": "S048",
+      "status": "mapped"
+    },
+    "S903": {
+      "name": "Actual Wage-Profit Curves",
+      "chapter": 9,
+      "cd_id": "S049",
+      "cd2_id": "S049",
+      "status": "mapped"
+    },
+    "S1001": {
+      "name": "Bank vs Private Industry IROP",
+      "chapter": 10,
+      "cd_id": "S050",
+      "cd2_id": "S050",
+      "status": "mapped"
+    },
+    "S1002": {
+      "name": "Interest Rate and Price Level",
+      "chapter": 10,
+      "cd_id": "S052",
+      "cd2_id": "S052",
+      "status": "mapped"
+    },
+    "S1003": {
+      "name": "Relative Price of Finance",
+      "chapter": 10,
+      "cd_id": "S053",
+      "cd2_id": "S053",
+      "status": "mapped"
+    },
+    "S1004": {
+      "name": "Real Interest Rate HP-filtered",
+      "chapter": 10,
+      "cd_id": "S054",
+      "cd2_id": "S054",
+      "status": "mapped"
+    },
+    "S1005": {
+      "name": "Dividend Yield vs Bond Yield",
+      "chapter": 10,
+      "cd_id": "S055",
+      "cd2_id": "S055",
+      "status": "mapped"
+    },
+    "S1006": {
+      "name": "Bond and Equity Returns",
+      "chapter": 10,
+      "cd_id": "S056",
+      "cd2_id": "S056",
+      "status": "mapped"
+    },
+    "S1007": {
+      "name": "Equity Rate vs Corporate IROP",
+      "chapter": 10,
+      "cd_id": "S057",
+      "cd2_id": "S057",
+      "status": "mapped"
+    },
+    "S1008": {
+      "name": "Actual vs Warranted Stock Price",
+      "chapter": 10,
+      "cd_id": "S059",
+      "cd2_id": "S059",
+      "status": "mapped"
+    },
+    "S1101": {
+      "name": "Trade Balances in Major Countries",
+      "chapter": 11,
+      "cd_id": "S060",
+      "cd2_id": "S060",
+      "status": "mapped"
+    },
+    "S1102": {
+      "name": "Real Effective Exchange Rates (PPI), US and Japan",
+      "chapter": 11,
+      "cd_id": "S061",
+      "cd2_id": "S061",
+      "status": "mapped"
+    },
+    "S1103": {
+      "name": "Law of One Price at Aggregate Level, US and Japan",
+      "chapter": 11,
+      "cd_id": "S062",
+      "cd2_id": "S062",
+      "status": "mapped"
+    },
+    "S1104": {
+      "name": "US Balance of Trade, Real Exchange Rate, Relative GDP",
+      "chapter": 11,
+      "cd_id": "S063",
+      "cd2_id": "S063",
+      "status": "mapped"
+    },
+    "S1401": {
+      "name": "Nominal GDP Growth and Level of Wage Share",
+      "chapter": 14,
+      "cd_id": "S068",
+      "cd2_id": "S068",
+      "status": "mapped"
+    },
+    "S1402": {
+      "name": "Unemployment Measures US 1948-2011",
+      "chapter": 14,
+      "cd_id": "S069",
+      "cd2_id": "S069",
+      "status": "mapped"
+    },
+    "S1403": {
+      "name": "Wage Share vs Unemployment Intensity",
+      "chapter": 14,
+      "cd_id": "S070",
+      "cd2_id": "S070",
+      "status": "mapped"
+    },
+    "S1404": {
+      "name": "Rate of Change of Wage Share vs Unemployment Intensity",
+      "chapter": 14,
+      "cd_id": "S071",
+      "cd2_id": "S071",
+      "status": "mapped"
+    },
+    "S1405": {
+      "name": "HP-Filtered Wage Share Growth vs Unemployment Intensity",
+      "chapter": 14,
+      "cd_id": "S072",
+      "cd2_id": "S072",
+      "status": "mapped"
+    },
+    "S1406": {
+      "name": "Inflation and Productivity Growth",
+      "chapter": 14,
+      "cd_id": "S073",
+      "cd2_id": "S073",
+      "status": "mapped"
+    },
+    "S1407": {
+      "name": "HP-Filtered Real Wage Growth vs Unemployment Intensity",
+      "chapter": 14,
+      "cd_id": "S074",
+      "cd2_id": "S074",
+      "status": "mapped"
+    },
+    "S1408": {
+      "name": "HP-Filtered Nominal Wage Growth vs Unemployment Intensity",
+      "chapter": 14,
+      "cd_id": "S075",
+      "cd2_id": "S075",
+      "status": "mapped"
+    },
+    "S1501": {
+      "name": "Consumer Price Level, US, 1774-2011",
+      "chapter": 15,
+      "cd_id": "S076",
+      "cd2_id": "S076",
+      "status": "mapped"
+    },
+    "S1502": {
+      "name": "Growth Rates of Real Output, US Major Industries (Part 1)",
+      "chapter": 15,
+      "cd_id": "S077",
+      "cd2_id": "S077",
+      "status": "mapped"
+    },
+    "S1503": {
+      "name": "Growth Rates of Real Output, US Major Industries (Part 2)",
+      "chapter": 15,
+      "cd_id": "S078",
+      "cd2_id": "S078",
+      "status": "mapped"
+    },
+    "S1504": {
+      "name": "Growth of Nominal GDP and Relative New Purchasing Power",
+      "chapter": 15,
+      "cd_id": "S079",
+      "cd2_id": "S079",
+      "status": "mapped"
+    },
+    "S1505": {
+      "name": "Classical and Conventional Phillips-Type Curves, 1948-2010",
+      "chapter": 15,
+      "cd_id": "S083",
+      "cd2_id": "S083",
+      "status": "mapped"
+    },
+    "S1506": {
+      "name": "Classical and Conventional Phillips-Type Curves, 1948-1981",
+      "chapter": 15,
+      "cd_id": "S084",
+      "cd2_id": "S084",
+      "status": "mapped"
+    },
+    "S1507": {
+      "name": "Classical and Conventional Phillips-Type Curves, 1982-2010",
+      "chapter": 15,
+      "cd_id": "S085",
+      "cd2_id": "S085",
+      "status": "mapped"
+    },
+    "S1508": {
+      "name": "World Inflation vs Growth of Private and Public Credit, 1970-1988",
+      "chapter": 15,
+      "cd_id": "S088",
+      "cd2_id": "S088",
+      "status": "mapped"
+    },
+    "S1509": {
+      "name": "World Inflation vs Growth of Total Credit, 1988-2011",
+      "chapter": 15,
+      "cd_id": "S089",
+      "cd2_id": "S089",
+      "status": "mapped"
+    },
+    "S1601": {
+      "name": "US and UK Golden Waves, 1786-2010",
+      "chapter": 16,
+      "cd_id": "S093",
+      "cd2_id": "S093",
+      "status": "mapped"
+    },
+    "S1602": {
+      "name": "Hourly Real Wages and Productivity, US Business Sector",
+      "chapter": 16,
+      "cd_id": "S095",
+      "cd2_id": "S095",
+      "status": "mapped"
+    },
+    "S1603": {
+      "name": "US and OECD Short-Term Interest Rates",
+      "chapter": 16,
+      "cd_id": "S098",
+      "cd2_id": "S098",
+      "status": "mapped"
+    },
+    "S1604": {
+      "name": "Net Average and Real Incremental Rates of Profit",
+      "chapter": 16,
+      "cd_id": "S099",
+      "cd2_id": "S099",
+      "status": "mapped"
+    },
+    "S1605": {
+      "name": "Household Debt-to-Income Ratio",
+      "chapter": 16,
+      "cd_id": "S100",
+      "cd2_id": "S100",
+      "status": "mapped"
+    },
+    "S1606": {
+      "name": "Household Debt-Service Ratio",
+      "chapter": 16,
+      "cd_id": "S101",
+      "cd2_id": "S101",
+      "status": "mapped"
+    },
+    "S1701": {
+      "name": "IRS 2011 Income Distribution — Full Table",
+      "chapter": 17,
+      "cd_id": "S102",
+      "cd2_id": "S102",
+      "status": "mapped"
+    },
+    "S1702": {
+      "name": "Personal Income Distribution below $200,000, Cumulative Probability from Above",
+      "chapter": 17,
+      "cd_id": "S103",
+      "cd2_id": "S103",
+      "status": "mapped"
+    },
+    "S1703": {
+      "name": "Personal Income Distribution above $200,000, Cumulative Probability from Above",
+      "chapter": 17,
+      "cd_id": "S104",
+      "cd2_id": "S104",
+      "status": "mapped"
+    },
+    "S301": {
+      "name": "Change in expenditure relative to change in income, Case I",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S302": {
+      "name": "Expenditure Share of Necessaries, Case I",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S303": {
+      "name": "Engel Curve of Necessaries, Case I",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S304": {
+      "name": "Discretionary Propensity to Consume, Case II",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S305": {
+      "name": "Engel Curve of Necessaries, Case II",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S306": {
+      "name": "Empirical Expenditure Share on Food (Working Class Budgets, United Kingdom, 1904)",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S307": {
+      "name": "Empirical Engel Curve for Food (Working Class Budgets, United Kingdom, 1904)",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S308": {
+      "name": "Necessary Good (x1) Demand Curves, Four Different Micro Foundations",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S309": {
+      "name": "Luxury Good (x2) Demand Curves, Four Different Micro Foundations",
+      "chapter": 3,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S401": {
+      "name": "Average and Marginal Costs with Wage Paid per Worker, at Normal Intensity for 8-Hour Shifts up to Engineering Capacity (Two and a Half Shifts)",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S402": {
+      "name": "Average and Marginal Costs with Wage Paid per Hour, at Normal Intensity for 8-Hour Shifts up to Engineering Capacity (Two and a Half Shifts)",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S403": {
+      "name": "Total Profit with Different Wage Arrangements, at Normal Intensity for 8-Hour Shifts up to Engineering Capacity (Two and a Half Shifts)",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S404": {
+      "name": "Automotive Unit Labor Cost",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S405": {
+      "name": "Automotive Marginal Labor Cost",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S406": {
+      "name": "Automotive Average Cost",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S407": {
+      "name": "Automotive Marginal Cost",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S408": {
+      "name": "Cost Curves Chosen by 94% of Business People Surveyed",
+      "chapter": 4,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "S1301": {
+      "name": "Actual and Equilibrium Paths of Output",
+      "chapter": 13,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new"
+    },
+    "AS001": {
+      "name": "GDP/GDI Decomposition and Business NOS",
+      "chapter": 6,
+      "cd_id": null,
+      "cd2_id": "S206",
+      "status": "mapped"
+    },
+    "AS002": {
+      "name": "Wage Equivalent and Corporate/Noncorporate Split",
+      "chapter": 6,
+      "cd_id": null,
+      "cd2_id": "S207",
+      "status": "mapped"
+    },
+    "AS003": {
+      "name": "Imputed Interest Adjustment and Sectoral Profit Rates",
+      "chapter": 6,
+      "cd_id": null,
+      "cd2_id": "S208",
+      "status": "mapped"
+    },
+    "AS004": {
+      "name": "GPIM Corporate Capital Stock",
+      "chapter": 6,
+      "cd_id": null,
+      "cd2_id": "S209",
+      "status": "mapped"
+    },
+    "AS005": {
+      "name": "GPIM Variant — BEA 2011 Initial Value",
+      "chapter": 6,
+      "cd_id": null,
+      "cd2_id": "S210",
+      "status": "mapped"
+    },
+    "AS006": {
+      "name": "GPIM Variant — BEA 1993 vs 2011",
+      "chapter": 6,
+      "cd_id": null,
+      "cd2_id": "S211",
+      "status": "mapped"
+    },
+    "AS007": {
+      "name": "GPIM Variant — IRS Adjusted",
+      "chapter": 6,
+      "cd_id": null,
+      "cd2_id": "S212",
+      "status": "mapped"
+    },
+    "AS008": {
+      "name": "GPIM Variant — Interwar Adjusted",
+      "chapter": 6,
+      "cd_id": null,
+      "cd2_id": "S213",
+      "status": "mapped"
+    },
+    "AS009": {
+      "name": "IRS Corporate Inventories and Total Capital Stock",
+      "chapter": 6,
+      "cd_id": null,
+      "cd2_id": "S214",
+      "status": "mapped"
+    },
+    "S709": {
+      "name": "US ROP Deviations from Average",
+      "chapter": 7,
+      "cd_id": "S035",
+      "cd2_id": "S035",
+      "status": "mapped"
+    },
+    "S710": {
+      "name": "US IROP Deviations from Average",
+      "chapter": 7,
+      "cd_id": "S037",
+      "cd2_id": "S037",
+      "status": "mapped"
+    },
+    "S711": {
+      "name": "OECD IROP Deviations from Average",
+      "chapter": 7,
+      "cd_id": "S038",
+      "cd2_id": "S038",
+      "status": "mapped"
+    },
+    "ES2001": {
+      "name": "Shaikh (2020) - An Empirically Sufficient Form for Sraffa Prices",
+      "chapter": null,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new",
+      "external_study_group": 20
+    },
+    "ES2101": {
+      "name": "Shaikh, Coronado, Nassif-Pires (2020) - On the empirical regularities of Sraffa prices",
+      "chapter": null,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new",
+      "external_study_group": 21
+    },
+    "ES2201": {
+      "name": "Shaikh & Jacobo (2020) - Economic Arbitrage and the Econophysics of Income Inequality",
+      "chapter": null,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new",
+      "external_study_group": 22
+    },
+    "ES2301": {
+      "name": "Weber & Shaikh (2020) - The US-China trade imbalance and the theory of free trade",
+      "chapter": null,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new",
+      "external_study_group": 23
+    },
+    "ES2302": {
+      "name": "China Current Account Balance (level USD Bn and % GDP)",
+      "chapter": null,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new",
+      "external_study_group": 23
+    },
+    "ES2303": {
+      "name": "China Official Foreign Exchange Reserves Excluding Gold",
+      "chapter": null,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new",
+      "external_study_group": 23
+    },
+    "ES2304": {
+      "name": "RMB Misalignment Estimates under Extended PPP Approach (literature compilation)",
+      "chapter": null,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new",
+      "external_study_group": 23
+    },
+    "ES2305": {
+      "name": "RMB Misalignment Estimates under Macroeconomic Balance Approach (literature compilation)",
+      "chapter": null,
+      "cd_id": null,
+      "cd2_id": null,
+      "status": "new",
+      "external_study_group": 23
+    }
+  },
+  "by_cd_id": {
+    "S001": "S201",
+    "S002": "S202",
+    "S003": "S203",
+    "S004": "S204",
+    "S005": "S205",
+    "S006": "S206",
+    "S007": "S207",
+    "S008": "S208",
+    "S009": "S209",
+    "S010": "S210",
+    "S011": "S211",
+    "S012": "S212",
+    "S013": "S213",
+    "S014": "S214",
+    "S015": "S215",
+    "S016": "S216",
+    "S017": "S217",
+    "S018": "S218",
+    "S022": "S501",
+    "S023": "S502",
+    "S024": "S503",
+    "S025": "S504",
+    "S026": "S601",
+    "S027": "S602",
+    "S028": "S603",
+    "S105": "S604",
+    "S030": "S701",
+    "S031": "S702",
+    "S032": "S703",
+    "S033": "S704",
+    "S034": "S705",
+    "S036": "S706",
+    "S038": "S711",
+    "S039": "S708",
+    "S042": "S801",
+    "S043": "S802",
+    "S041": "S803",
+    "S044": "S804",
+    "S045": "S805",
+    "S047": "S901",
+    "S048": "S902",
+    "S049": "S903",
+    "S050": "S1001",
+    "S052": "S1002",
+    "S053": "S1003",
+    "S054": "S1004",
+    "S055": "S1005",
+    "S056": "S1006",
+    "S057": "S1007",
+    "S059": "S1008",
+    "S060": "S1101",
+    "S061": "S1102",
+    "S062": "S1103",
+    "S063": "S1104",
+    "S068": "S1401",
+    "S069": "S1402",
+    "S070": "S1403",
+    "S071": "S1404",
+    "S072": "S1405",
+    "S073": "S1406",
+    "S074": "S1407",
+    "S075": "S1408",
+    "S076": "S1501",
+    "S077": "S1502",
+    "S078": "S1503",
+    "S079": "S1504",
+    "S083": "S1505",
+    "S084": "S1506",
+    "S085": "S1507",
+    "S088": "S1508",
+    "S089": "S1509",
+    "S093": "S1601",
+    "S095": "S1602",
+    "S098": "S1603",
+    "S099": "S1604",
+    "S100": "S1605",
+    "S101": "S1606",
+    "S102": "S1701",
+    "S103": "S1702",
+    "S104": "S1703",
+    "S035": "S709",
+    "S037": "S710"
+  },
+  "by_cd2_id": {
+    "S001": "S201",
+    "S002": "S202",
+    "S003": "S203",
+    "S004": "S204",
+    "S007": "S207",
+    "S008": "S208",
+    "S009": "S209",
+    "S010": "S210",
+    "S013": "S213",
+    "S017": "S217",
+    "S022": "S501",
+    "S023": "S502",
+    "S024": "S503",
+    "S025": "S504",
+    "S026": "S601",
+    "S027": "S602",
+    "S028": "S603",
+    "S105": "S604",
+    "S034": "S705",
+    "S036": "S706",
+    "S038": "S711",
+    "S047": "S901",
+    "S048": "S902",
+    "S049": "S903",
+    "S050": "S1001",
+    "S052": "S1002",
+    "S053": "S1003",
+    "S054": "S1004",
+    "S055": "S1005",
+    "S056": "S1006",
+    "S057": "S1007",
+    "S059": "S1008",
+    "S060": "S1101",
+    "S061": "S1102",
+    "S062": "S1103",
+    "S063": "S1104",
+    "S068": "S1401",
+    "S069": "S1402",
+    "S070": "S1403",
+    "S071": "S1404",
+    "S072": "S1405",
+    "S073": "S1406",
+    "S074": "S1407",
+    "S075": "S1408",
+    "S076": "S1501",
+    "S077": "S1502",
+    "S078": "S1503",
+    "S079": "S1504",
+    "S083": "S1505",
+    "S084": "S1506",
+    "S085": "S1507",
+    "S088": "S1508",
+    "S089": "S1509",
+    "S093": "S1601",
+    "S095": "S1602",
+    "S098": "S1603",
+    "S099": "S1604",
+    "S100": "S1605",
+    "S101": "S1606",
+    "S102": "S1701",
+    "S103": "S1702",
+    "S104": "S1703",
+    "S206": "AS001",
+    "S207": "AS002",
+    "S208": "AS003",
+    "S209": "AS004",
+    "S210": "AS005",
+    "S211": "AS006",
+    "S212": "AS007",
+    "S213": "AS008",
+    "S214": "AS009",
+    "S035": "S709",
+    "S037": "S710"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "series_id": "S214",
+  "name": "Average Rates of Profit in US Manufacturing, 1960–1989",
+  "chapter": 2,
+  "figures": [
+    "Fig2.12"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S014",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 66,
+      "quote": "Figure 2.12 depicts the average profit rates of sectors within US manufacturing, with the heavy line representing that of the manufacturing sector as a whole (chapter 7 and appendix 7.1). We can see that turbulence is normal to profitability.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 764,
+      "quote": "Figure 2.12 Average Rates of Profit in US Manufacturing, 1960–1989. Figure 2.13 Incremental Rates of Profit in US Manufacturing, 1960–1989. Discussed in chapter 7 in relation to figure 7.14. Appendix 7.2 Data Tables for Chapter 7 (available online at http://www.anwarshaikhecon.org/)",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Constructed (Shaikh / Christodoulopoulos) from OECD / BEA industry-level data",
+    "publication": "Shaikh (2016) Chapter 7 and Appendix 7.1; Christodoulopoulos (1995)",
+    "table_or_series_id": "Sectoral USMANAVG + 14 manufacturing sub-sectors (USACHE, USAMAI, USAFOD, USAMNM, USAMIO, USATEX, USABMI, USAMEL, USAWOD, USAMEQ, USAMTR, USAPAP, USABMA, USAMOT)",
+    "url": "https://stats.oecd.org/",
+    "frequency": "annual",
+    "units": "Percent (profit rate)",
+    "license": "Mixed (OECD + BEA public)",
+    "available_through": "Appendix 7.2 data tables (book companion site); OECD STAN",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "r_sector = profit / capital_stock per sector (full definition in Appendix 7.1)",
+  "components": [
+    {
+      "label": "Sectoral profit (numerator) for 15 US manufacturing aggregates",
+      "period": [
+        1960,
+        1989
+      ]
+    },
+    {
+      "label": "Sectoral capital stock (denominator)",
+      "period": [
+        1960,
+        1989
+      ]
+    }
+  ],
+  "year_range_book": [
+    1960,
+    1989
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "OECD STAN sectoral data + BEA GDP-by-industry + Fixed-Asset Tables",
+      "source": "OECD STAN; BEA Industry Accounts",
+      "url": "https://stats.oecd.org/Index.aspx?DataSetCode=STAN",
+      "units": "Billions of dollars (components)",
+      "splice_strategy": "none",
+      "concerns": [
+        "Sectoral codes (USACHE, USAMAI, etc.) follow OECD ISIC — may need crosswalk to NAICS for modern extension. Series is illustrative for 1960–1989 and not central to RSCD's main empirical claims."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Formula series: 15 manufacturing-sector profit rates (14 sub-sectors + USMANAVG aggregate).",
+    "Full methodology in Appendix 7.1 and Christodoulopoulos (1995, 138–140); see also Shaikh (1998b, 395).",
+    "Replication-fidelity series: focus is the 1960–1989 window for which Shaikh's analysis was done."
+  ],
+  "open_questions": [
+    "OECD STAN sector codes have evolved since 1989; building a faithful modern extension requires careful concordance to NAICS that may exceed Phase 3 scope."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "series_id": "S205",
+  "name": "Business Cycles, 1867–1902 (Ayres Index)",
+  "chapter": 2,
+  "figures": [
+    "Fig2.4B"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S005",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 57,
+      "quote": "Figures 2.4A–C are monthly indicators of the cyclical component of business activity, compiled by the Cleveland Trust Company (Ayres 1939, table 9, appendix A, col. 1).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 763,
+      "quote": "Figure 2.4A Business Cycles, 1831–1866. Figure 2.4B Business Cycles, 1867–1902. Figure 2.4C Business Cycles, 1903–1939. From Ayres (1939).",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Cleveland Trust Company (Leonard P. Ayres)",
+    "publication": "Ayres, L. P. (1939). Turning Points in Business Cycles. New York: Macmillan.",
+    "table_or_series_id": "Ayres (1939), table 9, appendix A, col. 1",
+    "url": "https://catalog.hathitrust.org/Record/001141928",
+    "frequency": "monthly",
+    "units": "Percent deviation from trend (cyclical component of business activity)",
+    "license": "Public domain (pre-1964, US publication)",
+    "available_through": "HathiTrust Digital Library",
+    "discontinued": true,
+    "replaced_by": "No modern continuation; NBER macrohistory + BCDB business-cycle dates are the closest analogues."
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [],
+  "year_range_book": [
+    1867,
+    1902
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "No modern continuation — historical-only series",
+      "source": "n/a",
+      "url": "",
+      "units": "",
+      "splice_strategy": "none",
+      "concerns": [
+        "See S204; Ayres index has no modern successor."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Direct port of Ayres (1939) monthly series, 1867–1902 subperiod (Fig 2.4B).",
+    "Same Ayres source as S204 and S206; differs only in plotted year range.",
+    "Caption notes the 1870s “Great Depression” visible in this panel."
+  ],
+  "open_questions": [],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

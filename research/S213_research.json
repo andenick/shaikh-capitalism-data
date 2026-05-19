@@ -1,0 +1,97 @@
+{
+  "series_id": "S213",
+  "name": "US Corporate Rate of Profit, 1947–2011",
+  "chapter": 2,
+  "figures": [
+    "Fig2.11"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S013",
+    "cd2_id": "S013"
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 65,
+      "quote": "Figure 2.11 displays the path of the real US general rate of profit, defined here, in OECD terminology, as the aggregate net operating surplus divided by the net capital stock, both in constant dollars (appendix 6.7). We see that from 1947 to 1982, the US rate of profit falls by more than 45%, and then reverses course thereafter.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 764,
+      "quote": "Figure 2.11 US Corporate Rate of Profit, 1947–2011. Discussed in chapter 16 in relation to figure 16.2. Appendix 16.2 Data Tables for Chapter 16, figure 16.4 (available online at http://www.anwarshaikhecon.org/)",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (NIPA + Fixed Assets)",
+    "publication": "BEA NIPA Table 1.14 (Corporate income); BEA Fixed-Asset Table 4.1 (Current-Cost Net Stock of Private Nonresidential Fixed Assets)",
+    "table_or_series_id": "Derived: Net Operating Surplus (NIPA T1.14 line 18) ÷ Net Capital Stock (FA T4.1)",
+    "url": "https://apps.bea.gov/iTable/?reqid=19",
+    "frequency": "annual",
+    "units": "Ratio (percent)",
+    "license": "Public domain (US federal government)",
+    "available_through": "BEA iTable; Robin BEA mirror (Table_1_14_Corporate_2012_2025.csv, Table_4.1_CurrentCost_Net_1925_2023.csv)",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "r = NOS / K_net (both in constant dollars; see Appendix 6.7 for full methodology)",
+  "components": [
+    {
+      "label": "Net Operating Surplus (Corporate)",
+      "source": "BEA NIPA Table 1.14",
+      "period": [
+        1947,
+        2011
+      ]
+    },
+    {
+      "label": "Net Stock of Private Nonresidential Fixed Assets (current cost)",
+      "source": "BEA Fixed-Asset Table 4.1",
+      "period": [
+        1925,
+        2011
+      ]
+    }
+  ],
+  "year_range_book": [
+    1947,
+    2011
+  ],
+  "year_range_extension": [
+    2012,
+    2025
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA NIPA T1.14 + FA T4.1 (annual updates)",
+      "source": "BEA",
+      "url": "https://apps.bea.gov/iTable/?reqid=19",
+      "units": "Billions of dollars (numerator and denominator both)",
+      "splice_strategy": "none",
+      "concerns": [
+        "Per anu-framework, profit-rate formula must be recomputed from extended NOS and K_net components, not spliced from a published rate series."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Formula series — not a directly observed rate. Defined in OECD terms as NOS/K_net in constant dollars; full methodology in Appendix 6.7 (p. 829ff).",
+    "Same underlying construction appears in Chapter 16 (Fig 16.2) and Appendix 16.2.",
+    "CD2 S013 dossier provides additional component-level detail; predecessor IDs include both cd_id and cd2_id."
+  ],
+  "open_questions": [
+    "Confirm whether 'corporate' here refers strictly to the corporate sector (NIPA T1.14) or the broader nonfinancial business sector — caption says 'Corporate' but Appendix 6.7 may use a different aggregate. Verify before extending."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

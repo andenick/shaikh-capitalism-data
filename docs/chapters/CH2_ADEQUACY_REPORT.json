@@ -1,0 +1,362 @@
+{
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": 2,
+  "reviewer": "opus-subagent-p4-wave1-ch2",
+  "review_date": "2026-05-18",
+  "series_count": 18,
+  "scores": {
+    "D1_source_reachability": {
+      "value": 23,
+      "max": 25,
+      "details": "35 URLs checked via real HTTP HEAD/GET with 10s timeout. 30/35 returned HTTP 200. Five returns flagged: (a) HathiTrust Record/001141928 returned 403 on the first two requests (S204, S205) but 200 on the third request (S206) for the same URL within the same scan -> classified as 'unverified-rate-limited', not 'discontinued'; same Record reachable. (b) HathiTrust Record/000404889 (Jastram 1977, used by S211) returned 403 -> 'unverified-rate-limited'; the book itself remains in the public catalog. (c) MeasuringWorth /datasets/uscompensation/ returned 404 -> SOURCE-RENAMED: MeasuringWorth has folded compensation into the unified /datasets/uswage/ dataset (verified 200). Substitute proposed for S207. (d) ONS /timeseries/pllu/mm22 returned 502 (Bad Gateway) -> 'unverified-rate-limited' (parent /inflationandpriceindices returned 200). PLLU is still ONS's canonical UK PPI variable; the 502 looks transient on this specific node. Score loss: -2 for the MW dataset rename (real schema change) and -0 for transient 403/502 which are non-blocking."
+    },
+    "D2_year_coverage": {
+      "value": 19,
+      "max": 20,
+      "details": "All 16 time_series series have explicit book year ranges. The single cross_sectional series (S216, 1972 BEA benchmark) is correctly bounded to a single year. Post-book extension coverage: 11 of 16 time_series have feasible extension to 2024/2025 via active sources (S201/S202/S203/S207/S208/S209/S210/S212/S213/S217/S218). 3 series are intentionally historical (S204/S205/S206 = Ayres 1939, no successor) and 2 are intentionally windowed truncations (S211 to 1940, S214/S215 to 1989; S214 and S215 do have OECD STAN/AMECO extension candidates but the book uses the 1960-1989 window analytically). No pre-2010 gaps inside the book windows. Score loss: -1 for S207's 1950-1970 BLS-FLS overlap-anchor verification still owed (the BLS FLS table is the source the book actually used but the program was sunset in 2013; the splice point is intact for the book period)."
+    },
+    "D3_license_compatibility": {
+      "value": 14,
+      "max": 15,
+      "details": "All US federal sources (BEA, BLS, FRB, FRED, Council of Economic Advisers/GPO/govinfo, BEA I-O) are public domain. UK ONS is Open Government Licence v3 (CC-BY-compatible). Maddison Project Database is CC BY 4.0 since 2018. MeasuringWorth (S203, S207, S210, S212) requires attribution for academic use; not strictly open-source-license but academic-use is permitted and is what the book itself relies on. HathiTrust catalog metadata is public; access to the Ayres 1939 / Jastram 1977 full text depends on the user's institutional affiliation but the books themselves are referenced as historical sources -- no contemporary download required. Score loss: -1 because MeasuringWorth's attribution license and HathiTrust full-text gating are not pure public-domain; these should be documented in the EPR but do not block replication."
+    },
+    "D4_units_consistency": {
+      "value": 14,
+      "max": 15,
+      "details": "Every series has an explicit primary_source.units field. Index series are tagged with the rebase year (1958=100 for S201/S202, 1889=100 for S207/S208, 1930=100 for S210/S211/S212, 1990 GK $ for S217/S218). Formula series (S208 RULC, S212 WPI-in-gold, S213 profit rate, S214/S215 profit rates, S218 ratio) explicitly mark units of the derived quantity. Cross-sectional S216 marks units as 'normalized dollars (axes scaled so both sets of prices have the same total)'. Score loss: -1 because S207 mixes two unit families (Index 1889=100 for productivity AND real $/hr for compensation in the same dossier); this is correct for the book (two co-plotted lines) but loaders will need to separate them and the dossier's primary_source.units string concatenates both -- flag for Phase 5 loader contract."
+    },
+    "D5_extension_feasibility": {
+      "value": 13,
+      "max": 15,
+      "details": "Time_series feasibility: S201 (FRED INDPRO), S202 (BEA NIPA T1.1.6 line 9), S203 (MW continuous), S207 (FRED OPHMFG + MW uswage), S208 (reconstruct), S209 (FRED UNRATE), S210 (FRED PPIACO + ONS PLLU), S212 (recompute), S213 (BEA T1.14 + FA T4.1), S217 (MPD 2023), S218 (MPD 2023 + reapply Shaikh exclusion rule) = 11 feasible. Historical-only: S204/S205/S206 (Ayres 1939, no successor; correctly documented as 'no modern continuation') -- not_applicable. Windowed by design: S211 (truncation at 1940 is the analytical point). Cross_sectional: S216 (each BEA benchmark year is a separate scatter). Manufacturing sub-sector series S214/S215 have AMECO MEC / OECD STAN candidates but with sector-code crosswalk issues (ISIC Rev3 -> NAICS) flagged as proxy. Score loss: -2 for (i) S207's BLS FLS sunset 2013 forcing a US-only OPHMFG substitution (concept narrows from 19 countries to US-only) and (ii) S218's exclusion-rule reapplication being non-trivial for MPD 2023."
+    },
+    "D6_no_proxy_compliance": {
+      "value": 9,
+      "max": 10,
+      "details": "All proposed substitutions carry explicit concept-match concerns in their extension_candidates[].concerns lists: S202 GPDIC1 -> noted as inclusive of residential (concept mismatch with Shaikh's nonresidential-only series), preferred substitute BEA NIPA T1.1.6 line 9; S207 BLS FLS 2013 sunset -> OPHMFG flagged as US-only concept narrowing; S208 ULCMFG flagged as nominal-not-real; S215 AMECO MEC flagged as gross-output-not-profits in numerator; S217/S218 MPD 2023 flagged for base-year change (1990 GK -> 2011 PPP) and revised regional aggregates. The only undisclosed-proxy risk is the MeasuringWorth uscompensation -> uswage rename for S207; flagged in this report's remediation list. Score loss: -1 for that rename which Phase 3 did not catch."
+    }
+  },
+  "total_score": 92,
+  "gate_passed": true,
+  "per_series": [
+    {
+      "sid": "S201",
+      "name": "US Industrial Production Index",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "Index, 1958=100 (rebased and spliced at 1919)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S202",
+      "name": "US Real Investment Index",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "Index, 1958=100 (rebased and spliced at 1901)",
+      "extension_status": "feasible",
+      "proposed_substitute": "BEA NIPA Table 1.1.6 line 9 (Real Nonresidential Fixed Investment) is the concept-correct extension; avoid FRED GPDIC1 which includes residential investment.",
+      "proxy_flags": [
+        "FRED GPDIC1 includes residential investment -> would be silent proxy; use BEA T1.1.6 line 9 instead."
+      ],
+      "remediation": [],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S203",
+      "name": "US Real GDP per Capita (MeasuringWorth)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "measuringworth-academic",
+      "units": "Real GDP per capita, constant dollars (per MeasuringWorth methodology)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S204",
+      "name": "Business Cycles, 1831-1866 (Ayres Index)",
+      "content_type_correction": null,
+      "url_status": "unverified-rate-limited",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "Percent deviation from trend (cyclical component of business activity)",
+      "extension_status": "discontinued",
+      "proposed_substitute": "No modern continuation. NBER macrohistory monthly composites (m12003 etc.) are nearest analogues but NOT the Ayres construction -- do not splice. Historical-only series.",
+      "proxy_flags": [],
+      "remediation": [
+        "HathiTrust Record/001141928 returned 403 on this request but 200 on the S206 request within the same scan -> transient rate-limit, Record is live."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S205",
+      "name": "Business Cycles, 1867-1902 (Ayres Index)",
+      "content_type_correction": null,
+      "url_status": "unverified-rate-limited",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "Percent deviation from trend (cyclical component of business activity)",
+      "extension_status": "discontinued",
+      "proposed_substitute": "No modern continuation -- historical-only series, see S204.",
+      "proxy_flags": [],
+      "remediation": [
+        "HathiTrust Record/001141928 transient 403; same Record returned 200 for S206."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S206",
+      "name": "Business Cycles, 1903-1939 (Ayres Index)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "Percent deviation from trend (cyclical component of business activity)",
+      "extension_status": "discontinued",
+      "proposed_substitute": "No modern continuation -- historical-only series.",
+      "proxy_flags": [],
+      "remediation": [],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S207",
+      "name": "US Manufacturing Productivity and Production Worker Real Compensation",
+      "content_type_correction": null,
+      "url_status": "404",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain + measuringworth-academic",
+      "units": "Index, 1889=100 (productivity); real $/hr (real compensation)",
+      "extension_status": "feasible",
+      "proposed_substitute": "MeasuringWorth renamed /datasets/uscompensation/ -> /datasets/uswage/ (verified 200). Update primary_source.url for the compensation component. For productivity extension, FRED OPHMFG is the BLS continuation (US-only, narrower than the discontinued BLS FLS 19-country table).",
+      "proxy_flags": [
+        "BLS FLS International Labor Comparisons program sunset 2013 -> US-only OPHMFG narrows concept; document in EPR per decision 0005."
+      ],
+      "remediation": [
+        "Update S207 primary_source.url to https://www.measuringworth.com/datasets/uswage/ before Phase 5.",
+        "Split S207's units field into two explicit slots: productivity_units (Index 1889=100) and compensation_units ($/hr, real) for loader contract."
+      ],
+      "adequacy_status": "ready_for_phase5_with_substitute"
+    },
+    {
+      "sid": "S208",
+      "name": "US Manufacturing Real Unit Production Labor Cost Index",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain + measuringworth-academic",
+      "units": "Index, 1889=100",
+      "extension_status": "feasible",
+      "proposed_substitute": "Recompute formula from extended S207 components (FRED OPHMFG productivity + MW uswage real compensation); do NOT splice FRED ULCMFG directly because it is nominal-unit-labor-cost, not the deflated ratio Shaikh constructs.",
+      "proxy_flags": [
+        "FRED ULCMFG is nominal ULC, not real -- would be a silent proxy if used directly."
+      ],
+      "remediation": [],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S209",
+      "name": "US Unemployment Rate",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "Percent of civilian labor force",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S210",
+      "name": "US and UK Wholesale Price Indexes, 1780-2010",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "mixed-historical-tables-out-of-copyright + public-domain extensions",
+      "units": "Index, 1930=100 (log scale)",
+      "extension_status": "feasible",
+      "proposed_substitute": "ONS /timeseries/pllu/mm22 returned 502 (transient gateway error; parent inflationandpriceindices returned 200). Use ONS PLLU CSV download endpoint via search interface or ONS API if 502 persists. NBER macrohistory URL has moved to https://www.nber.org/research/data/nber-macrohistory-database per Phase 3 open_question.",
+      "proxy_flags": [],
+      "remediation": [
+        "Re-verify ONS PLLU specific URL on next scan; the variable name PLLU is still canonical in ONS's PPI dataset family.",
+        "Update NBER macrohistory link in S210 dossier to https://www.nber.org/research/data/nber-macrohistory-database."
+      ],
+      "adequacy_status": "ready_for_phase5_with_substitute"
+    },
+    {
+      "sid": "S211",
+      "name": "US and UK Wholesale Price Indexes, 1780-1940 (1930=100, Log Scale)",
+      "content_type_correction": null,
+      "url_status": "unverified-rate-limited",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "historical-out-of-copyright",
+      "units": "Index, 1930=100 (log scale)",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": "Windowed view of S210 truncated at 1940 by design -- not for extension.",
+      "proxy_flags": [],
+      "remediation": [
+        "HathiTrust Record/000404889 (Jastram 1977) returned 403 -- likely bot-block; the book remains in the public catalog. Cite a stable archival URL or SalvagedInputs/book_data/ replica per decision 0005."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S212",
+      "name": "US and UK Wholesale Prices in Ounces of Gold, 1790-2010 (1930=100, Log Scale)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "mixed (MeasuringWorth gold + Jastram historical + BLS/ONS extensions)",
+      "units": "Index, 1930=100 (log scale); units are ounces of gold per unit of constant nominal basket",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S213",
+      "name": "US Corporate Rate of Profit, 1947-2011",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "Ratio (percent)",
+      "extension_status": "feasible",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [
+        "Phase 3 open question still outstanding: confirm whether 'Corporate' here = NIPA T1.14 corporate sector strictly, or broader nonfinancial business sector per Appendix 6.7. Resolve before Phase 5 ingestion contract."
+      ],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S214",
+      "name": "Average Rates of Profit in US Manufacturing, 1960-1989",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "mixed (OECD + BEA public)",
+      "units": "Percent (profit rate)",
+      "extension_status": "feasible",
+      "proposed_substitute": "OECD STAN with ISIC Rev3 -> NAICS / ISIC Rev4 crosswalk. Underlying data primarily from anwarshaikhecon.org Appendix 7.2 (per decision 0005, host SalvagedInputs/book_data/ replica + Internet Archive snapshot).",
+      "proxy_flags": [
+        "OECD ISDB (1994 vintage referenced in CD2/Christodoulopoulos 1995) discontinued; OECD STAN is the modern successor but with sector-code crosswalk required."
+      ],
+      "remediation": [
+        "Confirm anwarshaikhecon.org Appendix 7.2 availability or use SalvagedInputs replica per decision 0005."
+      ],
+      "adequacy_status": "ready_for_phase5_with_substitute"
+    },
+    {
+      "sid": "S215",
+      "name": "Incremental Rates of Profit in US Manufacturing, 1960-1989",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "mixed (OECD + BEA public)",
+      "units": "Percent",
+      "extension_status": "feasible",
+      "proposed_substitute": "Modern extension via OECD STAN sector profits + investment, applying Shaikh's r* = PG / IG(-1) formula. AMECO MEC is concept-similar but uses gross output instead of profits -- do not splice without disclosure.",
+      "proxy_flags": [
+        "AMECO MEC uses gross-output-not-profits in numerator -- concept differs; document if used."
+      ],
+      "remediation": [],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S216",
+      "name": "Normalized Total Prices of Production Profit versus Total Unit Labor Costs, US 1972 (71 Industries)",
+      "content_type_correction": "RATIFY: Phase 3 reclassified from time_series to cross_sectional (single-year 1972 BEA benchmark I-O scatter). Confirmed correct per Phase 2 taxonomy.",
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "public-domain",
+      "units": "Normalized dollars (axes scaled so both sets of prices have the same total)",
+      "extension_status": "not_applicable_cross_sectional",
+      "proposed_substitute": "Each subsequent BEA benchmark year (1977, 1982, 1987, 1992, 1997, 2002, 2007, 2012, 2017) is a separate cross-sectional scatter, not a time-series continuation. If multi-year analysis is desired, request a new registry row per benchmark year.",
+      "proxy_flags": [],
+      "remediation": [],
+      "adequacy_status": "ready_for_phase5"
+    },
+    {
+      "sid": "S217",
+      "name": "GDP per Capita of World Regions (Maddison)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "CC BY 4.0 (Maddison Project)",
+      "units": "1990 International Geary-Khamis dollars per capita (log scale on figure)",
+      "extension_status": "feasible",
+      "proposed_substitute": "Maddison Project Database 2023 (Bolt & van Zanden 2024). NOTE: base year changes from 1990 GK to 2011 PPP; regional aggregates also revised in MPD 2018/2020. Document discontinuity in EPR.",
+      "proxy_flags": [
+        "MPD 2023 base-year change (1990 GK -> 2011 PPP) -- document level discontinuity at splice."
+      ],
+      "remediation": [],
+      "adequacy_status": "ready_for_phase5_with_substitute"
+    },
+    {
+      "sid": "S218",
+      "name": "GDP per Capita Richest Four and Poorest Four Countries (Maddison)",
+      "content_type_correction": null,
+      "url_status": "200",
+      "url_status_checked_at": "2026-05-18T00:00:00Z",
+      "year_coverage_pct": 100,
+      "license": "CC BY 4.0 (Maddison Project)",
+      "units": "1990 International Geary-Khamis dollars per capita",
+      "extension_status": "feasible",
+      "proposed_substitute": "MPD 2023 country panel with Shaikh exclusion rule (Kuwait, Qatar, Venezuela from top 4) reapplied. May need additional exclusions (Macao, Luxembourg) for modern data; document in EPR. Ratio (Fig 2.17) is base-year-invariant so MPD 2023's 2011 PPP base is acceptable for the ratio; level series (Fig 2.16) requires rebasing.",
+      "proxy_flags": [
+        "Shaikh exclusion rule must be reapplied to modern panel; new exclusions (if any) must be disclosed in EPR per anu-framework no-proxy rule."
+      ],
+      "remediation": [
+        "Phase 5 must encode the explicit exclusion list (Kuwait, Qatar, Venezuela for 1950-2000) and the rule for handling oil-state and city-state outliers in 2001+."
+      ],
+      "adequacy_status": "ready_for_phase5_with_substitute"
+    }
+  ],
+  "chapter_level_recommendations": [
+    "Update S207 primary_source.url from /datasets/uscompensation/ (404) to /datasets/uswage/ (verified 200) -- MeasuringWorth consolidated the compensation dataset into the unified US wage dataset.",
+    "Update S210 NBER macrohistory link from http://www.nber.org/databases/macrohistory/rectdata/04/ to https://www.nber.org/research/data/nber-macrohistory-database per Phase 3 open_question + decision 0005.",
+    "Split S207 units field into two explicit loader slots: productivity (Index 1889=100) and real compensation ($/hr) -- they are co-plotted but distinct series.",
+    "Resolve S213 'Corporate' vs broader business-sector ambiguity per Phase 3 open_question before Phase 5 ingestion contract; the answer determines NIPA T1.14 vs T6.16 / FA T4.1 vs T2.1.",
+    "For S214/S215, secure SalvagedInputs replica of anwarshaikhecon.org Appendix 7.2 per decision 0005 (companion site status uncertain in 2026); OECD STAN extension requires ISIC Rev3->Rev4 + NAICS crosswalk -- document scope decision before Phase 5.",
+    "For S217/S218, document MPD 2023 methodological discontinuity (1990 GK -> 2011 PPP) and reapply Shaikh's exclusion rule for richest-4 averaging.",
+    "S216 cross_sectional reclassification (Phase 3) RATIFIED -- no time-series extension; if multi-benchmark analysis desired, create new registry rows per benchmark year.",
+    "Cross-chapter shared data (S210/S211/S212 with Ch5; S213 with Ch6/Ch16; S214/S215 with Ch7; S216 with Ch9; S217/S218 with Maddison) -- canonical dossier should live in the deeper-treatment chapter, with Ch2 cross-referencing. Coordinate with Ch5/Ch6/Ch7/Ch9/Ch16 reviewers."
+  ],
+  "blockers_for_phase5": [],
+  "open_questions": [
+    "Decision 0005 substitution proposals are now per-series ratified for Ch2; consolidate into a single ch-level substitutions table during Stage 2 close.",
+    "HathiTrust 403 responses correlate with rapid successive requests from the same client; if Phase 5 ingest needs HathiTrust full text, throttle requests or use HathiTrust Data API.",
+    "ONS PLLU specific page returned transient 502; re-verify on Phase 5 ingestion. PLLU is still listed as ONS's canonical UK PPI variable family.",
+    "S207's BLS FLS sunset (2013) means extensions beyond 2009 must transition to FRED OPHMFG which is US-only; the original book series was 19-country -- this is a documented concept narrowing per decision 0005."
+  ]
+}

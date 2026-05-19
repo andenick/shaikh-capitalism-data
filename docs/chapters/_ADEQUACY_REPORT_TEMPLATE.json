@@ -1,0 +1,44 @@
+{
+  "_template_version": "rscd-adequacy-v1.0",
+  "_template_notes": [
+    "Copy to docs/chapters/CH{N}_ADEQUACY_REPORT.json and populate.",
+    "Score gate: total_score >= 80/100. Below threshold blocks Phase 5.",
+    "url_status values: '200', '301', '404', 'discontinued', 'paywalled', 'offline-archival', 'unverified-rate-limited'",
+    "extension_status values: 'feasible', 'discontinued', 'data_unavailable', 'not_applicable_cross_sectional', 'not_applicable_theoretical'"
+  ],
+  "schema_version": "rscd-adequacy-v1.0",
+  "chapter": null,
+  "reviewer": "",
+  "review_date": "",
+  "series_count": 0,
+  "scores": {
+    "D1_source_reachability": {"value": 0, "max": 25, "details": ""},
+    "D2_year_coverage": {"value": 0, "max": 20, "details": ""},
+    "D3_license_compatibility": {"value": 0, "max": 15, "details": ""},
+    "D4_units_consistency": {"value": 0, "max": 15, "details": ""},
+    "D5_extension_feasibility": {"value": 0, "max": 15, "details": ""},
+    "D6_no_proxy_compliance": {"value": 0, "max": 10, "details": ""}
+  },
+  "total_score": 0,
+  "gate_passed": false,
+  "per_series": [
+    {
+      "sid": "S###",
+      "name": "",
+      "content_type_correction": null,
+      "url_status": "",
+      "url_status_checked_at": "",
+      "year_coverage_pct": null,
+      "license": "",
+      "units": "",
+      "extension_status": "",
+      "proposed_substitute": null,
+      "proxy_flags": [],
+      "remediation": [],
+      "adequacy_status": "ready_for_phase5"
+    }
+  ],
+  "chapter_level_recommendations": [],
+  "blockers_for_phase5": [],
+  "open_questions": []
+}

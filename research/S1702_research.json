@@ -1,0 +1,118 @@
+{
+  "series_id": "S1702",
+  "name": "Personal Income Distribution below $200,000, Cumulative Probability from Above",
+  "chapter": 17,
+  "figures": [
+    "Fig17.2"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": "S103",
+    "cd2_id": "S103"
+  },
+  "book_quotes": [
+    {
+      "chapter": 17,
+      "page": 752,
+      "quote": "An exponential distribution has the property that the natural log of its cumulative probability from above is linear with respect to bin size, which means that if we plot the former on a log scale and the bin size on an arithmetic scale we should get a straight line. Figure 17.2 displays 2011 US Internal Revenue Service (IRS) personal income data on a log-linear scale, and we see that incomes up to $200,000 representing the bottom 97% of the population are close to the theoretical exponential distribution represented by the dashed line (data appendix 17.1).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 17,
+      "page": 752,
+      "quote": "Figure 17.2 Personal Income Distribution below $200,000, Cumulative Probability from Above. Source: US 2011 IRS Data: Log-Linear Scale.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 17,
+      "page": 900,
+      "quote": "For the income distributions in figures 17.2 and 17.3, data on numbers of return within a range of income categories was taken from the US Internal Revenue Service (IRS) Table 1.4: All Returns: Sources of Income, Adjustments, and Tax Items, by Size of Adjusted Gross Income, Tax Year 2011 (https://www.irs.gov/uac/SOI-Tax-Stats-Individual-Income-Tax-Returns-Publication-1304-(Complete-Report)). The IRS data in thousands of US dollars is based on samples. As shown in Appendix 17.2: Data Tables for Chapter 17, the IRS data ranges were converted into bins centered at the midpoint of each range, and the corresponding numbers of returns were expressed as frequencies. The frequencies were in turn cumulated to get the cumulative probability from below and the cumulative probability from above as calculated as 1 minus the cumulative probability from below.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 17,
+      "page": 900,
+      "quote": "Figure 17.2 Personal Income Distribution below $200,000, Cumulative Probability from Above. For incomes below $200,000, the cumulative probability from above was placed on a (natural) log scale while bins were retained on an arithmetic scale. On such as log-linear scale an exponential distribution would yield the straight line displayed in the chart.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Internal Revenue Service, Statistics of Income (IRS SOI) Division",
+    "publication": "IRS Statistics of Income — Individual Income Tax Returns, Publication 1304 (Complete Report), Tax Year 2011",
+    "table_or_series_id": "Table 1.4 — All Returns: Sources of Income, Adjustments, and Tax Items, by Size of Adjusted Gross Income, Tax Year 2011 (filtered to AGI bins below $200,000)",
+    "url": "https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-publication-1304-complete-report",
+    "frequency": "annual",
+    "units": "Cumulative probability from above (dimensionless, on natural-log scale) plotted against bin midpoint in US dollars (arithmetic axis, $0 to $160,000)",
+    "license": "U.S. federal government public domain",
+    "available_through": "SalvagedInputs/book_data/ShaikhChoppedTables/ch17/Appendix17_USIRS2011.csv and IRS SOI archive",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Step 1: bin midpoint = (AGI_lower + AGI_upper) / 2 for each IRS SOI 2011 AGI range. Step 2: frequency_i = number_of_returns_i / sum(number_of_returns). Step 3: CDF_below_i = cumulative sum of frequency from low to high. Step 4: CDF_from_above_i = 1 - CDF_below_i (the survival function). Step 5: filter to bins with midpoint < $200,000 (bottom 97% of returns). Step 6: plot ln(CDF_from_above) vs midpoint on log-linear axes; the dashed reference line is the theoretical exponential distribution Phi(y) = exp(-y / ybar), where ybar = mean of the bottom-97% income data.",
+  "components": [
+    {
+      "label": "IRS SOI 2011 Table 1.4 — Number of Returns by AGI bin",
+      "role": "input",
+      "description": "Count of individual income tax returns within each AGI range, Tax Year 2011, all returns. Pre-binned by the IRS with bins of varying width.",
+      "source": "IRS Publication 1304 (Complete Report), Table 1.4, Tax Year 2011"
+    },
+    {
+      "label": "Bin midpoints (arithmetic)",
+      "role": "derived",
+      "description": "Midpoint of each AGI range used as the horizontal-axis value; for the top open-ended bins the IRS data tables in Appendix 17.2 give a constructed midpoint.",
+      "source": "Shaikh 2016, Appendix 17.1 (p. 900) and Appendix 17.2 Data Tables for Chapter 17"
+    },
+    {
+      "label": "Cumulative probability from above",
+      "role": "derived",
+      "description": "1 minus the cumulative frequency from below, restricted to bin midpoints below $200,000.",
+      "source": "Shaikh 2016, Appendix 17.1 (p. 900)"
+    },
+    {
+      "label": "Theoretical exponential reference line (dashed)",
+      "role": "derived_overlay",
+      "description": "Phi(y) = exp(-y/ybar) where ybar is estimated from a regression of ln(Phi(y)) on y over the bottom-97% data (footnote 3, p. 752).",
+      "source": "Shaikh 2016, p. 752, eq. and footnote 3; cited EPTC literature: Dragulescu and Yakovenko 2001; Silva and Yakovenko 2004; Yakovenko 2007"
+    }
+  ],
+  "year_range_book": [
+    2011,
+    2011
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "Cross-sectional snapshot at a single tax year (2011); no time-series extension applies per Anu Framework rules (extensions only apply to time_series content_type).",
+    "Each subsequent IRS SOI Individual Income Tax Returns publication (Publication 1304) for Tax Year YYYY supports an analogous reconstruction of this figure. The book's choice of 2011 was driven by the most recent complete IRS SOI release available at time of writing.",
+    "The EPTC framework (Yakovenko et al.) underlies the choice of cumulative-probability-from-above on a log axis: an exponential distribution renders as a straight line, so visual deviation diagnoses departures from exponentiality. Shaikh reports a Gini of 0.492 for this 2011 IRS distribution (p. 753), consistent with the theoretical Gini = 0.50 of a pure exponential.",
+    "Bin midpoint construction: standard ranges use arithmetic midpoint; the IRS open-ended top categories (>$1M, >$5M, >$10M) require an assumed upper bound — Appendix 17.2 gives Shaikh's chosen midpoints (e.g., 750,000; 1,750,000; 7,500,000 — matching the CD2 validation values).",
+    "Validation reference values from CD2 (bin midpoint -> cumulative probability from above): 1000 -> 0.044637; 22500 -> 0.070239; 62500 -> 0.130352; 150000 -> 0.101505 (note: these CD2 'reference_values' appear to be the FREQUENCY column FPR017_C3, not the survival function — Phase 4 should reconcile).",
+    "Source data file in salvage: SalvagedInputs/book_data/ShaikhChoppedTables/ch17/Appendix17_USIRS2011.csv (shared with S1701-as-IRS-full-table interpretation and S1703)."
+  ],
+  "open_questions": [
+    "CD2 'reference_values' for S103 appear to mix frequency and survival-function columns; before Phase 5 replication, reconcile against the Appendix 17.2 spreadsheet and confirm which IRS SOI column maps to Figure 17.2's y-axis.",
+    "Confirm Shaikh's chosen midpoints for the top open-ended IRS bins via the Appendix 17.2 spreadsheet — these are crucial for the exponential-fit ybar estimate and hence for the dashed reference line."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-c-ch13-17",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from printed pp. 751-753 (PDF pp. 789-791) and Appendix 17.1 (p. 900 / PDF p. 938). CD2 S103 ported (no JSON dossier existed, but MD doc and registry entry present)."
+    }
+  ]
+}

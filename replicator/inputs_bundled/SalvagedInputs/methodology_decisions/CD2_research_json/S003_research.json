@@ -1,0 +1,39 @@
+{
+  "series_id": "S003",
+  "series_name": "GDP MeasuringWorth",
+  "chapter": 2,
+  "figures": ["Fig 2.3"],
+  "research_date": "2026-03-07",
+  "researcher": "agent",
+  "kb_sources_searched": ["ch18_appendices.md", "ch02_turbulent_trends.md", "appendix_methodology_summary.json"],
+  "entries": [
+    {
+      "entry_type": "methodology_description",
+      "content": "U.S. real GDP from MeasuringWorth.com, covering 1790-2010. MeasuringWorth provides historical GDP estimates in constant dollars, constructed from multiple underlying sources including Kuznets, Balke-Gordon, and official BEA NIPA data where available. The series is used as published without additional splicing; it provides the longest continuous GDP series for the United States.",
+      "source_ref": "Appendix 2.1"
+    },
+    {
+      "entry_type": "source_citation",
+      "content": "MeasuringWorth.com. Gross Domestic Product (GDP) of the United States. Real GDP in constant dollars. Coverage 1780-2000 in original Shaikh data; extension from MeasuringWorth USGDP (2017 dollars) continues through 2024. Same source throughout—direct continuation at splice year.",
+      "source_ref": "MeasuringWorth.com"
+    },
+    {
+      "entry_type": "figure_context",
+      "content": "Fig 2.3 displays U.S. real GDP from 1790 to present using MeasuringWorth data. The chart illustrates long-run economic growth, with exponential expansion after the Civil War and acceleration in the 20th century. Used to establish the trend context for turbulent macro dynamics discussed in Chapter 2.",
+      "source_ref": "Shaikh 2016, Ch. 2"
+    }
+  ],
+  "citations": [
+    {
+      "id": "MeasuringWorth_GDP",
+      "full": "MeasuringWorth. Gross Domestic Product of the United States, 1790-Present. https://www.measuringworth.com/datasets/usgdp/"
+    },
+    {
+      "id": "MeasuringWorth_methods",
+      "full": "MeasuringWorth. Sources and Methods for U.S. GDP. https://www.measuringworth.com/sources.php"
+    }
+  ],
+  "methodology_summary": "S003 uses MeasuringWorth.com real GDP for the United States, 1790-2010. MeasuringWorth synthesizes historical GDP estimates from Kuznets, Balke-Gordon, and BEA NIPA into a single long-run series. No splicing of different sources—single provider throughout. Extension continues from same source (MeasuringWorth USGDP in 2017 dollars) with re-indexing at overlap year.",
+  "known_issues": [],
+  "cross_references": ["Appendix2_MeasuringWorthGDP_1889-2010.csv", "Inputs/API_Data/MeasuringWorth/"]
+}

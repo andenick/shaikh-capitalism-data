@@ -1,0 +1,124 @@
+{
+  "series_id": "S704",
+  "name": "Figure 7.14 US Manufacturing Average and Incremental Rates of Profit, 1960-1989",
+  "chapter": 7,
+  "figures": [
+    "Fig7.14"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S033",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 7,
+      "page": 302,
+      "quote": "Figure 7.14 depicts the annual total and incremental profit rates for US manufacturing alone from the same database for 1960-1989, not smoothed this time. As in the previous case, the rates of profit on total capital exhibit some persistent differences in levels, whereas the incremental rates of profit exhibit considerable crossing.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 856,
+      "quote": "II. Original world and US manufacturing profit rates 1960-1989 (Christodoulopoulos 1995). [...] Figure 7.14 US Manufacturing Average and Incremental Rates of Profit, 1960-1989. The 1994 International Sectoral Database (ISDB) (OECD 1994) contained annual data, now discontinued, from which it was possible to derive measures of gross operating surplus, that is, GDP minus Indirect Business Taxes (net of subsidies) minus Employee Compensation, gross capital stock, and gross investment for various OECD countries.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 301,
+      "quote": "The studies discussed in the next section are compiled from a variety of available databases. Christodoulopoulos (1995) uses the 1994 International Sectoral Database (ISDB) of the OECD, which had data on industry GOS, gross capital stock and gross investment. [...] As we will see, despite such variations in the exact measures, the results are remarkably consistent: incremental rate of profit are strongly equalized while average rates of profit are generally not.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "OECD (data discontinued); Christodoulopoulos (1995) reconstruction",
+    "publication": "OECD International Sectoral Database (ISDB), 1994 vintage, US country subset; computations from George Christodoulopoulos (1995); documented in Shaikh (2008) Appendix 1.",
+    "table_or_series_id": "ISDB 1994 US series: GOS, GKS, GFCF for ~14 US manufacturing sub-industries (USAFOD Food, USATEX Textiles, USAPAP Paper, USACHE Chemicals, USAMNM Nonmetallic Minerals, USABMA, USABMI, USAMAI Machinery, USAMEL Electrical Machinery, USAMEQ Equipment, USAMIO, USAMOT Motor Vehicles, USAMTR, USAWOD Wood; plus USMANAVG aggregate), 1960-1989.",
+    "url": "http://www.anwarshaikhecon.org/",
+    "frequency": "annual",
+    "units": "rate (percent; left panel y-axis -10% to 60% for average ROP, right panel y-axis -20% to 25% for IROP)",
+    "license": "OECD ISDB was licensed OECD data, now discontinued. Shaikh's redistribution via companion site is derivative/academic.",
+    "available_through": "Shaikh companion site http://www.anwarshaikhecon.org/ Appendix 7.2",
+    "discontinued": true,
+    "replaced_by": "BEA GDP-by-Industry tables + BEA Fixed Asset Tables 3.xES are the canonical US replacement (and are what Shaikh used for Figs 7.15-7.18 covering 1987-2005); for direct continuity with ISDB-style world data, OECD STAN is the successor."
+  },
+  "construction": "composite",
+  "formula": "For each US manufacturing sub-industry i and year t: ROP_i,t = GOS_i,t / GKS_i,t-1 ; IROP_i,t = (GOS_i,t - GOS_i,t-1) / GFCF_i,t-1. USMANAVG aggregate computed from sums of GOS, GKS, and GFCF across sub-industries before ratio formation. Annual values plotted unsmoothed (in contrast to Fig 7.13's 3-year centered moving average).",
+  "components": [
+    {
+      "label": "GOS_USA,i,t (US manufacturing sub-industry gross operating surplus)",
+      "source": "OECD ISDB 1994 (discontinued), US national accounts subset, in current USD",
+      "role": "numerator (and source of delta for IROP)"
+    },
+    {
+      "label": "GKS_USA,i,t-1 (US manufacturing sub-industry gross capital stock, lagged)",
+      "source": "OECD ISDB 1994 (discontinued)",
+      "role": "denominator (ROP)"
+    },
+    {
+      "label": "GFCF_USA,i,t-1 (US manufacturing sub-industry gross fixed capital formation, lagged)",
+      "source": "OECD ISDB 1994 (discontinued)",
+      "role": "denominator (IROP)"
+    }
+  ],
+  "year_range_book": [1960, 1989],
+  "year_range_extension": [1987, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA GDP-by-Industry: Value Added, Gross Operating Surplus by NAICS manufacturing sub-industry",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=150&step=2&isuri=1&categories=gdpxind",
+      "units": "billions of current USD",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "BEA GDPbyIndustry uses NAICS post-1997; pre-1997 BEA tables use SIC. ISDB used a different industry schema again - direct splice not feasible. Suggested approach is to extend Shaikh's analysis post-1987 from BEA (as in Figs 7.15-7.18) and present Fig 7.14 as a frozen historical view for 1960-1989.",
+        "Capital stock concept: BEA publishes only NET stock (current cost); ISDB used GROSS stock. Reconstruction would need to recompute gross stock from BEA gross-investment flows + retirement assumptions, breaking comparability."
+      ]
+    },
+    {
+      "subseries_label": "BEA Fixed Asset Tables 3.1ES (current-cost net stock by industry) and 3.7ES (historical-cost investment by industry)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "billions of USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Net vs gross stock concept change; this is the source Shaikh used for Figs 7.15-7.18 (1987-2005) per Appendix 7.1 III, not a literal continuation of Fig 7.14."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Per book p. 302 and Appendix 7.1 II (p. 856, PDF 894), Fig 7.14 is from the same Christodoulopoulos (1995)/OECD ISDB 1994 database as Fig 7.13, restricted to US manufacturing sub-industries, 1960-1989, with raw annual values (no smoothing).",
+    "Two panels: (a) average ROP by sub-industry, y-axis -10% to 60%; (b) incremental ROP by sub-industry, y-axis -20% to 25%. Series codes (USAFOD, USAMNM, etc.) are ISDB internal codes; figure legend (book p. 304 / PDF p. 342) enumerates the full list.",
+    "Shaikh's qualitative interpretation (p. 302): average rates show 'persistent differences in levels' (cross-industry cluster with outliers), while incremental rates show 'considerable crossing' (turbulent equalization). This is the empirical anchor for the chapter's central claim.",
+    "Anti-degradation: do not splice the published ROP/IROP series. Any extension to 1990+ requires switching data source (BEA NAICS post-1987 or OECD STAN), with documented mapping drift; Shaikh himself moves to BEA NAICS for post-1987 in Figs 7.15-7.18.",
+    "CD2 had no S033 dossier; the closest CD2 markdown is S034 (which covers Fig 7.15, not Fig 7.14)."
+  ],
+  "open_questions": [
+    "Locate the Shaikh (2008) Appendix 1 reconstruction (or Christodoulopoulos's underlying dataset) that produces Fig 7.14 specifically. The Appendix 7.2 files in SalvagedInputs (Appendix7_iropdataUSind.xlsx, Appendix7_ropdataUSind.xlsx) are for the 1987-2005 BEA-based analysis (Figs 7.15-7.18), NOT Fig 7.14's 1960-1989 ISDB-based analysis.",
+    "Confirm the exact list of US manufacturing sub-industries displayed (book figure legend shows ~14 codes plus USMANAVG); resolve any code mismatch with ISDB's standard nomenclature.",
+    "Decide whether to digitize Fig 7.14 from the PDF (chart-to-data extraction) as a fallback if Christodoulopoulos's raw data file cannot be located."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-b-ch7",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from book pp. 301-304 and Appendix 7.1 II (book p. 856 / PDF p. 894). Source = OECD ISDB 1994 via Christodoulopoulos (1995), US manufacturing subset 1960-1989, unsmoothed. CD2 had no S033 dossier. Raw data file for Fig 7.14 is not in SalvagedInputs ShaikhChoppedTables - flagged as open question."
+    },
+    {
+      "reviewer": "opus-subagent-batch1-A4-B5",
+      "date": "2026-05-18",
+      "status": "data_unavailable",
+      "notes": "B5 underlying-data search (shared with S703): Christodoulopoulos (1995) NSSR working paper not located. Shaikh (2008) Appendix 1 does not tabulate the US manufacturing sub-industry ISDB series. Marked data_unavailable; full provenance and recovery options at SalvagedInputs/book_data/Reconstructed/Christodoulopoulos_1995_data_unavailable.md. Same Phase 5 recommendation as S703 (include book figure as image; queue for Phase 6 manual digitization)."
+    }
+  ]
+}

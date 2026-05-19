@@ -1,0 +1,93 @@
+{
+  "series_id": "S1005",
+  "name": "Dividend Yield vs Bond Yield",
+  "chapter": 10,
+  "figures": [
+    "Fig10.9"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S055",
+    "cd2_id": "S055"
+  },
+  "book_quotes": [
+    {
+      "chapter": 10,
+      "page": 468,
+      "quote": "Figure 10.9 shows that the dividend yield on equities is generally very different from the long bond yield (which was shown to be equalized with the bank prime rate).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 873,
+      "quote": "The corporate yield is the previously described long bond yield, and the ten-year government bond yield and the dividend yield (calculated as the ratio of dividends to stock prices) are from Shiller (2014) at http://www.econ.yale.edu/~shiller/data.htm, based on his annual long-term data on the S&P composite stock price index from 1871 onward.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Robert Shiller / Yale (online dataset); plus Shaikh composite for corporate bond",
+    "publication": "Shiller (2014) 'long-term stock, bond, interest rate, and consumption data since 1871' (update of Market Volatility 1989, ch.26)",
+    "table_or_series_id": "Shiller annual S&P composite: P (price), D (dividend), 10-year govt bond yield (GS10 historical)",
+    "url": "http://www.econ.yale.edu/~shiller/data.htm",
+    "frequency": "annual",
+    "units": "Percent",
+    "license": "Public (academic/free use)",
+    "available_through": "Shiller's website (ie_data.xls); also bundled in Shaikh Appendix 10.2",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "dividend_yield_t = D_t / P_t; gov10y from Shiller historical series; corp_yield = S1002-A composite long bond",
+  "components": [
+    {"label": "Shiller dividend yield (S&P composite)", "source": "Shiller ie_data.xls, columns D/P"},
+    {"label": "Shiller 10-year US govt bond yield", "source": "Shiller ie_data.xls, GS10 historical reconstruction"},
+    {"label": "Composite corporate long bond yield", "source": "S1002-A"}
+  ],
+  "year_range_book": [1871, 2011],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "Shiller dataset (continuously updated)",
+      "source": "Robert Shiller, Yale",
+      "url": "http://www.econ.yale.edu/~shiller/data.htm",
+      "units": "Percent",
+      "splice_strategy": "none",
+      "concerns": ["Same source, just updated; clean extension"]
+    },
+    {
+      "subseries_label": "10-year Treasury Constant Maturity",
+      "source": "FRED (Board of Governors)",
+      "url": "https://fred.stlouisfed.org/series/GS10",
+      "units": "Percent, annual avg",
+      "splice_strategy": "growth_rate",
+      "concerns": ["Modern GS10 starts 1953; pre-1953 already in Shiller"]
+    },
+    {
+      "subseries_label": "S&P 500 dividend yield",
+      "source": "Multpl.com / S&P Dow Jones Indices",
+      "url": "https://www.multpl.com/s-p-500-dividend-yield",
+      "units": "Percent",
+      "splice_strategy": "none",
+      "concerns": ["Multpl.com mirrors Shiller's data; direct Shiller preferred"]
+    }
+  ],
+  "methodology_notes": [
+    "Three lines on one chart: dividend yield, 10-yr govt bond, corporate long bond.",
+    "Dividend yield computed as D/P (not D/P-lagged); follows Shiller convention.",
+    "Underlying Shiller series extends back to 1871 for S&P composite; pre-1871 not used.",
+    "Footnote 21 (p.468) acknowledges the dividend-bond gap as a 'puzzle' in mainstream finance; Shaikh's classical theory predicts this divergence (equity yields track profit rate, bond yields track bank interest rates)."
+  ],
+  "open_questions": [
+    "Modern extension via Shiller is trivial; main Phase 4 question is whether to harmonize the corporate yield component (S1002-A) to its modern FRED equivalent for the entire panel."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-b-ch10",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S055 ported; Shiller URL verified per Appendix 10.1; corp yield inherited from S1002"
+    }
+  ]
+}

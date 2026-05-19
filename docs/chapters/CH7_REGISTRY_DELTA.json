@@ -1,0 +1,267 @@
+{
+  "_schema": "rscd-registry-delta-v1.0",
+  "_purpose": "Per-series adequacy block to be merged into Technical/series_registry.json by the main thread after Wave 2 closeout.",
+  "chapter": 7,
+  "reviewer": "opus-subagent-p4-wave2-ch7",
+  "review_date": "2026-05-18",
+  "deltas": {
+    "S701": {
+      "content_type": "cross_sectional",
+      "_content_type_note": "Phase 3 dossier reclassified from time_series to cross_sectional; registry still showed time_series. Ratified in Phase 4.",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 8,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Cross-sectional classification ratified",
+          "Salvaged xlsx (Appendix7_SalterULCPriceTable33.xlsx) confirmed present"
+        ],
+        "issues_outstanding": [
+          "Cambridge core URL returns HTTP 500; update primary_source.url to Cambridge search URL or Internet Archive entry"
+        ]
+      }
+    },
+    "S702": {
+      "content_type": "cross_sectional",
+      "_content_type_note": "Same as S701 — Phase 3 reclassification ratified.",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 8,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Cross-sectional classification ratified",
+          "Salvaged xlsx (Appendix7_SalterULCPriceTable28.xlsx) confirmed present"
+        ],
+        "issues_outstanding": [
+          "Same Cambridge URL fix as S701"
+        ]
+      }
+    },
+    "S703": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 6,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "OECD STAN endpoint reachable (stats.oecd.org 200, data-explorer.oecd.org 200)",
+          "ISDB->STAN industry-coverage trade-off documented (IROP-only)"
+        ],
+        "issues_outstanding": [
+          "Christodoulopoulos (1995) raw data not in SalvagedInputs - byte-exact reproduction requires PDF digitization of Fig 7.13",
+          "Concept Match Justification needed in Phase 6 EPR for any STAN-based extension"
+        ]
+      }
+    },
+    "S704": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 6,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "BEA NAICS-based modern equivalent (S705/S706) confirmed as the continuation path",
+          "Anti-degradation rule: 1960-89 ISDB and 1987-2005 BEA NAICS are not splice-compatible"
+        ],
+        "issues_outstanding": [
+          "Christodoulopoulos extract not local - PDF digitization of Fig 7.14 required",
+          "Display-unit clarification: store decimal, display as percent"
+        ]
+      }
+    },
+    "S705": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 8,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "BEA + FRB URLs all reachable HTTP 200",
+          "Appendix7_ropdataUSind.xlsx confirmed present in SalvagedInputs",
+          "All-Private aggregate confirmed as weighted (sum_i PG / sum_i K)"
+        ],
+        "issues_outstanding": [
+          "Shaikh (2008) appendix B 31-industry exclusion list - inspect Appendix7_Documentation.xlsx first; fall back to CD2-inferred reconstruction",
+          "Post-2013 R&D/IP capitalization must be excluded in extension to maintain Shaikh's 2008 capital concept"
+        ]
+      }
+    },
+    "S706": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 8,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "BEA + FRB URLs reachable",
+          "Appendix7_iropdataUSind.xlsx confirmed present",
+          "IROP_avg confirmed as aggregate-before-ratio (methodology-consistent with ROP)",
+          "Raw (un-winsorized) presentation ratified for extension years"
+        ],
+        "issues_outstanding": [
+          "Same Shaikh (2008) appendix B blocker as S705",
+          "Post-2008 volatility regime documentation in any visualization"
+        ]
+      }
+    },
+    "S707": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 6,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Stub mismatch with CD2 S038 RESOLVED: S707 = Greek Mfg ROP (T&T 2011 Fig 4); OECD content lives in S711",
+          "MPRA paper URL reachable HTTP 200"
+        ],
+        "issues_outstanding": [
+          "Tsoulfidis & Tsaliki Greek raw panel not in SalvagedInputs - PDF digitization of T&T 2011 Fig 4 required",
+          "Modern Greek ELSTAT-based exhibit (if pursued) is a separate series, not a splice"
+        ]
+      }
+    },
+    "S708": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 6,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "MPRA paper URL reachable HTTP 200",
+          "T&T vs Shaikh IROP numerator definition difference documented (gross profit vs GOS)"
+        ],
+        "issues_outstanding": [
+          "Same Greek raw-data unavailability as S707 - PDF digitization of T&T 2011 Fig 5 required"
+        ]
+      }
+    },
+    "S709": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 8,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Decision 0004 ratified: S709 closes Phase 2 gap for Fig 7.16",
+          "S705 loader emits S709 as joint output (one-line algebraic transform)",
+          "All-Private aggregate baseline confirmed weighted"
+        ],
+        "issues_outstanding": [
+          "Inherits S705 caveats (Shaikh 2008 appendix B; R&D/IP exclusion in extension)",
+          "Phase 5 plotting must mirror Shaikh's 38-panel small-multiple layout"
+        ]
+      }
+    },
+    "S710": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 8,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Decision 0004 ratified: S710 closes Phase 2 gap for Fig 7.18",
+          "S706 loader emits S710 as joint output",
+          "IROP_avg = aggregate-before-ratio confirmed"
+        ],
+        "issues_outstanding": [
+          "Inherits S706 caveats (Shaikh 2008 appendix B; post-2008 volatility regime)",
+          "Same 38-panel small-multiple plotting requirement as S709"
+        ]
+      }
+    },
+    "S711": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 7,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Decision 0004 ratified: S711 closes Phase 2 gap for Fig 7.21 AND resolves long-standing S707/S038 misalignment",
+          "Appendix7_iropOECDPPP.xlsx VERIFIED PRESENT in SalvagedInputs (Phase 3 open question Q4 resolved)",
+          "OECD STAN 2025 Data Explorer reachable HTTP 200; PWT GGDC reachable HTTP 200",
+          "Aggregate-before-ratio convention confirmed (Appendix 7.1 V.7)"
+        ],
+        "issues_outstanding": [
+          "OECD STAN 2003 -> 2025 country-coverage discontinuity (30 -> 18, excluding Canada and UK) requires Concept Match Justification in Phase 6 EPR",
+          "ISIC Rev3 -> Rev4 industry crosswalk required for any extension; Shaikh's idiosyncratic labels need explicit mapping",
+          "NO WEQ adjustment in OECD construction (book p. 859 V.2) - cross-country comparability gap vs US S705/S706, document in EPR",
+          "PWT 6.2 -> 10.01 methodology evolution - cross-country aggregate effects likely small (CD2 MAE=0.04) but document"
+        ]
+      }
+    }
+  },
+  "url_substitutions": [
+    {
+      "applies_to_series": ["S701", "S702"],
+      "field": "primary_source.url",
+      "old_value": "https://www.cambridge.org/core/books/productivity-and-technical-change/13C6E0F2C6CC5D6E5DAB0F3A1CAA5C28",
+      "new_value": "https://www.cambridge.org/core/search?q=Productivity+and+Technical+Change+Salter",
+      "rationale": "Cambridge core book detail URL returns HTTP 500 (CMS error - book IS in catalog, retrievable via search). Search URL verified HTTP 200. Replication input is local salvaged xlsx; URL is for citation only."
+    },
+    {
+      "applies_to_series": ["S701", "S702", "S703", "S704", "S705", "S706", "S711"],
+      "field": "primary_source.available_through (add Wayback fallback)",
+      "old_value": "http://www.anwarshaikhecon.org/ (DNS failure 2026-05-18)",
+      "new_value": "https://web.archive.org/web/2023/http://www.anwarshaikhecon.org/ (HTTP 200) - canonical Wayback snapshot",
+      "rationale": "anwarshaikhecon.org DNS failure consistent with decision 0005; Wayback snapshot remains accessible as authoritative archive of Shaikh's Appendix 7.2 data tables."
+    },
+    {
+      "applies_to_series": ["S703"],
+      "field": "primary_source.discontinued_substitute_path",
+      "old_value": "OECD ISDB 1994 (not hosted by OECD)",
+      "new_value": "OECD STAN 2025 via Data Explorer https://data-explorer.oecd.org/vis?df[id]=DSD_STAN@DF_STAN_2025 - IROP track only (capital stock too sparse for ROP track); requires ISIC Rev3->Rev4 crosswalk",
+      "rationale": "OECD ISDB 1994 vintage discontinued; OECD STAN 2025 is the canonical successor for industry-level GFCF/GOPS but provides only IROP-compatible coverage (no capital stock). Concept Match Justification required for Phase 6."
+    },
+    {
+      "applies_to_series": ["S711"],
+      "field": "primary_source.discontinued_substitute_path",
+      "old_value": "OECD STAN 2003 vintage (no canonical re-host)",
+      "new_value": "Appendix7_iropOECDPPP.xlsx (local, SalvagedInputs) for 1988-2003 byte-exact; OECD STAN 2025 + PWT 10.01 with ISIC Rev3->Rev4 crosswalk + 30->18 country discontinuity for extension to 2023",
+      "rationale": "STAN 2003 vintage not separately archived by OECD, but Shaikh's pre-computed derivative is in local salvaged inputs. Extension is methodologically continuous per CD2 overlap MAE=0.04."
+    }
+  ],
+  "content_type_corrections": [
+    {
+      "sid": "S701",
+      "old": "time_series",
+      "new": "cross_sectional",
+      "phase": "ratified_in_phase4 (Phase 3 dossier already had correction)"
+    },
+    {
+      "sid": "S702",
+      "old": "time_series",
+      "new": "cross_sectional",
+      "phase": "ratified_in_phase4 (Phase 3 dossier already had correction)"
+    }
+  ],
+  "loader_metadata_to_emit": {
+    "S705": {
+      "joint_outputs": ["S705", "S709"],
+      "industry_exclusion_source": "inferred_from_CD2_S034_and_book_partial_list_if_appendix_B_not_in_SalvagedInputs",
+      "exclude_post_2013_RnD_IP": true,
+      "all_private_aggregate": "weighted_sum_PG_over_sum_K"
+    },
+    "S706": {
+      "joint_outputs": ["S706", "S710"],
+      "iropavg_aggregation": "aggregate_before_ratio",
+      "default_presentation": "raw_unwinsorized",
+      "exclude_post_2013_RnD_IP": true
+    },
+    "S703": {
+      "byte_exact_input": "pdf_digitization_of_Fig_7_13",
+      "extension_track": "OECD_STAN_2025_IROP_only_with_concept_match_justification"
+    },
+    "S704": {
+      "byte_exact_input": "pdf_digitization_of_Fig_7_14",
+      "extension_track": "none (post-1989 US continuation = S705/S706)",
+      "display_units": "store_decimal_display_percent"
+    },
+    "S707": {
+      "byte_exact_input": "pdf_digitization_of_TT2011_Fig_4_from_MPRA",
+      "extension_track": "none (frozen historical exhibit)"
+    },
+    "S708": {
+      "byte_exact_input": "pdf_digitization_of_TT2011_Fig_5_from_MPRA",
+      "extension_track": "none (frozen historical exhibit)",
+      "definition_note": "T&T use delta(gross_profit)/IG; Shaikh in S711 uses delta(GOS)/IG - documented"
+    },
+    "S711": {
+      "byte_exact_input": "Appendix7_iropOECDPPP.xlsx",
+      "extension_track": "OECD_STAN_2025_plus_PWT_10_01_with_ISIC_Rev3_Rev4_crosswalk_and_country_set_documentation",
+      "no_WEQ_adjustment": true,
+      "industry_filter": "3_plus_countries_per_industry",
+      "aggregation": "aggregate_before_ratio_post_PPP_conversion"
+    }
+  }
+}

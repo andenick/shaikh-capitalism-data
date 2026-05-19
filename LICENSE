@@ -1,11 +1,7 @@
-MIT License (Code) + CC-BY-4.0 (Data)
+RSCD — Shaikh 2016 Replication and Extension
 
-This project uses a dual license:
-
-## Code (MIT License)
-
-All Python scripts, library code, and configuration files in Technical/ANU_REPLICATOR/
-are licensed under the MIT License:
+CODE LICENSE: MIT
+=================
 
 Copyright (c) 2026 Nicholas Anderson
 
@@ -27,25 +23,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Data (CC-BY-4.0)
+DATA LICENSE: CC-BY-4.0
+=======================
 
-All data outputs (CSVs, Excel workbooks, JSON files) are licensed under
-Creative Commons Attribution 4.0 International (CC-BY-4.0):
-
+Data outputs in chopped/, extenbooks/, and Outputs/ are licensed under
+Creative Commons Attribution 4.0 International:
 https://creativecommons.org/licenses/by/4.0/
 
 You are free to share and adapt the data for any purpose, provided you give
-appropriate credit, provide a link to the license, and indicate if changes
-were made.
+appropriate credit by citing:
 
-## Attribution
+  Anderson, N. (2026). RSCD: Replication and Extension of Shaikh (2016)
+  "Capitalism: Competition, Conflict, Crises". https://github.com/andenick/rscd
 
-This project replicates and extends data from:
-
-Shaikh, Anwar (2016). *Capitalism: Competition, Conflict, Crises*.
-Oxford University Press. ISBN 978-0199390632.
-
-Original data appendices available at: http://www.anwarshaikhecon.org/
-
-All extension data is drawn from publicly available government statistical
-agencies (FRED, BEA, BLS, World Bank, MeasuringWorth, OECD).
+  Shaikh, A. (2016). Capitalism: Competition, Conflict, Crises. Oxford
+  University Press.

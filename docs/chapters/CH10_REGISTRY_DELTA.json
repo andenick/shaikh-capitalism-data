@@ -1,0 +1,284 @@
+{
+  "schema_version": "rscd-registry-delta-v1.0",
+  "chapter": 10,
+  "generated_by": "opus-subagent-p4-wave2-ch10",
+  "generated_at": "2026-05-18",
+  "applies_to_registry": "Technical/series_registry.json",
+  "operations": [
+    {
+      "sid": "S1001",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 22,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "anwarshaikhecon.org companion-site reachability — RESOLVED as DEAD (DNS does not resolve 2026-05-18, consistent with Ch5 wave-1 finding); local SalvagedInputs copy + IA snapshot 2024-03-11 is the documented fallback per decision 0005.",
+          "Open question 6 (NAICS banking mapping): NAICS 5221 (Depository Credit Intermediation) adopted as primary mapping; NAICS 52 (Finance & Insurance) reported as sensitivity case."
+        ],
+        "issues_outstanding": [
+          "Open question (Phase 3): BEA published net capital stocks vs. Shaikh's appendix-7.2 corrected stock — accept BEA published with Concept Match Justification for Phase 5 first pass."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "http://www.anwarshaikhecon.org/",
+          "to": "file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_Documentation.xlsx",
+          "web_citation": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/"
+        },
+        {
+          "field": "extension_candidates[0].url",
+          "from": "https://www.bea.gov/industry/gdpbyind_data.htm",
+          "to": "https://apps.bea.gov/iTable/?reqid=150",
+          "note": "BEA Industry Economic Accounts moved to apps.bea.gov/iTable; the old /industry/gdpbyind_data.htm 200-redirects there. Use reqid=150 for GDP-by-industry."
+        }
+      ]
+    },
+    {
+      "sid": "S1002",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 22,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "NBER macrohistory m13019.dat reachability — VERIFIED 200 OK (auto-redirects http://www.nber.org -> https://data.nber.org).",
+          "FRED AAA + PPIACO extension series — VERIFIED live via fredgraph.csv programmatic endpoint (HEAD on /series/<id> rate-limits; csv endpoint is reliable).",
+          "Open question 5 (Fig 10.3 short-rate split): RESOLVED — KEEP BUNDLED; render Fig 10.3 multi-line plot at Phase 6 without expanding the registry."
+        ],
+        "issues_outstanding": [
+          "Open question (Phase 3): Jastram-to-BLS-PPI growth-rate splice at 1976/1977 may carry small level discontinuities under BLS WPI methodology revisions 1978/1986; document the splice point and report sensitivity to alternative anchor windows."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "http://www.nber.org/databases/macrohistory/rectdata/13/m13019.dat",
+          "to": "https://data.nber.org/databases/macrohistory/rectdata/13/m13019.dat",
+          "note": "NBER macrohistory redirected to data.nber.org subdomain; update for clarity."
+        },
+        {
+          "field": "extension_candidates[0].url",
+          "from": "https://fred.stlouisfed.org/series/AAA",
+          "to": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=AAA",
+          "note": "Use canonical programmatic download endpoint; /series/AAA HTML page rate-limits scrapers."
+        },
+        {
+          "field": "extension_candidates[1].url",
+          "from": "https://fred.stlouisfed.org/series/PPIACO",
+          "to": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PPIACO",
+          "note": "Use canonical programmatic download endpoint."
+        }
+      ]
+    },
+    {
+      "sid": "S1003",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 22,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "anwarshaikhecon.org reachability — RESOLVED as DEAD; local SalvagedInputs copy + IA snapshot.",
+          "Re-baseline question (Phase 3): KEEP 1947=1 base for replication; 2010-base view is a Phase 6 visualization concern, not a registry change."
+        ],
+        "issues_outstanding": [
+          "Enforce No-Lazy-Splices-on-Derived-Quantities rule in S1003 loader: recompute ratio from extended S1002 components, never splice the ratio itself."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "http://www.anwarshaikhecon.org/",
+          "to": "file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx",
+          "web_citation": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/"
+        },
+        {
+          "field": "extension_candidates[0].url",
+          "from": "https://fred.stlouisfed.org/series/AAA",
+          "to": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=AAA",
+          "note": "Inherit S1002 extension component endpoints."
+        }
+      ]
+    },
+    {
+      "sid": "S1004",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 22,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "anwarshaikhecon.org reachability — RESOLVED as DEAD; local SalvagedInputs copy + IA snapshot.",
+          "Open question 2 (HP filter lambda): produce BOTH lambda=3 (book replication, primary output column) AND lambda=6.25 (Ravn-Uhlig 2002 standard, sensitivity column)."
+        ],
+        "issues_outstanding": [
+          "Open question 1 (Phase 3): HP filter implementation — use two-sided HP filter with default padding; confirm against DATAintropprice sheet values at known intervals before Phase 5 sign-off.",
+          "HP filter endpoint problem on extension: recompute end-to-end on full extended panel; do not splice smoothed trend."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "http://www.anwarshaikhecon.org/",
+          "to": "file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx",
+          "web_citation": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/"
+        }
+      ]
+    },
+    {
+      "sid": "S1005",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 22,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Shiller data.htm + ie_data.xls binary — VERIFIED 200 OK; OLE2 legacy xls format confirmed via binary header.",
+          "Multpl.com mirror — VERIFIED 200 OK as redundant fallback."
+        ],
+        "issues_outstanding": [
+          "Shiller monthly->annual aggregation convention (annual average vs Jan vs end-of-year): confirm at ingestion against DATAintropprice sheet."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.additional_url_for_binary",
+          "from": null,
+          "to": "http://www.econ.yale.edu/~shiller/data/ie_data.xls",
+          "note": "Direct binary download URL for the ie_data.xls workbook; the data.htm landing page links to it."
+        },
+        {
+          "field": "extension_candidates[1].url",
+          "from": "https://fred.stlouisfed.org/series/GS10",
+          "to": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=GS10",
+          "note": "Programmatic endpoint."
+        }
+      ]
+    },
+    {
+      "sid": "S1006",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 21,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Open question 1 (Phase 3): Ibbotson licensing — RESOLVED via decision 0005: Damodaran NYU verified 200 OK 2026-05-18; substituted as the open modern extension source. SalvagedInputs/Appendix10_Ibbotson.xlsx retained as authoritative for 1926-2010 book reproduction.",
+          "Damodaran NYU URL verified: https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html (200 OK)."
+        ],
+        "issues_outstanding": [
+          "Open question 2 (Phase 3): LT Corporate Bond total return for post-2010 extension — Damodaran does not publish this directly. Use AAA-yield + duration reconstruction with Concept Match Justification, OR document Bloomberg US Long Credit Index as paid alternative.",
+          "Add proxy:true flag with Concept Match Justification for the LT Corp Bond reconstruction component."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.agency",
+          "from": "Ibbotson Associates (now Morningstar)",
+          "to": "Damodaran NYU (modern extension) + Ibbotson SBBI 2004 Yearbook (historical 1926-2010 via SalvagedInputs)"
+        },
+        {
+          "field": "primary_source.url",
+          "from": "https://www.morningstar.com/products/ibbotson-sbbi",
+          "to": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html",
+          "note": "Morningstar Ibbotson product page is gated commercial (returned 202 Accepted CDN challenge). Damodaran NYU is the open-license substitute per decision 0005."
+        },
+        {
+          "field": "primary_source.license",
+          "from": "Commercial (Morningstar/Ibbotson SBBI subscription); historical Yearbook reproductions in academic libraries",
+          "to": "Open academic (Damodaran NYU, modern extension) + SalvagedInputs/Appendix10_Ibbotson.xlsx (Ibbotson 2004 Yearbook table 2-2 historical reference)"
+        },
+        {
+          "field": "primary_source.available_through",
+          "from": "ShaikhChoppedTables/Appendix10_Ibbotson.xlsx",
+          "to": "ShaikhChoppedTables/Appendix10_Ibbotson.xlsx (1926-2010 historical) + Damodaran annual update (extension); LT Corp Bond extension component requires AAA-yield reconstruction"
+        },
+        {
+          "field": "extension_candidates[1].url",
+          "from": "https://fred.stlouisfed.org/series/SP500",
+          "to": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500",
+          "note": "Programmatic endpoint; note FRED SP500 is price only, not total return — kept as a fallback price proxy if Damodaran extraction fails."
+        }
+      ]
+    },
+    {
+      "sid": "S1007",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 22,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "BEA NIPA + FRED extension components — VERIFIED live: A006RD3A086NBEA (gross investment deflator, from 1929), W260RC1A027NBEA (nonfinancial NOS, from 1929), apps.bea.gov/iTable 200 OK.",
+          "Shiller ie_data.xls binary — VERIFIED 200 OK.",
+          "anwarshaikhecon.org reachability — RESOLVED as DEAD; local SalvagedInputs copy + IA snapshot."
+        ],
+        "issues_outstanding": [
+          "Open question 1 (Phase 3): exact BEA NIPA line for 'Monetary Interest Paid by Nonfinancial Sector' — pin at Phase 5 ingestion (likely NIPA Table 1.14 or Table 7.11; verify against book values at known years).",
+          "Open question 2 (Phase 3): BEA post-2018 comprehensive revision shifts NOS levels; pin vintage for book replication (pre-2018) and stamp current vintage on extension loader output."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "http://www.anwarshaikhecon.org/",
+          "to": "file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx",
+          "web_citation": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/"
+        },
+        {
+          "field": "extension_candidates[1].url",
+          "from": "https://fred.stlouisfed.org/series/A006RD3A086NBEA",
+          "to": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=A006RD3A086NBEA"
+        },
+        {
+          "field": "extension_candidates[2].url",
+          "from": "https://fred.stlouisfed.org/series/W260RC1A027NBEA",
+          "to": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=W260RC1A027NBEA"
+        }
+      ]
+    },
+    {
+      "sid": "S1008",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 22,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Shiller data.htm + ie_data.xls binary — VERIFIED 200 OK.",
+          "BEA gross investment deflator (FRED A006RD3A086NBEA) — VERIFIED live.",
+          "Open question (Phase 3): footnote-24 initialization — RESOLVED: pin to 1948-2011 mean of preq; extension MUST NOT re-anchor on extended interval (would alter all historical values)."
+        ],
+        "issues_outstanding": [
+          "Open question 2 (Phase 3): Shiller P* methodology version — pin to 2014 (r=7.6%); verify current ie_data.xls P* column matches by spot-check against book values."
+        ]
+      },
+      "url_updates": [
+        {
+          "field": "primary_source.offline_fallback",
+          "from": null,
+          "to": "file:SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx (DATAintropprice sheet)",
+          "note": "Primary URL remains Shiller direct (verified live); add SalvagedInputs DATAintropprice sheet as offline-archival fallback for book replication test anchors."
+        },
+        {
+          "field": "extension_candidates[1].url",
+          "from": "https://fred.stlouisfed.org/series/A006RD3A086NBEA",
+          "to": "https://fred.stlouisfed.org/graph/fredgraph.csv?id=A006RD3A086NBEA"
+        }
+      ]
+    }
+  ],
+  "chapter_recommendations_for_main_thread": [
+    "Apply the eight sets of url_updates above to series_registry.json before Phase 5.",
+    "Append the adequacy block under each of S1001-S1008 (sum of score_contributions = 175; chapter D-dimension total_score = 91/100).",
+    "Promote SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_*.xlsx workbooks (Documentation, Ibbotson, IntroPPrice, USLR) to canonical primary files for the five series that cite anwarshaikhecon.org (S1001, S1003, S1004, S1007, S1008); add IA snapshot 2024-03-11 as web citation. This matches the Ch5 wave-1 ratification of decision 0005 reference guidance.",
+    "Replace Ibbotson Morningstar URL with Damodaran NYU for S1006 modern extension; retain Appendix10_Ibbotson.xlsx as authoritative 1926-2010 historical reproduction.",
+    "Standardize all FRED extension URLs to the fredgraph.csv?id=<id> programmatic endpoint, not /series/<id> HTML pages.",
+    "Pin BEA NIPA vintage in S1007 loader: book uses pre-2018 vintage for replication; modern extension stamps the current vintage in loader output for reproducibility.",
+    "Pin Shiller P* version in S1008 to 2014 (r=7.6%); spot-check against book values at sign-off.",
+    "Document the No-Lazy-Splices-on-Derived-Quantities rule in S1003/S1004/S1008 loaders (recompute formula from extended components, never splice the derived series).",
+    "S1006: add proxy:true flag with Concept Match Justification for the LT Corp Bond total return reconstruction in any post-2010 extension."
+  ]
+}

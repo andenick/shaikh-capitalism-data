@@ -1,30 +1,29 @@
 cff-version: 1.2.0
-title: "Capitalism: Competition, Conflict, Crises — Data Replication Package"
-message: "If you use this data or code, please cite both this package and the original work."
+title: "RSCD: Replication and Extension of Shaikh (2016) Capitalism: Competition, Conflict, Crises"
+message: "If you use this dataset or code, please cite both this work and Shaikh (2016)."
 type: dataset
 authors:
-  - family-names: Anderson
-    given-names: Nicholas
-    affiliation: The New School for Social Research
-date-released: "2026-05-11"
-version: "4.0.0"
+  - given-names: Nicholas
+    family-names: Anderson
+    email: ibeforeena@gmail.com
+    affiliation: "The New School for Social Research"
+version: 0.1.0-pre
+date-released: 2026-05-18
 license: MIT
-repository-code: "https://github.com/andenick/shaikh-capitalism-data"
+license-url: https://opensource.org/licenses/MIT
 keywords:
   - political economy
-  - profit rate
-  - economic data
+  - classical economics
+  - Shaikh
   - replication
-  - time series
-  - real competition
+  - empirical data
 references:
   - type: book
     title: "Capitalism: Competition, Conflict, Crises"
     authors:
-      - family-names: Shaikh
-        given-names: Anwar
-    year: 2016
+      - given-names: Anwar
+        family-names: Shaikh
     publisher:
       name: Oxford University Press
-    isbn: "978-0199390632"
-    url: "http://www.anwarshaikhecon.org/"
+    year: 2016
+    isbn: "978-0-19-539066-4"

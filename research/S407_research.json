@@ -1,0 +1,86 @@
+{
+  "series_id": "S407",
+  "name": "Automotive Marginal Cost",
+  "chapter": 4,
+  "figures": [
+    "Fig4.22"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 4,
+      "page": 161,
+      "quote": "And overall marginal cost as in figure 4.22, which is the sum of marginal material cost (equal to average material cost, since the latter is taken to be constant) and marginal labor costs discussed previously. In the automotive industry, the former happens to be very much larger than the latter, so the overall marginal cost curve is essentially flat-bottomed over much of the observed range of output, with modest spikes at each new shift.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 163,
+      "quote": "Figure 4.22 Automotive Marginal Cost Source: Inman 1995, 64, fig. 6.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 161,
+      "quote": "The rule p = mc would then select a very large number of points if p happened to run along the flat bottom of the curve; would select multiple points, including engineering capacity, if p was between this lower limit and the tops of various spikes; and would select only engineering capacity if p was higher still.",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Robert P. Inman (author); Shaikh reproduces in Capitalism (2016)",
+    "publication": "Inman 1995 (citation in Shaikh's bibliography); reproduced figure: Shaikh (2016), p. 163, fig. 4.22",
+    "table_or_series_id": "Inman (1995), figure 6 (simulated marginal cost vs. annual vehicle production in thousands)",
+    "url": "https://www.google.com/books/edition/_/2bC3AAAAIAAJ",
+    "frequency": "synthetic (Monte-Carlo simulation across output levels)",
+    "units": "USD marginal cost per additional car vs. annual vehicle production (thousands)",
+    "license": "Copyright Inman 1995; reproduced under fair use",
+    "available_through": "Inman 1995 article; Shaikh (2016) reproduction",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "mc(Q) = marginal_material_cost(Q) + marginal_labor_cost(Q). Since average material cost is constant by assumption, marginal material cost = average material cost. Marginal labor cost from S405.",
+  "components": [
+    {
+      "name": "Marginal material cost (= average material cost)",
+      "source": "Inman 1995, p. 57 (material cost proportional to output)"
+    },
+    {
+      "name": "Marginal labor cost (S405 series)",
+      "source": "Inman 1995, fig. 4 (= our S405)"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "S407 is the overall marginal-cost curve summing material marginal cost and labor marginal cost (S405). Reclassified content_type to 'derived'.",
+    "Fig 4.22 y-axis range: $0-$8,000. The curve is dominated by the material-cost flat bottom (much larger than labor mc in automotive), with modest spikes at shift changes.",
+    "Critical theoretical implication that Shaikh draws from this figure (p. 161): the rule p = mc gives multiple solutions (anywhere from many points along the flat bottom, to engineering capacity, depending on p), so it 'fails' as a unique output-selection rule - the same conclusion derived theoretically in S401-S403.",
+    "extension_candidates intentionally empty: same reasoning as S404."
+  ],
+  "open_questions": [
+    "Same as S404: Inman 1995 bibliographic verification."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch4",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Marginal-cost total from Inman series. Same reclassification."
+    }
+  ]
+}

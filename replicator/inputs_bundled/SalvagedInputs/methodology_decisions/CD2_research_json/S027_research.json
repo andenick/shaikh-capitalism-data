@@ -1,0 +1,50 @@
+{
+  "series_id": "S027",
+  "series_name": "Corrected vs Conventional Corporate Profitability",
+  "chapter": 6,
+  "figures": [
+    "Fig 6.2",
+    "Fig 6.6"
+  ],
+  "research_date": "2026-03-07",
+  "researcher": "agent",
+  "kb_sources_searched": [
+    "CH06_DOCUMENTATION.md",
+    "ch06/README.md"
+  ],
+  "entries": [
+    {
+      "entry_type": "methodology_description",
+      "content": "Compares two measures of corporate profitability: (1) Corrected profit rate (rcorp) using imputed-interest-adjusted NOS and GPIM total capital stock (including IRS inventories); (2) Conventional NIPA profit rate (rcorpnipa) using standard NIPA corporate profits and BEA current-cost net stock. Also computes corresponding profit shares (NOS/VA for corrected, P_nipa/VA_nipa for conventional).",
+      "source_ref": "Appendix 6.8, Table II-7"
+    },
+    {
+      "entry_type": "source_citation",
+      "content": "BEA NIPA Tables 1.14 (corporate accounts), 7.11 (imputed interest). BEA Fixed Asset Tables 6.1-6.8 (capital stocks). IRS Statistics of Income (corporate inventories). All combined in Shaikh's GPIM methodology for total capital stock KTC.",
+      "source_ref": "BEA NIPA, FA, IRS SOI"
+    },
+    {
+      "entry_type": "figure_context",
+      "content": "Fig 6.2 shows corrected vs conventional corporate profit rates 1947-2011. The corrected rate is systematically lower due to both the imputed interest adjustment (raising measured profit via interest reclassification) and the GPIM capital stock (larger denominator including inventories and historical-cost adjustments). Fig 6.6 normalizes for capacity utilization.",
+      "source_ref": "Shaikh 2016, Ch. 6"
+    }
+  ],
+  "citations": [
+    {
+      "id": "BEA_NIPA_T114",
+      "full": "Bureau of Economic Analysis. NIPA Table 1.14: Gross Value Added of Domestic Corporate Business."
+    },
+    {
+      "id": "IRS_SOI",
+      "full": "Internal Revenue Service. Statistics of Income: Corporation Income Tax Returns. Various years."
+    }
+  ],
+  "methodology_summary": "S027 extracts four columns from S013 (Table II-7): S013J (corrected rcorp = NOS_corp/KTC_corp(-1)), S013O (conventional rcorpnipa = P_corpnipa/KNC_corpbea(-1)), S013I (corrected profit share), S013N (conventional profit share). The divergence between corrected and conventional measures demonstrates the quantitative importance of Shaikh's three adjustments: imputed interest, inventory inclusion, and GPIM capital stock revaluation.",
+  "known_issues": [],
+  "cross_references": [
+    "Appendix6_Table68II7.csv",
+    "BEA NIPA T1.14",
+    "BEA FA T6.1",
+    "IRS SOI"
+  ]
+}

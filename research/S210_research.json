@@ -1,0 +1,141 @@
+{
+  "series_id": "S210",
+  "name": "US and UK Wholesale Price Indexes, 1780–2010",
+  "chapter": 2,
+  "figures": [
+    "Fig2.8"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S010",
+    "cd2_id": "S010"
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 62,
+      "quote": "The term “inflation” means a persistent rise in prices. Inflation has been so pervasive in modern discourse that it has taken on the aura of a natural phenomenon. It is therefore salutary to look at the matter in historical perspective. Figure 2.8 displays UK and US wholesale price indexes, along with corresponding indexes of gold prices, over long intervals (305 years for the United Kingdom and 205 for the United States).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 764,
+      "quote": "Gold prices from 1780 to 1785 are available for the United Kingdom in Jastram (1977) and were estimated for the United States for the same interval using the 1786 ratio of US/UK gold prices (which is essentially constant until 1800). For 1786–2010, the US gold price is the official price for 1786–1790 available from Measuring Worth.com, http://www.measuringworth.com/gold/, and the market price thereafter. The same source has the UK market gold price in UK£ from 1786–1949, and in US$ thereafter, so the latter segment was converted to UK£ using the US$–UK£ exchange from the same site. Sources and methods for 1786–1945 appear in Lawrence H. Officer and Samuel H. Williamson, “The Price of Gold, 1257–2010,” http://www.measuringworth.com/gold/, and in Lawrence H. Officer, “Dollar–Pound Exchange Rate From 1791,” http://www.measuringworth.com/exchangepound/, respectively. The UK Wholesale Price Index (WPI) is available in Jastram (1977, table 2) from 1560 to 1976 (1930 = 100), except for missing values in 1939–1945, which were filled in using implicit annual growth rates in the NBER monthly for the UK PPI, All commodities Variable ID = m04053.dat, http://www.nber.org/databases/macrohistory/rectdata/04/. This was extended for 1977–2010 using the implicit growth rates of the UK Producer Price Index available from http://www.statistics.gov.uk/statbase/, variable named PLLU, Price Index of UK Output of Mfg Goods. US WPI is available in Jastram (1977, 145–146, table 7) for 1800–1976. Data for 1706–1799 was interpolated using the US CPI (see sources for figure 2.5) rescaled by the 1800 ratio of WPI/CPI. The series was extended to 1977–2010 using implicit growth rates of US PPI available from the BLS as Variable WPS00000000 at http://www.bls.gov/ppi/data.htm#.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Jastram (1977) historical + MeasuringWorth + BLS + UK ONS",
+    "publication": "Jastram, R. W. (1977) The Golden Constant: The English and American Experience 1560–1976; MeasuringWorth (gold + CPI); BLS PPI; UK ONS PPI",
+    "table_or_series_id": "Jastram (1977) Table 2 (UK WPI) + Table 7 (US WPI 1800–1976); BLS WPS00000000; UK ONS PLLU",
+    "url": "https://www.measuringworth.com/datasets/gold/",
+    "frequency": "annual",
+    "units": "Index, 1930=100 (log scale on figure)",
+    "license": "Mixed (historical Jastram out-of-copyright for tables; MeasuringWorth academic; BLS/ONS public)",
+    "available_through": "MeasuringWorth gold; FRED WPS00000000 for US PPI",
+    "discontinued": false,
+    "replaced_by": "BLS PPI WPS00000000 replaced legacy US WPI in 1978"
+  },
+  "construction": "composite",
+  "formula": null,
+  "components": [
+    {
+      "label": "UK WPI 1780–1938 (Jastram 1977 Table 2)",
+      "period": [
+        1780,
+        1938
+      ]
+    },
+    {
+      "label": "UK WPI 1939–1945 interpolated via NBER macrohistory m04053",
+      "period": [
+        1939,
+        1945
+      ]
+    },
+    {
+      "label": "UK WPI 1946–1976 (Jastram 1977 Table 2)",
+      "period": [
+        1946,
+        1976
+      ]
+    },
+    {
+      "label": "UK PPI extension 1977–2010 via ONS PLLU growth rates",
+      "period": [
+        1977,
+        2010
+      ]
+    },
+    {
+      "label": "US WPI 1706–1799 interpolated via MeasuringWorth CPI rescaled at 1800",
+      "period": [
+        1706,
+        1799
+      ]
+    },
+    {
+      "label": "US WPI 1800–1976 (Jastram 1977 Table 7)",
+      "period": [
+        1800,
+        1976
+      ]
+    },
+    {
+      "label": "US WPI 1977–2010 extension via BLS PPI WPS00000000 growth rates",
+      "period": [
+        1977,
+        2010
+      ]
+    }
+  ],
+  "year_range_book": [
+    1780,
+    2010
+  ],
+  "year_range_extension": [
+    2011,
+    2025
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "BLS PPI All Commodities (WPS00000000) via FRED",
+      "source": "BLS Producer Price Index",
+      "url": "https://fred.stlouisfed.org/series/PPIACO",
+      "units": "Index 1982=100",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "PPIACO is the same WPS00000000 series Shaikh used. Splice via growth rates per Shaikh's own method."
+      ]
+    },
+    {
+      "subseries_label": "UK ONS Producer Price Index of UK Output of Manufactured Goods",
+      "source": "Office for National Statistics",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/pllu/mm22",
+      "units": "Index (rebased)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "PLLU still published; verify it is the unchanged successor in 2026."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Composite of Jastram (1977) historical wholesale price tables for both US and UK, extended forward via BLS WPS00000000 (US) and ONS PLLU (UK) using growth-rate splices per Appendix 2.1 (p. 764).",
+    "Gold price (used in Figs 2.8 and 2.10) sourced from MeasuringWorth; for 1780–1785 US gold price estimated using 1786 US/UK ratio.",
+    "Appendix 2.1 explicitly cross-references this to “Appendix 5.3 Data Tables for Chapter 5, figures 5.3, 5.4, 16.1” — the underlying data is shared with Ch5."
+  ],
+  "open_questions": [
+    "CD2 did not have a dossier for S010 in the salvaged JSON (only S001–S009, S017, etc.); cross-check ANY relevant material in CD2_research_md/S010.md.",
+    "Verify NBER macrohistory URL http://www.nber.org/databases/macrohistory/rectdata/04/ — NBER reorganized its historical macro data; current link is https://www.nber.org/research/data/nber-macrohistory-database."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

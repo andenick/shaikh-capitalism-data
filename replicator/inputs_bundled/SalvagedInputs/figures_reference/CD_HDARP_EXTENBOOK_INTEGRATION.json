@@ -1,0 +1,3078 @@
+{
+  "metadata": {
+    "generated": "2026-01-05",
+    "hdarp_version": "v4.1",
+    "total_extenbooks": 109,
+    "total_hdarp_figures": 155,
+    "purpose": "Links Extenbooks to HDARP figure metadata for enhanced data series analysis",
+    "updated": "2026-01-05T21:19:07.251701",
+    "pending_creation": 16
+  },
+  "figure_extenbooks": {
+    "Fig10.1": {
+      "figure_id": "Fig10.1",
+      "extenbook_path": "Fig10.1_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig10.1_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 10.1 Incremental Rates of Profit, Banks versus All Private Industries, 1988–2005",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "r_banks",
+            "definition": "Incremental rate of profit for banking sector",
+            "unit": "percentage"
+          },
+          {
+            "name": "r_all_private",
+            "definition": "Incremental rate of profit for all private industries",
+            "unit": "percentage"
+          }
+        ],
+        "shaikh_observations_count": 4,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "BEA NIPA data",
+          "Banking sector profit data"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Classical theory proposes that the regulating profit rate of the banking sector, like that of every ...",
+          "While average rates of profit do not generally equalize, regulating rates do"
+        ]
+      }
+    },
+    "Fig10.10": {
+      "figure_id": "Fig10.10",
+      "extenbook_path": "Fig10.10_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig10.10_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 10.10 Bond and Equity Rates of Return, 1926–2010",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "large_co_stocks",
+            "definition": "Large company stocks rate of return",
+            "unit": "percentage"
+          },
+          {
+            "name": "lt_corp_bonds",
+            "definition": "Long-term corporate bonds rate of return",
+            "unit": "percentage"
+          },
+          {
+            "name": "lt_govt_bonds",
+            "definition": "Long-term government bonds rate of return",
+            "unit": "percentage"
+          }
+        ],
+        "shaikh_observations_count": 6,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "Ibbotson 2004 - Table 2-2, pages 30-31"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "1926–2010 average annual stock market and corporate and government bond rates of return are generall...",
+          "Average returns: Large Company Stocks 11.88%, Long-Term Corporate Bonds 6.24%, Long-Term Government ..."
+        ]
+      }
+    },
+    "Fig10.12": {
+      "figure_id": "Fig10.12",
+      "extenbook_path": "Fig10.12_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig10.12_Extenbook.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig10.13": {
+      "figure_id": "Fig10.13",
+      "extenbook_path": "Fig10.13_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig10.13_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 10.13 Actual Real Stock Price versus EMH Rational Price and Classical Warranted Price, 1948–2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "preq",
+            "definition": "Actual real stock price (S&P composite deflated by BEA gross investment price index)",
+            "unit": "index",
+            "base_year": 1947
+          },
+          {
+            "name": "prstarshiller1",
+            "definition": "EMH rational stock price (Shiller's constant discount rate r=7.6% method, converted to gross investment deflator)",
+            "unit": "index",
+            "base_year": 1947
+          },
+          {
+            "name": "prweq",
+            "definition": "Classical warranted stock price from equation p(w,eq,t) = p(w,eq,t-1)(1+r(I,t)) - dv(t)",
+            "unit": "index",
+            "base_year": 1947
+          }
+        ],
+        "shaikh_observations_count": 9,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "S&P real stock prices",
+          "Shiller EMH rational price calculation",
+          "Classical warranted price calculation"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "EMH rational price is smooth due to constant discount rate assumption, while actual stock price 'is ...",
+          "Shiller: 'these big stock market movements were not in fact justified by what actually happened to d..."
+        ]
+      }
+    },
+    "Fig10.2": {
+      "figure_id": "Fig10.2",
+      "extenbook_path": "Extenbook_Fig10.2.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig10.2.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 10.2 Bank Loan Rate of Interest and Corporate Bond Yield",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "prime_rate",
+            "definition": "Bank prime rate - interest rate offered to good business customers",
+            "unit": "percentage"
+          },
+          {
+            "name": "corp_aaa_yield",
+            "definition": "Corporate Aaa bond yield - interest rate paid by highly rated corporations on bond market borrowing",
+            "unit": "percentage"
+          }
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "Prime rate data",
+          "Corporate Aaa bond yield"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "The second proposition is that the bank loan rate of interest is equalized with the bond yield for e...",
+          "The intrinsic relation between the bank prime rate and the Aaa corporate bond yield is evident"
+        ]
+      }
+    },
+    "Fig10.3": {
+      "figure_id": "Fig10.3",
+      "extenbook_path": "Extenbook_Fig10.3.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig10.3.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 10.3 US Short- and Long-Term Interest Rates",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "cd_3mo",
+            "definition": "3-month CD rate",
+            "unit": "percentage"
+          },
+          {
+            "name": "discount_rate",
+            "definition": "Federal Reserve discount rate",
+            "unit": "percentage"
+          },
+          {
+            "name": "fed_funds",
+            "definition": "Federal Funds rate",
+            "unit": "percentage"
+          },
+          {
+            "name": "munis_higrade",
+            "definition": "High-grade municipal bond rate",
+            "unit": "percentage"
+          },
+          {
+            "name": "corp_aaa",
+            "definition": "Corporate Aaa bond rate",
+            "unit": "percentage"
+          }
+        ],
+        "shaikh_observations_count": 5,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "Fed Reserve H.15",
+          "ERP 2012"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Competition within any industry equalizes the selling prices of similar products, up to transportati...",
+          "In the case of finance, this means that similar interest rates will be equalized, up to premia relat..."
+        ]
+      }
+    },
+    "Fig10.4": {
+      "figure_id": "Fig10.4",
+      "extenbook_path": "Extenbook_Fig10.4.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig10.4.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig10.5": {
+      "figure_id": "Fig10.5",
+      "extenbook_path": "Fig10.5_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig10.5_Extenbook.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig10.6": {
+      "figure_id": "Fig10.6",
+      "extenbook_path": "Fig10.6_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig10.6_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 10.6 Interest Rate and the Price Level, 1857–2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "long_bond_yield_index",
+            "definition": "Long bond yield index (spliced from railroad bonds 1857-1937 to corporate Aaa 1936-2002+)",
+            "unit": "index",
+            "base_year": 1947
+          },
+          {
+            "name": "producer_price_index",
+            "definition": "Producer price index",
+            "unit": "index",
+            "base_year": 1947
+          }
+        ],
+        "shaikh_observations_count": 6,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "Macaulay 1938 - Railroad bond yield 1857-1937",
+          "Fed Reserve HS-39 - Corporate Aaa yield 1936-2002",
+          "Producer Price Index"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Tooke and Gibson documented that market interest rates move with the price level",
+          "From 1857 to 2011, the long bond yield index generally moved in the same direction as the producer p..."
+        ]
+      }
+    },
+    "Fig10.7": {
+      "figure_id": "Fig10.7",
+      "extenbook_path": "Fig10.7_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig10.7_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 10.7 Relative Price of Finance, 1857–2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "ib_over_p",
+            "definition": "Relative price of finance (i/p) - interest rate divided by price level",
+            "unit": "ratio",
+            "base_year": 1947
+          }
+        ],
+        "shaikh_observations_count": 6,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "Long bond yield index",
+          "Producer price index"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "As a relative price of provision, this would be expected to essentially reflect the real cost of fin...",
+          "From 1857 to 1927 this ratio is relatively stable even through the Great Depression of 1873–1893"
+        ]
+      }
+    },
+    "Fig10.8": {
+      "figure_id": "Fig10.8",
+      "extenbook_path": "Fig10.8_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig10.8_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 10.8 Real Interest Rate and its HP-Filtered Value, 1857–2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "ib_long_real",
+            "definition": "Long bond real interest rate",
+            "unit": "percentage"
+          },
+          {
+            "name": "ib_long_real_HP3",
+            "definition": "HP-filtered value of long bond real interest rate (parameter = 3)",
+            "unit": "percentage"
+          }
+        ],
+        "shaikh_observations_count": 5,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "Long bond real interest rate",
+          "HP-filtered values"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Irving Fisher claimed expected real rate of interest (money rate minus expected inflation) would equ...",
+          "The HP-filtered value is not 'stable' over any meaningful time period - highly volatile even over de..."
+        ]
+      }
+    },
+    "Fig10.9": {
+      "figure_id": "Fig10.9",
+      "extenbook_path": "Extenbook_Fig10.9.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig10.9.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 10.9 Dividend Yield versus Bond Yield, 1871–2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "dividend_yield",
+            "definition": "Equity dividend yield",
+            "unit": "percentage"
+          },
+          {
+            "name": "corp_long_bond",
+            "definition": "Corporate long bond yield",
+            "unit": "percentage"
+          },
+          {
+            "name": "govt_10yr_bond",
+            "definition": "10-year government bond yield",
+            "unit": "percentage"
+          }
+        ],
+        "shaikh_observations_count": 5,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "Shiller 2014 - dividend yield",
+          "Corporate long bond yield",
+          "10-year government bond yield"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Dividend yield on equities is generally very different from the long bond yield",
+          "Bond yields are equalized with bank prime rate"
+        ]
+      }
+    },
+    "Fig11.1": {
+      "figure_id": "Fig11.1",
+      "extenbook_path": "Extenbook_Fig11.1.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig11.1.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig11.2": {
+      "figure_id": "Fig11.2",
+      "extenbook_path": "Extenbook_Fig11.2.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig11.2.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Trade Balances in Major Countries, 1960-2009 (Exports/Imports)",
+        "figure_type": "",
+        "variables": [
+          "Export-import ratio in common currency",
+          "Trade balance (surplus/deficit)",
+          "Bilateral and multilateral trade flows"
+        ],
+        "shaikh_observations_count": 11,
+        "theoretical_significance_preview": [
+          "Contradicts comparative advantage hypothesis that predicts balanced trade through real exchange rate adjustments",
+          "Supports classical theory that persistent trade imbalances arise from structural differences in international competitiveness",
+          "Demonstrates that free trade does not automatically make nations equally competitive regardless of technology or development levels"
+        ],
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Persistent, marked trade imbalances characterize postwar period - neither fixed nor flexible exchang...",
+          "Panel 1: Finland, Japan, Korea, Norway, Sweden all move from trade deficits to surpluses over half-c..."
+        ]
+      }
+    },
+    "Fig11.3": {
+      "figure_id": "Fig11.3",
+      "extenbook_path": "Extenbook_Fig11.3.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig11.3.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Real Effective Exchange Rates (PPI-Basis), United States and Japan, 1960-2009",
+        "figure_type": "",
+        "variables": [
+          "Real effective exchange rate (PPI-deflated)",
+          "Nominal exchange rate",
+          "Producer price index",
+          "Trade-weighted basket of currencies"
+        ],
+        "shaikh_observations_count": 8,
+        "theoretical_significance_preview": [
+          "Definitively rejects PPP hypothesis at both short-run and long-run levels",
+          "Supports classical theory that real exchange rates track real unit labor costs, not stationary equilibrium",
+          "Demonstrates non-stationarity is the norm, not deviation from equilibrium",
+          "Shows standard theory's prediction of automatic trade balance through exchange rate adjustment does not hold"
+        ],
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Real exchange rates are NOT stationary in either short run or long run",
+          "Tests based on aggregate price indexes overwhelmingly reject PPP as short-run relationship"
+        ]
+      }
+    },
+    "Fig11.4": {
+      "figure_id": "Fig11.4",
+      "extenbook_path": "Extenbook_Fig11.4.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig11.4.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig11.5": {
+      "figure_id": "Fig11.5",
+      "extenbook_path": "Extenbook_Fig11.5.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig11.5.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig11.6": {
+      "figure_id": "Fig11.6",
+      "extenbook_path": "Extenbook_Fig11.6.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig11.6.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Law of One Price at the Aggregate Level, United States and Japan, 1960-2009",
+        "figure_type": "",
+        "variables": [
+          "Real exchange rate / fundamentals ratio",
+          "Deviation from Law of One Price",
+          "Adjusted real effective unit labor costs",
+          "Nontradable/tradable price ratio"
+        ],
+        "shaikh_observations_count": 7,
+        "theoretical_significance_preview": [
+          "Validates Law of One Price at aggregate level when properly adjusted",
+          "Demonstrates real exchange rates gravitate around fundamentals (real unit labor costs adjusted for tradable/nontradable)",
+          "Provides superior policy rule to PPP for determining sustainable exchange rate levels",
+          "Shows deviations from fundamentals are driven by conjunctural factors (capital flows, policy interventions) not equilibrium adjustments"
+        ],
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Appropriate aggregate test of LOP is deviation of real exchange rate from its fundamentals",
+          "Given data limitations and anomalous 1980-1987 period, 'remarkable how stable this ratio is over lon..."
+        ]
+      }
+    },
+    "Fig11.7": {
+      "figure_id": "Fig11.7",
+      "extenbook_path": "Fig11.7_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig11.7_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US Balance of Trade, Real Exchange Rate, and Relative GDP, 1960-2009",
+        "figure_type": "",
+        "variables": [
+          "Trade balance (exports/imports ratio)",
+          "Real effective exchange rate",
+          "Relative real GDP (US relative to trading partners)",
+          "Export volumes",
+          "Import volumes"
+        ],
+        "shaikh_observations_count": 10,
+        "theoretical_significance_preview": [
+          "Demonstrates multiple determinants of trade balance: competitiveness (real exchange rate) and relative income (Keynesian channel)",
+          "Refutes simplistic attribution of US deficit to exchange rate manipulation by trading partners",
+          "Shows improved US competitiveness offset by rising relative income, resulting in worsening deficit",
+          "Validates classical theory that trade imbalances reflect real competitive differences, not equilibrium deviations",
+          "Integrates classical (cost-based) and Keynesian (income-based) channels in trade determination"
+        ],
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Real exchange rate and relative GDP pull in opposite directions on trade balance",
+          "Observed deterioration of US trade balance is consistent with observed improvement in its average co..."
+        ]
+      }
+    },
+    "Fig12.5": {
+      "figure_id": "Fig12.5",
+      "extenbook_path": "Extenbook_Fig12.5.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig12.5.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Phillips Curve, United States, 1955-1970",
+        "figure_type": "scatter_plot_with_fitted_curve",
+        "variables": [],
+        "shaikh_observations_count": 5,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "The Phillips curve hypothesis stated that inflation would fall as unemployment rose, and data seemed...",
+          "By the 1970s, the Phillips curve relationship broke down completely during the Great Stagflation"
+        ]
+      }
+    },
+    "Fig12.6": {
+      "figure_id": "Fig12.6",
+      "extenbook_path": "Fig12.6_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig12.6_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US Inflation and Unemployment Rates, 1955-1970 and 1971-1986",
+        "figure_type": "grouped_bar_chart",
+        "variables": [],
+        "shaikh_observations_count": 5,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "The Phillips curve hypothesized that inflation would fall as unemployment rose, and the data seemed ...",
+          "Beginning in the 1970s, unemployment rose, in which case inflation should have fallen according to t..."
+        ]
+      }
+    },
+    "Fig12.7": {
+      "figure_id": "Fig12.7",
+      "extenbook_path": "Extenbook_Fig12.7.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig12.7.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Phillips Curve, United States, 1971-1981",
+        "figure_type": "scatter_plot",
+        "variables": [],
+        "shaikh_observations_count": 5,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Figure 12.7, scaled in the same manner as figure 12.5, displays the same variables in the subsequent...",
+          "In case there is any doubt about the reason for demise of this construct, figure 12.8 displays the d..."
+        ]
+      }
+    },
+    "Fig12.8": {
+      "figure_id": "Fig12.8",
+      "extenbook_path": "Fig12.8_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig12.8_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Phillips Curve, United States, 1955-2010",
+        "figure_type": "scatter_plot",
+        "variables": [],
+        "shaikh_observations_count": 5,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "In case there is any doubt about the reason for demise of this construct, figure 12.8 displays the d...",
+          "Similar pattern reversals appeared in all major countries"
+        ]
+      }
+    },
+    "Fig12.9": {
+      "figure_id": "Fig12.9",
+      "extenbook_path": "Extenbook_Fig12.9.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig12.9.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig14.1": {
+      "figure_id": "Fig14.1",
+      "extenbook_path": "Extenbook_Fig14.1.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig14.1.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig14.10": {
+      "figure_id": "Fig14.10",
+      "extenbook_path": "Fig14.10_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig14.10_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Nominal GDP Growth and Level of Wages Share, United States, 1948-2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "Nominal_GDP_Growth",
+            "definition": "Growth rate of nominal output as proxy for aggregate demand",
+            "data_source": "NIPA Tables",
+            "axis": "left"
+          },
+          {
+            "name": "Wage_Share",
+            "definition": "EC/GDP - Employee compensation divided by GDP",
+            "formula": "σW = wr/yr",
+            "data_source": "NIPA T1.10 line 2 / NIPA T1.10 line 1",
+            "axis": "right"
+          }
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "Demonstrates empirical support for classical argument that wage share responds to aggregate demand conditions",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Broad concordance between trends of nominal GDP growth and wage share evident",
+          "Wage share trend rises with trend of aggregate demand growth rate"
+        ]
+      }
+    },
+    "Fig14.11": {
+      "figure_id": "Fig14.11",
+      "extenbook_path": "Extenbook_Fig14.11.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig14.11.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Unemployment Measures, United States, 1948-2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "Unemployment_Rate",
+            "definition": "uL - Official unemployment rate",
+            "data_source": "BLS series LNS14000000Q",
+            "axis": "left"
+          },
+          {
+            "name": "Unemployment_Duration_Index",
+            "definition": "Index of average duration of unemployment, 1948-51 = 100",
+            "data_source": "BLS series LNS13008275",
+            "axis": "right"
+          },
+          {
+            "name": "Unemployment_Intensity",
+            "definition": "ULINTENSITY = uL × unemployment duration index",
+            "formula": "uInt_L = uDur_L · uL",
+            "components": [
+              "unemployment rate",
+              "unemployment duration index"
+            ],
+            "axis": "left"
+          }
+        ],
+        "shaikh_observations_count": 4,
+        "theoretical_significance_preview": "Introduces unemployment intensity as superior measure to standard unemployment rate for wage dynamics",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Unemployment rate roughly doubles over interval 1948-2011",
+          "Unemployment duration quadruples over same period"
+        ]
+      }
+    },
+    "Fig14.12": {
+      "figure_id": "Fig14.12",
+      "extenbook_path": "Fig14.12_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig14.12_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Empirical Path of the Wage Share versus Unemployment Intensity, United States, 1948-2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "WAGESHHP40",
+            "definition": "HP(40)-filtered wage share",
+            "range": "0.53 to 0.59",
+            "units": "ratio"
+          },
+          {
+            "name": "ULINTENSITYHP40",
+            "definition": "HP(40)-filtered unemployment intensity",
+            "range": "0.07 to 0.35",
+            "units": "ratio"
+          }
+        ],
+        "shaikh_observations_count": 4,
+        "theoretical_significance_preview": "Provides strong empirical support for classical predator-prey dynamics between wage share and unemployment",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Empirical path strikingly similar to theoretical path of classical model (Fig14.9)",
+          "Clockwise spiral pattern evident despite major disturbances (Vietnam War, Great Stagflation, neolibe..."
+        ]
+      }
+    },
+    "Fig14.13": {
+      "figure_id": "Fig14.13",
+      "extenbook_path": "Fig14.13_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig14.13_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Rate of Change of Wage Share versus Unemployment Intensity, United States, 1949-2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "Wageshare_Growth",
+            "definition": "σ̇W/σW - Rate of change of wage share",
+            "formula": "d(σW)/dt / σW",
+            "range": "-3.0% to 3.0%",
+            "units": "percentage per year"
+          },
+          {
+            "name": "Unemployment_Intensity",
+            "definition": "Product of unemployment rate and duration index",
+            "range": "0% to 40%",
+            "units": "percentage"
+          }
+        ],
+        "shaikh_observations_count": 4,
+        "theoretical_significance_preview": "Demonstrates raw empirical support for Classical wage-share Phillips curve before filtering",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Unlike conventional nominal-wage Phillips curve, wage-share curve clearly displays negative slope",
+          "Raw scatter shows considerable noise requiring filtering to extract structural relation"
+        ]
+      }
+    },
+    "Fig14.14": {
+      "figure_id": "Fig14.14",
+      "extenbook_path": "Fig14.14_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig14.14_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "HP(100)-Filtered Values, Rate of Change of the Wage Share versus Unemployment Intensity, United States, 1949-2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "Wage_Share_Growth",
+            "definition": "GWSHHP100 - HP(100)-filtered growth rate of wage share",
+            "formula": "HP-filtered σ̇W/σW",
+            "range": "-1.0% to 1.5%",
+            "units": "percentage per year"
+          },
+          {
+            "name": "Unemployment_Intensity",
+            "definition": "HP(100)-filtered unemployment intensity",
+            "range": "0% to 30%",
+            "units": "percentage"
+          }
+        ],
+        "shaikh_observations_count": 8,
+        "theoretical_significance_preview": "Most important empirical result - demonstrates two stable Classical Phillips curves separated by neoliberal attack on labor",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Only two distinct Phillips-type wage-share curves for entire 1949-2011 period",
+          "Booms move economy UP curve, busts move DOWN same curve (1960-1973, 1993-2003)"
+        ]
+      }
+    },
+    "Fig14.15": {
+      "figure_id": "Fig14.15",
+      "extenbook_path": "Extenbook_Fig14.15.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig14.15.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Inflation and Productivity Growth, United States, 1948-2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "Inflation",
+            "definition": "ṗ/p - Rate of change of GDP deflator",
+            "data_source": "NIPA T1.1.9 line 1",
+            "range": "-4% to 10%",
+            "units": "percentage per year"
+          },
+          {
+            "name": "Productivity_Growth",
+            "definition": "ẏr/yr - Rate of change of productivity",
+            "formula": "yr = (GDP*100/p)/(FEE/1000)",
+            "components": [
+              "real GDP per thousand workers"
+            ],
+            "range": "-4% to 10%",
+            "units": "percentage per year"
+          }
+        ],
+        "shaikh_observations_count": 6,
+        "theoretical_significance_preview": "Explains why real wage and nominal wage Phillips curves shift even when wage-share curve is stable",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Productivity growth begins to fall from 1960 until late 1970s",
+          "Productivity growth gradually rises back to original level by 2000"
+        ]
+      }
+    },
+    "Fig14.16": {
+      "figure_id": "Fig14.16",
+      "extenbook_path": "Fig14.16_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig14.16_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "HP(100)-Filtered Values, Rate of Change of Real Wages versus Unemployment Intensity, United States, 1949-2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "Real_Wage_Growth",
+            "definition": "HP(100)-filtered ẇr/wr",
+            "formula": "ẇr/wr = ẏr/yr + f(uInt_L)",
+            "range": "0.0% to 3.5%",
+            "units": "percentage per year"
+          },
+          {
+            "name": "Unemployment_Intensity",
+            "definition": "HP(100)-filtered unemployment intensity",
+            "range": "0% to 30%",
+            "units": "percentage"
+          }
+        ],
+        "shaikh_observations_count": 5,
+        "theoretical_significance_preview": "Shows real wage Phillips curve (Goodwin component) shifts with productivity growth changes",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Real wage curve departs from 1948-1982 fitted wage-share function in 1960",
+          "Departure caused by falling productivity growth (Fig14.15) pulling curve down"
+        ]
+      }
+    },
+    "Fig15.1": {
+      "figure_id": "Fig15.1",
+      "extenbook_path": "Fig15.1_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig15.1_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Consumer Price Level, United States, 1774–2011",
+        "figure_type": "",
+        "variables": [
+          "Consumer Price Level"
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Figure displays the actual path of the consumer price level with shaded area corresponding to the pe...",
+          "Shows war-related inflation spikes during Revolutionary War (1776-1783), War of 1812 (1812-1814), US..."
+        ]
+      }
+    },
+    "Fig15.3": {
+      "figure_id": "Fig15.3",
+      "extenbook_path": "Fig15.3_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig15.3_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Growth of Nominal GDP and Relative New Purchasing Power, 1950–2010",
+        "figure_type": "",
+        "variables": [
+          "Growth Rate of Nominal GDP",
+          "New Purchasing Power Relative to GDP"
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "There is a strong correlation between nominal GDP growth and new purchasing power (1951-1952 is the ...",
+          "From 1948 to 1981, relative new purchasing power rises and then stabilizes"
+        ]
+      }
+    },
+    "Fig15.4": {
+      "figure_id": "Fig15.4",
+      "extenbook_path": "Fig15.4_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig15.4_Extenbook.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig15.5": {
+      "figure_id": "Fig15.5",
+      "extenbook_path": "Fig15.5_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig15.5_Extenbook.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig16.1": {
+      "figure_id": "Fig16.1",
+      "extenbook_path": "Extenbook_Fig16.1.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig16.1.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US and UK Golden Waves, 1786–2010 (1930 = 100) Deviations from Cubic Time Trends",
+        "figure_type": "",
+        "variables": [
+          "US Golden Price of Commodities (de-trended)",
+          "UK Golden Price of Commodities (de-trended)"
+        ],
+        "shaikh_observations_count": 7,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Long waves persist in golden prices even after 1939 when fiat currency prices stopped displaying wav...",
+          "Great depressions recur in predictable patterns and typically begin in the middle of long downturns"
+        ]
+      }
+    },
+    "Fig16.2": {
+      "figure_id": "Fig16.2",
+      "extenbook_path": "Fig16.2_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig16.2_Extenbook.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig16.3": {
+      "figure_id": "Fig16.3",
+      "extenbook_path": "Fig16.3_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig16.3_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Hourly Real Wages and Productivity, US Business Sector, 1947–2012 (1982 = 100)",
+        "figure_type": "",
+        "variables": [
+          "Hourly Productivity (1982=100)",
+          "Actual Path of Hourly Real Compensation (1982=100)",
+          "Counterfactual Path of Hourly Real Compensation (using 1947-81 relationship to productivity and time)"
+        ],
+        "shaikh_observations_count": 6,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Real wages tend to grow more slowly than productivity even under normal circumstances",
+          "Starting in the 1980s in the Reagan era real wage growth slowed down considerably, representing dram..."
+        ]
+      }
+    },
+    "Fig16.4": {
+      "figure_id": "Fig16.4",
+      "extenbook_path": "Extenbook_Fig16.4.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig16.4.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig16.5": {
+      "figure_id": "Fig16.5",
+      "extenbook_path": "Extenbook_Fig16.5.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig16.5.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig16.6": {
+      "figure_id": "Fig16.6",
+      "extenbook_path": "Fig16.6_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig16.6_Extenbook.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig16.9": {
+      "figure_id": "Fig16.9",
+      "extenbook_path": "Fig16.9_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig16.9_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Household Debt-to-Income Ratio, United States, 1975–2011",
+        "figure_type": "",
+        "variables": [
+          "Household Debt-to-Income Ratio"
+        ],
+        "shaikh_observations_count": 7,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Ratio starts at approximately 60% in 1975 and shows gradual increase through early 1980s to around 7...",
+          "Beginning in mid-1980s, ratio accelerates upward, growing dramatically during 1982-2007 boom period"
+        ]
+      }
+    },
+    "Fig2.1": {
+      "figure_id": "Fig2.1",
+      "extenbook_path": "Fig2.1_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig2.1_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US Industrial Production Index, 1860–2010",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "Industrial Production Index",
+            "definition": "Index of US industrial output over time"
+          }
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "Demonstrates capitalism's inexorable tendency toward growth while highlighting non-constant growth rates and endemic turbulence requiring theoretical explanation",
+        "has_axis_specs": false,
+        "source_tables": []
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter"
+        ],
+        "notes": [
+          "The system's apparently inexorable tendency toward growth is immediately evident.",
+          "It is evident from the charts that growth rates are not constant in the long run. Both industrial ou..."
+        ]
+      }
+    },
+    "Fig2.10": {
+      "figure_id": "Fig2.10",
+      "extenbook_path": "Extenbook_Fig2.10.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig2.10.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US and UK Wholesale Prices in Ounces of Gold, 1790–2010 (1930 = 100, Log Scale)",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "UK Wholesale Prices in Gold",
+            "definition": "UK price level divided by price of gold in UK currency"
+          },
+          {
+            "name": "US Wholesale Prices in Gold",
+            "definition": "US price level divided by price of gold in US currency"
+          }
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "Golden waves reveal long waves never disappeared but were obscured by national currency devaluations; 2007-2008 crisis 'arrived on schedule'; confirms Kondratieff periodicities",
+        "has_axis_specs": false,
+        "source_tables": []
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "log_scale"
+        ],
+        "notes": [
+          "It is therefore instructive to consider UK and US prices not in terms of their respective national c...",
+          "The resulting 'golden waves' show us something quite fascinating. Not only are all the previous long..."
+        ]
+      }
+    },
+    "Fig2.11": {
+      "figure_id": "Fig2.11",
+      "extenbook_path": "Fig2.11_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig2.11_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US Corporate Rate of Profit 1947–2011",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "General Rate of Profit",
+            "definition": "Aggregate net operating surplus divided by net capital stock, both in constant dollars (OECD terminology)"
+          }
+        ],
+        "shaikh_observations_count": 2,
+        "theoretical_significance_preview": "Provides entry point into macroeconomics of growth and cycles; long waves are also waves in accumulation driven by rate of profit; requires explanation of decline and reversal",
+        "has_axis_specs": false,
+        "source_tables": [
+          "OECD: aggregate net operating surplus divided by net capital stock, both in constant dollars"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "normalize_base_year"
+        ],
+        "notes": [
+          "We see that from 1947 to 1982, the US rate of profit falls by more than 45%, and then reverses cours...",
+          "The analysis of the general rate of profit will provide us with our point of entry into the macroeco..."
+        ]
+      }
+    },
+    "Fig2.12": {
+      "figure_id": "Fig2.12",
+      "extenbook_path": "Fig2.12_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig2.12_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Average Rates of Profit in US Manufacturing 1960–1989",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "Average Rates of Profit",
+            "definition": "Average profit rates for 15 manufacturing sectors"
+          }
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "Turbulence is normal to profitability; investment decisions must be robust with substantial margin of error; real competition not perfect competition required for technical change analysis",
+        "has_axis_specs": false,
+        "source_tables": []
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "normalize_base_year"
+        ],
+        "notes": [
+          "turbulence is normal to profitability. It is in this climate that firms make their decisions about i...",
+          "An obvious implication, which seems to have been lost to the theoretical literature, is that all suc..."
+        ]
+      }
+    },
+    "Fig2.13": {
+      "figure_id": "Fig2.13",
+      "extenbook_path": "Fig2.13_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig2.13_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Incremental Rates of Profit in US Manufacturing 1960–1989",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "Incremental Rate of Profit",
+            "definition": "Change in gross profits divided by gross investment in previous year (ΔPG/IG(-1))"
+          }
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "Profit rate equalization in true form is turbulent with recurrent overshooting/undershooting, not 'attained and held' equality; incremental rates, not average rates, equalize through capital mobility",
+        "has_axis_specs": false,
+        "source_tables": []
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "normalize_base_year"
+        ],
+        "notes": [
+          "the picture changes substantially when we consider the profit rates on new investment, that is, the ...",
+          "It is then apparent that incremental profit rates, unlike average ones, do 'cross over' a great deal..."
+        ]
+      }
+    },
+    "Fig2.14": {
+      "figure_id": "Fig2.14",
+      "extenbook_path": "Extenbook_Fig2.14.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig2.14.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Normalized Total Prices of Production Profit versus Total Unit Labor Costs, US 1972 (Seventy-One Industries)",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "Market Prices (Prices of Production)",
+            "definition": "Total market value of each sector's output (unit market price × total output)"
+          },
+          {
+            "name": "Direct Prices (Unit Labor Costs)",
+            "definition": "Prices proportional to vertically integrated unit labor costs"
+          }
+        ],
+        "shaikh_observations_count": 2,
+        "theoretical_significance_preview": "Vindicates Ricardo's '93% Theory of Price' against orthodox derision; ~87% of price structure explained by labor costs; profitability plays minor role in long-run competitive prices",
+        "has_axis_specs": false,
+        "source_tables": [
+          "US input-output table for 1972"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter"
+        ],
+        "notes": [
+          "From 1947 to 1998 the average absolute deviation of observed market prices with respect to direct pr...",
+          "To put it in Ricardian terms, about 87% of the inter-industrial structure of long-run competitive pr..."
+        ]
+      }
+    },
+    "Fig2.15": {
+      "figure_id": "Fig2.15",
+      "extenbook_path": "Extenbook_Fig2.15.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig2.15.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "GDP per Capita of World Regions 1990, International Geary–Khamis Dollars (Log Scale)",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "GDP per Capita by Region",
+            "definition": "Real GDP per capita for five world regions in International Geary-Khamis Dollars"
+          }
+        ],
+        "shaikh_observations_count": 4,
+        "theoretical_significance_preview": "Capitalist development creates rising standards in core regions while colonial possessions stagnate/decline; rising global inequality is historical tendency accelerating with capitalist development",
+        "has_axis_specs": false,
+        "source_tables": [
+          "Maddison (2003)"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "log_scale"
+        ],
+        "notes": [
+          "growth in standards of living is a characteristic feature of successful capitalist development. But ...",
+          "rankings can change, as in the case of the Western Offshoots surpassing their parent regions by the ..."
+        ]
+      }
+    },
+    "Fig2.16": {
+      "figure_id": "Fig2.16",
+      "extenbook_path": "Extenbook_Fig2.16.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig2.16.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "GDP per Capita Richest Four and Poorest Four Countries, International Geary–Khamis Dollars (Log Scale)",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "GDP per Capita Richest 4",
+            "definition": "Average GDP per capita of richest four countries at each time point"
+          },
+          {
+            "name": "GDP per Capita Poorest 4",
+            "definition": "Average GDP per capita of poorest four countries at each time point"
+          }
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "True divergence between rich and poor more extreme than regional data shows; inequality accelerates during neoliberal era; poorest countries suffer absolute declines in modern period",
+        "has_axis_specs": false,
+        "source_tables": [
+          "Maddison (2003)"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "log_scale"
+        ],
+        "notes": [
+          "A notable feature is the large drop of the poor-country GDP per capita in the postwar period, and ag...",
+          "Figure 2.17 tracks the corresponding rich-to-poor ratio, which stands at 2.8 in 1600, 3.4 in 1700, 3..."
+        ]
+      }
+    },
+    "Fig2.2": {
+      "figure_id": "Fig2.2",
+      "extenbook_path": "Fig2.2_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig2.2_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US Real Investment Index, 1832–2010",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "Real Investment Index",
+            "definition": "Index of real investment in the United States over time"
+          }
+        ],
+        "shaikh_observations_count": 2,
+        "theoretical_significance_preview": "Investment volatility is endemic to capitalist growth and far exceeds output volatility, requiring explanation of why investment is more turbulent",
+        "has_axis_specs": false,
+        "source_tables": []
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter"
+        ],
+        "notes": [
+          "Both industrial output and investment, for instance, have a higher average rate of growth (slope) in...",
+          "the path of investment is far more turbulent than that of output"
+        ]
+      }
+    },
+    "Fig2.3": {
+      "figure_id": "Fig2.3",
+      "extenbook_path": "Fig2.3_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig2.3_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US Real GDP per Capita, 1889–2010",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "Real GDP per Capita",
+            "definition": "Real Gross Domestic Product per person in the United States"
+          }
+        ],
+        "shaikh_observations_count": 2,
+        "theoretical_significance_preview": "Demonstrates long-run growth in living standards characteristic of successful capitalist development",
+        "has_axis_specs": false,
+        "source_tables": []
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter"
+        ],
+        "notes": [
+          "The system's apparently inexorable tendency toward growth is immediately evident.",
+          "growth rates are not constant in the long run"
+        ]
+      }
+    },
+    "Fig2.5": {
+      "figure_id": "Fig2.5",
+      "extenbook_path": "Fig2.5_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig2.5_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US Manufacturing Productivity and Production Worker Real Compensation, 1889–2010 (1889 = 100)",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "Productivity",
+            "definition": "Output per worker hour in manufacturing"
+          },
+          {
+            "name": "Real Compensation Per Production Worker (CPI-based)",
+            "definition": "Real wages deflated by consumer price index"
+          }
+        ],
+        "shaikh_observations_count": 4,
+        "theoretical_significance_preview": "Demonstrates that real wage growth is not automatically tied to productivity growth; social and institutional mechanisms required for linkage which can be broken",
+        "has_axis_specs": false,
+        "source_tables": [
+          "U.S. Bureau of Economic Analysis and Measuring Worth.com (1889 = 100)"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter"
+        ],
+        "notes": [
+          "Productivity growth is essentially a measure of technical change, and its steady long-term rise spea...",
+          "One of the great strengths of developed capitalism is that real wages also generally rise over the l..."
+        ]
+      }
+    },
+    "Fig2.6": {
+      "figure_id": "Fig2.6",
+      "extenbook_path": "Fig2.6_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig2.6_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US Manufacturing Real Unit Production Labor Cost Index, 1889–2010",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "Real Unit Labor Cost",
+            "definition": "Ratio of real wages to productivity (also share of nominal wage bill in total money value of output)"
+          }
+        ],
+        "shaikh_observations_count": 5,
+        "theoretical_significance_preview": "Demonstrates conflictual nature of real wage-productivity relation; shattered 'Golden Age' illusion of automatic wage-productivity linkage; shows shifting power balance between labor and capital",
+        "has_axis_specs": false,
+        "source_tables": []
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter"
+        ],
+        "notes": [
+          "real unit labor cost, the ratio of real wages to productivity, is of paramount importance to busines...",
+          "At the aggregate level, a rise in real unit labor costs lowers real profit margins."
+        ]
+      }
+    },
+    "Fig2.7": {
+      "figure_id": "Fig2.7",
+      "extenbook_path": "Fig2.7_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig2.7_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US Unemployment Rate, 1890–2010",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "Unemployment Rate",
+            "definition": "Official unemployment rate as percentage of labor force"
+          }
+        ],
+        "shaikh_observations_count": 5,
+        "theoretical_significance_preview": "Shows Great Depressions' impact can be moderated but at cost of stretched duration; unemployment regulates labor-capital power balance and real wage-productivity linkage",
+        "has_axis_specs": false,
+        "source_tables": []
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "normalize_base_year"
+        ],
+        "notes": [
+          "It provides a vivid picture of the enormous impact that Great Depressions have on economic life.",
+          "while it might not be possible to abolish Depressions, it is certainly possible to moderate some of ..."
+        ]
+      }
+    },
+    "Fig2.8": {
+      "figure_id": "Fig2.8",
+      "extenbook_path": "Fig2.8_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig2.8_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US and UK Wholesale Price Indexes, 1780–2010 (1930 = 100, Log Scale)",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "UK Wholesale Price Index",
+            "definition": "Wholesale price index for United Kingdom"
+          },
+          {
+            "name": "US Wholesale Price Index",
+            "definition": "Wholesale price index for United States"
+          }
+        ],
+        "shaikh_observations_count": 2,
+        "theoretical_significance_preview": "Inflation is modern phenomenon not natural to capitalism; fundamental change in price level behavior around 1940 requires explanation",
+        "has_axis_specs": false,
+        "source_tables": []
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "log_scale"
+        ],
+        "notes": [
+          "It is immediately apparent that what we now call 'inflation' is a modern phenomenon. For hundreds of...",
+          "When placed on the same scale as in figure 2.8, the long swings in prices prior to the 1940s are dwa..."
+        ]
+      }
+    },
+    "Fig2.9": {
+      "figure_id": "Fig2.9",
+      "extenbook_path": "Extenbook_Fig2.9.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig2.9.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US and UK Wholesale Price Indexes, 1780–1940 (1930 = 100, Log Scale)",
+        "figure_type": "empirical",
+        "variables": [
+          {
+            "name": "UK Wholesale Price Index",
+            "definition": "Wholesale price index for United Kingdom"
+          },
+          {
+            "name": "US Wholesale Price Index",
+            "definition": "Wholesale price index for United States"
+          }
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "Underpins notion of 'long waves'; shows Great Depressions associated with downswing phases pre-1940; apparent disappearance of waves post-1940 requires explanation",
+        "has_axis_specs": false,
+        "source_tables": []
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "log_scale"
+        ],
+        "notes": [
+          "For more than a century-and-a-half from 1780 to 1940, price movement displays distinct long swings w...",
+          "But after 1940, prices never stop rising. This fundamental change in the behavior of the price level..."
+        ]
+      }
+    },
+    "Fig5.1": {
+      "figure_id": "Fig5.1",
+      "extenbook_path": "Extenbook_Fig5.1.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig5.1.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig5.2": {
+      "figure_id": "Fig5.2",
+      "extenbook_path": "Extenbook_Fig5.2.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig5.2.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig5.3": {
+      "figure_id": "Fig5.3",
+      "extenbook_path": "Extenbook_Fig5.3.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig5.3.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig5.4": {
+      "figure_id": "Fig5.4",
+      "extenbook_path": "Extenbook_Fig5.4.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig5.4.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig5.6": {
+      "figure_id": "Fig5.6",
+      "extenbook_path": "Fig5.6_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig5.6_Extenbook.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig6.1": {
+      "figure_id": "Fig6.1",
+      "extenbook_path": "Fig6.1_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig6.1_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 6.1 Corporate and Non-Corporate Profit Rates, 1947-2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "rbus",
+            "definition": "Total business profit rate"
+          },
+          {
+            "name": "rcorp",
+            "definition": "Corporate profit rate = NOS / (KGC + INV)"
+          },
+          {
+            "name": "rnoncorp",
+            "definition": "Non-corporate profit rate"
+          }
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          {
+            "table_id": "NIPA",
+            "description": "National Income and Product Accounts"
+          },
+          {
+            "table_id": "IRS",
+            "description": "Corporate balance sheets"
+          }
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Corporate and non-corporate profit rates turn out to be very similar",
+          "Both show similar cyclical patterns and long-run trends"
+        ]
+      }
+    },
+    "Fig6.2": {
+      "figure_id": "Fig6.2",
+      "extenbook_path": "Fig6.2_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig6.2_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 6.2 Corporate Profitability Measures Corrected for Imputed Interest and Inventories versus Conventional NIPA Measures",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "Rcorp",
+            "definition": "Corrected maximum profit rate = VA / (KGC + INV)"
+          },
+          {
+            "name": "Rcorpnipa",
+            "definition": "NIPA maximum profit rate"
+          },
+          {
+            "name": "profshcorp",
+            "definition": "Corrected profit share = NOS / VA"
+          },
+          {
+            "name": "profshcorpnipa",
+            "definition": "NIPA profit share = P / VA"
+          },
+          {
+            "name": "rcorp",
+            "definition": "Corrected average profit rate = NOS / (KGC + INV)"
+          },
+          {
+            "name": "rcorpnipa",
+            "definition": "NIPA profit rate = P / KNCNIPA"
+          }
+        ],
+        "shaikh_observations_count": 6,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          {
+            "table_id": "NIPA",
+            "description": "Value added, operating surplus, profit"
+          },
+          {
+            "table_id": "BEA Fixed Assets",
+            "description": "Capital stock measures"
+          },
+          {
+            "table_id": "IRS",
+            "description": "Corporate inventories"
+          }
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Corrected maximum profit rate (VA/total capital) falls more steadily than NIPA measure",
+          "Corrected profit share (NOS/VA) is far more stable than NIPA share, falling modestly until early 198..."
+        ]
+      }
+    },
+    "Fig6.3": {
+      "figure_id": "Fig6.3",
+      "extenbook_path": "Fig6.3_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig6.3_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 6.3 Component Ratios Accounting for the Difference between Corrected and Conventional Profit Rates",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "x1",
+            "definition": "Monetary interest ratio = 1 + (NMINT/P)"
+          },
+          {
+            "name": "x2",
+            "definition": "Inventory ratio = 1 + (INV/KNCNIPA)"
+          },
+          {
+            "name": "x3",
+            "definition": "Capital stock ratio = KNCNIPA / KGC"
+          },
+          {
+            "name": "rcorp/rcorpnipa",
+            "definition": "Ratio of corrected to NIPA profit rate = x3*(x1/x2)"
+          }
+        ],
+        "shaikh_observations_count": 5,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          {
+            "table_id": "NIPA",
+            "description": "Net monetary interest, profits"
+          },
+          {
+            "table_id": "BEA",
+            "description": "Capital stock measures"
+          },
+          {
+            "table_id": "IRS",
+            "description": "Corporate inventories"
+          }
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Monetary interest ratio (x1) rises sharply in first half of period as interest rates rise, then stab...",
+          "Inventory ratio (x2) is fairly stable"
+        ]
+      }
+    },
+    "Fig6.4": {
+      "figure_id": "Fig6.4",
+      "extenbook_path": "Extenbook_Fig6.4.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig6.4.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 6.4 New Capacity Utilization Rate Compared to FRB Rate",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "uK",
+            "definition": "New capacity utilization = Y/Yn (cointegrated with capital stock)"
+          },
+          {
+            "name": "uFRB",
+            "definition": "Federal Reserve Board capacity utilization measure"
+          }
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          {
+            "table_id": "NIPA",
+            "description": "Real output, capital stock"
+          },
+          {
+            "table_id": "FRB",
+            "description": "Federal Reserve Board capacity utilization"
+          }
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "New measure shows not only short-run fluctuations but also two distinct twenty-five-year-long fluctu...",
+          "FRB measure only available from 1967"
+        ]
+      }
+    },
+    "Fig6.5": {
+      "figure_id": "Fig6.5",
+      "extenbook_path": "Extenbook_Fig6.5.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig6.5.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 6.5 Normal-Capacity Corporate Profit Rates, Corrected versus Conventional Measures",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "Rcorpn",
+            "definition": "Normal maximum profit rate = Yn/K"
+          },
+          {
+            "name": "Rcorpnipan",
+            "definition": "NIPA normal maximum rate"
+          },
+          {
+            "name": "profshcorpn",
+            "definition": "Normal profit share = (P/Y)n"
+          },
+          {
+            "name": "profshcorpnipan",
+            "definition": "NIPA normal profit share"
+          },
+          {
+            "name": "rcorpn",
+            "definition": "Normal average profit rate = (P/Y)n * Rn"
+          },
+          {
+            "name": "rcorpnipan",
+            "definition": "NIPA normal profit rate"
+          }
+        ],
+        "shaikh_observations_count": 6,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          {
+            "table_id": "NIPA",
+            "description": "Value added, operating surplus, profit"
+          },
+          {
+            "table_id": "BEA",
+            "description": "Capital stock"
+          },
+          {
+            "table_id": "Derived",
+            "description": "Capacity utilization measures"
+          }
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Normal maximum profit rate falls steadily, supporting notion that technical change reduces output-ca...",
+          "Normal profit share falls modestly in Golden Age until early 1980s, then rises in neoliberal era"
+        ]
+      }
+    },
+    "Fig7.13": {
+      "figure_id": "Fig7.13",
+      "extenbook_path": "Extenbook_Fig7.13.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig7.13.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 7.13 World Manufacturing Average and Incremental Rates of Profit, 1970-1989",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "average_profit_rate",
+            "definition": "Ratio of total profits to current cost value of capital stock"
+          },
+          {
+            "name": "incremental_profit_rate",
+            "definition": "Ratio of change in real profit to lagged real investment (3-year centered moving average)"
+          }
+        ],
+        "shaikh_observations_count": 4,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "OECD 1994 International Sectoral Database (ISDB)",
+          "Christodoulopoulos 1995"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Average rates of profit cluster around common level but some remain persistently above or below",
+          "Incremental rates of profit exhibit substantial crossing - very different pattern from average rates"
+        ]
+      }
+    },
+    "Fig7.14": {
+      "figure_id": "Fig7.14",
+      "extenbook_path": "Fig7.14_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig7.14_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 7.14 US Manufacturing Average and Incremental Rates of Profit, 1960-1989",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "average_profit_rate",
+            "definition": "Ratio of total profits to current cost value of capital stock (annual, not smoothed)"
+          },
+          {
+            "name": "incremental_profit_rate",
+            "definition": "Ratio of change in real profit to lagged real investment (annual, not smoothed)"
+          }
+        ],
+        "shaikh_observations_count": 4,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "OECD 1994 International Sectoral Database (ISDB)"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Average profit rates exhibit some persistent differences in levels",
+          "Incremental rates of profit exhibit considerable crossing"
+        ]
+      }
+    },
+    "Fig7.15": {
+      "figure_id": "Fig7.15",
+      "extenbook_path": "Fig7.15_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig7.15_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 7.15 Average Rates of Profit in US Industries, 1987-2005",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "average_profit_rate",
+            "definition": "Ratio of (GOS - wage equivalent of proprietors/partners) to (fixed capital stock + inventories), adjusted for imputed quantities"
+          }
+        ],
+        "shaikh_observations_count": 4,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "US NIPA sectoral data"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Rates of profit on total capital cluster around some central tendency",
+          "Substantial number remain persistently above or below average"
+        ]
+      }
+    },
+    "Fig7.16": {
+      "figure_id": "Fig7.16",
+      "extenbook_path": "Fig7.16_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig7.16_Extenbook.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig7.17": {
+      "figure_id": "Fig7.17",
+      "extenbook_path": "Fig7.17_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig7.17_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 7.17 Incremental Rates of Profit in US Industries, 1987-2005",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "incremental_profit_rate",
+            "definition": "Ratio of change in gross operating surplus to lagged gross investment (annual)"
+          }
+        ],
+        "shaikh_observations_count": 4,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "US NIPA sectoral data"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Unlike average profit rates, incremental rates of profit cross over a great deal",
+          "In every single case, individual incremental rates of profit cross back and forth relative to the av..."
+        ]
+      }
+    },
+    "Fig7.18": {
+      "figure_id": "Fig7.18",
+      "extenbook_path": "Fig7.18_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig7.18_Extenbook.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig7.19": {
+      "figure_id": "Fig7.19",
+      "extenbook_path": "Extenbook_Fig7.19.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig7.19.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 7.19 Deviations of Greek Manufacturing Profit Rates from Average Profit Rate, 1962-1991",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "profit_rate_deviation",
+            "definition": "Deviation of individual industry average profit rate from overall mean"
+          }
+        ],
+        "shaikh_observations_count": 4,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "Tsoulfidis and Tsaliki 2011, 19, fig. 4"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Visual inspection does not provide strong support for equalization of average profit rates over the ...",
+          "Fourteen out of twenty industries have estimated long-run deviations not statistically different fro..."
+        ]
+      }
+    },
+    "Fig7.20": {
+      "figure_id": "Fig7.20",
+      "extenbook_path": "Extenbook_Fig7.20.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig7.20.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 7.20 Deviations of Greek Manufacturing Incremental Profit Rates from Average Incremental Rate, 1962-1991",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "incremental_profit_rate_deviation",
+            "definition": "Deviation of individual industry incremental profit rate from overall mean"
+          }
+        ],
+        "shaikh_observations_count": 4,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "Tsoulfidis and Tsaliki 2011, 30, fig. 5"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Much stronger visual support for long-run equalization of incremental rates than average rates",
+          "For incremental rates, all estimated long-run deviations are not statistically different from zero"
+        ]
+      }
+    },
+    "Fig7.21": {
+      "figure_id": "Fig7.21",
+      "extenbook_path": "Extenbook_Fig7.21.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig7.21.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig9.1": {
+      "figure_id": "Fig9.1",
+      "extenbook_path": "Extenbook_Fig9.1.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig9.1.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 9.1 Normalized Total Market Prices versus Total Direct Prices, United States",
+        "figure_type": "empirical",
+        "variables": {
+          "x": "Direct prices (prices proportional to integrated labor times)",
+          "y": "Market prices (actual observed prices)"
+        },
+        "shaikh_observations_count": 122,
+        "theoretical_significance_preview": "Validates Ricardo's hypothesis that market prices are closely related to integrated labor times. Demonstrates the empirical relevance of the labor theory of value for understanding actual price struct...",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter"
+        ],
+        "notes": [
+          "T",
+          "h"
+        ]
+      }
+    },
+    "Fig9.2": {
+      "figure_id": "Fig9.2",
+      "extenbook_path": "Extenbook_Fig9.2.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig9.2.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 9.2 Market Price–Direct Price Ratios (Seventy-One Industries)",
+        "figure_type": "empirical",
+        "variables": {
+          "x": "Market price/direct price ratio in earlier year",
+          "y": "Market price/direct price ratio in 1972"
+        },
+        "shaikh_observations_count": 116,
+        "theoretical_significance_preview": "Supports the time-series version of Ricardo's hypothesis: relative price structures remain stable over time, driven by relative labor requirements.",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "normalize_base_year"
+        ],
+        "notes": [
+          "M",
+          "a"
+        ]
+      }
+    },
+    "Fig9.3": {
+      "figure_id": "Fig9.3",
+      "extenbook_path": "Extenbook_Fig9.3.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig9.3.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 9.3 Three-Sector Numerical Example",
+        "figure_type": "conceptual",
+        "variables": {
+          "panel1": "Integrated output-capital ratios as function of profit rate",
+          "panel2": "Price of production to integrated labor time ratios as function of profit rate",
+          "panel3": "Distance measures between prices and labor values as function of profit rate"
+        },
+        "shaikh_observations_count": 158,
+        "theoretical_significance_preview": "Demonstrates the systematic but limited nature of price-value deviations. Shows that at actual profit rates, deviations are small even in theoretical examples.",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "A",
+          "t"
+        ]
+      }
+    },
+    "Fig9.4": {
+      "figure_id": "Fig9.4",
+      "extenbook_path": "Extenbook_Fig9.4.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig9.4.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 9.4 Integrated Output–Capital Ratios Relative to the Standard, United States, 1998 (Circulating Capital Model)",
+        "figure_type": "empirical",
+        "variables": {
+          "x": "Profit rate ratio (r/R)",
+          "y": "Industry integrated output-capital ratio relative to standard (VR(r)/VRR)"
+        },
+        "shaikh_observations_count": 177,
+        "theoretical_significance_preview": "Provides empirical validation of the theoretical framework. Shows that real-world price systems are simpler and more predictable than some theoretical models suggest.",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "normalize_base_year"
+        ],
+        "notes": [
+          "M",
+          "o"
+        ]
+      }
+    },
+    "Fig9.5": {
+      "figure_id": "Fig9.5",
+      "extenbook_path": "Extenbook_Fig9.5.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig9.5.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 9.5 Integrated Output–Capital Ratios for Four Exceptional Industries (Circulating Capital Model)",
+        "figure_type": "empirical",
+        "variables": {
+          "x": "Profit rate ratio (r/R)",
+          "y": "Integrated output-capital ratio relative to standard (VR(r)/VRR)"
+        },
+        "shaikh_observations_count": 202,
+        "theoretical_significance_preview": "Validates that near-linearity is the norm even for outlier industries. Demonstrates that Sraffian complications are empirically negligible.",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "normalize_base_year"
+        ],
+        "notes": [
+          "E",
+          "v"
+        ]
+      }
+    },
+    "Fig10.11": {
+      "figure_id": "Fig10.11",
+      "extenbook_path": "Fig10.11_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig10.11_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 10.11 Equity Current Rate of Return versus Adjusted and NIPA Corporate Current Incremental Rates of Profit, 1948–2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "req_real",
+            "definition": "Equity real current rate of return = (dividend yield + real capital gains)",
+            "unit": "percentage",
+            "mean_1947_2011": 9.83,
+            "coeff_of_variation": 1.71
+          },
+          {
+            "name": "iropcorp_adj_real",
+            "definition": "Adjusted corporate real incremental rate of profit",
+            "unit": "percentage",
+            "mean_1947_2011": 9.5,
+            "coeff_of_variation": 1.39
+          },
+          {
+            "name": "iropcorpnipa_real",
+            "definition": "NIPA corporate real incremental rate of profit = ΔPG/IG(t-1)",
+            "unit": "percentage",
+            "mean_1947_2011": 8.49,
+            "coeff_of_variation": 1.68
+          }
+        ],
+        "shaikh_observations_count": 7,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": [
+          "S&P equity data",
+          "BEA NIPA corporate profit data",
+          "Adjusted corporate incremental rate data"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Classical theory: equity rate of return turbulently equalized to rate of return on new corporate inv...",
+          "First panel: equity return mean 9.83%, adjusted corporate rate 9.50% - slightly higher mean associat..."
+        ]
+      }
+    },
+    "Fig14.17": {
+      "figure_id": "Fig14.17",
+      "extenbook_path": "Fig14.17_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig14.17_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "HP(100)-Filtered Values, Rate of Change of Nominal Wages versus Unemployment Intensity, United States, 1949-2011",
+        "figure_type": "",
+        "variables": [
+          {
+            "name": "Nominal_Wage_Growth",
+            "definition": "HP(100)-filtered ẇ/w",
+            "formula": "ẇ/w = ṗ/p + ẏ/y + f(uInt_L)",
+            "range": "0.0% to 9.0%",
+            "units": "percentage per year"
+          },
+          {
+            "name": "Unemployment_Intensity",
+            "definition": "HP(100)-filtered unemployment intensity",
+            "range": "0% to 30%",
+            "units": "percentage"
+          }
+        ],
+        "shaikh_observations_count": 7,
+        "theoretical_significance_preview": "Demonstrates why original Phillips curve failed - must account for both inflation AND productivity, and use unemployment intensity",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Nominal wage curve pulled downward by declining productivity growth (Fig14.15)",
+          "Nominal wage curve pulled upward by rising inflation rate in 1970s"
+        ]
+      }
+    },
+    "Fig15.10": {
+      "figure_id": "Fig15.10",
+      "extenbook_path": "Fig15.10_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig15.10_Extenbook.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig15.11": {
+      "figure_id": "Fig15.11",
+      "extenbook_path": "Fig15.11_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig15.11_Extenbook.xlsx",
+      "has_hdarp_metadata": false
+    },
+    "Fig15.2A": {
+      "figure_id": "Fig15.2A",
+      "extenbook_path": "Fig15.2A_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig15.2A_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Growth Rates of Real Output, US Major Industries, 1987–2010",
+        "figure_type": "",
+        "variables": [
+          "All industries",
+          "Agriculture, forestry, fishing, and hunting",
+          "Mining",
+          "Utilities",
+          "Construction",
+          "Durable Mfg. goods",
+          "Nondurable Mfg. goods",
+          "Wholesale trade",
+          "Retail trade"
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Displays the growth rates of real output for major US sectors from 1987 to 2010 in comparison to the...",
+          "Since the growth of any given industry requires concomitant growth in its inputs, no major industry ..."
+        ]
+      }
+    },
+    "Fig15.2B": {
+      "figure_id": "Fig15.2B",
+      "extenbook_path": "Fig15.2B_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig15.2B_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Growth Rates of Real Output, US Major Industries, 1987–2010 (continued)",
+        "figure_type": "",
+        "variables": [
+          "All industries",
+          "Transportation and warehousing",
+          "Information",
+          "Finance, insurance, real estate, rental, and leasing",
+          "Professional and business services",
+          "Educational services, health care, and social assistance",
+          "Arts, entertainment, recreation, accommodation, and food services",
+          "Other services, except government",
+          "Federal government",
+          "State and local government"
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Continuation of Fig15.2A showing additional industry sectors",
+          "Demonstrates that actual growth is never balanced, with industries varying around the economy-wide a..."
+        ]
+      }
+    },
+    "Fig16.10": {
+      "figure_id": "Fig16.10",
+      "extenbook_path": "Fig16.10_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig16.10_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Household Debt-Service Ratio, 1980–2012",
+        "figure_type": "",
+        "variables": [
+          "Household Debt-Service Ratio (percentage of household income devoted to debt service payments including principal and interest)"
+        ],
+        "shaikh_observations_count": 9,
+        "theoretical_significance_preview": "",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "Ratio starts at approximately 10.5% in 1980 and shows modest fluctuation through 1980s-1990s",
+          "Despite rising debt loads during this period, falling interest rates offset the effect, keeping debt..."
+        ]
+      }
+    },
+    "Fig16.8": {
+      "figure_id": "Fig16.8",
+      "extenbook_path": "Fig16.8_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig16.8_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Net Average and Real Incremental Rates of Profit, US Corporations, 1947–2011",
+        "figure_type": "",
+        "variables": [
+          "r - i (Net average rate of profit)",
+          "rI HP100(-1) - i (Net real incremental rate of profit, lagged)"
+        ],
+        "shaikh_observations_count": 8,
+        "theoretical_significance_preview": "Real net rate of profit is central driver of accumulation, material foundation for 'animal spirits' of capitalists, with net new purchasing power taking major role in fiat money era",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "The Stagflation Crisis of late 1960s was precipitated when both rates sank to unprecedented lows",
+          "Net incremental rate shows extreme volatility and sharp decline during stagflation crisis, reaching ..."
+        ]
+      }
+    },
+    "Fig17.3": {
+      "figure_id": "Fig17.3",
+      "extenbook_path": "Fig17.3_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig17.3_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Personal Income Distribution above $200,000, Cumulative Probability from Above",
+        "figure_type": "empirical",
+        "variables": [
+          "Actual income distribution",
+          "Theoretical Pareto distribution"
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "This figure provides the complementary evidence to Figure 17.2, confirming the two-class structure of income distribution. The Pareto distribution of the top 3% of incomes validates that property-base...",
+        "has_axis_specs": true,
+        "source_tables": "US 2011 IRS Data"
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter"
+        ],
+        "notes": [
+          "The data represents the top 3% of the US population (incomes above $200,000)",
+          "The actual distribution closely follows a linear path on the log-log scale, confirming that high inc..."
+        ]
+      }
+    },
+    "Fig4.5": {
+      "figure_id": "Fig4.5",
+      "extenbook_path": "Fig4.5_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig4.5_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Daily Output from Different Shift Combinations Totaling 20-Hours per Day, at the Maximum Intensity of Labor",
+        "figure_type": "conceptual",
+        "variables": [
+          {
+            "name": "Daily Output",
+            "definition": "Total production from all shifts in a day"
+          },
+          {
+            "name": "Total Daily Hours",
+            "definition": "Sum of hours across all shifts"
+          }
+        ],
+        "shaikh_observations_count": 3,
+        "theoretical_significance_preview": "Demonstrates microeconomic 're-switching' analogous to Cambridge Capital Controversy, destroying the possibility of a well-defined neoclassical production function even at the firm level",
+        "has_axis_specs": false,
+        "source_tables": ""
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": [
+          "While the two-shift 17:3 combination dominates a single 20-hour shift, it still does not constitute ...",
+          "Similar 're-switching' must occur between (say) the two-shift combinations 12:8 and 8:12, as well as..."
+        ]
+      }
+    },
+    "Fig8.1": {
+      "figure_id": "Fig8.1",
+      "extenbook_path": "Fig8.1_Extenbook.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Fig8.1_Extenbook.xlsx",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Price Paths of Concentrated and Unconcentrated Industries - Wholesale Prices in Oligopolistic and Competitive Industries, 1965-73 (1957-59 = 100)",
+        "figure_type": "empirical",
+        "variables": {
+          "price_level": "Wholesale price index normalized to 1957-59 = 100",
+          "time": "Years 1965-1973",
+          "industry_type": "Oligopolistic vs Competitive industries"
+        },
+        "shaikh_observations_count": 5,
+        "theoretical_significance_preview": "This figure is central to the debate about whether price stability indicates monopoly power or simply reflects higher entry/exit costs in capital-intensive industries. Shaikh argues the data supports ...",
+        "has_axis_specs": false,
+        "source_tables": null
+      },
+      "recommended_analysis": {
+        "filters": [
+          "HP_filter",
+          "normalize_base_year"
+        ],
+        "notes": [
+          "Eichner (1973, 1187) presents data on the average price of concentrated and competitive industries a...",
+          "But this does not provide any evidence that the smoother prices of the concentrated industries are a..."
+        ]
+      }
+    },
+    "Fig2.4A": {
+      "figure_id": "Fig2.4A",
+      "extenbook_path": "Extenbook_Fig2.4A.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig2.4A.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Business Cycles, 1831–1866",
+        "figure_type": "empirical",
+        "chapter": 2,
+        "page_number": 58,
+        "variables": [
+          {
+            "name": "Cyclical component of business activity",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S004"
+        ],
+        "data_columns": []
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig2.4B": {
+      "figure_id": "Fig2.4B",
+      "extenbook_path": "Extenbook_Fig2.4B.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig2.4B.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Business Cycles, 1867–1902",
+        "figure_type": "empirical",
+        "chapter": 2,
+        "page_number": 59,
+        "variables": [
+          {
+            "name": "Cyclical component of business activity",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S005"
+        ],
+        "data_columns": []
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig2.4C": {
+      "figure_id": "Fig2.4C",
+      "extenbook_path": "Extenbook_Fig2.4C.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig2.4C.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Business Cycles, 1903–1939",
+        "figure_type": "empirical",
+        "chapter": 2,
+        "page_number": 59,
+        "variables": [
+          {
+            "name": "Cyclical component of business activity",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S006"
+        ],
+        "data_columns": []
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig5.5": {
+      "figure_id": "Fig5.5",
+      "extenbook_path": "Extenbook_Fig5.5.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig5.5.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 5.5 UK Wholesale Price Indexes in Gold Ounces and Pound Sterling Price of Gold, 1790-2009 (Log Scale, 1930 = 100)",
+        "figure_type": "unknown",
+        "chapter": 5,
+        "page_number": 198,
+        "variables": [
+          {
+            "name": "UK WPI in Gold oz.",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "£ Price of Gold",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S024"
+        ],
+        "data_columns": []
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig7.11": {
+      "figure_id": "Fig7.11",
+      "extenbook_path": "Extenbook_Fig7.11.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig7.11.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 7.11 Change in Selling Price versus Change in Unit Labor Cost, US 1923-1950 (Ratio of Each Variable in 1950 to its 1923 Value)",
+        "figure_type": "unknown",
+        "chapter": 7,
+        "page_number": 287,
+        "variables": [
+          {
+            "name": "selling_price_change",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "unit_labor_cost_change",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S030"
+        ],
+        "data_columns": []
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig7.12": {
+      "figure_id": "Fig7.12",
+      "extenbook_path": "Extenbook_Fig7.12.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig7.12.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 7.12 Change in Selling Price versus Change in Unit Labor Cost, UK 1954-1963 (Ratio of Each Variable in 1963 to its 1954 Value)",
+        "figure_type": "unknown",
+        "chapter": 7,
+        "page_number": 287,
+        "variables": [
+          {
+            "name": "selling_price_change",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "unit_labor_cost_change",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S031"
+        ],
+        "data_columns": []
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig9.11": {
+      "figure_id": "Fig9.11",
+      "extenbook_path": "Extenbook_Fig9.11.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig9.11.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 9.11 Integrated Output–Capital Ratios and Standard Prices for the Four Previously Exceptional Industries, United States, 1998 (Fixed Capital Model)",
+        "figure_type": "empirical",
+        "chapter": 9,
+        "page_number": "417",
+        "variables": [
+          {
+            "name": "panel1_x",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "panel1_y",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "panel2_x",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "panel2_y",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S044"
+        ],
+        "data_columns": []
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig9.19": {
+      "figure_id": "Fig9.19",
+      "extenbook_path": "Extenbook_Fig9.19.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig9.19.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Figure 9.19 Actual Wage–Profit Curves, 1947–1972",
+        "figure_type": "empirical",
+        "chapter": 9,
+        "page_number": "422-423",
+        "variables": [
+          {
+            "name": "x",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "y",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S045"
+        ],
+        "data_columns": []
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig15.7": {
+      "figure_id": "Fig15.7",
+      "extenbook_path": "Extenbook_Fig15.7.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig15.7.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Classical and Conventional Phillips-Type Curves, 1948–2010",
+        "figure_type": "unknown",
+        "chapter": 15,
+        "page_number": 707,
+        "variables": [
+          {
+            "name": "Inflation Rate",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "Unutilized growth capacity (1-σ)",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "Unemployment Rate",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S079"
+        ],
+        "data_columns": [
+          "gdp_growth_rate"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig15.8": {
+      "figure_id": "Fig15.8",
+      "extenbook_path": "Extenbook_Fig15.8.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig15.8.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Classical and Conventional Phillips-Type Curves, 1948–1981",
+        "figure_type": "unknown",
+        "chapter": 15,
+        "page_number": 708,
+        "variables": [
+          {
+            "name": "Inflation Rate",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "Unutilized growth capacity (1-σ)",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "Unemployment Rate",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S080"
+        ],
+        "data_columns": [
+          "gdp_growth_rate"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig15.9": {
+      "figure_id": "Fig15.9",
+      "extenbook_path": "Extenbook_Fig15.9.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig15.9.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Classical and Conventional Phillips-Type Curves, 1982–2010",
+        "figure_type": "unknown",
+        "chapter": 15,
+        "page_number": 710,
+        "variables": [
+          {
+            "name": "Inflation Rate",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "Unutilized growth capacity (1-σ)",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "Unemployment Rate",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S081"
+        ],
+        "data_columns": [
+          "gdp_growth_rate"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig15.12": {
+      "figure_id": "Fig15.12",
+      "extenbook_path": "Extenbook_Fig15.12.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig15.12.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "World Inflation versus Growth of Private and Public Credit, 1970–1988",
+        "figure_type": "unknown",
+        "chapter": 15,
+        "page_number": 718,
+        "variables": [
+          {
+            "name": "Inflation Rate",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "Growth of Domestic Claims (public and private cred",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S084"
+        ],
+        "data_columns": [
+          "gdp_growth_rate"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig15.13": {
+      "figure_id": "Fig15.13",
+      "extenbook_path": "Extenbook_Fig15.13.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig15.13.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "World Inflation versus Growth of Total Private and Public Credit, 1988–2011",
+        "figure_type": "unknown",
+        "chapter": 15,
+        "page_number": 719,
+        "variables": [
+          {
+            "name": "Inflation Rate",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "Growth in Domestic Credit",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S085"
+        ],
+        "data_columns": [
+          "gdp_growth_rate"
+        ]
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig16.7": {
+      "figure_id": "Fig16.7",
+      "extenbook_path": "Extenbook_Fig16.7.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig16.7.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "US and OECD Short-Term Interest Rates, 1960–2011",
+        "figure_type": "unknown",
+        "chapter": 16,
+        "page_number": 734,
+        "variables": [
+          {
+            "name": "US Short-Term Interest Rate",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "OECD Weighted Average Short-Term Interest Rate",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S094"
+        ],
+        "data_columns": []
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig17.1": {
+      "figure_id": "Fig17.1",
+      "extenbook_path": "Extenbook_Fig17.1.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig17.1.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "The Global Crisis of 2007 in Light of Past Long Waves",
+        "figure_type": "empirical",
+        "chapter": 17,
+        "page_number": 749,
+        "variables": [
+          {
+            "name": "US smoothed data",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "UK smoothed data",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "Average of Past Two Waves",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S098"
+        ],
+        "data_columns": []
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    },
+    "Fig17.2": {
+      "figure_id": "Fig17.2",
+      "extenbook_path": "Extenbook_Fig17.2.xlsx",
+      "extenbook_relative": "Output/Extenbooks/Extenbook_Fig17.2.xlsx",
+      "extenbook_status": "pending_creation",
+      "has_hdarp_metadata": true,
+      "hdarp_metadata": {
+        "full_caption": "Personal Income Distribution below $200,000, Cumulative Probability from Above",
+        "figure_type": "empirical",
+        "chapter": 17,
+        "page_number": 752,
+        "variables": [
+          {
+            "name": "Actual income distribution",
+            "definition": "",
+            "unit": ""
+          },
+          {
+            "name": "Theoretical exponential distribution",
+            "definition": "",
+            "unit": ""
+          }
+        ],
+        "linked_series": [
+          "S099"
+        ],
+        "data_columns": []
+      },
+      "recommended_analysis": {
+        "filters": [],
+        "notes": []
+      }
+    }
+  },
+  "chapter_extenbooks": [
+    {
+      "chapter": "02",
+      "extenbook_path": "Extenbook_Ch02.xlsx",
+      "description": "Chapter 02 consolidated data"
+    },
+    {
+      "chapter": "05",
+      "extenbook_path": "Extenbook_Ch05.xlsx",
+      "description": "Chapter 05 consolidated data"
+    },
+    {
+      "chapter": "06",
+      "extenbook_path": "Extenbook_Ch06.xlsx",
+      "description": "Chapter 06 consolidated data"
+    },
+    {
+      "chapter": "07",
+      "extenbook_path": "Extenbook_Ch07.xlsx",
+      "description": "Chapter 07 consolidated data"
+    },
+    {
+      "chapter": "08",
+      "extenbook_path": "Extenbook_Ch08.xlsx",
+      "description": "Chapter 08 consolidated data"
+    },
+    {
+      "chapter": "09",
+      "extenbook_path": "Extenbook_Ch09.xlsx",
+      "description": "Chapter 09 consolidated data"
+    },
+    {
+      "chapter": "10",
+      "extenbook_path": "Extenbook_Ch10.xlsx",
+      "description": "Chapter 10 consolidated data"
+    },
+    {
+      "chapter": "11",
+      "extenbook_path": "Extenbook_Ch11.xlsx",
+      "description": "Chapter 11 consolidated data"
+    },
+    {
+      "chapter": "12",
+      "extenbook_path": "Extenbook_Ch12.xlsx",
+      "description": "Chapter 12 consolidated data"
+    },
+    {
+      "chapter": "14",
+      "extenbook_path": "Extenbook_Ch14.xlsx",
+      "description": "Chapter 14 consolidated data"
+    },
+    {
+      "chapter": "15",
+      "extenbook_path": "Extenbook_Ch15.xlsx",
+      "description": "Chapter 15 consolidated data"
+    },
+    {
+      "chapter": "16",
+      "extenbook_path": "Extenbook_Ch16.xlsx",
+      "description": "Chapter 16 consolidated data"
+    }
+  ],
+  "statistics": {
+    "figures_with_hdarp": 103,
+    "figures_without_hdarp": 33,
+    "empirical_figures": 31,
+    "conceptual_figures": 72
+  }
+}

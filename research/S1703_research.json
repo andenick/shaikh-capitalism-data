@@ -1,0 +1,119 @@
+{
+  "series_id": "S1703",
+  "name": "Personal Income Distribution above $200,000, Cumulative Probability from Above",
+  "chapter": 17,
+  "figures": [
+    "Fig17.3"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": "S104",
+    "cd2_id": "S104"
+  },
+  "book_quotes": [
+    {
+      "chapter": 17,
+      "page": 752,
+      "quote": "At the other end, a Pareto distribution has the property that the natural log of its cumulative probability from above is linear with respect to the natural log of bin size, and figure 17.3 shows that incomes above $200,000 do indeed follow a linear path on a log-log scale. The EPTC group shows that the same patterns obtain in all years in the United States from 1983 to 2001, and in Japan and the United Kingdom (Yakovenko 2007, 13–15).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 17,
+      "page": 753,
+      "quote": "Figure 17.3 Personal Income Distribution above $200,000, Cumulative Probability from Above. Sources: US 2011 IRS Data: Log-Log Scale; appendices 17.1 and 17.2.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 17,
+      "page": 900,
+      "quote": "Figure 17.3 Personal Income Distribution above $200,000, Cumulative Probability from Above. For incomes above $200,000, both the cumulative probability from above and the bins were placed on (natural) log scales. On such as log-log scale a Pareto distribution would yield the straight line displayed in the chart.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 17,
+      "page": 751,
+      "quote": "The EPTC group marshals substantial empirical evidence that the bottom 97%–99% of the distribution of personal incomes in the United States is roughly exponential while the top 1%–3% is roughly Pareto. They also provide an ingenious method for combining the two types of distributions, thereby creating a powerful and parsimonious approximation to overall income distribution (Dragulescu and Yakovenko 2001, 358; Silva and Yakovenko 2004, 2; Yakovenko and Barkley Rosser 2009; Jagielski and Kutner 2013).",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Internal Revenue Service, Statistics of Income (IRS SOI) Division",
+    "publication": "IRS Statistics of Income — Individual Income Tax Returns, Publication 1304 (Complete Report), Tax Year 2011",
+    "table_or_series_id": "Table 1.4 — All Returns: Sources of Income, Adjustments, and Tax Items, by Size of Adjusted Gross Income, Tax Year 2011 (filtered to AGI bins at/above $200,000)",
+    "url": "https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-returns-publication-1304-complete-report",
+    "frequency": "annual",
+    "units": "Cumulative probability from above (dimensionless, on natural-log scale) plotted against bin midpoint in US dollars (also natural-log axis, $100,000 to $10,000,000)",
+    "license": "U.S. federal government public domain",
+    "available_through": "SalvagedInputs/book_data/ShaikhChoppedTables/ch17/Appendix17_USIRS2011.csv and IRS SOI archive",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Same construction pipeline as S1702 (bin midpoint -> frequency -> cumulative-from-above), then filter to bins with midpoint >= $200,000 (top ~3%). Plot ln(CDF_from_above) vs ln(midpoint) on log-log axes; the reference line is the theoretical Pareto distribution P(Y > y) proportional to y^(-alpha), which renders as a straight line of slope -alpha on log-log axes.",
+  "components": [
+    {
+      "label": "IRS SOI 2011 Table 1.4 — Number of Returns by AGI bin (top 3%)",
+      "role": "input",
+      "description": "Subset of IRS SOI 2011 Table 1.4 for AGI bins at or above $200,000 (the top ~3% of returns).",
+      "source": "IRS Publication 1304 (Complete Report), Table 1.4, Tax Year 2011"
+    },
+    {
+      "label": "Bin midpoints (log scale)",
+      "role": "derived",
+      "description": "Midpoint of each top-tail AGI range; the open-ended top categories ($1M+, $5M+, $10M+) use Appendix-17.2-constructed midpoints (e.g., 750,000; 1,750,000; 3,500,000; 7,500,000).",
+      "source": "Shaikh 2016, Appendix 17.2 Data Tables for Chapter 17"
+    },
+    {
+      "label": "Cumulative probability from above (log)",
+      "role": "derived",
+      "description": "Survival function values restricted to top-tail bins; plotted on a natural-log axis.",
+      "source": "Shaikh 2016, Appendix 17.1 (p. 900)"
+    },
+    {
+      "label": "Theoretical Pareto reference line",
+      "role": "derived_overlay",
+      "description": "Straight-line fit on the log-log axes; slope is the Pareto exponent -alpha. Shaikh estimates alpha by OLS on the top-3% subsample (regression of ln(CDF_from_above) on ln(midpoint)).",
+      "source": "Shaikh 2016, p. 752; cited EPTC literature: Yakovenko 2007"
+    }
+  ],
+  "year_range_book": [
+    2011,
+    2011
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "Cross-sectional snapshot at a single tax year (2011); no time-series extension applies per Anu Framework rules.",
+    "S1702 (bottom 97%, exponential) and S1703 (top 3%, Pareto) are two halves of the same Figure 17.1/17.2/17.3 decomposition strategy from the EPTC ('econophysics two-class') framework due to Yakovenko and co-authors. Together they cover all bins in IRS SOI 2011 Table 1.4.",
+    "Validation reference values from CD2 (bin midpoint -> cumulative probability from above): 350000 -> 0.026151; 750000 -> 0.004110; 1250000 -> 0.000928; 1750000 -> 0.000385; 3500009 -> 0.000546; 7500000 -> 0.000132. The slight non-monotonicity at 3.5M / 7.5M reflects IRS sample noise in the open-ended top bins.",
+    "Pareto exponent estimation: Shaikh does not state the alpha estimate in the text; visual inspection of Fig 17.3 yields alpha approximately 1.5-2.0, consistent with the Yakovenko-Barkley-Rosser (2009) US tail estimates. Phase 5 replication should compute alpha by OLS on log(CDF_from_above) vs log(midpoint) for the top-tail bins and report the value.",
+    "Open-bin midpoint choice (especially for the $10M+ bin) materially affects the fitted Pareto exponent — see Shaikh's Appendix 17.2 spreadsheet for the canonical midpoints.",
+    "Source data file in salvage: SalvagedInputs/book_data/ShaikhChoppedTables/ch17/Appendix17_USIRS2011.csv (shared with S1702)."
+  ],
+  "open_questions": [
+    "What Pareto exponent alpha does the dashed reference line in Fig 17.3 correspond to? The book quotes neither the slope nor R^2; Phase 5 must recover both from the underlying Appendix 17.2 values.",
+    "Need to confirm the exact midpoints Shaikh used for the open-ended top IRS bins ($1M+, $5M+, $10M+); reference values in CD2 use 750000, 1750000, 3500009, 7500000.",
+    "Cross-validation: do Shaikh, Papanikolaou, Weiner (2014) cited at p. 753 supply the EPTC dataset for years 1996-2008 in machine-readable form? If so, it would support replication of Fig 17.3 across multiple years."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-c-ch13-17",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from printed pp. 751-753 (PDF pp. 789-791) and Appendix 17.1 (p. 900 / PDF p. 938). CD2 S104 ported (MD doc and registry entry, no JSON dossier in salvage)."
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "series_id": "S705",
+  "name": "US Industry Average Rates of Profit (Figure 7.15), 1987-2005",
+  "chapter": 7,
+  "figures": [
+    "Fig7.15"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S034",
+    "cd2_id": "S034"
+  },
+  "book_quotes": [
+    {
+      "chapter": 7,
+      "page": 305,
+      "quote": "The first chart in figure 7.15 presents the evidence on average profit rates from 1987 to 2005 for thirty US industries. It is apparent that the previously noted patterns recur: rates of profit on total capital cluster around some central tendency, but a substantial number remain persistently above or below the average (defined by the overall profit rate of all included private industries).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 857,
+      "quote": "Since the US BEA now only calculates net capital stock, the rate of profit on total capital is defined here as the ratio of nominal net profits (gross profits minus depreciation) to current-cost net capital stock. On the other hand, since gross investment figures are widely available and are independent of the debatable assumptions needed to estimate capital stocks, the incremental rate of profit is defined as the ratio of the change in nominal gross profits to lagged nominal gross investment. [...] 1. The basic flow variables were taken from the US Bureau of Economic Analysis (BEA) Gross-Domestic-Product-(GDP)-by-Industry tables 1947-97 GDPbyInd_VA_NAICS and 1998-2005 GDPbyInd_VA_NAICS, available at http://www.bea.gov/industry/gdpbyind_data.htm.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 858,
+      "quote": "The NAICS data set has sixty-one individual private industries, plus an overall aggregate (All Private Industries) and several sub-aggregates such as Total, Durable, and Nondurable Manufacturing. [...] Particular care was taken focus on industries that were dominated by profit-driven enterprises and were also competitive on a world scale. This led to the exclusion of thirty-one of the original sixty-one private industries, with a concomitant redefinition of the overall rate of profit and incremental rate of profit.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 302,
+      "quote": "First of all, because gross operating surplus counts all the income of proprietors and partners as profit, a better measure of gross profit is derived by subtracting out the estimated wage equivalent (WEQ) of proprietors and partners. This adjustment reduces the measured long-term profit rate in all sectors, the greatest effect being in industries with large numbers of self-employed people. For instance, in Construction it reduces the measured profit rate from 90.5% to 20.7%.",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (BEA) + Shaikh (2008) reconstruction",
+    "publication": "BEA GDP-by-Industry tables (GDPbyInd_VA_NAICS 1947-97 and 1998-2005) + BEA Fixed Asset Tables 3.1ES, 3.4ES, 3.7ES, 3.8ES + NIPA Tables 7.12, 1BU, 2AUI + US Flow of Funds Tables L.109, L.114, L.115, L.116, L.117. Aggregated and adjusted in Shaikh (2008). Appendix 7.2 data tables (sheets ropdataUSind, iropdataUSind) on http://www.anwarshaikhecon.org/.",
+    "table_or_series_id": "BEA GDPbyInd_VA_NAICS (Gross Value Added, Employee Compensation, Gross Operating Surplus, by NAICS industry 1987-2005); BEA Fixed Asset Table 3.1ES (Current-Cost Net Stock of Private Fixed Assets by Industry); shipped as Appendix7_ropdataUSind.xlsx in SalvagedInputs",
+    "url": "https://apps.bea.gov/iTable/?reqid=150&step=2&isuri=1&categories=gdpxind",
+    "frequency": "annual",
+    "units": "rate (decimal/percent; ratio of nominal net profits to current-cost net capital stock)",
+    "license": "U.S. public domain (BEA primary data); Shaikh adjusted dataset is academic/derivative.",
+    "available_through": "BEA iTable + Fixed Assets interactive tables; Shaikh companion site Appendix 7.2 (ropdataUSind sheet); local copy at SalvagedInputs/book_data/ShaikhChoppedTables/Appendix7_ropdataUSind.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "For each included industry i in each year t (1987-2005): ROP_i,t = (PG_i,t - DEP_i,t) / K_i,t-1, where PG_i,t = GOS_i,t - WEQ_i,t (gross profit = gross operating surplus minus wage equivalent of self-employed); DEP_i,t = current-cost depreciation (BEA Fixed Asset Table 3.4ES); K_i,t-1 = lagged current-cost net capital stock (BEA Fixed Asset Table 3.1ES), with adjustments: (a) OOH imputations removed from Real Estate using NIPA T7.12; (b) normal inventories added for manufacturing, wholesale/retail, construction using NIPA T1BU/T2AUI; (c) bank/insurance reserves added using Flow of Funds L.109, L.114-117. WEQ_i = w_i x SEP_i, where w_i = EC_i / FEE_i (average wage per full-time-equivalent employee) and SEP_i = self-employed persons; pre-1998 FEE/PEP ratios filled from 1987-1998 FTPE ratios. Then average ROP per year = sum_i(PG-DEP) / sum_i K(-1) across the 30 included industries.",
+  "components": [
+    {
+      "label": "GVA, EC, GOS, FTPE, SEP, FEE by NAICS industry (1987-2005)",
+      "source": "BEA GDPbyInd_VA_NAICS tables (downloaded Shaikh 2008)",
+      "role": "raw flows"
+    },
+    {
+      "label": "Current-cost net capital stock K by industry, current-cost depreciation DEP, historical-cost gross investment IG, chain-type quantity index KQI",
+      "source": "BEA Fixed Asset Tables 3.1ES, 3.4ES, 3.7ES, 3.8ES",
+      "role": "capital stock and depreciation"
+    },
+    {
+      "label": "Owner-Occupied-Housing imputation removal (Real Estate adjustment)",
+      "source": "NIPA Table 7.12 + Fixed Asset Table 5.1 (residential stock by Owner/Form), Table 5.7 (residential investment)",
+      "role": "real-estate cleaning"
+    },
+    {
+      "label": "Normal inventories for Manufacturing and Wholesale/Retail",
+      "source": "NIPA Table 1BU (Real Manufacturing and Trade Inventories) + Table 2AUI (Implicit Price Deflators)",
+      "role": "inventory addition to K and IG"
+    },
+    {
+      "label": "Construction inventories (from Economic Census of Construction 1992/97/2002 Table 3)",
+      "source": "US Economic Census of Construction",
+      "role": "construction-specific inventory imputation"
+    },
+    {
+      "label": "Insurance and Banking reserves",
+      "source": "US Flow of Funds Tables L.116 (Property-Casualty Insurance lines 2-3), L.117 (Life Insurance lines 2-3), L.109 (Commercial Banks lines 2-4), L.114 (Savings Banks lines 2-5), L.115 (Credit Unions lines 2-4)",
+      "role": "reserves added to fixed K for financial sectors"
+    },
+    {
+      "label": "Industry exclusion list (31 of 61 NAICS private industries dropped)",
+      "source": "Shaikh (2008) Table 9.A1 'Full list of excluded industries', book p. 190 (PDF p. 16); partial list also in Capitalism (2016) Appendix 7.1 II.6 (book pp. 858-859). EXTRACTED to SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv (31 rows, verbatim industry numbers and titles).",
+      "role": "sample restriction to 30 competitive for-profit industries"
+    }
+  ],
+  "year_range_book": [1987, 2005],
+  "year_range_extension": [1987, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA GDP-by-Industry (Value Added components, by NAICS)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=150&step=2&isuri=1&categories=gdpxind",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "BEA has rebased GDPbyIndustry tables multiple times since 2008 (NAICS 2002 -> 2007 -> 2012 -> 2017); industry concordances may shift specific NAICS codes. Re-run the full construction pipeline rather than splicing.",
+        "Comprehensive revisions to NIPA in 2013 and 2018 changed treatment of R&D and intellectual property; Shaikh's 2008 vintage does not include these as fixed assets. Document the discrepancy."
+      ]
+    },
+    {
+      "subseries_label": "BEA Fixed Asset Tables 3.1ES, 3.4ES, 3.7ES (current-cost net stock, depreciation, historical-cost investment by industry)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Post-2013 inclusion of R&D and IP in Fixed Assets alters capital stock levels significantly; must use pre-revision OR re-run with clear documentation.",
+        "Industry boundaries within Fixed Asset Tables don't always match GDPbyIndustry boundaries; Shaikh notes this and aggregates sectors 50-51 and 69-70 - apply same aggregation in any extension."
+      ]
+    },
+    {
+      "subseries_label": "NIPA Table 7.12 (Imputations) for OOH adjustment",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&select_all_years=0&nipa_table_list=287",
+      "units": "billions of USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Line numbers in NIPA T7.12 used by Shaikh (lines 134, 135, 136, 140) need verification under current NIPA structure - lines may have shifted in 2018 comprehensive revision."
+      ]
+    },
+    {
+      "subseries_label": "Federal Reserve Flow of Funds (Z.1 release) - bank and insurance reserves",
+      "source": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/releases/z1/",
+      "units": "billions of USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Flow of Funds table numbering has changed since 2008 (now Z.1 statistical release); Shaikh's L.109/L.114-117 references correspond to current Z.1 L.111, L.114, L.115, L.116, L.117 (verify line numbering)."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Composite series: the displayed line for each of 30 industries is its annual ROP, and the 'All Private' aggregate is computed from sectoral totals (not as an unweighted mean of industry rates). Shaikh emphasizes (book p. 305) that the empirical pattern is clustering of average rates around a center with persistent outliers - this is what later figures (7.16 deviations) make precise.",
+    "Per CD2 S034 validation values: 1987 = 0.137997, 1990 = 0.156228, 1993 = 0.161418, 1996 = 0.165296, 1999 = 0.152938, 2002 = 0.146300, 2005 = 0.181969. These should be reproduced exactly when loading Appendix7_ropdataUSind.xlsx.",
+    "Wage-equivalent adjustment (WEQ) is the principal departure from naive NIPA: it shifts the income of self-employed proprietors and partners from operating surplus into compensation. Per book p. 302, this reduces the measured Construction profit rate from 90.5% to 20.7%, illustrating the magnitude of the correction.",
+    "OOH (owner-occupied housing) removal is the second principal correction: NIPA treats homeowners as businesses renting to themselves, which inflates Real Estate's gross operating surplus by ~55.5% and capital stock by ~76% over 1988-2005 (book p. 302).",
+    "Inventory and reserve adjustments add ~50% to the banking/finance capital stock denominator, reducing the apparent banking profit rate from 41.8% to 17.7% (book p. 303). These are non-optional for cross-industry comparability.",
+    "Industry exclusions: 31 of 61 NAICS private industries are dropped on three grounds (book p. 304): (i) non-profit-dominated (arts, museums, education, social services); (ii) inadequate WEQ data (legal, medical, computer services); (iii) internationally non-competitive on a world scale (textiles, mining, domestic oil). Full list in Shaikh (2008) appendix B.",
+    "CD2 dossier (S034) noted construction step: Load S217 parsed data -> select 30 industry ROP columns -> compute cross-sectional average per year. In RSCD, the loader should read Appendix7_ropdataUSind.xlsx (in SalvagedInputs/book_data/ShaikhChoppedTables/) and reproduce the 30-industry panel + aggregate.",
+    "Anti-degradation: do NOT splice the published ROP series. Any extension to 2006+ requires re-fetching GVA/GOS/EC + Fixed Asset components from current BEA vintages, re-applying WEQ/OOH/inventory/reserve adjustments per Appendix 7.1, and re-computing ratios end-to-end. Document NIPA comprehensive revision impacts (2013 R&D capitalization, 2018 revision)."
+  ],
+  "open_questions": [
+    "CD2 S034 included a Validation table extending to 2024 (1987 = 0.137997 ... 2024 = 0.114170). Confirm whether this extension was computed by CD2 or imported from a later Shaikh paper/spreadsheet. If CD2-computed, verify the methodology faithfully reproduces Appendix 7.1 III (especially the WEQ, OOH, inventory, reserve adjustments) for post-2005 NIPA vintages.",
+    "RESOLVED 2026-05-18 (B4 blocker): Shaikh (2008) Table 9.A1 (the appendix B referenced in book Appendix 7.1 II.6) was located in Inputs/Capitalism Data/Technical/data/raw/01_SOURCE_MATERIALS/Web Folders/Shaikh Publications/[2008] Shaikh - Competition and Industrial Rates of Return.pdf, page 190 of the printed text (PDF p. 16). The full 31-industry list was extracted verbatim and is staged at SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv. The 30 industries retained in Shaikh's sample are the NAICS rows NOT listed in that CSV.",
+    "Verify that BEA's post-2013 inclusion of R&D and IP in Fixed Assets has been EXCLUDED in any extension (to maintain methodology consistency with Shaikh's 2008 capital stock concept).",
+    "Confirm Flow of Funds line numbers L.109/L.114-117 remain stable in current Z.1 release."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-b-ch7",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from CD2 S034 dossier + book pp. 302-305 + Appendix 7.1 III (book pp. 857-859 / PDF pp. 895-897) verbatim. Source = BEA GDPbyInd_VA_NAICS + Fixed Assets + WEQ/OOH/inventory/reserve adjustments per Shaikh (2008). Appendix7_ropdataUSind.xlsx in SalvagedInputs is the canonical extract. 4 quotes (definition, source, method, caveat), 7 components, 4 extension candidates, 8 methodology notes."
+    },
+    {
+      "reviewer": "opus-subagent-batch1-A4-B4",
+      "date": "2026-05-18",
+      "status": "blocker-resolved",
+      "notes": "B4 resolved. Shaikh (2008) Table 9.A1 (Appendix B) located in Capitalism Data and extracted verbatim to SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv (31 rows, industry_no + industry_level + industry_title + interpretive exclusion_ground + naics_subgroup columns). README at same path documents provenance and the interpretive vs verbatim distinction. The 30 retained industries are the NAICS rows NOT in this CSV; the loader for S705/S706/S709/S710 should use this CSV as the sample-restriction key."
+    }
+  ]
+}

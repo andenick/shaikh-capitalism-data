@@ -1,0 +1,109 @@
+{
+  "series_id": "S804",
+  "name": "Rate of Profit on Assets, Concentrated vs. Unconcentrated Industries, 1939-1957 (Stigler)",
+  "chapter": 8,
+  "figures": [
+    "Fig8.5"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S044",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 8,
+      "page": 376,
+      "quote": "This is precisely what Stigler (Stigler 1963, 68, table 17) shows in his challenge to the oligopoly interpretation of the data. He calculates profit rates on assets (the theoretically appropriate measure) for concentrated and unconcentrated industries for 1939-1956, as displayed in figure 8.5. We see that while concentrated industries do indeed display less variation (Stigler 1963, 70), both sets of profit rates move together and their average levels are the same: 7.1% for concentrated, 6.9% for unconcentrated.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 8,
+      "page": 376,
+      "quote": "Figure 8.5 Rate of Profit on Assets (%)",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 8,
+      "page": 375,
+      "quote": "We know that concentration ratios and so-called barriers to entry are highly correlated (Schmalensee 1989, 978, 993). From the point of view of real competition, industries with high entry (and exit) costs will have more stable prices and profit rates (recall the discussion Eichner's data in section II.3 of this chapter), but not higher profit rates in the long run.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Stigler (academic author); underlying source: U.S. Federal Trade Commission / Securities and Exchange Commission Quarterly Financial Reports and earlier NRA / Census firm-level data.",
+    "publication": "Stigler, George J. (1963), Capital and Rates of Return in Manufacturing Industries (Princeton, NJ: Princeton University Press for NBER), Table 17, p. 68.",
+    "table_or_series_id": "Stigler 1963, Table 17, p. 68 (digitized in ShaikhChoppedTables/Appendix8_StiglerRatesOfProfit.xlsx)",
+    "url": "https://www.nber.org/books-and-chapters/capital-and-rates-return-manufacturing-industries",
+    "frequency": "multi-year averages (six bins: 1939-41, 1942-44, 1945-47, 1948-50, 1951-54, 1955-57)",
+    "units": "Rate of profit on assets, percent",
+    "license": "NBER/Princeton University Press monograph; reproducible under fair use for replication.",
+    "available_through": "NBER (full PDF freely available); Princeton University Press archive.",
+    "discontinued": true,
+    "replaced_by": "No direct continuation. Modern analogs: IRS Statistics of Income (Corporate Source Book) profit rates on assets by NAICS industry, combined with U.S. Census Bureau Concentration Ratios in Manufacturing for the matching Economic Census year."
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [
+    "Six time bins (1939-41, 1942-44, 1945-47, 1948-50, 1951-54, 1955-57) x two series (concentrated, unconcentrated) = 12 data points, in ShaikhChoppedTables/Appendix8_StiglerRatesOfProfit.xlsx"
+  ],
+  "year_range_book": [
+    1939,
+    1957
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "IRS SOI Corporation Source Book profit rates on assets, by NAICS industry",
+      "source": "IRS Statistics of Income",
+      "url": "https://www.irs.gov/statistics/soi-tax-stats-corporation-source-book-of-statistics-of-income",
+      "units": "Net income / total assets, percent, by industry, annual",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "SIC->NAICS classification break c. 1997 requires concordance.",
+        "Definition of 'concentrated' vs. 'unconcentrated' must be re-derived from Census Concentration Ratios for each year (Stigler used a high-vs-low CR4 partition for the 1947-58 period)."
+      ]
+    },
+    {
+      "subseries_label": "U.S. Census Bureau Concentration Ratios in Manufacturing (CR4/CR8) for partitioning industries",
+      "source": "U.S. Census Bureau, Economic Census Concentration Ratios",
+      "url": "https://www.census.gov/data/tables/2017/econ/concentration.html",
+      "units": "Percent of value of shipments by top N firms",
+      "splice_strategy": "none",
+      "concerns": [
+        "Used to construct the partition; not a price/profit series itself."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Stigler partitioned manufacturing industries into 'concentrated' (high CR4) and 'unconcentrated' (low CR4) groups, then computed asset-weighted average rate of profit on assets within each group for six non-overlapping time bins between 1939 and 1957.",
+    "Period averages reported in Shaikh's Figure 8.5 (per ShaikhChoppedTables/Appendix8_StiglerRatesOfProfit.xlsx): Unconcentrated = 5.25, 7.6, 10.0, 8.0, 5.1, 5.4; Concentrated = 6.5, 6.2, 7.3, 9.1, 6.3, 7.0 (units: percent).",
+    "Shaikh reports averages of 7.1% (concentrated) and 6.9% (unconcentrated), confirming the central conclusion that mean profit rates on assets are essentially identical across concentration groups - consistent with real-competition theory, contrary to oligopoly power.",
+    "Construction is 'direct': Shaikh reproduces Stigler's Table 17 numbers without modification."
+  ],
+  "open_questions": [
+    "Stigler's underlying industry-level micro data (per-industry profit rates that go into the concentrated/unconcentrated averages) is not in ShaikhChoppedTables; available only in Stigler 1963 monograph appendices.",
+    "Stub had cd_id S044 with no genuine CD2 predecessor (cd2_id remains null).",
+    "Whether the 1948-50 spike in unconcentrated profit rates (10.0%) reflects post-WWII reconversion or sample composition is not discussed by Shaikh; flag for Phase 4 if extension is attempted."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-b-ch8",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from book pp.375-376 and Stigler 1963 Tbl 17 via ShaikhChoppedTables/Appendix8_StiglerRatesOfProfit.xlsx. Note: time bins are unequal length; treated as time_series."
+    }
+  ]
+}

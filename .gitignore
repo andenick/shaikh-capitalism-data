@@ -1,28 +1,32 @@
-# API keys (never commit)
-config/api_keys.env
-
-# Cached API responses (regenerated on run)
-data/cache/
-
-# Pipeline output — series and chopped CSVs are INCLUDED (for validation without API keys)
-# Extenbooks excluded (large, regenerated)
-data/output/extenbooks/
-data/output/figures/
-data/output/reports/
-
 # Python
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
 
-# Generator scripts (internal use)
-_generate_*.py
-
-# OS
+# IDE
+.vscode/
+.idea/
+*.swp
 .DS_Store
-Thumbs.db
-_generate_*.py
-_apply_*.py
-config/column_mapping.json
-config/exact_column_mapping.json
-config/v3_script_mapping.json
+
+# API keys (NEVER commit)
+config/api_keys.env
+replicator/config/api_keys.env
+
+# Raw / processed caches (re-fetchable)
+data/raw/
+data/processed/
+replicator/data/raw/
+replicator/data/processed/
+replicator/workdir/
+
+# Temp + Handoffs (local-only)
+Technical/tmp/
+Technical/Handoffs/

@@ -1,0 +1,108 @@
+{
+  "series_id": "S1402",
+  "name": "Unemployment Measures US 1948-2011",
+  "chapter": 14,
+  "figures": [
+    "Fig14.11"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S069",
+    "cd2_id": "S069"
+  },
+  "book_quotes": [
+    {
+      "chapter": 14,
+      "page": 664,
+      "quote": "Figure 14.11 looks at the unemployment rate, the index of unemployment duration (1948–1951 = 100) and the previously defined unemployment intensity which is a product of the two, along with respective HP values. The unemployment rate roughly doubles over the interval, but the unemployment duration quadruples. The unemployment intensity, which is their product, rises to ten times its original value. I would argue that this is a much better indicator of the downward pressure of unemployment on wage changes.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 892,
+      "quote": "The unemployment rate uL is from the Bureau of Labor Statistics (BLS) (http://data.bls.gov/cgi-bin/surveymost?ln, series LNS14000000Q) and unemployment duration also from the BLS (http://www.bls.gov/cps/duration.htm, series LNS13008275) with historical data for both at http://www.bls.gov/cps/cpsatabs.htm. An index of unemployment duration was created using 1948–51 = 100, and unemployment intensity = unemployment rate x index of unemployment duration.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 14,
+      "page": 663,
+      "quote": "Then the product of the two rates has a simple meaning: the total months out of work of unemployed workers relative to normal number of months expected even if the whole labor force were employed. I will call this the intensity of unemployment (uInt L).",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "BLS",
+    "publication": "Current Population Survey (CPS) Labor Force Statistics",
+    "table_or_series_id": "LNS14000000 (unemployment rate); LNS13008275 (mean duration of unemployment, weeks)",
+    "url": "https://www.bls.gov/cps/",
+    "frequency": "monthly",
+    "units": "Percent (unemployment rate); weeks (duration); index 1948–1951=100 (duration index)",
+    "license": "U.S. Government Work (public domain)",
+    "available_through": "BLS data tools, FRED",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "duration_index_t = (mean_duration_weeks_t / mean_duration_weeks_{1948-51 avg}) * 100; unemployment_intensity_t = unemployment_rate_t * (duration_index_t / 100)",
+  "components": [
+    {
+      "subseries_label": "Civilian unemployment rate",
+      "source": "BLS CPS series LNS14000000",
+      "role": "u_L in the chapter; first factor of intensity",
+      "fred_proxy": "UNRATE"
+    },
+    {
+      "subseries_label": "Mean duration of unemployment",
+      "source": "BLS CPS series LNS13008275",
+      "role": "Numerator of duration index (rebased 1948–51=100)",
+      "fred_proxy": "UEMPMEAN"
+    },
+    {
+      "subseries_label": "Unemployment intensity (derived)",
+      "source": "Derived: unemployment_rate * duration_index/100",
+      "role": "Key explanatory variable for the Classical wage-share Phillips curve in Sec. V",
+      "fred_proxy": null
+    }
+  ],
+  "year_range_book": [1948, 2011],
+  "year_range_extension": [1948, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "Civilian unemployment rate",
+      "source": "FRED (BLS LNS14000000)",
+      "url": "https://fred.stlouisfed.org/series/UNRATE",
+      "units": "Percent, seasonally adjusted, monthly",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Aggregate to annual averages to match book chart frequency"]
+    },
+    {
+      "subseries_label": "Average (mean) duration of unemployment",
+      "source": "FRED (BLS LNS13008275)",
+      "url": "https://fred.stlouisfed.org/series/UEMPMEAN",
+      "units": "Weeks, seasonally adjusted",
+      "splice_strategy": "overlap_anchor",
+      "concerns": ["Re-base to 1948–51 = 100 using FRED historical observations before computing intensity"]
+    }
+  ],
+  "methodology_notes": [
+    "Unemployment intensity is Shaikh's own construct (Eq. 14.13). It is the product of the unemployment rate and a rebased index of mean unemployment duration; the rebasing year window is explicitly the 1948–51 average per Appendix 14.2.",
+    "Shaikh prefers unemployment intensity over the raw unemployment rate because the duration component multiplies through and captures the cumulative wage-suppression pressure of long unemployment spells.",
+    "Footnote 9 (p. 664) notes that BLS U-6/U-7 extended unemployment measures would be theoretically preferable but are only available back to 1994, so the official rate is retained for the long sample.",
+    "All three series plotted in Fig 14.11 (unemployment rate, duration index, intensity) are shown both as levels and as HP(100)-filtered trends."
+  ],
+  "open_questions": [
+    "FRED's UEMPMEAN has a methodological break in January 2011 (top-coding of duration raised from 2 years to 5 years). For extension beyond 2011, document and decide whether to apply a continuity adjustment.",
+    "Confirm with Shaikh's published Appendix 14.3 spreadsheet that the 1948–51 base average uses annual or monthly means."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-c-ch14",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S069 ported; intensity formula verified against text Eq. 14.13 (book p. 663) and Appendix 14.2 (book p. 892)."
+    }
+  ]
+}

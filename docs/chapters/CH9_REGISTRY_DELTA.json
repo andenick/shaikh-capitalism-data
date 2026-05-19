@@ -1,0 +1,192 @@
+{
+  "schema_version": "rscd-registry-delta-v1.0",
+  "chapter": 9,
+  "generated_by": "opus-subagent-p4-wave2-ch9",
+  "generated_at": "2026-05-18",
+  "applies_to_registry": "Technical/series_registry.json",
+  "operations": [
+    {
+      "sid": "S901",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 30,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Phase 3 open question 1 (series count correctness): RESOLVED — keep-at-3 ratified; per-series figure lists reassigned with no overlap (S901 = Fig 9.1, 9.2, 9.16).",
+          "Phase 3 open question 2 (1947-1972 vs 1998 industry classification): RESOLVED as a hard limit — NAICS-vs-SIC mismatch documented; the six benchmark years remain separate cross-sections, never a continuous panel. This is acceptable because content_type='cross_sectional'.",
+          "Source reachability: BEA-IO canonical URL verified 200 OK; legacy iTable URL (book citation) is 404 — registry must be updated."
+        ],
+        "issues_outstanding": [
+          "Phase 3 open question 3 (Shaikh Appendix9 workbook vs BEA-iTable cross-validation): deferred to Phase 5 ingestion — verify Appendix9_1998Circ.xlsx and Appendix9_1998Fixed.xlsx numbers match a fresh BEA Use Table pull within tolerance.",
+          "OOH (NIPA Table 7.12 lines 133-134) correction must be coded as explicit loader step in Phase 5."
+        ]
+      },
+      "figure_list_updates": [
+        {
+          "field": "figures",
+          "from": ["Fig9.1", "Fig9.2", "Fig9.16"],
+          "to": ["Fig9.1", "Fig9.2", "Fig9.16"],
+          "note": "No change — S901 figures already correct. Fig 9.16 belongs to S901 because the data substrate (market prices) is S901 even though the production-price construction it scatters against comes from S902."
+        }
+      ],
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "https://www.bea.gov/industry/input-output-accounts-data",
+          "to": "https://www.bea.gov/industry/input-output-accounts-data",
+          "note": "No change — Phase 3 already updated from the book-cited legacy http://www.bea.gov/iTable/index_industry_io.cfm (verified 404 on 2026-05-18) to the canonical successor (verified 200 OK)."
+        },
+        {
+          "field": "primary_source.offline_archive_paths",
+          "from": null,
+          "to": [
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1947fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1958fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1963fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1967fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1972fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1998Circ.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1998Fixed.xlsx"
+          ],
+          "web_citation_anwarshaikh": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+          "note": "anwarshaikhecon.org DNS does not resolve 2026-05-18 (same condition as Ch5 review). Promote local SalvagedInputs Appendix9 workbooks to canonical archival source per decision 0005."
+        }
+      ]
+    },
+    {
+      "sid": "S902",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 30,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Phase 3 open question 1 (series count correctness): RESOLVED — keep-at-3 ratified; per-series figure lists reassigned. S902 absorbs Fig 9.4, 9.5, 9.6, 9.7, 9.9, 9.10, 9.11, 9.13, 9.14, 9.15, 9.18 (all eigensystem/standard-price outputs from the same 1998 BEA computation, with 9.13-9.15 extending to historical benchmarks).",
+          "Phase 3 open question 2 (multi-year distance summary split): RESOLVED — Fig 9.13, 9.14, 9.15 stay in S902 (they ARE the multi-year extension of the 1998 standard-price construction; not a separate provenance).",
+          "Source reachability: BEA Industry IO and Fixed Asset URLs both 200 OK 2026-05-18."
+        ],
+        "issues_outstanding": [
+          "Phase 3 open question 3 (capital-flow matrix uniform-growth-rate assumption): persists into Phase 5/6 — if any post-1998 extension is attempted, validate whether BEA's detailed Fixed Asset Tables (Type x Industry) allow the g_j-uniform assumption to be relaxed.",
+          "Phase 3 open question 4 (eigenvalue verification): Phase 5 must verify dominant-eigenvalue solve of KT recovers Shaikh's R_t values in Table 9.18 (R_1947=1.088 ... R_1998=0.7317) to numerical tolerance — this is the canonical Ch9 replication check.",
+          "Capital flow benchmark file (Annual_IOUse_Before_Redefinitions_1998-2010.xls per Phase 3 dossier) not located in SalvagedInputs by exact name; needs Phase 5 locate-or-download."
+        ]
+      },
+      "figure_list_updates": [
+        {
+          "field": "figures",
+          "from": ["Fig9.4", "Fig9.5", "Fig9.6", "Fig9.7", "Fig9.9", "Fig9.10", "Fig9.11", "Fig9.13", "Fig9.14", "Fig9.15", "Fig9.18"],
+          "to": ["Fig9.4", "Fig9.5", "Fig9.6", "Fig9.7", "Fig9.9", "Fig9.10", "Fig9.11", "Fig9.13", "Fig9.14", "Fig9.15", "Fig9.18"],
+          "note": "No change to S902 list — Phase 3 already correctly assigned these 11 figures. Cleanup happens entirely in S903 (where Fig 9.6, 9.7, 9.13, 9.14, 9.15, 9.18 must be REMOVED to eliminate overlap)."
+        }
+      ],
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "https://www.bea.gov/industry/input-output-accounts-data",
+          "to": "https://www.bea.gov/industry/input-output-accounts-data",
+          "note": "No change — Phase 3 URL is canonical and verified 200 OK."
+        },
+        {
+          "field": "primary_source.additional_url_for_fixed_assets",
+          "from": null,
+          "to": "https://www.bea.gov/itable/fixed-assets",
+          "note": "Add explicit Fixed Asset Tables URL (200 OK 2026-05-18) since FAT 3.1ES and 3.4ES are structural inputs to the fixed-capital model, not just an extension concern."
+        },
+        {
+          "field": "primary_source.offline_archive_paths",
+          "from": null,
+          "to": [
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1998Circ.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1998Fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1947fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1958fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1963fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1967fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1972fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_pvdevexample.xlsx"
+          ],
+          "web_citation_anwarshaikh": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+          "note": "Same DNS-dead anwarshaikhecon.org condition as Ch5; local Appendix9 workbooks (including pvdevexample worked example) promoted to canonical archive."
+        }
+      ]
+    },
+    {
+      "sid": "S903",
+      "op": "set_adequacy",
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 31,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "Phase 3 open question 1 (series count + figure-list overflow): RESOLVED — S903 figure list trimmed from 11 to 3 (Fig 9.8, 9.12, 9.19 = the actual wage-profit curves). Overlapping figures 9.6, 9.7, 9.13, 9.14, 9.15, 9.18 reassigned to S902; Fig 9.16 reassigned to S901.",
+          "Phase 3 open question 3 (1947 R > 1): not actually an issue — R = 1/lambda_max(KT) = 1.088 simply means profit rates up to 108.8% are mathematically admissible in 1947's geometry; matches Shaikh's plotted Fig 9.19 x-axis range. Confirmed.",
+          "Source reachability: BEA + PWT 7.1 release archive + PWT root all 200 OK 2026-05-18 — no substitution needed for book-period replication."
+        ],
+        "issues_outstanding": [
+          "Phase 3 open question 2 (PWT 7.1 variable name truncated at 'Real'): Phase 5 ingestion task — open Appendix9_PennWorldTables.xlsx to confirm whether RGDPL2 or RGDPCH is used; does not block adequacy.",
+          "Phase 3 open question 4 (CD2's PWT 7.1 + NBER + observed profit rates subseries decomposition): deferred — current composite series is adequate for Phase 5; richer decomposition is a Phase 6 enrichment concern not a Phase 4 blocker.",
+          "PWT 7.1 -> PWT 10.01 growth-rate splice strategy documented but not yet operationalized in a loader."
+        ]
+      },
+      "figure_list_updates": [
+        {
+          "field": "figures",
+          "from": ["Fig9.6", "Fig9.7", "Fig9.8", "Fig9.10", "Fig9.12", "Fig9.13", "Fig9.14", "Fig9.15", "Fig9.16", "Fig9.18", "Fig9.19"],
+          "to": ["Fig9.8", "Fig9.12", "Fig9.19"],
+          "note": "TRIM: keep only the actual wage-profit curves (Fig 9.8 circulating 1998; Fig 9.12 fixed 1998; Fig 9.19 panel 1947-1998 of real wage curves). The other 8 figures were CD2-progenitor catch-all artifacts and now belong cleanly to S902 (Fig 9.6, 9.7, 9.10, 9.13, 9.14, 9.15, 9.18) or S901 (Fig 9.16)."
+        }
+      ],
+      "url_updates": [
+        {
+          "field": "primary_source.url",
+          "from": "https://www.bea.gov/industry/input-output-accounts-data ; https://www.rug.nl/ggdc/productivity/pwt/pwt-releases/pwt-7.1 (PWT 7.1 archive; CIC Penn original mirror at University of Pennsylvania)",
+          "to": "https://www.bea.gov/industry/input-output-accounts-data ; https://www.bea.gov/itable/fixed-assets ; https://www.rug.nl/ggdc/productivity/pwt/pwt-releases/pwt-7.1",
+          "note": "Add explicit BEA Fixed Assets URL (200 OK) since FAT 3.1ES/3.4ES are required inputs. Keep PWT 7.1 release URL as primary (200 OK; book vintage still hosted)."
+        },
+        {
+          "field": "extension_candidates[0].url",
+          "from": "https://www.rug.nl/ggdc/productivity/pwt",
+          "to": "https://www.rug.nl/ggdc/productivity/pwt/",
+          "note": "Minor normalization — root URL with trailing slash returns 200 OK and is the canonical landing for PWT 10.01."
+        },
+        {
+          "field": "primary_source.offline_archive_paths",
+          "from": null,
+          "to": [
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1998Fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1947fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1958fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1963fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1967fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_1972fixed.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_PennWorldTables.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_PennWorldTables2.xlsx",
+            "SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_ObservedProfitRates.xlsx"
+          ],
+          "web_citation_anwarshaikh": "https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/",
+          "note": "PWT 7.1 extracts archived locally as Appendix9_PennWorldTables*.xlsx; observed profit rates (Table 9.18 R_t values) archived as Appendix9_ObservedProfitRates.xlsx — these are the canonical replication targets for Phase 5."
+        }
+      ]
+    }
+  ],
+  "chapter_recommendations_for_main_thread": [
+    "Apply the three url_updates blocks above to series_registry.json before Phase 5.",
+    "Apply the S903 figure-list TRIM (11 -> 3) before Phase 5. This is the substantive figure-mapping cleanup that Phase 3 deferred to Phase 4. S901 and S902 figure lists need no change (Phase 3 already correct).",
+    "Append the adequacy block under each of S901-S903 (status: ready_for_phase5, score_contributions: S901=30, S902=30, S903=31 = 91 total for Ch9).",
+    "Promote SalvagedInputs/book_data/ShaikhChoppedTables/Appendix9_*.xlsx (14 files total) to canonical archival sources for the Ch9 historical IO tables, PWT 7.1 extracts, observed profit rates, and worked examples — consistent with decision 0005's reference guidance for anwarshaikhecon.org.",
+    "RATIFY keep-at-3 series count decision: the three Ch9 series correctly partition the empirical work into (1) market-vs-direct price comparison [S901], (2) eigensystem standard-price decomposition [S902], (3) wage-share identity wage-profit curves [S903]. The 17 figures in Ch9 are different views of the same three computations — not 17 independent series.",
+    "RATIFY content_type='cross_sectional' for all 3 Ch9 series. Extension = adding benchmark years, not splicing time series.",
+    "Document for Phase 5: (a) PWT 7.1 variable name confirmation against Appendix9_PennWorldTables.xlsx, (b) eigenvalue solve must recover Table 9.18 R_t values within numerical tolerance, (c) OOH correction (NIPA 7.12 lines 133-134) is an explicit loader step, (d) NAICS-vs-SIC mismatch is a hard limit on continuous panels."
+  ],
+  "figure_mapping_full_chapter": {
+    "S901": ["Fig9.1", "Fig9.2", "Fig9.16"],
+    "S902": ["Fig9.4", "Fig9.5", "Fig9.6", "Fig9.7", "Fig9.9", "Fig9.10", "Fig9.11", "Fig9.13", "Fig9.14", "Fig9.15", "Fig9.18"],
+    "S903": ["Fig9.8", "Fig9.12", "Fig9.19"],
+    "excluded_non_empirical": ["Fig9.3", "Fig9.17", "Fig9.20", "Fig9.21", "Fig9.22"],
+    "total_empirical": 17,
+    "total_excluded": 5,
+    "overlap_remaining": 0,
+    "validation": "All 17 empirical figures partitioned uniquely into S901/S902/S903 with no overlap. 5 non-empirical figures (numerical examples Fig 9.3, 9.17 + theoretical Fig 9.20-9.22) explicitly excluded from all S9xx dossiers."
+  }
+}

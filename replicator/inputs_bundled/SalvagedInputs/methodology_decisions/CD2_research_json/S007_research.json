@@ -1,0 +1,52 @@
+{
+  "series_id": "S007",
+  "series_name": "Manufacturing Productivity and Real Wages",
+  "chapter": 2,
+  "figures": ["Fig 2.5"],
+  "research_date": "2026-03-07",
+  "researcher": "agent",
+  "kb_sources_searched": ["ch18_appendices.md", "ch02_turbulent_trends.md", "appendix_methodology_summary.json"],
+  "entries": [
+    {
+      "entry_type": "methodology_description",
+      "content": "Series constructed from two primary sources: BEA Long Term Economic Growth (1966, Series A173) for 1860-1970, and BLS International Labor Comparisons for 1950-2009. Both series were rebased to 1889=100 and spliced at 1950. The BEA LTEG data provides manufacturing output per man-hour in 1958 dollars; BLS International provides output per hour in manufacturing for 19 countries/areas at 2002=100. Splicing preserves continuity by reindexing the BLS series to match the BEA series level at the overlap year.",
+      "source_ref": "Appendix 2.1"
+    },
+    {
+      "entry_type": "source_citation",
+      "content": "BEA (1966). Long Term Economic Growth, 1860-1970. Washington, DC: US Government Printing Office. Series A173, p.211. Manufacturing output per man-hour, 1958=100. NBER/Kendrick series.",
+      "source_ref": "BEA LTEG"
+    },
+    {
+      "entry_type": "figure_context",
+      "content": "Fig 2.5 displays the long-run trend in US manufacturing productivity and real wages from 1889 to 2009. The series illustrates the divergence between productivity growth and real wage growth over the 20th century. Extension via FRED OPHMFG (Manufacturing Sector: Real Output Per Hour) provides direct continuation post-2009; OPHMFG is manufacturing-specific (replaces prior OUTNFB nonfarm proxy).",
+      "source_ref": "ch02 README"
+    }
+  ],
+  "citations": [
+    {
+      "id": "BEA_LTEG_1966",
+      "full": "U.S. Bureau of Economic Analysis (1966). Long Term Economic Growth, 1860-1970. Washington, DC: U.S. Government Printing Office. Series A173.",
+      "short": "BEA LTEG (1966)"
+    },
+    {
+      "id": "BLS_International",
+      "full": "U.S. Bureau of Labor Statistics. International Labor Comparisons. Table 1: Output per hour in manufacturing, 19 countries or areas, 1950-2009. http://www.bls.gov/fls/#productivity",
+      "short": "BLS International Manufacturing"
+    },
+    {
+      "id": "FRED_OPHMFG",
+      "full": "Federal Reserve Economic Data (FRED). OPHMFG - Manufacturing Sector: Real Output Per Hour of All Persons. Index 2012=100. https://fred.stlouisfed.org/series/OPHMFG",
+      "short": "FRED OPHMFG"
+    }
+  ],
+  "methodology_summary": "S007 combines BEA LTEG Series A173 (1860-1970, manufacturing output per man-hour, 1958=100) with BLS International Manufacturing productivity data (1950-2009, 19 countries, 2002=100). Both series are rebased to 1889=100 and spliced at 1950. The BLS series is reindexed to match the BEA level at the splice point. Extension uses FRED OPHMFG (manufacturing-specific output per hour, Index 2012=100), re-indexed at 2009 for continuity. All data sources and methods are detailed in Appendix 2.1.",
+  "known_issues": [
+    "S007A (BEA LTEG) has sparse annual coverage 1860-1889; calculated values (S007C) interpolate from 1889 onward",
+    "BLS International coverage ends 2009; FRED OPHMFG extension begins 1987 (overlap used for splice validation)"
+  ],
+  "cross_references": [
+    {"series_id": "S008", "relationship": "Related series - S008 covers manufacturing real compensation (wages) while S007 covers productivity"},
+    {"series_id": "S001", "relationship": "Same chapter - Industrial production (S001) provides sector context"}
+  ]
+}

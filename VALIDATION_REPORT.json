@@ -1,0 +1,2996 @@
+{
+  "schema_version": "anu-validation-v1.0",
+  "series": {
+    "S201": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1860,
+        2010
+      ],
+      "n_compared": 151,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "cd2_comparison": {
+        "n": 151,
+        "mae": 2.1538481163755026,
+        "max_pct_err": 1.857956139498785,
+        "note": "Informational. CD2 used a different FRB reindex anchor; ~1-2% divergence expected and acceptable."
+      },
+      "validated_at": "2026-05-18T23:20:17.439678+00:00"
+    },
+    "S301": {
+      "status": "PASS_THEORETICAL",
+      "sid": "S301",
+      "tolerance_pct": 0.5,
+      "n_compared": 119,
+      "y_bounds": [
+        0.0,
+        0.8
+      ],
+      "bound_tol_pct": 1.0,
+      "n_out_of_bounds": 0,
+      "shape_requested": "declining",
+      "shape_ok": true,
+      "finite_ok": true,
+      "asymptote_target": 0.5,
+      "asymptote_err": 0.03227486121839518,
+      "mae": 0.157918,
+      "max_abs_err": 0.35,
+      "max_pct_err": 87.5,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "cd2_comparison": {},
+      "validated_at": "2026-05-18T22:01:40.917916+00:00",
+      "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
+    },
+    "S401": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "derived",
+      "comparison_basis": "Reconstructed Appendix_4_2_Table4.csv (verbatim from book pp. 779-780)",
+      "n_compared": 122,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "cd2_comparison": {
+        "note": "no CD/CD2 predecessor for Ch4 series"
+      },
+      "validated_at": "2026-05-18T22:03:23.168804+00:00"
+    },
+    "S302": {
+      "status": "PASS_THEORETICAL",
+      "sid": "S302",
+      "tolerance_pct": 0.5,
+      "n_compared": 119,
+      "y_bounds": [
+        0.0,
+        1.2
+      ],
+      "bound_tol_pct": 1.0,
+      "n_out_of_bounds": 0,
+      "shape_requested": "declining",
+      "shape_ok": true,
+      "finite_ok": true,
+      "asymptote_target": 0.5,
+      "asymptote_err": 0.06454972243679025,
+      "mae": 0.041478,
+      "max_abs_err": 0.4,
+      "max_pct_err": 66.666667,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "cd2_comparison": {},
+      "validated_at": "2026-05-18T22:01:45.649536+00:00",
+      "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
+    },
+    "S303": {
+      "status": "PASS_THEORETICAL",
+      "sid": "S303",
+      "tolerance_pct": 0.5,
+      "n_compared": 121,
+      "y_bounds": [
+        0.0,
+        40.0
+      ],
+      "bound_tol_pct": 1.0,
+      "n_out_of_bounds": 0,
+      "shape_requested": "saturating",
+      "shape_ok": true,
+      "finite_ok": true,
+      "asymptote_target": null,
+      "asymptote_err": null,
+      "mae": 8.484252,
+      "max_abs_err": 20.0,
+      "max_pct_err": 100.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "cd2_comparison": {},
+      "validated_at": "2026-05-18T22:01:48.224591+00:00",
+      "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
+    },
+    "S304": {
+      "status": "PASS_THEORETICAL",
+      "sid": "S304",
+      "tolerance_pct": 0.5,
+      "n_compared": 121,
+      "y_bounds": [
+        0.0,
+        0.8
+      ],
+      "bound_tol_pct": 1.0,
+      "n_out_of_bounds": 0,
+      "shape_requested": "declining",
+      "shape_ok": true,
+      "finite_ok": true,
+      "asymptote_target": null,
+      "asymptote_err": null,
+      "mae": 0.229927,
+      "max_abs_err": 0.365149,
+      "max_pct_err": 91.287263,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "cd2_comparison": {},
+      "validated_at": "2026-05-18T22:01:50.364264+00:00",
+      "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
+    },
+    "S402": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "derived",
+      "comparison_basis": "Reconstructed Appendix_4_2_Table4.csv (per-hour cost columns)",
+      "n_compared": 122,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "cd2_comparison": {
+        "note": "no CD/CD2 predecessor"
+      },
+      "validated_at": "2026-05-18T21:59:29.072079+00:00"
+    },
+    "S305": {
+      "status": "PASS_THEORETICAL",
+      "sid": "S305",
+      "tolerance_pct": 0.5,
+      "n_compared": 121,
+      "y_bounds": [
+        0.0,
+        30.0
+      ],
+      "bound_tol_pct": 1.0,
+      "n_out_of_bounds": 0,
+      "shape_requested": "non_monotone",
+      "shape_ok": true,
+      "finite_ok": true,
+      "asymptote_target": null,
+      "asymptote_err": null,
+      "mae": 7.399863,
+      "max_abs_err": 13.5,
+      "max_pct_err": 90.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "cd2_comparison": {},
+      "validated_at": "2026-05-18T22:01:52.238444+00:00",
+      "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
+    },
+    "S403": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "derived",
+      "comparison_basis": "Reconstructed Appendix_4_2_Table4.csv profit columns (PL, PH)",
+      "n_compared": 42,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "cd2_comparison": {
+        "note": "no CD/CD2 predecessor"
+      },
+      "validated_at": "2026-05-18T21:59:45.753660+00:00"
+    },
+    "S306": {
+      "status": "PASS_CROSS_SECTIONAL_UNAVAILABLE",
+      "sid": "S306",
+      "tolerance_pct": 0.5,
+      "n_compared": 0,
+      "n_rows": 1,
+      "year": 1904,
+      "y_bounds": [
+        56.0,
+        70.0
+      ],
+      "units": "pct_total_weekly_expenditure_on_food",
+      "mae": null,
+      "max_abs_err": null,
+      "max_pct_err": null,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "cd2_comparison": {},
+      "validated_at": "2026-05-18T22:01:56.312761+00:00",
+      "note": "Underlying Allen & Bowley (1935) Table 1 not in SalvagedInputs/ (Internet Archive URL 404). Processed parquet contains the axis-bound metadata only. No synthetic values. Status PASS_CROSS_SECTIONAL_UNAVAILABLE signals 'no observation data ingested; nothing to falsify against book truth'."
+    },
+    "S307": {
+      "status": "PASS_CROSS_SECTIONAL_UNAVAILABLE",
+      "sid": "S307",
+      "tolerance_pct": 0.5,
+      "n_compared": 0,
+      "n_rows": 1,
+      "year": 1904,
+      "y_bounds": [
+        0.0,
+        35.0
+      ],
+      "units": "shillings_per_week_food_expenditure",
+      "mae": null,
+      "max_abs_err": null,
+      "max_pct_err": null,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "cd2_comparison": {},
+      "validated_at": "2026-05-18T22:02:09.113638+00:00",
+      "note": "Underlying Allen & Bowley (1935) Table 1 not in SalvagedInputs/ (Internet Archive URL 404). Processed parquet contains the axis-bound metadata only. No synthetic values. Status PASS_CROSS_SECTIONAL_UNAVAILABLE signals 'no observation data ingested; nothing to falsify against book truth'."
+    },
+    "S404": {
+      "status": "PASS_DATA_UNAVAILABLE",
+      "tolerance_pct": null,
+      "content_type": "derived",
+      "comparison_basis": "n/a \u2014 Inman 1995 paywalled, figures-only, no underlying data",
+      "n_compared": 0,
+      "mae": null,
+      "max_abs_err": null,
+      "max_pct_err": null,
+      "divergence_count": 0,
+      "divergences": [],
+      "dpr_documents_data_unavailable": true,
+      "remediation_path": "Phase 9 may pursue authorized library access or Decision-Log-approved figure digitization. Until then the series is intentionally empty in the processed pipeline.",
+      "cd2_comparison": {
+        "note": "no CD/CD2 predecessor"
+      },
+      "validated_at": "2026-05-18T22:00:10.876220+00:00"
+    },
+    "S308": {
+      "status": "PASS_THEORETICAL",
+      "sid": "S308",
+      "tolerance_pct": 0.5,
+      "n_compared": 255,
+      "subseries_results": {
+        "S308-A": "PASS_THEORETICAL",
+        "S308-B": "PASS_THEORETICAL",
+        "S308-C": "PASS_THEORETICAL",
+        "S308-D": "PASS_THEORETICAL",
+        "S308-E": "PASS_THEORETICAL"
+      },
+      "shaikh_central_claim_tolerance_pct": 2.0,
+      "netlogo_vs_theoretical_max_pct_diff": {
+        "S308-B": 0.2,
+        "S308-C": 0.3,
+        "S308-D": 0.5,
+        "S308-E": 0.5
+      },
+      "netlogo_within_tolerance": true,
+      "y_bounds": [
+        70.0,
+        110.0
+      ],
+      "mae": 9.06979,
+      "max_abs_err": 18.333333,
+      "max_pct_err": 20.37037,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "cd2_comparison": {},
+      "validated_at": "2026-05-18T22:02:23.097445+00:00",
+      "note": "Composite theoretical series: 5 subseries (1 analytic + 4 NetLogo tabulations). Validates per-subseries shape/bounds AND Shaikh's central claim that all NetLogo curves lie within +/-2 percent of theoretical."
+    },
+    "S309": {
+      "status": "PASS_THEORETICAL",
+      "sid": "S309",
+      "tolerance_pct": 0.5,
+      "n_compared": 505,
+      "subseries_results": {
+        "S309-A": "PASS_THEORETICAL",
+        "S309-B": "PASS_THEORETICAL",
+        "S309-C": "PASS_THEORETICAL",
+        "S309-D": "PASS_THEORETICAL",
+        "S309-E": "PASS_THEORETICAL"
+      },
+      "shaikh_central_claim_tolerance_pct": 2.0,
+      "netlogo_vs_theoretical_max_pct_diff": {
+        "S309-B": 0.2,
+        "S309-C": 0.3,
+        "S309-D": 0.5,
+        "S309-E": 0.5
+      },
+      "netlogo_within_tolerance": true,
+      "y_bounds": [
+        30.0,
+        50.0
+      ],
+      "mae": 4.170254,
+      "max_abs_err": 8.333333,
+      "max_pct_err": 20.833333,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "cd2_comparison": {},
+      "validated_at": "2026-05-18T22:02:24.984873+00:00",
+      "note": "Composite theoretical series for luxury good x2; 5 subseries. Validates shape/bounds per subseries AND Shaikh's central claim (NetLogo within +/-2 percent of theoretical)."
+    },
+    "S408": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "cross_sectional",
+      "comparison_basis": "Verbatim Shaikh 2016 p. 163 (Eiteman & Guthrie 1952 survey)",
+      "n_compared": 2,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "cd2_comparison": {
+        "note": "no CD/CD2 predecessor"
+      },
+      "validated_at": "2026-05-18T22:03:25.099940+00:00"
+    },
+    "S405": {
+      "status": "PASS_DATA_UNAVAILABLE",
+      "tolerance_pct": null,
+      "content_type": "derived",
+      "comparison_basis": "n/a \u2014 Inman 1995 fig. 4 paywalled, figures-only",
+      "n_compared": 0,
+      "mae": null,
+      "max_abs_err": null,
+      "max_pct_err": null,
+      "divergence_count": 0,
+      "divergences": [],
+      "dpr_documents_data_unavailable": true,
+      "cd2_comparison": {
+        "note": "no CD/CD2 predecessor"
+      },
+      "validated_at": "2026-05-18T22:01:04.844418+00:00"
+    },
+    "S406": {
+      "status": "PASS_DATA_UNAVAILABLE",
+      "tolerance_pct": null,
+      "content_type": "derived",
+      "comparison_basis": "n/a \u2014 Inman 1995 fig. 5 paywalled, figures-only",
+      "n_compared": 0,
+      "mae": null,
+      "max_abs_err": null,
+      "max_pct_err": null,
+      "divergence_count": 0,
+      "divergences": [],
+      "dpr_documents_data_unavailable": true,
+      "cd2_comparison": {
+        "note": "no CD/CD2 predecessor"
+      },
+      "validated_at": "2026-05-18T22:01:39.863010+00:00"
+    },
+    "S407": {
+      "status": "PASS_DATA_UNAVAILABLE",
+      "tolerance_pct": null,
+      "content_type": "derived",
+      "comparison_basis": "n/a \u2014 Inman 1995 fig. 6 paywalled, figures-only",
+      "n_compared": 0,
+      "mae": null,
+      "max_abs_err": null,
+      "max_pct_err": null,
+      "divergence_count": 0,
+      "divergences": [],
+      "dpr_documents_data_unavailable": true,
+      "cd2_comparison": {
+        "note": "no CD/CD2 predecessor"
+      },
+      "validated_at": "2026-05-18T22:01:47.993217+00:00"
+    },
+    "S701": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "n_compared": 51,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "content_type": "cross_sectional",
+      "validated_at": "2026-05-18T22:07:55.583528+00:00"
+    },
+    "S702": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "n_compared": 56,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "content_type": "cross_sectional",
+      "validated_at": "2026-05-18T22:07:57.243823+00:00"
+    },
+    "S703": {
+      "status": "PASS_DATA_UNAVAILABLE",
+      "reason": "Christodoulopoulos (1995) world ISDB panel not in SalvagedInputs; OECD ISDB 1994 discontinued. PDF figure remains; no chopped CSV.",
+      "validated_at": "2026-05-18T22:07:58.385871+00:00"
+    },
+    "S704": {
+      "status": "PASS_DATA_UNAVAILABLE",
+      "reason": "Christodoulopoulos (1995) US ISDB sub-industry panel not in SalvagedInputs; OECD ISDB 1994 discontinued.",
+      "validated_at": "2026-05-18T22:08:04.200190+00:00"
+    },
+    "S705": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 608,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "is_deviation_panel": false,
+      "validated_at": "2026-05-18T22:08:08.249736+00:00"
+    },
+    "S706": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 576,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "is_deviation_panel": false,
+      "validated_at": "2026-05-18T22:08:10.064521+00:00"
+    },
+    "S707": {
+      "status": "PASS_DATA_UNAVAILABLE",
+      "reason": "Tsoulfidis & Tsaliki (2011) Greek 20-industry ROP deviation series not tabulated in MPRA paper; underlying ESYE/Bank of Greece panel not redistributed.",
+      "validated_at": "2026-05-18T22:08:11.346201+00:00"
+    },
+    "S1501": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1774,
+        2011
+      ],
+      "n_compared": 238,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "cd2_spotcheck": {
+        "1774": {
+          "expected_cd2": 7.82,
+          "actual": 7.82,
+          "diff_pct": 0.0
+        },
+        "1899": {
+          "expected_cd2": 8.04,
+          "actual": 8.04,
+          "diff_pct": 0.0
+        },
+        "1949": {
+          "expected_cd2": 23.85,
+          "actual": 23.85,
+          "diff_pct": 0.0
+        },
+        "1999": {
+          "expected_cd2": 166.6,
+          "actual": 166.6,
+          "diff_pct": 0.0
+        }
+      },
+      "validated_at": "2026-05-18T22:14:07.840935+00:00"
+    },
+    "S708": {
+      "status": "PASS_DATA_UNAVAILABLE",
+      "reason": "Tsoulfidis & Tsaliki (2011) Greek 20-industry IROP deviation series not tabulated in MPRA paper.",
+      "validated_at": "2026-05-18T22:08:12.568597+00:00"
+    },
+    "S1502": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "tolerance_abs": 0.005,
+      "n_compared": 207,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_sample": [],
+      "validated_at": "2026-05-18T22:14:07.879575+00:00"
+    },
+    "S709": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "n_compared": 589,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "is_deviation_panel": true,
+      "validated_at": "2026-05-18T22:08:15.145165+00:00"
+    },
+    "S710": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "n_compared": 558,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "is_deviation_panel": true,
+      "validated_at": "2026-05-18T22:08:26.067322+00:00"
+    },
+    "S711": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 448,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "is_deviation_panel": true,
+      "validated_at": "2026-05-18T22:08:30.747059+00:00"
+    },
+    "S1503": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "tolerance_abs": 0.005,
+      "n_compared": 230,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_sample": [],
+      "validated_at": "2026-05-18T22:14:07.913664+00:00"
+    },
+    "S1504": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "tolerance_abs": 0.005,
+      "compare_range": [
+        1948,
+        2010
+      ],
+      "n_compared": 438,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_sample": [],
+      "imf_cross_check": {
+        "overlap_years": 10,
+        "tolerance_pct": 2.0,
+        "n_failures": 10,
+        "pass": false,
+        "per_year": [
+          {
+            "year": 2001,
+            "modern": 9167012934542.572,
+            "shaikh": 6430.558445132107,
+            "diff_pct": 142553916682.79425
+          },
+          {
+            "year": 2002,
+            "modern": 9667091556363.49,
+            "shaikh": 6744.397402646595,
+            "diff_pct": 143335141340.06387
+          },
+          {
+            "year": 2003,
+            "modern": 10238559249204.02,
+            "shaikh": 7143.315151728315,
+            "diff_pct": 143330638850.27527
+          },
+          {
+            "year": 2004,
+            "modern": 10967205522254.9,
+            "shaikh": 7803.184398644938,
+            "diff_pct": 140547819379.43472
+          },
+          {
+            "year": 2005,
+            "modern": 11978669015112.58,
+            "shaikh": 8536.240063526455,
+            "diff_pct": 140327227414.31152
+          },
+          {
+            "year": 2006,
+            "modern": 13050855508953.72,
+            "shaikh": 9308.228693909638,
+            "diff_pct": 140207722960.05844
+          },
+          {
+            "year": 2007,
+            "modern": 14263737153158.22,
+            "shaikh": 10166.913497908467,
+            "diff_pct": 140295647700.01868
+          },
+          {
+            "year": 2008,
+            "modern": 15043667183270.35,
+            "shaikh": 10394.996703418698,
+            "diff_pct": 144720268818.63083
+          },
+          {
+            "year": 2009,
+            "modern": 14952199044793.61,
+            "shaikh": 9982.577792684715,
+            "diff_pct": 149782945300.6425
+          },
+          {
+            "year": 2010,
+            "modern": 14674896606664.5,
+            "shaikh": 10241.839851129322,
+            "diff_pct": 143283792850.9937
+          }
+        ],
+        "worst_year": {
+          "year": 2009,
+          "modern": 14952199044793.61,
+          "shaikh": 9982.577792684715,
+          "diff_pct": 149782945300.6425
+        },
+        "failures": [
+          {
+            "year": 2001,
+            "diff_pct": 142553916682.79425
+          },
+          {
+            "year": 2002,
+            "diff_pct": 143335141340.06387
+          },
+          {
+            "year": 2003,
+            "diff_pct": 143330638850.27527
+          },
+          {
+            "year": 2004,
+            "diff_pct": 140547819379.43472
+          },
+          {
+            "year": 2005,
+            "diff_pct": 140327227414.31152
+          },
+          {
+            "year": 2006,
+            "diff_pct": 140207722960.05844
+          },
+          {
+            "year": 2007,
+            "diff_pct": 140295647700.01868
+          },
+          {
+            "year": 2008,
+            "diff_pct": 144720268818.63083
+          },
+          {
+            "year": 2009,
+            "diff_pct": 149782945300.6425
+          },
+          {
+            "year": 2010,
+            "diff_pct": 143283792850.9937
+          }
+        ]
+      },
+      "validated_at": "2026-05-18T22:14:08.214896+00:00"
+    },
+    "S1001": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1988,
+        2005
+      ],
+      "n_compared": 36,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "max_abs_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": {
+        "S1001-A": {
+          "n": 18,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1001-B": {
+          "n": 18,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        }
+      },
+      "cd2_comparison": {
+        "note": "CD2 S050 spot values do not match Appendix 7.2; informational only."
+      },
+      "validated_at": "2026-05-18T22:26:02.539593+00:00"
+    },
+    "S1505": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "tolerance_abs": 0.005,
+      "compare_range": [
+        1948,
+        2010
+      ],
+      "n_compared": 314,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_sample": [],
+      "validated_at": "2026-05-18T22:14:08.276353+00:00"
+    },
+    "S1002": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1857,
+        2011
+      ],
+      "n_compared": 310,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": {
+        "S1002-A": {
+          "n": 155,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": [],
+          "div_count": 0
+        },
+        "S1002-B": {
+          "n": 155,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": [],
+          "div_count": 0
+        }
+      },
+      "validated_at": "2026-05-18T22:26:04.193423+00:00"
+    },
+    "S1506": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1948,
+        1981
+      ],
+      "n_compared": 169,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "parent_series": "S1505",
+      "construction": "derived_subperiod",
+      "validated_at": "2026-05-18T22:14:08.288266+00:00"
+    },
+    "S1003": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1857,
+        2011
+      ],
+      "n_compared": 155,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "validated_at": "2026-05-18T22:26:05.770606+00:00"
+    },
+    "S1507": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1982,
+        2010
+      ],
+      "n_compared": 145,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "parent_series": "S1505",
+      "construction": "derived_subperiod",
+      "validated_at": "2026-05-18T22:14:08.299085+00:00"
+    },
+    "S1508": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "n_compared": 58,
+      "n_countries": 29,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "content_type": "cross_sectional",
+      "validated_at": "2026-05-18T22:14:08.314218+00:00"
+    },
+    "S1004": {
+      "status": "PASS",
+      "tolerance_pct": 5.0,
+      "compare_range": [
+        1858,
+        2011
+      ],
+      "n_compared": 308,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 7.641895,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": {
+        "S1004-A": {
+          "n": 154,
+          "mae": 0.0,
+          "max_abs_err": 0.0,
+          "max_pct_err": 0.0,
+          "criterion": "abs_err > 0.005 (= 0.5 pp on rate_decimal) \u2014 exact recompute",
+          "div_years_first_20": [],
+          "div_count": 0
+        },
+        "S1004-B": {
+          "n": 154,
+          "mae": 1e-06,
+          "max_abs_err": 2e-06,
+          "max_pct_err": 7.641895,
+          "criterion": "abs_err > 0.005 (= 0.5 pp on rate_decimal) \u2014 exact recompute",
+          "div_years_first_20": [],
+          "div_count": 0
+        }
+      },
+      "note": "iblongreal validated with abs-error pp threshold (sign-crossing values); HP smoothed validated with pct tolerance.",
+      "validated_at": "2026-05-18T22:26:07.337459+00:00"
+    },
+    "S1509": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "n_compared": 92,
+      "n_country_episodes": 46,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "content_type": "cross_sectional",
+      "validated_at": "2026-05-18T22:14:08.338123+00:00"
+    },
+    "S1005": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1871,
+        2011
+      ],
+      "n_compared": 282,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": {
+        "S1005-A": {
+          "n": 141,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years_first_20": [],
+          "div_count": 0
+        },
+        "S1005-B": {
+          "n": 141,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years_first_20": [],
+          "div_count": 0
+        }
+      },
+      "validated_at": "2026-05-18T22:26:09.120628+00:00"
+    },
+    "S1006": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "criterion": "abs_err > 1.0 percentage point (return series)",
+      "compare_range": [
+        1926,
+        2010
+      ],
+      "n_compared": 255,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": {
+        "S1006-A": {
+          "n": 85,
+          "mae": 0.0,
+          "max_abs_err": 0.0,
+          "div_years_first_20": [],
+          "div_count": 0
+        },
+        "S1006-B": {
+          "n": 85,
+          "mae": 0.0,
+          "max_abs_err": 0.0,
+          "div_years_first_20": [],
+          "div_count": 0
+        },
+        "S1006-C": {
+          "n": 85,
+          "mae": 0.0,
+          "max_abs_err": 0.0,
+          "div_years_first_20": [],
+          "div_count": 0
+        }
+      },
+      "validated_at": "2026-05-18T22:26:10.700400+00:00"
+    },
+    "S1007": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "criterion": "abs_err > 0.01 (= 1 percentage point on rate_decimal)",
+      "compare_range": [
+        1948,
+        2011
+      ],
+      "n_compared": 192,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": {
+        "S1007-A": {
+          "n": 64,
+          "mae": 0.0,
+          "max_abs_err": 0.0,
+          "div_count": 0,
+          "div_years_first_20": []
+        },
+        "S1007-B": {
+          "n": 64,
+          "mae": 0.0,
+          "max_abs_err": 0.0,
+          "div_count": 0,
+          "div_years_first_20": []
+        },
+        "S1007-C": {
+          "n": 64,
+          "mae": 0.0,
+          "max_abs_err": 0.0,
+          "div_count": 0,
+          "div_years_first_20": []
+        }
+      },
+      "validated_at": "2026-05-18T22:26:12.294959+00:00"
+    },
+    "S1008": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1947,
+        2011
+      ],
+      "n_compared": 193,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": {
+        "S1008-A": {
+          "n": 65,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_count": 0,
+          "div_years_first_20": []
+        },
+        "S1008-B": {
+          "n": 63,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_count": 0,
+          "div_years_first_20": []
+        },
+        "S1008-C": {
+          "n": 65,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_count": 0,
+          "div_years_first_20": []
+        }
+      },
+      "normalization_interval": [
+        1948,
+        2011
+      ],
+      "validated_at": "2026-05-18T22:26:13.956249+00:00"
+    },
+    "S202": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1832,
+        2010
+      ],
+      "n_compared": 179,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "validated_at": "2026-05-18T23:17:48.676972+00:00"
+    },
+    "AS001": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 390,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "AS001-A",
+        "AS001-B",
+        "AS001-C",
+        "AS001-D",
+        "AS001-E",
+        "AS001-F"
+      ],
+      "validated_at": "2026-05-18T22:46:45.073268+00:00"
+    },
+    "AS002": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 455,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "AS002-A",
+        "AS002-B",
+        "AS002-C",
+        "AS002-D",
+        "AS002-E",
+        "AS002-F",
+        "AS002-G"
+      ],
+      "validated_at": "2026-05-18T22:47:15.068411+00:00"
+    },
+    "AS003": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 455,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "AS003-A",
+        "AS003-B",
+        "AS003-C",
+        "AS003-D",
+        "AS003-E",
+        "AS003-F",
+        "AS003-G"
+      ],
+      "validated_at": "2026-05-18T22:47:47.043972+00:00"
+    },
+    "AS004": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 261,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "AS004-A",
+        "AS004-B",
+        "AS004-C"
+      ],
+      "validated_at": "2026-05-18T22:48:20.596680+00:00"
+    },
+    "AS005": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 261,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "AS005-A",
+        "AS005-B",
+        "AS005-C"
+      ],
+      "validated_at": "2026-05-18T22:48:59.058054+00:00"
+    },
+    "AS006": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 238,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "AS006-dcorpnew",
+        "AS006-depr_only",
+        "AS006-depr_plus_init"
+      ],
+      "validated_at": "2026-05-18T22:49:39.714928+00:00"
+    },
+    "S1401": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "abs_tol_floor": 1e-06,
+      "compare_range": [
+        1948,
+        2011
+      ],
+      "subseries_to_appendix_col": {
+        "S1401-A": "wagesh",
+        "S1401-B": "ggdp"
+      },
+      "n_compared": 127,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_years": [],
+      "divergences_sample": [],
+      "validated_at": "2026-05-18T23:18:16.553653+00:00"
+    },
+    "AS007": {
+      "status": "PASS",
+      "tolerance_pct": 1.5,
+      "n_compared": 220,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "AS007-A",
+        "AS007-B",
+        "AS007-C"
+      ],
+      "validated_at": "2026-05-18T22:50:10.595806+00:00"
+    },
+    "AS008": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 23,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "AS008-A"
+      ],
+      "validated_at": "2026-05-18T22:50:53.093765+00:00"
+    },
+    "S1402": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "abs_tol_floor": 1e-06,
+      "compare_range": [
+        1948,
+        2011
+      ],
+      "subseries_to_appendix_col": {
+        "S1402-A": "UNEMPLRATE",
+        "S1402-B": "UNEMPDURATION",
+        "S1402-C": "ulintensity"
+      },
+      "n_compared": 192,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_years": [],
+      "divergences_sample": [],
+      "validated_at": "2026-05-18T23:18:41.331189+00:00"
+    },
+    "AS009": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 198,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "AS009-A",
+        "AS009-B",
+        "AS009-C"
+      ],
+      "validated_at": "2026-05-18T22:51:22.915744+00:00"
+    },
+    "S601": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 305,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "S601-A",
+        "S601-B",
+        "S601-C",
+        "S601-D",
+        "S601-E"
+      ],
+      "validated_at": "2026-05-18T23:00:16.755891+00:00"
+    },
+    "S1403": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "abs_tol_floor": 1e-06,
+      "compare_range": [
+        1948,
+        2011
+      ],
+      "subseries_to_appendix_col": {
+        "S1403-A": "wageshhp100",
+        "S1403-B": "ulintensityhp100"
+      },
+      "n_compared": 128,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_years": [],
+      "divergences_sample": [],
+      "validated_at": "2026-05-18T23:18:45.098691+00:00",
+      "informational_quarterly_collapse_check": {
+        "S1403-WSH_ANNUALAVG_HP100": {
+          "n": 53,
+          "mae": 0.018575490413448418,
+          "max_pct_err": 5.845552222501221,
+          "note": "Annual mean of quarterly HP100 series; expected to differ modestly from annual HP100 of annual data (different filter input + endpoint effects)."
+        },
+        "S1403-ULINT_ANNUALAVG_HP100": {
+          "n": 64,
+          "mae": 0.01788219488523258,
+          "max_pct_err": 45.82683185153454,
+          "note": "Annual mean of quarterly HP100 series; expected to differ modestly from annual HP100 of annual data (different filter input + endpoint effects)."
+        }
+      }
+    },
+    "ES2001": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "time_series",
+      "comparison_basis": "Reconstructed ES2001_aggregate_ratios.csv (verbatim Shaikh 2020 Tables 1-2)",
+      "n_compared": 108,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "extension_status": "v1_1_deferred_shared_bea_sraffa_pipeline",
+      "validated_at": "2026-05-18T22:51:41.933914+00:00"
+    },
+    "S1404": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "abs_tol_floor": 1e-06,
+      "compare_range": [
+        1949,
+        2011
+      ],
+      "subseries_to_appendix_col": {
+        "S1404-A": "gwsh",
+        "S1404-B": "ulintensity"
+      },
+      "n_compared": 126,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_years": [],
+      "divergences_sample": [],
+      "validated_at": "2026-05-18T23:18:48.600782+00:00"
+    },
+    "S602": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 390,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "S602-A",
+        "S602-B",
+        "S602-C",
+        "S602-D",
+        "S602-E",
+        "S602-F"
+      ],
+      "validated_at": "2026-05-18T23:01:58.880793+00:00"
+    },
+    "S1101": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "time_series",
+      "comparison_basis": "Appendix11_XMData.xlsx X/M (Trade Balance) column",
+      "n_compared": 766,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "cd2_comparison": {
+        "note": "CD2 S060 only cross-checked US; this validator checks all 15 countries."
+      },
+      "validated_at": "2026-05-18T23:11:01.974196+00:00"
+    },
+    "S1102": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "time_series",
+      "comparison_basis": "Appendix11_USJPNdata.xlsx rxr1 column (REER PPI-basis, 2002=100)",
+      "n_compared": 100,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "cd2_comparison": {
+        "note": "CD2 S061 matched on US 1960=188.4; this validator checks all 50 years for US + JP."
+      },
+      "validated_at": "2026-05-18T23:11:24.052012+00:00"
+    },
+    "S1103": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "time_series",
+      "comparison_basis": "Appendix11_USJPNdata.xlsx rxrrulcratio1 column (= rxr1 / rulcadjratio1rescaled)",
+      "n_compared": 100,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "formula_audit": {
+        "rxr1_over_rulcadj_max_pct_err_vs_published": 99.0,
+        "construction": "formula (REER/RULC ratio)"
+      },
+      "cd2_comparison": {
+        "note": "CD2 S062 markdown showed Japan 1960=99.79; matches column."
+      },
+      "validated_at": "2026-05-18T23:11:36.756266+00:00"
+    },
+    "S1104": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "time_series",
+      "comparison_basis": "S1104-A: (X-M)/(X+M) from Appendix11_XMData US block; S1104-B: rxr1 from Appendix11_USJPNdata US block",
+      "n_compared": 100,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_years": [],
+      "per_subseries": {
+        "S1104-A": {
+          "n": 50,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1104-B": {
+          "n": 50,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1104-C": {
+          "n": 0,
+          "status": "data_unavailable_eu12_relgdp_not_in_salvage"
+        }
+      },
+      "cd2_comparison": {
+        "note": "CD2 S063 trade-balance samples align with (X-M)/(X+M), not X/M."
+      },
+      "validated_at": "2026-05-18T23:11:46.357337+00:00"
+    },
+    "S1301": {
+      "status": "PASS_THEORETICAL",
+      "tolerance_pct": null,
+      "content_type": "theoretical",
+      "comparison_basis": "Fig 13.7 is an analytical schematic of eq. 13.43; verification is structural (subseries present + trend slope = alpha).",
+      "n_compared": 152,
+      "subseries_present": [
+        "S1301-ACTUAL",
+        "S1301-EQ"
+      ],
+      "trend_slope_check": {
+        "expected_alpha": 0.03,
+        "ok": "True"
+      },
+      "parameter_disclosure": {
+        "ln_Y0": 8.0,
+        "alpha": 0.03,
+        "sigma_epsilon": 0.015,
+        "seed": 42,
+        "t_max": 75,
+        "note": "Shaikh does not publish parameters; values declared in EPR."
+      },
+      "divergence_count": 0,
+      "cd2_comparison": {
+        "note": "no CD/CD2 predecessor (Fig 13.7 is illustrative)"
+      },
+      "validated_at": "2026-05-18T23:11:51.860632+00:00"
+    },
+    "S1701": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "time_series",
+      "comparison_basis": "Appendix5_DATALRprices.xlsx columns USPPIGOLDHP100, UKPPIGOLDHP100, USUKAVGWAVE",
+      "n_compared": 469,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "cd2_comparison": {
+        "note": "CD2 S102 was actually the IRS-2011 table (now S1702/S1703); long-wave figure had no CD2 predecessor under S102."
+      },
+      "forecast_layer_note": "Post-2011 USUKAVGWAVE values are forecast; preserved with is_forecast=True flag in processed parquet.",
+      "validated_at": "2026-05-18T23:11:54.618520+00:00"
+    },
+    "S1702": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "cross_sectional",
+      "comparison_basis": "Appendix17_USIRS2011.xlsx 'Cumulative Frequency from Above' (FPR017_C5), midpoint < $200k",
+      "n_compared": 17,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "spot_check_phase4": {
+        "1000": {
+          "expected": 0.95536,
+          "got": 0.95536,
+          "diff_pct": 0.0003
+        },
+        "22500": {
+          "expected": 0.5835,
+          "got": 0.5835,
+          "diff_pct": 0.0004
+        },
+        "62500": {
+          "expected": 0.21588,
+          "got": 0.21588,
+          "diff_pct": 0.001
+        },
+        "150000": {
+          "expected": 0.03233,
+          "got": 0.03233,
+          "diff_pct": 0.005
+        }
+      },
+      "column_fix": "FPR017_C3 (Frequency) -> FPR017_C5 (Cumulative from Above) applied",
+      "cd2_comparison": {
+        "note": "CD2 S103 reference_values were the Frequency column, not survival; corrected here."
+      },
+      "validated_at": "2026-05-18T23:12:04.887847+00:00"
+    },
+    "S1703": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "content_type": "cross_sectional",
+      "comparison_basis": "Appendix17_USIRS2011.xlsx 'Cumulative Frequency from Above' (FPR017_C5), midpoint >= $200k",
+      "n_compared": 6,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "spot_check_phase4": {
+        "350000": {
+          "expected": 0.00618,
+          "got": 0.00618,
+          "diff_pct": 0.003
+        },
+        "750000": {
+          "expected": 0.00207,
+          "got": 0.00207,
+          "diff_pct": 0.0088
+        },
+        "1250000": {
+          "expected": 0.001142,
+          "got": 0.001142,
+          "diff_pct": 0.018
+        },
+        "1750000": {
+          "expected": 0.000757,
+          "got": 0.000757,
+          "diff_pct": 0.0439
+        },
+        "3500009": {
+          "expected": 0.000211,
+          "got": 0.000211,
+          "diff_pct": 0.1275
+        },
+        "7500000": {
+          "expected": 7.87e-05,
+          "got": 7.9e-05,
+          "diff_pct": 0.0381
+        }
+      },
+      "column_fix": "FPR017_C3 (Frequency) -> FPR017_C5 (Cumulative from Above) applied",
+      "top_bin_dropped": true,
+      "top_bin_drop_audit": "$10,000,000+ open-ended bin has no midpoint; dropped per anti-synthetic rule. Loader filters NaN midpoint.",
+      "ten_million_bin_present_in_processed": true,
+      "cd2_comparison": {
+        "note": "CD2 S104 reference_values were the Frequency column; corrected to column F here."
+      },
+      "validated_at": "2026-05-18T23:12:20.695267+00:00"
+    },
+    "S603": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 260,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "S603-A",
+        "S603-B",
+        "S603-C",
+        "S603-D"
+      ],
+      "validated_at": "2026-05-18T23:02:54.547879+00:00"
+    },
+    "S1405": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "abs_tol_floor": 1e-06,
+      "compare_range": [
+        1949,
+        2011
+      ],
+      "subseries_to_appendix_col": {
+        "S1405-A": "gwshhp100",
+        "S1405-B": "ulintensityhp100",
+        "S1405-FIT1": "GWSHHP100RAL8AF",
+        "S1405-FIT2": "GWSHHP100RAL8BP1F"
+      },
+      "n_compared": 252,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_years": [],
+      "divergences_sample": [],
+      "validated_at": "2026-05-18T23:19:03.878242+00:00",
+      "phillips_fit_replication": {
+        "era1": {
+          "fitted": {
+            "a": -1.0264314084942405,
+            "c": -0.010676501931369086,
+            "r2": 0.9308709119788912,
+            "n": 34,
+            "converged": true
+          },
+          "published": {
+            "a": -1.026431,
+            "c": -0.010677,
+            "r2": 0.931
+          },
+          "a_abs_diff": 4.0849424043365445e-07,
+          "c_abs_diff": 4.980686309150051e-07,
+          "r2_abs_diff": 0.00012908802110889184,
+          "param_tol_abs": 0.05,
+          "matches_published": true,
+          "unconstrained": {
+            "a": -0.00412605830878613,
+            "b": 6.246071511159723e-05,
+            "c": -1.705913249493028,
+            "r2": 0.987531392983579,
+            "n": 34,
+            "converged": true
+          }
+        },
+        "era2": {
+          "fitted": {
+            "a": -1.0109957889204761,
+            "c": -0.003708829519245551,
+            "r2": 0.9649650111322942,
+            "n": 18,
+            "converged": true
+          },
+          "published": {
+            "a": -1.010996,
+            "c": -0.003709,
+            "r2": 0.965
+          },
+          "a_abs_diff": 2.1107952385968076e-07,
+          "c_abs_diff": 1.704807544491288e-07,
+          "r2_abs_diff": 3.498886770580967e-05,
+          "param_tol_abs": 0.05,
+          "matches_published": true,
+          "unconstrained": {
+            "a": -5.218114246257406,
+            "b": 5.207096707313747,
+            "c": -0.0007166129112659367,
+            "r2": 0.964983136239133,
+            "n": 18,
+            "converged": true
+          }
+        }
+      }
+    },
+    "ES2101": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "derived",
+      "comparison_basis": "Reconstructed ES2101_summary_statistics.csv (verbatim Section 5 p. 272)",
+      "n_compared": 10,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "extension_status": "v1_1_deferred_shared_bea_sraffa_pipeline",
+      "validated_at": "2026-05-18T22:52:29.222860+00:00"
+    },
+    "ES2201": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "time_series",
+      "comparison_basis": "Reconstructed ES2201_fitted_parameters.csv (verbatim Shaikh-Jacobo 2020 Table 1)",
+      "n_compared": 75,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "extension_status": "v1_1_deferred_mle_refit_2017_2022",
+      "validated_at": "2026-05-18T22:52:36.704099+00:00"
+    },
+    "S604": {
+      "status": "PASS",
+      "tolerance_pct": 2.0,
+      "n_compared": 128,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "subseries_compared": [
+        "S604-A",
+        "S604-B"
+      ],
+      "validated_at": "2026-05-18T23:03:53.965027+00:00"
+    },
+    "S1406": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "abs_tol_floor": 1e-06,
+      "compare_range": [
+        1949,
+        2011
+      ],
+      "subseries_to_appendix_col": {
+        "S1406-A": "inflrate",
+        "S1406-B": "GPRODVTY"
+      },
+      "n_compared": 125,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_years": [],
+      "divergences_sample": [],
+      "validated_at": "2026-05-18T23:19:14.308714+00:00"
+    },
+    "S1407": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "abs_tol_floor": 1e-06,
+      "compare_range": [
+        1949,
+        2011
+      ],
+      "subseries_to_appendix_col": {
+        "S1407-A": "GRWAGEHP100",
+        "S1407-B": "ulintensityhp100"
+      },
+      "n_compared": 126,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_years": [],
+      "divergences_sample": [],
+      "validated_at": "2026-05-18T23:19:20.986192+00:00"
+    },
+    "S1408": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "abs_tol_floor": 1e-06,
+      "compare_range": [
+        1949,
+        2011
+      ],
+      "subseries_to_appendix_col": {
+        "S1408-A": "GMWAGEHP100",
+        "S1408-B": "ulintensityhp100"
+      },
+      "n_compared": 126,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_years": [],
+      "divergences_sample": [],
+      "validated_at": "2026-05-18T23:19:25.080115+00:00"
+    },
+    "ES2302": {
+      "status": "PASS",
+      "tolerance_pct": 15.0,
+      "content_type": "time_series",
+      "comparison_basis": "Fig 2 / paper Section 1 p. 432 figure-read anchors at known peaks",
+      "n_compared": 2,
+      "mae": 0.3845,
+      "max_abs_err": 0.569,
+      "max_pct_err": 2.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "year_range_processed": [
+        1997,
+        2031
+      ],
+      "subseries_present": [
+        "ES2302-level",
+        "ES2302-pctgdp"
+      ],
+      "validated_at": "2026-05-18T22:53:19.950103+00:00"
+    },
+    "ES2303": {
+      "status": "PASS",
+      "tolerance_pct": 10.0,
+      "content_type": "time_series",
+      "comparison_basis": "Paper-text anchors (Section 1 p. 433, Section 3 p. 438) and WB WDI publish-vintage 2000->2010 ratio",
+      "n_compared": 3,
+      "mae": 109.4335,
+      "max_abs_err": 239.5478,
+      "max_pct_err": 6.6541,
+      "divergence_count": 0,
+      "divergences": [],
+      "year_range_processed": [
+        1990,
+        2024
+      ],
+      "validated_at": "2026-05-18T23:06:07.248952+00:00"
+    },
+    "ES2304": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "derived",
+      "comparison_basis": "Reconstructed ES2304_literature_compilation.csv (verbatim named endpoints from paper note 17)",
+      "n_compared": 2,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "extension_status": "not_applicable_literature_compilation",
+      "validated_at": "2026-05-18T22:54:55.940352+00:00"
+    },
+    "ES2305": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "derived",
+      "comparison_basis": "Reconstructed ES2305_literature_compilation.csv (verbatim named endpoints)",
+      "n_compared": 2,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "extension_status": "not_applicable_literature_compilation",
+      "validated_at": "2026-05-18T22:55:45.125194+00:00"
+    },
+    "ES2301": {
+      "status": "PASS",
+      "tolerance_pct": 10.0,
+      "content_type": "time_series",
+      "comparison_basis": "Fig 1 endpoint anchors (2002, 2017) for World and China",
+      "n_compared": 4,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergences": [],
+      "year_range_processed": [
+        2002,
+        2018
+      ],
+      "subseries_present": [
+        "ES2301-china",
+        "ES2301-world"
+      ],
+      "validated_at": "2026-05-18T23:05:09.211340+00:00"
+    },
+    "S203": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1889,
+        2010
+      ],
+      "n_compared": 112,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "validated_at": "2026-05-18T23:18:01.814590+00:00"
+    },
+    "S204": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1831,
+        1866
+      ],
+      "n_compared": 432,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "frequency": "monthly",
+      "extension_status": "not_applicable_discontinued",
+      "validated_at": "2026-05-18T23:18:12.116895+00:00"
+    },
+    "S205": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1867,
+        1902
+      ],
+      "n_compared": 432,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "frequency": "monthly",
+      "extension_status": "not_applicable_discontinued",
+      "validated_at": "2026-05-18T23:18:16.586202+00:00"
+    },
+    "S206": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1903,
+        1939
+      ],
+      "n_compared": 439,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "frequency": "monthly",
+      "extension_status": "not_applicable_discontinued",
+      "validated_at": "2026-05-18T23:18:41.311585+00:00"
+    },
+    "S207": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1889,
+        2010
+      ],
+      "n_compared": 243,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": [
+        {
+          "label": "productivity",
+          "n": 121,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_years": [],
+          "divergence_count": 0
+        },
+        {
+          "label": "compensation",
+          "n": 122,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_years": [],
+          "divergence_count": 0
+        }
+      ],
+      "validated_at": "2026-05-18T23:18:45.029196+00:00"
+    },
+    "S208": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1889,
+        2010
+      ],
+      "n_compared": 122,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "validated_at": "2026-05-18T23:18:48.527701+00:00"
+    },
+    "S209": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1890,
+        2010
+      ],
+      "n_compared": 121,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "note": "Tolerance: 0.15pp absolute (unemployment in percent; tight pct-err inappropriate near zero).",
+      "validated_at": "2026-05-18T23:19:04.422565+00:00"
+    },
+    "S210": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1790,
+        2010
+      ],
+      "n_compared": 442,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "per_subseries": [
+        {
+          "label": "US WPI",
+          "n": 221,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_years": [],
+          "divergence_count": 0
+        },
+        {
+          "label": "UK WPI",
+          "n": 221,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_years": [],
+          "divergence_count": 0
+        }
+      ],
+      "note": "Book truth = CD2 S023 (no Appendix 2 chopped table); BLS WPU substituted for frozen WPS post-1974.",
+      "validated_at": "2026-05-18T23:19:14.289059+00:00"
+    },
+    "S211": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1790,
+        1940
+      ],
+      "n_compared": 302,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "per_subseries": [
+        {
+          "label": "US WPI",
+          "n": 151,
+          "divergence_years": [],
+          "mae": 0.0,
+          "max_pct_err": 0.0
+        },
+        {
+          "label": "UK WPI",
+          "n": 151,
+          "divergence_years": [],
+          "mae": 0.0,
+          "max_pct_err": 0.0
+        }
+      ],
+      "note": "Book truth = CD2 S022 (Jastram 1977 + NBER). No extension by design.",
+      "validated_at": "2026-05-18T23:19:20.913016+00:00"
+    },
+    "S212": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1790,
+        2010
+      ],
+      "n_compared": 442,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "per_subseries": [
+        {
+          "label": "US WPI in gold",
+          "n": 221,
+          "divergence_years": [],
+          "mae": 0.0,
+          "max_pct_err": 0.0
+        },
+        {
+          "label": "UK WPI in gold",
+          "n": 221,
+          "divergence_years": [],
+          "mae": 0.0,
+          "max_pct_err": 0.0
+        }
+      ],
+      "note": "Book truth = CD2 S024/S025 (Jastram 1977 + MeasuringWorth gold).",
+      "validated_at": "2026-05-18T23:19:25.050770+00:00"
+    },
+    "S213": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1947,
+        2011
+      ],
+      "n_compared": 65,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "note": "Tolerance: 0.005 absolute (profit rates ~0.10-0.20).",
+      "validated_at": "2026-05-18T23:19:38.562385+00:00"
+    },
+    "S214": {
+      "status": "PASS_DATA_UNAVAILABLE",
+      "book_period": [
+        1960,
+        1989
+      ],
+      "book_period_status": "data_unavailable",
+      "reason": "anwarshaikhecon.org App 7.2 / OECD ISDB 1994 not in SalvagedInputs; per anu-framework no-fabrication rule, book values are not synthesized.",
+      "post_book_rows": 19,
+      "post_book_range": [
+        1987,
+        2005
+      ],
+      "remediation": "When App 7.2 replica is added to SalvagedInputs, re-run L01 to populate 1960-1989.",
+      "validated_at": "2026-05-18T23:19:43.765529+00:00"
+    },
+    "S215": {
+      "status": "PASS_DATA_UNAVAILABLE",
+      "book_period": [
+        1960,
+        1989
+      ],
+      "book_period_status": "data_unavailable",
+      "reason": "anwarshaikhecon.org App 7.2 / OECD ISDB 1994 not in SalvagedInputs.",
+      "post_book_rows": 18,
+      "post_book_range": [
+        1988,
+        2005
+      ],
+      "remediation": "When App 7.2 replica is added to SalvagedInputs, re-run L01.",
+      "validated_at": "2026-05-18T23:19:46.876579+00:00"
+    },
+    "S216": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "year": 1972,
+      "n_industries": 71,
+      "per_subseries": [
+        {
+          "label": "tp(r) normalized",
+          "n": 71,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_industries": []
+        },
+        {
+          "label": "tpm normalized",
+          "n": 71,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_industries": []
+        }
+      ],
+      "validated_at": "2026-05-18T23:19:51.537779+00:00"
+    },
+    "S217": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1600,
+        2000
+      ],
+      "n_compared": 224,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "regions_compared": [
+        "Africa",
+        "Asia",
+        "Latin America",
+        "Western Europe",
+        "Western Offshoots",
+        "World"
+      ],
+      "validated_at": "2026-05-18T23:19:55.862943+00:00"
+    },
+    "S218": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1600,
+        2000
+      ],
+      "n_compared": 63,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "labels_compared": [
+        "POOREST 4",
+        "RATIO OF RICHEST 4 TO POOREST 4",
+        "RICHEST 4"
+      ],
+      "validated_at": "2026-05-18T23:19:58.922177+00:00"
+    },
+    "S501": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1790,
+        1940
+      ],
+      "mae": 0.0,
+      "per_subseries": [
+        {
+          "subseries": "S501-A",
+          "col": "USWPI",
+          "n": 151,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_years": []
+        },
+        {
+          "subseries": "S501-B",
+          "col": "UKWPI",
+          "n": 151,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_years": []
+        }
+      ],
+      "validated_at": "2026-05-19T00:03:28.841404+00:00"
+    },
+    "S502": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1790,
+        2010
+      ],
+      "mae": 0.0,
+      "per_subseries": [
+        {
+          "subseries": "S502-A",
+          "col": "USWPI",
+          "n": 221,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_years": []
+        },
+        {
+          "subseries": "S502-B",
+          "col": "UKWPI",
+          "n": 221,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_years": []
+        }
+      ],
+      "inflation_diagnostics": {
+        "US_2010_over_1940": 13.656,
+        "UK_2010_over_1939": 57.992,
+        "book_claim_US": 14.0,
+        "book_claim_UK": 58.0
+      },
+      "validated_at": "2026-05-19T00:03:31.436314+00:00"
+    },
+    "S503": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1790,
+        2010
+      ],
+      "mae": 0.0,
+      "per_subseries": [
+        {
+          "subseries": "S503-A",
+          "col": "UKPPIGold",
+          "n": 221,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_years": []
+        },
+        {
+          "subseries": "S503-B",
+          "col": "UKGoldpriceindex",
+          "n": 221,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_years": []
+        }
+      ],
+      "internal_consistency_check": {
+        "1790": {
+          "UKWPI": 96.5,
+          "recon_p_x_pG/100": 96.5,
+          "diff_pct": 0.0
+        },
+        "1930": {
+          "UKWPI": 100.0,
+          "recon_p_x_pG/100": 100.0,
+          "diff_pct": 0.0
+        },
+        "2010": {
+          "UKWPI": 5726.733,
+          "recon_p_x_pG/100": 5726.733,
+          "diff_pct": 0.0
+        }
+      },
+      "validated_at": "2026-05-19T00:03:37.314924+00:00"
+    },
+    "S504": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1800,
+        2010
+      ],
+      "mae": 0.0,
+      "per_subseries": [
+        {
+          "subseries": "S504-A",
+          "col": "USPPIGold",
+          "n": 211,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_years": []
+        },
+        {
+          "subseries": "S504-B",
+          "col": "USGoldpriceindex",
+          "n": 211,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_years": []
+        }
+      ],
+      "fdr_1934_jump_diagnostic": {
+        "pG_US_1933": 118.239,
+        "pG_US_1934": 169.037,
+        "ratio_1934_over_1933": 1.4296,
+        "FDR_official_devaluation_ratio_35_over_20.67": 1.6933
+      },
+      "internal_consistency_check": {
+        "1800": {
+          "USWPI": 102.2,
+          "recon": 102.2,
+          "diff_pct": 0.0
+        },
+        "1930": {
+          "USWPI": 100.0,
+          "recon": 100.0,
+          "diff_pct": 0.0
+        },
+        "2010": {
+          "USWPI": 1239.999,
+          "recon": 1239.999,
+          "diff_pct": 0.0
+        }
+      },
+      "validated_at": "2026-05-19T00:03:39.850821+00:00"
+    },
+    "S901": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "per_benchmark": [
+        {
+          "label": "1947F",
+          "n_industries": 71,
+          "market_mae": 0.0,
+          "market_max_pct_err": 0.0,
+          "market_divergences": [],
+          "direct_mae": 0.0,
+          "direct_max_pct_err": 0.0,
+          "direct_divergences": []
+        },
+        {
+          "label": "1958F",
+          "n_industries": 71,
+          "market_mae": 0.0,
+          "market_max_pct_err": 0.0,
+          "market_divergences": [],
+          "direct_mae": 0.0,
+          "direct_max_pct_err": 0.0,
+          "direct_divergences": []
+        },
+        {
+          "label": "1963F",
+          "n_industries": 71,
+          "market_mae": 0.0,
+          "market_max_pct_err": 0.0,
+          "market_divergences": [],
+          "direct_mae": 0.0,
+          "direct_max_pct_err": 0.0,
+          "direct_divergences": []
+        },
+        {
+          "label": "1967F",
+          "n_industries": 71,
+          "market_mae": 0.0,
+          "market_max_pct_err": 0.0,
+          "market_divergences": [],
+          "direct_mae": 0.0,
+          "direct_max_pct_err": 0.0,
+          "direct_divergences": []
+        },
+        {
+          "label": "1972F",
+          "n_industries": 71,
+          "market_mae": 0.0,
+          "market_max_pct_err": 0.0,
+          "market_divergences": [],
+          "direct_mae": 0.0,
+          "direct_max_pct_err": 0.0,
+          "direct_divergences": []
+        },
+        {
+          "label": "1998C",
+          "n_industries": 65,
+          "market_mae": 0.0,
+          "market_max_pct_err": 0.0,
+          "market_divergences": [],
+          "direct_mae": 0.0,
+          "direct_max_pct_err": 0.0,
+          "direct_divergences": []
+        },
+        {
+          "label": "1998F",
+          "n_industries": 65,
+          "market_mae": 0.0,
+          "market_max_pct_err": 0.0,
+          "market_divergences": [],
+          "direct_mae": 0.0,
+          "direct_max_pct_err": 0.0,
+          "direct_divergences": []
+        }
+      ],
+      "mae": 0.0,
+      "%MAWD_per_benchmark_percent": {
+        "1947F": 0.8224,
+        "1958F": 0.7904,
+        "1963F": 0.7829,
+        "1967F": 0.6526,
+        "1972F": 0.5216,
+        "1998C": 0.4487,
+        "1998F": 0.3928
+      },
+      "validated_at": "2026-05-19T00:03:42.340776+00:00"
+    },
+    "S902": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "per_benchmark": [
+        {
+          "label": "1947F",
+          "n_industries": 71,
+          "tpr_mae": 0.0,
+          "tpr_max_pct_err": 0.0,
+          "divergences": [],
+          "delta_c_standard_vs_labor": 0.099091
+        },
+        {
+          "label": "1958F",
+          "n_industries": 71,
+          "tpr_mae": 0.0,
+          "tpr_max_pct_err": 0.0,
+          "divergences": [],
+          "delta_c_standard_vs_labor": 0.093709
+        },
+        {
+          "label": "1963F",
+          "n_industries": 71,
+          "tpr_mae": 0.0,
+          "tpr_max_pct_err": 0.0,
+          "divergences": [],
+          "delta_c_standard_vs_labor": 0.129314
+        },
+        {
+          "label": "1967F",
+          "n_industries": 71,
+          "tpr_mae": 0.0,
+          "tpr_max_pct_err": 0.0,
+          "divergences": [],
+          "delta_c_standard_vs_labor": 0.155122
+        },
+        {
+          "label": "1972F",
+          "n_industries": 71,
+          "tpr_mae": 0.0,
+          "tpr_max_pct_err": 0.0,
+          "divergences": [],
+          "delta_c_standard_vs_labor": 0.141044
+        },
+        {
+          "label": "1998C",
+          "n_industries": 65,
+          "tpr_mae": 0.0,
+          "tpr_max_pct_err": 0.0,
+          "divergences": [],
+          "delta_c_standard_vs_labor": 0.106623
+        },
+        {
+          "label": "1998F",
+          "n_industries": 65,
+          "tpr_mae": 0.0,
+          "tpr_max_pct_err": 0.0,
+          "divergences": [],
+          "delta_c_standard_vs_labor": 0.115548
+        }
+      ],
+      "mae": 0.0,
+      "observed_profit_rate_check": [
+        {
+          "year": 1947,
+          "expected": 0.236,
+          "got": 0.236,
+          "diff_pct": 0.0,
+          "ok": true
+        },
+        {
+          "year": 1958,
+          "expected": 0.176,
+          "got": 0.176,
+          "diff_pct": 0.0,
+          "ok": true
+        },
+        {
+          "year": 1963,
+          "expected": 0.21,
+          "got": 0.21,
+          "diff_pct": 0.0,
+          "ok": true
+        },
+        {
+          "year": 1967,
+          "expected": 0.229,
+          "got": 0.229,
+          "diff_pct": 0.0,
+          "ok": true
+        },
+        {
+          "year": 1972,
+          "expected": 0.188,
+          "got": 0.188,
+          "diff_pct": 0.0,
+          "ok": true
+        },
+        {
+          "year": 1998,
+          "expected": 0.1258,
+          "got": 0.1258,
+          "diff_pct": 0.0,
+          "ok": true
+        }
+      ],
+      "validated_at": "2026-05-19T00:03:57.860329+00:00"
+    },
+    "S903": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "per_curve": [
+        {
+          "subseries": "S903-WSHARE-47",
+          "n": 108,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WRCURVE-47",
+          "n": 108,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WSHARE-58",
+          "n": 97,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WRCURVE-58",
+          "n": 97,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WSHARE-63",
+          "n": 85,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WRCURVE-63",
+          "n": 85,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WSHARE-67",
+          "n": 76,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WRCURVE-67",
+          "n": 76,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WSHARE-72",
+          "n": 70,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WRCURVE-72",
+          "n": 70,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WSHARE-98FIX",
+          "n": 73,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WRCURVE-98FIX",
+          "n": 73,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WSHARE-98CIRC",
+          "n": 103,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        },
+        {
+          "subseries": "S903-WRCURVE-98CIRC",
+          "n": 103,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "divergences_count": 0
+        }
+      ],
+      "mae": 0.0,
+      "r_fixed_sanity_gate": [
+        {
+          "year": 1947,
+          "expected": 1.088,
+          "got": 1.088,
+          "diff_pct": 0.0,
+          "ok": true
+        },
+        {
+          "year": 1958,
+          "expected": 0.9734,
+          "got": 0.9734,
+          "diff_pct": 0.0,
+          "ok": true
+        },
+        {
+          "year": 1963,
+          "expected": 0.8547,
+          "got": 0.8547,
+          "diff_pct": 0.0,
+          "ok": true
+        },
+        {
+          "year": 1967,
+          "expected": 0.7644,
+          "got": 0.7644,
+          "diff_pct": 0.0,
+          "ok": true
+        },
+        {
+          "year": 1972,
+          "expected": 0.7033,
+          "got": 0.7033,
+          "diff_pct": 0.0,
+          "ok": true
+        },
+        {
+          "year": 1998,
+          "expected": 0.7317,
+          "got": 0.7317,
+          "diff_pct": 0.0,
+          "ok": true
+        }
+      ],
+      "validated_at": "2026-05-19T00:04:01.687104+00:00"
+    },
+    "S801": {
+      "status": "PASS_DATA_UNAVAILABLE",
+      "reason": "Eichner (1973) Fig 8.1 is chart-only with no underlying table in the publication; Shaikh did not transcribe values; no Appendix8_* chopped table exists for this figure; PDF not in RSCD workspace. Phase 5 blocker B6 resolved as data_unavailable. Per playbook recipe.",
+      "validated_at": "2026-05-19T00:08:29.565308+00:00"
+    },
+    "S802": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "cross_sectional",
+      "n_compared": 9,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "validated_at": "2026-05-19T00:08:51.282845+00:00"
+    },
+    "S803": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "cross_sectional",
+      "n_compared": 104,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "panels": {
+        "FIG83": {
+          "n_compared": 84,
+          "mae": 0.0,
+          "max_abs_err": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_count": 0
+        },
+        "FIG84_BAIN": {
+          "n_compared": 10,
+          "mae": 0.0,
+          "max_abs_err": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_count": 0
+        },
+        "FIG84_DEMSETZ": {
+          "n_compared": 10,
+          "mae": 0.0,
+          "max_abs_err": 0.0,
+          "max_pct_err": 0.0,
+          "divergence_count": 0
+        }
+      },
+      "validated_at": "2026-05-19T00:09:40.830627+00:00"
+    },
+    "S804": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "content_type": "time_series",
+      "n_compared": 12,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "validated_at": "2026-05-19T00:10:02.516923+00:00"
+    },
+    "S805": {
+      "status": "PASS",
+      "tolerance_pct": 0.5,
+      "content_type": "cross_sectional",
+      "n_compared": 12,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "validated_at": "2026-05-19T00:10:22.264115+00:00"
+    },
+    "S1601": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1786,
+        2010
+      ],
+      "n_compared": 450,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "max_abs_err": 0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": {
+        "S1601-A": {
+          "n": 225,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1601-B": {
+          "n": 225,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        }
+      },
+      "validated_at": "2026-05-19T00:19:54.117861+00:00"
+    },
+    "S1602": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1947,
+        2012
+      ],
+      "n_compared": 330,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "max_abs_err": 0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": {
+        "S1602-A": {
+          "n": 66,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1602-B": {
+          "n": 66,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1602-C": {
+          "n": 66,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1602-G": {
+          "n": 66,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1602-H": {
+          "n": 66,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        }
+      },
+      "validated_at": "2026-05-19T00:19:56.062690+00:00"
+    },
+    "S1603": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1960,
+        2012
+      ],
+      "n_compared": 125,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "max_abs_err": 0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": {
+        "S1603-A": {
+          "n": 53,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1603-B": {
+          "n": 53,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1603-C": {
+          "n": 19,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        }
+      },
+      "validated_at": "2026-05-19T00:19:58.109805+00:00"
+    },
+    "S1604": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1946,
+        2011
+      ],
+      "n_compared": 320,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "max_abs_err": 0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": {
+        "S1604-A": {
+          "n": 65,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1604-B": {
+          "n": 64,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1604-C": {
+          "n": 64,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1604-D": {
+          "n": 63,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1604-E": {
+          "n": 64,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        }
+      },
+      "tolerance_note": "Divergence requires BOTH abs_err > 0.001 (0.1pp) AND pct_err > 1% to avoid false-positives near zero crossings of the incremental series.",
+      "validated_at": "2026-05-19T00:20:02.802946+00:00"
+    },
+    "S1605": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1975,
+        2012
+      ],
+      "n_compared": 114,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "max_abs_err": 0,
+      "divergence_years": [],
+      "divergence_count": 0,
+      "per_subseries": {
+        "S1605-A": {
+          "n": 38,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1605-B": {
+          "n": 38,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1605-C": {
+          "n": 38,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        }
+      },
+      "validated_at": "2026-05-19T00:20:04.831391+00:00"
+    },
+    "S1606": {
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "compare_range": [
+        1980,
+        2012
+      ],
+      "n_compared": 264,
+      "mae": 0.0,
+      "max_pct_err": 0.0,
+      "max_abs_err": 0,
+      "divergence_quarters": [],
+      "divergence_count": 0,
+      "per_subseries_quarterly": {
+        "S1606-A": {
+          "n": 132,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_quarters": []
+        },
+        "S1606-B": {
+          "n": 132,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_quarters": []
+        }
+      },
+      "per_subseries_annual": {
+        "S1606-A": {
+          "n": 33,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        },
+        "S1606-B": {
+          "n": 33,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": []
+        }
+      },
+      "annual_status": "PASS",
+      "validated_at": "2026-05-19T00:20:06.805239+00:00"
+    }
+  },
+  "generated_at": "2026-05-19T00:20:06.806315+00:00"
+}

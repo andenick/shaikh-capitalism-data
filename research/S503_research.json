@@ -1,0 +1,119 @@
+{
+  "series_id": "S503",
+  "name": "UK WPI in Gold and UK Gold Price",
+  "chapter": 5,
+  "figures": [
+    "Fig5.5"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S024",
+    "cd2_id": "S024"
+  },
+  "book_quotes": [
+    {
+      "chapter": 5,
+      "page": 198,
+      "quote": "Figure 5.5 decomposes the UK price index from 1790 to 2008 into the two basic components suggested by Marx's theory (equation (5.9)): the relative price of commodities with respect to gold (p', their golden price) and the £ price of gold itself (pG).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 5,
+      "page": 198,
+      "quote": "As shown in figure 5.5, the movements of p' over the whole period from 1790 to 2009 are modest enough to be consistent with the hypothesis that the long-run price of commodities relative to gold is driven by slowly changing structural factors-despite the fact that the golden price of commodities reflects major shocks due to the Long Depression of the 1870s, World War I, the Great Depression of the 1930s, World War II, the Great Stagflation of the 1970s, and the sharp run up in gold prices prior to the current crisis.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 5,
+      "page": 788,
+      "quote": "For the UK, gold prices from 1780 to 1785 are available in Jastram (1977) and were estimated for the United States over the same interval using the 1786 ratio of US-UK gold prices (which is essentially constant until 1800). For 1786-2010, the US gold price is the official price for 1786-1790 available from Measuring Worth.com at http://www.measuringworth.com/gold/, and the market price thereafter. The same source has the UK market gold price in UK£ from 1786 to 1949, and in US$ thereafter, so the latter segment was converted to UKBritish £ using the US$-UK£ exchange from the same site.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 5,
+      "page": 788,
+      "quote": "UK and US WPI expressed in gold were then calculated as the ratio of WPI to the price of gold, 1930 = 100.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh (book companion); Jastram (1977); Officer & Williamson (MeasuringWorth)",
+    "publication": "Appendix 5.3 Data Tables for Chapter 5, sheet =DATALRprices (Shaikh, anwarshaikhecon.org); Jastram, The Golden Constant (1977); Officer & Williamson, 'The Price of Gold, 1257-2010' and 'Dollar-Pound Exchange Rate from 1791'",
+    "table_or_series_id": "S010-S (UK PPI in gold = UKWPI / UK gold price), S010-AB (UK gold price in £)",
+    "url": "http://www.measuringworth.com/gold/",
+    "frequency": "annual",
+    "units": "index, 1930 = 100 (for both p' and pG, rebased)",
+    "license": "academic / MeasuringWorth permits scholarly use",
+    "available_through": "MeasuringWorth (gold price), Jastram (1977) tables, Shaikh Appendix 5.3 spreadsheet",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "p_UK = p'_UK * pG_UK, where pG_UK = UK market £-price of gold per ounce (Jastram 1977 for 1780-1785 + MeasuringWorth 1786-2010, with 1950-2010 segment converted from US$ via Officer dollar-pound exchange rate), and p'_UK = UKWPI(1930=100) / pG_UK(1930=100). Both pG and p' are rebased to 1930 = 100 prior to plotting.",
+  "components": [
+    {
+      "label": "UKWPI 1790-2009",
+      "source": "S502 leg B (Jastram 1977 table 2 + NBER m04053 1939-1945 + ONS PLLU 1977-2010), 1930 = 100"
+    },
+    {
+      "label": "UK gold price (£ per oz), 1780-2010",
+      "source": "Jastram (1977) for 1780-1785; MeasuringWorth (Officer & Williamson) for 1786-1949 in £, 1950-2010 in US$ converted to £ via Officer dollar-pound exchange rate"
+    }
+  ],
+  "year_range_book": [
+    1790,
+    2009
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "UK gold price 2011-present (£/oz)",
+      "source": "LBMA Gold Price PM (London auction) divided by Bank of England daily $/£ spot",
+      "url": "https://www.lbma.org.uk/prices-and-data/precious-metal-prices",
+      "units": "GBP per troy ounce",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "LBMA reformed the London Gold Fixing into the LBMA Gold Price in March 2015; identifier continuity across the reform must be documented.",
+        "Conversion from US$ to £ requires a documented FX series (Bank of England 'XUDLGBD' daily spot) - choose monthly average for compatibility with annual frequency."
+      ]
+    },
+    {
+      "subseries_label": "UK WPI in gold (p'), derived for 2011-present",
+      "source": "Computed: ONS PLLU / (LBMA gold price £/oz), rebased to 1930 = 100 using the 2010 anchor from Shaikh's DATALRprices sheet",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/pllu",
+      "units": "index, 1930 = 100",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "This is a 'formula' continuation per the No-Lazy-Splices rule: must recompute the ratio from extended components, NOT growth-rate splice on p' itself.",
+        "Anchor year choice matters; 2010 is the last book year and the natural overlap point."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "S503 is the empirical implementation of Shaikh's equation 5.9 (p = p' * pG) for the UK. It is by construction a 'formula' series: extension MUST recompute the ratio from extended UKWPI and extended UK gold price, never growth-splice the ratio directly. (Anu Framework: 'No Lazy Splices on Derived Quantities'.)",
+    "Both lines plotted in figure 5.5 are rebased to 1930 = 100. The y-axis is log-scale 10 to 10,000.",
+    "The 1950 transition (UK gold price quoted in US$ thereafter in MeasuringWorth) is bridged by Officer's Dollar-Pound exchange series; flag this as a splice point for QA against Bank of England historical FX.",
+    "CD2 ancestor S024 lists 'BLS PPI extension' for UK gold price, which is a documentation error: Appendix 5.2 makes clear the UK gold price extension is from MeasuringWorth + Officer FX, not BLS PPI. Corrected here."
+  ],
+  "open_questions": [
+    "Confirm whether Shaikh uses annual averages or year-end values for the UK gold price; Appendix 5.2 does not specify.",
+    "Validate the 1939-1945 UK gold-price observations (gold market was officially suspended in the UK during wartime); MeasuringWorth's series may interpolate.",
+    "anwarshaikhecon.org Appendix 5.3 URL is not confirmed live - 200-OK check for Phase 4.",
+    "Decide whether to keep the year_range as 1790-2009 (per figure title) or 1780-2010 (per data coverage); current setting follows the figure caption."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch5",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from Ch5 pp. 197-198 and Appendix 5.2 pp. 788-789; CD2 S024 dossier ported with correction (UK gold price extension is MeasuringWorth, not BLS)."
+    }
+  ]
+}

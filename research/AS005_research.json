@@ -1,0 +1,93 @@
+{
+  "series_id": "AS005",
+  "name": "GPIM Variant - BEA 2011 Initial Value",
+  "chapter": 6,
+  "figures": ["Appendix Figure 6.7.4"],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": "S210"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 845,
+      "quote": "Appendix table 6.7.13 lists three different 1925 values of current-cost corporate net stock available in various BEA publications (with the latter two also expressed as percentages of the BEA 2011 initial value). Appendix figure 6.7.5 illustrates the effects of alternate initial values (in 1925) for the GPIM accumulation rules, keeping the aggregate depreciation rate the same as in present day net-stock BEA estimates and sticking to the underlying BEA assumption that individual depreciation rates are entirely invariant to economic fluctuations. Only one-third of any initial difference in 19,225 remains in 1947: the 31% initial difference of the BEA 1993 starting point is reduced to a 10% difference by 1947, and the 21% initial difference of the SCB 1985 starting point is reduced to 7%.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 845,
+      "quote": "Different Initial Values in 1925, Current-Cost Corporate Net Stock ... BEA 2011 ... Fixed Asset Table 6.1, line 1 ... 98.1 ... BEA 1993 ... Table A.13, 294 (BEA 1993) ... 77.7 (79%) ... SCB 1985 ... Table 6, 56 (Gorman, Musgrav, Silverstein, and Comins 1985) ... 67.1 (68%).",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 845,
+      "quote": "But since all starting points end up on the same path in the long run, the lower initial values must grow faster to catch up with the common long-run path. In other words, lower starting points yield higher capital stock growth rates for a considerable length of time. This property turns out to have major consequences for the path of the postwar capital stock when we adjust for the effects of the Great Depression.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "BEA",
+    "publication": "Fixed Asset Accounts (FA)",
+    "table_or_series_id": "BEA FA Table 6.1, line 1, year 1925 (Current-Cost Net Stock of Private Fixed Assets, corporate); 2011 vintage initial value = 98.1 bill$",
+    "url": "https://apps.bea.gov/iTable/?reqid=10&step=2&isuri=1&table_list=10",
+    "frequency": "annual",
+    "units": "Billions of current dollars",
+    "license": "Public domain (U.S. Government work)",
+    "available_through": "BEA iTable",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "Same GPIM accumulation as AS004 (KC_t = IG_t + (1 - z_t)(pK'_t/pK'_{t-1}) KC_{t-1}) but with initial value KC_{1925} = 98.1 bill$ (BEA 2011 vintage, FA T6.1 line 1, year 1925), keeping BEA 2011 depreciation rates unchanged. This is the reference variant against which AS006-AS008 are compared.",
+  "components": [
+    {"label": "Initial 1925 value KC_{1925}", "source": "BEA FA T6.1 line 1 (2011 vintage) = 98.1 bill$"},
+    {"label": "Gross investment IG series 1925-2011", "source": "BEA FA T6.7"},
+    {"label": "Depreciation rate z (BEA 2011 implicit)", "source": "BEA 2011 vintage FA tables"},
+    {"label": "Capital stock chain price index pK'", "source": "BEA FA T6.4 / T6.1 implicit deflator"},
+    {"label": "Baseline GPIM machinery", "source": "AS004"}
+  ],
+  "year_range_book": [1925, 2011],
+  "year_range_extension": [2012, 2025],
+  "extension_candidates": [
+    {
+      "subseries_label": "GPIM corporate net stock with BEA 2011 initial value (extended)",
+      "source": "BEA FA Tables 6.1, 6.4, 6.7 + GPIM accumulation",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "Billions of current dollars",
+      "splice_strategy": "growth_rate",
+      "concerns": ["After 2011, the relevant question is not the 1925 initial value (long since washed out) but the choice of depreciation rate and IPP inclusion. Extension is mostly cosmetic.", "Extension exists primarily to maintain parallel structure with AS006-AS008 variants for sensitivity reporting"]
+    }
+  ],
+  "methodology_notes": [
+    "DELIBERATE COUNTERFACTUAL vs baseline (AS004): AS005 holds the BEA 2011 initial value (98.1 bill$) fixed, providing the reference path. AS004 baseline uses BEA 1993 depreciation/retirement rates AND adjusts for the Great Depression via the IRS book-value index; AS005 keeps the 'underlying BEA assumption that individual depreciation rates are entirely invariant to economic fluctuations' (p. 845). The difference between AS005 and AS006/AS007/AS008 isolates the effect of each perturbation.",
+    "Convergence property (book p. 845): 'all starting points end up on the same path in the long run, the lower initial values must grow faster to catch up with the common long-run path.' By 1947 the 31% initial difference (BEA 1993 vs BEA 2011) is reduced to 10%; by 1969 all variants are within 2% of each other (Appendix Figure 6.7.4, p. 846).",
+    "Appendix Table 6.7.13 (p. 845) gives the three 1925 initial values: BEA 2011 = 98.1 (100%), BEA 1993 = 77.7 (79%), SCB 1985 = 67.1 (68%). AS005 uses 98.1; AS006 uses 77.7.",
+    "AS005 is mechanically the simplest variant - it is the GPIM regenerator applied with no adjustments, used to verify the 99.6% accuracy match against official BEA KNCcorpbea (Appendix Table 6.7.12, p. 844).",
+    "Output role: AS005 is rarely the operational capital stock in S6xx series (AS004 is). AS005 exists as the documented reference variant; downstream users can switch to AS005 to remove the Great Depression adjustment and see its quantitative impact."
+  ],
+  "open_questions": [
+    "AS005 versus AS004: confirm which is the 'baseline' for S601-S604. CD2 markdown describes AS005 (S210) as the 'BEA 2011 initial value' reference; AS004 (S209) uses BEA 1993 depreciation rates plus Great Depression adjustment. Per Shaikh p. 851, the FINAL (preferred) measure is the AS004-style adjusted series. AS005 is the pure BEA-mechanical comparison case.",
+    "Initial-value choice is largely cosmetic for post-1970 analysis (differences <2% by 1969); the methodologically substantive choice is depreciation rate, which AS005 cedes to BEA's infinite-life geometric assumption.",
+    "Should AS005 explicitly track Appendix Figure 6.7.4's three lines (KNCcorpbea, KNCcorp1', KNCcorp2') as separate subseries?"
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-as-ch6",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from CD2 S210 markdown + verbatim quotes from Appendix 6.7 Section V.1 and Appendix Table 6.7.13 (book pp. 845-846). Three book quotes (definition, source, method). Documents the precise difference from AS004 baseline."
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "series_id": "S603",
+  "name": "Component Ratios x1, x2, x3",
+  "chapter": 6,
+  "figures": [
+    "Fig6.3"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S028",
+    "cd2_id": "S028"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 249,
+      "quote": "The differences between corrected and conventional measures hinge on three factors: (1) the derivation of a new measure of gross fixed capital (KGC); (2) the inclusion of monetary net interest paid (NMINT) in overall profit; and (3) the inclusion of inventories (INV) in total capital. Let r_NIPA = P/KNC_NIPA = the NIPA profit rate. Then the corrected rate of profit (r) is related to the NIPA rate by three variables x1, x2, x3 representing net monetary interest, inventory, and capital stock ratios, respectively. r ≡ (P + NMINT) / (KGC(-1) + INV(-1)) = r_NIPA · ((1 + NMINT/P) / (1 + (INV/KNC_NIPA)(-1))) · (KGC(-1)/KNC_NIPA(-1)) = r_NIPA · (x1/x2) · x3 (6.11).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 249,
+      "quote": "Figure 6.3 charts each of the component ratios. The monetary interest ratio x1 rises sharply in the first half of the period as interest rates rise, and then stabilizes as rising debt loads are offset by sharply falling interest rates. The inventory ratio x2 is fairly stable, so that the movements of x1/x2 are dominated by those in the interest ratio. On the other hand, since the new capital stock measure rises relative to the conventional BEA measure, x3 falls steadily. So (x1/x2)·x3, which is the ratio of the new profit rate to the conventional one, has a downward trend with fluctuations deriving from the effects of net interest flows on NIPA profit (P = NOS - NMIN).",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 248,
+      "quote": "VA = NOS + EC, NOS = P + NMINT (6.8); σ_P = NOS/VA = 1 - EC/VA (6.9); r ≡ NOS/KTC(-1) = (P + NMINT)/(KGC(-1) + INV(-1)) (6.10).",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (BEA) + Internal Revenue Service",
+    "publication": "NIPA Table 7.11 + Fixed Asset Tables 6.1-6.8 + IRS SOI; Shaikh (2016) Appendix Table 6.8.II.7 columns S013P/S013Q/S013R",
+    "table_or_series_id": "x1 = 1 + (NMINTcorp/Pcorp) using NIPA T7.11 and T1.14; x2 = 1 + (INVcorp(-1)/KNCcorpbea(-1)) using IRS SOI inventories and BEA FA T6.1; x3 = KNCcorpbea(-1)/KGCcorp(-1) using BEA official net stock vs. Shaikh's GPIM gross stock; published as Appendix 6.8 Table II-7 columns S013P, S013Q, S013R",
+    "url": "https://apps.bea.gov/iTable/iTable.cfm?reqid=19&step=2",
+    "frequency": "annual",
+    "units": "ratio (dimensionless)",
+    "license": "U.S. public domain",
+    "available_through": "BEA iTable + Fixed Assets interactive + IRS Tax Stats; Shaikh appendix tables at www.anwarshaikhecon.org",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "x1 = 1 + (NMINT_corp / P_corp)  [imputed-interest adjustment factor; ratio of corrected NOS to NIPA profit]. x2 = 1 + (INV_corp(-1) / KNC_corpbea(-1))  [inventory adjustment factor; ratio of total capital base to BEA-only fixed capital base]. x3 = KNC_corpbea(-1) / KGC_corp(-1)  [net-vs-gross / BEA-vs-GPIM capital-stock revaluation factor]. Decomposition identity (eq. 6.11): r_corrected / r_NIPA = (x1 / x2) · x3. Plotted as four lines in Fig 6.3: x1, x2, x3, and the product rcorp/rcorpnipa = x3·(x1/x2).",
+  "components": [
+    {
+      "label": "NMINT_corp (net monetary interest paid by corporate sector)",
+      "source": "BEA NIPA Table 7.11",
+      "role": "numerator of x1 increment"
+    },
+    {
+      "label": "P_corp (NIPA corporate profits)",
+      "source": "BEA NIPA Table 1.14",
+      "role": "denominator of x1 increment"
+    },
+    {
+      "label": "INV_corp(-1) (corporate inventories, lagged, current cost)",
+      "source": "IRS SOI corporate balance sheets, scaled to corrected fixed capital",
+      "role": "numerator of x2 increment"
+    },
+    {
+      "label": "KNC_corpbea(-1) (BEA official current-cost net fixed capital, corporate, lagged)",
+      "source": "BEA Fixed Asset Table 6.1",
+      "role": "denominator of x2 increment AND numerator of x3"
+    },
+    {
+      "label": "KGC_corp(-1) (Shaikh GPIM current-cost gross fixed capital, corporate, lagged)",
+      "source": "Shaikh GPIM applied to BEA investment flows (Appendix 6.7.V.5)",
+      "role": "denominator of x3"
+    }
+  ],
+  "year_range_book": [1947, 2011],
+  "year_range_extension": [1947, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA NIPA T7.11 (Monetary Interest Paid and Received by Sector)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&nipa_table_list=274",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "CD2 known issue: NMINTcorp data is incomplete for recent years — x1 cannot be computed forward without imputation; flag and freeze x1 at last complete year rather than fabricating a proxy."
+      ]
+    },
+    {
+      "subseries_label": "BEA NIPA T1.14 (corporate profits)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&nipa_table_list=42",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": []
+    },
+    {
+      "subseries_label": "BEA Fixed Asset Tables 6.1-6.8 (net and gross current-cost stocks)",
+      "source": "U.S. Bureau of Economic Analysis Fixed Assets Accounts",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "KGC requires GPIM re-application to BEA chain-weighted investment flows per appendix 6.5.V; do not use BEA chain-weighted aggregate KGC directly."
+      ]
+    },
+    {
+      "subseries_label": "IRS SOI corporate inventories",
+      "source": "Internal Revenue Service Statistics of Income",
+      "url": "https://www.irs.gov/statistics/soi-tax-stats-corporation-data-by-sector-or-industry",
+      "units": "billions of current USD",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Sample-based; mixed FIFO/LIFO; current-cost conversion via ratio to corrected fixed capital (book p. 247)."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "S603 is the analytical decomposition diagnostic for S602. The identity (eq. 6.11) decomposes the ratio of the corrected to conventional corporate profit rate into three multiplicative factors. There is no new underlying data — the ratios are constructed from the same components feeding S602. Including S603 as a separate series exists because Fig 6.3 plots these ratios explicitly to communicate which adjustment dominates over time.",
+    "Empirical pattern from CD2 markdown S028.md and book p. 249: x1 (interest) rose from ~1.08 in 1948 to ~1.71 around 1982 then partially declined; x2 (inventory) stayed near 1.14 throughout; x3 (net/gross capital) fell steadily from ~1.11 to ~0.61. The dominant correction is x3 (capital-stock revaluation via GPIM) for the trend, with x1 (interest) driving fluctuations.",
+    "Note book uses both KNC_NIPA and KNC_corpbea for the official BEA measure interchangeably; the GPIM measure is denoted KGC for gross and KNC_GPIM for net. RSCD documentation should standardize: official BEA = KNC_corpbea; Shaikh GPIM = KGC_corp (gross) and KNC_corp_gpim (net).",
+    "The (x1/x2)·x3 product line in Fig 6.3 is the analytical bridge that quantitatively explains the wedge between rcorp and rcorpnipa shown in Fig 6.2 — a single number summarizing how much of the trend in r/r_nipa comes from each correction.",
+    "Extension: x1 may need to be frozen at the last year for which NMINTcorp is complete; document the freeze date and treat post-freeze x1 as 'undefined' rather than carrying it forward. x2 and x3 can extend further as their inputs (FA tables and IRS inventories) are available."
+  ],
+  "open_questions": [
+    "GPIM-variants question (chapter-wide): the GPIM-based KGC entering x3 has several CD2 variants (S210-S213) reflecting different 1925 initial-value, vintage, IRS, and interwar assumptions. Decision needed: should S603 plot only the headline x3 (using Shaikh's preferred GPIM variant) or expose multiple x3 variants as a sensitivity panel? CD2's S028 used only the headline; recommend keeping the headline in S603 and registering variants under AS-series cross-referenced to this dossier.",
+    "Whether 'derived' would be a more accurate content_type than 'time_series' — the ratios are purely analytical, not independent observations. Recommendation: keep as time_series since they are plotted as time series in Fig 6.3 and they do require fresh component data for extension.",
+    "Verify whether Shaikh's published appendix 6.8.II.7 columns S013P/Q/R use lagged or current-period denominators consistently; book equation (6.10) uses (-1) lag but the column descriptions should be cross-checked against the Excel file."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-a-ch6",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from CD2 S028 dossier + verbatim eq. 6.11 and Fig 6.3 narrative from book p. 249. NMINT incompleteness flagged in extension concerns per CD2 known issue."
+    },
+    {
+      "reviewer": "opus-subagent-ch6-retry",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Retry pass after Ch6 content-filter incident. Confirmed all acceptance criteria met (3 quotes including verbatim eq. 6.11 with definition+source+method roles, BEA+IRS primary source, formula construction with 5 components for x1/x2/x3 ratios, extension candidates for all input tables, 5 methodology notes). No content changes required."
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "series_id": "S702",
+  "name": "Figure 7.12 Change in Selling Price versus Change in Unit Labor Cost, UK 1954-1963 (Ratio of Each Variable in 1963 to its 1954 Value)",
+  "chapter": 7,
+  "figures": [
+    "Fig7.12"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": "S031",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 7,
+      "page": 286,
+      "quote": "Figures 7.11 and 7.12 display this striking relationship for the United States comparing 1923 to 1950, and for the United Kingdom comparing 1954-1963 (the latter in an Addendum provided by W. B. Reddaway after Salter's untimely death in 1963). We will see in chapter 9 that this pattern is an aspect of a powerful and more general property of relative prices.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 287,
+      "quote": "Figure 7.12 Change in Selling Price versus Change in Unit Labor Cost, UK 1954-1963 (Ratio of Each Variable in 1963 to its 1954 Value) Source: Salter 1969, 164, table 28.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 286,
+      "quote": "Salter himself does not compare the changes in relative prices to those in relative unit labor costs, but the necessary information is available in his book for two other data sets (164, table 28; 197, table 33).",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Salter, W. E. G. (Cambridge University Press)",
+    "publication": "Productivity and Technical Change, 2nd edition, 1969, Table 28 (UK 1954-1963 industry selling price and unit labor cost indices, base 1954 = 100). Table 28 appears in the Addendum compiled by W. B. Reddaway after Salter's death.",
+    "table_or_series_id": "Salter (1969) p. 164, Table 28",
+    "url": "https://www.cambridge.org/core/books/productivity-and-technical-change/13C6E0F2C6CC5D6E5DAB0F3A1CAA5C28",
+    "frequency": "cross_sectional (two-period industry comparison: 1954 vs 1963)",
+    "units": "ratio (1963 value / 1954 value, x 100; both selling price and unit labor cost indexed)",
+    "license": "Reproduced from Salter (1969); academic fair use. Underlying UK source data is from UK Census of Production and Board of Trade industrial statistics for 1954 and 1963.",
+    "available_through": "Cambridge University Press; transcribed into Appendix 7.2 file 'Appendix7_SalterULCPriceTable28.xlsx' on Shaikh's companion website http://www.anwarshaikhecon.org/",
+    "discontinued": true,
+    "replaced_by": "Salter/Reddaway's UK 1954-1963 panel is not maintained as a current series. For modern UK selling-price vs unit-labor-cost cross-sections see ONS Productivity Industry by Industry + ONS Producer Price Inflation by SIC07."
+  },
+  "construction": "direct",
+  "formula": null,
+  "components": [],
+  "year_range_book": [1954, 1963],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "ONS Labour Productivity by industry (UK, SIC 2007)",
+      "source": "UK Office for National Statistics",
+      "url": "https://www.ons.gov.uk/economy/economicoutputandproductivity/productivitymeasures",
+      "units": "index",
+      "splice_strategy": "none",
+      "concerns": [
+        "UK SIC 1958 (Salter's vintage) is not directly comparable to SIC 2007; cross-industry decadal scatter cannot be reconstructed for the 1954-1963 baseline."
+      ]
+    },
+    {
+      "subseries_label": "ONS Producer Price Inflation by industry (UK)",
+      "source": "UK Office for National Statistics",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/producerpriceinflation/latest",
+      "units": "index, varies by base year",
+      "splice_strategy": "none",
+      "concerns": [
+        "Industry coverage and base years differ from Salter's UK Census of Production tables; the 1954/1963 figures cannot be back-extended from current ONS PPI."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Cross-sectional scatter for the UK, analogous to Figure 7.11 for the US. Each point is one UK manufacturing industry; x = (UCC_1963 / UCC_1954) x 100, y = (price_1963 / price_1954) x 100.",
+    "Per book p. 286, the 1954-1963 UK data appear in Salter's posthumous 'Addendum provided by W. B. Reddaway after Salter's untimely death in 1963', specifically Table 28 on p. 164 of the 1969 second edition.",
+    "Appendix 7.1 (book p. 856, PDF 894) explicitly states 'Figures 7.1-7.12 are either illustrations or have their sources listed within the figure itself,' so the dossier's primary source is Salter (1969) Table 28 - no separate methodology appendix exists.",
+    "Replication for RSCD: digitize Table 28 from Salter (1969) directly OR use Shaikh's transcribed Appendix 7.2 file Appendix7_SalterULCPriceTable28.xlsx. Like S701, the figure is a historical cross-section and is not extensible as a modern time series."
+  ],
+  "open_questions": [
+    "Confirm Appendix7_SalterULCPriceTable28.xlsx in SalvagedInputs is verbatim from Salter (1969) Table 28, with no transformation applied by Shaikh.",
+    "Decide whether to preserve Salter's UK industry labels (e.g., 'Iron and Steel', 'Cotton', 'Wool') as-is for the regenerated figure, or to map them to modern SIC07 (recommendation: keep original - illustration of a historical pattern).",
+    "Re-classify content_type from time_series (stub default) to cross_sectional."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-b-ch7",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from book Ch7 pp. 286-287 verbatim. Source confirmed as Salter (1969) Table 28 (Reddaway Addendum). Excel transcription present in SalvagedInputs (Appendix7_SalterULCPriceTable28.xlsx). Cross-sectional; not extensible. Re-classified content_type."
+    }
+  ]
+}

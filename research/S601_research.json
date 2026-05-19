@@ -1,0 +1,158 @@
+{
+  "series_id": "S601",
+  "name": "Corporate and Non-Corporate Profit Rates",
+  "chapter": 6,
+  "figures": [
+    "Fig6.1",
+    "Fig6.4",
+    "Fig6.5"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S026",
+    "cd2_id": "S026"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 245,
+      "quote": "Empirical measures of profit and capital come next (appendix 6.7). The first step toward measuring profit is to distinguish within National Income and Product Accounts (NIPA) between the domestic for-profit business sector and government, non-profit businesses and a fictitious sector called owner-occupied housing (OOH) in which homeowners are treated as businesses renting their homes to themselves (appendix 6.7.I.1). We then need to correct for the fact that in NIPA all of the income of unincorporated enterprises is treated as part of its operating surplus, rather than being split between the wage-equivalent of proprietors and partners and their effective profit (appendix 6.7.I.2). Once corrected for this oversight, corporate and non-corporate profit rates turn out to be very similar (figure 6.1).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 246,
+      "quote": "Removing the imputed quantities returns net operating surplus to being the sum of actual net monetary interest paid and NIPA profit, just as in classical and business accounts. This has a minimal impact on business and corporate measures of value added (raising them by about 1%-2% in 2009) but a more substantial one on corresponding measures of operating surplus (raising them by about 10% in 2009). Taken by itself, the imputed interest correction raises the measured share of net operating surplus (NOS) in value added without substantially affecting the output-capital ratio. This is the only effect for the corporate sector, but in the non-corporate sector the previously discussed wage-equivalent adjustment shifts the estimated wage-equivalent of proprietors and partners into the wage bill and lowers the measured surplus by much more, so that the combined effect of both corrections is to lower total business operating surplus by about 30% in 2009. Once again the corporate sector is a particularly useful focus because the only needed adjustment for imputed interest is easily made (appendix 6.7.IV and appendix table 6.7.11).",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 250,
+      "quote": "The profit rate can be decomposed into structural and cyclical factors. Let Y_n represent normal capacity net output, u_K = Y/Y_n = the rate of capacity utilization whose normal level is 1, R_n = (Y_n/K) = the capacity-capital ratio, which is the structural maximum rate of profit in the sense of Sraffa, and σ_Pn = (P/Y)_n = the normal profit share (i.e., its structural component). With this in mind, we can write the actual profit rate and normal profit rates as follows: r = P/K = (P/Y) · R_n · u_K (6.12); r_n = (P/Y)_n · R_n (6.13).",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (BEA)",
+    "publication": "National Income and Product Accounts (NIPA) + Fixed Asset Tables; Shaikh (2016) Appendix 6.7 and Appendix Table 6.8.I.3",
+    "table_or_series_id": "NIPA T1.14 (corporate GVA), NIPA T7.11 (monetary interest paid/received by sector), Fixed Asset T6.1 (current-cost net stock of private fixed assets by industry and legal form); aggregated in Shaikh's Appendix 6.8 Table I-3 columns S208AW (Pcorp/KNCcorp(-1)) and S208AX (Pnoncorp/KNCnoncorp(-1))",
+    "url": "https://apps.bea.gov/iTable/iTable.cfm?reqid=19&step=2#reqid=19&step=2&isuri=1&1921=survey",
+    "frequency": "annual",
+    "units": "rate (decimal; profit rate as ratio of NOS to lagged net capital stock)",
+    "license": "U.S. public domain (BEA data)",
+    "available_through": "BEA iTable + Fixed Assets interactive tables; Shaikh appendix tables redistributed at www.anwarshaikhecon.org",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "rcorp = NOS_corp / KNC_corp(-1); rnoncorp = NOS_noncorp / KNC_noncorp(-1); rbus = NOS_bus / KNC_bus(-1). NOS_corp = NIPA corporate profit P + net monetary interest paid NMINT (imputed-interest adjustment, i.e. removing NIPA's fictitious banking-services imputation). NOS_noncorp = noncorporate operating surplus minus wage-equivalent WEQ of proprietors and partners. Capital denominator is current-cost net stock of private fixed assets by legal form, lagged one period. Normal-capacity variant: r_n = (P/Y)_n · (Y_n/K) using cointegration-derived capacity output Y_n.",
+  "components": [
+    {
+      "label": "NOS_corp (imputed-interest-adjusted corporate net operating surplus)",
+      "source": "NIPA Table 1.14 (corporate GVA components) + NIPA Table 7.11 (monetary interest paid/received by sector)",
+      "role": "numerator (corporate)"
+    },
+    {
+      "label": "NOS_noncorp (wage-equivalent-adjusted noncorporate NOS)",
+      "source": "NIPA noncorporate accounts + WEQ2 wage equivalent (Shaikh Appendix 6.7.I.2)",
+      "role": "numerator (noncorporate)"
+    },
+    {
+      "label": "KNC_corp(-1) (current-cost net fixed capital stock, corporate, lagged)",
+      "source": "BEA Fixed Asset Table 6.1 (current-cost net stock by industry and legal form)",
+      "role": "denominator (corporate)"
+    },
+    {
+      "label": "KNC_noncorp(-1) (current-cost net fixed capital stock, noncorporate, lagged)",
+      "source": "BEA Fixed Asset Table 6.1",
+      "role": "denominator (noncorporate)"
+    },
+    {
+      "label": "Capacity utilization u_K (for normal-capacity variant Fig 6.4/6.5)",
+      "source": "Shaikh's cointegration-derived capacity series (Appendix 6.6) and FRB capacity utilization rate (post-1967)",
+      "role": "structural decomposition (Fig 6.4 plots u_K vs u_FRB; Fig 6.5 plots normal-capacity rates)"
+    }
+  ],
+  "year_range_book": [1947, 2011],
+  "year_range_extension": [1947, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA NIPA T1.14 corporate GVA / profits (annual)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&select_all_years=0&nipa_table_list=42",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Extend by re-fetching components (NOS, NMINT, KNC) and re-computing the formula end-to-end; never splice the derived profit rate itself.",
+        "Post-vintage revisions to NIPA/FA tables change historical values; document vintage dates."
+      ]
+    },
+    {
+      "subseries_label": "BEA NIPA T7.11 monetary interest paid/received by sector (annual)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&select_all_years=0&nipa_table_list=274",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "CD2 known issue: NMINT_corp from BEA T7.11 is incomplete for the most recent years; document last available year and flag any forward-fill."
+      ]
+    },
+    {
+      "subseries_label": "BEA Fixed Asset Table 6.1 current-cost net stock by legal form (annual)",
+      "source": "U.S. Bureau of Economic Analysis Fixed Assets Accounts",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "BEA quality-adjustment of chain-weighted indexes alters output-capital trend (see book p. 244); preserve methodology consistency by using BEA current-cost levels rather than chain real series."
+      ]
+    },
+    {
+      "subseries_label": "Federal Reserve Board capacity utilization rate (G.17)",
+      "source": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/releases/g17/current/",
+      "units": "percent of capacity",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Used only in Fig 6.4/6.5 for the FRB comparison line; the main capacity series u_K is Shaikh's own (cointegration of Y on K with a trend), not the FRB measure."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Composite series — Fig 6.1 plots three lines (rbus, rcorp, rnoncorp); Fig 6.4 plots Shaikh's capacity utilization u_K against the FRB measure u_FRB; Fig 6.5 plots normal-capacity profit and maximum profit rates with corrected and conventional variants. All three figures live in this dossier per the original CD2 mapping (S026).",
+    "The imputed-interest correction (NIPA T7.11) is essential: NIPA treats banks as producers of 'banking services' and imputes services to depositors, leaving NIPA profit unchanged but shifting NOS. Shaikh reverses this so NOS = P + NMINT (net monetary interest paid), restoring the classical/business definition. Book p. 246.",
+    "The wage-equivalent adjustment for proprietors and partners is required only for the non-corporate sector; the corporate sector has no such adjustment, which is why Shaikh treats the corporate rate as the simpler operational measure (book p. 245: 'we can use the corporate profit rate, which is simpler to calculate, since it does not require a wage-equivalent as a proxy for the general rate of profit').",
+    "Capital denominator is current-cost net stock (KNC), lagged one period, in nominal terms; the resulting profit rate is a real rate by construction because numerator and denominator share the same current price level (book p. 244, appendix 6.2).",
+    "Fig 6.5 normal-capacity variant uses Shaikh's GPIM-derived capacity output Y_n (appendix 6.6), cointegrated with K subject to an unknown trend in K/Y; this is the structural decomposition r_n = (P/Y)_n · R_n.",
+    "Extension strategy: re-fetch the component time series (NOS_corp, NOS_noncorp, KNC_corp, KNC_noncorp, NMINT) from current BEA vintages and re-run the formula end-to-end. Do NOT splice the published rcorp/rnoncorp series — the construction must be re-computed from primary components per Anu Framework anti-degradation rules."
+  ],
+  "open_questions": [
+    "CD2 tracked GPIM variants and intermediate construction outputs as separate series S206 (GDP/GDI decomposition + business NOS), S207 (wage equivalent + corp/noncorp split), S208 (imputed interest + sectoral profit rates), S209 (GPIM corporate capital stock), S210-S213 (GPIM variants by initial-value / vintage / IRS / interwar adjustments), and S214 (IRS corporate inventories + total capital). In RSCD these are not assigned series IDs S6xx but are the *components* of S601-S604. Decision needed: should these be (a) implemented as subseries under S601/S602 (e.g., S601-A, S601-B …), (b) registered as AS-prefixed analytical-support series outside the main 98, or (c) tracked only as named columns inside the loaders/processors? Recommendation pending Phase 4 review.",
+    "CD2 S013 ('Final Profit Rate Measures') was the aggregate intermediate table assembling Appendix 6.8.II.7 columns used by S027, S028, and S105. In RSCD the four Ch6 series each draw from this same intermediate table. Confirm whether the loader should materialize a single ch06_intermediate.parquet (the analog of S013) or whether each series loader re-computes independently.",
+    "Validate that NIPA T1.14 line numbers used by Shaikh in 2011 vintage still correspond to the same concepts in current (post-2018 comprehensive revision) NIPA structure; flag any concept drift for Phase 4 adequacy.",
+    "Wage-equivalent series WEQ2 methodology (appendix 6.7.I.2) needs replication code reference — not standard NIPA construct; verify Shaikh's published code/spreadsheet path in ShaikhChoppedTables."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-a-ch6",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from CD2 S026 dossier + verbatim quotes from book pp. 245-250. Construction formula, components, extension candidates, and methodology notes filled. GPIM-variants disposition flagged as open question."
+    },
+    {
+      "reviewer": "opus-subagent-ch6-retry",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Retry pass after Ch6 content-filter incident. Confirmed all acceptance criteria met (3 quotes with definition+source+method roles, BEA primary source identified, composite construction with 5 components, extension candidates for all 4 component tables, 6 methodology notes). No content changes required."
+    }
+  ]
+}

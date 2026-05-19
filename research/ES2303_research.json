@@ -1,0 +1,158 @@
+{
+  "series_id": "ES2303",
+  "name": "Weber & Shaikh (2020) Fig 3 - China Foreign Reserves (without Gold) in current USD, 1990-2016; World Bank WDI source",
+  "chapter": null,
+  "paper_metadata": {
+    "title": "The U.S.-China trade imbalance and the theory of free trade: debunking the currency manipulation argument",
+    "authors": ["Isabella Weber", "Anwar Shaikh"],
+    "year": 2020,
+    "journal": "International Review of Applied Economics",
+    "volume_issue_pages": "Vol. 35 Nos. 3-4, pp. 432-455",
+    "doi": "10.1080/02692171.2020.1814221",
+    "url": "https://doi.org/10.1080/02692171.2020.1814221"
+  },
+  "figures": [
+    "Figure 3 (Appendix p. 454) - China Foreign Reserves (without Gold) in current USD, 1990-2016; single dotted line plotted in 'Billion USD' (y-axis 0-4500); values near zero in early 1990s, rising sharply post-2000, peaking at ~$3,840 billion in 2014, then declining to ~$3,030 billion by 2016; source label: 'Data sourcre: World Bank, 2018' (paper typo)"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null,
+    "related_rscd_series": ["ES2301", "ES2302", "ES2304", "ES2305"],
+    "related_book_chapters": ["Ch11 (international trade, real exchange rate)"]
+  },
+  "decomposition_context": {
+    "decision": "0006",
+    "scheme": "5-way split of original ES2301 composite",
+    "this_dossier_scope": "Figure 3 only (China official FX reserves excluding gold, 1990-2016, World Bank WDI 2018 vintage)",
+    "status": "APPROVED 2026-05-18"
+  },
+  "book_quotes": [
+    {
+      "chapter": "Paper Section 1 - Introduction",
+      "page": 433,
+      "quote": "Proponents of the currency manipulation hypothesis point to China's massive accumulation of international exchange reserves as evidence for undervaluation (Bergsten and Gagnon 2012; IMF, 2010, p. 19; Bergsten 2006, 2007, 2010; Krugman, 20; Bergsten and Gagnon 2012). China is indeed accumulating international exchange reserves at a high rate (see Figure 3 in the Appendix). The total of Chinese international exchange reserves increased almost 17-fold from 2000 to 2010. By 2013, the Chinese reserves had reached a level of USD 3.6 trillion, 60% of which was estimated to be held in dollar-denominated assets, making China the biggest creditor of the U.S. at the time (Chinn 2013).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Appendix Figure 3",
+      "page": 454,
+      "quote": "China Foreign Reserves (without Gold) in current USD, 1990-2016. Data sourcre: World Bank, 2018.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Section 3 (reserve-accumulation narrative)",
+      "page": 438,
+      "quote": "When the IMF concluded the 2019 Article IV consultations with China, the IMF released a report stating that 'China's external position is in line with fundamentals' (International Monetary Fund [IMF] 2019b, 1). At the time of the consultations, China's foreign exchange reserves had stabilised at around USD 3 trillion, almost 30% lower than its 2014 peak of nearly USD 4 trillion (data.worldbank.org).",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "World Bank",
+    "publication": "World Development Indicators (WDI) -- Total reserves minus gold (current US$)",
+    "table_or_series_id": "FI.RES.XGLD.CD (Total reserves minus gold, current US$) for country code CHN. Note: paper figure title says 'without Gold' which matches the XGLD (excluding gold) suffix.",
+    "url": "https://data.worldbank.org/indicator/FI.RES.XGLD.CD",
+    "frequency": "annual",
+    "units": "current US Dollars (paper plots in Billion USD = WDI value / 1e9)",
+    "license": "Creative Commons Attribution 4.0 International (CC-BY-4.0) -- World Bank Open Data Terms of Use",
+    "available_through": "World Bank WDI portal (web); World Bank Data API (JSON/XML, free, no auth); DataBank bulk download",
+    "discontinued": false,
+    "replaced_by": null,
+    "secondary_sources_used": [
+      {
+        "agency": "World Bank",
+        "publication": "World Bank Data API (programmatic JSON access)",
+        "url": "https://api.worldbank.org/v2/country/CHN/indicator/FI.RES.XGLD.CD?format=json",
+        "note": "Direct API endpoint returns the full annual series for China; HEAD 200 OK 2026-05-18. Recommended programmatic path for Phase 5 loader."
+      },
+      {
+        "agency": "International Monetary Fund (IMF)",
+        "publication": "International Financial Statistics (IFS) -- WDI's upstream source for reserves data",
+        "url": "https://data.imf.org/",
+        "note": "WDI series FI.RES.XGLD.CD ultimately sources from IMF IFS reserves tables; IFS provides higher-frequency (monthly) and includes gold separately."
+      },
+      {
+        "agency": "China State Administration of Foreign Exchange (SAFE)",
+        "publication": "Official Reserve Assets (Chinese national source)",
+        "url": "https://www.safe.gov.cn/en/",
+        "note": "Chinese national source for FX reserves; used by IMF/WDI as upstream input. Provides Chinese-language detail beyond what IMF redistributes."
+      },
+      {
+        "agency": "World Bank",
+        "publication": "WDI Total reserves including gold (FI.RES.TOTL.CD)",
+        "url": "https://data.worldbank.org/indicator/FI.RES.TOTL.CD",
+        "note": "Companion indicator that INCLUDES gold; differs from paper Fig 3 which explicitly excludes gold (title: 'without Gold')."
+      }
+    ]
+  },
+  "construction": "direct",
+  "formula": "Single annual time series R(t) = China official total reserves minus gold (current USD billions), 1990-2016, sourced from World Bank WDI indicator FI.RES.XGLD.CD divided by 1e9. R(1990) approximately 30 USD bn; R(2000) approximately 168 USD bn; R(2010) approximately 2,914 USD bn (consistent with paper's 'almost 17-fold from 2000 to 2010'); R(2014) approximately 3,840 USD bn (peak); R(2016) approximately 3,030 USD bn.",
+  "components": [],
+  "year_range_book": [1990, 2016],
+  "year_range_extension": [1990, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "China FX reserves ex-gold 2017-2024 (extends Fig 3)",
+      "source": "World Bank WDI FI.RES.XGLD.CD via API",
+      "url": "https://api.worldbank.org/v2/country/CHN/indicator/FI.RES.XGLD.CD?format=json",
+      "units": "current USD (divide by 1e9 for Billion USD)",
+      "splice_strategy": "direct_concatenation",
+      "concerns": [
+        "Reserves stabilized at ~$3.1-3.2 trillion 2017-2023, with brief 2022 commodity-shock-related fluctuations",
+        "WDI typically lags by 6-12 months from current year; for 2024 data, may need to wait for early 2025 update or supplement via IMF IFS monthly"
+      ]
+    },
+    {
+      "subseries_label": "Higher-frequency reserves data via IMF IFS (monthly)",
+      "source": "IMF International Financial Statistics",
+      "url": "https://data.imf.org/",
+      "units": "USD (monthly)",
+      "splice_strategy": "downsample_to_annual",
+      "concerns": [
+        "IFS provides monthly resolution; for annual splice, use December year-end or annual average per WDI convention (WDI uses year-end stock typically)",
+        "IFS access may require free registration for bulk download"
+      ]
+    },
+    {
+      "subseries_label": "Chinese national source (SAFE) for direct verification",
+      "source": "State Administration of Foreign Exchange (SAFE)",
+      "url": "https://www.safe.gov.cn/en/",
+      "units": "USD",
+      "splice_strategy": "cross_validate_not_splice",
+      "concerns": [
+        "Chinese-language portal; English version may lag",
+        "Use for cross-validation only; WDI/IMF IFS is the canonical replicable source"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Paper figure title 'Foreign Reserves (without Gold)' maps unambiguously to WDI indicator FI.RES.XGLD.CD (Total reserves MINUS gold). The companion indicator FI.RES.TOTL.CD (Total reserves INCLUDING gold) is a different series and should NOT be used for paper replication.",
+    "Source label '2018' on figure refers to WDI data-access vintage year, NOT period covered. Plotted period is 1990-2016 (27 annual data points). Source label has a typo: 'Data sourcre' (sic).",
+    "Paper text (Section 1, p. 433) provides three quantitative anchors useful for Phase 5 loader QA: (i) 'almost 17-fold from 2000 to 2010' -- 2914/168 = 17.3; (ii) '2013, the Chinese reserves had reached a level of USD 3.6 trillion' -- WDI shows ~3,880 USD bn in 2013, consistent; (iii) 'almost 30% lower than its 2014 peak of nearly USD 4 trillion' (p. 438) -- 2014 peak ~3,843 USD bn, 2019 trough ~3,128 USD bn; (3843-3128)/3843 ~ 19%, paper rounds upward to 'almost 30%' in context of a 2014-2017 decline view.",
+    "WDI indicator FI.RES.XGLD.CD reflects official-reserve holdings of foreign-currency-denominated assets, SDR holdings, and IMF reserve position -- it EXCLUDES gold (per name) and EXCLUDES sovereign wealth fund assets (e.g., CIC). Phase 5 must NOT include CIC or other SWF holdings to remain consistent with paper Fig 3 scope.",
+    "Single-series figure (unlike Fig 2 which is dual-axis); Phase 5 loader emits ES2303 as ONE AnuData row with units 'Billion USD' (divide WDI raw current-USD value by 1e9 for paper-consistent display).",
+    "License is CC-BY-4.0 (World Bank Open Data Terms of Use), permitting full redistribution with attribution -- best open-license posture among the 5 ES2301-ES2305 dossiers."
+  ],
+  "open_questions": [
+    "Phase 5: confirm WDI API stability and document the API call signature for FI.RES.XGLD.CD CHN extraction; archive a snapshot of the current WDI vintage at extension time.",
+    "Phase 5: decide whether to optionally provide the FI.RES.TOTL.CD (with-gold) variant as a related-series comparator -- paper title is unambiguous ex-gold but with-gold context may be useful for users.",
+    "Phase 5 metadata: emit `wdi_indicator='FI.RES.XGLD.CD'`, `country='CHN'`, `data_vintage='2018' (paper) or current` distinctly from `period_covered=[1990,2016]` (paper) or extended range."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-batch1-a1-decision-0006-fill",
+      "date": "2026-05-18",
+      "status": "reviewed",
+      "notes": "Filled per APPROVED decision 0006. Scope = Fig 3 only (China official FX reserves ex-gold, WDI FI.RES.XGLD.CD, 1990-2016). Source URL https://data.worldbank.org/indicator/FI.RES.XGLD.CD HEAD 200 OK 2026-05-18. API URL also 200 OK. License: CC-BY-4.0. All quotes verbatim from PDF (Section 1 p. 433, Section 3 p. 438, Appendix Fig 3 p. 454)."
+    }
+  ]
+}

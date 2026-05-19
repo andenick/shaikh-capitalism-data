@@ -1,0 +1,23 @@
+================================================================
+  HOW TO CITE THIS DATA
+================================================================
+
+If you use this data in your research, please cite:
+
+  Anderson, Nicholas. (2026).
+  Capitalism: Competition, Conflict, Crises -- Empirical Data Replication and Extension
+  Package [Data set], Data Package Version 1.3.
+  The New School for Social Research.
+  Based on: Anwar Shaikh, "Capitalism: Competition, Conflict, Crises"
+  (2016). Oxford University Press.
+
+
+ORIGINAL WORK
+-------------
+Please also cite the original work when using this data:
+
+  Anwar Shaikh. (2016).
+  Capitalism: Competition, Conflict, Crises.
+  Oxford University Press.
+
+================================================================

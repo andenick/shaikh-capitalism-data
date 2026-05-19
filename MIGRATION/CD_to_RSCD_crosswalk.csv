@@ -1,0 +1,103 @@
+cd_id,cd_name,figure_count,rscd_id,status
+S001,"US Industrial Production Index, 1860â€“2010",1,S201,mapped
+S002,"US Real Investment Index, 1832â€“2010",1,S202,mapped
+S003,"US Real GDP per Capita, 1889â€“2010",1,S203,mapped
+S004,"Business Cycles, 1831â€“1866",1,S204,mapped
+S005,"Business Cycles, 1867â€“1902",1,S205,mapped
+S006,"Business Cycles, 1903â€“1939",1,S206,mapped
+S007,"US Manufacturing Productivity and Production Worker Real Compensation, 1889â€“2010",1,S207,mapped
+S008,"US Manufacturing Real Unit Production Labor Cost Index, 1889â€“2010",1,S208,mapped
+S009,"US Unemployment Rate, 1890â€“2010",1,S209,mapped
+S010,"US and UK Wholesale Price Indexes, 1780â€“2010",1,S210,mapped
+S011,"US and UK Wholesale Price Indexes, 1780â€“1940",1,S211,mapped
+S012,"US and UK Wholesale Prices in Ounces of Gold, 1790â€“2010",1,S212,mapped
+S013,US Corporate Rate of Profit 1947â€“2011,1,S213,mapped
+S014,Average Rates of Profit in US Manufacturing 1960â€“1989,1,S214,mapped
+S015,Incremental Rates of Profit in US Manufacturing 1960â€“1989,1,S215,mapped
+S016,"Normalized Total Prices of Production Profit versus Total Unit Labor Costs, US 1972",1,S216,mapped
+S017,"GDP per Capita of World Regions 1990, International Geary-Khamis Dollars",1,S217,mapped
+S018,"GDP per Capita Richest Four and Poorest Four Countries, International Geary-Khamis Dollars",2,S218,mapped
+S019,"Daily Output from Different Shift Combinations Totaling 20-Hours per Day, at the Maximum Intensity of Labor",1,,unmapped
+S020,US and UK Gold Prices,1,,unmapped
+S021,"UK Wholesale Price Indexes in Pound Sterling, US Dollars, and Ounces of Gold",1,,unmapped
+S022,"US and UK Wholesale Price Indexes, 1790-1940",1,S501,mapped
+S023,"US and UK Wholesale Price Indexes, 1790-2010",1,S502,mapped
+S024,"UK Wholesale Price Indexes in Gold Ounces and Pound Sterling Price of Gold, 1790-2009",1,S503,mapped
+S025,"US Wholesale Price Indexes in Gold Ounces and US Dollar Price of Gold, 1800-2009",1,S504,mapped
+S026,Corporate and Non-Corporate Profit Rates,3,S601,mapped
+S027,Corporate Profitability Measures Corrected for Imputed Interest and Inventories versus Conventional NIPA Measures,2,S602,mapped
+S028,Component Ratios Accounting for the Difference between Corrected and Conventional Profit Rates,1,S603,mapped
+S029,Andrews's Unit Cost View,1,,unmapped
+S030,"Change in Selling Price versus Change in Unit Labor Cost, US 1923-1950",1,S701,mapped
+S031,"Change in Selling Price versus Change in Unit Labor Cost, UK 1954-1963",1,S702,mapped
+S032,"World Manufacturing Average and Incremental Rates of Profit, 1970-1989",1,S703,mapped
+S033,"US Manufacturing Average and Incremental Rates of Profit, 1960-1989",1,S704,mapped
+S034,"Average Rates of Profit in US Industries, 1987-2005",1,S705,mapped
+S035,"Deviations of US Industry Profit Rates from Average, 1987-2005",1,,unmapped
+S036,"Incremental Rates of Profit in US Industries, 1987-2005",1,S706,mapped
+S037,"Deviations of US Industry Incremental Profit Rates from Average, 1987-2005",1,,unmapped
+S038,"Deviations of Greek Manufacturing Profit Rates from Average Profit Rate, 1962-1991",1,S707,mapped
+S039,"Deviations of Greek Manufacturing Incremental Profit Rates from Average Incremental Rate, 1962-1991",1,S708,mapped
+S040,OECD Industries Incremental Profit Rate Deviations,1,,unmapped
+S041,,2,S803,mapped
+S042,Price Paths of Concentrated and Unconcentrated Industries,1,S801,mapped
+S043,,1,S802,mapped
+S044,,1,S804,mapped
+S045,,1,S805,mapped
+S047,,3,S901,mapped
+S048,,11,S902,mapped
+S049,,11,S903,mapped
+S050,,2,S1001,mapped
+S052,,2,S1002,mapped
+S053,,2,S1003,mapped
+S054,,2,S1004,mapped
+S055,,1,S1005,mapped
+S056,,1,S1006,mapped
+S057,,1,S1007,mapped
+S059,,1,S1008,mapped
+S060,,1,S1101,mapped
+S061,,1,S1102,mapped
+S062,,1,S1103,mapped
+S063,,1,S1104,mapped
+S064,"Phillips Curve, United States, 1955-1970",1,,unmapped
+S065,"US Inflation and Unemployment Rates, 1955-1970 and 1971-1986",1,,unmapped
+S066,"Phillips Curve, United States, 1971-1981",1,,unmapped
+S067,"Phillips Curve, United States, 1955-2025",1,,unmapped
+S068,,1,S1401,mapped
+S069,,1,S1402,mapped
+S070,,1,S1403,mapped
+S071,,1,S1404,mapped
+S072,,1,S1405,mapped
+S073,,1,S1406,mapped
+S074,,1,S1407,mapped
+S075,,1,S1408,mapped
+S076,,1,S1501,mapped
+S077,,1,S1502,mapped
+S078,,1,S1503,mapped
+S079,,1,S1504,mapped
+S080,,1,,unmapped
+S081,,1,,unmapped
+S082,,1,,unmapped
+S083,,1,S1505,mapped
+S084,,1,S1506,mapped
+S085,,1,S1507,mapped
+S086,,1,,unmapped
+S087,,1,,unmapped
+S088,,1,S1508,mapped
+S089,,1,S1509,mapped
+S090,,1,,unmapped
+S091,,1,,unmapped
+S092,,1,,unmapped
+S093,,1,S1601,mapped
+S094,,1,,unmapped
+S095,,1,S1602,mapped
+S096,,1,,unmapped
+S097,,1,,unmapped
+S098,,1,S1603,mapped
+S099,,1,S1604,mapped
+S100,,1,S1605,mapped
+S101,,1,S1606,mapped
+S102,The Global Crisis of 2007 in Light of Past Long Waves,1,S1701,mapped
+S103,"Personal Income Distribution below $200,000, Cumulative Probability from Above",1,S1702,mapped
+S104,"Personal Income Distribution above $200,000, Cumulative Probability from Above",1,S1703,mapped
+S105,,1,S604,mapped

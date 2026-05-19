@@ -1,0 +1,225 @@
+{
+  "_schema": "rscd-registry-delta-v1.0",
+  "_purpose": "Per-series adequacy block to be merged into Technical/series_registry.json by the main thread after Wave 3 closeout.",
+  "chapter": 16,
+  "reviewer": "opus-subagent-p4-wave3-ch16",
+  "review_date": "2026-05-18",
+  "deltas": {
+    "S1601": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 16,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "All extension URLs verified HTTP 200 (FRED PPIACO, FRED GOLDPMGBD228NLBM, ONS K646 PPI, BoE Millennium, NBER macrohistory)",
+          "UK historical WPI source decision: BoE Millennium dataset canonical; Mitchell as cross-check",
+          "Cubic-trend endpoint sensitivity decision: re-fit on extended sample AND retain Shaikh's 1786-2010 trend as baseline reference"
+        ],
+        "issues_outstanding": [
+          "Phase 5: re-fit cubic trend on 1786-2024 sample AND emit baseline variant from Shaikh's published 1786-2010 trend",
+          "Phase 5: validate Shaikh's published golden-wave residuals at sample years (1790, 1830, 1873, 1896, 1929, 1971, 2010) against Appendix 5.3 workbook",
+          "Phase 5 BLS landing-page URL note: bls.gov/ppi/data.htm returns 403 to bot UA; cite as Shaikh-era source page with data fetched via FRED PPIACO / data.bls.gov direct"
+        ]
+      }
+    },
+    "S1602": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 16,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "All extension URLs verified HTTP 200 (FRED COMPRNFB, FRED OPHNFB, data.bls.gov direct series IDs)",
+          "Deflator choice: CPI-U-RS (BLS PRS84006093 default) canonical for Shaikh-consistent replication; PCE as sensitivity variant",
+          "bls.org typo correction: canonicalize to bls.gov in all RSCD output"
+        ],
+        "issues_outstanding": [
+          "Phase 5: rebase FRED COMPRNFB / OPHNFB from 2017=100 to 1982=100 using BLS-published factors or overlap arithmetic",
+          "Phase 5: replicate Shaikh's counterfactual ec_c regression ln(ec) ~ ln(y) + time over 1960-1981 (output feeds S1604 rcorpalt)",
+          "Phase 5: validate splice continuity at 2012 between Shaikh's distributed Appendix 16.2 and FRED extension"
+        ]
+      }
+    },
+    "S1603": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 15,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "All extension URLs verified HTTP 200 (FRED TB3MS, FRB H.10 weights + landing, IMF IFS portal, govinfo ERP, OECD Data Explorer)",
+          "Trade-weight vintage decision: latest-vintage Fed H.10 broad-index weights for all years 1960-2024; vintage-as-of as sensitivity variant",
+          "Dual-variant emission decision: S1603_replicated (book-fidelity rebuild) + S1603_oecd_mei (low-effort approximation flagged proxy:true)",
+          "Legacy gpoaccess.gov ERP URL replaced with govinfo.gov/app/collection/erp"
+        ],
+        "issues_outstanding": [
+          "Phase 5: implement S1603_replicated loader (Fed H.10 weights + IMF IFS country rates + annual aggregation) ~2-4 hour effort",
+          "Phase 5: implement S1603_oecd_mei loader (OECD MEI IRSTCI01 single-endpoint fetch) ~15-minute effort with proxy:true flag and CMJ",
+          "Phase 5: validate S1603_replicated against CD2 S098 sample values before splicing extension data"
+        ]
+      },
+      "variants_to_emit": ["S1603_replicated", "S1603_oecd_mei"]
+    },
+    "S1604": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 16,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "All extension URLs verified HTTP 200 (FRED TB3MS, BEA iTable root + flatfile endpoints)",
+          "HP-filter lambda decision: lambda=100 (annual, Shaikh's choice) canonical; lambda=6.25 as sensitivity variant",
+          "rcorpalt cross-series dependency on S1602 counterfactual documented; ingestion order S1602 -> S1604 enforced"
+        ],
+        "issues_outstanding": [
+          "Phase 5: confirm CD2 split between S099 (this) and chapter-6 dossiers S0606-S0608 — avoid double-counting in cross-series uniqueness check",
+          "Phase 5: emit HP-100 endpoint-fragility caveat in series_registry metadata for downstream consumers",
+          "Cross-chapter dependency: chapter-6 profit-rate chain S0606-S0608 must be Phase-5-ready before S1604 loader compile"
+        ]
+      }
+    },
+    "S1605": {
+      "adequacy": {
+        "status": "ready_for_phase5_with_substitute",
+        "score_contribution": 16,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "All extension URLs verified HTTP 200 (FRB Z.1 release, FRED HCCSDODNS, FRED DPI, FRED CMDEBT, FRED TDSP)",
+          "Numerator wrong-concept-proxy correction: CMDEBT (households+nonprofits) -> HCCSDODNS (households-only) per Z.1 D.3 line 2 spec",
+          "Denominator wrong-concept-proxy correction: PI (pre-tax Personal Income) -> DPI (Disposable Personal Income) per NIPA T2.1 line 27 spec",
+          "Unit-conversion decision: explicit HCCSDODNS / (DPI * 1000) loader formula with dimensional-analysis comment per anu-framework",
+          "Z.1 D.3 line numbering post-2013 restructure: FRED series identifier (HCCSDODNS) preserves concept regardless of D.3 line renumbering"
+        ],
+        "issues_outstanding": [
+          "Phase 5 loader MUST use HCCSDODNS (NOT CMDEBT) for numerator with dimensional-analysis comment",
+          "Phase 5 loader MUST use DPI (NOT PI) for denominator with dimensional-analysis comment",
+          "Phase 5 loader MUST include explicit unit-conversion step ratio = HCCSDODNS / (DPI * 1000)",
+          "Phase 5: validate substituted ratio against Shaikh's published Fig 16.9 values at sample years (1975, 1985, 2000, 2007, 2011); document magnitude of CMDEBT/PI vs HCCSDODNS/DPI divergence as evidence of wrong-concept-proxy failure mode"
+        ]
+      },
+      "components_corrected": {
+        "numerator": {"cd2_proxy": "CMDEBT", "canonical": "HCCSDODNS", "units": "millions_usd"},
+        "denominator": {"cd2_proxy": "PI", "canonical": "DPI", "units": "billions_usd_saar"}
+      },
+      "proxy": false,
+      "proxy_justification": "S1605 was a CD2 wrong-concept-proxy correction, NOT a new proxy substitution. CMDEBT (households+nonprofits) and PI (pre-tax) were CD2-inherited proxies that diverged from book spec. HCCSDODNS (households-only, Z.1 D.3 line 2) and DPI (Disposable Personal Income, NIPA T2.1 line 27) restore book-spec fidelity. Both substitutes match Shaikh's explicit Appendix 16.1 citations directly — no proxy classification warranted."
+    },
+    "S1606": {
+      "adequacy": {
+        "status": "ready_for_phase5",
+        "score_contribution": 16,
+        "reviewed_at": "2026-05-18",
+        "issues_resolved": [
+          "All extension URLs verified HTTP 200 (FRB housedebt release, FRED TDSP, FRED FODSP)",
+          "Cadence decision: emit BOTH quarterly (book-faithful primary) and annual-average (cross-Ch16 cadence-consistent secondary) variants",
+          "Two-subseries decomposition per CD2 preserved: S1606-A (FOR via FODSP) and S1606-B (DSR via TDSP)"
+        ],
+        "issues_outstanding": [
+          "Phase 5: emit S1606 at quarterly cadence (primary) + annual-average (secondary)",
+          "Phase 5: validate FRED TDSP against Shaikh's plotted Fig 16.10 values at sample quarters (1980Q1, 1985Q1, 2000Q1, 2007Q1, 2012Q1)",
+          "Phase 5: document FOR > DSR by construction (FOR adds rent, leases, insurance, property tax)"
+        ]
+      }
+    }
+  },
+  "url_substitutions": [
+    {
+      "applies_to_series": ["S1601"],
+      "field": "primary_source.url",
+      "old_value": "https://www.bls.gov/ppi/data.htm",
+      "new_value_for_data_access": "https://fred.stlouisfed.org/series/PPIACO  OR  https://data.bls.gov/timeseries/WPS00000000",
+      "rationale": "BLS landing page returns HTTP 403 to bot User-Agent (verified 2026-05-18); underlying WPS00000000 data fully reachable via FRED mirror or data.bls.gov direct series-ID endpoint (both 200). For citation provenance keep bls.gov as Shaikh-era source page; for data fetch use FRED/data.bls.gov."
+    },
+    {
+      "applies_to_series": ["S1602"],
+      "field": "primary_source.url",
+      "old_value": "https://www.bls.gov/productivity/data.htm",
+      "new_value_for_data_access": "https://data.bls.gov/timeseries/PRS84006093 + https://data.bls.gov/timeseries/PRS84006153  OR  https://fred.stlouisfed.org/series/COMPRNFB + https://fred.stlouisfed.org/series/OPHNFB",
+      "rationale": "BLS landing page returns HTTP 403 to bot User-Agent (verified 2026-05-18); underlying PRS84006093 + PRS84006153 fully reachable via data.bls.gov direct or FRED mirror (all 200). For citation provenance keep bls.gov; for data fetch use FRED/data.bls.gov."
+    },
+    {
+      "applies_to_series": ["S1602"],
+      "field": "book_quotes[1].source_url (Appendix 16.1 p. 898 footnote typo)",
+      "old_value": "http://www.bls.org",
+      "new_value": "https://www.bls.gov",
+      "rationale": "Book footnote on p. 898 has typo bls.org for bls.gov. Canonicalize bls.gov in all RSCD output and dossier text. (Note: bls.org coincidentally redirects to a live page but is not the BLS — must not be cited.)"
+    },
+    {
+      "applies_to_series": ["S1603"],
+      "field": "book_quotes[2].source_url (Appendix 16.1 p. 899 ERP Table 73)",
+      "old_value": "http://www.gpoaccess.gov/eop/tables10.html",
+      "new_value": "https://www.govinfo.gov/app/collection/erp",
+      "rationale": "GPO Access decommissioned 2012; URL is DNS-dead (verified 2026-05-18 — getaddrinfo failed). ERP migrated to govinfo.gov (200 verified). Practical extension for ERP Table 73 col 1 (3-month T-bill) via FRED TB3MS."
+    }
+  ],
+  "data_substitutions": [
+    {
+      "concept": "Household debt (book spec: Z.1 Table D.3 line 2, household sector excl. nonprofits)",
+      "applies_to_series": ["S1605 (numerator)"],
+      "cd2_proxy_used": "FRED CMDEBT (Households + Nonprofit Organizations Credit Market Instruments Liability, millions USD)",
+      "canonical_substitute": {
+        "source": "FRED HCCSDODNS (Households Debt Securities and Loans Liability)",
+        "url": "https://fred.stlouisfed.org/series/HCCSDODNS",
+        "units": "millions_usd",
+        "splice_strategy": "direct (no splice — FRED series spans 1947-present)"
+      },
+      "concept_match_justification": "HCCSDODNS matches Shaikh's stated source Z.1 D.3 line 2 (households-only, excluding nonprofit organizations) directly. CMDEBT includes nonprofits and is therefore a wrong-concept proxy per anu-framework No Proxies rule. Substitution RESTORES book-spec fidelity; not a NEW proxy.",
+      "proxy_true": false,
+      "anu_framework_rule": "No Proxies (MANDATORY) — CD2 inherited wrong-concept proxy CMDEBT for households-only Z.1 D.3 line 2; correction restores book fidelity."
+    },
+    {
+      "concept": "Household disposable income (book spec: BEA NIPA T2.1 line 27, Disposable Personal Income)",
+      "applies_to_series": ["S1605 (denominator)"],
+      "cd2_proxy_used": "FRED PI (Personal Income, pre-tax broader, billions USD SAAR)",
+      "canonical_substitute": {
+        "source": "FRED DPI (Disposable Personal Income, BEA NIPA T2.1 line 27)",
+        "url": "https://fred.stlouisfed.org/series/DPI",
+        "units": "billions_usd_saar",
+        "splice_strategy": "direct (no splice — FRED series spans 1947-present)"
+      },
+      "concept_match_justification": "DPI matches Shaikh's stated source NIPA T2.1 line 27 (Disposable Personal Income, after-tax) directly. PI is pre-tax Personal Income and is therefore a wrong-concept proxy per anu-framework No Proxies rule. Substitution RESTORES book-spec fidelity; not a NEW proxy.",
+      "proxy_true": false,
+      "anu_framework_rule": "No Proxies (MANDATORY) — CD2 inherited wrong-concept proxy PI for after-tax DPI; correction restores book fidelity."
+    },
+    {
+      "concept": "Trade-weighted OECD short-term interest rate aggregate (book spec: Shaikh+Ragab bespoke Fed H.10 × IMF IFS construction)",
+      "applies_to_series": ["S1603 (OECD component)"],
+      "discontinued_source": "None — input sources (Fed H.10, IMF IFS) both active",
+      "canonical_substitute_replicated": {
+        "label": "S1603_replicated",
+        "source": "Fed H.10 broad-index trade weights × IMF IFS country money market / T-bill rates, aggregated annually with latest-vintage weights",
+        "url_h10": "https://www.federalreserve.gov/releases/h10/Weights/",
+        "url_ifs": "https://data.imf.org/IFS",
+        "license": "Public-domain (Fed H.10 US-Gov) + IMF IFS free dissemination",
+        "units": "Percent per annum",
+        "concept_match_justification": "Faithful rebuild of Shaikh+Ragab methodology using original input sources. Latest-vintage Fed H.10 weights used for all years 1960-2024 to avoid weight churn. NOT a proxy.",
+        "proxy_true": false
+      },
+      "canonical_substitute_approximation": {
+        "label": "S1603_oecd_mei",
+        "source": "OECD MEI IRSTCI01 'Short-term interest rates' pre-aggregated series",
+        "url": "https://data-explorer.oecd.org/",
+        "license": "CC-BY-4.0 (OECD)",
+        "units": "Percent per annum",
+        "concept_match_justification": "OECD MEI IRSTCI01 uses GDP-PPP weighting vs Shaikh's Fed H.10 trade weighting; basket composition partially overlaps but is not identical. Flagged `proxy: true` with explicit Concept Match Justification noting basket-weight methodology difference. Low-effort variant for users who do not require book-fidelity replication.",
+        "proxy_true": true
+      },
+      "emit_variants": ["S1603_replicated", "S1603_oecd_mei"]
+    }
+  ],
+  "construction_corrections": [],
+  "subseries_metadata_to_emit": {
+    "S1601": {"baseline_variant": "shaikh_1786_2010_published_trend", "extension_variant": "refit_cubic_full_sample_1786_2024"},
+    "S1602": {"deflator": "CPI-U-RS (canonical)", "sensitivity_variant": "PCE"},
+    "S1603_replicated": {"vintage": "latest_vintage_h10_weights", "proxy": false, "construction": "composite"},
+    "S1603_oecd_mei": {"proxy": true, "proxy_source": "OECD MEI IRSTCI01", "concept_match_justification": "GDP-PPP vs trade-weight basket difference; both measure trade-weighted OECD short-term interest rates"},
+    "S1604": {"hp_lambda": 100, "sensitivity_variant_lambda": 6.25, "endpoint_fragility_caveat": true, "depends_on": ["S1602 counterfactual ec_c", "S0606", "S0607", "S0608"]},
+    "S1605": {"numerator_series": "HCCSDODNS", "denominator_series": "DPI", "unit_conversion": "ratio = HCCSDODNS / (DPI * 1000)", "anu_framework_dim_check_required": true, "cd2_wrong_concept_proxy_corrected": true},
+    "S1606": {"primary_cadence": "quarterly", "secondary_cadence": "annual_average", "subseries": ["S1606-A (FOR via FODSP)", "S1606-B (DSR via TDSP)"]}
+  },
+  "loader_metadata_to_emit": {
+    "S1601": {"refit_cubic": true, "baseline_reference_variant": "shaikh_1786_2010", "extension_variant": "refit_1786_2024", "validate_against_years": [1790, 1830, 1873, 1896, 1929, 1971, 2010]},
+    "S1602": {"rebase_to": "1982=100", "fred_source_base": "2017=100", "counterfactual_regression_window": "1960-1981", "counterfactual_formula": "ln(ec) ~ ln(y) + time", "splice_year": 2012},
+    "S1603": {"emit_variants": ["S1603_replicated", "S1603_oecd_mei"], "h10_vintage": "latest", "ifs_basket": "shaikh_oecd_basket_from_cd2_s098"},
+    "S1604": {"hp_lambda": 100, "depends_on_phase5_order": ["S1602", "S0606-S0608", "S1604"], "no_double_count_with_chapter6": true},
+    "S1605": {"numerator": "HCCSDODNS", "denominator": "DPI", "ratio_formula": "HCCSDODNS / (DPI * 1000)", "dimensional_analysis_comment_required": true, "validate_against_years": [1975, 1985, 2000, 2007, 2011], "document_cd2_divergence": true},
+    "S1606": {"primary_series": "TDSP", "secondary_series": "FODSP", "cadence_primary": "quarterly", "cadence_secondary": "annual_average", "validate_against_quarters": ["1980Q1", "1985Q1", "2000Q1", "2007Q1", "2012Q1"]}
+  }
+}

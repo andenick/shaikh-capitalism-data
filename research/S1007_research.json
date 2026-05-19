@@ -1,0 +1,103 @@
+{
+  "series_id": "S1007",
+  "name": "Equity Rate vs Corporate IROP",
+  "chapter": 10,
+  "figures": [
+    "Fig10.11"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S057",
+    "cd2_id": "S057"
+  },
+  "book_quotes": [
+    {
+      "chapter": 10,
+      "page": 468,
+      "quote": "the equity rate of return reqt = ((peqt - peqt-1) + dvt) / peqt-1 in equation (10.10) will be turbulently equalized to the rate of return on new corporate investment, the latter being proxied by the corporate incremental rate of profit iropcorpt = GOSt / (IGt-1 + INVt-1) and the NIPA approximation iropcorpnipat = PGt / IGt-1.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 874,
+      "quote": "The current-cost (real) equity rate of return uses stock price (peq), and dividend (dv) data from Shiller (2014) converted to real terms (preq, dvreq) using the BEA gross investment deflator in appendix table 6.8.II.7 and calculated according to the formula in rreqt = (dvrt+(preqt-preqt-1)) / preqt-1.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 874,
+      "quote": "The current corporate incremental rate of profit is calculated as the change in real Net Operating Surplus (NIPA profit plus Monetary Interest Paid by the Nonfinancial Sector) divided by real gross investment in fixed capital and inventories, and its NIPA proxy is calculated as the ratio of the change in gross NIPA profits to BEA real gross investment, as described in chapter 6, section VIII, derived in chapter 7, section VI.4, and calculated in appendix 6.8.II.7.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh derived (Shiller + BEA NIPA + Appendix 6.8.II.7)",
+    "publication": "Capitalism (Oxford 2016) Appendix 10.2 + Appendix 6.8.II.7",
+    "table_or_series_id": "rreq (equity real rate of return); iropcorp adjusted; iropcorpnipa",
+    "url": "http://www.anwarshaikhecon.org/",
+    "frequency": "annual",
+    "units": "Rate (decimal); displayed as percent",
+    "license": "Author-distributed",
+    "available_through": "ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx; Appendix7_iropdataUSind.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "rreq_t = (dvr_t + (preq_t - preq_{t-1})) / preq_{t-1}; iropcorp_t = delta NOS_real / (IG_real + INV_real)_{t-1}; iropcorpnipa_t = delta NIPA_profits_real / IG_real_{t-1}",
+  "components": [
+    {"label": "Shiller S&P price peq (nominal)", "source": "Shiller (2014) ie_data.xls"},
+    {"label": "Shiller S&P dividend dv (nominal)", "source": "Shiller (2014) ie_data.xls"},
+    {"label": "BEA gross investment deflator", "source": "BEA NIPA Table 1.1.9 (Implicit price deflators), used in Shaikh App. 6.8.II.7"},
+    {"label": "Corporate Net Operating Surplus", "source": "BEA NIPA Table 1.14 (NOS of domestic nonfinancial corporate sector) + Monetary Interest Paid"},
+    {"label": "Real gross investment (fixed + inventories)", "source": "BEA NIPA Tables 5.2.3 / 5.6.3"}
+  ],
+  "year_range_book": [1948, 2011],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "Shiller equity data (current to date)",
+      "source": "Robert Shiller, Yale",
+      "url": "http://www.econ.yale.edu/~shiller/data.htm",
+      "units": "Index / dollars",
+      "splice_strategy": "none",
+      "concerns": ["Same source updated"]
+    },
+    {
+      "subseries_label": "BEA NIPA gross investment deflator",
+      "source": "FRED / BEA",
+      "url": "https://fred.stlouisfed.org/series/A006RD3A086NBEA",
+      "units": "Index 2017=100",
+      "splice_strategy": "growth_rate",
+      "concerns": ["Re-baseline may shift levels; growth rates preserved"]
+    },
+    {
+      "subseries_label": "Corporate NOS (nonfinancial)",
+      "source": "BEA NIPA Table 1.14, FRED W260RC1A027NBEA",
+      "url": "https://fred.stlouisfed.org/series/W260RC1A027NBEA",
+      "units": "Billions of dollars, annual",
+      "splice_strategy": "growth_rate",
+      "concerns": ["BEA periodic comprehensive revisions can shift levels of NOS"]
+    }
+  ],
+  "methodology_notes": [
+    "Equity rate is current-cost / real: prices and dividends converted from nominal to real using BEA investment deflator (consistent with Shaikh's Ch6 capital-stock deflation convention, NOT CPI).",
+    "Two corporate IROP variants: 'adjusted' (NOS + monetary interest paid by nonfinancial sector / gross investment in fixed cap + inventories), and 'NIPA proxy' (delta gross NIPA profits / gross investment).",
+    "Means over 1947-2011: equity 9.83%, adjusted iropcorp 9.50%, iropcorpnipa 8.49% (Table 10.2 / book p.469).",
+    "Construction depends on S105 (Ch6 corporate average profit rate) only as comparison anchor in Fig 10.12; the IROP series here is distinct."
+  ],
+  "open_questions": [
+    "Confirm the exact BEA imputation for 'Monetary Interest Paid by the Nonfinancial Sector' - this is added back to NOS to undo the NIPA convention that classes interest as cost.",
+    "Modern extension: BEA classifies corporate sector slightly differently post-2018 comprehensive revision; need to re-derive Shaikh's 'adjusted' NOS series consistently."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-b-ch10",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S057 ported; formula verbatim from p.468; sources cross-checked Appendix 10.1"
+    }
+  ]
+}

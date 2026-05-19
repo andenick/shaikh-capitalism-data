@@ -1,0 +1,107 @@
+{
+  "series_id": "S402",
+  "name": "Average and Marginal Costs with Wage Paid per Hour, at Normal Intensity for 8-Hour Shifts up to Engineering Capacity (Two and a Half Shifts)",
+  "chapter": 4,
+  "figures": [
+    "Fig4.17"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 4,
+      "page": 154,
+      "quote": "A similar result obtains when wages are paid per hour of work (¯w) rather than per worker. In this case, unit labor cost ¯wl(Hj, i) ≡ ¯wHj/XRj(Hj, i) is proportional to the labor coefficient in table 4.2... As with the labor coefficient, the endpoints of unit labor costs of the first two shifts are the same.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 154,
+      "quote": "Table 4.4 summarizes the derivations of cost curves for both types of wage payments, and figures 4.16 and 4.17 depict the corresponding ac, avc, and mc curves for output ranges which allow us to see their characteristic shapes.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 4,
+      "page": 156,
+      "quote": "Note that since the labor coefficient falls at a slowing rate (see figure 4.14), the corresponding avc curve can have roughly flat sections at the end of the second and third shifts. A roughly stable avc in the range of desired operation is one of the most well-documented empirical patterns in the literature, which is why it is commonly assumed as a stylized fact in the post-Keynesian and Classical traditions, quite unlike the U-shaped avc commonly assumed in neoclassical theory (recall the last two graphs in figure 4.15).",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh (author construction)",
+    "publication": "Capitalism: Competition, Conflict, Crises (Oxford University Press, 2016), Appendix 4.2",
+    "table_or_series_id": "Appendix Table 4.2.4 (Cost Curves and Profit), wages-paid-per-hour columns",
+    "url": "https://global.oup.com/academic/product/capitalism-9780199390632",
+    "frequency": "synthetic",
+    "units": "money units per unit of output (illustrative; wh = 12.5, pa = 10, p = 7)",
+    "license": "Copyright Oxford University Press; reproduced under fair use for research",
+    "available_through": "Shaikh book PDF; Appendix 4.2 reconstructed verbatim from book PDF pp. 772-781 (PDF pp. 810-819) on 2026-05-18",
+    "discontinued": false,
+    "replaced_by": null,
+    "primary_source_local_fallback": "SalvagedInputs/book_data/Reconstructed/Appendix_4_2_Table4.csv (per-hour cost columns: XR, afc, ulc, avc, ac, mc) and SalvagedInputs/book_data/Reconstructed/Appendix_4_2_Table3.csv (xr/mk/l inputs). README at SalvagedInputs/book_data/Reconstructed/Appendix_4_2_README.md"
+  },
+  "construction": "formula",
+  "formula": "ulc = wh*l(H,i) = wh*H/XR (wages paid per hour); avc = ulc + pa*a; ac = afc + avc with afc = d*pMK*mk(H,i); mc = pa*a + wh*(dXRs(Hs,i)/dHs). Tabulated for H = 1..20.",
+  "components": [
+    {
+      "name": "Labor coefficient l(H,i)",
+      "source": "Appendix Table 4.2.1, column 'Labor Coefficient' (l = H/XR)"
+    },
+    {
+      "name": "Hourly wage wh",
+      "source": "Appendix 4.2, p. 781: wh = 12.5 (so wh*8 = 100 = wN per 8-hour shift, consistency with S401)"
+    },
+    {
+      "name": "Materials price and coefficient (pa, a)",
+      "source": "Appendix Tables 4.2.1, 4.2.4: pa = 10, a = 0.30"
+    },
+    {
+      "name": "Machine coefficient mk(H,i)",
+      "source": "Appendix Table 4.2.1"
+    },
+    {
+      "name": "Output price p",
+      "source": "Appendix 4.2, p. 781: p = 7"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "S402 is the per-hour wage analogue of S401, derived from the same Appendix Table 4.2.4 numerical scaffold. Reclassified content_type from default 'time_series' (stub) to 'derived'.",
+    "Per book p. 154: 'marginal cost mc = pa¯a + ¯w · dXRs(Hs,i)/dHs follows the same path within each shift because the labor coefficient repeats itself within each shift. ... the presence of material costs as the first term in marginal cost is due to the fact that we are considering total output, not net output. The second term is more familiar, being the ratio of the given hourly wage rate to the marginal product of labor.'",
+    "Distinguishing qualitative feature relative to S401: with hourly wages, within-shift marginal cost is NOT flat at pa*a; instead it tracks pa*a + wh/MPL(h), which inherits the within-shift U-shape of MPL. Shift-boundary spikes are still present, driven by productivity discontinuities rather than by a wage-bill jump.",
+    "Per book p. 156: 'Average cost curves slope downward within each shift but spike upward at the beginning of each shift. Marginal cost within a shift is constant if wages are paid per worker or approaches constancy at the end of a shift if wages are paid per hour. But in both cases, the marginal cost curve is highly spiky at the shift-change points.'",
+    "extension_candidates intentionally empty: closed-form theoretical illustration, no real-world counterpart to extend."
+  ],
+  "open_questions": [
+    "Same as S401: Appendix 4.2 chopped-table workbook is missing; reconstruction requires transcription or re-implementation of the productivity formula.",
+    "Confirm parameter consistency: wh = 12.5 over 8 hours = 100 matches wN = 100 from S401 (consistent baseline)."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch4",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Hourly-wage variant of S401. Same reclassification to 'derived'. Same Appendix 4.2 reconstruction issue."
+    },
+    {
+      "reviewer": "opus-subagent-batch1-a2",
+      "date": "2026-05-18",
+      "status": "blocker_resolved",
+      "notes": "CH4-B1 RESOLVED. Verbatim Appendix 4.2 tables transcribed; L01 loader should consume Appendix_4_2_Table4.csv per-hour columns (XR, afc, ulc, avc, ac, mc). Consistency check: wh*8=100=wN confirmed; derived ulc(per-hour, XR=2.84)=4.40 (book) vs 12.5*0.3521=4.401 (recomputed)."
+    }
+  ]
+}

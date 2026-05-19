@@ -1,0 +1,167 @@
+{
+  "series_id": "S711",
+  "name": "OECD Industry IROP Deviations from Average (Figure 7.21), 1988-2003 (PPP-adjusted)",
+  "chapter": 7,
+  "figures": [
+    "Fig7.21"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S038",
+    "cd2_id": "S038"
+  },
+  "book_quotes": [
+    {
+      "chapter": 7,
+      "page": 305,
+      "quote": "Finally, more recent OECD data can be used to extend earlier investigations. Data on capital stock was too sparse to calculate average rates of profits for the OECD as a whole, but it was possible to calculate corresponding incremental rates of profit (appendix 7.1). Figure 7.21 displays the deviations of incremental profit rates from their overall mean for various industries. The patterns are the same as in the previous case: incremental rates of profit cross back and forth a great deal.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 858,
+      "quote": "V. Incremental rates of profit for OECD industries 1988-2003 Figure 7.21 OECD Industries, Deviations of Incremental Rates of Profit from their Average (Using PPP Exchange Rates) 1. Data source: OECD STructral ANalysis (STAN) Database (OECD 2003) provides investment and profit data which were used to calculate IROP. However, since it does not provide capital stock data, it was not possible to calculate the average rate of profit.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 859,
+      "quote": "2. The variables used for IROP analysis from STAN were Gross Fixed Capital Formation (GFCF), which is gross investment; and Gross Operating Surplus and mixed income (GOPS), which is gross profit. The latter was either directly available or could be constructed as the sum of Net Operating Surplus and mixed income (NOPS) and Consumption of Fixed Capital (CFC). Lack of data prevented the removal of the remuneration of the wage equivalent (WEQ) of the self-employed (see chapter 6, section VIII, and appendix 6.7.II).",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 859,
+      "quote": "6. The variables were in local currency units (and in euros for EMU countries in post-euro years), so they were converted to Purchasing Power adjusted US Dollars (International Dollars) using the Penn World Table (PWT) 6.2 Purchasing Power Parity (PPP) data. 7. The PPP-converted variables were aggregated across countries for each industry and the IROP calculated as the change in GOPS divided by GFCF of the preceding year.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 859,
+      "quote": "Appendix 7.2 Data Tables for Chapter 7 (available online at http://www.anwarshaikhecon.org/), Sheet = iropOECDPPP",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 7,
+      "page": 859,
+      "quote": "3. The STAN database (OECD 2003) was used because it covered roughly thirty OECD countries. The subsequent version of this database covered only eighteen countries and excluded even those such as Canada and the United Kingdom.",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "OECD + Shaikh (2008) reconstruction",
+    "publication": "OECD STructural ANalysis (STAN) Database (OECD 2003 vintage) + Penn World Table 6.2 (PPP conversion). Aggregated and adjusted per Shaikh (2008). Shipped in Appendix 7.2 iropOECDPPP sheet at http://www.anwarshaikhecon.org/.",
+    "table_or_series_id": "OECD STAN (2003 vintage) Gross Fixed Capital Formation (GFCF) and Gross Operating Surplus and mixed income (GOPS) by industry, ~30 OECD countries, ISIC Rev. 3. Industries shown in Fig 7.21 (book PDF p. 351 / printed p. 312): Apparel, Coke, Comp.act., Constr., Elect. Apparatus, Electricity, Fab.metals, Fishing, Furniture, Hotels, Land.trans., Leather, Mach&equip, Metals&machine., Motor, Paper, Post, Publishing, Radio, Retail, Rubber, sale.motor, Textile, Trans.support, Water.trans, Wood&publishing, Wstrade (27 industries).",
+    "url": "https://www.oecd.org/sti/ind/stanstructuralanalysisdatabase.htm",
+    "frequency": "annual",
+    "units": "rate deviation (decimal; industry IROP minus cross-industry mean IROP, year by year; underlying IROP in PPP-adjusted International Dollars)",
+    "license": "OECD STAN: subscription / OECD member access (legacy 2003 vintage not currently downloadable as such - superseded by STAN 2025 with different industry list and country coverage). PWT 6.2: academic public release (superseded by PWT 10.01). Shaikh derived series is academic/derivative.",
+    "available_through": "Original 2003 STAN vintage is no longer hosted in canonical form by OECD; Shaikh's derived data is in Appendix 7.2 iropOECDPPP sheet at anwarshaikhecon.org (local copy: SalvagedInputs/book_data/ShaikhChoppedTables/ if present). Current STAN (2025 vintage) is on the OECD Data Explorer with reduced country coverage and an ISIC Rev 3 -> Rev 4 industry mapping.",
+    "discontinued": true,
+    "replaced_by": "OECD STAN 2025 (current vintage) at https://data-explorer.oecd.org/vis?df[id]=DSD_STAN@DF_STAN_2025 - covers only 18 countries (per book p. 859, the 2003 vintage covered 30 countries and the 'subsequent version' had already dropped to 18 even excluding Canada and the UK). For PPP, use PWT 10.01."
+  },
+  "construction": "composite",
+  "formula": "For each industry i and year t (1988-2003): (a) For each country c in the included set, convert GFCF_c,i,t and GOPS_c,i,t from local currency to PPP-adjusted US dollars using PWT 6.2 PPP factors. (b) Aggregate across countries per industry: GFCF_i,t = sum_c GFCF_c,i,t and GOPS_i,t = sum_c GOPS_c,i,t (only including countries with both variables observed). (c) IROP_i,t = (GOPS_i,t - GOPS_i,t-1) / GFCF_i,t-1. (d) IROP_avg,t = unweighted mean of IROP_i,t across the included industries (only industries comprising 3+ countries are retained per Appendix 7.1 V.4). (e) dev_i,t = IROP_i,t - IROP_avg,t. Note: NO WEQ adjustment because international data did not allow removal of self-employed income (book p. 859 V.2).",
+  "components": [
+    {
+      "label": "OECD STAN 2003 vintage GFCF (Gross Fixed Capital Formation) by country x industry x year",
+      "source": "OECD STAN Database (OECD 2003)",
+      "role": "denominator - investment / capital flow per industry"
+    },
+    {
+      "label": "OECD STAN 2003 vintage GOPS (Gross Operating Surplus and mixed income) by country x industry x year; or constructed as NOPS + CFC where GOPS not directly reported",
+      "source": "OECD STAN Database (OECD 2003)",
+      "role": "numerator (after differencing) - gross profit per industry"
+    },
+    {
+      "label": "Penn World Table 6.2 PPP factors by country x year",
+      "source": "Penn World Table 6.2 (Heston, Summers, Aten 2006)",
+      "role": "currency conversion to International Dollars before cross-country aggregation"
+    },
+    {
+      "label": "Cross-country aggregator (sum_c per industry-year, restricted to industries with 3+ countries reporting both GFCF and GOPS)",
+      "source": "Shaikh (2008) Appendix 7.1 V.4 + V.7 (aggregation rule)",
+      "role": "world-industry totals from country panels"
+    },
+    {
+      "label": "Industry exclusion rule (drop arts/museums/education/social services and industries where self-employed income dominates - law, medicine)",
+      "source": "Shaikh (2008) Appendix 7.1 V.5 (same exclusion logic as US Section II.6)",
+      "role": "sample restriction; final included sectors shown in Fig 7.21 caption"
+    },
+    {
+      "label": "Cross-industry mean IROP_avg per year, then dev_i,t = IROP_i,t - IROP_avg,t",
+      "source": "Derived (post-processing)",
+      "role": "the displayed deviation series"
+    },
+    {
+      "label": "Appendix7_iropOECDPPP.xlsx (if salvaged) - Shaikh Appendix 7.2 iropOECDPPP sheet",
+      "source": "http://www.anwarshaikhecon.org/ (Shaikh companion site Appendix 7.2)",
+      "role": "canonical derived dataset for byte-exact reproduction"
+    }
+  ],
+  "year_range_book": [1988, 2003],
+  "year_range_extension": [1988, 2023],
+  "extension_candidates": [
+    {
+      "subseries_label": "OECD STAN 2025 vintage (GFCF + GOPS by ISIC Rev 4 industry, ~18 countries)",
+      "source": "OECD",
+      "url": "https://data-explorer.oecd.org/vis?df[id]=DSD_STAN@DF_STAN_2025",
+      "units": "millions of national currency (then convert to PPP USD)",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "DISCONTINUED PRIMARY SOURCE: OECD ISDB 1994 was discontinued (cf S703-S704); OECD STAN remains, but the 2003 vintage Shaikh used has been superseded multiple times. Country coverage dropped from ~30 (Shaikh's vintage) to ~18 in subsequent versions (per book p. 859 V.3 verbatim).",
+        "ISIC Rev 3 -> Rev 4 industry classification change requires a crosswalk; some Shaikh-included sectors (e.g., 'Wood&publishing', 'sale.motor') do not map cleanly. Flag as open question.",
+        "CD2 noted (S038 extension block) mean-deviation MAE of 0.04 over the overlap window when using STAN 2025 + PWT 10.01 with their crosswalk - suggests methodological continuity is possible if industry mapping is done carefully.",
+        "Cannot splice deviation series across vintages; if extending, re-aggregate countries -> re-compute IROP -> re-compute deviation on the new vintage end-to-end."
+      ]
+    },
+    {
+      "subseries_label": "Penn World Table 10.01 (replacement for PWT 6.2 PPP factors)",
+      "source": "Groningen Growth and Development Centre",
+      "url": "https://www.rug.nl/ggdc/productivity/pwt/",
+      "units": "PPP factor (national currency per International Dollar)",
+      "splice_strategy": "none",
+      "concerns": [
+        "PWT methodology evolved substantially between v6.2 (2006) and v10.01 (2023+); PPP levels may shift, but Shaikh's use is for cross-country aggregation per industry-year, where the differences mostly wash out within an industry's PPP-weighted GFCF/GOPS totals."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Composite series: requires assembling OECD STAN country-industry panels, PPP-converting via PWT 6.2, aggregating across countries per industry, computing IROP per industry-year, computing the cross-industry mean, and finally deviations. The construction is much more involved than S709/S710 (which were one-line derivatives of S705/S706).",
+    "Per book p. 305 (verbatim), the OECD test is methodologically asymmetric vs the US (S705-S710): only IROP is computable because STAN provides no capital stock data, so there is NO OECD analogue of Figs 7.15-7.16 (only of Figs 7.17-7.18). This is the third tier of Shaikh's empirical case (US ROP/IROP, Greek ROP/IROP, OECD IROP).",
+    "Per book p. 859 V.2 (verbatim), the OECD construction CANNOT apply the WEQ (wage equivalent) adjustment that S705/S706/S709/S710 apply, because international data did not allow removal of self-employed income. This is a known cross-country comparability limitation - the OECD IROP includes some self-employed income in the GOPS numerator.",
+    "Per book p. 859 V.4, the data restriction window is points where both GFCF and GOPS are observed, beginning in 1987 (the IROP starts in 1988 because of the lag). Per V.4, only industries comprising 3+ countries are retained.",
+    "Per book p. 859 V.7, the IROP is computed AFTER cross-country aggregation (aggregate-before-ratio), not as an average of country-industry IROPs.",
+    "CD2 S038 (the direct ancestor) is the only CD2 dossier that maps to an OECD-wide construction. The CD2 markdown notes Fig 7.19 and Fig 7.21 together in its figures list, but this was a CD2 documentation error: Fig 7.19 is Greek (Tsoulfidis & Tsaliki, see S707), Fig 7.21 is OECD STAN (see this dossier). S711 fully separates the OECD content from the Greek content.",
+    "CD2 S038 extension block recorded: 'Same methodology (PPP-adjusted IROP by industry), different OECD vintage and PWT version. ISIC Rev 3 -> Rev 4 industry mapping. Mean deviation overlap MAE=0.04.' - i.e. methodological continuity is achievable across vintages with careful industry mapping. Phase 4/5 should verify this MAE on RSCD inputs.",
+    "Anti-degradation: NO publication-data splice is acceptable. Any extension to 2004+ requires re-fetching OECD STAN 2025 GFCF + GOPS by country-industry, applying PWT 10.01 PPP factors, re-aggregating with the 3+ country rule, re-computing IROP, and re-computing deviations - all using a single coherent vintage. Document the vintage date.",
+    "Closes the Phase 2 gap for Fig 7.21 per decision 0004. The Ch7 rollup explicitly flagged this: 'Figure 7.21 (OECD IROP deviations, 1988-2003) is the CD2 S038 content that the stub's S707 name field mislabeled. Phase 4 should add a separate S70x for Fig 7.21.' - S711 IS that series."
+  ],
+  "open_questions": [
+    "DISCONTINUED PRIMARY SOURCE - OECD STAN 2003 vintage is no longer hosted; the modern STAN 2025 vintage has reduced country coverage (book p. 859 V.3 verbatim: subsequent versions dropped to 18 countries excluding Canada and UK). Phase 4 must decide: (a) accept Shaikh's Fig 7.21 as a frozen historical exhibit with no extension; (b) extend on STAN 2025 + PWT 10.01 with explicit acknowledgement of country-coverage discontinuity; or (c) attempt to locate an archived copy of STAN 2003.",
+    "ISIC Rev 3 -> Rev 4 crosswalk: the Fig 7.21 industry list ('Apparel', 'Coke', 'Comp.act.', 'sale.motor', 'Wood&publishing', etc.) is in Shaikh's idiosyncratic short labels mapped from ISIC Rev 3. Need to produce an explicit crosswalk to ISIC Rev 4 / NACE Rev 2 for any STAN 2025 extension.",
+    "Identify the exact ~30-country list Shaikh used (book says 'roughly thirty' but does not enumerate them). The country list is needed to evaluate which countries are actually in the post-aggregation totals. Likely full OECD membership c. 2003 - Phase 4 to confirm from STAN 2003 documentation or Shaikh (2008).",
+    "Locate Appendix7_iropOECDPPP.xlsx in SalvagedInputs (not confirmed present); if missing, Phase 4 should pull from anwarshaikhecon.org or reconstruct from scratch.",
+    "Verify whether IROP_avg is unweighted mean of industry IROPs OR re-aggregated as (sum_i delta GOPS_i)/(sum_i GFCF_i(-1)). Appendix 7.1 V is silent on this final aggregation step - inspect Shaikh's spreadsheet."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-s711",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from CD2 S038 dossier + book pp. 305, 858-859 (PDF pp. 344, 897-899) verbatim. Decision 0004: closes Phase 2 gap for Fig 7.21 (OECD IROP deviations) and resolves the long-standing S707/S038 misalignment flagged in CH7_RESEARCH_SUMMARY. Construction = composite (PPP conversion + country aggregation + IROP + deviation). Source = OECD STAN 2003 vintage (DISCONTINUED) + PWT 6.2. 6 quotes (definition + 3 source/method + caveat), 7 components, 2 extension candidates, 9 methodology notes, 5 open questions. Per anti-degradation rule: extension via OECD STAN 2025 + PWT 10.01 is contingent on Phase 4 ratification of country-coverage discontinuity (30 countries -> 18) and ISIC Rev 3 -> Rev 4 crosswalk."
+    }
+  ]
+}

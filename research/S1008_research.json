@@ -1,0 +1,96 @@
+{
+  "series_id": "S1008",
+  "name": "Actual vs Warranted Stock Price",
+  "chapter": 10,
+  "figures": [
+    "Fig10.13"
+  ],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": "S059",
+    "cd2_id": "S059"
+  },
+  "book_quotes": [
+    {
+      "chapter": 10,
+      "page": 473,
+      "quote": "The trouble is that we cannot calculate the level of the warranted price without some further assumptions. pw_eqt = pw_eqt-1 (1 + rIt) - dvt (10.31)",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 473,
+      "quote": "The first panel in figure 10.13 compares the actual real stock price to the estimated rational price whose smoothness is the source of Shiller's concerns about the EMH. The second panel in figure 10.13 displays the actual real stock price alongside the classical warranted rate.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 874,
+      "quote": "The actual real stock price is Shiller's nominal price deflated by the BEA gross investment deflator as described for figure 10.11. The classical warranted price was derived in chapter 10, section VI, according to the formula in equation (10.31) in the context of Shiller's critique of the Efficient Market Hypothesis and calculated using real variables in the spreadsheet in appendix 10.2. Data Tables for Chapter 10, sheet \"DATAintropprice.\" Shiller's own \"rational\" stock price is from his website, http://www.econ.yale.edu/~shiller/data.htm, in long-term stock, bond, interest rate, and consumption data under the name P* (Present Value of Real Dividends, Const r).",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh derived (Shiller P*, BEA deflator, Appendix 10.2 DATAintropprice sheet)",
+    "publication": "Capitalism (Oxford 2016) Appendix 10.2, sheet 'DATAintropprice'; Shiller (2014) for P*",
+    "table_or_series_id": "preq (actual real), prstarshiller1 (Shiller P* re-deflated), prweq (classical warranted)",
+    "url": "http://www.econ.yale.edu/~shiller/data.htm",
+    "frequency": "annual",
+    "units": "Index (real, BEA gross investment deflator base)",
+    "license": "Author-distributed + Shiller free academic",
+    "available_through": "ShaikhChoppedTables/Appendix10_IntroPPrice.xlsx",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "preq_t = P_shiller_nominal_t / BEA_invest_deflator_t; prstarshiller1_t = (Shiller P* * Shiller CPI / 100) / BEA_invest_deflator_t; prweq_t = prweq_{t-1} * (1 + rI_t) - dvr_t  [eq 10.31], with initial value chosen so prweq has same mean as preq over 1948-2011",
+  "components": [
+    {"label": "Shiller nominal S&P price", "source": "Shiller ie_data.xls, column P"},
+    {"label": "Shiller P* (present value of real dividends, constant r=7.6%)", "source": "Shiller ie_data.xls, P* column"},
+    {"label": "Shiller CPI", "source": "Shiller ie_data.xls (for un-deflating P* before re-deflating with BEA)"},
+    {"label": "BEA gross investment deflator", "source": "BEA NIPA Table 1.1.9 / Shaikh Appendix 6.8.II.7"},
+    {"label": "rI corporate incremental rate of profit", "source": "S1007 iropcorp adjusted"},
+    {"label": "dvr real dividends", "source": "Shiller dv / BEA deflator"}
+  ],
+  "year_range_book": [1947, 2011],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "Shiller dataset (current to date)",
+      "source": "Robert Shiller, Yale",
+      "url": "http://www.econ.yale.edu/~shiller/data.htm",
+      "units": "Index / dollars",
+      "splice_strategy": "none",
+      "concerns": ["Shiller continues to update P* and CPI"]
+    },
+    {
+      "subseries_label": "BEA gross investment deflator (FRED)",
+      "source": "FRED / BEA",
+      "url": "https://fred.stlouisfed.org/series/A006RD3A086NBEA",
+      "units": "Index",
+      "splice_strategy": "growth_rate",
+      "concerns": ["Re-baseline only"]
+    }
+  ],
+  "methodology_notes": [
+    "Three lines split across two panels in Fig 10.13. Panel 1: preq vs prstarshiller1 (EMH). Panel 2: preq vs prweq (classical).",
+    "Initial-value convention for warranted price (footnote 24, p.473): 'I choose an initial value of the warranted stock price which gives it the same mean as the actual stock price over this interval [1948-2011].' This is normalization, not a model parameter.",
+    "Footnote 25 (p.473): 'All displayed real prices are in terms of the BEA gross investment price index. Since Shiller's real rational price is CPI-deflated, I converted it to the nominal equivalent using his CPI and then deflated it by the gross investment index (appendix 10.2).'",
+    "rI in eq 10.31 = corporate incremental rate of profit (from S1007); shows the warranted price depends entirely on the regulating profit rate, not a constant discount rate."
+  ],
+  "open_questions": [
+    "Replication must follow the exact 'same mean' initialization to get matching levels - Phase 5 implementation should pin this down with a test against the DATAintropprice sheet values.",
+    "Shiller's P* methodology changed across his 1981, 2001, 2014 papers (discount rate set differently each time); Shaikh uses 2014 value r=7.6% - verify P* column in current Shiller download matches the 2014 version."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-b-ch10",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S059 ported; eq 10.31 and footnote 24-25 quoted verbatim p.473; Shiller P* re-deflation method documented"
+    }
+  ]
+}

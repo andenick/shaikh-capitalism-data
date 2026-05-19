@@ -1,0 +1,162 @@
+{
+  "series_id": "ES2301",
+  "name": "Weber & Shaikh (2020) Fig 1 - US Trade Balance in Billion USD vs World Total and China, 2002-2017 (rescoped per decision 0006)",
+  "chapter": null,
+  "paper_metadata": {
+    "title": "The U.S.-China trade imbalance and the theory of free trade: debunking the currency manipulation argument",
+    "authors": ["Isabella Weber", "Anwar Shaikh"],
+    "year": 2020,
+    "journal": "International Review of Applied Economics",
+    "volume_issue_pages": "Vol. 35 Nos. 3-4, pp. 432-455 (published 2021 in print; first online 2020-09-09)",
+    "doi": "10.1080/02692171.2020.1814221",
+    "url": "https://doi.org/10.1080/02692171.2020.1814221",
+    "received": "2020-03-29",
+    "accepted": "2020-06-11",
+    "first_online": "2020-09-09",
+    "jel_codes": ["B17", "F10", "F31", "F32", "F60"]
+  },
+  "figures": [
+    "Figure 1 (Appendix p. 453) - U.S. Trade Balance in Billion USD, 2002-2017, World Total vs China; source label: 'Data Source: U.S. Census Bureau, 2018'; figure annotation: '*Total Exports Value minus Customs Import Value in USD'"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null,
+    "related_rscd_series": ["ES2302", "ES2303", "ES2304", "ES2305", "S1101"],
+    "related_book_chapters": ["Ch11 (international trade, real exchange rate, Figures 11.4-11.7)"]
+  },
+  "decomposition_context": {
+    "decision": "0006",
+    "scheme": "5-way split of original ES2301 composite into ES2301-rescoped + ES2302 + ES2303 + ES2304 + ES2305",
+    "this_dossier_scope": "Figure 1 only (US-China and US-World bilateral merchandise trade balances from US Census Bureau FT900)",
+    "status": "APPROVED 2026-05-18"
+  },
+  "book_quotes": [
+    {
+      "chapter": "Paper Section 1 - Introduction",
+      "page": 432,
+      "quote": "Large trade imbalances accumulated again on the eve of the 2008 global economic crisis with the U.S.-China imbalance being the most drastic case (Figure 2). This reversed position of the U.S. and Chinese external imbalances is reflected in their bilateral trade balance. In the period leading up to the crisis, China increased its share in the U.S. trade deficit from around one-fifth in 2002, the first year after China's accession to the World Trade Organisation (WTO), to about one-third in 2008. Ten years after the crisis, global trade continues to be unbalanced even though China's current account surplus has sharply decreased to 0.4% of its GDP (International Monetary Fund (IMF) 2019a, 2), while the US deficit with China has reached another record in 2018 at USD 419 billion (U.S. Department of the Treasury, 2019, p. 1-2).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Appendix Figure 1",
+      "page": 453,
+      "quote": "U.S. Trade Balance in Billion USD, 2002-2017. *Total Exports Value minus Customs Import Value in USD. World Total. China. Data Source: U.S. Census Bureau, 2018.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Section 1 - Introduction (definitional context for Fig 1 series)",
+      "page": 433,
+      "quote": "China's share in the US trade deficit increased rapidly in the years leading up to the 2008 crisis, becoming the focus of US trade politics. Bergsten and Gagnon (2012) have called Chinese currency intervention 'the most dramatic and effective form of currency manipulation' (2). According to them, intervention against the dollar by China lay at the root of the global imbalances in the run-up to the 2008 crisis.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Census Bureau, Foreign Trade Division",
+    "publication": "U.S. International Trade in Goods and Services (FT900) -- monthly release; country-level detail via 'Trade in Goods with China' (Exhibit 14) and 'Top Trading Partners' tables",
+    "table_or_series_id": "FT900 Exhibit 14 (Trade in Goods with China) and Exhibit 1 (US Total Trade in Goods) -- annual totals derived by summing monthly Total Exports Value minus Customs Import Value in current USD",
+    "url": "https://www.census.gov/foreign-trade/balance/c5700.html",
+    "frequency": "annual (computed from monthly FT900 releases)",
+    "units": "Billion current USD (trade balance = exports minus imports, on a balance-of-payments / customs-import-value basis)",
+    "license": "U.S. Federal Government public domain (17 USC 105 -- works of the US Federal Government are not copyright-protected)",
+    "available_through": "Census FT900 monthly trade reports portal; USA Trade Online (interactive query); Census Foreign Trade Division API",
+    "discontinued": false,
+    "replaced_by": null,
+    "secondary_sources_used": [
+      {
+        "agency": "U.S. Census Bureau",
+        "publication": "USA Trade Online (interactive query interface to Foreign Trade Division data)",
+        "url": "https://usatrade.census.gov/",
+        "note": "Alternative access to the same FT900 underlying data; supports custom country and HS-code aggregations."
+      },
+      {
+        "agency": "U.S. Department of the Treasury",
+        "publication": "Report to Congress on Macroeconomic and Foreign Exchange Policies of Major Trading Partners (May 2019)",
+        "url": "https://home.treasury.gov/policy-issues/international/macroeconomic-and-foreign-exchange-policies-of-major-trading-partners",
+        "note": "Cited in paper for the 'USD 419 billion 2018 US-China bilateral deficit' headline figure (p. 432); not a chart source for Fig 1 but a narrative source for the post-paper-window 2018 record."
+      }
+    ]
+  },
+  "construction": "formula",
+  "formula": "For year t in {2002, ..., 2017}: TB_World(t) = X_World(t) - M_World(t); TB_China(t) = X_China(t) - M_China(t), where X is Total Exports Value (FT900 column) and M is Customs Import Value (FT900 column), both summed to annual from monthly releases. Figure 1 plots TB_World(t) (solid line, dropping from -474.2 in 2002 to ~-810 in 2017) and TB_China(t) (dashed line, dropping from ~-103 in 2002 to ~-376 in 2017).",
+  "components": [
+    "Component A: US Total goods exports value (FT900 Exhibit 1, summed monthly to annual, current USD)",
+    "Component B: US Total goods Customs Import Value (FT900 Exhibit 1, summed monthly to annual, current USD)",
+    "Component C: US goods exports to China (FT900 Exhibit 14, monthly summed to annual)",
+    "Component D: US goods imports from China, Customs Import Value (FT900 Exhibit 14, monthly summed to annual)"
+  ],
+  "year_range_book": [2002, 2017],
+  "year_range_extension": [2002, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "US-China bilateral merchandise trade balance 2018-2024 (extends Fig 1 China line)",
+      "source": "U.S. Census Bureau, Foreign Trade Division, FT900 Exhibit 14",
+      "url": "https://www.census.gov/foreign-trade/balance/c5700.html",
+      "units": "Billion current USD",
+      "splice_strategy": "direct_concatenation",
+      "concerns": [
+        "Section 301 tariffs imposed 2018-2019 introduce a tariff-induced structural break in import volumes/values (Trump tariffs on Chinese goods covering ~$370bn imports by 2019)",
+        "COVID-19 (2020) created a one-off compression in bilateral trade flows; 2020 deficit briefly narrowed",
+        "Census periodically revises HS code aggregations; 2022 HS revision may affect comparability of fine-grained subcategories but not the country-level total"
+      ]
+    },
+    {
+      "subseries_label": "US-World goods trade balance 2018-2024 (extends Fig 1 World Total line)",
+      "source": "U.S. Census Bureau, Foreign Trade Division, FT900 Exhibit 1",
+      "url": "https://www.census.gov/foreign-trade/data/",
+      "units": "Billion current USD",
+      "splice_strategy": "direct_concatenation",
+      "concerns": [
+        "FT900 Exhibit 1 publishes 'goods balance' (Census basis) and 'goods balance' (BoP basis); paper Fig 1 uses Total Exports Value minus Customs Import Value (Census basis) per the asterisk note",
+        "Maintain Census-basis (not BoP-basis) for splice consistency with paper window"
+      ]
+    },
+    {
+      "subseries_label": "Programmatic access via USA Trade Online (FT900 underlying microdata)",
+      "source": "U.S. Census Bureau",
+      "url": "https://usatrade.census.gov/",
+      "units": "current USD (configurable units)",
+      "splice_strategy": "direct_concatenation",
+      "concerns": [
+        "USA Trade Online requires account creation for bulk download; small-query interactive use is free",
+        "Same underlying microdata as FT900; equivalent for trade balance reconstruction"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "RESCOPED PER DECISION 0006 (APPROVED 2026-05-18): This dossier now covers ONLY Figure 1 (US bilateral trade balances vs World and China, 2002-2017, Census FT900). The composite scope spanning Figs 1-5 has been split into 5 dossiers ES2301-ES2305; the formerly-composite ES2301 is rescoped to the Fig-1 Census FT900 series.",
+    "Source label on figure: 'Data Source: U.S. Census Bureau, 2018' -- the '2018' is the data-access vintage year, NOT the period covered. The plotted period covered is 2002-2017 (16 annual data points per series). Phase 5 loaders must emit `data_vintage_year` and `period_covered` as distinct metadata fields to avoid downstream confusion.",
+    "Figure footnote explicitly states 'Total Exports Value minus Customs Import Value in USD' -- this is the Census-basis goods trade balance (not BoP-basis). Census-basis is the FT900 Exhibit 1/14 default and is what Phase 5 loaders should reproduce.",
+    "Year 2002 is selected as the start of the series because it is the first full year after China's WTO accession (December 2001) -- Section 1 explicitly motivates this start date (p. 432).",
+    "Figure 1 conventions: World Total drawn as solid line, China drawn as dashed line; both negative throughout the window. World Total deficit widens from approximately -474 bn USD (2002) to -810 bn USD (2017); China deficit widens from approximately -103 bn USD (2002) to -376 bn USD (2017).",
+    "Closely related to S1101 (book Ch 11 'Trade Balances in Major Countries') but distinct in: (a) S1101 uses IMF IFS X/M ratio (unitless) for a 15-country panel 1960-2009; (b) ES2301 uses Census FT900 trade balance (USD level) for US bilateral with China and World, 2002-2017. Different sources, units, country coverage, and time windows."
+  ],
+  "open_questions": [
+    "Phase 5 must confirm Census FT900 Exhibit 14 (China-specific) data is available consistently back to 2002 in the current Census portal; older monthly releases may be archived under different paths.",
+    "Section 301 tariff regime (2018-) and CARES Act bilateral effects must be acknowledged in any post-2017 extension; not a blocker but a documented structural break.",
+    "Decision needed in Phase 5: emit Fig 1 as TWO AnuData series rows (ES2301_world, ES2301_china) or ONE series with a `country` dimension; current registry suggests two rows for downstream filter compatibility."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-es2101-2301",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Original composite fill (Figs 1-5 in one dossier); recommended 5-way split."
+    },
+    {
+      "reviewer": "opus-subagent-batch1-a1-decision-0006-rescope",
+      "date": "2026-05-18",
+      "status": "reviewed",
+      "notes": "Rescoped per APPROVED decision 0006 to Figure 1 only (Census FT900 US bilateral trade balance vs World and China, 2002-2017). Composite Fig 2/3/4/5 content moved to new ES2302/ES2303/ES2304/ES2305 dossiers. Census FT900 URL HEAD 200 OK 2026-05-18. All quotes verbatim from PDF (paper pp. 432-433 and Appendix p. 453)."
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "series_id": "AS008",
+  "name": "GPIM Variant - Interwar Adjusted",
+  "chapter": 6,
+  "figures": ["Appendix Figure 6.7.8", "Appendix Figure 6.7.9"],
+  "content_type": "derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": "S213"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 849,
+      "quote": "Current BEA methodology assumes infinite service lives, which is why the earlier BEA methodology based on (point estimates of) actual useful lives is preferable. But both methodologies suffer from the fact that they assume that depletion rates are invariant to economic conditions. In this section, we examine the consequences of allowing for changes in depletion rates due to the cataclysmic events of the Great Depression and World War II. Here, we make use of the fact that historical net stock estimates derived via the PIM are analogous to company book value data on capital stocks.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 849,
+      "quote": "Since current- and constant-cost capital stocks are based on the same depreciation rates as historical stocks, we can adjust all three for the effects of the interwar period by multiplying them by the IRS book value index from 1925 to 1947 and reverting to the GPIM calculation in equations (6.5.22) and (6.5.23) thereafter.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 851,
+      "quote": "We can now create new estimates of gross and net capital stocks. The depletion (depreciation and retirement) rates are taken from BEA 1993. So too are the initial values for each type of stock, because these are typically estimated on the basis of assumed depletion rates. The estimated capital stocks are then adjusted in the previously described manner to allow for the effects of the Great Depression and World War II. ... In comparison to official BEA net capital stock (KNCcorpbea), the new net stock measure (KNCcorp) starts out lower in 1947 due to a combination of its lower initial value and the interwar effect, but then narrows the gap because it grows faster. The new gross stock measure (KNCcorp) starts out higher than the official BEA net stock, but this is more than canceled out by the interwar effect, so that by 1947 the former is 90% of the latter.",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Internal Revenue Service / U.S. Census Bureau / BEA",
+    "publication": "U.S. Historical Statistics of Income (Census 1975, Series V 115, 924-926) for IRS book value index; BEA Fixed Asset Accounts (1993 and 2011 vintages) for depreciation rates and underlying stocks",
+    "table_or_series_id": "IRS book value of net corporate capital assets, 1925-1947 (Census Series V 115); BEA FA T6.3 (historical cost), T6.1 (current cost); BEA 1993 Table A.13 for depreciation rates",
+    "url": "https://www.census.gov/library/publications/1975/compendia/hist_stats_colonial-1970.html",
+    "frequency": "annual",
+    "units": "Index (1925=1.0) for the interwar adjustment multiplier; billions of current dollars for resulting stocks",
+    "license": "Public domain (U.S. Government works)",
+    "available_through": "Census Bureau Historical Statistics archive; BEA archives for 1993-vintage depreciation rates",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "interwar_multiplier_t = (IRS_index_t / BEA_historical_index_t), normalized to 1.0 at 1925. KNHcorp_adj_t = KNHcorp_BEA_t * interwar_multiplier_t for 1925 <= t <= 1947. After 1947: GPIM accumulation (equations 6.5.22, 6.5.23) with BEA 1993 depreciation rates and adjusted initial path. Equivalent re-cast: the post-1947 series is identical to AS006 except that the 1947 starting value is re-anchored to be 28% lower (KNCcorp_1947_adj / KNCcorpbea_1947 = 0.72).",
+  "components": [
+    {"label": "IRS book value index 1925-1947", "source": "Census 1975, Series V 115 (also feeds AS007)"},
+    {"label": "BEA historical-cost index 1925-1947", "source": "BEA FA Table 6.3 (corporate historical cost), 2011 vintage"},
+    {"label": "Interwar adjustment ratio 1925-1947 (the AS008 series itself)", "source": "Derived: IRS_index / BEA_historical_index, normalized to 1.0 at 1925"},
+    {"label": "BEA 1993 depreciation rates", "source": "BEA 1993 SCB Table A.13 (also AS006)"},
+    {"label": "Baseline GPIM machinery post-1947", "source": "AS004 / equations 6.5.22, 6.5.23"}
+  ],
+  "year_range_book": [1925, 1947],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "Interwar adjustment ratio (NOT extended)",
+      "source": "Historical 1925-1947 only; the adjustment is a one-time correction",
+      "url": "https://www.census.gov/library/publications/1975/compendia/hist_stats_colonial-1970.html",
+      "units": "Index (1925=1.0)",
+      "splice_strategy": "none",
+      "concerns": ["AS008 is intrinsically a 1925-1947 historical correction series; there is nothing to extend post-1947 because the adjustment ratio is, by construction, applied only over the interwar window", "The downstream effect IS extended via AS004 (the 'preferred' KNCcorp which incorporates AS008's re-anchoring); but AS008 itself terminates at 1947"]
+    }
+  ],
+  "methodology_notes": [
+    "DELIBERATE COUNTERFACTUAL vs AS007: AS007 produces the absolute IRS-anchored stock level. AS008 isolates the MULTIPLIER (the time-varying ratio IRS_index/BEA_historical_index) that is applied to BEA stocks for the 1925-1947 interwar window. CD2 sample values for AS008 (S213 markdown) confirm this: 1925=1.0000, 1927=1.1243, 1929=1.2475, 1933=1.1245 - these are dimensionless ratios near 1.0, not capital stock levels.",
+    "Why a separate series from AS007? AS008 is the ATOMIC INPUT (the adjustment ratio time series 1925-1947); AS007 is the APPLIED PRODUCT (the adjusted historical stock). Separating them allows the user to inspect the magnitude of the interwar correction independently from the resulting capital-stock path, and to verify the correction is applied with the correct sign and timing.",
+    "Empirical reading: The AS008 multiplier RISES above 1.0 in 1927-1929 (pre-Depression) because IRS book value rose faster than BEA's PIM-imputed historical stock; this is anomalous and may reflect IRS asset revaluations or definitional differences. It then DECLINES toward 1.0 as the Depression hits (massive corporate write-downs bring IRS in line with BEA's smoother path). By 1947, the cumulative effect is that IRS has risen 20% from 1925 while BEA has risen 52% (book p. 849).",
+    "AS008 is one of THREE adjustments combined to produce the preferred KNCcorp (AS004): (1) BEA 1993 depreciation rates = AS006; (2) Interwar IRS adjustment 1925-1947 = AS008; (3) Initial value BEA 2011 = AS005's anchor. The combined effect (book p. 851): 'starts out lower in 1947 due to a combination of its lower initial value and the interwar effect, but then narrows the gap because it grows faster.'",
+    "Output role: AS008 is methodologically the most specialized variant - it isolates a single time-series adjustment used in AS004. Downstream S6xx series should reference AS008 only when explaining or sensitivity-testing the Great Depression component of the capital-stock correction."
+  ],
+  "open_questions": [
+    "AS008 is NOT a time_series in the conventional sense - it is a 1925-1947 adjustment ratio with no post-1947 values (the multiplier becomes 1.0 by construction after 1947 because GPIM takes over). Should content_type be 'derived' or something more specific? Currently 'derived' is correct.",
+    "Sample values in CD2 S213 markdown end at 1943=1.0470. Confirm AS008 should extend to 1947 (where the ratio re-anchors) or terminate earlier.",
+    "The 1927-1929 multiplier values >1.0 deserve scrutiny - they imply IRS book value grew faster than BEA imputed in the late 1920s, possibly reflecting asset revaluations or definitional changes; flag for Phase 4 source-validation."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-as-ch6",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Filled from CD2 S213 markdown + verbatim quotes from Appendix 6.7 Section V.4 and Section V.5 (book pp. 849-851). Three book quotes (definition, source, method). Documents precise difference from AS007 (AS008 = ratio; AS007 = applied stock)."
+    }
+  ]
+}

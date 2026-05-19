@@ -1,0 +1,118 @@
+{
+  "series_id": "S502",
+  "name": "US and UK Wholesale Price Indexes, 1790-2010",
+  "chapter": 5,
+  "figures": [
+    "Fig5.4"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S023",
+    "cd2_id": "S023"
+  },
+  "book_quotes": [
+    {
+      "chapter": 5,
+      "page": 188,
+      "quote": "Figure 5.4, which extends the time span to 2010, shows that these patterns change dramatically after 1939/40. Prices rise more or less continuously in this new epoch, and the previous stationary fluctuations in national price levels are swamped by the cumulative effects of persistent inflation. By 2010 the price level in the United Kingdom had risen fifty-eight-fold relative to its prewar base in 1939, and that in the United States fourteen-fold from its prewar base in 1940.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 5,
+      "page": 189,
+      "quote": "How would classical political economy account for this striking change? Classical economics begins by making a distinction between the theory of relative prices (governed in the long run by prices reflecting competitively equalized rates of profit) and the theory of the general price level.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 5,
+      "page": 788,
+      "quote": "The UK Wholesale Price Index (WPI) is available in Jastram (1977, table 2) from 1560 to 1976 (1930 = 100), except for missing values in 1939-1945, which were filled in using implicit annual growth rates in the NBER monthly for the UK PPI, All commodities Variable ID = m04053.dat, at http://www.nber.org/databases/macrohistory/rectdata/04/. This was extended for 1977-2010 using the implicit growth rates of the UK Producer Price Index available from http://www.statistics.gov.uk/statbase/, variable named PLLU, Price Index of UK Output of Manufactured Goods.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 5,
+      "page": 788,
+      "quote": "US WPI is available in Jastram (1977, 145-146, table 7) for 1800-1976. Data for 1706-1799 was interpolated using the US CPI (see sources for figure 2.5) rescaled by the 1800 ratio of WPI/CPI. The series was extended to 1977-2010 using implicit growth rates of US PPI available from the BLS as Variable WPS00000000 at http://www.bls.gov/ppi/data.htm#.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Shaikh (book companion); Jastram (1977); BLS; UK ONS; NBER Macrohistory",
+    "publication": "Appendix 5.3 Data Tables for Chapter 5, sheet =DATALRprices (Shaikh, anwarshaikhecon.org); Jastram, The Golden Constant (1977), tables 2 and 7",
+    "table_or_series_id": "S010-F (US WPI), S010-R (UK WPI), 1790-2010 full range",
+    "url": "http://www.anwarshaikhecon.org/",
+    "frequency": "annual",
+    "units": "index, 1930 = 100",
+    "license": "academic / publicly posted by author",
+    "available_through": "Shaikh website Appendix 5.3 spreadsheet (DATALRprices)",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "Same component construction as S501, extended to 2010: USWPI for 1977-2010 spliced via BLS WPS00000000 growth rates onto Jastram (1977, table 7); UKWPI for 1977-2010 spliced via UK ONS PLLU growth rates onto Jastram (1977, table 2). Pre-1800 US gap filled from US CPI rescaled by 1800 WPI/CPI ratio; 1939-1945 UK gap filled from NBER m04053. All indexes rebased to 1930 = 100.",
+  "components": [
+    {
+      "label": "USWPI 1790-2010",
+      "source": "Jastram (1977, table 7) 1800-1976; US CPI 1790-1799 (rescaled); BLS WPS00000000 growth rates 1977-2010"
+    },
+    {
+      "label": "UKWPI 1790-2010",
+      "source": "Jastram (1977, table 2) 1790-1938 and 1946-1976; NBER m04053 1939-1945; ONS PLLU growth rates 1977-2010"
+    }
+  ],
+  "year_range_book": [
+    1790,
+    2010
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "US WPI / PPI continuation 2011-present",
+      "source": "BLS PPI Commodity Data, WPS00000000 'All commodities' (legacy WPI identifier; current code WPU00000000)",
+      "url": "https://download.bls.gov/pub/time.series/wp/wp.data.0.Current",
+      "units": "index, 1982 = 100",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "BLS converted WPI series WPS prefixes to WPU prefixes during the PPI reclassification; verify identifier continuity before splicing.",
+        "Rebase to 1930 = 100 requires multiplying by the 2010 anchor value from Shaikh's DATALRprices sheet."
+      ]
+    },
+    {
+      "subseries_label": "UK WPI / PPI continuation 2011-present",
+      "source": "UK ONS Output Producer Price Index (PLLU, Output of Manufactured Products)",
+      "url": "https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/pllu",
+      "units": "index, 2015 = 100 (current ONS base)",
+      "splice_strategy": "growth_rate",
+      "concerns": [
+        "ONS rebased PPI to 2015 = 100 (and earlier to 2010 = 100) since Shaikh's 2010 data; the PLLU identifier survives the rebases but the index level changes.",
+        "Apply growth-rate splice anchored at 2010 to preserve Jastram-era levels."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "S502 is the full long-run series Shaikh uses for figure 5.4. It serves as the source of the chronological slices used in figures 5.3 (1790-1940), 5.5 (UK in gold), and 5.6 (US in gold).",
+    "Construction is 'composite' rather than 'direct' because both legs splice Jastram's historical archive with modern BLS/ONS PPI growth rates, and one gap (UK 1939-1945) is filled by a third source (NBER macrohistory). All splice anchors and identifiers are documented in Appendix 5.2 (pp. 788-789).",
+    "Empirical claim Shaikh emphasises: 58x rise (UK) since 1939 and 14x rise (US) since 1940 by 2010 - regression-test as a post-build validation.",
+    "CD2 ancestor S023 listed BLS and Jastram source_refs with confidence='high'; preserved here. The legacy CD2 validation table contained anomalies (1996 = 857.3, 2020 = 1305.3) that appear to be a USWPI-only column rather than the dual-series index pair plotted; treat with caution."
+  ],
+  "open_questions": [
+    "Resolve whether the figure 5.4 series is plotted as two separate country lines or as a single composite; the y-axis label is shared, so a unit/scale audit is needed at ingestion.",
+    "Investigate the 2020/2026 reference values in CD2 S023 - these post-date the book and may have been added by CD2's extension layer; should not contaminate the book-period dossier.",
+    "Pre-1800 US CPI interpolation rule cross-references figure 2.5 sources; document that linkage cleanly in chapter 2 dossiers (S2xx) to avoid double-counting."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch5",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from Ch5 pp. 188-189 narrative and Appendix 5.2 pp. 788-789; CD2 S023 dossier ported."
+    }
+  ]
+}

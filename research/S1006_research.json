@@ -1,0 +1,95 @@
+{
+  "series_id": "S1006",
+  "name": "Bond and Equity Returns",
+  "chapter": 10,
+  "figures": [
+    "Fig10.10"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S056",
+    "cd2_id": "S056"
+  },
+  "book_quotes": [
+    {
+      "chapter": 10,
+      "page": 468,
+      "quote": "Figure 10.10 displays 1926-2010 average annual stock market and corporate and government bond rates of return, which are generally quite different (Ibbotson 2004, 30-31, table 2-2). These are nominal rates, but subtracting a common rate of inflation from each to make them into real rates would obviously not change the evident difference between the three sets.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 469,
+      "quote": "Source: Ibbotson Associates, SBBI Valuation Edition 2004 Yearbook, 30-31, table 2-2.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 10,
+      "page": 874,
+      "quote": "Rates of return on large company stocks and long-term corporate and government bonds for 1926-2003 are from Ibbotson (2004, 30-31, table 2-2). I thank David Stubbs for having updated these to 2010.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Ibbotson Associates (now Morningstar)",
+    "publication": "Ibbotson SBBI 2004 Valuation Yearbook, Table 2-2 (pp.30-31); updated to 2010 by David Stubbs",
+    "table_or_series_id": "rslarge (large-company stocks), rbcorplt (long-term corporate bonds), rbgovlt (long-term govt bonds)",
+    "url": "https://www.morningstar.com/products/ibbotson-sbbi",
+    "frequency": "annual",
+    "units": "Percent (total return)",
+    "license": "Commercial (Morningstar/Ibbotson SBBI subscription); historical Yearbook reproductions in academic libraries",
+    "available_through": "ShaikhChoppedTables/Appendix10_Ibbotson.xlsx",
+    "discontinued": false,
+    "replaced_by": "Morningstar Direct now publishes Ibbotson SBBI annual data under license"
+  },
+  "construction": "direct",
+  "formula": "rslarge_t, rbcorplt_t, rbgovlt_t = nominal annual total returns from Ibbotson table 2-2",
+  "components": [
+    {"label": "Large Company Stocks total return", "source": "Ibbotson SBBI 2004, table 2-2 (S&P 500 since 1957; S&P 90 1926-1956)"},
+    {"label": "Long-Term Corporate Bonds total return", "source": "Ibbotson SBBI 2004, table 2-2 (~20yr AAA/AA corporate index)"},
+    {"label": "Long-Term Government Bonds total return", "source": "Ibbotson SBBI 2004, table 2-2 (~20yr US Treasury)"}
+  ],
+  "year_range_book": [1926, 2010],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "Damodaran historical equity & bond return tables (publicly available reconstruction)",
+      "source": "Aswath Damodaran, NYU Stern",
+      "url": "https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/histretSP.html",
+      "units": "Percent annual",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "Damodaran's series largely replicates Ibbotson methodology and is free; small definitional differences in corporate bond index"
+      ]
+    },
+    {
+      "subseries_label": "S&P 500 Total Return Index",
+      "source": "S&P Dow Jones Indices / Bloomberg / FRED (SP500 proxy)",
+      "url": "https://fred.stlouisfed.org/series/SP500",
+      "units": "Percent annual",
+      "splice_strategy": "growth_rate",
+      "concerns": ["FRED SP500 is price index, not total return; need TR series from S&P directly"]
+    }
+  ],
+  "methodology_notes": [
+    "Ibbotson SBBI Yearbook is the canonical US asset-class return series; widely used in finance and pension actuarial work.",
+    "David Stubbs extension 2004-2010 acknowledged in Appendix 10.1; methodology consistent with Ibbotson original.",
+    "Table 10.1 averages (1926-2010): Large Stocks 11.88%, LT Corporate Bonds 6.24%, LT Govt Bonds 5.91% - these are the equity-premium-puzzle numbers Shaikh discusses.",
+    "Nominal returns; Shaikh deliberately does NOT real-deflate because his point (a common inflation deflator wouldn't change rank ordering)."
+  ],
+  "open_questions": [
+    "Ibbotson is now a commercial product (Morningstar). Phase 4: confirm whether RSCD can use Damodaran's free reconstruction as the modern source or must licence Ibbotson.",
+    "Should the extension stop at the last freely-available Ibbotson year (2010) or attempt to splice Damodaran for 2011+?"
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-b-ch10",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "CD2 S056 ported; Ibbotson licensing flagged; Damodaran proposed as open extension"
+    }
+  ]
+}

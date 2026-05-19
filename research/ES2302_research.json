@@ -1,0 +1,148 @@
+{
+  "series_id": "ES2302",
+  "name": "Weber & Shaikh (2020) Fig 2 - China Current Account Balance, 1997-2017 (Billion USD level AND percent of GDP); IMF WEO source",
+  "chapter": null,
+  "paper_metadata": {
+    "title": "The U.S.-China trade imbalance and the theory of free trade: debunking the currency manipulation argument",
+    "authors": ["Isabella Weber", "Anwar Shaikh"],
+    "year": 2020,
+    "journal": "International Review of Applied Economics",
+    "volume_issue_pages": "Vol. 35 Nos. 3-4, pp. 432-455",
+    "doi": "10.1080/02692171.2020.1814221",
+    "url": "https://doi.org/10.1080/02692171.2020.1814221"
+  },
+  "figures": [
+    "Figure 2 (Appendix p. 453) - China Current Account Balance, 1997-2017; dual-axis chart with 'Billion USD' (left axis 0-450) and 'Percentage' (right axis 0-12); two series plotted: 'China Current Account Balance in Billions USD' (solid line) and 'China Current Account Balance in Percent of GDP' (dotted line); source label: 'Data Source: IMF, 2018'"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null,
+    "related_rscd_series": ["ES2301", "ES2303", "ES2304", "ES2305", "S1101"],
+    "related_book_chapters": ["Ch11 (international trade, real exchange rate)"]
+  },
+  "decomposition_context": {
+    "decision": "0006",
+    "scheme": "5-way split of original ES2301 composite",
+    "this_dossier_scope": "Figure 2 only (China current account balance, level USD AND % of GDP, 1997-2017, IMF WEO 2018 vintage)",
+    "status": "APPROVED 2026-05-18"
+  },
+  "book_quotes": [
+    {
+      "chapter": "Paper Section 1 - Introduction",
+      "page": 432,
+      "quote": "Large trade imbalances accumulated again on the eve of the 2008 global economic crisis with the U.S.-China imbalance being the most drastic case (Figure 2). This reversed position of the U.S. and Chinese external imbalances is reflected in their bilateral trade balance. In the period leading up to the crisis, China increased its share in the U.S. trade deficit from around one-fifth in 2002, the first year after China's accession to the World Trade Organisation (WTO), to about one-third in 2008. Ten years after the crisis, global trade continues to be unbalanced even though China's current account surplus has sharply decreased to 0.4% of its GDP (International Monetary Fund (IMF) 2019a, 2), while the US deficit with China has reached another record in 2018 at USD 419 billion (U.S. Department of the Treasury, 2019, p. 1-2).",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper Appendix Figure 2",
+      "page": 453,
+      "quote": "China Current Account Balance, 1997-2017. China Current Account Balance in Billions USD. China Current Account Balance in Percent of GDP. Data Source: IMF, 2018.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": "Paper References (IMF 2018 source citation)",
+      "page": 450,
+      "quote": "International Monetary Fund (IMF). 2018. 'World Economic Database. Reports for Selected Country and Subject', online: https://www.imf.org/",
+      "role": "method",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "International Monetary Fund (IMF)",
+    "publication": "World Economic Outlook (WEO) Database -- semi-annual vintages (April and October); paper uses the 2018 vintage",
+    "table_or_series_id": "WEO subjects BCA (Current account balance, level, USD billions) and BCA_NGDPD (Current account balance, percent of GDP) for country code CHN",
+    "url": "https://www.imf.org/en/Publications/WEO/weo-database",
+    "frequency": "annual",
+    "units": "Billion current USD (BCA) AND Percent of GDP (BCA_NGDPD) -- DUAL UNITS; emit as two separate AnuData rows",
+    "license": "Publicly downloadable from IMF.org with attribution; IMF terms permit research and replication use; not under a formal open license but non-blocking for research",
+    "available_through": "IMF WEO database web query + bulk CSV download; also IMF Datamapper (https://www.imf.org/external/datamapper/) for individual subject lookup",
+    "discontinued": false,
+    "replaced_by": null,
+    "secondary_sources_used": [
+      {
+        "agency": "International Monetary Fund (IMF)",
+        "publication": "IMF Datamapper interactive interface for individual subjects",
+        "url": "https://www.imf.org/external/datamapper/BCA@WEO/CHN",
+        "note": "Direct deep-link to China BCA series from WEO; current vintage. Returns 200 OK."
+      },
+      {
+        "agency": "International Monetary Fund (IMF)",
+        "publication": "External Sector Report (annual since 2012; for cross-validation of CA balance)",
+        "url": "https://www.imf.org/en/Publications/ESR",
+        "note": "Provides multilaterally consistent CA balance estimates with adjustment for asymmetries; useful for cross-check of WEO BCA values."
+      }
+    ]
+  },
+  "construction": "direct",
+  "formula": "Two separate annual time series for country CHN: (i) BCA(t) = China current account balance in current USD billions, 1997-2017; (ii) BCA_NGDPD(t) = China current account balance as percent of nominal GDP, 1997-2017. Both pulled directly from IMF WEO database 2018 vintage. Visual: BCA peaks ~$420bn in 2008, falls to ~$165bn by 2017; BCA_NGDPD peaks at ~10% of GDP in 2007, falls to ~1.3% by 2017.",
+  "components": [
+    "Component A (ES2302_level): China current account balance, BCA series, billion USD",
+    "Component B (ES2302_pctgdp): China current account balance, BCA_NGDPD series, percent of GDP"
+  ],
+  "year_range_book": [1997, 2017],
+  "year_range_extension": [1997, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "China current account balance level (BCA) 2018-2024 (extends Fig 2 solid line)",
+      "source": "IMF WEO Database (latest vintage; April or October)",
+      "url": "https://www.imf.org/en/Publications/WEO/weo-database",
+      "units": "Billion current USD",
+      "splice_strategy": "vintage_overlap_anchor",
+      "concerns": [
+        "IMF WEO revises historical CA values with each semi-annual vintage; pin a specific vintage (e.g. 2024 October) and document",
+        "2020 COVID year and 2022 commodity-shock year create structural-break observations -- not data gaps but interpretive ones",
+        "Paper used 2018 vintage; modern vintages may have small historical revisions to 2017 values vs. the published figure"
+      ]
+    },
+    {
+      "subseries_label": "China current account balance percent of GDP (BCA_NGDPD) 2018-2024 (extends Fig 2 dotted line)",
+      "source": "IMF WEO Database",
+      "url": "https://www.imf.org/en/Publications/WEO/weo-database",
+      "units": "Percent of nominal GDP",
+      "splice_strategy": "vintage_overlap_anchor",
+      "concerns": [
+        "Same vintage-revision concerns as level series; denominator NGDPD (nominal GDP, USD) also revised across WEO vintages"
+      ]
+    },
+    {
+      "subseries_label": "Cross-validation: IMF External Sector Report annual CA assessment",
+      "source": "IMF External Sector Report (annual since 2012)",
+      "url": "https://www.imf.org/en/Publications/ESR",
+      "units": "Percent of GDP (CA) plus EBA-model assessments of CA gap",
+      "splice_strategy": "cross_validate_not_splice",
+      "concerns": [
+        "ESR CA values may differ slightly from WEO due to multilateral-consistency adjustments; use for cross-check, not direct splice"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Figure 2 is a DUAL-AXIS chart: left y-axis is 'Billion USD' (range 0-450) for the level series; right y-axis is 'Percentage' (range 0-12) for the %-of-GDP series. Both series share the same x-axis (years 1997-2017) and the same underlying current-account concept from IMF WEO.",
+    "DUAL-UNIT REQUIREMENT: Phase 5 loader MUST emit ES2302 as TWO distinct AnuData series rows (ES2302_level and ES2302_pctgdp), one per unit type, NOT a single row with mixed units. This is documented in CHES_v2_ADEQUACY_REPORT.json D4 and was a key reason for the 5-way split in decision 0006 (single-dossier-per-figure makes the dual-unit emission requirement explicit).",
+    "Source label '2018' on figure refers to IMF WEO data-access vintage year, NOT the period covered. The plotted period is 1997-2017. Phase 5 emits `data_vintage_year=2018` and `period_covered=[1997,2017]` as distinct metadata.",
+    "Paper References list (p. 450) cites the source as 'International Monetary Fund (IMF). 2018. World Economic Database' -- this is the IMF WEO database; the paper's URL is just https://www.imf.org/ (root). The canonical modern URL for the database is https://www.imf.org/en/Publications/WEO/weo-database (200 OK 2026-05-18).",
+    "Figure 2 visually confirms paper's headline narrative (Section 1, p. 432): China's CA surplus peaks ~2007-2008 then falls sharply, reaching 0.4% of GDP per IMF (2019a) by 2019 -- consistent with the extrapolation of the Fig 2 dotted line beyond the 2017 endpoint.",
+    "Related to S1101 (book Ch 11 trade balances 15-country panel including China-via-CD2-addition) but distinct: S1101 uses IMF IFS goods X/M ratio; ES2302 uses IMF WEO BCA current-account-balance level and %-of-GDP. Different concept (current account vs goods balance), different source within IMF (WEO vs IFS), different unit choice."
+  ],
+  "open_questions": [
+    "Phase 5: pin WEO vintage (recommend 2024 October for extension to 2024) and document any revisions to 1997-2017 values vs. paper's 2018 vintage.",
+    "Phase 5: confirm bulk-download path for WEO database (CSV-by-country or full-database export) and document any auth/registration requirement.",
+    "Phase 5: cross-check 2007-2008 peak values (BCA ~420 USD bn, BCA_NGDPD ~10% per figure) against the modern WEO vintage to ensure pre-extension level-anchoring is consistent."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-batch1-a1-decision-0006-fill",
+      "date": "2026-05-18",
+      "status": "reviewed",
+      "notes": "Filled per APPROVED decision 0006. Scope = Fig 2 only (China CA level + %GDP, IMF WEO 2018 vintage). Source URL https://www.imf.org/en/Publications/WEO/weo-database HEAD 200 OK 2026-05-18. Dual-axis figure requires TWO AnuData rows in Phase 5. All quotes verbatim from PDF (Section 1 p. 432, Appendix Fig 2 p. 453, References p. 450)."
+    }
+  ]
+}

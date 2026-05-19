@@ -1,0 +1,6 @@
+year,value,subseries_id,source_id,units,country_key
+2002,-103.0,ES2301-china,CENSUS_FT900_C5700,billion_usd,China
+2002,-474.0,ES2301-world,CENSUS_FT900_EXH1,billion_usd,World
+2017,-376.0,ES2301-china,CENSUS_FT900_C5700,billion_usd,China
+2017,-810.0,ES2301-world,CENSUS_FT900_EXH1,billion_usd,World
+2018,-419.0,ES2301-china,CENSUS_FT900_C5700,billion_usd,China

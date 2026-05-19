@@ -1,0 +1,63 @@
+{
+  "_template_version": "rscd-research-v1.0",
+  "_template_notes": [
+    "Copy to research/{SID}_research.json and populate. Every series gets a dossier.",
+    "Quotes must be verbatim from the book. Page numbers refer to Oxford 2016 edition.",
+    "If a field genuinely doesn't apply (e.g., a cross-sectional series has no extension_candidates), keep the key and set value to null with a note explaining why."
+  ],
+  "series_id": "S###",
+  "name": "",
+  "chapter": null,
+  "figures": [],
+  "content_type": "time_series | cross_sectional | theoretical | derived",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": null,
+      "page": null,
+      "quote": "",
+      "role": "definition | source | method | caveat",
+      "verbatim_check": false
+    }
+  ],
+  "primary_source": {
+    "agency": "",
+    "publication": "",
+    "table_or_series_id": "",
+    "url": "",
+    "frequency": "annual | quarterly | monthly",
+    "units": "",
+    "license": "",
+    "available_through": null,
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "direct | formula | composite",
+  "formula": null,
+  "components": [],
+  "year_range_book": [null, null],
+  "year_range_extension": [null, null],
+  "extension_candidates": [
+    {
+      "subseries_label": "",
+      "source": "",
+      "url": "",
+      "units": "",
+      "splice_strategy": "growth_rate | overlap_anchor | none",
+      "concerns": []
+    }
+  ],
+  "methodology_notes": [],
+  "open_questions": [],
+  "review_history": [
+    {
+      "reviewer": "",
+      "date": "",
+      "status": "draft | reviewed | approved",
+      "notes": ""
+    }
+  ]
+}

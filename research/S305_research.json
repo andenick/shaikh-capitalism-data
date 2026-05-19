@@ -1,0 +1,97 @@
+{
+  "series_id": "S305",
+  "name": "Engel Curve of Necessaries, Case II",
+  "chapter": 3,
+  "figures": [
+    "Fig3.7"
+  ],
+  "content_type": "theoretical",
+  "predecessor_ids": {
+    "cd_id": null,
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "The same result obtains if instead c declines with discretionary income. To see this, we rewrite equation (3.4) as (p1x1 – p1x1min) = c (y – p1x1min), which is a linear relationship between discretionary expenditure on necessary goods and discretionary income. Since c is the slope of this curve, as c falls the curve gets flatter. This saturation property carries over the relation between total expenditure on necessaries and total income, both of which only differ from their discretionary counterparts by a common minimum expenditure on necessaries.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 91,
+      "quote": "x1 = (1 – c) x1min + c (y/p1)",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 3,
+      "page": 93,
+      "quote": "Figures 3.3–3.5 display the results of the case in which x1min rises more slowly than income, figures 3.6–3.7 the case in which c declines with income, and figures 3.8 and 3.9 the characteristic patterns in actual data.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Oxford University Press",
+    "publication": "Shaikh, Anwar. 2016. Capitalism: Competition, Conflict, Crises. New York: Oxford University Press.",
+    "table_or_series_id": "Figure 3.7 (p. 95)",
+    "url": "https://global.oup.com/academic/product/capitalism-9780199390632",
+    "frequency": "annual",
+    "units": "Expenditure on Necessaries (0–30 model units) vs income y (0–60 model units)",
+    "license": "Book figure; reproduction governed by OUP permissions",
+    "available_through": "Book PDF in Inputs/Capitalism Data/",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "p1*x1 = (1 - c(y)) * p1*x1min + c(y)*y, with c declining in y so the Engel curve curves downward at higher y.",
+  "components": [
+    {
+      "label": "y",
+      "role": "input",
+      "description": "Per-capita income, 0–60 model units.",
+      "source": "Author simulation"
+    },
+    {
+      "label": "c(y)",
+      "role": "parameter",
+      "description": "Discretionary propensity, declining in y (Case II).",
+      "source": "Shaikh 2016 p. 93"
+    }
+  ],
+  "year_range_book": [
+    null,
+    null
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [],
+  "methodology_notes": [
+    "Fig 3.7 plots the Engel curve for necessaries under Case II (c declines with income, x1min held constant). It is the integrated counterpart of Fig 3.6.",
+    "HDARP_SERIES_LINKAGE.json: Fig3.7 documentation_type='theoretical', is_empirical=false.",
+    "Stub set content_type='time_series'; re-typed to 'theoretical'.",
+    "Distinct from S303 only in the source of saturation (c(y) vs x1min(y))."
+  ],
+  "open_questions": [
+    "Stub content_type was 'time_series'; re-typed to 'theoretical'. Phase 4 should confirm.",
+    "Exact c(y) profile used to render Fig 3.7 is not stated."
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-wave-a-ch3",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from book p. 93. Theoretical Engel curve, Case II."
+    }
+  ]
+}

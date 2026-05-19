@@ -1,0 +1,43 @@
+{
+  "series_id": "S002",
+  "series_name": "Real Investment",
+  "chapter": 2,
+  "figures": ["Fig 2.2"],
+  "research_date": "2026-03-07",
+  "researcher": "agent",
+  "kb_sources_searched": ["ch18_appendices.md", "ch02_turbulent_trends.md", "appendix_methodology_summary.json"],
+  "entries": [
+    {
+      "entry_type": "methodology_description",
+      "content": "Real investment in fixed nonresidential business capital (equipment and structures) constructed from two spliced sources: (1) BEA Fixed Reproducible Tangible Wealth of the United States (1977, table B4, pp. 343-344), Investment in Fixed Nonresidential Business Capital, 1832-1975, originally in 1970=100; (2) BEA Wealth Table 4.8, line 1 (Investment in Fixed Nonresidential Capital), 1901-2010. Both series were rebased to 1958=100 and spliced at 1901 to create a continuous real investment index.",
+      "source_ref": "Appendix 2.1"
+    },
+    {
+      "entry_type": "source_citation",
+      "content": "BEA Fixed Reproducible Tangible Wealth of the United States, 1925-75, Table B4, pp. 343-344. BEA Wealth Table 4.8, line 1, accessed 9/2/2011. Extension via FRED GPDIC1 (Real Gross Private Domestic Investment, billions chained 2017 dollars).",
+      "source_ref": "BEA Table B4, BEA Wealth 4.8"
+    },
+    {
+      "entry_type": "figure_context",
+      "content": "Fig 2.2 displays real U.S. investment in fixed nonresidential business capital (1958=100) from 1832 to present. The chart shows the extreme volatility of investment over the long run, including railroad booms of the 1840s-1850s, Civil War disruptions, the Great Depression collapse, and postwar investment cycles.",
+      "source_ref": "Shaikh 2016, Ch. 2"
+    }
+  ],
+  "citations": [
+    {
+      "id": "BEA_1977_B4",
+      "full": "U.S. Bureau of Economic Analysis. Fixed Reproducible Tangible Wealth of the United States, 1925-75. Washington, DC: U.S. Government Printing Office, 1977. Table B4, pp. 343-344."
+    },
+    {
+      "id": "BEA_Wealth_4.8",
+      "full": "U.S. Bureau of Economic Analysis. Wealth Tables. Table 4.8, Line 1: Investment in Fixed Nonresidential Capital. Accessed September 2, 2011."
+    },
+    {
+      "id": "FRED_GPDIC1",
+      "full": "Federal Reserve Economic Data (FRED). Real Gross Private Domestic Investment (GPDIC1). St. Louis Fed. https://fred.stlouisfed.org/series/GPDIC1"
+    }
+  ],
+  "methodology_summary": "S002 combines BEA historical fixed investment (1832-1975, table B4) with BEA Wealth Table 4.8 line 1 (1901-2010). The earlier BEA series covers investment in fixed nonresidential business capital (equipment and structures) in constant dollars; the Wealth table provides the modern NIPA-consistent series. Both were rebased to 1958=100 and spliced at 1901. Extension uses FRED GPDIC1 (real, chained 2017 dollars) re-indexed at overlap.",
+  "known_issues": [],
+  "cross_references": ["Appendix2_RealInvestmentUS_1832-2010.csv", "FRED GPDIC1"]
+}

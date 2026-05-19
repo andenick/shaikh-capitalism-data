@@ -1,0 +1,173 @@
+{
+  "series_id": "S604",
+  "name": "Corporate Incremental Rate of Profit (IROP)",
+  "chapter": 6,
+  "figures": [
+    "Fig6.7"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S105",
+    "cd2_id": "S105"
+  },
+  "book_quotes": [
+    {
+      "chapter": 6,
+      "page": 254,
+      "quote": "I will argue in chapter 7, section VI.5, that the rate of profit on new capital can be well approximated by the incremental rate of return on investment, defined as the ratio of the change in gross net operating surplus to current gross investment in fixed capital and inventories. The numerator can be calculated by adding the change in current-cost depreciation to the change in the previously calculated imputations-adjusted net operating surplus, and the denominator can be calculated by adding the estimated inventory changes to BEA data on fixed capital gross investment.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 255,
+      "quote": "Figure 6.7 makes two sets of comparison. The first panel compares the nominal corporate incremental rate of profit (iropcorp) calculated using the ratio of the change in nominal corrected GOS to the sum of nominal gross investment in fixed capital and the change in nominal inventories, with the equivalent NIPA measure (iropcorpnipa) calculated as the ratio of change in nominal gross NIPA profit (change in the real sum of net profit and current-cost depreciation) to nominal gross investment in fixed capital. This is a test of the effects of the corrections to the numerator and denominator, and it is of great interest to discover that the two measures are virtually the same: the corrected incremental rate of profit has essentially the same mean and somewhat lower standard deviation than the simpler NIPA measure.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 256,
+      "quote": "The second chart compares the corrected current (real) corporate incremental rate of profit (iroprcorp) calculated in the same manner as the nominal rate except with real variables, with the NIPA rate (iroprcorpnipa) also using real variables (appendix 6.8.II.7). Here the corrected measure has a slightly higher mean but slightly lower standard deviation (table 6.23). These findings are quite important because the NIPA measures are easily estimated across countries and through time.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 6,
+      "page": 254,
+      "quote": "But the incremental rate of profit used as proxy is different because a change in the current price level would affect the nominal change in gross profit in the numerator and the current-cost equivalent of gross investment in the denominator. Hence, to make the incremental rate of profit comparable to the average profit rate and the (unobserved) profit rate on new capital, we must express its element in current terms. For this reason, I will refer to it as the current incremental rate of profit with the understanding that it is numerically equivalent to a conventional real rate.",
+      "role": "caveat",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (BEA) + Internal Revenue Service",
+    "publication": "BEA NIPA + Fixed Asset Tables + IRS SOI; Shaikh (2016) Appendix 6.7 and Appendix Table 6.8.II.7",
+    "table_or_series_id": "NIPA T1.14 (corporate GVA, profits, depreciation), NIPA T5.3.5 (gross private fixed investment by type, corporate), Fixed Asset T6.4 (current-cost depreciation of corporate fixed assets), IRS SOI corporate inventories; published as Shaikh Appendix 6.8 Table II-7 columns S013AO (nominal adjusted iropcorp), S013AP (nominal NIPA iropcorpnipa), and the corresponding real (current-cost) columns for iroprcorp and iroprcorpnipa",
+    "url": "https://apps.bea.gov/iTable/iTable.cfm?reqid=19&step=2",
+    "frequency": "annual",
+    "units": "rate (decimal; first-difference ratio)",
+    "license": "U.S. public domain (BEA, IRS data)",
+    "available_through": "BEA iTable + Fixed Assets interactive + IRS Tax Stats; Shaikh appendix tables redistributed at www.anwarshaikhecon.org",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "formula",
+  "formula": "Four IROP series plotted in two panels of Fig 6.7. NOMINAL panel: (1) iropcorp = Delta(GOS_corp_adjusted) / (IG_corpbea + Delta(INV_corp)), where Delta(GOS_corp_adjusted) = Delta(NOS_corp) + Delta(D_corp_currentcost) with NOS_corp = P_corp + NMINT_corp (imputed-interest adjusted) and D the current-cost depreciation; (2) iropcorpnipa = Delta(GOS_corpnipa) / IG_corpbea where Delta(GOS_corpnipa) = Delta(P_corpnipa) + Delta(D_corpnipa). REAL (current-cost) panel: (3) iproprcorp and (4) iproprcorpnipa computed in the same manner but with all flows expressed in current (real) terms, numerically equivalent to a conventional real rate per book p. 254. Numerator-denominator both expressed in matching prices so the ratio cancels deflation.",
+  "components": [
+    {
+      "label": "Delta(NOS_corp) = first-difference of imputed-interest-adjusted corporate net operating surplus",
+      "source": "Derived from S601/S602 components: NIPA T1.14 corporate profits P_corp + NIPA T7.11 net monetary interest NMINT_corp",
+      "role": "numerator (adjusted) - net component"
+    },
+    {
+      "label": "Delta(D_corp_currentcost) = first-difference of current-cost depreciation, corporate",
+      "source": "BEA Fixed Asset Table 6.4 (current-cost depreciation of private fixed assets by industry and legal form, corporate)",
+      "role": "numerator increment to convert net to gross operating surplus"
+    },
+    {
+      "label": "Delta(P_corpnipa) = first-difference of NIPA corporate profits",
+      "source": "BEA NIPA Table 1.14",
+      "role": "numerator (NIPA) - net component"
+    },
+    {
+      "label": "IG_corpbea = gross private fixed investment, corporate",
+      "source": "BEA NIPA Table 5.3.5 (gross private domestic fixed investment by type) allocated to corporate sector via Fixed Asset legal-form split",
+      "role": "denominator (fixed-capital component)"
+    },
+    {
+      "label": "Delta(INV_corp) = first-difference of corporate inventories",
+      "source": "IRS Statistics of Income corporate balance sheets (1926-2011), scaled to current cost per Shaikh Appendix 6.7.V",
+      "role": "denominator increment for adjusted IROP only"
+    },
+    {
+      "label": "Current-cost price deflator (for real panel)",
+      "source": "BEA Fixed Asset price index for corporate fixed assets (implicit in current-cost FA tables)",
+      "role": "ensures numerator and denominator share the same current price level so the ratio is real by construction (book p. 254 footnote 22)"
+    }
+  ],
+  "year_range_book": [1947, 2011],
+  "year_range_extension": [1947, 2024],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA NIPA Table 1.14 (Gross Value Added of Domestic Corporate Business)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&nipa_table_list=42",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Re-fetch components (P_corp, NMINT_corp, EC) and re-compute IROP end-to-end; first-difference series cannot be spliced because adjacent vintages produce different first differences at the seam."
+      ]
+    },
+    {
+      "subseries_label": "BEA NIPA Table 5.3.5 (Gross Private Domestic Fixed Investment by Type)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&nipa_table_list=143",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Corporate share of total fixed investment must be allocated using BEA Fixed Asset legal-form tables (T6.7 nonresidential investment by legal form); validate allocation share for current vintage."
+      ]
+    },
+    {
+      "subseries_label": "BEA Fixed Asset Table 6.4 (Current-Cost Depreciation of Private Fixed Assets by Industry and Legal Form)",
+      "source": "U.S. Bureau of Economic Analysis Fixed Assets Accounts",
+      "url": "https://apps.bea.gov/iTable/?reqid=10&step=2",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "Required to convert net to gross operating surplus in the IROP numerator."
+      ]
+    },
+    {
+      "subseries_label": "BEA NIPA Table 7.11 (Monetary Interest Paid and Received by Sector)",
+      "source": "U.S. Bureau of Economic Analysis",
+      "url": "https://apps.bea.gov/iTable/?reqid=19&step=3&isuri=1&nipa_table_list=274",
+      "units": "billions of current USD",
+      "splice_strategy": "none",
+      "concerns": [
+        "CD2 S105 known issue: NMINT_corp from T7.11 is incomplete for the most recent years; the adjusted iropcorp will therefore have a shorter extension window than iropcorpnipa. Freeze adjusted measure at last complete year rather than imputing NMINT forward."
+      ]
+    },
+    {
+      "subseries_label": "IRS Statistics of Income corporate balance sheets (inventories)",
+      "source": "Internal Revenue Service",
+      "url": "https://www.irs.gov/statistics/soi-tax-stats-corporation-data-by-sector-or-industry",
+      "units": "billions of current USD",
+      "splice_strategy": "overlap_anchor",
+      "concerns": [
+        "IRS SOI publication lag (typically 3-4 years) and reporting changes post-2011 may limit Delta(INV_corp) availability; CD2 S105 known issue flags this as a binding constraint on the adjusted IROP extension.",
+        "Note that iropcorpnipa does not require IRS inventories and can therefore extend further; in Shaikh's framework this is precisely why the NIPA proxy is operationally attractive (book p. 256: 'the NIPA measures are easily estimated across countries and through time')."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "S604 is the chapter's culminating profit-signal series. The IROP is the empirical analog of Shaikh's 'rate of return on new capital' (book p. 254): because turbulent equalization of profit rates operates via the mobility of *new* capital, what matters for arbitrage is the return on incremental investment, not the return on the legacy capital stock. Average rates (S601, S602) are too smoothed to function as the marginal price signal.",
+    "Book p. 254 footnote 22: 'all variables must be put in current-currency units, which requires that the past-period flows be translated into current-period equivalents.' This is the same as translating all flows to base-year prices because the resulting current-vs-current or base-vs-base ratio is identical — Shaikh treats the 'current' (real) IROP as numerically equivalent to a real rate. This is why Fig 6.7's caption reads 'Numerically, Current Rates = Real Rates'.",
+    "Book p. 255-256 / Table 6.24 finding: the adjusted (iropcorp) and NIPA proxy (iropcorpnipa) IROP series are 'virtually the same' — mean 13.45% vs 13.62% nominal; 9.50% vs 8.49% real; correlation in shape is very high. This is a critical methodological result: it licenses use of the simpler NIPA IROP for international and inter-sectoral comparisons (Ch7, Ch10) where the imputed-interest and IRS-inventory adjustments are infeasible.",
+    "IROP is inherently more volatile than the average profit rate because of first-differencing. CD2 S105 known issue flags 'wide validation tolerance (5%) required' for replication. The coefficient of variation for the four series in Table 6.24 ranges 0.95-1.68 — order of magnitude higher than the corresponding average profit rates.",
+    "Per book p. 254: the *unobserved* rate of profit on new capital cannot be measured directly; the IROP is therefore explicitly an approximation/proxy. Shaikh argues in Ch7 Sec VI.5 that this proxy is the operationally correct profit signal for inter-industry mobility.",
+    "Extension strategy: re-fetch P_corp, NMINT_corp, D_corp, IG_corp, INV_corp from current BEA/IRS vintages; compute first differences; form the ratio. Do NOT splice the published IROP series — adjacent first-differences across vintage breaks are not consistent. The NIPA-proxy variant (iropcorpnipa) is the operationally extendible version because it does not depend on the partially-unavailable NMINT_corp or IRS inventory data."
+  ],
+  "open_questions": [
+    "GPIM-variants disposition (chapter-wide, cross-cutting S601-S604): CD2 carried S206-S214 as separate series tracking intermediate construction outputs (GDP/GDI decomposition, wage equivalent, imputed-interest by sector, GPIM corporate capital stock, and four GPIM variants by initial-value / vintage / IRS / interwar adjustments). In RSCD these are inputs to S601-S604 rather than independent dossiers. Recommendation: register as AS-prefixed analytical-support series cross-referenced from S601 (capacity utilization u_K, wage-equivalent WEQ2) and S602/S603 (GPIM KGC and its four sensitivity variants). Decision pending Phase 4 review.",
+    "CD2 S105 known issue 'Extension limited by availability of corporate inventory data from IRS post-2011' applies most acutely to S604 because the adjusted IROP depends on Delta(INV_corp). Need to confirm whether IRS Tax Stats now provides SOI corporate balance-sheet inventories through a year past 2011; if not, the adjusted-IROP extension window is bounded at ~2011-2013 while the NIPA-proxy IROP can extend through the current BEA vintage.",
+    "BEA NIPA T5.3.5 reports total private fixed investment, not corporate share directly; verify the corporate allocation methodology in Shaikh's appendix matches the current BEA Fixed Asset T6.7 legal-form split (corporate share of nonresidential investment is conventionally ~75-80%, but vintage-specific).",
+    "Confirm whether Shaikh's published Appendix 6.8 Table II-7 columns S013AO/AP/AQ/AR (the four IROP series) use t-vs-(t-1) differencing or a centered-difference convention; book text says 'change in' which conventionally means first-difference but should be cross-checked against the Excel file.",
+    "Question for Phase 4: with iropcorp ≈ iropcorpnipa empirically (book Table 6.24), is the modeling-stage value of carrying both series independently in RSCD high enough to justify the IRS-extension cost, or should RSCD designate iropcorpnipa as the canonical extended series with iropcorp held only at the book vintage for replication?"
+  ],
+  "review_history": [
+    {
+      "reviewer": "phase3_stubber",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "auto-generated stub"
+    },
+    {
+      "reviewer": "opus-subagent-ch6-retry",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Populated from CD2 S105 dossier + verbatim quotes from book pp. 254-256 (Fig 6.7 definition, numerator/denominator decomposition, real-rate equivalence, NIPA-proxy validation). All four components (Delta GOS adjusted/NIPA, IG, Delta INV) sourced to BEA tables. NMINT and IRS-inventory extension constraints flagged."
+    }
+  ]
+}

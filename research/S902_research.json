@@ -1,0 +1,148 @@
+{
+  "series_id": "S902",
+  "name": "Integrated Output-Capital Ratios and Standard Prices",
+  "chapter": 9,
+  "figures": [
+    "Fig9.4",
+    "Fig9.5",
+    "Fig9.6",
+    "Fig9.7",
+    "Fig9.9",
+    "Fig9.10",
+    "Fig9.11",
+    "Fig9.13",
+    "Fig9.14",
+    "Fig9.15",
+    "Fig9.18"
+  ],
+  "content_type": "cross_sectional",
+  "predecessor_ids": {
+    "cd_id": "S048",
+    "cd2_id": "S048"
+  },
+  "book_quotes": [
+    {
+      "chapter": 9,
+      "page": 406,
+      "quote": "Figure 9.4 presents the key evidence from United States 1998 data on the paths of individual industry integrated output–capital ratios relative to the output–capital ratio of the standard industry (VRR ≡R). It is clear that individual output–capital ratios VR (r)j generally follow very smooth near-linear paths.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 9,
+      "page": 406,
+      "quote": "However, four out of the sixty-ﬁve industries do exhibit somewhat more complex movements in the highest range of r/R. Figure 9.5 focuses on these: oil and gas extraction; broadcasting and telecommunications; funds, trusts, and other ﬁnancial vehicles; and food services and drinking places.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 9,
+      "page": 407,
+      "quote": "This is a linear function passing through the two requisite endpoints: at w = 1, r = 0, we get VR (0)j ≡VR0j = the labor value composition of the jth industry; and at w = 0, r = R, we get VR (R)j = R, which is the labor value composition of the standard industry. The corresponding standard prices of individual commodities p(r)j would then also be exact linear functions.",
+      "role": "method",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 9,
+      "page": 867,
+      "quote": "The following data was taken from the US Bureau of Economics, http://www.bea.gov/iTable/index_industry_io.cfm: industry-by-industry sixty-ﬁve-order total requirements input–output tables B′, after redeﬁnitions designed to match commodity ﬂows to industries; the vector of direct sectoral wage bills W constructed from the Employee Compensation portions of value-added ﬂows in the use tables, after redeﬁnitions; and the market values of industry gross outputs X′ from the same use tables.",
+      "role": "source",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 9,
+      "page": 869,
+      "quote": "Data for total capital stock and total depreciation for private industries in each given year from Fixed Asset Tables 3.1ES (Current-Cost Net Stock of Private Fixed Assets by Industry) and 3.4ES (Current-Cost Depreciation of Private Fixed Assets by Industry), and these were mapped into the sixty-one industries appearing in BEA input–output tables.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "US Bureau of Economic Analysis (BEA)",
+    "publication": "BEA Industry-by-Industry Use Tables (1998, 65-order) + Fixed Asset Tables 3.1ES (current-cost net stock of private fixed assets by industry) and 3.4ES (current-cost depreciation) + Capital Flow (gross investment) matrix from the 1997 benchmark + NIPA Tables 5.8.5A-B (government investment splits) and 7.5 (Consumption of Fixed Capital by Legal Form) and 7.12 (OOH imputations) + Shaikh (1998a)/Ochoa (1984) historical 71-order IO tables for 1947, 1958, 1963, 1967, 1972",
+    "table_or_series_id": "BEA Use Tables (1998, 65 industries, post-redefinition); Fixed Asset Tables 3.1ES, 3.4ES, 7.1B (government); NIPA Tables 1.10, 5.8.5A-B, 6.4D, 7.5, 7.12; capital flow benchmark matrix (180x123 -> reduced to 65x65) at Annual_IOUse_Before_Redefinitions_1998-2010.xls (columns FO6I-FO9I for government); appendix workbooks Appendix9_1998Circ.xlsx, Appendix9_1998Fixed.xlsx, Appendix9_pvdevexample.xlsx (SalvagedInputs/book_data/ShaikhChoppedTables/)",
+    "url": "https://www.bea.gov/industry/input-output-accounts-data",
+    "frequency": "benchmark cross-section (single year: 1998 for figures 9.4-9.14; multi-year 1947-1998 for Fig 9.15 distance summaries)",
+    "units": "VR(r)_j: integrated output-capital ratio (dimensionless); standard prices p(r)_j/v_j (dimensionless, normalized at p(0)=v); distance measures δc/CV/δe (dimensionless); r/R: dimensionless ratio of actual profit rate to maximum profit rate",
+    "license": "BEA public domain; Shaikh appendix workbooks are book-companion supplementary materials (anwarshaikhecon.org)",
+    "available_through": "BEA iTable / Industry Economic Accounts / Fixed Asset Tables; Shaikh's online appendix at http://www.anwarshaikhecon.org/",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": "VR(r)_j ≡ p(r)_j / (p(r)·KT_(j)); standard price p(r)_j / v_j = 1 + (r/R)·(R - VR0_j)/VR0_j (book eq. 9.20, exact under linear-VR assumption); fixed-capital generalization: p(r) = w·l + p(r)·(A+D) + r·p(r)·K (eq. 9.1.5) with KT ≡ K·(I-(A+D))^-1; standard wage w = 1 - r/R chosen as numeraire",
+  "components": [
+    {
+      "label": "BEA 1998 Use Table after redefinitions",
+      "role": "65-order A′ matrix (= I - (B′)^-1) and gross output vector X′"
+    },
+    {
+      "label": "BEA Employee Compensation rows of value-added block",
+      "role": "direct wage bill W -> skill-adjusted labor coefficients l′"
+    },
+    {
+      "label": "BEA Fixed Asset Tables 3.1ES (current-cost net stock) and 3.4ES (current-cost depreciation)",
+      "role": "industry-level capital stock K_j and depreciation D_j vectors for the fixed-capital model"
+    },
+    {
+      "label": "BEA 1997 benchmark capital flow (gross investment) matrix",
+      "role": "supplies inter-industry composition of K_ij by assuming each asset type in industry j grows at the industry's gross growth rate g_j (so capital-stock column proportions = capital-flow column proportions)"
+    },
+    {
+      "label": "NIPA Tables 5.8.5A-B / 7.5 / 7.1B",
+      "role": "splits government capital stock and depreciation into the four IO-table government cells (Federal/State-Local x General/Enterprise)"
+    },
+    {
+      "label": "NIPA Table 7.12 lines 133-134",
+      "role": "owner-occupied housing imputations -> real-estate column correction"
+    },
+    {
+      "label": "Shaikh (1998a) / Ochoa (1984) historical IO tables",
+      "role": "1947, 1958, 1963, 1967, 1972 71-order matrices (real estate excluded) for Fig 9.13-9.15 multi-year distance series"
+    }
+  ],
+  "year_range_book": [
+    1947,
+    1998
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "BEA Use Tables + Fixed Asset Tables (1997-2023+) annual benchmarks",
+      "source": "BEA Industry Economic Accounts and Fixed Assets Accounts",
+      "url": "https://www.bea.gov/industry/input-output-accounts-data",
+      "units": "current-cost net stock and depreciation (millions of $); use table flows (millions of $)",
+      "splice_strategy": "none",
+      "concerns": [
+        "Each benchmark year is a separate cross-section; there is nothing to splice. Adding 2007/2012 would require recomputing the full A′, K, D, KT matrix system and re-running the eigenvalue decomposition for R and p(r).",
+        "BEA capital flow matrix is only produced in benchmark years (last published 1997); post-1997 industry composition of capital stock must be inferred from gross investment by industry-by-asset (BEA Detailed Fixed Asset Tables by type and industry)",
+        "NAICS classification breaks: pre-1997 SIC tables (Ochoa/Shaikh 1998a) and post-1997 NAICS tables share at most a crude crosswalk"
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "S902 covers two derived objects sharing the same input data: (i) integrated output-capital ratios VR(r)_j (Fig 9.4, 9.5, 9.9, 9.11) and (ii) standard prices p(r)_j / v_j as functions of r/R (Fig 9.6, 9.7, 9.10, 9.11). Both are evaluated for each of 65 industries in 1998 over r/R ∈ [0,1].",
+    "Two models are run separately on the same 1998 data: circulating-capital model (K=A, D=0) and fixed-capital model (K, D constructed from BEA Fixed Asset Tables and the 1997 benchmark capital flow matrix). Figures 9.4-9.8 use circulating; figures 9.9-9.12 use fixed.",
+    "Maximum rate of profit R is the reciprocal of the dominant eigenvalue of KT = K·(I-(A+D))^-1 (Appendix 9.1 eq. 9.1.6). Sraffa's standard commodity is implicitly chosen as numeraire (so w = 1 - r/R is exactly linear).",
+    "Empirical eigenvalue decomposition (Appendix 9.1 Sec V, eq. 9.1.19) shows p(r) deviates from a linear function only via (r/R)^2 · Σ sub-dominant terms; observed profit shares ~0.30 give (r/R)^2 ≈ 0.09 so the linear Marx component dominates - this is the empirical finding visualized in Fig 9.4-9.7.",
+    "Four 'exceptional' industries in Fig 9.5 (oil & gas extraction = industry 3; broadcasting & telecom = 39; funds/trusts/other financial vehicles = 44; food services & drinking places = 60) show non-monotonic VR(r) paths but only in the range r/R > 0.75 and within ±1% of their final value (1).",
+    "Distance measures in Fig 9.13/9.14 and Tables 9.12-9.13 quantify the closeness of standard prices to labor times for both models across 1947, 58, 63, 67, 72, 1998 - this is what makes the series multi-year despite each figure being a single-year cross-section."
+  ],
+  "open_questions": [
+    "Series count correctness (per Phase 3 Ch9 mandate): S902 lumps 11 figures into one composite 'series'. A defensible alternative would be to split into (a) VR(r)_j ratios as a function of r/R (Fig 9.4, 9.5, 9.9, 9.11), (b) standard-price/labor-time ratios p(r)_j/v_j (Fig 9.6, 9.7, 9.10), (c) standard-price-vs-direct-price distance measures (Fig 9.13, 9.14, 9.15), and (d) production-price-vs-direct-price scatter in 1972 (Fig 9.18). See CH9_RESEARCH_SUMMARY.md for the recommendation.",
+    "Should the multi-year distance summary (Fig 9.13/9.15 across 1947-1998) be split off as its own derived time-series-of-cross-sectional-distances? It currently lives partly here and partly in S901.",
+    "Capital-flow matrix construction relies on the assumption that all asset types in an industry grow at the same gross rate g_j (Appendix 9.2 Sec IV.1). Validate that BEA's post-1997 detailed Fixed Asset tables (Type x Industry) would allow this assumption to be relaxed in any RSCD replication.",
+    "Verify the dominant-eigenvalue numerical recipe in Phase 5/6 against Shaikh's reported R values (Table 9.18: 1947 R=1.088, 1958=0.9734, ..., 1998=0.7317)."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-b-ch9",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": "Verbatim quotes from PDF pp.406-407 (Sec VII.1) and Appendix 9.2 pp.867-869. Source identified: BEA Use Tables + Fixed Asset Tables + 1997 capital flow benchmark, plus historical Ochoa/Shaikh (1998a) for 1947-1972. The construction is mathematically explicit (Appendix 9.1)."
+    }
+  ]
+}

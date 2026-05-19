@@ -1,0 +1,3109 @@
+{
+  "schema_version": "rscd-chapter-index-v1.0",
+  "generated_by": "_phase2_taxonomy_builder.py",
+  "source_files": {
+    "FIGURE_MASTER_v4": "Inputs\\Capitalism Data\\Outputs\\ShinyApp\\data\\ShaikhAbsorbed\\FIGURE_MASTER_v4.json",
+    "HDARP_SERIES_LINKAGE": "Inputs\\Capitalism Data\\Outputs\\ShinyApp\\data\\ShaikhAbsorbed\\catalogs\\HDARP_SERIES_LINKAGE.json"
+  },
+  "total_chapters": 16,
+  "total_figures": 159,
+  "chapters": [
+    {
+      "chapter": 2,
+      "figures": [
+        {
+          "figure_id": "Fig2.1",
+          "caption": "US Industrial Production Index, 1860–2010",
+          "page": 57,
+          "section": "I. Turbulent Growth",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "appendix 2.1 and appendix 2.2 data tables",
+          "cd_linked_series": [
+            "S001"
+          ],
+          "year_range": {
+            "start": 1860,
+            "end": 2010
+          },
+          "hdarp_table_sources": [
+            {
+              "source": "1966_BEA_Long_Term_Economic_Growth",
+              "tables": [
+                "Series A173"
+              ],
+              "coverage": "1860-1965"
+            },
+            {
+              "source": "Robin_FRED",
+              "tables": [
+                "INDPRO.csv"
+              ],
+              "coverage": "2011-2025"
+            }
+          ]
+        },
+        {
+          "figure_id": "Fig2.2",
+          "caption": "US Real Investment Index, 1832–2010",
+          "page": 57,
+          "section": "I. Turbulent Growth",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "appendix 2.1 and appendix 2.2 data tables",
+          "cd_linked_series": [
+            "S002"
+          ],
+          "year_range": {
+            "start": 1832,
+            "end": 2010
+          },
+          "hdarp_table_sources": [
+            {
+              "source": "1993_DoC_Fixed_Reproducible_Tangible_Wealth",
+              "tables": [
+                "Table B4"
+              ],
+              "coverage": "1832-1989"
+            },
+            {
+              "source": "Robin_BEA",
+              "tables": [
+                "Table_4.1_CurrentCost_Net_1925_2023.csv"
+              ],
+              "coverage": "1925-2023"
+            }
+          ]
+        },
+        {
+          "figure_id": "Fig2.3",
+          "caption": "US Real GDP per Capita, 1889–2010",
+          "page": 58,
+          "section": "I. Turbulent Growth",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "appendix 2.1 and appendix 2.2 data tables",
+          "cd_linked_series": [
+            "S003"
+          ],
+          "year_range": {
+            "start": 1889,
+            "end": 2010
+          },
+          "hdarp_table_sources": [
+            {
+              "source": "MeasuringWorth",
+              "tables": [
+                "USGDP_1790-2025.csv"
+              ],
+              "coverage": "1790-2025"
+            }
+          ]
+        },
+        {
+          "figure_id": "Fig2.4A",
+          "caption": "Business Cycles, 1831–1866",
+          "page": 58,
+          "section": "I. Turbulent Growth",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Ayres 1939, table 9, appendix A, col. 1",
+          "cd_linked_series": [
+            "S004"
+          ],
+          "year_range": {
+            "start": 1831,
+            "end": 1866
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig2.4B",
+          "caption": "Business Cycles, 1867–1902",
+          "page": 59,
+          "section": "I. Turbulent Growth",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Ayres 1939, table 9, appendix A, col. 1",
+          "cd_linked_series": [
+            "S005"
+          ],
+          "year_range": {
+            "start": 1867,
+            "end": 1902
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig2.4C",
+          "caption": "Business Cycles, 1903–1939",
+          "page": 59,
+          "section": "I. Turbulent Growth",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Ayres 1939, table 9, appendix A, col. 1",
+          "cd_linked_series": [
+            "S006"
+          ],
+          "year_range": {
+            "start": 1903,
+            "end": 1939
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig2.5",
+          "caption": "US Manufacturing Productivity and Production Worker Real Compensation, 1889–2010 (1889 = 100)",
+          "page": 60,
+          "section": "II. Productivity, Real Wages, and Real Unit Labor Costs",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "appendix 2.1 and appendix 2.2 data tables",
+          "cd_linked_series": [
+            "S007"
+          ],
+          "year_range": {
+            "start": 1889,
+            "end": 2010
+          },
+          "hdarp_table_sources": [
+            {
+              "source": "1961_Kendrick_Productivity_Trends",
+              "tables": [
+                "chunk_01_table_2.csv",
+                "chunk_02_table_1.csv"
+              ],
+              "coverage": "1869-1960"
+            },
+            {
+              "source": "1966_BEA_Long_Term_Economic_Growth",
+              "tables": [
+                "Series A173"
+              ],
+              "coverage": "1860-1965"
+            }
+          ]
+        },
+        {
+          "figure_id": "Fig2.6",
+          "caption": "US Manufacturing Real Unit Production Labor Cost Index, 1889–2010",
+          "page": 61,
+          "section": "II. Productivity, Real Wages, and Real Unit Labor Costs",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "appendix 2.1 and appendix 2.2 data tables",
+          "cd_linked_series": [
+            "S008"
+          ],
+          "year_range": {
+            "start": 1889,
+            "end": 2010
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig2.7",
+          "caption": "US Unemployment Rate, 1890–2010",
+          "page": 62,
+          "section": "III. The Rate of Unemployment",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "appendix 2.1 and appendix 2.2 data tables",
+          "cd_linked_series": [
+            "S009"
+          ],
+          "year_range": {
+            "start": 1890,
+            "end": 2010
+          },
+          "hdarp_table_sources": [
+            {
+              "source": "1966_BEA_Long_Term_Economic_Growth",
+              "tables": [
+                "CHART 4 data"
+              ],
+              "coverage": "1890-1965"
+            },
+            {
+              "source": "Robin_FRED",
+              "tables": [
+                "UNRATE.csv"
+              ],
+              "coverage": "1948-2025"
+            }
+          ]
+        },
+        {
+          "figure_id": "Fig2.8",
+          "caption": "US and UK Wholesale Price Indexes, 1780–2010 (1930 = 100, Log Scale)",
+          "page": 63,
+          "section": "IV. Prices, Inflation, and the Golden Wave",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "appendix 2.1 and appendix 2.2 data tables",
+          "cd_linked_series": [
+            "S010"
+          ],
+          "year_range": {
+            "start": 1780,
+            "end": 2010
+          },
+          "hdarp_table_sources": [
+            {
+              "source": "1977_Jastram_Golden_Constant",
+              "tables": [
+                "chunk_001_tables.csv"
+              ],
+              "coverage": "1780-1976"
+            },
+            {
+              "source": "MeasuringWorth",
+              "tables": [
+                "Historical WPI"
+              ],
+              "coverage": "1780-2025"
+            }
+          ]
+        },
+        {
+          "figure_id": "Fig2.9",
+          "caption": "US and UK Wholesale Price Indexes, 1780–1940 (1930 = 100, Log Scale)",
+          "page": 64,
+          "section": "IV. Prices, Inflation, and the Golden Wave",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "appendix 2.1 and appendix 2.2 data tables",
+          "cd_linked_series": [
+            "S011"
+          ],
+          "year_range": {
+            "start": 1780,
+            "end": 1940
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig2.10",
+          "caption": "US and UK Wholesale Prices in Ounces of Gold, 1790–2010 (1930 = 100, Log Scale)",
+          "page": 64,
+          "section": "IV. Prices, Inflation, and the Golden Wave",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "appendix 2.1 and appendix 2.2 data tables",
+          "cd_linked_series": [
+            "S012"
+          ],
+          "year_range": {
+            "start": 1790,
+            "end": 2010
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig2.11",
+          "caption": "US Corporate Rate of Profit 1947–2011",
+          "page": 66,
+          "section": "V. The General Rate of Profit",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "appendix 6.7",
+          "cd_linked_series": [
+            "S013"
+          ],
+          "year_range": {
+            "start": 1947,
+            "end": 2011
+          },
+          "hdarp_table_sources": [
+            {
+              "source": "1993_DoC_Fixed_Reproducible_Tangible_Wealth",
+              "tables": [
+                "Table A1-A8"
+              ],
+              "coverage": "1925-1989"
+            },
+            {
+              "source": "Robin_BEA",
+              "tables": [
+                "Table_1_14_Corporate_2012_2025.csv",
+                "Table_4.1_CurrentCost_Net_1925_2023.csv"
+              ],
+              "coverage": "1947-2025"
+            }
+          ]
+        },
+        {
+          "figure_id": "Fig2.12",
+          "caption": "Average Rates of Profit in US Manufacturing 1960–1989",
+          "page": 67,
+          "section": "VI. Turbulent Arbitrage",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "chapter 7 and appendix 7.1",
+          "cd_linked_series": [
+            "S014"
+          ],
+          "year_range": {
+            "start": 1960,
+            "end": 1989
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig2.13",
+          "caption": "Incremental Rates of Profit in US Manufacturing 1960–1989",
+          "page": 68,
+          "section": "VI. Turbulent Arbitrage",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Christodoulopoulos 1995, 138–140; Shaikh 1998b, 395",
+          "cd_linked_series": [
+            "S015"
+          ],
+          "year_range": {
+            "start": 1960,
+            "end": 1989
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig2.14",
+          "caption": "Normalized Total Prices of Production Profit versus Total Unit Labor Costs, US 1972 (Seventy-One Industries)",
+          "page": 70,
+          "section": "VII. Relative Prices",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "chapter 9, tables 9.9 and 9.13",
+          "cd_linked_series": [
+            "S016"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig2.15",
+          "caption": "GDP per Capita of World Regions 1990, International Geary–Khamis Dollars (Log Scale)",
+          "page": 70,
+          "section": "VIII. Convergence and Divergence on a World Scale",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Maddison (2003); appendix 2.1",
+          "cd_linked_series": [
+            "S017"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig2.16",
+          "caption": "GDP per Capita Richest Four and Poorest Four Countries, International Geary–Khamis Dollars (Log Scale)",
+          "page": 71,
+          "section": "VIII. Convergence and Divergence on a World Scale",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "appendix 2.1 Data Sources and Methods; appendix 2.1, table 1",
+          "cd_linked_series": [
+            "S018"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig2.17",
+          "caption": "Ratio of the GDP per Capita of the Richest Four to the Poorest Four Countries, International Geary–Khamis Dollars (Log Scale)",
+          "page": 72,
+          "section": "VIII. Convergence and Divergence on a World Scale",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "appendix 2.1, table 1",
+          "cd_linked_series": [
+            "S018"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 19,
+        "empirical": 19,
+        "time_series": 19,
+        "cross_sectional": 0,
+        "theoretical": 0
+      }
+    },
+    {
+      "chapter": 3,
+      "figures": [
+        {
+          "figure_id": "Fig3.1",
+          "caption": "Budget Constrained Choice",
+          "page": 91,
+          "section": "III. Shaping Structures, Economic Gradients, and Aggregate Emergent Properties - 1. Analytical framework for robust microeconomics",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.2",
+          "caption": "A Rise in the Price of the Necessary Good",
+          "page": 92,
+          "section": "III. Shaping Structures, Economic Gradients, and Aggregate Emergent Properties - 2. Downward sloping demand curves",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.3",
+          "caption": "Change in expenditure relative to change in income, Case I",
+          "page": 94,
+          "section": "III. Shaping Structures, Economic Gradients, and Aggregate Emergent Properties - 3. Income elasticities and Engel's Law",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.4",
+          "caption": "Expenditure Share of Necessaries, Case I",
+          "page": 94,
+          "section": "III. Shaping Structures, Economic Gradients, and Aggregate Emergent Properties - 3. Income elasticities and Engel's Law",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.5",
+          "caption": "Engel Curve of Necessaries, Case I",
+          "page": 94,
+          "section": "III. Shaping Structures, Economic Gradients, and Aggregate Emergent Properties - 3. Income elasticities and Engel's Law",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.6",
+          "caption": "Discretionary Propensity to Consume, Case II",
+          "page": 94,
+          "section": "III. Shaping Structures, Economic Gradients, and Aggregate Emergent Properties - 3. Income elasticities and Engel's Law",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.7",
+          "caption": "Engel Curve of Necessaries, Case II",
+          "page": 95,
+          "section": "III. Shaping Structures, Economic Gradients, and Aggregate Emergent Properties - 3. Income elasticities and Engel's Law",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.8",
+          "caption": "Empirical Expenditure Share on Food (Working Class Budgets, United Kingdom, 1904)",
+          "page": 95,
+          "section": "III. Shaping Structures, Economic Gradients, and Aggregate Emergent Properties - 3. Income elasticities and Engel's Law",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.9",
+          "caption": "Empirical Engel Curve for Food (Working Class Budgets, United Kingdom, 1904)",
+          "page": 95,
+          "section": "III. Shaping Structures, Economic Gradients, and Aggregate Emergent Properties - 3. Income elasticities and Engel's Law",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.10",
+          "caption": "Necessary Good (x1) Demand Curves, Four Different Micro Foundations",
+          "page": 99,
+          "section": "III. Shaping Structures, Economic Gradients, and Aggregate Emergent Properties - 5. Simulations: Insensitivity of aggregate relations to micro foundations",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.11",
+          "caption": "Luxury Good (x2) Demand Curves, Four Different Micro Foundations",
+          "page": 100,
+          "section": "III. Shaping Structures, Economic Gradients, and Aggregate Emergent Properties - 5. Simulations: Insensitivity of aggregate relations to micro foundations",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.12",
+          "caption": "Equilibrium as an Achieved State (Stable Monotonic Adjustment)",
+          "page": 104,
+          "section": "V. Turbulent Gravitation - 1. Equilibration as a turbulent process versus equilibrium as an achieved state",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.13",
+          "caption": "Equilibration as Turbulent Gravitation (Stable Monotonic Adjustment with Noise)",
+          "page": 105,
+          "section": "V. Turbulent Gravitation - 1. Equilibration as a turbulent process versus equilibrium as an achieved state",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.14",
+          "caption": "Equilibrium as Turbulent Growth (Stable Monotonic Adjustment around a Growth Path, with Shocks)",
+          "page": 106,
+          "section": "V. Turbulent Gravitation - 2. Statics, dynamics, and growth cycles",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig3.15",
+          "caption": "Micro Independence of Emergent Macro Properties",
+          "page": 111,
+          "section": "VI. Summary and Central Implications",
+          "type": "diagram",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 15,
+        "empirical": 9,
+        "time_series": 8,
+        "cross_sectional": 1,
+        "theoretical": 6
+      }
+    },
+    {
+      "chapter": 4,
+      "figures": [
+        {
+          "figure_id": "Fig4.1",
+          "caption": "Productivity per Hours Worked at Different Intensities of Labor, for a Reference Shift of a Given Technology",
+          "page": 136,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 1. Work conditions and 're-switching' along the microeconomic production possibilities frontier",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.2",
+          "caption": "Output per Hours Worked at Different Intensities of Labor, for a Reference Shift of a Given Technology",
+          "page": 137,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 1. Work conditions and 're-switching' along the microeconomic production possibilities frontier",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.3",
+          "caption": "Labor Coefficient per Hours Worked at Different Intensities of Labor, for a Reference Shift of a Given Technology",
+          "page": 137,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 1. Work conditions and 're-switching' along the microeconomic production possibilities frontier",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.4",
+          "caption": "Machine Coefficient per Hours Worked at Different Intensities of Labor, for a Reference Shift of a Given Technology",
+          "page": 138,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 1. Work conditions and 're-switching' along the microeconomic production possibilities frontier",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.5",
+          "caption": "Daily Output from Different Shift Combinations Totaling 20-Hours per Day, at the Maximum Intensity of Labor",
+          "page": 139,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 1. Work conditions and 're-switching' along the microeconomic production possibilities frontier",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S019"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.6",
+          "caption": "Average and Marginal Products of Labor of the Maximum Technical Output Curve (10:10)",
+          "page": 141,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 1. Work conditions and 're-switching' along the microeconomic production possibilities frontier",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.7",
+          "caption": "The Short-Run Neoclassical Production Function (Gross Output versus Labor Services, with a Given Machine Stock)",
+          "page": 144,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 2. Output and production coefficients under socially determined work conditions",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.8",
+          "caption": "Output per Hour in the Neoclassical Production Function (Gross Output/Hour versus Capital/Hour, with a Given Machine Stock)",
+          "page": 144,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 2. Output and production coefficients under socially determined work conditions",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.9",
+          "caption": "Output versus Employment, for 8-Hour Shifts Operated up to Engineering Capacity (Two and a Half Shifts)",
+          "page": 145,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 2. Output and production coefficients under socially determined work conditions",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.10",
+          "caption": "Output per Worker versus Machines per Worker, for 8-Hour Shifts Operated up to Engineering Capacity (Two and a Half Shifts)",
+          "page": 145,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 2. Output and production coefficients under socially determined work conditions",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.11",
+          "caption": "Output versus Labor Hours, for 8-Hour Shifts Operated up to Engineering Capacity (Two and a Half Shifts)",
+          "page": 146,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 2. Output and production coefficients under socially determined work conditions",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.12",
+          "caption": "Output per Worker-Hour versus Machines per Worker-Hour, for 8-Hour Shifts Operated up to Engineering Capacity (Two and a Half Shifts)",
+          "page": 146,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 2. Output and production coefficients under socially determined work conditions",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.13",
+          "caption": "Output per Worker-Hour versus Machine-Hours per Worker-Hour, for 8-Hour Shifts Operated up to Engineering Capacity (Two and a Half Shifts)",
+          "page": 147,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 2. Output and production coefficients under socially determined work conditions",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.14A",
+          "caption": "Machine and Materials Coefficients versus Output for 8-Hour Shifts Operated at Normal Intensity up to Engineering Capacity (Two and a Half Shifts)",
+          "page": 151,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 2. Output and production coefficients under socially determined work conditions",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.14B",
+          "caption": "Labor Coefficient and Employment Coefficient versus Output for 8-Hour Shifts Operated at Normal Intensity up to Engineering Capacity (Two and a Half Shifts)",
+          "page": 151,
+          "section": "IV. PRODUCTION AT THE LEVEL OF A FIRM - 2. Output and production coefficients under socially determined work conditions",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.15",
+          "caption": "Typical Cost Curves in the Three Main Economic Traditions",
+          "page": 153,
+          "section": "V. COST, PRICES, AND PROFITS - 1. Assumed shapes of cost curves in neoclassical, neo-Ricardian, and post-Keynesian theories",
+          "type": "diagram",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.16",
+          "caption": "Average and Marginal Costs with Wage Paid per Worker, at Normal Intensity for 8-Hour Shifts up to Engineering Capacity (Two and a Half Shifts)",
+          "page": 155,
+          "section": "V. COST, PRICES, AND PROFITS - 2. Cost curves under general conditions of the labor process",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.17",
+          "caption": "Average and Marginal Costs with Wage Paid per Hour, at Normal Intensity for 8-Hour Shifts up to Engineering Capacity (Two and a Half Shifts)",
+          "page": 156,
+          "section": "V. COST, PRICES, AND PROFITS - 2. Cost curves under general conditions of the labor process",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.18",
+          "caption": "Total Profit with Different Wage Arrangements, at Normal Intensity for 8-Hour Shifts up to Engineering Capacity (Two and a Half Shifts)",
+          "page": 157,
+          "section": "V. COST, PRICES, AND PROFITS - 2. Cost curves under general conditions of the labor process",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.19",
+          "caption": "Automotive Unit Labor Cost",
+          "page": 162,
+          "section": "VI. EMPIRICAL EVIDENCE ON COST CURVES",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.20",
+          "caption": "Automotive Marginal Labor Cost",
+          "page": 162,
+          "section": "VI. EMPIRICAL EVIDENCE ON COST CURVES",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.21",
+          "caption": "Automotive Average Cost",
+          "page": 162,
+          "section": "VI. EMPIRICAL EVIDENCE ON COST CURVES",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.22",
+          "caption": "Automotive Marginal Cost",
+          "page": 163,
+          "section": "VI. EMPIRICAL EVIDENCE ON COST CURVES",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig4.23",
+          "caption": "Cost Curves Chosen by 94% of Business People Surveyed",
+          "page": 163,
+          "section": "VI. EMPIRICAL EVIDENCE ON COST CURVES",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 24,
+        "empirical": 8,
+        "time_series": 8,
+        "cross_sectional": 0,
+        "theoretical": 16
+      }
+    },
+    {
+      "chapter": 5,
+      "figures": [
+        {
+          "figure_id": "Fig5.3",
+          "caption": "Figure 5.3 US and UK Wholesale Price Indexes, 1790-1940 (Log Scale, 1930 = 100)",
+          "page": 188,
+          "section": "III. CLASSICAL THEORIES OF MONEY AND THE NATIONAL PRICE LEVEL",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 5.2",
+          "cd_linked_series": [
+            "S022"
+          ],
+          "year_range": {
+            "start": 1790,
+            "end": 1940
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig5.4",
+          "caption": "Figure 5.4 US and UK Wholesale Price Indexes, 1790-2010 (Log Scale, 1930 = 100)",
+          "page": 189,
+          "section": "III. CLASSICAL THEORIES OF MONEY AND THE NATIONAL PRICE LEVEL",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 5.2",
+          "cd_linked_series": [
+            "S023"
+          ],
+          "year_range": {
+            "start": 1790,
+            "end": 2010
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig5.5",
+          "caption": "Figure 5.5 UK Wholesale Price Indexes in Gold Ounces and Pound Sterling Price of Gold, 1790-2009 (Log Scale, 1930 = 100)",
+          "page": 198,
+          "section": "III. CLASSICAL THEORIES OF MONEY AND THE NATIONAL PRICE LEVEL, subsection 4. Empirical patterns with respect to Marx's theory of money",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 5.2",
+          "cd_linked_series": [
+            "S024"
+          ],
+          "year_range": {
+            "start": 1790,
+            "end": 2009
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig5.6",
+          "caption": "Figure 5.6 US Wholesale Price Indexes in Gold Ounces and US Dollar Price of Gold, 1800-2009 (Log Scale, 1930 = 100)",
+          "page": 199,
+          "section": "III. CLASSICAL THEORIES OF MONEY AND THE NATIONAL PRICE LEVEL, subsection 4. Empirical patterns with respect to Marx's theory of money",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 5.2",
+          "cd_linked_series": [
+            "S025"
+          ],
+          "year_range": {
+            "start": 1800,
+            "end": 2009
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 4,
+        "empirical": 4,
+        "time_series": 4,
+        "cross_sectional": 0,
+        "theoretical": 0
+      }
+    },
+    {
+      "chapter": 6,
+      "figures": [
+        {
+          "figure_id": "Fig6.1",
+          "caption": "Figure 6.1 Corporate and Non-Corporate Profit Rates, 1947-2011",
+          "page": 246,
+          "section": "V. Measurement of Profit and Capital",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 6.7",
+          "cd_linked_series": [
+            "S026"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig6.2",
+          "caption": "Figure 6.2 Corporate Profitability Measures Corrected for Imputed Interest and Inventories versus Conventional NIPA Measures",
+          "page": 249,
+          "section": "VIII. Measurement of Profit and Capital",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 6.7",
+          "cd_linked_series": [
+            "S027"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig6.3",
+          "caption": "Figure 6.3 Component Ratios Accounting for the Difference between Corrected and Conventional Profit Rates",
+          "page": 250,
+          "section": "VIII. Measurement of Profit and Capital",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 6.7",
+          "cd_linked_series": [
+            "S028"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig6.4",
+          "caption": "Figure 6.4 New Capacity Utilization Rate Compared to FRB Rate",
+          "page": 251,
+          "section": "VIII. Measurement of Profit and Capital",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 6.6",
+          "cd_linked_series": [
+            "S026"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig6.5",
+          "caption": "Figure 6.5 Normal-Capacity Corporate Profit Rates, Corrected versus Conventional Measures",
+          "page": 252,
+          "section": "VIII. Measurement of Profit and Capital",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 6.7",
+          "cd_linked_series": [
+            "S026"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig6.6",
+          "caption": "Figure 6.6 Proxies for Normal-Capacity Corporate Profit Rates",
+          "page": 253,
+          "section": "VIII. Measurement of Profit and Capital",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 6.7",
+          "cd_linked_series": [
+            "S027"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig6.7",
+          "caption": "Figure 6.7 Corrected Current Corporate Incremental Rates of Profit and NIPA Proxy Measures (Numerically, Current Rates = Real Rates)",
+          "page": 255,
+          "section": "VIII. Measurement of Profit and Capital",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 6.7, Appendix 6.8.II.7",
+          "cd_linked_series": [
+            "S105"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 7,
+        "empirical": 7,
+        "time_series": 7,
+        "cross_sectional": 0,
+        "theoretical": 0
+      }
+    },
+    {
+      "chapter": 7,
+      "figures": [
+        {
+          "figure_id": "Fig7.11",
+          "caption": "Figure 7.11 Change in Selling Price versus Change in Unit Labor Cost, US 1923-1950 (Ratio of Each Variable in 1950 to its 1923 Value)",
+          "page": 287,
+          "section": "VI. EVIDENCE ON REAL COMPETITION - 2. Empirical evidence on operating costs of plants: Salter",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": null,
+          "cd_linked_series": [
+            "S030"
+          ],
+          "year_range": {
+            "start": 1923,
+            "end": 1950
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig7.12",
+          "caption": "Figure 7.12 Change in Selling Price versus Change in Unit Labor Cost, UK 1954-1963 (Ratio of Each Variable in 1963 to its 1954 Value)",
+          "page": 287,
+          "section": "VI. EVIDENCE ON REAL COMPETITION - 2. Empirical evidence on operating costs of plants: Salter",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": null,
+          "cd_linked_series": [
+            "S031"
+          ],
+          "year_range": {
+            "start": 1954,
+            "end": 1963
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig7.13",
+          "caption": "Figure 7.13 World Manufacturing Average and Incremental Rates of Profit, 1970-1989",
+          "page": 303,
+          "section": "VI. EVIDENCE ON REAL COMPETITION - 5. Empirical evidence on equalization of regulating rates of profit - ii. Empirical evidence for OECD countries",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": null,
+          "cd_linked_series": [
+            "S032"
+          ],
+          "year_range": {
+            "start": 1970,
+            "end": 1989
+          },
+          "hdarp_table_sources": [
+            {
+              "source": "1993_DoC_Fixed_Reproducible_Tangible_Wealth",
+              "tables": [
+                "Manufacturing tables"
+              ],
+              "coverage": "1947-1989"
+            },
+            {
+              "source": "OECD_STAN",
+              "tables": [
+                "B2A3G, P51G"
+              ],
+              "coverage": "1970-1989"
+            }
+          ]
+        },
+        {
+          "figure_id": "Fig7.14",
+          "caption": "Figure 7.14 US Manufacturing Average and Incremental Rates of Profit, 1960-1989",
+          "page": 304,
+          "section": "VI. EVIDENCE ON REAL COMPETITION - 5. Empirical evidence on equalization of regulating rates of profit - ii. Empirical evidence for OECD countries",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": null,
+          "cd_linked_series": [
+            "S033"
+          ],
+          "year_range": {
+            "start": 1960,
+            "end": 1989
+          },
+          "hdarp_table_sources": [
+            {
+              "source": "1993_DoC_Fixed_Reproducible_Tangible_Wealth",
+              "tables": [
+                "chunk_005_table_A1_manufacturing.csv"
+              ],
+              "coverage": "1947-1989"
+            }
+          ]
+        },
+        {
+          "figure_id": "Fig7.15",
+          "caption": "Figure 7.15 Average Rates of Profit in US Industries, 1987-2005",
+          "page": 306,
+          "section": "VI. EVIDENCE ON REAL COMPETITION - 5. Empirical evidence on equalization of regulating rates of profit - ii. Empirical evidence for OECD countries",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 2 in Shaikh 2008",
+          "cd_linked_series": [
+            "S034"
+          ],
+          "year_range": {
+            "start": 1987,
+            "end": 2005
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig7.17",
+          "caption": "Figure 7.17 Incremental Rates of Profit in US Industries, 1987-2005",
+          "page": 308,
+          "section": "VI. EVIDENCE ON REAL COMPETITION - 5. Empirical evidence on equalization of regulating rates of profit - ii. Empirical evidence for OECD countries",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 2 in Shaikh 2008",
+          "cd_linked_series": [
+            "S036"
+          ],
+          "year_range": {
+            "start": 1987,
+            "end": 2005
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig7.19",
+          "caption": "Figure 7.19 Deviations of Greek Manufacturing Profit Rates from Average Profit Rate, 1962-1991",
+          "page": 310,
+          "section": "VI. EVIDENCE ON REAL COMPETITION - 5. Empirical evidence on equalization of regulating rates of profit - ii. Empirical evidence for OECD countries",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": null,
+          "cd_linked_series": [
+            "S038"
+          ],
+          "year_range": {
+            "start": 1962,
+            "end": 1991
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig7.20",
+          "caption": "Figure 7.20 Deviations of Greek Manufacturing Incremental Profit Rates from Average Incremental Rate, 1962-1991",
+          "page": 311,
+          "section": "VI. EVIDENCE ON REAL COMPETITION - 5. Empirical evidence on equalization of regulating rates of profit - ii. Empirical evidence for OECD countries",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": null,
+          "cd_linked_series": [
+            "S039"
+          ],
+          "year_range": {
+            "start": 1962,
+            "end": 1991
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 8,
+        "empirical": 8,
+        "time_series": 8,
+        "cross_sectional": 0,
+        "theoretical": 0
+      }
+    },
+    {
+      "chapter": 8,
+      "figures": [
+        {
+          "figure_id": "Fig8.1",
+          "caption": "Price Paths of Concentrated and Unconcentrated Industries - Wholesale Prices in Oligopolistic and Competitive Industries, 1965-73 (1957-59 = 100)",
+          "page": 371,
+          "section": "II. Empirical Evidence on Competition and Monopoly - Price rigidity and monopoly power",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": null,
+          "cd_linked_series": [
+            "S042"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig8.2",
+          "caption": "Percentage of Prices Increases or No Decreases during Contractions, in Relation to Concentration",
+          "page": 372,
+          "section": "II. Empirical Evidence on Competition and Monopoly - Price rigidity and monopoly power",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": null,
+          "cd_linked_series": [
+            "S043"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig8.3",
+          "caption": "Rate of Profit on Equity versus CR8, Forty-Two Industries",
+          "page": 374,
+          "section": "II. Empirical Evidence on Competition and Monopoly - Empirical evidence on profit rates and monopoly power",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": null,
+          "cd_linked_series": [
+            "S041"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig8.4",
+          "caption": "Rate of Profit on Equity versus CR8, Grouped Data",
+          "page": 375,
+          "section": "II. Empirical Evidence on Competition and Monopoly - Empirical evidence on profit rates and monopoly power",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": null,
+          "cd_linked_series": [
+            "S041"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig8.5",
+          "caption": "Rate of Profit on Assets (%)",
+          "page": 376,
+          "section": "II. Empirical Evidence on Competition and Monopoly - Empirical evidence on profit rates and monopoly power",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": null,
+          "cd_linked_series": [
+            "S044"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig8.6",
+          "caption": "Rates of Return and Concentration (CR4), 1963 and 1969",
+          "page": 377,
+          "section": "II. Empirical Evidence on Competition and Monopoly - Empirical evidence on profit rates and monopoly power",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": null,
+          "cd_linked_series": [
+            "S045"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 6,
+        "empirical": 6,
+        "time_series": 6,
+        "cross_sectional": 0,
+        "theoretical": 0
+      }
+    },
+    {
+      "chapter": 9,
+      "figures": [
+        {
+          "figure_id": "Fig9.1",
+          "caption": "Figure 9.1 Normalized Total Market Prices versus Total Direct Prices, United States",
+          "page": "396",
+          "section": "V. Evidence on Market Prices in Relation to Direct Prices",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S047"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.2",
+          "caption": "Figure 9.2 Market Price–Direct Price Ratios (Seventy-One Industries)",
+          "page": "397",
+          "section": "V. Evidence on Market Prices in Relation to Direct Prices",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S047"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.3",
+          "caption": "Figure 9.3 Three-Sector Numerical Example",
+          "page": "410",
+          "section": "VI. Prices of Production, Direct Prices, and the Rate of Profit",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.4",
+          "caption": "Figure 9.4 Integrated Output–Capital Ratios Relative to the Standard, United States, 1998 (Circulating Capital Model)",
+          "page": "411",
+          "section": "VII. Evidence on Prices of Production",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S048"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.5",
+          "caption": "Figure 9.5 Integrated Output–Capital Ratios for Four Exceptional Industries (Circulating Capital Model)",
+          "page": "412",
+          "section": "VII. Evidence on Prices of Production",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S048"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.6",
+          "caption": "Figure 9.6 Standard Price–Labor Ratios, United States, 1998 (Circulating Capital Model)",
+          "page": "413",
+          "section": "VII. Evidence on Prices of Production",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S048",
+            "S049"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.7",
+          "caption": "Figure 9.7 Standard Prices for Four Exceptional Industries, United States, 1998 (Circulating Capital Model)",
+          "page": "414",
+          "section": "VII. Evidence on Prices of Production",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S048",
+            "S049"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.8",
+          "caption": "Figure 9.8 Actual Wage–Profit Curve, United States, 1998 (Circulating Capital Model)",
+          "page": "414",
+          "section": "VII. Evidence on Prices of Production",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S049"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.9",
+          "caption": "Figure 9.9 Integrated Output–Capital Ratios Relative to the Standard, United States, 1998 (Fixed Capital Model)",
+          "page": "415",
+          "section": "VII. Evidence on Prices of Production",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S048"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.10",
+          "caption": "Figure 9.10 Standard Price–Labor Ratios, United States, 1998 (Fixed Capital Model)",
+          "page": "416",
+          "section": "VII. Evidence on Prices of Production",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S048",
+            "S049"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.11",
+          "caption": "Figure 9.11 Integrated Output–Capital Ratios and Standard Prices for the Four Previously Exceptional Industries, United States, 1998 (Fixed Capital Model)",
+          "page": "417",
+          "section": "VII. Evidence on Prices of Production",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S048"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.12",
+          "caption": "Figure 9.12 Actual Wage–Profit Curve, United States, 1998 (Fixed Capital Model)",
+          "page": "417",
+          "section": "VII. Evidence on Prices of Production",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S049"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.13",
+          "caption": "Figure 9.13 Distance Measures of Standard Price–Labor Time Deviations, United States, 1998 (Circulating and Fixed Capital Models)",
+          "page": "418",
+          "section": "VIII. Empirical Distance Measures",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S048",
+            "S049"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.14",
+          "caption": "Figure 9.14 Elasticities of Distance Measures, Standard Price of Production–Labor Time Deviations, United States, 1998 (Circulating and Fixed Capital Models)",
+          "page": "418",
+          "section": "VIII. Empirical Distance Measures",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S048",
+            "S049"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.15",
+          "caption": "Figure 9.15 Prices of Production versus Direct Prices",
+          "page": "418-420",
+          "section": "IX. Empirical Evidence on Prices of Production and Market Prices",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S048",
+            "S049"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.16",
+          "caption": "Figure 9.16 Prices of Production versus Market Prices",
+          "page": "419",
+          "section": "IX. Empirical Evidence on Prices of Production and Market Prices",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S047",
+            "S049"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.17",
+          "caption": "Figure 9.17 Numerical Example, Production Price–Direct Price and Market Price–Direct Price",
+          "page": "418-420",
+          "section": "IX. Empirical Evidence on Prices of Production and Market Prices",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.18",
+          "caption": "Figure 9.18 Production Price–Direct Price Ratios (Seventy-One Industries)",
+          "page": "419-422",
+          "section": "IX. Empirical Evidence on Prices of Production and Market Prices",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S048",
+            "S049"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.19",
+          "caption": "Figure 9.19 Actual Wage–Profit Curves, 1947–1972",
+          "page": "422-423",
+          "section": "X. Wage–Profit Curves, 1947–1998",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S049"
+          ],
+          "year_range": {
+            "start": 1947,
+            "end": 1972
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.20",
+          "caption": "Figure 9.20 Two Linear Wage–Profit Curves",
+          "page": "430-431",
+          "section": "XI. Origins and Developments of the Classical Theory",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.21",
+          "caption": "Figure 9.21 Samuelson's Surrogate Production Function and Wage–Profit Frontier",
+          "page": "431-433",
+          "section": "XI. Origins and Developments of the Classical Theory",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig9.22",
+          "caption": "Figure 9.22 Two Nonlinear Wage–Profit Curves",
+          "page": "433-434",
+          "section": "XI. Origins and Developments of the Classical Theory",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 22,
+        "empirical": 17,
+        "time_series": 0,
+        "cross_sectional": 17,
+        "theoretical": 5
+      }
+    },
+    {
+      "chapter": 10,
+      "figures": [
+        {
+          "figure_id": "Fig10.1",
+          "caption": "Figure 10.1 Incremental Rates of Profit, Banks versus All Private Industries, 1988–2005",
+          "page": 462,
+          "section": "VI. Empirical Evidence - 1. Equalization of bank regulating rate of profit",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 7.2",
+          "cd_linked_series": [
+            "S050"
+          ],
+          "year_range": {
+            "start": 1988,
+            "end": 2005
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig10.2",
+          "caption": "Figure 10.2 Bank Loan Rate of Interest and Corporate Bond Yield",
+          "page": 463,
+          "section": "VI. Empirical Evidence - 2. Equalization of bank loan rate with corporate bond yield",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 10.1, 10.2",
+          "cd_linked_series": [
+            "S050",
+            "S054"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig10.3",
+          "caption": "Figure 10.3 US Short- and Long-Term Interest Rates",
+          "page": 463,
+          "section": "VI. Empirical Evidence - 3. Equalization of interest rates of similar financial assets",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 10.1",
+          "cd_linked_series": [
+            "S052",
+            "S053"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig10.6",
+          "caption": "Figure 10.6 Interest Rate and the Price Level, 1857–2011",
+          "page": 465,
+          "section": "VI. Empirical Evidence - 6. Interest rates and prices",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 10.1",
+          "cd_linked_series": [
+            "S052"
+          ],
+          "year_range": {
+            "start": 1857,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig10.7",
+          "caption": "Figure 10.7 Relative Price of Finance, 1857–2011",
+          "page": 466,
+          "section": "VI. Empirical Evidence - 6. Interest rates and prices",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 10.1",
+          "cd_linked_series": [
+            "S053"
+          ],
+          "year_range": {
+            "start": 1857,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig10.8",
+          "caption": "Figure 10.8 Real Interest Rate and its HP-Filtered Value, 1857–2011",
+          "page": 467,
+          "section": "VI. Empirical Evidence - 6. Interest rates and prices",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 10.1",
+          "cd_linked_series": [
+            "S054"
+          ],
+          "year_range": {
+            "start": 1857,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig10.9",
+          "caption": "Figure 10.9 Dividend Yield versus Bond Yield, 1871–2011",
+          "page": 468,
+          "section": "VI. Empirical Evidence",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 10.1",
+          "cd_linked_series": [
+            "S055"
+          ],
+          "year_range": {
+            "start": 1871,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig10.10",
+          "caption": "Figure 10.10 Bond and Equity Rates of Return, 1926–2010",
+          "page": 469,
+          "section": "VI. Empirical Evidence",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 10.1",
+          "cd_linked_series": [
+            "S056"
+          ],
+          "year_range": {
+            "start": 1926,
+            "end": 2010
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig10.11",
+          "caption": "Figure 10.11 Equity Current Rate of Return versus Adjusted and NIPA Corporate Current Incremental Rates of Profit, 1948–2011",
+          "page": 470,
+          "section": "VI. Empirical Evidence",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 10.1, 10.2",
+          "cd_linked_series": [
+            "S057"
+          ],
+          "year_range": {
+            "start": 1948,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig10.13",
+          "caption": "Figure 10.13 Actual Real Stock Price versus EMH Rational Price and Classical Warranted Price, 1948–2011",
+          "page": 474,
+          "section": "VI. Empirical Evidence",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 10.1, 10.2",
+          "cd_linked_series": [
+            "S059"
+          ],
+          "year_range": {
+            "start": 1948,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 10,
+        "empirical": 10,
+        "time_series": 10,
+        "cross_sectional": 0,
+        "theoretical": 0
+      }
+    },
+    {
+      "chapter": 11,
+      "figures": [
+        {
+          "figure_id": "Fig11.2",
+          "caption": "Trade Balances in Major Countries, 1960-2009 (Exports/Imports)",
+          "page": 524,
+          "section": "VI. EMPIRICAL EVIDENCE",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 11.1",
+          "cd_linked_series": [
+            "S060"
+          ],
+          "year_range": {
+            "start": 1960,
+            "end": 2009
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig11.3",
+          "caption": "Real Effective Exchange Rates (PPI-Basis), United States and Japan, 1960-2009",
+          "page": 526,
+          "section": "VI. EMPIRICAL EVIDENCE / 2. Empirical evidence on the relation between real exchange rates and real costs",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 11.1",
+          "cd_linked_series": [
+            "S061"
+          ],
+          "year_range": {
+            "start": 1960,
+            "end": 2009
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig11.6",
+          "caption": "Law of One Price at the Aggregate Level, United States and Japan, 1960-2009",
+          "page": 531,
+          "section": "VI. EMPIRICAL EVIDENCE / 3. Implications of the classical approach to long-run exchange rates",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 11.1",
+          "cd_linked_series": [
+            "S062"
+          ],
+          "year_range": {
+            "start": 1960,
+            "end": 2009
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig11.7",
+          "caption": "US Balance of Trade, Real Exchange Rate, and Relative GDP, 1960-2009",
+          "page": 534,
+          "section": "VI. EMPIRICAL EVIDENCE / 3. Implications of the classical approach to long-run exchange rates",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 11.1",
+          "cd_linked_series": [
+            "S063"
+          ],
+          "year_range": {
+            "start": 1960,
+            "end": 2009
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 4,
+        "empirical": 4,
+        "time_series": 4,
+        "cross_sectional": 0,
+        "theoretical": 0
+      }
+    },
+    {
+      "chapter": 12,
+      "figures": [
+        {
+          "figure_id": "Fig12.5",
+          "caption": "Phillips Curve, United States, 1955-1970",
+          "page": 564,
+          "section": "III. KEYNES'S BREAKTHROUGH > 5. The rise and fall of the IS-LM/Phillips-Curve model",
+          "type": "scatter_plot_with_fitted_curve",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S064"
+          ],
+          "year_range": {
+            "start": 1955,
+            "end": 1970
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig12.6",
+          "caption": "US Inflation and Unemployment Rates, 1955-1970 and 1971-1986",
+          "page": 565,
+          "section": "III. KEYNES'S BREAKTHROUGH > 5. The rise and fall of the IS-LM/Phillips-Curve model",
+          "type": "grouped_bar_chart",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S065"
+          ],
+          "year_range": {
+            "start": 1955,
+            "end": 1970
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig12.7",
+          "caption": "Phillips Curve, United States, 1971-1981",
+          "page": 565,
+          "section": "III. KEYNES'S BREAKTHROUGH > 5. The rise and fall of the IS-LM/Phillips-Curve model",
+          "type": "scatter_plot",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S066"
+          ],
+          "year_range": {
+            "start": 1971,
+            "end": 1981
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig12.8",
+          "caption": "Phillips Curve, United States, 1955-2010",
+          "page": 566,
+          "section": "III. KEYNES'S BREAKTHROUGH > 5. The rise and fall of the IS-LM/Phillips-Curve model",
+          "type": "scatter_plot",
+          "content_type": "theoretical",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S067"
+          ],
+          "year_range": {
+            "start": 1949,
+            "end": 2025
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 4,
+        "empirical": 0,
+        "time_series": 0,
+        "cross_sectional": 0,
+        "theoretical": 4
+      }
+    },
+    {
+      "chapter": 13,
+      "figures": [
+        {
+          "figure_id": "Fig13.1",
+          "caption": "Keynesian Multiplier Process with a Temporary Rise in the Level of Investment",
+          "page": 602,
+          "section": "II. A Reconsideration of the Theory of Effective Demand",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig13.2",
+          "caption": "Keynesian Multiplier Process with a Permanent Rise in the Level of Investment",
+          "page": 602,
+          "section": "II. A Reconsideration of the Theory of Effective Demand",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig13.3",
+          "caption": "Generalized Multiplier Process with a Temporary Rise in Investment",
+          "page": 606,
+          "section": "II. A Reconsideration of the Theory of Effective Demand",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig13.4",
+          "caption": "Generalized Multiplier Process with a Permanent Rise in Investment",
+          "page": 606,
+          "section": "II. A Reconsideration of the Theory of Effective Demand",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig13.5",
+          "caption": "Normal Rates of Profit, Interest, and Profit of Enterprise",
+          "page": 623,
+          "section": "III. Modern Classical Economics: The Centrality of Profit",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig13.6",
+          "caption": "Classical Accumulation",
+          "page": 631,
+          "section": "III. Modern Classical Economics: The Centrality of Profit",
+          "type": "diagram",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig13.7",
+          "caption": "Actual and Equilibrium Paths of Output",
+          "page": 633,
+          "section": "III. Modern Classical Economics: The Centrality of Profit",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig13.8",
+          "caption": "Effect of a Permanent Drop in the Rate of Profit",
+          "page": 634,
+          "section": "III. Modern Classical Economics: The Centrality of Profit",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig13.9",
+          "caption": "Effect of a Temporary Rise in Profitability or Purchasing Power",
+          "page": 634,
+          "section": "III. Modern Classical Economics: The Centrality of Profit",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig13.10",
+          "caption": "Effects of Persistent Excess Demand on the Level and Trend of Output",
+          "page": 635,
+          "section": "III. Modern Classical Economics: The Centrality of Profit",
+          "type": "conceptual",
+          "content_type": "theoretical",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 10,
+        "empirical": 1,
+        "time_series": 0,
+        "cross_sectional": 1,
+        "theoretical": 9
+      }
+    },
+    {
+      "chapter": 14,
+      "figures": [
+        {
+          "figure_id": "Fig14.10",
+          "caption": "Nominal GDP Growth and Level of Wages Share, United States, 1948-2011",
+          "page": 664,
+          "section": "VI. Empirical Evidence on Growth, Unemployment, and Wages",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 14.2",
+          "cd_linked_series": [
+            "S068"
+          ],
+          "year_range": {
+            "start": 1948,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig14.11",
+          "caption": "Unemployment Measures, United States, 1948-2011",
+          "page": 664,
+          "section": "VI. Empirical Evidence on Growth, Unemployment, and Wages",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 14.2",
+          "cd_linked_series": [
+            "S069"
+          ],
+          "year_range": {
+            "start": 1948,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig14.12",
+          "caption": "Empirical Path of the Wage Share versus Unemployment Intensity, United States, 1948-2011",
+          "page": 665,
+          "section": "VI. Empirical Evidence on Growth, Unemployment, and Wages",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 14.1, Appendix 14.2",
+          "cd_linked_series": [
+            "S070"
+          ],
+          "year_range": {
+            "start": 1948,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig14.13",
+          "caption": "Rate of Change of Wage Share versus Unemployment Intensity, United States, 1949-2011",
+          "page": 666,
+          "section": "VI. Empirical Evidence on Growth, Unemployment, and Wages",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 14.2",
+          "cd_linked_series": [
+            "S071"
+          ],
+          "year_range": {
+            "start": 1949,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig14.14",
+          "caption": "HP(100)-Filtered Values, Rate of Change of the Wage Share versus Unemployment Intensity, United States, 1949-2011",
+          "page": 667,
+          "section": "VI. Empirical Evidence on Growth, Unemployment, and Wages",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 14.2",
+          "cd_linked_series": [
+            "S072"
+          ],
+          "year_range": {
+            "start": 1949,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig14.15",
+          "caption": "Inflation and Productivity Growth, United States, 1948-2011",
+          "page": 670,
+          "section": "VI. Empirical Evidence on Growth, Unemployment, and Wages",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 14.2",
+          "cd_linked_series": [
+            "S073"
+          ],
+          "year_range": {
+            "start": 1948,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig14.16",
+          "caption": "HP(100)-Filtered Values, Rate of Change of Real Wages versus Unemployment Intensity, United States, 1949-2011",
+          "page": 670,
+          "section": "VI. Empirical Evidence on Growth, Unemployment, and Wages",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 14.2",
+          "cd_linked_series": [
+            "S074"
+          ],
+          "year_range": {
+            "start": 1949,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig14.17",
+          "caption": "HP(100)-Filtered Values, Rate of Change of Nominal Wages versus Unemployment Intensity, United States, 1949-2011",
+          "page": 671,
+          "section": "VI. Empirical Evidence on Growth, Unemployment, and Wages",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "Appendix 14.2",
+          "cd_linked_series": [
+            "S075"
+          ],
+          "year_range": {
+            "start": 1949,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 8,
+        "empirical": 8,
+        "time_series": 8,
+        "cross_sectional": 0,
+        "theoretical": 0
+      }
+    },
+    {
+      "chapter": 15,
+      "figures": [
+        {
+          "figure_id": "Fig15.1",
+          "caption": "Consumer Price Level, United States, 1774–2011",
+          "page": 696,
+          "section": "IV. Growth, Profitability, and the Price Level",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S076"
+          ],
+          "year_range": {
+            "start": 1774,
+            "end": 2011
+          },
+          "hdarp_table_sources": [
+            {
+              "source": "MeasuringWorth",
+              "tables": [
+                "USCPI_1774-2025.csv"
+              ],
+              "coverage": "1774-2025"
+            }
+          ]
+        },
+        {
+          "figure_id": "Fig15.2A",
+          "caption": "Growth Rates of Real Output, US Major Industries, 1987–2010",
+          "page": 701,
+          "section": "VI. Supply-Response",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S077"
+          ],
+          "year_range": {
+            "start": 1987,
+            "end": 2010
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig15.2B",
+          "caption": "Growth Rates of Real Output, US Major Industries, 1987–2010 (continued)",
+          "page": 701,
+          "section": "VI. Supply-Response",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S078"
+          ],
+          "year_range": {
+            "start": 1987,
+            "end": 2010
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig15.3",
+          "caption": "Growth of Nominal GDP and Relative New Purchasing Power, 1950–2010",
+          "page": 704,
+          "section": "VIII. Empirical Evidence - 1. United States",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S079"
+          ],
+          "year_range": {
+            "start": 1950,
+            "end": 2010
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig15.7",
+          "caption": "Classical and Conventional Phillips-Type Curves, 1948–2010",
+          "page": 707,
+          "section": "VIII. Empirical Evidence - 1. United States - iii. Inflation",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S083"
+          ],
+          "year_range": {
+            "start": 1948,
+            "end": 2010
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig15.8",
+          "caption": "Classical and Conventional Phillips-Type Curves, 1948–1981",
+          "page": 708,
+          "section": "VIII. Empirical Evidence - 1. United States - iii. Inflation",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S084"
+          ],
+          "year_range": {
+            "start": 1948,
+            "end": 1981
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig15.9",
+          "caption": "Classical and Conventional Phillips-Type Curves, 1982–2010",
+          "page": 710,
+          "section": "VIII. Empirical Evidence - 1. United States - iii. Inflation",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S085"
+          ],
+          "year_range": {
+            "start": 1982,
+            "end": 2010
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig15.12",
+          "caption": "World Inflation versus Growth of Private and Public Credit, 1970–1988",
+          "page": 718,
+          "section": "VIII. Empirical Evidence - 3. Inflation on a world scale",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S088"
+          ],
+          "year_range": {
+            "start": 1970,
+            "end": 1988
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig15.13",
+          "caption": "World Inflation versus Growth of Total Private and Public Credit, 1988–2011",
+          "page": 719,
+          "section": "VIII. Empirical Evidence - 3. Inflation on a world scale",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S089"
+          ],
+          "year_range": {
+            "start": 1988,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 9,
+        "empirical": 9,
+        "time_series": 9,
+        "cross_sectional": 0,
+        "theoretical": 0
+      }
+    },
+    {
+      "chapter": 16,
+      "figures": [
+        {
+          "figure_id": "Fig16.1",
+          "caption": "US and UK Golden Waves, 1786–2010 (1930 = 100) Deviations from Cubic Time Trends",
+          "page": 727,
+          "section": "I. Introduction - 1. Depressions recur",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S093"
+          ],
+          "year_range": {
+            "start": 1786,
+            "end": 2010
+          },
+          "hdarp_table_sources": [
+            {
+              "source": "1977_Jastram_Golden_Constant",
+              "tables": [
+                "chunk_001_tables.csv"
+              ],
+              "coverage": "1786-1976"
+            }
+          ]
+        },
+        {
+          "figure_id": "Fig16.3",
+          "caption": "Hourly Real Wages and Productivity, US Business Sector, 1947–2012 (1982 = 100)",
+          "page": 731,
+          "section": "II. Profitability in the Postwar Period - 2. Productivity and real wages",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S095"
+          ],
+          "year_range": {
+            "start": 1947,
+            "end": 2012
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig16.7",
+          "caption": "US and OECD Short-Term Interest Rates, 1960–2011",
+          "page": 734,
+          "section": "II. Profitability in the Postwar Period - 5. The extraordinary postwar path of the interest rate",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S098"
+          ],
+          "year_range": {
+            "start": 1960,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig16.8",
+          "caption": "Net Average and Real Incremental Rates of Profit, US Corporations, 1947–2011",
+          "page": 735,
+          "section": "II. Profitability in the Postwar Period - 6. The rate of profit-of-enterprise and the great boom after the 1980s",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S099"
+          ],
+          "year_range": {
+            "start": 1947,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig16.9",
+          "caption": "Household Debt-to-Income Ratio, United States, 1975–2011",
+          "page": 735,
+          "section": "II. Profitability in the Postwar Period - 6. The rate of profit-of-enterprise and the great boom after the 1980s",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S100"
+          ],
+          "year_range": {
+            "start": 1975,
+            "end": 2011
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig16.10",
+          "caption": "Household Debt-Service Ratio, 1980–2012",
+          "page": 736,
+          "section": "II. Profitability in the Postwar Period - 6. The rate of profit-of-enterprise and the great boom after the 1980s",
+          "type": "empirical",
+          "content_type": "time_series",
+          "has_axis": true,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S101"
+          ],
+          "year_range": {
+            "start": 1980,
+            "end": 2012
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 6,
+        "empirical": 6,
+        "time_series": 6,
+        "cross_sectional": 0,
+        "theoretical": 0
+      }
+    },
+    {
+      "chapter": 17,
+      "figures": [
+        {
+          "figure_id": "Fig17.1",
+          "caption": "The Global Crisis of 2007 in Light of Past Long Waves",
+          "page": 749,
+          "section": "Summary and Conclusions",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "Appendix 5.3",
+          "cd_linked_series": [
+            "S102"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig17.2",
+          "caption": "Personal Income Distribution below $200,000, Cumulative Probability from Above",
+          "page": 752,
+          "section": "Summary and Conclusions",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "",
+          "cd_linked_series": [
+            "S103"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        },
+        {
+          "figure_id": "Fig17.3",
+          "caption": "Personal Income Distribution above $200,000, Cumulative Probability from Above",
+          "page": 753,
+          "section": "Summary and Conclusions",
+          "type": "empirical",
+          "content_type": "cross_sectional",
+          "has_axis": false,
+          "appendix_reference": "Appendices 17.1 and 17.2",
+          "cd_linked_series": [
+            "S104"
+          ],
+          "year_range": {
+            "start": null,
+            "end": null
+          },
+          "hdarp_table_sources": []
+        }
+      ],
+      "counts": {
+        "total": 3,
+        "empirical": 3,
+        "time_series": 0,
+        "cross_sectional": 3,
+        "theoretical": 0
+      }
+    }
+  ]
+}

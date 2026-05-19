@@ -1,0 +1,96 @@
+{
+  "series_id": "S209",
+  "name": "US Unemployment Rate",
+  "chapter": 2,
+  "figures": [
+    "Fig2.7"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S009",
+    "cd2_id": "S009"
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 60,
+      "quote": "Figure 2.7 displays the path of the (official) unemployment rate from 1890 to 2010. It provides a vivid picture of the enormous impact that Great Depressions have on economic life.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 764,
+      "quote": "Figure 2.7 US Unemployment Rate, 1890–2010. Civilian unemployment rate 1860–1970 from BEA (1966, Series B1-B2), and from 1948 to 2010 from the Economic Report of the President, http://www.gpo.gov/fdsys/browse/collection.action?collectionCode=ERP., table b-40.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "U.S. Bureau of Economic Analysis (historical) + Council of Economic Advisers / GPO (modern)",
+    "publication": "BEA (1966) Long Term Economic Growth Series B1–B2 (1860–1970); Economic Report of the President table B-40 (1948–2010)",
+    "table_or_series_id": "BEA LTEG B1–B2 spliced with ERP Table B-40",
+    "url": "https://www.govinfo.gov/app/collection/erp",
+    "frequency": "annual",
+    "units": "Percent of civilian labor force",
+    "license": "Public domain (US federal government)",
+    "available_through": "FRED UNRATE (modern continuation)",
+    "discontinued": false,
+    "replaced_by": null
+  },
+  "construction": "composite",
+  "formula": null,
+  "components": [
+    {
+      "label": "BEA (1966) LTEG Series B1–B2 (civilian unemployment rate)",
+      "period": [
+        1860,
+        1970
+      ],
+      "native_units": "Percent"
+    },
+    {
+      "label": "Economic Report of the President Table B-40",
+      "period": [
+        1948,
+        2010
+      ],
+      "native_units": "Percent"
+    }
+  ],
+  "year_range_book": [
+    1890,
+    2010
+  ],
+  "year_range_extension": [
+    2011,
+    2025
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "FRED UNRATE (Civilian Unemployment Rate)",
+      "source": "BLS Current Population Survey (via FRED)",
+      "url": "https://fred.stlouisfed.org/series/UNRATE",
+      "units": "Percent, seasonally adjusted (annualize for splice)",
+      "splice_strategy": "none",
+      "concerns": [
+        "Same underlying BLS CPS concept as ERP Table B-40; direct continuation."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Composite splice of BEA LTEG B1–B2 with ERP Table B-40 per Appendix 2.1 (p. 764). Modern extension is seamless via FRED UNRATE (annual mean of monthly).",
+    "CD2 S009 dossier validated; pre-1948 LTEG estimates differ in methodology from modern CPS — historical comparability caveat."
+  ],
+  "open_questions": [
+    "ERP archive URL has migrated to govinfo.gov; verify table numbering still maps to B-40 in current annual editions."
+  ],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}

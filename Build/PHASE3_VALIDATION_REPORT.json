@@ -1,0 +1,481 @@
+{
+  "schema_version": "rscd-phase3-validation-v1.0",
+  "generated_at": "2026-05-18T21:03:46.359198+00:00",
+  "total": 118,
+  "pass": 118,
+  "fail": 0,
+  "by_series": {
+    "AS001": {
+      "status": "PASS",
+      "issues": []
+    },
+    "AS002": {
+      "status": "PASS",
+      "issues": []
+    },
+    "AS003": {
+      "status": "PASS",
+      "issues": []
+    },
+    "AS004": {
+      "status": "PASS",
+      "issues": []
+    },
+    "AS005": {
+      "status": "PASS",
+      "issues": []
+    },
+    "AS006": {
+      "status": "PASS",
+      "issues": []
+    },
+    "AS007": {
+      "status": "PASS",
+      "issues": []
+    },
+    "AS008": {
+      "status": "PASS",
+      "issues": []
+    },
+    "AS009": {
+      "status": "PASS",
+      "issues": []
+    },
+    "ES2001": {
+      "status": "PASS",
+      "issues": []
+    },
+    "ES2101": {
+      "status": "PASS",
+      "issues": []
+    },
+    "ES2201": {
+      "status": "PASS",
+      "issues": []
+    },
+    "ES2301": {
+      "status": "PASS",
+      "issues": []
+    },
+    "ES2302": {
+      "status": "PASS",
+      "issues": []
+    },
+    "ES2303": {
+      "status": "PASS",
+      "issues": []
+    },
+    "ES2304": {
+      "status": "PASS",
+      "issues": []
+    },
+    "ES2305": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1001": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1002": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1003": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1004": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1005": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1006": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1007": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1008": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1101": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1102": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1103": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1104": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1301": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1401": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1402": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1403": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1404": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1405": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1406": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1407": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1408": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1501": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1502": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1503": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1504": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1505": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1506": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1507": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1508": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1509": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1601": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1602": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1603": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1604": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1605": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1606": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1701": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1702": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S1703": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S201": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S202": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S203": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S204": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S205": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S206": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S207": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S208": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S209": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S210": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S211": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S212": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S213": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S214": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S215": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S216": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S217": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S218": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S301": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S302": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S303": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S304": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S305": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S306": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S307": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S308": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S309": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S401": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S402": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S403": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S404": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S405": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S406": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S407": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S408": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S501": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S502": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S503": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S504": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S601": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S602": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S603": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S604": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S701": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S702": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S703": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S704": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S705": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S706": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S707": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S708": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S709": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S710": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S711": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S801": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S802": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S803": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S804": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S805": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S901": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S902": {
+      "status": "PASS",
+      "issues": []
+    },
+    "S903": {
+      "status": "PASS",
+      "issues": []
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "series_id": "S211",
+  "name": "US and UK Wholesale Price Indexes, 1780–1940 (1930=100, Log Scale)",
+  "chapter": 2,
+  "figures": [
+    "Fig2.9"
+  ],
+  "content_type": "time_series",
+  "predecessor_ids": {
+    "cd_id": "S011",
+    "cd2_id": null
+  },
+  "book_quotes": [
+    {
+      "chapter": 2,
+      "page": 62,
+      "quote": "When placed on the same scale as in figure 2.8, the long swings in prices prior to the 1940s are dwarfed by the subsequent secular increases. It is therefore useful to separate out the two episodes, as in figure 2.9. Then two things stand out. For more than a century-and-a-half from 1780 to 1940, price movement displays distinct long swings with no overall trend.",
+      "role": "definition",
+      "verbatim_check": true
+    },
+    {
+      "chapter": 2,
+      "page": 764,
+      "quote": "Gold prices from 1780 to 1785 are available for the United Kingdom in Jastram (1977) and were estimated for the United States for the same interval using the 1786 ratio of US/UK gold prices (which is essentially constant until 1800). For 1786–2010, the US gold price is the official price for 1786–1790 available from Measuring Worth.com, http://www.measuringworth.com/gold/, and the market price thereafter. The same source has the UK market gold price in UK£ from 1786–1949, and in US$ thereafter, so the latter segment was converted to UK£ using the US$–UK£ exchange from the same site. Sources and methods for 1786–1945 appear in Lawrence H. Officer and Samuel H. Williamson, “The Price of Gold, 1257–2010,” http://www.measuringworth.com/gold/, and in Lawrence H. Officer, “Dollar–Pound Exchange Rate From 1791,” http://www.measuringworth.com/exchangepound/, respectively. The UK Wholesale Price Index (WPI) is available in Jastram (1977, table 2) from 1560 to 1976 (1930 = 100), except for missing values in 1939–1945, which were filled in using implicit annual growth rates in the NBER monthly for the UK PPI, All commodities Variable ID = m04053.dat, http://www.nber.org/databases/macrohistory/rectdata/04/. This was extended for 1977–2010 using the implicit growth rates of the UK Producer Price Index available from http://www.statistics.gov.uk/statbase/, variable named PLLU, Price Index of UK Output of Mfg Goods. US WPI is available in Jastram (1977, 145–146, table 7) for 1800–1976. Data for 1706–1799 was interpolated using the US CPI (see sources for figure 2.5) rescaled by the 1800 ratio of WPI/CPI. The series was extended to 1977–2010 using implicit growth rates of US PPI available from the BLS as Variable WPS00000000 at http://www.bls.gov/ppi/data.htm#.",
+      "role": "source",
+      "verbatim_check": true
+    }
+  ],
+  "primary_source": {
+    "agency": "Jastram (1977) historical + NBER macrohistory + MeasuringWorth (CPI interpolation)",
+    "publication": "Jastram, R. W. (1977) The Golden Constant",
+    "table_or_series_id": "Jastram (1977) Table 2 (UK WPI) + Table 7 (US WPI)",
+    "url": "https://catalog.hathitrust.org/Record/000404889",
+    "frequency": "annual",
+    "units": "Index, 1930=100 (log scale)",
+    "license": "Historical data tables out of copyright; published source under standard book copyright",
+    "available_through": "HathiTrust / academic libraries",
+    "discontinued": true,
+    "replaced_by": "No modern continuation of Jastram's exact construction; modern BLS PPI / ONS PPI are concept-similar successors."
+  },
+  "construction": "composite",
+  "formula": null,
+  "components": [
+    {
+      "label": "UK WPI 1780–1940 (Jastram 1977 Table 2; 1939–1940 from NBER m04053)",
+      "period": [
+        1780,
+        1940
+      ]
+    },
+    {
+      "label": "US WPI 1780–1940 (Jastram 1977 Table 7; 1780–1799 interpolated via MeasuringWorth CPI)",
+      "period": [
+        1780,
+        1940
+      ]
+    }
+  ],
+  "year_range_book": [
+    1780,
+    1940
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
+  "extension_candidates": [
+    {
+      "subseries_label": "No extension (historical episode only; truncated by design at 1940)",
+      "source": "n/a",
+      "url": "",
+      "units": "",
+      "splice_strategy": "none",
+      "concerns": [
+        "Fig 2.9 is explicitly the pre-1940 subperiod of Fig 2.8 to display long waves; extending it past 1940 would defeat its analytical purpose. For post-1940 see Fig 2.8 (S210)."
+      ]
+    }
+  ],
+  "methodology_notes": [
+    "Same underlying data as S210 truncated to 1780–1940 to expose the long-wave pattern.",
+    "Per Appendix 2.1, this is a windowed view of the same Jastram-based construction."
+  ],
+  "open_questions": [],
+  "review_history": [
+    {
+      "reviewer": "opus-subagent-wave-a-ch2",
+      "date": "2026-05-18",
+      "status": "draft",
+      "notes": ""
+    }
+  ]
+}
