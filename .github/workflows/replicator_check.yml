@@ -1,0 +1,76 @@
+name: Replicator Check
+
+on:
+  push:
+    branches: [master, main]
+    paths:
+      - 'Technical/**'
+      - 'replicator/**'
+      - 'code/**'
+      - '.github/workflows/replicator_check.yml'
+  pull_request:
+    branches: [master, main]
+  schedule:
+    # Weekly Monday 06:00 UTC — catches upstream API drift
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      BEA_API_KEY: ${{ secrets.BEA_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # The repo ships the replicator at Technical/replicator/ with its own requirements
+          if [ -f Technical/replicator/requirements.txt ]; then
+            pip install -r Technical/replicator/requirements.txt
+          elif [ -f Technical/requirements.txt ]; then
+            pip install -r Technical/requirements.txt
+          fi
+
+      - name: Phase 3 research validator
+        run: |
+          if [ -f Technical/code/utils/_phase3_research_validator.py ]; then
+            python Technical/code/utils/_phase3_research_validator.py
+          fi
+
+      - name: Phase 4 adequacy validator
+        run: |
+          if [ -f Technical/code/utils/_phase4_adequacy_validator.py ]; then
+            python Technical/code/utils/_phase4_adequacy_validator.py
+          fi
+
+      - name: V03 validator sweep (replicator --report)
+        run: |
+          if [ -f Technical/replicator/scripts/replicate.py ]; then
+            cd Technical/replicator
+            # Ensure api_keys.env exists (FRED key from secrets)
+            mkdir -p config
+            echo "FRED_API_KEY=${FRED_API_KEY}" > config/api_keys.env
+            [ -n "${BEA_API_KEY}" ] && echo "BEA_API_KEY=${BEA_API_KEY}" >> config/api_keys.env || true
+            python scripts/replicate.py --report
+          fi
+
+      - name: Upload validation report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-report
+          path: |
+            Technical/Build/PHASE3_VALIDATION_REPORT.json
+            Technical/Build/PHASE4_VALIDATION_REPORT.json
+            Technical/VALIDATION_REPORT.json
+          retention-days: 30

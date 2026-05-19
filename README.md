@@ -1,8 +1,9 @@
 # RSCD — Replication of Shaikh (2016)
 
+[![Replicator Check](https://github.com/andenick/shaikh-capitalism-data/actions/workflows/replicator_check.yml/badge.svg)](https://github.com/andenick/shaikh-capitalism-data/actions/workflows/replicator_check.yml)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data-CC--BY--4.0-orange.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-v1.0-green.svg)](RELEASE_NOTES_v1.0.md)
+[![Version](https://img.shields.io/badge/Version-v2.0.0-green.svg)](RELEASE_NOTES_v1.0.md)
 
 Open replication and 1860–2025 extension of the empirical material in:
 
