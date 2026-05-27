@@ -15,7 +15,7 @@ Conventions
 - HP filtering for S1604 uses lambda=100 (Shaikh's explicit choice for annual
   data); Ravn-Uhlig 6.25 is emitted as a sensitivity variant only.
 - S1605 unit conversion (HCCSDODNS millions / (DPI billions * 1000)) is
-  implemented in P02_S1605_construct.py with an explicit dimensional comment.
+  implemented in P02_S1605.py with an explicit dimensional comment.
 """
 from __future__ import annotations
 

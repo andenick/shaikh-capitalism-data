@@ -4,7 +4,7 @@
 **Phase**: 5 (Ingestion)
 **Series ID**: ES2201
 **Content type**: `time_series`
-**Status**: ingested
+**Status**: study_complete
 **Authored**: 2026-05-18
 **Author**: opus-fanout-ES
 

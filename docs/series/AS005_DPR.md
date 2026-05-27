@@ -1,8 +1,7 @@
 # AS005 — GPIM Variant - BEA 2011 Reference (Pure GPIM Regenerator) (Data Provenance Record)
 
 **Chapter:** Ch6  **Content type:** derived  **Construction:** formula
-**Status:** ingested  **Year range (book):** 1925-2011
-
+***Status**: book_period_validated
 ## Definition
 
 GPIM Variant - BEA 2011 Reference (Pure GPIM Regenerator)

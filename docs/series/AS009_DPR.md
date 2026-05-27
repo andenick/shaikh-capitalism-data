@@ -1,8 +1,7 @@
 # AS009 — IRS Corporate Inventories and Total Capital Stock (Data Provenance Record)
 
 **Chapter:** Ch6  **Content type:** derived  **Construction:** formula
-**Status:** ingested  **Year range (book):** 1946-2011
-
+***Status**: book_period_validated
 ## Definition
 
 IRS Corporate Inventories and Total Capital Stock

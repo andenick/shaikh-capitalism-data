@@ -1,7 +1,7 @@
 # S501 — US and UK Wholesale Price Indexes, 1790-1940
 
 **Data Provenance Record (DPR)** · **Phase**: 5 (Ingestion) · **Series ID**: S501
-**Status**: ingested · **Authored**: 2026-05-18 · **Author**: opus-fanout-wave3-ch5
+**Status**: book_period_validated
 **Related**: `Technical/research/S501_research.json`, `Technical/docs/chapters/CH5_ADEQUACY_REPORT.json`, `Technical/docs/series/S501_EPR.md`, registry → `series.S501`.
 
 ---

@@ -3,7 +3,7 @@
 **Data Provenance Record (DPR)**
 **Phase**: 5 (Ingestion)
 **Series ID**: S305
-**Status**: ingested
+**Status**: book_period_validated
 **Content type**: `theoretical`
 **Authored**: 2026-05-18
 **Author**: opus-subagent-wave-a-ch3 (Phase 5-8 fanout)
@@ -32,11 +32,26 @@ Figure 3.7 closes the Case II family. Together with S304 it demonstrates that th
 ## 4. Construction
 
 1. Income grid y in [0, 60], 121 points.
-2. Calibration: c(y) = 0.7*exp(-0.05*y) (Case II shared with S304); x1min = 5.0 (constant). p1 = 1.
-3. Evaluate p1*x1 = (1 - c(y)) * 5.0 + c(y) * y.
-4. At y=0: 5.0. At y=60: ~ (1-0.035)*5 + 0.035*60 = 4.825 + 2.1 = 6.925, well within the printed [0, 30] axis.
+2. Calibration matched to Shaikh's **plotted Figure 3.6** (the c(y) profile he
+   actually used to render Fig 3.7): c(y) = 0.80*exp(-0.014*y), giving
+   c(10..50) = 0.70, 0.61, 0.53, 0.46, 0.40 — reproducing the read-off Fig 3.6
+   curve. x1min = 10.0 (constant), pinned by the Engel-curve start point
+   (E = 10 at y = 10, shared with Fig 3.5 Case I) and matching the chapter's
+   simulation minimum (eq 3.5, x1min = 10). p1 = 1. These parameters are local
+   to L01_S305 and do NOT modify the shared `c_case_ii` used by S304.
+3. Evaluate p1*x1 = (1 - c(y)) * p1*x1min + c(y) * y.
+4. Reproduces Fig 3.7 bounds: E(10) = 10.0, E(50) = 25.9 (book ~10 -> ~26),
+   monotone-rising and concave (saturating) across the entire [0, 60] grid
+   (peak at the y=60 boundary), well within the printed [0, 30] axis.
 
-**Formula**: `p1*x1 = (1 - c(y)) * p1*x1min + c(y) * y`
+**Formula**: `p1*x1 = (1 - c(y)) * p1*x1min + c(y) * y`, c(y) = 0.80*exp(-0.014*y), x1min = 10
+
+### Calibration history
+The original calibration (c0=0.7, k=0.05, x1min=5.0) decayed c(y) far too fast
+(c crashed to ~0.06 by y=50) and used half the correct x1min, collapsing the
+curve into a non-monotone hump that peaked at ~9 near y=25 then declined to ~7.6
+— roughly 3x too low and the wrong shape (book Fig 3.7 rises monotonically).
+Corrected 2026-05-27 by matching Shaikh's plotted Fig 3.6 c(y) profile.
 
 ## 5. Year coverage
 
@@ -48,8 +63,17 @@ Figure 3.7 closes the Case II family. Together with S304 it demonstrates that th
 
 ## 7. Caveats
 
-1. The Case II calibration (c(y), x1min) is chosen for consistency with S304 and the printed axis bounds. With c(y) decaying rapidly the integrated Engel curve flattens quickly — visible in Fig 3.7 as a strong saturation. Our values plateau at low absolute level (~7) within the y < 60 range; Shaikh's printed curve appears to reach somewhat higher levels (~25 at y=60), indicating his calibration uses slower c(y) decay or a larger x1min. We document our choice and note the qualitative shape is correct (saturating).
-2. No empirical content; no proxy; no synthetic fill.
+1. Shaikh states the Engel-curve equation (eq 3.5 with c -> c(y), p. 91/93) and
+   the qualitative saturation property, but does NOT publish an explicit
+   algebraic c(y). The c(y) used here is calibrated to reproduce **Shaikh's own
+   plotted Figure 3.6** (the c-curve he used for Fig 3.7), which is directly
+   readable (0.70 at y=10 -> 0.40 at y=50). This is reproduction of a published
+   figure, not an invented functional form; the exponential family is one of
+   several profiles consistent with that read-off (a near-linear decline fits
+   equally well). x1min = 10 is determined, not free: both Engel curves
+   (Fig 3.5, Fig 3.7) start at E = 10 at y = 10.
+2. No empirical content; no proxy; no synthetic fill. Fully deterministic
+   (no np.random).
 
 ## 8. Cross-references
 

@@ -1,3 +1,25 @@
+---
+decision_id: "0006"
+title: "ES2301 (Weber-Shaikh 2020) Decomposition"
+status: approved
+proposed_at: "2026-05-18T00:00:00Z"
+approved_at: "2026-05-18T18:45:00Z"
+decided_by: user
+recommended_by: opus-subagent-p4-wave3-es
+affected_series:
+  - ES2301
+  - ES2302
+  - ES2303
+  - ES2304
+  - ES2305
+  - ES2306
+affected_stages:
+  - phase_3
+  - phase_4
+  - phase_5
+  - phase_6
+---
+
 # 0006 — ES2301 (Weber-Shaikh 2020) Decomposition
 
 **Status**: APPROVED (user ratified 2026-05-18)

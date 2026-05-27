@@ -20,7 +20,7 @@ imports the module and looks for a top-level `run()` function. If found, it
 calls it. The return value (expected to be a dict) is appended to a per-run log.
 
 For `--series SID`, files are filtered by a `SID_` substring in the basename
-(e.g. `L01_S201_load.py` matches `--series S201`). S00 modules are always run
+(e.g. `L01_S201.py` matches `--series S201`). S00 modules are always run
 regardless of series filter (they are infrastructure).
 
 A return dict like `{"status": "PASS"|"FAIL"|"OK"|"SKIPPED", ...}` is expected
@@ -70,7 +70,7 @@ def _discover(phase: str, series: Optional[str] = None) -> list[Path]:
     d = CODE_DIR / phase
     if not d.exists():
         return []
-    sid_re = re.compile(r"_(S\d{3,4}|AS\d{3}|ES\d{4})_")  # _S201_, _S2010_, _AS101_, _ES2001_
+    sid_re = re.compile(r"_(S\d{3,4}|AS\d{3}|ES\d{4})(?:_|\.)")  # _S201_, _S2010_, _AS101_, _ES2001_
     out = []
     for p in sorted(d.iterdir()):
         if p.suffix != ".py":
@@ -81,7 +81,7 @@ def _discover(phase: str, series: Optional[str] = None) -> list[Path]:
             has_any_sid = bool(sid_re.search(p.name))
             if has_any_sid:
                 # script is for some series — must match the requested one
-                if f"_{series}_" not in p.name and not p.name.startswith(f"{series}_"):
+                if (f"_{series}_" not in p.name and f"_{series}." not in p.name and not p.name.startswith(f"{series}_")):
                     continue
             # else: series-generic script — always include
         out.append(p)

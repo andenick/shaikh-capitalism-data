@@ -86,7 +86,7 @@ CSVs for all 109 series, modulo:
 
 ```
 Anderson, N. (2026). RSCD: Replication and Extension of Shaikh (2016)
-  "Capitalism: Competition, Conflict, Crises". https://github.com/andenick/rscd
+  "Capitalism: Competition, Conflict, Crises". https://github.com/andenick/shaikh-capitalism-data
 
 Shaikh, A. (2016). Capitalism: Competition, Conflict, Crises.
   Oxford University Press.

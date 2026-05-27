@@ -87,7 +87,7 @@ See `CITATION.cff` or:
 
 > Anderson, N. (2026). RSCD: Replication and Extension of Shaikh (2016)
 > "Capitalism: Competition, Conflict, Crises", v1.0.
-> https://github.com/andenick/rscd
+> https://github.com/andenick/shaikh-capitalism-data
 
 ---
 

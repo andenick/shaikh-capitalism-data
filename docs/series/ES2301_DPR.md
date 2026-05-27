@@ -3,7 +3,7 @@
 **Data Provenance Record (DPR)**
 **Phase**: 5 (Ingestion)
 **Series ID**: ES2301 (rescoped per decision 0006)
-**Status**: ingested
+**Status**: study_complete
 **Authored**: 2026-05-18
 **Author**: opus-fanout-ES
 

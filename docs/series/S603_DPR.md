@@ -1,8 +1,7 @@
 # S603 — Component Ratios x1, x2, x3 (Data Provenance Record)
 
 **Chapter:** Ch6  **Content type:** time_series  **Construction:** formula
-**Status:** ingested  **Year range (book):** 1947-2011
-
+***Status**: book_period_validated
 ## Definition
 
 Component Ratios x1, x2, x3

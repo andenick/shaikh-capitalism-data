@@ -8,8 +8,25 @@ from __future__ import annotations
 
 from pathlib import Path
 
-# Project root = parent of Technical/
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
+import os as _os
+# Project root discovery (in order of priority):
+# 1. Env var RSCD_PROJECT_ROOT (replicator/CI override)
+# 2. Walk ancestors of __file__ (non-resolved, then resolved) looking for "RSCD"
+# 3. parents[3] of __file__ as a last resort
+_env = _os.environ.get("RSCD_PROJECT_ROOT")
+if _env and Path(_env).exists():
+    PROJECT_ROOT = Path(_env)
+else:
+    PROJECT_ROOT = None
+    for _candidate in (Path(__file__).parents, Path(__file__).resolve().parents):
+        for _p in _candidate:
+            if _p.name == "RSCD" and (_p / "Technical").exists():
+                PROJECT_ROOT = _p
+                break
+        if PROJECT_ROOT is not None:
+            break
+    if PROJECT_ROOT is None:
+        PROJECT_ROOT = Path(__file__).resolve().parents[3]
 assert PROJECT_ROOT.name == "RSCD", f"Unexpected project root: {PROJECT_ROOT}"
 
 # Top-level

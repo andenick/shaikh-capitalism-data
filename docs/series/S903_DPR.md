@@ -1,6 +1,6 @@
 # S903 — Actual Wage-Profit Curves, US 1947-1998
 
-**DPR** · **Phase**: 5 · **Series ID**: S903 · **Status**: ingested · **Authored**: 2026-05-18
+**DPR** · **Phase**: 5 · **Series ID**: S903 · **Status**: book_period_validated · **Authored**: 2026-05-18
 
 ---
 

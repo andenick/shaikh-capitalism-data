@@ -1,8 +1,7 @@
 # AS001 — GDP/GDI Decomposition and Business NOS (Data Provenance Record)
 
 **Chapter:** Ch6  **Content type:** derived  **Construction:** composite
-**Status:** ingested  **Year range (book):** 1947-2011
-
+***Status**: book_period_validated
 ## Definition
 
 GDP/GDI Decomposition and Business NOS

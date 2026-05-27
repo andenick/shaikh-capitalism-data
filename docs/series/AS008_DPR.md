@@ -1,8 +1,7 @@
 # AS008 — GPIM Variant - Interwar Adjustment Multiplier (Data Provenance Record)
 
 **Chapter:** Ch6  **Content type:** derived  **Construction:** formula
-**Status:** ingested  **Year range (book):** 1925-1947
-
+***Status**: book_period_validated
 ## Definition
 
 GPIM Variant - Interwar Adjustment Multiplier

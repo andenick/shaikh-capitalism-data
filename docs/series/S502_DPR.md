@@ -1,7 +1,7 @@
 # S502 — US and UK Wholesale Price Indexes, 1790-2010
 
 **Data Provenance Record (DPR)** · **Phase**: 5 (Ingestion) · **Series ID**: S502
-**Status**: ingested · **Authored**: 2026-05-18 · **Author**: opus-fanout-wave3-ch5
+**Status**: book_period_validated
 
 ---
 

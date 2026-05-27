@@ -1,3 +1,28 @@
+---
+decision_id: "0002"
+title: "Ch6 GPIM Construction Internals Disposition"
+status: approved
+proposed_at: "2026-05-18T00:00:00Z"
+approved_at: "2026-05-18T00:00:00Z"
+decided_by: user
+affected_series:
+  - AS001
+  - AS002
+  - AS003
+  - AS004
+  - AS005
+  - AS006
+  - AS007
+  - AS008
+  - AS009
+  - S601
+  - S602
+  - S603
+  - S604
+affected_stages:
+  - phase_3
+---
+
 # 0002 — Ch6 GPIM Construction Internals Disposition
 
 **Status**: CLOSED

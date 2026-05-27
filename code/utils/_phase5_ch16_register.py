@@ -375,7 +375,7 @@ REGISTRY_UPDATES = {
             "unit_conversion_required": ("HCCSDODNS (millions USD) / "
                                           "(DPI (billions USD) * 1000) - "
                                           "explicit dimensional-analysis comment "
-                                          "in P02_S1605_construct.py docstring."),
+                                          "in P02_S1605.py docstring."),
             "applies_to": "Extension period only; book period reads HHDebtIncRatio directly from Appendix.",
         },
         "extension_deferred_to_phase6": True,

@@ -35,10 +35,10 @@ S034,US Industry Average Rates of Profit,7,S705,US Industry Average Rates of Pro
 S035,US Industry Profit Rate Deviations from Average,7,S709,US ROP Deviations from Average,mapped (decision 0002),promoted to AS series per decision 0002
 S036,US Industry Incremental Rates of Profit,7,S706,US Industry Incremental Rates of Profit,mapped,
 S037,US Industry IROP Deviations from Average,7,S710,US IROP Deviations from Average,mapped (decision 0002),promoted to AS series per decision 0002
-S038,OECD Industry IROP Deviations (PPP-adjusted),7,S707,OECD Industry IROP Deviations (PPP-adjusted),mapped,
+S038,OECD Industry IROP Deviations (PPP-adjusted),7,S707,Greek Manufacturing Profit Rate Deviations (Tsoulfidis & Tsaliki 2011 Fig 4),false_name_match,"NOT a genuine predecessor: matched only on a stale wrong S707 registry name (corrected 2026-05-22). CD2 S038 is an OECD-IROP deviation series 1988-2019; RSCD S707 is Shaikh Fig 7.19 = Tsoulfidis & Tsaliki 2011 fig.4, Greek manufacturing 1962-1991. See RSCD_SWEEP_INCORPORATION_PLAN.md."
 S040,Ibbotson Returns on Stocks and Bonds,10,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
 S041,"Interest Rates, Prices, and Equity Data",10,S803,"Interest Rates, Prices, and Equity Data",mapped,
-S042,US Long-Run Interest Rates and Prices,10,S801,US Long-Run Interest Rates and Prices,mapped,
+S042,US Long-Run Interest Rates and Prices,10,S801,Wholesale Prices in Oligopolistic and Competitive Industries (Eichner 1973 Fig 8.1),false_name_match,"NOT a genuine predecessor: known mismap per S801 DPR section 8. CD2 S042 is a Ch10 Jastram long-run interest-rate/price series 1780-2013; RSCD S801 is Shaikh Fig 8.1 = Eichner 1973 wholesale-price chart 1965-1973. See RSCD_SWEEP_INCORPORATION_PLAN.md."
 S050,Bank vs Private Industry IROP,10,S1001,Bank vs Private Industry IROP,mapped,
 S051,Business Profit Rate and Prime Rate,10,,,unmapped,no figure linkage found in CD HDARP_SERIES_LINKAGE.json
 S052,Interest Rate and Price Level,10,S1002,Interest Rate and Price Level,mapped,

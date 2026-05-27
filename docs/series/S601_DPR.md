@@ -1,8 +1,7 @@
 # S601 — Corporate and Non-Corporate Profit Rates (Data Provenance Record)
 
 **Chapter:** Ch6  **Content type:** time_series  **Construction:** composite
-**Status:** ingested  **Year range (book):** 1947-2011
-
+***Status**: book_period_validated
 ## Definition
 
 Corporate and Non-Corporate Profit Rates

@@ -32,3 +32,33 @@ migration within an active domain, NOT a data-source proxy.
 ## 4. Synthetic data
 
 None. v1.0 is verbatim transcription.
+
+## 5. Conceptual continuity vs adjacent concepts
+
+The extension proxy (v1.1 shared BEA-to-Sraffa pipeline + extended
+BLS Employment Projections crosswalk) measures `Sraffa Curvature Index
+distribution across aggregation levels` rather than `single-matrix CI
+point estimates` or `Theil price-value dispersion alone` because:
+- Source agency choice: BEA Benchmark IO at the 176/119-order detail is
+  the only published US matrix that supports the 295-aggregation rollup.
+  No alternative agency provides comparable industry detail.
+- Methodology continuity: v1.0 verbatim summary stats and v1.1 full CI
+  distribution both apply Bienenfeld-line vs arc-length per p(r) curve.
+  Adding 2012/2017 benchmark matrices reuses the same CI = 1 − SI
+  estimator, not a substitute.
+- Disambiguation: Curvature Index (CI < 0.1) is NOT the price-value
+  ratio of ES2001 — CI characterizes the *shape* of p(r) over r ∈ [0, R],
+  while ES2001 reports the scalar p(r_obs)/v aggregate. Both belong to
+  the same Sraffa-stochastic-effect evidence base but answer different
+  questions and have different content_type tags.
+
+The book's original concept (Shaikh-Coronado-Nassif-Pires 2020 §5, p. 272)
+was: "Sraffa price curves are close to linear" — operationalized as
+CI < 0.1 across all 295 aggregations and only 6% labor-value sign
+switches in 2002. The modern series preserves the CI estimator and
+aggregation-level rollup methodology while permitting the BLS
+Employment Projections crosswalk URL migration (sect300.xls → current
+EP industry data; same agency, current URL). This is NOT a proxy
+substitution forbidden by the No-Proxy rule because (a) BEA IO is the
+same source family, (b) BLS Employment Projections is the same agency
+under a renamed program — concept-identical labor input data.

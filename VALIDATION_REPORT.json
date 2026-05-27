@@ -129,13 +129,13 @@
       "finite_ok": true,
       "asymptote_target": null,
       "asymptote_err": null,
-      "mae": 0.229927,
-      "max_abs_err": 0.365149,
-      "max_pct_err": 91.287263,
+      "mae": 0.151645,
+      "max_abs_err": 0.4,
+      "max_pct_err": 100.0,
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-05-18T22:01:50.364264+00:00",
+      "validated_at": "2026-05-27T05:08:16.208438+00:00",
       "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
     },
     "S402": {
@@ -165,18 +165,18 @@
       ],
       "bound_tol_pct": 1.0,
       "n_out_of_bounds": 0,
-      "shape_requested": "non_monotone",
+      "shape_requested": "rising",
       "shape_ok": true,
       "finite_ok": true,
       "asymptote_target": null,
       "asymptote_err": null,
-      "mae": 7.399863,
-      "max_abs_err": 13.5,
-      "max_pct_err": 90.0,
+      "mae": 7.207609,
+      "max_abs_err": 13.0,
+      "max_pct_err": 86.666667,
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-05-18T22:01:52.238444+00:00",
+      "validated_at": "2026-05-27T05:03:54.581892+00:00",
       "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
     },
     "S403": {
@@ -238,22 +238,13 @@
       "note": "Underlying Allen & Bowley (1935) Table 1 not in SalvagedInputs/ (Internet Archive URL 404). Processed parquet contains the axis-bound metadata only. No synthetic values. Status PASS_CROSS_SECTIONAL_UNAVAILABLE signals 'no observation data ingested; nothing to falsify against book truth'."
     },
     "S404": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "tolerance_pct": null,
+      "status": "PASS",
+      "n_compared": 22,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
       "content_type": "derived",
-      "comparison_basis": "n/a \u2014 Inman 1995 paywalled, figures-only, no underlying data",
-      "n_compared": 0,
-      "mae": null,
-      "max_abs_err": null,
-      "max_pct_err": null,
-      "divergence_count": 0,
-      "divergences": [],
-      "dpr_documents_data_unavailable": true,
-      "remediation_path": "Phase 9 may pursue authorized library access or Decision-Log-approved figure digitization. Until then the series is intentionally empty in the processed pipeline.",
-      "cd2_comparison": {
-        "note": "no CD/CD2 predecessor"
-      },
-      "validated_at": "2026-05-18T22:00:10.876220+00:00"
+      "is_digitized": true,
+      "validated_at": "2026-05-26T23:34:47.202017+00:00"
     },
     "S308": {
       "status": "PASS_THEORETICAL",
@@ -338,55 +329,31 @@
       "validated_at": "2026-05-18T22:03:25.099940+00:00"
     },
     "S405": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "tolerance_pct": null,
+      "status": "PASS",
+      "n_compared": 38,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
       "content_type": "derived",
-      "comparison_basis": "n/a \u2014 Inman 1995 fig. 4 paywalled, figures-only",
-      "n_compared": 0,
-      "mae": null,
-      "max_abs_err": null,
-      "max_pct_err": null,
-      "divergence_count": 0,
-      "divergences": [],
-      "dpr_documents_data_unavailable": true,
-      "cd2_comparison": {
-        "note": "no CD/CD2 predecessor"
-      },
-      "validated_at": "2026-05-18T22:01:04.844418+00:00"
+      "is_digitized": true,
+      "validated_at": "2026-05-26T23:35:04.994904+00:00"
     },
     "S406": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "tolerance_pct": null,
+      "status": "PASS",
+      "n_compared": 26,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
       "content_type": "derived",
-      "comparison_basis": "n/a \u2014 Inman 1995 fig. 5 paywalled, figures-only",
-      "n_compared": 0,
-      "mae": null,
-      "max_abs_err": null,
-      "max_pct_err": null,
-      "divergence_count": 0,
-      "divergences": [],
-      "dpr_documents_data_unavailable": true,
-      "cd2_comparison": {
-        "note": "no CD/CD2 predecessor"
-      },
-      "validated_at": "2026-05-18T22:01:39.863010+00:00"
+      "is_digitized": true,
+      "validated_at": "2026-05-26T23:35:23.455916+00:00"
     },
     "S407": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "tolerance_pct": null,
+      "status": "PASS",
+      "n_compared": 17,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
       "content_type": "derived",
-      "comparison_basis": "n/a \u2014 Inman 1995 fig. 6 paywalled, figures-only",
-      "n_compared": 0,
-      "mae": null,
-      "max_abs_err": null,
-      "max_pct_err": null,
-      "divergence_count": 0,
-      "divergences": [],
-      "dpr_documents_data_unavailable": true,
-      "cd2_comparison": {
-        "note": "no CD/CD2 predecessor"
-      },
-      "validated_at": "2026-05-18T22:01:47.993217+00:00"
+      "is_digitized": true,
+      "validated_at": "2026-05-26T23:36:10.145573+00:00"
     },
     "S701": {
       "status": "PASS",
@@ -447,9 +414,16 @@
       "validated_at": "2026-05-18T22:08:10.064521+00:00"
     },
     "S707": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "reason": "Tsoulfidis & Tsaliki (2011) Greek 20-industry ROP deviation series not tabulated in MPRA paper; underlying ESYE/Bank of Greece panel not redistributed.",
-      "validated_at": "2026-05-18T22:08:11.346201+00:00"
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 600,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "is_deviation_panel": true,
+      "validated_at": "2026-05-26T18:55:31.153678+00:00"
     },
     "S1501": {
       "status": "PASS",
@@ -489,9 +463,16 @@
       "validated_at": "2026-05-18T22:14:07.840935+00:00"
     },
     "S708": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "reason": "Tsoulfidis & Tsaliki (2011) Greek 20-industry IROP deviation series not tabulated in MPRA paper.",
-      "validated_at": "2026-05-18T22:08:12.568597+00:00"
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 600,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "is_deviation_panel": true,
+      "validated_at": "2026-05-26T19:02:16.102192+00:00"
     },
     "S1502": {
       "status": "PASS",
@@ -2679,9 +2660,16 @@
       "validated_at": "2026-05-19T00:04:01.687104+00:00"
     },
     "S801": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "reason": "Eichner (1973) Fig 8.1 is chart-only with no underlying table in the publication; Shaikh did not transcribe values; no Appendix8_* chopped table exists for this figure; PDF not in RSCD workspace. Phase 5 blocker B6 resolved as data_unavailable. Per playbook recipe.",
-      "validated_at": "2026-05-19T00:08:29.565308+00:00"
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 18,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "is_deviation_panel": false,
+      "validated_at": "2026-05-26T21:40:03.605029+00:00"
     },
     "S802": {
       "status": "PASS",
@@ -2992,5 +2980,5 @@
       "validated_at": "2026-05-19T00:20:06.805239+00:00"
     }
   },
-  "generated_at": "2026-05-19T00:20:06.806315+00:00"
+  "generated_at": "2026-05-27T05:08:16.209481+00:00"
 }

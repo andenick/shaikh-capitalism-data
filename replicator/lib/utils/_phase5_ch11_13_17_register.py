@@ -110,7 +110,7 @@ NEW_SUBSOURCES = {
         "release_schedule": "one-time book publication",
         "license": "Equation is public mathematical knowledge (Nelson & Plosser 1982; Enders 2004)",
         "retrieval_method": "analytical realisation with declared parameters",
-        "retrieval_location": "L01_S1301_load.py renders the schematic",
+        "retrieval_location": "L01_S1301.py renders the schematic",
         "url": "https://global.oup.com/academic/product/capitalism-9780199390632",
         "url_status": "live (202 anti-bot wrapper resolves to 200)",
         "discontinued": False,

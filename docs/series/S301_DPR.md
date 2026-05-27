@@ -3,7 +3,7 @@
 **Data Provenance Record (DPR)**
 **Phase**: 5 (Ingestion)
 **Series ID**: S301
-**Status**: ingested
+**Status**: book_period_validated
 **Content type**: `theoretical`
 **Construction**: `formula`
 **Authored**: 2026-05-18

@@ -172,6 +172,8 @@ def main() -> int:
     technical = work / "Technical"
     print(f"    PROJECT_ROOT: {work}")
     print(f"    Technical:    {technical}")
+    # Tell utils.paths where the project root is — avoids symlink-resolution issues
+    os.environ["RSCD_PROJECT_ROOT"] = str(work)
 
     # Import run.py from the bootstrapped tree so utils.paths resolves correctly
     import importlib.util

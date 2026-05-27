@@ -3,9 +3,18 @@
 **Data Provenance Record (DPR)**
 **Phase**: 5 (Ingestion)
 **Series ID**: S801
-**Status**: ingested (with `data_unavailable` extraction status)
-**Authored**: 2026-05-18
+**Status**: book_period_validated
+**Authored**: 2026-05-18 · **Recovery update**: 2026-05-26
 **Author**: opus-subagent-ch8-fanout
+
+> **Recovery (2026-05-26):** Recovered from `data_unavailable` by offline vector extraction of Shaikh
+> Fig 8.1 (which reproduces Eichner 1973 p.1187) from the book PDF (Oxford print p413, found in Robert's
+> `_PDF_LIBRARY`), **overlay-validated against the figure**. Two entities (Oligopolistic, Competitive),
+> 1965-1973, index 1957-59=100 — captures the late administered-price divergence (olig→145 vs comp→128.5
+> by 1973). `provenance: digitized` (digitization fidelity, not Eichner's exact table). Pipeline:
+> L01/P02/V03 (round-trip PASS, n=18, MAE 0.0) → chopped `S801.csv` + extenbook. Source xlsx:
+> `SalvagedInputs/book_data/Reconstructed/Eichner_1973_Fig8_1_S801.xlsx`; method:
+> `Technical/WL1_Tsoulfidis_Tsaliki/EXTRACTION_REPORT.md`. The §§ below predate recovery (historical).
 **Related artifacts**:
 - Research dossier: `Technical/research/S801_research.json`
 - Adequacy: `Technical/docs/chapters/CH8_ADEQUACY_REPORT.json`

@@ -1,6 +1,6 @@
 # S503 — UK WPI in Gold and UK Gold Price, 1790-2009
 
-**DPR** · **Phase**: 5 · **Series ID**: S503 · **Status**: ingested · **Authored**: 2026-05-18
+**DPR** · **Phase**: 5 · **Series ID**: S503 · **Status**: book_period_validated · **Authored**: 2026-05-18
 
 ---
 

@@ -1,8 +1,7 @@
 # AS003 — Imputed Interest Adjustment and Sectoral Profit Rates (Data Provenance Record)
 
 **Chapter:** Ch6  **Content type:** derived  **Construction:** formula
-**Status:** ingested  **Year range (book):** 1947-2011
-
+***Status**: book_period_validated
 ## Definition
 
 Imputed Interest Adjustment and Sectoral Profit Rates

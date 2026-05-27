@@ -3,7 +3,7 @@
 **Data Provenance Record (DPR)**
 **Phase**: 5 (Ingestion)
 **Series ID**: S403
-**Status**: ingested
+**Status**: book_period_validated
 **Authored**: 2026-05-18
 **Author**: opus-subagent-ch4-fanout
 **Related artifacts**:

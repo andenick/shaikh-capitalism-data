@@ -48,7 +48,36 @@ None. Tables 1-2 are the paper's own computed values.
 
 None. v1.0 is verbatim transcription only.
 
-## 6. Source-URL substitutions
+## 6. Conceptual continuity vs adjacent concepts
+
+The extension proxy (v1.1 shared BEA-to-Sraffa pipeline) measures
+`Sraffa aggregate price/value ratios at observed rates of profit` rather
+than `nominal-vs-real GDP ratios` or `Marx-Tonak constant/variable
+capital aggregates` because:
+- Source agency choice: BEA Benchmark IO Use/Make tables are the input
+  to the paper's eqs 6, 8, 10. No alternative agency exists for the
+  industry-level technology matrix needed.
+- Methodology continuity: the v1.0 verbatim Tables 1-2 panel and the
+  v1.1 extended panel both run *the same* eigenvalue/left-eigenvector
+  computation on *the same* BEA-IO matrix family. Adding 1977/1982/.../2017
+  benchmark years is concept-identical, not concept-substituting.
+- Disambiguation: aggregate price/value ratios are NOT cross-sectional
+  Sraffa price curves p(r) — those are ES2101's empirical object.
+  Tables 1-2 collapse the curve to a single scalar at r_obs per
+  (model, year). Extension preserves the scalar concept; the curve
+  concept lives in a sibling series.
+
+The book's original concept (Shaikh 2020 p. 9, "The Six Benchmark Year
+Tables") was: "the close empirical correspondence between Sraffa prices
+and labor values across the entire empirically observed range of the rate
+of profit". The modern series preserves the scalar aggregate-ratio
+computation while permitting matrix-order discontinuities (71-order
+for 1947-1972, 65-order for 1998, 403/171-order for 2002+). This is NOT
+a proxy substitution forbidden by the No-Proxy rule because BEA IO is
+the canonical and only source of the input; extension years use exactly
+the same source family at successive vintages.
+
+## 7. Source-URL substitutions
 
 Per decision 0005 / CHES adequacy: `anwarshaikhecon.org` was DNS-
 unreachable 2026-05-18. The canonical URL-of-record for ES2001 is

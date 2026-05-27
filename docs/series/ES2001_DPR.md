@@ -4,7 +4,7 @@
 **Phase**: 5 (Ingestion)
 **Series ID**: ES2001
 **Content type**: `time_series` (aggregate-ratio panel)
-**Status**: ingested
+**Status**: study_complete
 **Authored**: 2026-05-18
 **Author**: opus-fanout-ES
 

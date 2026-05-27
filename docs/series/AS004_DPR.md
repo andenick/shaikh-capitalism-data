@@ -1,8 +1,7 @@
 # AS004 — GPIM Corporate Capital Stock (Operational Baseline) (Data Provenance Record)
 
 **Chapter:** Ch6  **Content type:** derived  **Construction:** formula
-**Status:** ingested  **Year range (book):** 1925-2011
-
+***Status**: book_period_validated
 ## Definition
 
 GPIM Corporate Capital Stock (Operational Baseline)

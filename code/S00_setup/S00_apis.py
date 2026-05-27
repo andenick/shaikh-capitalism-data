@@ -341,7 +341,7 @@ def damodaran_histret(ttl_days: Optional[int] = 30) -> pd.DataFrame:
     S1006_EPR.md. ``proxy: true`` flag stamped on S1006-B and S1006-D in
     the registry. Damodaran does *not* publish an LT Corporate Bond total
     return; the LT Corp series extension is reconstructed from FRED AAA yield
-    (see L01_S1006_load.py for the reconstruction).
+    (see L01_S1006.py for the reconstruction).
     """
     query = {"source": "damodaran", "file": "histretSP.html"}
     cached = S00_cache.get("damodaran", query, ttl_days=ttl_days)

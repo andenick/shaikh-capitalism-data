@@ -1,8 +1,7 @@
 # S604 — Corporate Incremental Rate of Profit (IROP) (Data Provenance Record)
 
 **Chapter:** Ch6  **Content type:** time_series  **Construction:** formula
-**Status:** ingested  **Year range (book):** 1948-2011
-
+***Status**: book_period_validated
 ## Definition
 
 Corporate Incremental Rate of Profit (IROP)

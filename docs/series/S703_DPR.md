@@ -3,7 +3,7 @@
 **Data Provenance Record (DPR)**
 **Phase**: 5 (Ingestion)
 **Series ID**: S703
-**Status**: ingested (with `data_unavailable` extraction status)
+**Status**: data_unavailable
 **Authored**: 2026-05-18
 **Author**: opus-subagent-ch7-fanout
 **Related artifacts**:

@@ -3,7 +3,9 @@
 **Data Provenance Record (DPR)**
 **Phase**: 5 (Ingestion)
 **Series ID**: S406
-**Status**: ingested (data_unavailable)
+**Status**: book_period_validated
+
+> **Recovery (2026-05-26):** Recovered from data_unavailable by native-resolution vector trace of Shaikh Fig 4.21 Average Cost (= Inman 1995) from the book PDF (Robert _PDF_LIBRARY p204-205), overlay-validated vs the figure. content_type=theoretical (Monte-Carlo simulation curve), x=annual vehicle output; chopped keys on point-index per the S308 functional-curve precedent. provenance: digitized. V03 round-trip PASS; pipeline + anu-doctor 0/0. Source: SalvagedInputs/book_data/Reconstructed/Inman_1995_S404-407_cost_curves.json; method: Technical/WL1_Tsoulfidis_Tsaliki/EXTRACTION_REPORT.md.
 **Authored**: 2026-05-18
 **Author**: opus-subagent-ch4-fanout
 

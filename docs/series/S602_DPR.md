@@ -1,8 +1,7 @@
 # S602 — Corrected vs Conventional Corporate Profitability (Data Provenance Record)
 
 **Chapter:** Ch6  **Content type:** time_series  **Construction:** composite
-**Status:** ingested  **Year range (book):** 1947-2011
-
+***Status**: book_period_validated
 ## Definition
 
 Corrected vs Conventional Corporate Profitability
