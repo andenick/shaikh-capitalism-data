@@ -67,7 +67,7 @@ series; CD2 = Anu v6.0, 114 series) with a strict provenance discipline:
    plausible alternative)
 4. **CD/CD2 deep KB rehydration** — currently only the salvaged subset is
    bundled; a v1.1 patch could re-link the full HDARP corpus from CD
-5. **Cross-validation against ST2 NickyData (Shaikh-Tonak 1948-2024)** for
+5. **Cross-validation against ST2 AnuData (Shaikh-Tonak 1948-2024)** for
    the 1948-2010 overlap window
 6. **CI test harness** — `pytest replicator/scripts/replicate.py --series S201`
    in GitHub Actions on each push
