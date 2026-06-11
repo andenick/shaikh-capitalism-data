@@ -25,7 +25,7 @@ The canonical Shaikh-published values are transcribed from `SalvagedInputs/book_
 
 ## Construction
 
-Six lines plotted in Fig 6.2 / 6.6: corrected vs NIPA maximum rate (Rcorp vs Rcorpnipa), corrected vs NIPA average rate (rcorp vs rcorpnipa), corrected vs NIPA profit share (Profshcorp vs Profshcorpnipa). Eq. 6.10 applied with KTC(-1) = KGC(-1) + INV(-1) (uses AS004 + AS009 denominators).
+Six lines plotted in Fig 6.2 / 6.6: corrected vs NIPA maximum rate (Rcorp vs Rcorpnipa), corrected vs NIPA average rate (rcorp vs rcorpnipa), corrected vs NIPA profit share (Profshcorp vs Profshcorpnipa). Eq. 6.10 applied with KTC(-1) = KGC(-1) + INV(-1) (uses XS004 + XS009 denominators).
 
 ## Year Coverage
 
@@ -41,7 +41,7 @@ decimal_rate_and_share
 
 ## Cross-references
 
-`AS003`, `AS004`, `AS009`
+`XS003`, `XS004`, `XS009`
 
 ## Validation Expectation
 

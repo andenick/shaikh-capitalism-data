@@ -1078,7 +1078,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "AS001": {
+    "XS001": {
       "dpr": true,
       "epr": true,
       "epr_applicable": false,
@@ -1089,7 +1089,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "AS002": {
+    "XS002": {
       "dpr": true,
       "epr": true,
       "epr_applicable": false,
@@ -1100,7 +1100,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "AS003": {
+    "XS003": {
       "dpr": true,
       "epr": true,
       "epr_applicable": false,
@@ -1111,7 +1111,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "AS004": {
+    "XS004": {
       "dpr": true,
       "epr": true,
       "epr_applicable": false,
@@ -1122,7 +1122,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "AS005": {
+    "XS005": {
       "dpr": true,
       "epr": true,
       "epr_applicable": false,
@@ -1133,7 +1133,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "AS006": {
+    "XS006": {
       "dpr": true,
       "epr": true,
       "epr_applicable": false,
@@ -1144,7 +1144,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "AS007": {
+    "XS007": {
       "dpr": true,
       "epr": true,
       "epr_applicable": false,
@@ -1155,7 +1155,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "AS008": {
+    "XS008": {
       "dpr": true,
       "epr": true,
       "epr_applicable": false,
@@ -1166,7 +1166,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "AS009": {
+    "XS009": {
       "dpr": true,
       "epr": true,
       "epr_applicable": false,
@@ -1210,7 +1210,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "ES2001": {
+    "XS2001": {
       "dpr": true,
       "epr": true,
       "epr_applicable": true,
@@ -1221,7 +1221,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "ES2101": {
+    "XS2101": {
       "dpr": true,
       "epr": true,
       "epr_applicable": true,
@@ -1232,7 +1232,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "ES2201": {
+    "XS2201": {
       "dpr": true,
       "epr": true,
       "epr_applicable": true,
@@ -1243,7 +1243,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "ES2301": {
+    "XS2301": {
       "dpr": true,
       "epr": true,
       "epr_applicable": true,
@@ -1254,7 +1254,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "ES2302": {
+    "XS2302": {
       "dpr": true,
       "epr": true,
       "epr_applicable": true,
@@ -1265,7 +1265,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "ES2303": {
+    "XS2303": {
       "dpr": true,
       "epr": true,
       "epr_applicable": true,
@@ -1276,7 +1276,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "ES2304": {
+    "XS2304": {
       "dpr": true,
       "epr": true,
       "epr_applicable": true,
@@ -1287,7 +1287,7 @@
       "chopped": true,
       "completeness": 1.0
     },
-    "ES2305": {
+    "XS2305": {
       "dpr": true,
       "epr": true,
       "epr_applicable": true,

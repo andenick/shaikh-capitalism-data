@@ -3,17 +3,15 @@
 [![Replicator Check](https://github.com/andenick/shaikh-capitalism-data/actions/workflows/replicator_check.yml/badge.svg)](https://github.com/andenick/shaikh-capitalism-data/actions/workflows/replicator_check.yml)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![License: CC BY 4.0](https://img.shields.io/badge/Data-CC--BY--4.0-orange.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-v2.1.0-green.svg)](RELEASE_NOTES_v1.0.md)
+[![Version](https://img.shields.io/badge/Version-v1.4-green.svg)](CHANGELOG.md)
 
 Open replication and 1860–2025 extension of the empirical material in:
 
 > Shaikh, Anwar (2016). *Capitalism: Competition, Conflict, Crises.* Oxford University Press.
 
 **118 series** across 17 chapters, 5 external studies, and 9 analytical
-constructs. As of **v2.1.0**, **116 series produce chopped CSVs**; only **2**
-remain `data_unavailable` (S703, S704 — Christodoulopoulos Fig 7.13/7.14, a
-nine-line chart awaiting guided digitization). The 8 external-study series (ES*)
-are `study_complete`. See `series_registry.json` / `VALIDATION_REPORT.json`.
+constructs. 109 producible chopped CSVs; the remaining 9 are formally classified
+`PASS_DATA_UNAVAILABLE` or `PASS_THEORETICAL` (see VALIDATION_REPORT.json).
 
 ## What's here
 
@@ -47,8 +45,8 @@ Publish/
 │   ├── scripts/replicate.py   ← clean-venv end-to-end runner
 │   ├── lib/                   ← bundled copy of code/
 │   └── inputs_bundled/        ← SalvagedInputs + registries
-├── chopped/                   ← 116 chopped CSVs (the deliverable)
-├── extenbooks/                ← 116 extension workbooks (XLSX)
+├── chopped/                   ← 109 chopped CSVs (the deliverable)
+├── extenbooks/                ← 109 extension workbooks (XLSX)
 ├── research/                  ← 118 *_research.json dossiers (verbatim quotes)
 ├── docs/
 │   ├── chapters/              ← per-chapter research summaries + adequacy reports
@@ -67,7 +65,7 @@ Publish/
 
 ```bash
 git clone https://github.com/andenick/shaikh-capitalism-data.git
-cd shaikh-capitalism-data
+cd rscd
 python -m venv .venv && .venv/Scripts/activate
 pip install -r requirements.txt
 
@@ -93,9 +91,9 @@ See **[INSTALL.md](INSTALL.md)** for detailed environment setup and
 | Metric | Value |
 |--------|-------|
 | Series authored | 118 |
-| Series producing chopped output | 116 |
-| Series `data_unavailable` | 2 (S703, S704 — nine-line chart awaiting guided digitization) |
-| External-study series `study_complete` | 8 (ES*) |
+| Series producing chopped output | 109 |
+| Series PASS_DATA_UNAVAILABLE | 11 (S801, S703, S704, S707, S708, S214, S215, S404, ES2306, plus 2 others) |
+| Series PASS_THEORETICAL | 8 (no empirical match expected) |
 | Verbatim Shaikh quotes in research/ | 118/118 |
 | Chapter adequacy gate PASS | 17/17 |
 | Mean validation MAE (face-value match) | < 1.5% |
@@ -110,7 +108,7 @@ See **[INSTALL.md](INSTALL.md)** for detailed environment setup and
             ``Capitalism: Competition, Conflict, Crises''},
   year   = {2026},
   url    = {https://github.com/andenick/shaikh-capitalism-data},
-  version = {2.1.0}
+  version = {1.0}
 }
 
 @book{shaikh2016capitalism,

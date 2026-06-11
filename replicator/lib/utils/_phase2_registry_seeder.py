@@ -51,8 +51,12 @@ def main():
         },
         "prefix_scheme": {
             "primary": {"prefix": "S", "pattern": "S{chapter}{seq}", "example": "S201"},
-            "external": {"prefix": "ES", "pattern": "ES{group}{seq}", "example": "ES1701"},
-            "analytical": {"prefix": "AS", "pattern": "AS###", "example": "AS001"},
+            "extra": {
+                "prefix": "XS",
+                "meaning": "Extra Series — book-appendix series (xs_class: appendix) and series from other studies (xs_class: external_study)",
+                "pattern": "XS### / XS####",
+                "example": "XS003",
+            },
         },
         "external_study_groups": {
             "_note": "Frozen for v1.0 after docs/decisions/0001_external_study_scope.md is authored",

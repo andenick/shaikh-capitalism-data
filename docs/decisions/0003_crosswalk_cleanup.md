@@ -1,18 +1,3 @@
----
-decision_id: "0003"
-title: "Crosswalk Mismap Cleanup"
-status: approved
-proposed_at: "2026-05-18T00:00:00Z"
-approved_at: "2026-05-18T00:00:00Z"
-decided_by: mechanical
-affected_series:
-  - S707
-  - S801
-  - S803
-affected_stages:
-  - phase_3
----
-
 # 0003 — Crosswalk Mismap Cleanup
 
 **Status**: CLOSED

@@ -1,0 +1,33 @@
+"""P02_S215_construct - pass-through Appendix7 post-book mfg IROP averages."""
+from __future__ import annotations
+import sys
+from pathlib import Path
+import pandas as pd
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from utils.paths import DATA_RAW, DATA_PROCESSED  # noqa: E402
+
+IN = DATA_RAW / "S215_APP7_INDUSTRY_IROP_AVG.parquet"
+OUT = DATA_PROCESSED / "S215.parquet"
+
+
+def run() -> dict:
+    if not IN.exists():
+        return {"status": "FAIL", "error": "raw missing"}
+    df = pd.read_parquet(IN).rename(columns={"subsource_id": "source_id"})
+    df = df[["year", "value", "subseries_id", "source_id", "units"]]
+    DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(OUT, index=False)
+    return {
+        "status": "OK", "rows_processed": int(len(df)),
+        "year_range": [int(df["year"].min()), int(df["year"].max())],
+        "subseries_present": sorted(df["subseries_id"].unique().tolist()),
+        "book_period_status": "data_unavailable",
+        "extension": {"extension_status": "post_book_only",
+                      "label": "Mfg-industry mean IROP 1988-2005 from Appendix 7"},
+        "output": str(OUT),
+    }
+
+
+if __name__ == "__main__":
+    import json
+    print(json.dumps(run(), indent=2, default=str))

@@ -1,7 +1,7 @@
 """Phase 5 Ch6 + AS registry / subsource / ledger updater (idempotent).
 
 Updates Technical/series_registry.json, Technical/SUBSOURCE_METADATA.json, and
-Technical/ANU_LEDGER.json for the 13-series Ch6 fanout: S601-S604 + AS001-AS009.
+Technical/ANU_LEDGER.json for the 13-series Ch6 fanout: S601-S604 + XS001-XS009.
 
 Safe to re-run. Invoke from project root:
     python Technical/code/utils/_phase5_ch6_register.py
@@ -44,7 +44,7 @@ NEW_SUBSOURCES = {
         "replaced_by": None,
         "requires_api_key": False,
         "api_key_env_var": None,
-        "graceful_degradation": "Workbook is the canonical Phase 5 source. Per-series EPRs document the BEA / IRS / FRB extension recipe; loaders use _nipa_t711_line_resolver.py for vintage-stable T7.11 lines and the BEA 1993 staged data in Reconstructed/BEA_1993_FA_methodology/ for AS004/AS006/AS007.",
+        "graceful_degradation": "Workbook is the canonical Phase 5 source. Per-series EPRs document the BEA / IRS / FRB extension recipe; loaders use _nipa_t711_line_resolver.py for vintage-stable T7.11 lines and the BEA 1993 staged data in Reconstructed/BEA_1993_FA_methodology/ for XS004/XS006/XS007.",
         "notes": "Underlying agencies: BEA NIPA (T1.7.5, T1.10, T1.13, T1.14, T6.2, T6.7, T7.11, T7.12); BEA Fixed Asset Accounts (T6.1, T6.3, T6.4, T6.7, T6.8); IRS SOI Corporation Source Book (1926-2011); U.S. Census Bureau Historical Statistics 1975 Series V 115 (IRS book-value corporate net stock); Federal Reserve Board G.17 capacity utilization. All U.S. public-domain. Shaikh's Appendix 6.7 (book pp. 828-855) is the methodology narrative.",
     },
     "BEA_1993_FA_METHODOLOGY_STAGED": {
@@ -67,8 +67,8 @@ NEW_SUBSOURCES = {
         "replaced_by": "BEA 1996 infinite-life geometric-rate methodology",
         "requires_api_key": False,
         "api_key_env_var": None,
-        "graceful_degradation": "Required for AS004 (preferred baseline), AS006 (depreciation-rate variant), AS007 (IRS-adjusted variant). Phase 5 blocker CH6-B3 marked RESOLVED 2026-05-18.",
-        "notes": "Year coverage 1925-2011; values 1990-2011 are Shaikh's linear projections from BEA 1993 raw data 1925-1989. Extension to 2012+ is not feasible for the discontinued methodology; AS004 baseline freezes at 2011 vintage for the depreciation/retirement rate inputs.",
+        "graceful_degradation": "Required for XS004 (preferred baseline), XS006 (depreciation-rate variant), XS007 (IRS-adjusted variant). Phase 5 blocker CH6-B3 marked RESOLVED 2026-05-18.",
+        "notes": "Year coverage 1925-2011; values 1990-2011 are Shaikh's linear projections from BEA 1993 raw data 1925-1989. Extension to 2012+ is not feasible for the discontinued methodology; XS004 baseline freezes at 2011 vintage for the depreciation/retirement rate inputs.",
     },
 }
 
@@ -90,137 +90,137 @@ COMMON_PHASE5_FIELDS = {"status": "ingested"}
 #   year_range:    [start, end]
 #   tolerance_pct: V03 tolerance (1.0 default)
 SERIES_SPECS = {
-    "AS001": {
+    "XS001": {
         "chapter": 6, "name": "GDP/GDI Decomposition and Business NOS",
         "content_type": "derived", "construction": "composite",
         "primary_source": "SHAIKH_APPENDIX_6_8",
         "units": "billions_current_usd",
         "year_range": [1947, 2011],
         "subseries": {
-            "AS001-A": {"name": "Business sector NOS (NOSbusnipa)", "color": "#1f77b4"},
-            "AS001-B": {"name": "Aggregate NOSnipa", "color": "#ff7f0e"},
-            "AS001-C": {"name": "Household NOS (NOShh)", "color": "#2ca02c"},
-            "AS001-D": {"name": "NPISH NOS (NOSnpish)", "color": "#d62728"},
-            "AS001-E": {"name": "General government NOS (NOSgengov)", "color": "#9467bd"},
-            "AS001-F": {"name": "Government enterprise NOS (NOSgoventerp)", "color": "#8c564b"},
+            "XS001-A": {"name": "Business sector NOS (NOSbusnipa)", "color": "#1f77b4"},
+            "XS001-B": {"name": "Aggregate NOSnipa", "color": "#ff7f0e"},
+            "XS001-C": {"name": "Household NOS (NOShh)", "color": "#2ca02c"},
+            "XS001-D": {"name": "NPISH NOS (NOSnpish)", "color": "#d62728"},
+            "XS001-E": {"name": "General government NOS (NOSgengov)", "color": "#9467bd"},
+            "XS001-F": {"name": "Government enterprise NOS (NOSgoventerp)", "color": "#8c564b"},
         },
-        "notes": "Business NOS = Aggregate NOS - HH - NPISH - GenGov - GovEnterp. Source: Appendix Table 6.8.I.1. Used by AS003 / S602.",
+        "notes": "Business NOS = Aggregate NOS - HH - NPISH - GenGov - GovEnterp. Source: Appendix Table 6.8.I.1. Used by XS003 / S602.",
     },
-    "AS002": {
+    "XS002": {
         "chapter": 6, "name": "Wage Equivalent and Corp/Noncorp Split",
         "content_type": "derived", "construction": "composite",
         "primary_source": "SHAIKH_APPENDIX_6_8",
         "units": "billions_current_usd",
         "year_range": [1947, 2011],
         "subseries": {
-            "AS002-A": {"name": "PropInc (proprietors + partnerships income w/IVA, CCAdj)", "color": "#1f77b4"},
-            "AS002-B": {"name": "ECprop (employee comp of proprietors)", "color": "#ff7f0e"},
-            "AS002-C": {"name": "WEQ2 (preferred wage equivalent)", "color": "#2ca02c"},
-            "AS002-D": {"name": "WEQ1 (alternative wage equivalent)", "color": "#d62728"},
-            "AS002-E": {"name": "Pnoncorp (preferred noncorporate profit, WEQ2-based)", "color": "#9467bd"},
-            "AS002-F": {"name": "Pcorpnipa (NIPA corporate profit)", "color": "#8c564b"},
-            "AS002-G": {"name": "Sigma (sigma = Pcorp/(Pcorp+ECcorp) share)", "color": "#e377c2"},
+            "XS002-A": {"name": "PropInc (proprietors + partnerships income w/IVA, CCAdj)", "color": "#1f77b4"},
+            "XS002-B": {"name": "ECprop (employee comp of proprietors)", "color": "#ff7f0e"},
+            "XS002-C": {"name": "WEQ2 (preferred wage equivalent)", "color": "#2ca02c"},
+            "XS002-D": {"name": "WEQ1 (alternative wage equivalent)", "color": "#d62728"},
+            "XS002-E": {"name": "Pnoncorp (preferred noncorporate profit, WEQ2-based)", "color": "#9467bd"},
+            "XS002-F": {"name": "Pcorpnipa (NIPA corporate profit)", "color": "#8c564b"},
+            "XS002-G": {"name": "Sigma (sigma = Pcorp/(Pcorp+ECcorp) share)", "color": "#e377c2"},
         },
-        "notes": "WEQ2 = (sigma*PropInc - ECprop)/(1+sigma). Source: Appendix Table 6.8.I.2. Used by AS003 / S603.",
+        "notes": "WEQ2 = (sigma*PropInc - ECprop)/(1+sigma). Source: Appendix Table 6.8.I.2. Used by XS003 / S603.",
     },
-    "AS003": {
+    "XS003": {
         "chapter": 6, "name": "Imputed Interest Adjustment and Sectoral Profit Rates",
         "content_type": "derived", "construction": "formula",
         "primary_source": "SHAIKH_APPENDIX_6_8",
         "units": "mixed_billions_usd_and_decimal_rates",
         "year_range": [1947, 2011],
         "subseries": {
-            "AS003-A": {"name": "BankNetIntPaid (T7.11 (L4+L44+L73) - (L28+L52+L91))", "color": "#1f77b4"},
-            "AS003-B": {"name": "NFNetImpIntPaid (T7.11 (L74+L75) - (L53+L54))", "color": "#ff7f0e"},
-            "AS003-C": {"name": "BusImpIntAdj = -BankNetIntPaid - NFNetImpIntPaid", "color": "#2ca02c"},
-            "AS003-D": {"name": "rbus (business sector profit rate)", "color": "#d62728"},
-            "AS003-E": {"name": "rcorp (corporate profit rate)", "color": "#9467bd"},
-            "AS003-F": {"name": "rnoncorp (noncorporate profit rate, WEQ2)", "color": "#8c564b"},
-            "AS003-G": {"name": "rnoncorp1 (noncorporate profit rate, WEQ1)", "color": "#e377c2"},
+            "XS003-A": {"name": "BankNetIntPaid (T7.11 (L4+L44+L73) - (L28+L52+L91))", "color": "#1f77b4"},
+            "XS003-B": {"name": "NFNetImpIntPaid (T7.11 (L74+L75) - (L53+L54))", "color": "#ff7f0e"},
+            "XS003-C": {"name": "BusImpIntAdj = -BankNetIntPaid - NFNetImpIntPaid", "color": "#2ca02c"},
+            "XS003-D": {"name": "rbus (business sector profit rate)", "color": "#d62728"},
+            "XS003-E": {"name": "rcorp (corporate profit rate)", "color": "#9467bd"},
+            "XS003-F": {"name": "rnoncorp (noncorporate profit rate, WEQ2)", "color": "#8c564b"},
+            "XS003-G": {"name": "rnoncorp1 (noncorporate profit rate, WEQ1)", "color": "#e377c2"},
         },
         "notes": "FISIM-revision-stable T7.11 line resolver used (see _nipa_t711_line_resolver.py). Source: Appendix Tables 6.8.I.3 + 6.8.II.7. Used by S601, S602, S603, S604.",
         "tolerance_pct": 1.0,
     },
-    "AS004": {
+    "XS004": {
         "chapter": 6, "name": "GPIM Corporate Capital Stock (Operational Baseline)",
         "content_type": "derived", "construction": "formula",
         "primary_source": "SHAIKH_APPENDIX_6_8",
         "units": "billions_current_usd",
         "year_range": [1925, 2011],
         "subseries": {
-            "AS004-A": {"name": "KNCcorp (GPIM net current-cost corp stock, operational baseline)", "color": "#1f77b4"},
-            "AS004-B": {"name": "KGCcorp (GPIM gross current-cost corp stock)", "color": "#ff7f0e"},
-            "AS004-C": {"name": "KNHcorp (GPIM historical-cost corp net stock)", "color": "#2ca02c"},
+            "XS004-A": {"name": "KNCcorp (GPIM net current-cost corp stock, operational baseline)", "color": "#1f77b4"},
+            "XS004-B": {"name": "KGCcorp (GPIM gross current-cost corp stock)", "color": "#ff7f0e"},
+            "XS004-C": {"name": "KNHcorp (GPIM historical-cost corp net stock)", "color": "#2ca02c"},
         },
-        "notes": "Operational baseline used by S601-S604 (combines BEA 2011 initial + BEA 1993 depreciation + IRS interwar adjustment). Source: Appendix Table 6.8.II.5. Per Decision 0002 + Phase 4 Q6: AS004 is the operational baseline; AS005 is the pure reference.",
+        "notes": "Operational baseline used by S601-S604 (combines BEA 2011 initial + BEA 1993 depreciation + IRS interwar adjustment). Source: Appendix Table 6.8.II.5. Per Decision 0002 + Phase 4 Q6: XS004 is the operational baseline; XS005 is the pure reference.",
         "tolerance_pct": 1.0,
     },
-    "AS005": {
+    "XS005": {
         "chapter": 6, "name": "GPIM Variant - BEA 2011 Reference (Pure GPIM Regenerator)",
         "content_type": "derived", "construction": "formula",
         "primary_source": "SHAIKH_APPENDIX_6_8",
         "units": "billions_current_usd",
         "year_range": [1925, 2011],
         "subseries": {
-            "AS005-A": {"name": "KNCcorp' (pure GPIM from BEA 2011 init + BEA 2011 depreciation rate)", "color": "#1f77b4"},
-            "AS005-B": {"name": "KNCcorpbea (official BEA 2011 net stock - reference)", "color": "#ff7f0e"},
-            "AS005-C": {"name": "KNCcorp'ratio (pure GPIM / official BEA)", "color": "#2ca02c"},
+            "XS005-A": {"name": "KNCcorp' (pure GPIM from BEA 2011 init + BEA 2011 depreciation rate)", "color": "#1f77b4"},
+            "XS005-B": {"name": "KNCcorpbea (official BEA 2011 net stock - reference)", "color": "#ff7f0e"},
+            "XS005-C": {"name": "KNCcorp'ratio (pure GPIM / official BEA)", "color": "#2ca02c"},
         },
         "notes": "Pure reference regenerator; verifies 99.6% accuracy of the GPIM rule (Appendix Table 6.8.II.1). Sensitivity variant — NOT used by S601-S604.",
         "tolerance_pct": 1.0,
     },
-    "AS006": {
+    "XS006": {
         "chapter": 6, "name": "GPIM Variant - BEA 1993 Depreciation Rates",
         "content_type": "derived", "construction": "formula",
         "primary_source": "SHAIKH_APPENDIX_6_8",
         "units": "billions_current_usd",
         "year_range": [1925, 2011],
         "subseries": {
-            "AS006-depr_only": {"name": "KNCcorp93 (BEA 1993 depreciation, BEA 2011 initial value)", "color": "#1f77b4"},
-            "AS006-depr_plus_init": {"name": "KNCbea93 (BEA 1993 depreciation, BEA 1993 initial value 77.769)", "color": "#ff7f0e"},
-            "AS006-dcorpnew": {"name": "dcorpnew (BEA 1993 depreciation rate, decimal)", "color": "#2ca02c"},
+            "XS006-depr_only": {"name": "KNCcorp93 (BEA 1993 depreciation, BEA 2011 initial value)", "color": "#1f77b4"},
+            "XS006-depr_plus_init": {"name": "KNCbea93 (BEA 1993 depreciation, BEA 1993 initial value 77.769)", "color": "#ff7f0e"},
+            "XS006-dcorpnew": {"name": "dcorpnew (BEA 1993 depreciation rate, decimal)", "color": "#2ca02c"},
         },
         "notes": "Per Phase 4 Q1: two sub-variants shipped. depr_only matches dossier text; depr_plus_init matches CD2 sample values. Source: Appendix Table 6.8.II.3.",
         "tolerance_pct": 1.0,
     },
-    "AS007": {
+    "XS007": {
         "chapter": 6, "name": "GPIM Variant - IRS Adjusted",
         "content_type": "derived", "construction": "formula",
         "primary_source": "SHAIKH_APPENDIX_6_8",
         "units": "billions_current_usd",
         "year_range": [1925, 2011],
         "subseries": {
-            "AS007-A": {"name": "KTHcorpirs (IRS book value of corporate total assets, billions after /1000)", "color": "#1f77b4"},
-            "AS007-B": {"name": "KNCcorpbeaAdj (BEA 2011 net stock adjusted by IRS index)", "color": "#ff7f0e"},
-            "AS007-C": {"name": "KNHcorpbeaAdj (BEA 2011 historical-cost adjusted by IRS index)", "color": "#2ca02c"},
+            "XS007-A": {"name": "KTHcorpirs (IRS book value of corporate total assets, billions after /1000)", "color": "#1f77b4"},
+            "XS007-B": {"name": "KNCcorpbeaAdj (BEA 2011 net stock adjusted by IRS index)", "color": "#ff7f0e"},
+            "XS007-C": {"name": "KNHcorpbeaAdj (BEA 2011 historical-cost adjusted by IRS index)", "color": "#2ca02c"},
         },
-        "notes": "Source: Appendix Table 6.8.II.4 (Great Depression / WWII correction). UNIT NORMALIZATION: raw IRS Series V 115 (KTHcorpirs) is in thousands of dollars and divided by 1000 at load time to convert to billions. AS007 has no extension (historical 1925-1947 correction only).",
+        "notes": "Source: Appendix Table 6.8.II.4 (Great Depression / WWII correction). UNIT NORMALIZATION: raw IRS Series V 115 (KTHcorpirs) is in thousands of dollars and divided by 1000 at load time to convert to billions. XS007 has no extension (historical 1925-1947 correction only).",
         "extension_status": "not_applicable_historical_correction",
         "tolerance_pct": 1.5,
     },
-    "AS008": {
+    "XS008": {
         "chapter": 6, "name": "GPIM Variant - Interwar Adjustment Multiplier",
         "content_type": "derived", "construction": "formula",
         "primary_source": "SHAIKH_APPENDIX_6_8",
         "units": "dimensionless_ratio_1925eq1",
         "year_range": [1925, 1947],
         "subseries": {
-            "AS008-A": {"name": "Adj. Ratio (IRS index / BEA historical-cost index, 1925=1.0)", "color": "#1f77b4"},
+            "XS008-A": {"name": "Adj. Ratio (IRS index / BEA historical-cost index, 1925=1.0)", "color": "#1f77b4"},
         },
-        "notes": "Source: Appendix Table 6.8.II.5 column 'Adj. Ratio'. Intrinsically 1925-1947 only — feeds AS007/AS004 historical correction. No extension by construction.",
+        "notes": "Source: Appendix Table 6.8.II.5 column 'Adj. Ratio'. Intrinsically 1925-1947 only — feeds XS007/XS004 historical correction. No extension by construction.",
         "extension_status": "not_applicable_historical_correction",
         "tolerance_pct": 1.0,
     },
-    "AS009": {
+    "XS009": {
         "chapter": 6, "name": "IRS Corporate Inventories and Total Capital Stock",
         "content_type": "derived", "construction": "formula",
         "primary_source": "SHAIKH_APPENDIX_6_8",
         "units": "billions_current_usd",
         "year_range": [1946, 2011],
         "subseries": {
-            "AS009-A": {"name": "INVcorp (corporate inventories, current cost)", "color": "#1f77b4"},
-            "AS009-B": {"name": "KGCcorp (gross fixed capital, after Great Dep / WWII adj)", "color": "#ff7f0e"},
-            "AS009-C": {"name": "KTCcorp = KGCcorp + INVcorp (total corporate capital stock)", "color": "#2ca02c"},
+            "XS009-A": {"name": "INVcorp (corporate inventories, current cost)", "color": "#1f77b4"},
+            "XS009-B": {"name": "KGCcorp (gross fixed capital, after Great Dep / WWII adj)", "color": "#ff7f0e"},
+            "XS009-C": {"name": "KTCcorp = KGCcorp + INVcorp (total corporate capital stock)", "color": "#2ca02c"},
         },
         "notes": "Source: Appendix Table 6.8.II.6. UNIT NORMALIZATION: raw IRS SOI INVIRScorp is in thousands of dollars and divided by 1000 at load time. Per Phase 4 Q3: extension_method='constant_ratio_proxy_2012_onwards' flag carried through; Phase 6 lift to re-estimated ratio is recommended but deferred.",
         "extension_status": "feasible_with_proxy_or_substitute",
@@ -234,7 +234,7 @@ SERIES_SPECS = {
         "units": "decimal_rate",
         "year_range": [1947, 2011],
         "figures": ["Fig6.1", "Fig6.4", "Fig6.5"],
-        "components": ["AS003", "AS004", "AS009"],
+        "components": ["XS003", "XS004", "XS009"],
         "subseries": {
             "S601-A": {"name": "rcorp (corporate profit rate, NOS/KTC_lag, adjusted)", "color": "#1f77b4"},
             "S601-B": {"name": "rnoncorp (noncorporate profit rate, WEQ2-based)", "color": "#ff7f0e"},
@@ -252,7 +252,7 @@ SERIES_SPECS = {
         "units": "decimal_rate_and_share",
         "year_range": [1947, 2011],
         "figures": ["Fig6.2", "Fig6.6"],
-        "components": ["AS003", "AS004", "AS009"],
+        "components": ["XS003", "XS004", "XS009"],
         "subseries": {
             "S602-A": {"name": "Rcorp (corrected maximum profit rate VA/KTC_lag)", "color": "#1f77b4"},
             "S602-B": {"name": "Rcorpnipa (NIPA maximum profit rate VA_nipa/KNCbea_lag)", "color": "#ff7f0e"},
@@ -271,7 +271,7 @@ SERIES_SPECS = {
         "units": "dimensionless_ratio",
         "year_range": [1947, 2011],
         "figures": ["Fig6.3"],
-        "components": ["AS003", "AS004", "AS009"],
+        "components": ["XS003", "XS004", "XS009"],
         "subseries": {
             "S603-A": {"name": "x1 = 1 + NMINT/P (imputed-interest factor)", "color": "#1f77b4"},
             "S603-B": {"name": "x2 = 1 + INV(-1)/KNCbea(-1) (inventory factor)", "color": "#ff7f0e"},
@@ -288,7 +288,7 @@ SERIES_SPECS = {
         "units": "decimal_rate",
         "year_range": [1948, 2011],
         "figures": ["Fig6.7"],
-        "components": ["AS003", "AS004", "AS009"],
+        "components": ["XS003", "XS004", "XS009"],
         "subseries": {
             "S604-A": {"name": "iropcorp (nominal corrected IROP)", "color": "#1f77b4"},
             "S604-B": {"name": "iropcorpnipa (nominal NIPA IROP)", "color": "#ff7f0e"},
@@ -344,7 +344,7 @@ def _registry_body(sid: str, spec: dict) -> dict:
             {"step": 2, "op": "pass_through_with_normalization",
              "input": "raw parquet",
              "output": "processed parquet (year,value,subseries_id,source_id,units)",
-             "params": "AS007/AS009 apply /1000 unit normalization; AS003/S60x compose from underlying variables"},
+             "params": "XS007/XS009 apply /1000 unit normalization; XS003/S60x compose from underlying variables"},
         ],
         "notes": spec.get("notes", ""),
     }

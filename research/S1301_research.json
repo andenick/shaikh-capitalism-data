@@ -16,21 +16,27 @@
       "page": 632,
       "quote": "Since the slope of the path of ln Yt is the growth rate of output, a constant growth rate implies a constant slope (i.e., a straight-line path). Figure 13.7 depicts the log of actual output around one equilibrium path. As indicated by the other dotted lines, lines parallel to this one also have the same slope and hence represent the same growth rate.",
       "role": "definition",
-      "verbatim_check": true
+      "verbatim_check": true,
+      "unverified": "no ch13 KB",
+      "note": "UNVERIFIED: no ch13 KB extraction exists (KB covers ch02, ch05-ch12, ch14-ch18). Checked ch12 and ch18 per reconciliation mandate: neither contains the Fig 13.7 / eq 13.43 source text. Excluded from the web explainer; queue ch13 KB extraction to verify."
     },
     {
       "chapter": 13,
       "page": 632,
       "quote": "Now consider the illustrative special case in which f(t) = α = constant. Starting from some initial net output Y0, we get ln Y1 = ln Y0 + α + ε1, ln Y2 = ln Y0 + 2 · α + (ε2 + ε1), and so on, so that ln Yt = ln Y0 + α · t + ηt, where ηt ≡ Σ(i=1..t) εi (13.43)",
       "role": "method",
-      "verbatim_check": true
+      "verbatim_check": true,
+      "unverified": "no ch13 KB",
+      "note": "UNVERIFIED: no ch13 KB extraction exists. Excluded from the web explainer; queue ch13 KB extraction to verify."
     },
     {
       "chapter": 13,
       "page": 632,
       "quote": "If the error term εt in equation (13.42) was pure white noise, the path in equation (13.43) would be a random walk with drift, that is, a unit root process (Nelson and Plosser 1982; Enders 2004, 186).",
       "role": "source",
-      "verbatim_check": true
+      "verbatim_check": true,
+      "unverified": "no ch13 KB",
+      "note": "UNVERIFIED: no ch13 KB extraction exists. ch12_macroeconomics.md references Nelson-Plosser random-walk-with-drift but only as a ch12 overview cross-referencing ch13 sec II.9, NOT the eq 13.43 source. Excluded from the web explainer; queue ch13 KB extraction to verify."
     }
   ],
   "primary_source": {

@@ -212,6 +212,11 @@ REGISTRY_UPDATES = {
     },
     "S803": {
         **COMMON_INGESTED,
+        # 2026-06-11 fix: corrects stale series-level name carried over from the
+        # phase-2 seeder (was "Interest Rates, Prices, and Equity Data", a CD2 S041
+        # Chapter-10 carryover). The register dict previously set no series-level
+        # `name`, so the seeder's wrong title survived registry regeneration.
+        "name": "Rate of Profit on Equity versus CR8, Bain 42-Industry Sample, 1936-1940 (Figures 8.3 and 8.4)",
         "content_type": "cross_sectional",
         "construction": "direct",
         "units": "percent",

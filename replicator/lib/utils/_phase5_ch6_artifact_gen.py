@@ -9,7 +9,7 @@ Bulk-writes:
 
 The L01 loaders all delegate to ``L01_loaders._ch6_appendix_loader.load_variables``
 to pull the canonical Shaikh Appendix 6.8 columns. The P02 processors apply
-unit normalization (AS007/AS009: /1000 thousands->billions) and re-emit a
+unit normalization (XS007/XS009: /1000 thousands->billions) and re-emit a
 standard 5-column long-form parquet. The V03 validators compare processed
 values against the same Appendix-table source (round-trip verification + a CD2
 informational comparison when a CD2 series file exists). Per series tolerances
@@ -36,64 +36,64 @@ from utils._phase5_ch6_register import SERIES_SPECS  # noqa: E402
 
 # ---------------------------------------------------------------------------
 # Source-variable mapping. Each series maps subseries_id -> (table_name, variable_name, scale)
-# scale = 1.0 by default; 1/1000 applied for AS007/AS009 to convert raw thousands-of-USD to billions.
+# scale = 1.0 by default; 1/1000 applied for XS007/XS009 to convert raw thousands-of-USD to billions.
 # ---------------------------------------------------------------------------
 SOURCE_MAP: dict[str, dict[str, tuple[str, str, float]]] = {
-    "AS001": {
-        "AS001-A": ("I1", "NOSbusnipa", 1.0),
-        "AS001-B": ("I1", "Aggregate NOSnipa", 1.0),
-        "AS001-C": ("I1", "NOShh", 1.0),
-        "AS001-D": ("I1", "NOSnpish", 1.0),
-        "AS001-E": ("I1", "NOSgengov", 1.0),
-        "AS001-F": ("I1", "NOSgoventerp", 1.0),
+    "XS001": {
+        "XS001-A": ("I1", "NOSbusnipa", 1.0),
+        "XS001-B": ("I1", "Aggregate NOSnipa", 1.0),
+        "XS001-C": ("I1", "NOShh", 1.0),
+        "XS001-D": ("I1", "NOSnpish", 1.0),
+        "XS001-E": ("I1", "NOSgengov", 1.0),
+        "XS001-F": ("I1", "NOSgoventerp", 1.0),
     },
-    "AS002": {
-        "AS002-A": ("I2", "PropInc", 1.0),
-        "AS002-B": ("I2", "ECprop", 1.0),
-        "AS002-C": ("I2", "WEQ2", 1.0),
-        "AS002-D": ("I2", "WEQ1", 1.0),
-        "AS002-E": ("I2", "Pnoncorp", 1.0),
-        "AS002-F": ("I2", "Pcorpnipa", 1.0),
-        "AS002-G": ("I2", "s", 1.0),
+    "XS002": {
+        "XS002-A": ("I2", "PropInc", 1.0),
+        "XS002-B": ("I2", "ECprop", 1.0),
+        "XS002-C": ("I2", "WEQ2", 1.0),
+        "XS002-D": ("I2", "WEQ1", 1.0),
+        "XS002-E": ("I2", "Pnoncorp", 1.0),
+        "XS002-F": ("I2", "Pcorpnipa", 1.0),
+        "XS002-G": ("I2", "s", 1.0),
     },
-    "AS003": {
-        "AS003-A": ("I3", "BankMonIntPaid", 1.0),  # placeholder; processor will compute BankNetIntPaid
-        "AS003-B": ("I3", "NFNetImpIntPaid", 1.0),
-        "AS003-C": ("I3", "BusImpIntAdj", 1.0),
-        "AS003-D": ("I3", "rbus", 1.0),
-        "AS003-E": ("I3", "rcorp", 1.0),
-        "AS003-F": ("I3", "rnoncorp", 1.0),
-        "AS003-G": ("I3", "rnoncorp1", 1.0),
+    "XS003": {
+        "XS003-A": ("I3", "BankMonIntPaid", 1.0),  # placeholder; processor will compute BankNetIntPaid
+        "XS003-B": ("I3", "NFNetImpIntPaid", 1.0),
+        "XS003-C": ("I3", "BusImpIntAdj", 1.0),
+        "XS003-D": ("I3", "rbus", 1.0),
+        "XS003-E": ("I3", "rcorp", 1.0),
+        "XS003-F": ("I3", "rnoncorp", 1.0),
+        "XS003-G": ("I3", "rnoncorp1", 1.0),
     },
-    "AS004": {
-        "AS004-A": ("II5", "KNCcorp", 1.0),
-        "AS004-B": ("II5", "KGCcorp", 1.0),
-        "AS004-C": ("II5", "KNHcorp", 1.0),
+    "XS004": {
+        "XS004-A": ("II5", "KNCcorp", 1.0),
+        "XS004-B": ("II5", "KGCcorp", 1.0),
+        "XS004-C": ("II5", "KNHcorp", 1.0),
     },
-    "AS005": {
-        "AS005-A": ("II1", "KNCcorp'", 1.0),
-        "AS005-B": ("II1", "KNCcorpbea", 1.0),
-        "AS005-C": ("II1", "KNCcorp'ratio", 1.0),
+    "XS005": {
+        "XS005-A": ("II1", "KNCcorp'", 1.0),
+        "XS005-B": ("II1", "KNCcorpbea", 1.0),
+        "XS005-C": ("II1", "KNCcorp'ratio", 1.0),
     },
-    "AS006": {
-        "AS006-depr_only": ("II3", "KNCcorpnew", 1.0),
-        "AS006-depr_plus_init": ("II3", "KNCbea93", 1.0),
-        "AS006-dcorpnew": ("II3", "dcorpnew", 1.0),
+    "XS006": {
+        "XS006-depr_only": ("II3", "KNCcorpnew", 1.0),
+        "XS006-depr_plus_init": ("II3", "KNCbea93", 1.0),
+        "XS006-dcorpnew": ("II3", "dcorpnew", 1.0),
     },
-    "AS007": {
+    "XS007": {
         # KTHcorpirs in II4 is in thousands of dollars — divide by 1000 to get billions
-        "AS007-A": ("II4", "KTHcorpirs", 1.0 / 1000.0),
-        "AS007-B": ("II4", "KNCcorpbeaAdj", 1.0),
-        "AS007-C": ("II4", "KNHcorpbeaAdj", 1.0),
+        "XS007-A": ("II4", "KTHcorpirs", 1.0 / 1000.0),
+        "XS007-B": ("II4", "KNCcorpbeaAdj", 1.0),
+        "XS007-C": ("II4", "KNHcorpbeaAdj", 1.0),
     },
-    "AS008": {
-        "AS008-A": ("II5", "Adj. Ratio", 1.0),
+    "XS008": {
+        "XS008-A": ("II5", "Adj. Ratio", 1.0),
     },
-    "AS009": {
+    "XS009": {
         # INVIRScorp in II6 is in thousands of dollars — divide by 1000 to get billions
-        "AS009-A": ("II6", "INVcorp", 1.0),  # already current-cost billions in the rescaled column
-        "AS009-B": ("II6", "KGCcorp", 1.0),
-        "AS009-C": ("II6", "KTCcorp", 1.0),
+        "XS009-A": ("II6", "INVcorp", 1.0),  # already current-cost billions in the rescaled column
+        "XS009-B": ("II6", "KGCcorp", 1.0),
+        "XS009-C": ("II6", "KTCcorp", 1.0),
     },
     "S601": {
         "S601-A": ("I3", "rcorp", 1.0),
@@ -206,7 +206,7 @@ and writes Technical/data/processed/{sid}.parquet with the canonical
 
 Construction: the Shaikh Appendix 6.8 chopped tables already contain the
 finished {sid} columns; the loader applied unit normalization at fetch time
-(AS007/AS009 thousands->billions; others identity). The processor enforces
+(XS007/XS009 thousands->billions; others identity). The processor enforces
 the 5-column schema, deduplicates, and sorts.
 """
 from __future__ import annotations
@@ -437,8 +437,8 @@ No synthetic values, interpolations, or freezes are used. All values are verbati
 | Appendix workbook missing or corrupted | `_ch6_appendix_loader` raises `FileNotFoundError` or empty DataFrame | L01 returns `status: FAIL` with explicit path |
 | Variable name not in workbook | `load_variables` returns empty DataFrame | L01 records 0 rows for that subseries; V03 flags as missing |
 | BEA / IRS vintage drift during extension | EPR-documented re-fetch script logs vintage_year; V03 tolerance widens for extension rows | Documented per-year; no silent overwrite of book period |
-| FISIM T7.11 line revision (AS003) | `_nipa_t711_line_resolver` falls back to nearest pinned vintage with logged warning | Re-mapped by stub label; vintage logged in resolver output |
-| BEA 1993 depreciation rate not available post-2011 | AS004/AS006/AS007 freeze depreciation rate inputs at 2011-vintage projection | Documented in `BEA_1993_FA_methodology/README.md` |
+| FISIM T7.11 line revision (XS003) | `_nipa_t711_line_resolver` falls back to nearest pinned vintage with logged warning | Re-mapped by stub label; vintage logged in resolver output |
+| BEA 1993 depreciation rate not available post-2011 | XS004/XS006/XS007 freeze depreciation rate inputs at 2011-vintage projection | Documented in `BEA_1993_FA_methodology/README.md` |
 
 ## CD2 Divergence Pre-Disclosure
 
@@ -468,50 +468,50 @@ def _doc_sources_table(sid: str) -> str:
 
 
 def _construction_doc(sid: str, spec: dict) -> str:
-    if sid == "AS003":
+    if sid == "XS003":
         return ("BankNetIntPaid = T7.11((L4+L44+L73)-(L28+L52+L91)); "
                 "NFNetImpIntPaid = T7.11((L74+L75)-(L53+L54)); "
                 "BusImpIntAdj = -BankNetIntPaid - NFNetImpIntPaid. "
                 "Sectoral profit rates: rcorp = Pcorp/KNCcorp(-1); rnoncorp = Pnoncorp/KNCnoncorp(-1); "
                 "rbus = Pbus/KNCbus(-1). All capital stocks lagged one period. "
                 "FISIM-revision-stable line ids resolved via `_nipa_t711_line_resolver.py`.")
-    if sid == "AS004":
+    if sid == "XS004":
         return ("KNCcorp_baseline = GPIM (eq. 6.57): KNCnew = IGC + (1-dcorpnew)*(pKN/pKN(-1))*KNCnew(-1), "
                 "with BEA 2011 initial value 98.1 (1925), BEA 1993 depreciation rate dcorpnew "
                 "(from `BEA_1993_FA_methodology/BEA_1993_depreciation_retirement_rates.csv`), "
-                "and IRS interwar adjustment via AS008 multiplier for 1925-1947.")
-    if sid == "AS005":
+                "and IRS interwar adjustment via XS008 multiplier for 1925-1947.")
+    if sid == "XS005":
         return ("Pure-reference GPIM regenerator with BEA 2011 initial value AND BEA 2011 "
                 "(infinite-life geometric) depreciation rate. Verifies 99.6% accuracy "
                 "vs. official BEA KNCcorpbea per Appendix Table 6.8.II.1.")
-    if sid == "AS006":
+    if sid == "XS006":
         return ("Two sub-variants per Phase 4 Q1:\n"
-                "* `AS006-depr_only`: GPIM rule (eq. 6.57) with BEA 1993 depreciation rate + BEA 2011 initial value 98.1.\n"
-                "* `AS006-depr_plus_init`: GPIM rule with BEA 1993 depreciation rate + BEA 1993 initial value 77.769.")
-    if sid == "AS007":
+                "* `XS006-depr_only`: GPIM rule (eq. 6.57) with BEA 1993 depreciation rate + BEA 2011 initial value 98.1.\n"
+                "* `XS006-depr_plus_init`: GPIM rule with BEA 1993 depreciation rate + BEA 1993 initial value 77.769.")
+    if sid == "XS007":
         return ("KTHcorpirs = IRS book-value index (Census 1975 Series V 115) used to scale "
                 "BEA 2011 current-cost stock for the Great Depression / WWII window 1925-1947. "
                 "Raw IRS Series V 115 values are in THOUSANDS OF DOLLARS; loader applies "
                 "scale factor 1/1000 to convert to billions before downstream use.")
-    if sid == "AS008":
-        return ("AS008 = IRS index / BEA 2011 historical-cost index, normalized so 1925 = 1.0. "
-                "Intrinsically 1925-1947 only — feeds AS007/AS004 historical correction.")
-    if sid == "AS009":
+    if sid == "XS008":
+        return ("XS008 = IRS index / BEA 2011 historical-cost index, normalized so 1925 = 1.0. "
+                "Intrinsically 1925-1947 only — feeds XS007/XS004 historical correction.")
+    if sid == "XS009":
         return ("INVcorp = IRS SOI corporate inventories at current cost. "
-                "KTCcorp = KGCcorp (from AS004) + INVcorp. "
+                "KTCcorp = KGCcorp (from XS004) + INVcorp. "
                 "Raw IRS SOI inventory line is in THOUSANDS OF DOLLARS in the upstream IRS source; "
                 "Shaikh's Appendix Table 6.8.II.6 column INVcorp is already in billions of current USD "
                 "after Shaikh's rescaling. Post-2011 inventory is bounded by IRS reporting; constant-ratio "
                 "proxy flagged via `extension_method: constant_ratio_proxy_2012_onwards`.")
     if sid == "S601":
         return ("Three sectoral profit-rate series + capacity-utilization u_K / u_FRB. "
-                "rcorp = (P + NMINT) / (KGC(-1) + INV(-1)) re-using AS003, AS004, AS009. "
+                "rcorp = (P + NMINT) / (KGC(-1) + INV(-1)) re-using XS003, XS004, XS009. "
                 "Re-computed end-to-end from components; no splice on the published rate.")
     if sid == "S602":
         return ("Six lines plotted in Fig 6.2 / 6.6: corrected vs NIPA maximum rate "
                 "(Rcorp vs Rcorpnipa), corrected vs NIPA average rate (rcorp vs rcorpnipa), "
                 "corrected vs NIPA profit share (Profshcorp vs Profshcorpnipa). "
-                "Eq. 6.10 applied with KTC(-1) = KGC(-1) + INV(-1) (uses AS004 + AS009 denominators).")
+                "Eq. 6.10 applied with KTC(-1) = KGC(-1) + INV(-1) (uses XS004 + XS009 denominators).")
     if sid == "S603":
         return ("Decomposition of rcorp/rcorpnipa = (x1/x2) * x3 per eq. 6.11. "
                 "x1 = 1 + NMINT/P (imputed-interest factor); "
@@ -535,23 +535,23 @@ def _extension_recipe(sid: str, spec: dict) -> str:
         "2. Fetch BEA Fixed Asset T6.1, T6.4, T6.7, T6.8 via the same client.\n"
         "3. Re-run the construction formula end-to-end.\n"
     )
-    if sid == "AS003":
+    if sid == "XS003":
         return (common_bea +
                 "4. T7.11 line ids are resolved by `_nipa_t711_line_resolver.compute_AS003_recipe`, "
                 "which uses the BEA-canonical stub labels rather than the 2011-vintage line numbers; "
                 "this survives the 2013/2018 FISIM revisions.\n"
                 "5. Recompute BusImpIntAdj for each year and propagate into sectoral profit rates.")
-    if sid in ("AS004", "AS006"):
+    if sid in ("XS004", "XS006"):
         return (common_bea +
                 "4. BEA 1993 depreciation/retirement rates are read from "
                 "`SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/BEA_1993_depreciation_retirement_rates.csv` "
                 "(Phase 5 blocker CH6-B3 RESOLVED). Rate inputs freeze at 2011-vintage projection.")
-    if sid == "AS007":
-        return ("Extension is NOT applicable — AS007 is a 1925-1947 historical correction. "
+    if sid == "XS007":
+        return ("Extension is NOT applicable — XS007 is a 1925-1947 historical correction. "
                 "Source data (Census 1975 Series V 115) is itself a one-time historical compilation.")
-    if sid == "AS008":
-        return ("Extension is NOT applicable — AS008 is the 1925-1947 multiplier ratio by construction.")
-    if sid == "AS009":
+    if sid == "XS008":
+        return ("Extension is NOT applicable — XS008 is the 1925-1947 multiplier ratio by construction.")
+    if sid == "XS009":
         return (common_bea +
                 "4. Post-2011 inventory currently uses `extension_method: constant_ratio_proxy_2012_onwards`. "
                 "Phase 6 lift recommended: re-estimate INV/KGC ratio from current IRS SOI Corporation Complete Report "
@@ -559,7 +559,7 @@ def _extension_recipe(sid: str, spec: dict) -> str:
                 "historical-cost stock as the denominator.")
     if sid in ("S601", "S602", "S603", "S604"):
         return (common_bea +
-                "4. Recompute AS003 (sectoral profit rates), AS004 (KNCcorp / KGCcorp), and AS009 (KTCcorp) "
+                "4. Recompute XS003 (sectoral profit rates), XS004 (KNCcorp / KGCcorp), and XS009 (KTCcorp) "
                 "using the same current-vintage components. NEVER splice the published profit-rate series.\n"
                 "5. For S603 x1: freeze at last complete NMINT year — do NOT forward-fill.\n"
                 "6. For S604: prefer iropcorpnipa as the canonical extended series; iropcorp is bounded by "
@@ -568,15 +568,15 @@ def _extension_recipe(sid: str, spec: dict) -> str:
 
 
 def _cd2_divergence(sid: str) -> str:
-    if sid == "AS006":
+    if sid == "XS006":
         return ("CD2's S211 sample values match the BEA 1993 *initial* value 77.769 (matches our "
-                "`AS006-depr_plus_init` sub-variant). The Phase 3 dossier text describes the "
-                "depreciation-rate-only variant (matches `AS006-depr_only`). Both are shipped; "
+                "`XS006-depr_plus_init` sub-variant). The Phase 3 dossier text describes the "
+                "depreciation-rate-only variant (matches `XS006-depr_only`). Both are shipped; "
                 "users should inspect Appendix Fig 6.7.5 / 6.7.6 to confirm which Shaikh plots.")
-    if sid == "AS007":
+    if sid == "XS007":
         return ("CD2 S212 raw values are ~1000x larger than expected (thousands vs billions). "
                 "Loader normalizes via scale = 1/1000.")
-    if sid == "AS009":
+    if sid == "XS009":
         return ("CD2 S214 INVIRScorp raw values are also ~1000x larger; same normalization applies. "
                 "Post-2011 proxy is explicitly flagged via `extension_method` metadata.")
     return ("CD2 / RSCD round-trip parity expected within tolerance for the book period. "
@@ -598,14 +598,14 @@ def _why_it_matters(sid: str, spec: dict) -> str:
 
 def _caveats(sid: str, spec: dict) -> str:
     cav = []
-    if sid == "AS006":
+    if sid == "XS006":
         cav.append("Two sub-variants shipped per Phase 4 Q1 — see CD2 Divergence in EPR.")
-    if sid == "AS007":
+    if sid == "XS007":
         cav.append("Raw IRS Series V 115 in thousands of dollars; loader applies scale=1/1000.")
-    if sid == "AS009":
+    if sid == "XS009":
         cav.append("Raw IRS SOI inventories in thousands of dollars; INVcorp column in Appendix Table 6.8.II.6 is already rescaled to billions.")
         cav.append("Post-2011 inventory uses constant 2011 ratio proxy; flagged via `extension_method`.")
-    if sid == "AS008":
+    if sid == "XS008":
         cav.append("Intrinsic year range 1925-1947 only; not an extendable series.")
     if sid == "S603":
         cav.append("x1 freezes at last complete NMINT_corp year; do NOT forward-fill (CD2 preserved behaviour).")
@@ -676,8 +676,8 @@ def main() -> int:
         # EPR
         epr_path = docs / f"{sid}_EPR.md"
         epr_class = spec.get("extension_status", "extendable_via_component_refetch")
-        proxy_disc = ("AS009 carries an extension-only proxy flag (constant_ratio_proxy_2012_onwards); see Decision 0002 + Phase 4 Q3."
-                      if sid == "AS009" else "Book period is fully sourced from primary BEA / IRS / Census; no proxies.")
+        proxy_disc = ("XS009 carries an extension-only proxy flag (constant_ratio_proxy_2012_onwards); see Decision 0002 + Phase 4 Q3."
+                      if sid == "XS009" else "Book period is fully sourced from primary BEA / IRS / Census; no proxies.")
         epr_path.write_text(EPR_TEMPLATE.format(
             sid=sid,
             name=spec["name"],

@@ -142,7 +142,7 @@ SERIES_DOCS = {
     },
     "S207": {
         "name": "US Manufacturing Productivity and Production Worker Real Compensation, 1889-2025",
-        "figure": "Figure 2.7",
+        "figure": "Figure 2.5",
         "definition": "Two co-plotted index series (both Index 1889 = 100): (a) manufacturing labor productivity, (b) production-worker real compensation per hour. Used by Shaikh to demonstrate divergence between productivity growth and worker wages.",
         "why": "Central to the labor-share-and-productivity-divergence argument that runs through Chapters 2, 6, 14, 15.",
         "sources": [
@@ -173,7 +173,7 @@ SERIES_DOCS = {
     },
     "S208": {
         "name": "US Manufacturing Real Unit Production Labor Cost Index, 1889-2025",
-        "figure": "Figure 2.8",
+        "figure": "Figure 2.6",
         "definition": "RULC = real compensation per hour / productivity, rescaled to 1889 = 100. Equivalent to (S207-B / S207-A) * 100.",
         "why": "Key Marxian indicator: real unit labor cost is the wage share when productivity and real wages are both real. Tracks the 'labor share' over 120 years.",
         "sources": [
@@ -200,7 +200,7 @@ SERIES_DOCS = {
     },
     "S209": {
         "name": "US Unemployment Rate, 1890-2025",
-        "figure": "Figure 2.9",
+        "figure": "Figure 2.7",
         "definition": "Civilian unemployment rate, spliced from BEA LTEG (1890-1947) + ERP Table B-40 (1948-2010), extended via FRED UNRATE.",
         "why": "Standard cyclical indicator; complements the Ayres business-cycle subperiods with a continuous post-1890 record.",
         "sources": [
@@ -227,8 +227,8 @@ SERIES_DOCS = {
         "extension_method": "Direct continuation via FRED UNRATE (same BLS CPS series as ERP T B-40).",
     },
     "S210": {
-        "name": "US and UK Wholesale Price Indexes, 1780-2025 (Fig 2.10, log scale)",
-        "figure": "Figure 2.10",
+        "name": "US and UK Wholesale Price Indexes, 1780-2025 (Fig 2.8, log scale)",
+        "figure": "Figure 2.8",
         "definition": "Annual wholesale price indexes for US (1780-2010) and UK (1780-2010) on log scale, both rebased to 1930 = 100. Composite of Jastram (1977) + BLS PPI + ONS PLLU.",
         "why": "Foundation series for the inflation-vs-deflation analysis that pervades the book (Chs 2, 5, 14, 15). The very long span makes the gold-standard / fiat-money price-level break of 1933 starkly visible.",
         "sources": [
@@ -258,7 +258,7 @@ SERIES_DOCS = {
     },
     "S211": {
         "name": "US and UK Wholesale Price Indexes, 1780-1940 (1930=100, log scale)",
-        "figure": "Figure 2.11",
+        "figure": "Figure 2.9",
         "definition": "Windowed view of S210 truncated at 1940 by analytical design. Used by Shaikh to focus on the gold-standard era prior to Bretton Woods.",
         "why": "Sets up the 'turbulent monetary regulation' argument by displaying the strikingly stationary character of WPIs under the gold standard.",
         "sources": [
@@ -283,7 +283,7 @@ SERIES_DOCS = {
     },
     "S212": {
         "name": "US and UK Wholesale Prices in Ounces of Gold, 1790-2025 (1930=100, log scale)",
-        "figure": "Figure 2.12",
+        "figure": "Figure 2.10",
         "definition": "Formula series: WPI / gold_price for US and UK separately, rebased to 1930 = 100.",
         "why": "Strips out monetary inflation/deflation by deflating prices by gold; reveals the *real* (commodity-money-denominated) price level over 220 years.",
         "sources": [
@@ -311,7 +311,7 @@ SERIES_DOCS = {
     },
     "S213": {
         "name": "US Corporate Rate of Profit, 1947-2011",
-        "figure": "Figure 2.13",
+        "figure": "Figure 2.11",
         "definition": "Average rate of profit for the US corporate sector, r = NOS_corporate / K_net (constant dollars), per Shaikh Appendix 6.7 methodology.",
         "why": "The book's first long-run profit-rate series; setup for the central-tendency-vs-incremental analysis in Chs 6, 7.",
         "sources": [
@@ -338,7 +338,7 @@ SERIES_DOCS = {
     },
     "S214": {
         "name": "Average Rates of Profit in US Manufacturing, 1960-1989",
-        "figure": "Figure 2.14",
+        "figure": "Figure 2.12",
         "definition": "Sector-by-sector profit rates for 15 US manufacturing aggregates, 1960-1989. Source: Shaikh Appendix 7.2 hosted on anwarshaikhecon.org.",
         "why": "Empirical foundation for the cross-sector profit-rate distribution analysis in Ch 7 (real competition).",
         "sources": [
@@ -365,7 +365,7 @@ SERIES_DOCS = {
     },
     "S215": {
         "name": "Incremental Rates of Profit in US Manufacturing, 1960-1989",
-        "figure": "Figure 2.15",
+        "figure": "Figure 2.13",
         "definition": "Incremental profit rate r* = PG / IG(-1), where PG = gross profits and IG = gross investment lagged one year (footnote 6, p. 67).",
         "why": "Companion to S214; introduces the *incremental* profit rate measure that becomes central to Chs 7, 14, 16.",
         "sources": [
@@ -390,9 +390,9 @@ SERIES_DOCS = {
     },
     "S216": {
         "name": "Normalized Total Prices of Production Profit vs Total Unit Labor Costs, US 1972 (71 Industries)",
-        "figure": "Figure 2.16",
+        "figure": "Figure 2.14",
         "definition": "Cross-sectional scatter for 71 industries from BEA 1972 benchmark I-O: x = total vertically-integrated unit labor cost (tv), y = total market prices (tpm) AND total prices of production at observed r (tp(r)). Both axes normalized so industry totals sum to 1.",
-        "why": "First-pass empirical test of the Sraffian/classical claim that market prices cluster around prices of production. The strong correlation in Fig 2.16 anchors the Real Competition argument in Ch 7.",
+        "why": "First-pass empirical test of the Sraffian/classical claim that market prices cluster around prices of production. The strong correlation in Fig 2.14 anchors the Real Competition argument in Ch 7.",
         "sources": [
             ("S216-A", "1972", "BEA 1972 Use/Make + Shaikh Appendix 9 Sraffian computation (tp(r) normalized)", "normalized dollars", "salvaged chopped (Appendix9_1972fixed)"),
             ("S216-B", "1972", "BEA 1972 Use/Make (tpm normalized)", "normalized dollars", "salvaged chopped (Appendix9_1972fixed)"),
@@ -419,7 +419,7 @@ SERIES_DOCS = {
     },
     "S217": {
         "name": "GDP per Capita of World Regions (Maddison), 1600-2000",
-        "figure": "Figure 2.17",
+        "figure": "Figure 2.15",
         "definition": "Maddison (2003) regional per-capita GDP estimates in 1990 International Geary-Khamis dollars, for World + 5 regions (Western Europe, Western Offshoots, Latin America, Asia, Africa).",
         "why": "Empirical foundation for the chapter's closing 'two-world' argument (~400 years of accelerating divergence between Western Offshoots/Europe and the rest).",
         "sources": [
@@ -450,9 +450,9 @@ SERIES_DOCS = {
     },
     "S218": {
         "name": "GDP per Capita Richest Four and Poorest Four Countries (Maddison), 1600-2000",
-        "figure": "Figure 2.18",
+        "figure": "Figures 2.16 and 2.17",
         "definition": "Average GDP per capita of the 4 richest countries and 4 poorest countries at each decennial benchmark, plus the ratio (richest4/poorest4). Shaikh excludes Kuwait/Qatar/Venezuela from the top 4 (1950+).",
-        "why": "Closes the chapter with a stark quantitative measure of global inequality: 40x in 1990, 64x in 2000.",
+        "why": "Closes the chapter with a stark quantitative measure of global inequality: the richest-four to poorest-four ratio rises from 7.1 in 1900 to 64.2 in 2000.",
         "sources": [
             ("S218-A", "1600-2000", "Maddison (2003) RICHEST 4 with Shaikh exclusions", "1990 GK $/cap", "salvaged chopped"),
             ("S218-B", "1600-2000", "Maddison (2003) POOREST 4", "1990 GK $/cap", "salvaged chopped"),
@@ -510,7 +510,7 @@ def _make_dpr(sid: str, d: dict) -> str:
 
 {d['definition']}
 
-In Shaikh (2016) the series appears as **{d['figure']}** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **{d['figure']}** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 

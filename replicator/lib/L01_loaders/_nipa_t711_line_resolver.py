@@ -1,6 +1,6 @@
 """
 NIPA T7.11 (Interest Paid and Received by Sector and Legal Form) line-number
-resolver — vintage-stable FISIM line mapping for AS003.
+resolver — vintage-stable FISIM line mapping for XS003.
 
 Background
 ----------
@@ -110,7 +110,7 @@ class T711StubMapping:
     notes: str = ""
 
 
-# The canonical CD2-2011 line list (Shaikh 2016, p. 842; AS003 dossier):
+# The canonical CD2-2011 line list (Shaikh 2016, p. 842; XS003 dossier):
 #   bank net interest paid     = (4 + 44 + 73) - (28 + 52 + 91)
 #   nonfin net imputed int pd  = (74 + 75)     - (53 + 54)
 #
@@ -267,7 +267,7 @@ _T711_LINE_INDEX: dict[int, dict[str, int]] = {
 }
 
 # Recipe assembled from stub labels (vintage-independent)
-AS003_RECIPE_STUBS: dict[str, dict[str, list[str]]] = {
+XS003_RECIPE_STUBS: dict[str, dict[str, list[str]]] = {
     "BankNetIntPaid": {
         "add": [
             "domestic_business__financial_corporate__monetary_interest_paid",
@@ -331,7 +331,7 @@ def resolve_t711_line(historical_line_num: int, vintage_year: int) -> str:
     except KeyError as e:
         raise KeyError(
             f"T7.11 line {historical_line_num} (vintage {vintage_year}) is not "
-            f"in the AS003 recipe set. Known lines: {sorted(reverse.keys())}"
+            f"in the XS003 recipe set. Known lines: {sorted(reverse.keys())}"
         ) from e
 
 
@@ -348,7 +348,7 @@ def get_stub_mapping(stub_label: str) -> T711StubMapping:
 
 
 def all_recipe_stubs() -> list[str]:
-    """Return the 10 stub labels used by the AS003 recipe."""
+    """Return the 10 stub labels used by the XS003 recipe."""
     return list(_CD2_TO_STUB.values())
 
 
@@ -356,7 +356,7 @@ def compute_AS003_recipe(
     t711_values: dict[str, float],
     current_vintage: int | None = None,
 ) -> dict[str, float]:
-    """Apply Shaikh's AS003 recipe to a value-dict keyed by stub label.
+    """Apply Shaikh's XS003 recipe to a value-dict keyed by stub label.
 
     Parameters
     ----------
@@ -377,12 +377,12 @@ def compute_AS003_recipe(
         raise ValueError(f"compute_AS003_recipe: missing stubs {missing!r}")
 
     bank_net = (
-        sum(t711_values[k] for k in AS003_RECIPE_STUBS["BankNetIntPaid"]["add"])
-        - sum(t711_values[k] for k in AS003_RECIPE_STUBS["BankNetIntPaid"]["sub"])
+        sum(t711_values[k] for k in XS003_RECIPE_STUBS["BankNetIntPaid"]["add"])
+        - sum(t711_values[k] for k in XS003_RECIPE_STUBS["BankNetIntPaid"]["sub"])
     )
     nf_net = (
-        sum(t711_values[k] for k in AS003_RECIPE_STUBS["NFNetImpIntPaid"]["add"])
-        - sum(t711_values[k] for k in AS003_RECIPE_STUBS["NFNetImpIntPaid"]["sub"])
+        sum(t711_values[k] for k in XS003_RECIPE_STUBS["NFNetImpIntPaid"]["add"])
+        - sum(t711_values[k] for k in XS003_RECIPE_STUBS["NFNetImpIntPaid"]["sub"])
     )
     bus_imp = -bank_net - nf_net
 

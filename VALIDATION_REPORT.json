@@ -1018,7 +1018,7 @@
       "divergence_count": 0,
       "validated_at": "2026-05-18T23:17:48.676972+00:00"
     },
-    "AS001": {
+    "XS001": {
       "status": "PASS",
       "tolerance_pct": 1.0,
       "n_compared": 390,
@@ -1028,16 +1028,16 @@
       "divergence_years": [],
       "divergence_count": 0,
       "subseries_compared": [
-        "AS001-A",
-        "AS001-B",
-        "AS001-C",
-        "AS001-D",
-        "AS001-E",
-        "AS001-F"
+        "XS001-A",
+        "XS001-B",
+        "XS001-C",
+        "XS001-D",
+        "XS001-E",
+        "XS001-F"
       ],
       "validated_at": "2026-05-18T22:46:45.073268+00:00"
     },
-    "AS002": {
+    "XS002": {
       "status": "PASS",
       "tolerance_pct": 1.0,
       "n_compared": 455,
@@ -1047,17 +1047,17 @@
       "divergence_years": [],
       "divergence_count": 0,
       "subseries_compared": [
-        "AS002-A",
-        "AS002-B",
-        "AS002-C",
-        "AS002-D",
-        "AS002-E",
-        "AS002-F",
-        "AS002-G"
+        "XS002-A",
+        "XS002-B",
+        "XS002-C",
+        "XS002-D",
+        "XS002-E",
+        "XS002-F",
+        "XS002-G"
       ],
       "validated_at": "2026-05-18T22:47:15.068411+00:00"
     },
-    "AS003": {
+    "XS003": {
       "status": "PASS",
       "tolerance_pct": 1.0,
       "n_compared": 455,
@@ -1067,17 +1067,17 @@
       "divergence_years": [],
       "divergence_count": 0,
       "subseries_compared": [
-        "AS003-A",
-        "AS003-B",
-        "AS003-C",
-        "AS003-D",
-        "AS003-E",
-        "AS003-F",
-        "AS003-G"
+        "XS003-A",
+        "XS003-B",
+        "XS003-C",
+        "XS003-D",
+        "XS003-E",
+        "XS003-F",
+        "XS003-G"
       ],
       "validated_at": "2026-05-18T22:47:47.043972+00:00"
     },
-    "AS004": {
+    "XS004": {
       "status": "PASS",
       "tolerance_pct": 1.0,
       "n_compared": 261,
@@ -1087,13 +1087,13 @@
       "divergence_years": [],
       "divergence_count": 0,
       "subseries_compared": [
-        "AS004-A",
-        "AS004-B",
-        "AS004-C"
+        "XS004-A",
+        "XS004-B",
+        "XS004-C"
       ],
       "validated_at": "2026-05-18T22:48:20.596680+00:00"
     },
-    "AS005": {
+    "XS005": {
       "status": "PASS",
       "tolerance_pct": 1.0,
       "n_compared": 261,
@@ -1103,13 +1103,13 @@
       "divergence_years": [],
       "divergence_count": 0,
       "subseries_compared": [
-        "AS005-A",
-        "AS005-B",
-        "AS005-C"
+        "XS005-A",
+        "XS005-B",
+        "XS005-C"
       ],
       "validated_at": "2026-05-18T22:48:59.058054+00:00"
     },
-    "AS006": {
+    "XS006": {
       "status": "PASS",
       "tolerance_pct": 1.0,
       "n_compared": 238,
@@ -1119,9 +1119,9 @@
       "divergence_years": [],
       "divergence_count": 0,
       "subseries_compared": [
-        "AS006-dcorpnew",
-        "AS006-depr_only",
-        "AS006-depr_plus_init"
+        "XS006-dcorpnew",
+        "XS006-depr_only",
+        "XS006-depr_plus_init"
       ],
       "validated_at": "2026-05-18T22:49:39.714928+00:00"
     },
@@ -1146,7 +1146,7 @@
       "divergences_sample": [],
       "validated_at": "2026-05-18T23:18:16.553653+00:00"
     },
-    "AS007": {
+    "XS007": {
       "status": "PASS",
       "tolerance_pct": 1.5,
       "n_compared": 220,
@@ -1156,13 +1156,13 @@
       "divergence_years": [],
       "divergence_count": 0,
       "subseries_compared": [
-        "AS007-A",
-        "AS007-B",
-        "AS007-C"
+        "XS007-A",
+        "XS007-B",
+        "XS007-C"
       ],
       "validated_at": "2026-05-18T22:50:10.595806+00:00"
     },
-    "AS008": {
+    "XS008": {
       "status": "PASS",
       "tolerance_pct": 1.0,
       "n_compared": 23,
@@ -1172,7 +1172,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "subseries_compared": [
-        "AS008-A"
+        "XS008-A"
       ],
       "validated_at": "2026-05-18T22:50:53.093765+00:00"
     },
@@ -1198,7 +1198,7 @@
       "divergences_sample": [],
       "validated_at": "2026-05-18T23:18:41.331189+00:00"
     },
-    "AS009": {
+    "XS009": {
       "status": "PASS",
       "tolerance_pct": 1.0,
       "n_compared": 198,
@@ -1208,9 +1208,9 @@
       "divergence_years": [],
       "divergence_count": 0,
       "subseries_compared": [
-        "AS009-A",
-        "AS009-B",
-        "AS009-C"
+        "XS009-A",
+        "XS009-B",
+        "XS009-C"
       ],
       "validated_at": "2026-05-18T22:51:22.915744+00:00"
     },
@@ -1267,11 +1267,11 @@
         }
       }
     },
-    "ES2001": {
+    "XS2001": {
       "status": "PASS",
       "tolerance_pct": 0.5,
       "content_type": "time_series",
-      "comparison_basis": "Reconstructed ES2001_aggregate_ratios.csv (verbatim Shaikh 2020 Tables 1-2)",
+      "comparison_basis": "Reconstructed XS2001_aggregate_ratios.csv (verbatim Shaikh 2020 Tables 1-2)",
       "n_compared": 108,
       "mae": 0.0,
       "max_abs_err": 0.0,
@@ -1635,11 +1635,11 @@
         }
       }
     },
-    "ES2101": {
+    "XS2101": {
       "status": "PASS",
       "tolerance_pct": 0.5,
       "content_type": "derived",
-      "comparison_basis": "Reconstructed ES2101_summary_statistics.csv (verbatim Section 5 p. 272)",
+      "comparison_basis": "Reconstructed XS2101_summary_statistics.csv (verbatim Section 5 p. 272)",
       "n_compared": 10,
       "mae": 0.0,
       "max_abs_err": 0.0,
@@ -1649,11 +1649,11 @@
       "extension_status": "v1_1_deferred_shared_bea_sraffa_pipeline",
       "validated_at": "2026-05-18T22:52:29.222860+00:00"
     },
-    "ES2201": {
+    "XS2201": {
       "status": "PASS",
       "tolerance_pct": 0.5,
       "content_type": "time_series",
-      "comparison_basis": "Reconstructed ES2201_fitted_parameters.csv (verbatim Shaikh-Jacobo 2020 Table 1)",
+      "comparison_basis": "Reconstructed XS2201_fitted_parameters.csv (verbatim Shaikh-Jacobo 2020 Table 1)",
       "n_compared": 75,
       "mae": 0.0,
       "max_abs_err": 0.0,
@@ -1741,7 +1741,7 @@
       "divergences_sample": [],
       "validated_at": "2026-05-18T23:19:25.080115+00:00"
     },
-    "ES2302": {
+    "XS2302": {
       "status": "PASS",
       "tolerance_pct": 15.0,
       "content_type": "time_series",
@@ -1757,12 +1757,12 @@
         2031
       ],
       "subseries_present": [
-        "ES2302-level",
-        "ES2302-pctgdp"
+        "XS2302-level",
+        "XS2302-pctgdp"
       ],
       "validated_at": "2026-05-18T22:53:19.950103+00:00"
     },
-    "ES2303": {
+    "XS2303": {
       "status": "PASS",
       "tolerance_pct": 10.0,
       "content_type": "time_series",
@@ -1779,11 +1779,11 @@
       ],
       "validated_at": "2026-05-18T23:06:07.248952+00:00"
     },
-    "ES2304": {
+    "XS2304": {
       "status": "PASS",
       "tolerance_pct": 0.5,
       "content_type": "derived",
-      "comparison_basis": "Reconstructed ES2304_literature_compilation.csv (verbatim named endpoints from paper note 17)",
+      "comparison_basis": "Reconstructed XS2304_literature_compilation.csv (verbatim named endpoints from paper note 17)",
       "n_compared": 2,
       "mae": 0.0,
       "max_abs_err": 0.0,
@@ -1793,11 +1793,11 @@
       "extension_status": "not_applicable_literature_compilation",
       "validated_at": "2026-05-18T22:54:55.940352+00:00"
     },
-    "ES2305": {
+    "XS2305": {
       "status": "PASS",
       "tolerance_pct": 0.5,
       "content_type": "derived",
-      "comparison_basis": "Reconstructed ES2305_literature_compilation.csv (verbatim named endpoints)",
+      "comparison_basis": "Reconstructed XS2305_literature_compilation.csv (verbatim named endpoints)",
       "n_compared": 2,
       "mae": 0.0,
       "max_abs_err": 0.0,
@@ -1807,26 +1807,26 @@
       "extension_status": "not_applicable_literature_compilation",
       "validated_at": "2026-05-18T22:55:45.125194+00:00"
     },
-    "ES2301": {
+    "XS2301": {
       "status": "PASS",
       "tolerance_pct": 10.0,
       "content_type": "time_series",
       "comparison_basis": "Fig 1 endpoint anchors (2002, 2017) for World and China",
       "n_compared": 4,
-      "mae": 0.0,
-      "max_abs_err": 0.0,
-      "max_pct_err": 0.0,
+      "mae": 6.0598,
+      "max_abs_err": 17.604,
+      "max_pct_err": 2.1733,
       "divergence_count": 0,
       "divergences": [],
       "year_range_processed": [
         2002,
-        2018
+        2024
       ],
       "subseries_present": [
-        "ES2301-china",
-        "ES2301-world"
+        "XS2301-china",
+        "XS2301-world"
       ],
-      "validated_at": "2026-05-18T23:05:09.211340+00:00"
+      "validated_at": "2026-06-11T04:43:02.195531+00:00"
     },
     "S203": {
       "status": "PASS",
@@ -2980,5 +2980,5 @@
       "validated_at": "2026-05-19T00:20:06.805239+00:00"
     }
   },
-  "generated_at": "2026-05-27T05:08:16.209481+00:00"
+  "generated_at": "2026-06-11T04:43:02.196589+00:00"
 }

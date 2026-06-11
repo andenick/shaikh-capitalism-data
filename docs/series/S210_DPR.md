@@ -1,4 +1,4 @@
-# S210 -- US and UK Wholesale Price Indexes, 1780-2025 (Fig 2.10, log scale)
+# S210 -- US and UK Wholesale Price Indexes, 1780-2025 (Fig 2.8, log scale)
 
 **Data Provenance Record (DPR)**
 **Phase**: 5 (Ingestion)
@@ -18,7 +18,7 @@
 
 Annual wholesale price indexes for US (1780-2010) and UK (1780-2010) on log scale, both rebased to 1930 = 100. Composite of Jastram (1977) + BLS PPI + ONS PLLU.
 
-In Shaikh (2016) the series appears as **Figure 2.10** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.8** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 
@@ -57,7 +57,7 @@ Index, 1930 = 100 (log scale on figure)
 
 ## 8. Cross-references
 
-- Book reference: Shaikh (2016), Ch. 2, Figure 2.10
+- Book reference: Shaikh (2016), Ch. 2, Figure 2.8
 - Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
 - Predecessor (CD2): see registry `predecessor_ids` block.
 

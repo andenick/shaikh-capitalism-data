@@ -18,7 +18,7 @@
 
 Incremental profit rate r* = PG / IG(-1), where PG = gross profits and IG = gross investment lagged one year (footnote 6, p. 67).
 
-In Shaikh (2016) the series appears as **Figure 2.15** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.13** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 
@@ -55,7 +55,7 @@ Rate (decimal)
 
 ## 8. Cross-references
 
-- Book reference: Shaikh (2016), Ch. 2, Figure 2.15
+- Book reference: Shaikh (2016), Ch. 2, Figure 2.13
 - Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
 - Predecessor (CD2): see registry `predecessor_ids` block.
 

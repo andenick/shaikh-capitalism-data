@@ -48,8 +48,14 @@
   "construction": "direct",
   "formula": null,
   "components": [],
-  "year_range_book": [1954, 1963],
-  "year_range_extension": [null, null],
+  "year_range_book": [
+    1954,
+    1963
+  ],
+  "year_range_extension": [
+    null,
+    null
+  ],
   "extension_candidates": [
     {
       "subseries_label": "ONS Labour Productivity by industry (UK, SIC 2007)",
@@ -79,6 +85,7 @@
     "Replication for RSCD: digitize Table 28 from Salter (1969) directly OR use Shaikh's transcribed Appendix 7.2 file Appendix7_SalterULCPriceTable28.xlsx. Like S701, the figure is a historical cross-section and is not extensible as a modern time series."
   ],
   "open_questions": [
+    "SOURCE-LABEL DESYNC (ch7 reconciliation 2026-06-11): the book caption (KB ground truth) cites this UK Fig 7.12 panel as Salter 1969, p.164, table 28 — research/docs now follow the book. BUT the registry subsource KEY (SALTER_1969_TABLE33_UK), SUBSOURCE_METADATA.json entry, and the chopped S702.csv source_id column still carry the file-derived label TABLE33 with page 197. Registry/chopped left untouched (out of scope). Registry owner should reconcile the key/source_id/table_id to the book-correct p.164/table 28. Data VALUES verified EXACT vs the Salter UK panel (56/56 pairs).",
     "Confirm Appendix7_SalterULCPriceTable28.xlsx in SalvagedInputs is verbatim from Salter (1969) Table 28, with no transformation applied by Shaikh.",
     "Decide whether to preserve Salter's UK industry labels (e.g., 'Iron and Steel', 'Cotton', 'Wool') as-is for the regenerated figure, or to map them to modern SIC07 (recommendation: keep original - illustration of a historical pattern).",
     "Re-classify content_type from time_series (stub default) to cross_sectional."

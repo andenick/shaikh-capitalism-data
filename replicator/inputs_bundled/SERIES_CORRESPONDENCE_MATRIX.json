@@ -689,63 +689,63 @@
       "cd2_id": null,
       "status": "new"
     },
-    "AS001": {
+    "XS001": {
       "name": "GDP/GDI Decomposition and Business NOS",
       "chapter": 6,
       "cd_id": null,
       "cd2_id": "S206",
       "status": "mapped"
     },
-    "AS002": {
+    "XS002": {
       "name": "Wage Equivalent and Corporate/Noncorporate Split",
       "chapter": 6,
       "cd_id": null,
       "cd2_id": "S207",
       "status": "mapped"
     },
-    "AS003": {
+    "XS003": {
       "name": "Imputed Interest Adjustment and Sectoral Profit Rates",
       "chapter": 6,
       "cd_id": null,
       "cd2_id": "S208",
       "status": "mapped"
     },
-    "AS004": {
+    "XS004": {
       "name": "GPIM Corporate Capital Stock",
       "chapter": 6,
       "cd_id": null,
       "cd2_id": "S209",
       "status": "mapped"
     },
-    "AS005": {
+    "XS005": {
       "name": "GPIM Variant — BEA 2011 Initial Value",
       "chapter": 6,
       "cd_id": null,
       "cd2_id": "S210",
       "status": "mapped"
     },
-    "AS006": {
+    "XS006": {
       "name": "GPIM Variant — BEA 1993 vs 2011",
       "chapter": 6,
       "cd_id": null,
       "cd2_id": "S211",
       "status": "mapped"
     },
-    "AS007": {
+    "XS007": {
       "name": "GPIM Variant — IRS Adjusted",
       "chapter": 6,
       "cd_id": null,
       "cd2_id": "S212",
       "status": "mapped"
     },
-    "AS008": {
+    "XS008": {
       "name": "GPIM Variant — Interwar Adjusted",
       "chapter": 6,
       "cd_id": null,
       "cd2_id": "S213",
       "status": "mapped"
     },
-    "AS009": {
+    "XS009": {
       "name": "IRS Corporate Inventories and Total Capital Stock",
       "chapter": 6,
       "cd_id": null,
@@ -773,7 +773,7 @@
       "cd2_id": "S038",
       "status": "mapped"
     },
-    "ES2001": {
+    "XS2001": {
       "name": "Shaikh (2020) - An Empirically Sufficient Form for Sraffa Prices",
       "chapter": null,
       "cd_id": null,
@@ -781,7 +781,7 @@
       "status": "new",
       "external_study_group": 20
     },
-    "ES2101": {
+    "XS2101": {
       "name": "Shaikh, Coronado, Nassif-Pires (2020) - On the empirical regularities of Sraffa prices",
       "chapter": null,
       "cd_id": null,
@@ -789,7 +789,7 @@
       "status": "new",
       "external_study_group": 21
     },
-    "ES2201": {
+    "XS2201": {
       "name": "Shaikh & Jacobo (2020) - Economic Arbitrage and the Econophysics of Income Inequality",
       "chapter": null,
       "cd_id": null,
@@ -797,7 +797,7 @@
       "status": "new",
       "external_study_group": 22
     },
-    "ES2301": {
+    "XS2301": {
       "name": "Weber & Shaikh (2020) - The US-China trade imbalance and the theory of free trade",
       "chapter": null,
       "cd_id": null,
@@ -805,7 +805,7 @@
       "status": "new",
       "external_study_group": 23
     },
-    "ES2302": {
+    "XS2302": {
       "name": "China Current Account Balance (level USD Bn and % GDP)",
       "chapter": null,
       "cd_id": null,
@@ -813,7 +813,7 @@
       "status": "new",
       "external_study_group": 23
     },
-    "ES2303": {
+    "XS2303": {
       "name": "China Official Foreign Exchange Reserves Excluding Gold",
       "chapter": null,
       "cd_id": null,
@@ -821,7 +821,7 @@
       "status": "new",
       "external_study_group": 23
     },
-    "ES2304": {
+    "XS2304": {
       "name": "RMB Misalignment Estimates under Extended PPP Approach (literature compilation)",
       "chapter": null,
       "cd_id": null,
@@ -829,7 +829,7 @@
       "status": "new",
       "external_study_group": 23
     },
-    "ES2305": {
+    "XS2305": {
       "name": "RMB Misalignment Estimates under Macroeconomic Balance Approach (literature compilation)",
       "chapter": null,
       "cd_id": null,
@@ -985,15 +985,15 @@
     "S102": "S1701",
     "S103": "S1702",
     "S104": "S1703",
-    "S206": "AS001",
-    "S207": "AS002",
-    "S208": "AS003",
-    "S209": "AS004",
-    "S210": "AS005",
-    "S211": "AS006",
-    "S212": "AS007",
-    "S213": "AS008",
-    "S214": "AS009",
+    "S206": "XS001",
+    "S207": "XS002",
+    "S208": "XS003",
+    "S209": "XS004",
+    "S210": "XS005",
+    "S211": "XS006",
+    "S212": "XS007",
+    "S213": "XS008",
+    "S214": "XS009",
     "S035": "S709",
     "S037": "S710"
   }

@@ -6,7 +6,7 @@ and writes Technical/data/processed/S604.parquet with the canonical
 
 Construction: the Shaikh Appendix 6.8 chopped tables already contain the
 finished S604 columns; the loader applied unit normalization at fetch time
-(AS007/AS009 thousands->billions; others identity). The processor enforces
+(XS007/XS009 thousands->billions; others identity). The processor enforces
 the 5-column schema, deduplicates, and sorts.
 """
 from __future__ import annotations

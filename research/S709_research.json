@@ -1,6 +1,6 @@
 {
   "series_id": "S709",
-  "name": "US Industry ROP Deviations from Average (Figure 7.16), 1988-2005",
+  "name": "US Industry ROP Deviations from Average (Figure 7.16), 1987-2005",
   "chapter": 7,
   "figures": [
     "Fig7.16"
@@ -71,8 +71,14 @@
       "role": "canonical source: contains industry ROP panel and All-Private aggregate from which dev_i,t is directly computed"
     }
   ],
-  "year_range_book": [1988, 2005],
-  "year_range_extension": [1988, 2024],
+  "year_range_book": [
+    1987,
+    2005
+  ],
+  "year_range_extension": [
+    1988,
+    2024
+  ],
   "extension_candidates": [
     {
       "subseries_label": "BEA GDP-by-Industry (Value Added components, by NAICS) - re-run S705 pipeline, then re-compute deviations",

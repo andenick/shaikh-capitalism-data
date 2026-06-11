@@ -18,7 +18,7 @@
 
 Average rate of profit for the US corporate sector, r = NOS_corporate / K_net (constant dollars), per Shaikh Appendix 6.7 methodology.
 
-In Shaikh (2016) the series appears as **Figure 2.13** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.11** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 
@@ -57,7 +57,7 @@ Rate (decimal; e.g. 0.15 = 15%)
 
 ## 8. Cross-references
 
-- Book reference: Shaikh (2016), Ch. 2, Figure 2.13
+- Book reference: Shaikh (2016), Ch. 2, Figure 2.11
 - Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
 - Predecessor (CD2): see registry `predecessor_ids` block.
 

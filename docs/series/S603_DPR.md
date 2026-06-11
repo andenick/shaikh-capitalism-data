@@ -39,7 +39,7 @@ dimensionless_ratio
 
 ## Cross-references
 
-`AS003`, `AS004`, `AS009`
+`XS003`, `XS004`, `XS009`
 
 ## Validation Expectation
 

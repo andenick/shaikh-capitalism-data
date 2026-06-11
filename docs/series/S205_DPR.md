@@ -18,7 +18,7 @@
 
 Monthly Ayres cyclical-component index, 1867-1902 subperiod.
 
-In Shaikh (2016) the series appears as **Figure 2.4B** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.4B** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 

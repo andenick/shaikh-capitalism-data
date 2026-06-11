@@ -18,7 +18,7 @@ Shaikh (2016).
 
 ## Search results (negative)
 
-- No copy of Christodoulopoulos (1995) anywhere in `D:/Arcanum/Projects/RSCD/Inputs`
+- No copy of Christodoulopoulos (1995) anywhere in the project `Inputs/` tree
   (recursive Grep for "Christodoulopoulos" returns only metadata
   references in Shaikh derivative catalogs — no PDF or data file).
 - No copy in `Inputs/Capitalism Data/Technical/data/raw/01_SOURCE_MATERIALS/Web Folders/Shaikh Publications/`

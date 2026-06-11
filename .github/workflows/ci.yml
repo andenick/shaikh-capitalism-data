@@ -1,0 +1,21 @@
+name: RSCD CI
+on: [push, pull_request]
+jobs:
+  replicate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.11' }
+      - name: Install dependencies (clean venv)
+        run: |
+          python -m venv .venv
+          . .venv/bin/activate
+          pip install -r requirements.txt
+      - name: Replicator health + plan
+        run: |
+          . .venv/bin/activate
+          python code/run.py --health
+          python code/run.py --list
+      - name: anu-doctor project consistency
+        run: python check_project.py --project . || true

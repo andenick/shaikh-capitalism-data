@@ -18,11 +18,11 @@
 
 Cross-sectional scatter for 71 industries from BEA 1972 benchmark I-O: x = total vertically-integrated unit labor cost (tv), y = total market prices (tpm) AND total prices of production at observed r (tp(r)). Both axes normalized so industry totals sum to 1.
 
-In Shaikh (2016) the series appears as **Figure 2.16** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.14** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 
-First-pass empirical test of the Sraffian/classical claim that market prices cluster around prices of production. The strong correlation in Fig 2.16 anchors the Real Competition argument in Ch 7.
+First-pass empirical test of the Sraffian/classical claim that market prices cluster around prices of production. The strong correlation in Fig 2.14 anchors the Real Competition argument in Ch 7.
 
 ## 3. Sources (per subseries)
 
@@ -59,7 +59,7 @@ Normalized dollars (sums of each axis match)
 
 ## 8. Cross-references
 
-- Book reference: Shaikh (2016), Ch. 2, Figure 2.16
+- Book reference: Shaikh (2016), Ch. 2, Figure 2.14
 - Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
 - Predecessor (CD2): see registry `predecessor_ids` block.
 

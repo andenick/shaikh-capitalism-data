@@ -56,7 +56,7 @@ No CD2 per-series CSV matches S804 content (no genuine CD2 dossier for Ch8). The
 ## 8. Recovery / future-work
 
 Optional modern parallel (out of Phase 5 scope):
-1. IRS SOI Corporation Complete Report (https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report — HTTP 200 confirmed; substitute for the deprecated Corporation Source Book slug, same as Ch6 AS009).
+1. IRS SOI Corporation Complete Report (https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report — HTTP 200 confirmed; substitute for the deprecated Corporation Source Book slug, same as Ch6 XS009).
 2. U.S. Census Economic Census Concentration Ratios via the active tables landing (https://www.census.gov/programs-surveys/economic-census/data/tables.html — HTTP 200 confirmed).
 3. NAICS-level partition into high-CR4 / low-CR4 and re-aggregation of annual IRS profit rates into multi-year bins.
 

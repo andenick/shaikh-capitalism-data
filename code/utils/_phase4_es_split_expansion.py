@@ -1,13 +1,13 @@
 """
-ES2301 5-way Split Expansion — RSCD
+XS2301 5-way Split Expansion — RSCD
 
 Per approved decision 0006:
-- Rescope ES2301 from composite parent to Fig-1 component only (US-China bilateral trade balance)
-- Add ES2302 (China current account)
-- Add ES2303 (China FX reserves)
-- Add ES2304 (RMB misalignment extended PPP, literature compilation)
-- Add ES2305 (RMB misalignment macro-balance, literature compilation)
-- ES2306 (relative ULC) deferred to v1.1
+- Rescope XS2301 from composite parent to Fig-1 component only (US-China bilateral trade balance)
+- Add XS2302 (China current account)
+- Add XS2303 (China FX reserves)
+- Add XS2304 (RMB misalignment extended PPP, literature compilation)
+- Add XS2305 (RMB misalignment macro-balance, literature compilation)
+- XS2306 (relative ULC) deferred to v1.1
 
 Idempotent.
 """
@@ -21,25 +21,25 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import paths
 
 NEW_ES = [
-    ("ES2302", "China Current Account Balance (level USD Bn and % GDP)",
+    ("XS2302", "China Current Account Balance (level USD Bn and % GDP)",
      "IMF World Economic Outlook database", "https://www.imf.org/en/Publications/WEO",
      "billions_usd_and_percent_gdp", "annual", "time_series", "direct",
      "Fig 2 of Weber & Shaikh (2020). Two columns: BCA level (USD Bn) and BCA as % of GDP.",
      [1990, 2017]),
-    ("ES2303", "China Official Foreign Exchange Reserves Excluding Gold",
+    ("XS2303", "China Official Foreign Exchange Reserves Excluding Gold",
      "World Bank WDI FI.RES.XGLD.CD", "https://data.worldbank.org/indicator/FI.RES.XGLD.CD",
      "current_usd", "annual", "time_series", "direct",
      "Fig 3 of Weber & Shaikh (2020). PBoC FX reserves ex-gold series.",
      [1990, 2017]),
-    ("ES2304", "RMB Misalignment Estimates under Extended PPP Approach (literature compilation)",
+    ("XS2304", "RMB Misalignment Estimates under Extended PPP Approach (literature compilation)",
      "Literature compilation", None,
      "percent", "annual", "time_series", "composite",
      "Fig 4 of Weber & Shaikh (2020). Compiled per paper note 17 from: Cline-Williamson 2007; Dunaway-Li 2005; Cheung-Chinn-Fujii 2010a; Cheung 2012.",
      [1995, 2012]),
-    ("ES2305", "RMB Misalignment Estimates under Macroeconomic Balance Approach (literature compilation)",
+    ("XS2305", "RMB Misalignment Estimates under Macroeconomic Balance Approach (literature compilation)",
      "Literature compilation", None,
      "percent", "annual", "time_series", "composite",
-     "Fig 5 of Weber & Shaikh (2020). Same 4-paper literature compilation as ES2304.",
+     "Fig 5 of Weber & Shaikh (2020). Same 4-paper literature compilation as XS2304.",
      [1995, 2012]),
 ]
 
@@ -49,9 +49,9 @@ def main():
     matrix = json.loads(paths.CORRESPONDENCE.read_text(encoding="utf-8"))
     initial = len(reg["series"])
 
-    # 1. Rescope ES2301
-    if "ES2301" in reg["series"]:
-        es2301 = reg["series"]["ES2301"]
+    # 1. Rescope XS2301
+    if "XS2301" in reg["series"]:
+        es2301 = reg["series"]["XS2301"]
         es2301["name"] = "US-China Bilateral Merchandise Trade Balance"
         es2301["figures"] = ["Fig 1"]
         es2301["status"] = "candidate"
@@ -67,10 +67,10 @@ def main():
             "license": "public-domain",
         }
         es2301["year_range"] = [1990, 2017]
-        es2301["notes"] = (es2301.get("notes") or "") + " | Rescoped per decision 0006 to Fig 1 only; ES2302-ES2305 hold the other 4 figures."
-        print("Rescoped ES2301")
+        es2301["notes"] = (es2301.get("notes") or "") + " | Rescoped per decision 0006 to Fig 1 only; XS2302-XS2305 hold the other 4 figures."
+        print("Rescoped XS2301")
 
-    # 2. Add ES2302-ES2305
+    # 2. Add XS2302-XS2305
     added = 0
     for new_id, name, agency, url, units, freq, ctype, cons, note, year_range in NEW_ES:
         if new_id in reg["series"]:

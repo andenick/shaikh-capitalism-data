@@ -701,6 +701,113 @@ def census_ft900_annual_balance(
     return df
 
 
+def census_country_annual_balance(
+    partner_code: str,
+    start: int = 2002,
+    end: int = 2024,
+    ttl_days: Optional[int] = 30,
+) -> pd.DataFrame:
+    """Fetch annual US goods trade balance with a partner from a Census country page.
+
+    Census Foreign Trade publishes per-partner goods-trade pages at
+    ``https://www.census.gov/foreign-trade/balance/c{code}.html``. Each page is
+    a sequence of per-year HTML tables with columns
+    ``[Month, Exports, Imports, Balance]`` (current USD **millions**, Census
+    basis = Total Exports Value − Customs Import Value). Every year-table ends
+    with a ``TOTAL {YYYY}`` row carrying the annual figures.
+
+    This parser reads the ``TOTAL {YYYY}`` rows directly — the year is embedded
+    in the ``Month`` cell, not in a column header — which is stable across the
+    Census page-layout vintages observed 2020-2026.
+
+    Codes used by RSCD XS2301:
+      * ``"0004"`` = All countries / World total (FT900 goods balance)
+      * ``"5700"`` = China
+
+    Parameters
+    ----------
+    partner_code : 4-digit Census country/area code as a string.
+    start, end : inclusive year bounds.
+
+    Returns
+    -------
+    DataFrame with columns ``['year', 'exports', 'imports', 'balance']`` in
+    current USD **millions**. Callers divide by 1000 for Billion-USD display.
+
+    Raises
+    ------
+    ApiUnavailable if the page cannot be fetched or no ``TOTAL`` rows parse.
+    """
+    import re
+    from io import StringIO
+
+    query = {"source": "census_country_page", "partner": partner_code,
+             "start": start, "end": end}
+    cached = S00_cache.get("census_country_page", query, ttl_days=ttl_days)
+    if cached is not None:
+        return cached
+
+    url = f"https://www.census.gov/foreign-trade/balance/c{partner_code}.html"
+    last_exc: Optional[Exception] = None
+    for attempt in range(RETRIES):
+        try:
+            resp = requests.get(url, timeout=HTTP_TIMEOUT,
+                                headers={"User-Agent": "RSCDPipeline/1.0"})
+            if resp.status_code == 200 and len(resp.content) > 2000:
+                break
+            last_exc = RuntimeError(f"HTTP {resp.status_code}, len={len(resp.content)}")
+        except (requests.ConnectionError, requests.Timeout) as exc:
+            last_exc = exc
+        time.sleep(2 ** (attempt + 1))
+    else:
+        raise ApiUnavailable(
+            f"Census country page c{partner_code} failed after {RETRIES} retries: {last_exc}")
+
+    try:
+        tables = pd.read_html(StringIO(resp.text))
+    except Exception as exc:
+        raise ApiUnavailable(f"Census country page c{partner_code} HTML parse failed: {exc}")
+
+    rows: dict[int, dict] = {}
+    for tbl in tables:
+        cols = [str(c).strip() for c in tbl.columns]
+        if "Month" not in cols or "Balance" not in cols:
+            continue
+        tbl.columns = cols
+        for _, r in tbl.iterrows():
+            mt = re.match(r"TOTAL\s+(\d{4})", str(r["Month"]).strip())
+            if not mt:
+                continue
+            yr = int(mt.group(1))
+            if yr < start or yr > end:
+                continue
+
+            def _num(col):
+                try:
+                    return float(str(r[col]).replace(",", "").replace("$", ""))
+                except (ValueError, KeyError):
+                    return None
+
+            bal = _num("Balance")
+            exp = _num("Exports")
+            imp = _num("Imports")
+            if bal is None and exp is not None and imp is not None:
+                bal = exp - imp
+            if bal is None:
+                continue
+            # Keep the most complete record per year (a year may recur in the
+            # current-year provisional table and a final-year table).
+            rows[yr] = {"year": yr, "exports": exp, "imports": imp, "balance": bal}
+
+    if not rows:
+        raise ApiUnavailable(
+            f"Census country page c{partner_code}: no TOTAL rows parsed from {url}")
+    df = pd.DataFrame(sorted(rows.values(), key=lambda d: d["year"])).reset_index(drop=True)
+    S00_cache.put("census_country_page", query, df,
+                  extra_meta={"endpoint": url, "partner": partner_code})
+    return df
+
+
 if __name__ == "__main__":
     import json
     print(json.dumps(health(), indent=2))

@@ -89,6 +89,7 @@
     "content_type set to cross_sectional (not time_series) because each contraction is a cross-section of industries; the three contractions are not a continuous time index."
   ],
   "open_questions": [
+    "SOURCE-TABLE NUMBER AMBIGUITY (flagged 2026-06-11 ch8/9 reconciliation): Shaikh's text (book p.372 / KB ch08 line 2141) cites the Weston data as 'Semmler 1984, 95, table 3.2', but the chopped source_id is SEMMLER_1984_TABLE_3_3 and the digitized workbook is Appendix8_Semmler19843.3.xlsx (Table 3.3). Both are p.95. Reconcile the source-citation label (text says 3.2; digitized workbook says 3.3); data values are unaffected.",
     "The Weston et al. (1974) underlying micro data (per-industry CR4 and price-change percentages) is not provided in the book or chopped tables; only the three-by-three summary table is available.",
     "Stub had cd_id S043; there is no corresponding CD2 dossier (cd2_id remains null).",
     "Extension would require choosing modern recessions (e.g., 2007-09) and reconstructing the same statistic; flagged for Phase 4 to decide whether to extend or treat this as a historical illustration."

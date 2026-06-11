@@ -1390,7 +1390,7 @@
         "eq_10.31_recursion"
       ]
     },
-    "AS001": {
+    "XS001": {
       "name": "GDP/GDI Decomposition and Business NOS",
       "chapter": 6,
       "status": "extenbook_published",
@@ -1403,20 +1403,20 @@
         "8_output"
       ],
       "artifacts": {
-        "research_json": "Technical/research/AS001_research.json",
+        "research_json": "Technical/research/XS001_research.json",
         "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
-        "dpr": "Technical/docs/series/AS001_DPR.md",
-        "epr": "Technical/docs/series/AS001_EPR.md",
+        "dpr": "Technical/docs/series/XS001_DPR.md",
+        "epr": "Technical/docs/series/XS001_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_AS001.py",
         "processor": "Technical/code/P02_processors/P02_AS001.py",
         "validator": "Technical/code/V03_validators/V03_AS001.py",
-        "processed": "Technical/data/processed/AS001.parquet",
-        "chopped_csv": "Technical/chopped/AS001.csv",
-        "extenbook_xlsx": "Technical/extenbooks/AS001_extenbook.xlsx"
+        "processed": "Technical/data/processed/XS001.parquet",
+        "chopped_csv": "Technical/chopped/XS001.csv",
+        "extenbook_xlsx": "Technical/extenbooks/XS001_extenbook.xlsx"
       },
       "updated_at": "2026-05-18T22:43:17.420354+00:00"
     },
-    "AS002": {
+    "XS002": {
       "name": "Wage Equivalent and Corp/Noncorp Split",
       "chapter": 6,
       "status": "extenbook_published",
@@ -1429,20 +1429,20 @@
         "8_output"
       ],
       "artifacts": {
-        "research_json": "Technical/research/AS002_research.json",
+        "research_json": "Technical/research/XS002_research.json",
         "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
-        "dpr": "Technical/docs/series/AS002_DPR.md",
-        "epr": "Technical/docs/series/AS002_EPR.md",
+        "dpr": "Technical/docs/series/XS002_DPR.md",
+        "epr": "Technical/docs/series/XS002_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_AS002.py",
         "processor": "Technical/code/P02_processors/P02_AS002.py",
         "validator": "Technical/code/V03_validators/V03_AS002.py",
-        "processed": "Technical/data/processed/AS002.parquet",
-        "chopped_csv": "Technical/chopped/AS002.csv",
-        "extenbook_xlsx": "Technical/extenbooks/AS002_extenbook.xlsx"
+        "processed": "Technical/data/processed/XS002.parquet",
+        "chopped_csv": "Technical/chopped/XS002.csv",
+        "extenbook_xlsx": "Technical/extenbooks/XS002_extenbook.xlsx"
       },
       "updated_at": "2026-05-18T22:43:17.420354+00:00"
     },
-    "AS003": {
+    "XS003": {
       "name": "Imputed Interest Adjustment and Sectoral Profit Rates",
       "chapter": 6,
       "status": "extenbook_published",
@@ -1455,20 +1455,20 @@
         "8_output"
       ],
       "artifacts": {
-        "research_json": "Technical/research/AS003_research.json",
+        "research_json": "Technical/research/XS003_research.json",
         "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
-        "dpr": "Technical/docs/series/AS003_DPR.md",
-        "epr": "Technical/docs/series/AS003_EPR.md",
+        "dpr": "Technical/docs/series/XS003_DPR.md",
+        "epr": "Technical/docs/series/XS003_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_AS003.py",
         "processor": "Technical/code/P02_processors/P02_AS003.py",
         "validator": "Technical/code/V03_validators/V03_AS003.py",
-        "processed": "Technical/data/processed/AS003.parquet",
-        "chopped_csv": "Technical/chopped/AS003.csv",
-        "extenbook_xlsx": "Technical/extenbooks/AS003_extenbook.xlsx"
+        "processed": "Technical/data/processed/XS003.parquet",
+        "chopped_csv": "Technical/chopped/XS003.csv",
+        "extenbook_xlsx": "Technical/extenbooks/XS003_extenbook.xlsx"
       },
       "updated_at": "2026-05-18T22:43:17.420354+00:00"
     },
-    "AS004": {
+    "XS004": {
       "name": "GPIM Corporate Capital Stock (Operational Baseline)",
       "chapter": 6,
       "status": "extenbook_published",
@@ -1481,20 +1481,20 @@
         "8_output"
       ],
       "artifacts": {
-        "research_json": "Technical/research/AS004_research.json",
+        "research_json": "Technical/research/XS004_research.json",
         "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
-        "dpr": "Technical/docs/series/AS004_DPR.md",
-        "epr": "Technical/docs/series/AS004_EPR.md",
+        "dpr": "Technical/docs/series/XS004_DPR.md",
+        "epr": "Technical/docs/series/XS004_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_AS004.py",
         "processor": "Technical/code/P02_processors/P02_AS004.py",
         "validator": "Technical/code/V03_validators/V03_AS004.py",
-        "processed": "Technical/data/processed/AS004.parquet",
-        "chopped_csv": "Technical/chopped/AS004.csv",
-        "extenbook_xlsx": "Technical/extenbooks/AS004_extenbook.xlsx"
+        "processed": "Technical/data/processed/XS004.parquet",
+        "chopped_csv": "Technical/chopped/XS004.csv",
+        "extenbook_xlsx": "Technical/extenbooks/XS004_extenbook.xlsx"
       },
       "updated_at": "2026-05-18T22:43:17.420354+00:00"
     },
-    "AS005": {
+    "XS005": {
       "name": "GPIM Variant - BEA 2011 Reference (Pure GPIM Regenerator)",
       "chapter": 6,
       "status": "extenbook_published",
@@ -1507,20 +1507,20 @@
         "8_output"
       ],
       "artifacts": {
-        "research_json": "Technical/research/AS005_research.json",
+        "research_json": "Technical/research/XS005_research.json",
         "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
-        "dpr": "Technical/docs/series/AS005_DPR.md",
-        "epr": "Technical/docs/series/AS005_EPR.md",
+        "dpr": "Technical/docs/series/XS005_DPR.md",
+        "epr": "Technical/docs/series/XS005_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_AS005.py",
         "processor": "Technical/code/P02_processors/P02_AS005.py",
         "validator": "Technical/code/V03_validators/V03_AS005.py",
-        "processed": "Technical/data/processed/AS005.parquet",
-        "chopped_csv": "Technical/chopped/AS005.csv",
-        "extenbook_xlsx": "Technical/extenbooks/AS005_extenbook.xlsx"
+        "processed": "Technical/data/processed/XS005.parquet",
+        "chopped_csv": "Technical/chopped/XS005.csv",
+        "extenbook_xlsx": "Technical/extenbooks/XS005_extenbook.xlsx"
       },
       "updated_at": "2026-05-18T22:43:17.420354+00:00"
     },
-    "AS006": {
+    "XS006": {
       "name": "GPIM Variant - BEA 1993 Depreciation Rates",
       "chapter": 6,
       "status": "extenbook_published",
@@ -1533,20 +1533,20 @@
         "8_output"
       ],
       "artifacts": {
-        "research_json": "Technical/research/AS006_research.json",
+        "research_json": "Technical/research/XS006_research.json",
         "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
-        "dpr": "Technical/docs/series/AS006_DPR.md",
-        "epr": "Technical/docs/series/AS006_EPR.md",
+        "dpr": "Technical/docs/series/XS006_DPR.md",
+        "epr": "Technical/docs/series/XS006_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_AS006.py",
         "processor": "Technical/code/P02_processors/P02_AS006.py",
         "validator": "Technical/code/V03_validators/V03_AS006.py",
-        "processed": "Technical/data/processed/AS006.parquet",
-        "chopped_csv": "Technical/chopped/AS006.csv",
-        "extenbook_xlsx": "Technical/extenbooks/AS006_extenbook.xlsx"
+        "processed": "Technical/data/processed/XS006.parquet",
+        "chopped_csv": "Technical/chopped/XS006.csv",
+        "extenbook_xlsx": "Technical/extenbooks/XS006_extenbook.xlsx"
       },
       "updated_at": "2026-05-18T22:43:17.420354+00:00"
     },
-    "AS007": {
+    "XS007": {
       "name": "GPIM Variant - IRS Adjusted",
       "chapter": 6,
       "status": "extenbook_published",
@@ -1559,20 +1559,20 @@
         "8_output"
       ],
       "artifacts": {
-        "research_json": "Technical/research/AS007_research.json",
+        "research_json": "Technical/research/XS007_research.json",
         "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
-        "dpr": "Technical/docs/series/AS007_DPR.md",
-        "epr": "Technical/docs/series/AS007_EPR.md",
+        "dpr": "Technical/docs/series/XS007_DPR.md",
+        "epr": "Technical/docs/series/XS007_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_AS007.py",
         "processor": "Technical/code/P02_processors/P02_AS007.py",
         "validator": "Technical/code/V03_validators/V03_AS007.py",
-        "processed": "Technical/data/processed/AS007.parquet",
-        "chopped_csv": "Technical/chopped/AS007.csv",
-        "extenbook_xlsx": "Technical/extenbooks/AS007_extenbook.xlsx"
+        "processed": "Technical/data/processed/XS007.parquet",
+        "chopped_csv": "Technical/chopped/XS007.csv",
+        "extenbook_xlsx": "Technical/extenbooks/XS007_extenbook.xlsx"
       },
       "updated_at": "2026-05-18T22:43:17.420354+00:00"
     },
-    "AS008": {
+    "XS008": {
       "name": "GPIM Variant - Interwar Adjustment Multiplier",
       "chapter": 6,
       "status": "extenbook_published",
@@ -1585,20 +1585,20 @@
         "8_output"
       ],
       "artifacts": {
-        "research_json": "Technical/research/AS008_research.json",
+        "research_json": "Technical/research/XS008_research.json",
         "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
-        "dpr": "Technical/docs/series/AS008_DPR.md",
-        "epr": "Technical/docs/series/AS008_EPR.md",
+        "dpr": "Technical/docs/series/XS008_DPR.md",
+        "epr": "Technical/docs/series/XS008_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_AS008.py",
         "processor": "Technical/code/P02_processors/P02_AS008.py",
         "validator": "Technical/code/V03_validators/V03_AS008.py",
-        "processed": "Technical/data/processed/AS008.parquet",
-        "chopped_csv": "Technical/chopped/AS008.csv",
-        "extenbook_xlsx": "Technical/extenbooks/AS008_extenbook.xlsx"
+        "processed": "Technical/data/processed/XS008.parquet",
+        "chopped_csv": "Technical/chopped/XS008.csv",
+        "extenbook_xlsx": "Technical/extenbooks/XS008_extenbook.xlsx"
       },
       "updated_at": "2026-05-18T22:43:17.420354+00:00"
     },
-    "AS009": {
+    "XS009": {
       "name": "IRS Corporate Inventories and Total Capital Stock",
       "chapter": 6,
       "status": "extenbook_published",
@@ -1611,16 +1611,16 @@
         "8_output"
       ],
       "artifacts": {
-        "research_json": "Technical/research/AS009_research.json",
+        "research_json": "Technical/research/XS009_research.json",
         "adequacy_report": "Technical/docs/chapters/CH6_ADEQUACY_REPORT.json",
-        "dpr": "Technical/docs/series/AS009_DPR.md",
-        "epr": "Technical/docs/series/AS009_EPR.md",
+        "dpr": "Technical/docs/series/XS009_DPR.md",
+        "epr": "Technical/docs/series/XS009_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_AS009.py",
         "processor": "Technical/code/P02_processors/P02_AS009.py",
         "validator": "Technical/code/V03_validators/V03_AS009.py",
-        "processed": "Technical/data/processed/AS009.parquet",
-        "chopped_csv": "Technical/chopped/AS009.csv",
-        "extenbook_xlsx": "Technical/extenbooks/AS009_extenbook.xlsx"
+        "processed": "Technical/data/processed/XS009.parquet",
+        "chopped_csv": "Technical/chopped/XS009.csv",
+        "extenbook_xlsx": "Technical/extenbooks/XS009_extenbook.xlsx"
       },
       "updated_at": "2026-05-18T22:43:17.420354+00:00"
     },
@@ -1728,15 +1728,15 @@
       },
       "updated_at": "2026-05-18T22:43:17.420354+00:00"
     },
-    "ES2001": {
+    "XS2001": {
       "phases_completed": [
         5,
         6,
         7
       ],
       "artifacts": {
-        "dpr": "Technical/docs/series/ES2001_DPR.md",
-        "epr": "Technical/docs/series/ES2001_EPR.md",
+        "dpr": "Technical/docs/series/XS2001_DPR.md",
+        "epr": "Technical/docs/series/XS2001_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_ES2001.py",
         "processor": "Technical/code/P02_processors/P02_ES2001.py",
         "validator": "Technical/code/V03_validators/V03_ES2001.py"
@@ -1744,15 +1744,15 @@
       "last_updated": "2026-05-18",
       "author": "opus-fanout-ES"
     },
-    "ES2101": {
+    "XS2101": {
       "phases_completed": [
         5,
         6,
         7
       ],
       "artifacts": {
-        "dpr": "Technical/docs/series/ES2101_DPR.md",
-        "epr": "Technical/docs/series/ES2101_EPR.md",
+        "dpr": "Technical/docs/series/XS2101_DPR.md",
+        "epr": "Technical/docs/series/XS2101_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_ES2101.py",
         "processor": "Technical/code/P02_processors/P02_ES2101.py",
         "validator": "Technical/code/V03_validators/V03_ES2101.py"
@@ -1760,15 +1760,15 @@
       "last_updated": "2026-05-18",
       "author": "opus-fanout-ES"
     },
-    "ES2201": {
+    "XS2201": {
       "phases_completed": [
         5,
         6,
         7
       ],
       "artifacts": {
-        "dpr": "Technical/docs/series/ES2201_DPR.md",
-        "epr": "Technical/docs/series/ES2201_EPR.md",
+        "dpr": "Technical/docs/series/XS2201_DPR.md",
+        "epr": "Technical/docs/series/XS2201_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_ES2201.py",
         "processor": "Technical/code/P02_processors/P02_ES2201.py",
         "validator": "Technical/code/V03_validators/V03_ES2201.py"
@@ -1776,15 +1776,15 @@
       "last_updated": "2026-05-18",
       "author": "opus-fanout-ES"
     },
-    "ES2301": {
+    "XS2301": {
       "phases_completed": [
         5,
         6,
         7
       ],
       "artifacts": {
-        "dpr": "Technical/docs/series/ES2301_DPR.md",
-        "epr": "Technical/docs/series/ES2301_EPR.md",
+        "dpr": "Technical/docs/series/XS2301_DPR.md",
+        "epr": "Technical/docs/series/XS2301_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_ES2301.py",
         "processor": "Technical/code/P02_processors/P02_ES2301.py",
         "validator": "Technical/code/V03_validators/V03_ES2301.py"
@@ -1792,15 +1792,15 @@
       "last_updated": "2026-05-18",
       "author": "opus-fanout-ES"
     },
-    "ES2302": {
+    "XS2302": {
       "phases_completed": [
         5,
         6,
         7
       ],
       "artifacts": {
-        "dpr": "Technical/docs/series/ES2302_DPR.md",
-        "epr": "Technical/docs/series/ES2302_EPR.md",
+        "dpr": "Technical/docs/series/XS2302_DPR.md",
+        "epr": "Technical/docs/series/XS2302_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_ES2302.py",
         "processor": "Technical/code/P02_processors/P02_ES2302.py",
         "validator": "Technical/code/V03_validators/V03_ES2302.py"
@@ -1808,15 +1808,15 @@
       "last_updated": "2026-05-18",
       "author": "opus-fanout-ES"
     },
-    "ES2303": {
+    "XS2303": {
       "phases_completed": [
         5,
         6,
         7
       ],
       "artifacts": {
-        "dpr": "Technical/docs/series/ES2303_DPR.md",
-        "epr": "Technical/docs/series/ES2303_EPR.md",
+        "dpr": "Technical/docs/series/XS2303_DPR.md",
+        "epr": "Technical/docs/series/XS2303_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_ES2303.py",
         "processor": "Technical/code/P02_processors/P02_ES2303.py",
         "validator": "Technical/code/V03_validators/V03_ES2303.py"
@@ -1824,15 +1824,15 @@
       "last_updated": "2026-05-18",
       "author": "opus-fanout-ES"
     },
-    "ES2304": {
+    "XS2304": {
       "phases_completed": [
         5,
         6,
         7
       ],
       "artifacts": {
-        "dpr": "Technical/docs/series/ES2304_DPR.md",
-        "epr": "Technical/docs/series/ES2304_EPR.md",
+        "dpr": "Technical/docs/series/XS2304_DPR.md",
+        "epr": "Technical/docs/series/XS2304_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_ES2304.py",
         "processor": "Technical/code/P02_processors/P02_ES2304.py",
         "validator": "Technical/code/V03_validators/V03_ES2304.py"
@@ -1840,15 +1840,15 @@
       "last_updated": "2026-05-18",
       "author": "opus-fanout-ES"
     },
-    "ES2305": {
+    "XS2305": {
       "phases_completed": [
         5,
         6,
         7
       ],
       "artifacts": {
-        "dpr": "Technical/docs/series/ES2305_DPR.md",
-        "epr": "Technical/docs/series/ES2305_EPR.md",
+        "dpr": "Technical/docs/series/XS2305_DPR.md",
+        "epr": "Technical/docs/series/XS2305_EPR.md",
         "loader": "Technical/code/L01_loaders/L01_ES2305.py",
         "processor": "Technical/code/P02_processors/P02_ES2305.py",
         "validator": "Technical/code/V03_validators/V03_ES2305.py"

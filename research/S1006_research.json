@@ -77,7 +77,7 @@
   "methodology_notes": [
     "Ibbotson SBBI Yearbook is the canonical US asset-class return series; widely used in finance and pension actuarial work.",
     "David Stubbs extension 2004-2010 acknowledged in Appendix 10.1; methodology consistent with Ibbotson original.",
-    "Table 10.1 averages (1926-2010): Large Stocks 11.88%, LT Corporate Bonds 6.24%, LT Govt Bonds 5.91% - these are the equity-premium-puzzle numbers Shaikh discusses.",
+    "Ibbotson (2004) Table 2-2 long-run averages (1926-2010): Large Stocks 11.88%, LT Corporate Bonds 6.24%, LT Govt Bonds 5.91% - these are the equity-premium-puzzle numbers Shaikh discusses. (Source is Ibbotson Table 2-2 per KB ch10; there is no Shaikh 'Table 10.1'.)",
     "Nominal returns; Shaikh deliberately does NOT real-deflate because his point (a common inflation deflator wouldn't change rank ordering)."
   ],
   "open_questions": [

@@ -18,7 +18,7 @@
 
 Civilian unemployment rate, spliced from BEA LTEG (1890-1947) + ERP Table B-40 (1948-2010), extended via FRED UNRATE.
 
-In Shaikh (2016) the series appears as **Figure 2.9** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.7** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 
@@ -56,7 +56,7 @@ Percent of civilian labor force
 
 ## 8. Cross-references
 
-- Book reference: Shaikh (2016), Ch. 2, Figure 2.9
+- Book reference: Shaikh (2016), Ch. 2, Figure 2.7
 - Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
 - Predecessor (CD2): see registry `predecessor_ids` block.
 

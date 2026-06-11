@@ -17,17 +17,17 @@
 
 ## 1. Definition
 
-**S701** is the **cross-sectional industry scatter** that Shaikh re-plots in Fig7.11 from Salter (1969). Each point is one industry; both axes are the ratio (1950/1923 × 100; selling price and unit labour cost). Period: 1923–1950.
+**S701** is the **cross-sectional industry scatter** that Shaikh re-plots in Fig7.11 from Salter (1969). Each point is one US industry; both axes are the ratio (1950/1923 × 100; selling price and unit labour cost). Period: 1923–1950. Per the book caption (KB ch07 ground truth), the source is **Salter 1969, p. 197, table 33**.
 
 ## 2. Why it matters in Chapter 7
 
-Ch7 develops Shaikh's theory of turbulent regulation of industrial profit rates by costs of production. Fig7.11 is a foundational visual demonstration that cross-industry variation in selling-price change is well explained by cross-industry variation in unit-labour-cost change (R² ≈ 0.77 per book p. 286), grounding the classical/Marxian claim that prices of production are regulated by costs.
+Ch7 develops Shaikh's theory of turbulent regulation of industrial profit rates by costs of production. Fig7.11 is a foundational visual demonstration that cross-industry variation in selling-price change is closely tracked by cross-industry variation in unit-labour-cost change — Shaikh calls it a "striking relationship" (book p. 286) — grounding the classical/Marxian claim that prices of production are regulated by costs.
 
 ## 3. Sources
 
 | Subseries | Coverage | Publisher / Reference | Native units | Retrieval |
 |---|---|---|---|---|
-| **S701-A** | 1923–1950 | Salter (1969) Table 28 (US 1923-50), via SalvagedInputs Appendix7_SalterULCPriceTable28.xlsx | index (1923=100) — encoded per-industry as 1950-vs-1923 ratio | https://www.cambridge.org/core/search?q=Productivity+and+Technical+Change+Salter (Cambridge); local salvaged xlsx |
+| **S701-A** | 1923–1950 | Salter (1969) **p. 197, table 33** (US 1923-50), per book Fig 7.11 caption; via SalvagedInputs Appendix7_SalterULCPriceTable**28**.xlsx (working-file name uses the opposite Salter table number — a file-naming artifact; cite the book) | index (1923=100) — encoded per-industry as 1950-vs-1923 ratio | https://www.cambridge.org/core/search?q=Productivity+and+Technical+Change+Salter (Cambridge); local salvaged xlsx |
 
 The Phase 4 adequacy review confirmed the salvaged xlsx is present locally and that the Cambridge core search URL returns HTTP 200 (the original book-detail URL returns HTTP 500 — CMS error, not 404; substitute documented in `CH7_REGISTRY_DELTA.json`).
 
@@ -48,7 +48,7 @@ ratio (1950/1923 × 100; selling price and unit labour cost).
 
 1. **Cross-sectional, not time series.** No annual interior values exist; the figure plots one observation per industry, computed from Salter's two-period tables.
 2. **Salter (1969) is copyrighted Cambridge UP.** Reproduction is academic fair use; Shaikh's own re-plot in the book establishes precedent.
-3. **Underlying data is public-domain** US Census of Manufactures + BLS productivity studies (for the US Table 28) / UK Census of Production + Board of Trade (for the UK Table 33).
+3. **Underlying data is public-domain** US Census of Manufactures + BLS productivity studies (for the US panel, Salter p. 197 table 33) / UK Census of Production + Board of Trade (for the UK panel, Salter p. 164 table 28).
 4. **Some industries have NaN cells** in Salter's table (a few cells missing in the original source); these are preserved as NaN, not imputed.
 
 ## 8. Cross-references

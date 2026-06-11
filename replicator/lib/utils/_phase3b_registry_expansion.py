@@ -18,23 +18,23 @@ import paths
 
 # CD2 ID → (new RSCD AS ID, name, components) — from decision 0002
 AS_FROM_CH6_GPIM = [
-    ("AS001", "S206", "GDP/GDI Decomposition and Business NOS",
+    ("XS001", "S206", "GDP/GDI Decomposition and Business NOS",
      ["BEA NIPA T1.7.5", "BEA NIPA T1.10", "BEA NIPA T1.13"]),
-    ("AS002", "S207", "Wage Equivalent and Corporate/Noncorporate Split",
+    ("XS002", "S207", "Wage Equivalent and Corporate/Noncorporate Split",
      ["BEA NIPA T6.2", "BEA NIPA T1.14", "BEA NIPA T1.15"]),
-    ("AS003", "S208", "Imputed Interest Adjustment and Sectoral Profit Rates",
+    ("XS003", "S208", "Imputed Interest Adjustment and Sectoral Profit Rates",
      ["BEA NIPA T7.11", "BEA NIPA T1.14", "Fed Z.1 D.3"]),
-    ("AS004", "S209", "GPIM Corporate Capital Stock",
+    ("XS004", "S209", "GPIM Corporate Capital Stock",
      ["BEA Fixed Asset T6.1", "BEA Fixed Asset T6.4", "IRS SOI"]),
-    ("AS005", "S210", "GPIM Variant — BEA 2011 Initial Value",
+    ("XS005", "S210", "GPIM Variant — BEA 2011 Initial Value",
      ["BEA Fixed Asset T6.1 (2011 vintage)"]),
-    ("AS006", "S211", "GPIM Variant — BEA 1993 vs 2011",
+    ("XS006", "S211", "GPIM Variant — BEA 1993 vs 2011",
      ["BEA Fixed Asset T6.1 (1993)", "BEA Fixed Asset T6.1 (2011)"]),
-    ("AS007", "S212", "GPIM Variant — IRS Adjusted",
+    ("XS007", "S212", "GPIM Variant — IRS Adjusted",
      ["BEA Fixed Asset T6.1", "IRS SOI"]),
-    ("AS008", "S213", "GPIM Variant — Interwar Adjusted",
+    ("XS008", "S213", "GPIM Variant — Interwar Adjusted",
      ["BEA Fixed Asset T6.1", "Historical Statistics interwar series"]),
-    ("AS009", "S214", "IRS Corporate Inventories and Total Capital Stock",
+    ("XS009", "S214", "IRS Corporate Inventories and Total Capital Stock",
      ["IRS SOI inventories", "BEA Fixed Asset T6.1"]),
 ]
 
@@ -47,13 +47,13 @@ NEW_S_CH7 = [
 
 # Per decision 0001 (ES codes 20-23)
 ES_PLACEHOLDERS = [
-    ("ES2001", 20, "Shaikh (2020) - An Empirically Sufficient Form for Sraffa Prices",
+    ("XS2001", 20, "Shaikh (2020) - An Empirically Sufficient Form for Sraffa Prices",
      "[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf"),
-    ("ES2101", 21, "Shaikh, Coronado, Nassif-Pires (2020) - On the empirical regularities of Sraffa prices",
+    ("XS2101", 21, "Shaikh, Coronado, Nassif-Pires (2020) - On the empirical regularities of Sraffa prices",
      "[2020] Shaikh Coronado & Nassif-Pires - On the empirical regularities of Sraffa prices.pdf"),
-    ("ES2201", 22, "Shaikh & Jacobo (2020) - Economic Arbitrage and the Econophysics of Income Inequality",
+    ("XS2201", 22, "Shaikh & Jacobo (2020) - Economic Arbitrage and the Econophysics of Income Inequality",
      "[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf"),
-    ("ES2301", 23, "Weber & Shaikh (2020) - The US-China trade imbalance and the theory of free trade",
+    ("XS2301", 23, "Weber & Shaikh (2020) - The US-China trade imbalance and the theory of free trade",
      "[2020] Weber & Shaikh - The U.S.-China trade imbalance and the theory of free trade debunking the currency manipulation argument.pdf"),
 ]
 

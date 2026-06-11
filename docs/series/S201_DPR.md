@@ -19,7 +19,7 @@
 
 **S201** is the annual **United States Industrial Production Index, 1860–2025**, on a 1958=100 base. It tracks real industrial output (manufacturing + mining + electric & gas utilities) of the US economy at annual frequency.
 
-In Shaikh (2016) the series appears as **Figure 2.1** ("US Industrial Production Index, 1860–2010"), opening Chapter 2 ("The Wealth of Nations: A Long View"). Shaikh uses it as the leading empirical illustration of the "system's apparently inexorable tendency toward growth" (p. 56).
+In Shaikh (2016) the series appears as **Figure 2.1** ("US Industrial Production Index, 1860–2010"), opening Chapter 2 ("Turbulent Trends and Hidden Structures"). Shaikh uses it as the leading empirical illustration of the "system's apparently inexorable tendency toward growth" (p. 56).
 
 ## 2. Why it matters in Chapter 2
 

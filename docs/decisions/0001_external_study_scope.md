@@ -1,20 +1,3 @@
----
-decision_id: "0001"
-title: "External Study Scope for RSCD v1.0"
-status: approved
-proposed_at: "2026-05-18T00:00:00Z"
-approved_at: "2026-05-18T00:00:00Z"
-decided_by: user
-affected_series:
-  - ES2001
-  - ES2101
-  - ES2201
-  - ES2301
-affected_stages:
-  - phase_2
-  - phase_3
----
-
 # 0001 — External Study Scope for RSCD v1.0
 
 **Status**: CLOSED

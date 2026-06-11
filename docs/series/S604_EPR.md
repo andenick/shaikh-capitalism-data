@@ -9,7 +9,7 @@ Per the Ch6 GPIM construction pipeline (see `Technical/docs/chapters/CH6_GPIM_SU
 1. Fetch BEA NIPA tables via `S00_apis.bea_table` (`BEA_API_KEY` required) using the table ids documented in the dossier `primary_source`.
 2. Fetch BEA Fixed Asset T6.1, T6.4, T6.7, T6.8 via the same client.
 3. Re-run the construction formula end-to-end.
-4. Recompute AS003 (sectoral profit rates), AS004 (KNCcorp / KGCcorp), and AS009 (KTCcorp) using the same current-vintage components. NEVER splice the published profit-rate series.
+4. Recompute XS003 (sectoral profit rates), XS004 (KNCcorp / KGCcorp), and XS009 (KTCcorp) using the same current-vintage components. NEVER splice the published profit-rate series.
 5. For S603 x1: freeze at last complete NMINT year — do NOT forward-fill.
 6. For S604: prefer iropcorpnipa as the canonical extended series; iropcorp is bounded by NMINT / IRS-inventory availability.
 
@@ -32,8 +32,8 @@ No synthetic values, interpolations, or freezes are used. All values are verbati
 | Appendix workbook missing or corrupted | `_ch6_appendix_loader` raises `FileNotFoundError` or empty DataFrame | L01 returns `status: FAIL` with explicit path |
 | Variable name not in workbook | `load_variables` returns empty DataFrame | L01 records 0 rows for that subseries; V03 flags as missing |
 | BEA / IRS vintage drift during extension | EPR-documented re-fetch script logs vintage_year; V03 tolerance widens for extension rows | Documented per-year; no silent overwrite of book period |
-| FISIM T7.11 line revision (AS003) | `_nipa_t711_line_resolver` falls back to nearest pinned vintage with logged warning | Re-mapped by stub label; vintage logged in resolver output |
-| BEA 1993 depreciation rate not available post-2011 | AS004/AS006/AS007 freeze depreciation rate inputs at 2011-vintage projection | Documented in `BEA_1993_FA_methodology/README.md` |
+| FISIM T7.11 line revision (XS003) | `_nipa_t711_line_resolver` falls back to nearest pinned vintage with logged warning | Re-mapped by stub label; vintage logged in resolver output |
+| BEA 1993 depreciation rate not available post-2011 | XS004/XS006/XS007 freeze depreciation rate inputs at 2011-vintage projection | Documented in `BEA_1993_FA_methodology/README.md` |
 
 ## CD2 Divergence Pre-Disclosure
 

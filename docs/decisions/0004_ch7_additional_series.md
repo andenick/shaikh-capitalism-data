@@ -1,18 +1,3 @@
----
-decision_id: "0004"
-title: "Add Ch7 Series S709-S711"
-status: approved
-proposed_at: "2026-05-18T00:00:00Z"
-approved_at: "2026-05-18T00:00:00Z"
-decided_by: user
-affected_series:
-  - S709
-  - S710
-  - S711
-affected_stages:
-  - phase_3
----
-
 # 0004 — Add Ch7 Series S709–S711
 
 **Status**: CLOSED

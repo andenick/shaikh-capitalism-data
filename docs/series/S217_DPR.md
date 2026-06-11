@@ -18,7 +18,7 @@
 
 Maddison (2003) regional per-capita GDP estimates in 1990 International Geary-Khamis dollars, for World + 5 regions (Western Europe, Western Offshoots, Latin America, Asia, Africa).
 
-In Shaikh (2016) the series appears as **Figure 2.17** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.15** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 
@@ -58,7 +58,7 @@ Empirical foundation for the chapter's closing 'two-world' argument (~400 years 
 
 ## 8. Cross-references
 
-- Book reference: Shaikh (2016), Ch. 2, Figure 2.17
+- Book reference: Shaikh (2016), Ch. 2, Figure 2.15
 - Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
 - Predecessor (CD2): see registry `predecessor_ids` block.
 

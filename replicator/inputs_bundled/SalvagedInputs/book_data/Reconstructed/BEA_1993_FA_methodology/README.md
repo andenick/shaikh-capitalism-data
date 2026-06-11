@@ -3,7 +3,7 @@
 **Status:** Phase 5 prerequisite (Blocker B3) — RESOLVED
 **Date staged:** 2026-05-18
 **Staged by:** RSCD A3 (Ch6 GPIM blocker batch)
-**Consumers:** AS004, AS006 (a and b sub-variants), AS007
+**Consumers:** XS004, XS006 (a and b sub-variants), XS007
 
 ## Purpose
 
@@ -13,7 +13,7 @@ distribution around mean service life. After 1997 BEA switched to
 geometric depreciation with infinite tails (no scrapping). Shaikh argues
 the finite-life methodology is empirically superior and uses it to
 construct his GPIM (Generalized Perpetual Inventory Method) variants
-AS004 / AS006 / AS007.
+XS004 / XS006 / XS007.
 
 These depreciation and retirement rates are no longer published in BEA's
 current iTable. This directory stages the recovered rates as a frozen
@@ -48,7 +48,7 @@ field names; book pp. 845-851):
 | `rho_corpnew`     | **BEA 1993-derived Retirement Rate (Gross Stock)**         | Decimal, 1926-2011       |
 | `KGCcorpnew`      | New Gross Current-Cost Corp Stock (GPIM applied)           | Bill-$, 1925-2011        |
 
-The **two key rates** used by AS004/AS006/AS007 GPIM construction are
+The **two key rates** used by XS004/XS006/XS007 GPIM construction are
 `dcorpnew` (net stock depreciation rate) and `rho_corpnew` (gross stock
 retirement rate). These are derived from BEA 1993 raw flows for 1925-1989
 and then linearly projected to 2011 (Shaikh's procedure, see Appendix
@@ -88,15 +88,15 @@ The agent's resolution sequence:
 
 ## Downstream consumption
 
-- **AS004** (GPIM Corporate Capital Stock — operational baseline):
+- **XS004** (GPIM Corporate Capital Stock — operational baseline):
   reads `dcorpnew` and `rho_corpnew` for the depletion-rate input
   `z_t = d_t + rho_t` in GPIM accumulation equations (6.5.22) and (6.5.23).
-- **AS006a** (BEA 1993 depreciation only, BEA 2011 initial value):
-  reads `dcorpnew` and `rho_corpnew`; initial KC held at 98.1 (AS004 value).
-- **AS006b** (BEA 1993 depreciation AND initial value): reads
+- **XS006a** (BEA 1993 depreciation only, BEA 2011 initial value):
+  reads `dcorpnew` and `rho_corpnew`; initial KC held at 98.1 (XS004 value).
+- **XS006b** (BEA 1993 depreciation AND initial value): reads
   `dcorpnew`, `rho_corpnew`, and `KNCbea93[1925] = 77.769`.
-- **AS007** (IRS-adjusted): uses interwar-period IRS index multiplier;
-  reads BEA 1993 rates indirectly via AS004 baseline.
+- **XS007** (IRS-adjusted): uses interwar-period IRS index multiplier;
+  reads BEA 1993 rates indirectly via XS004 baseline.
 
 Loaders MUST cite this file as the input and pin the source-file MD5
 hash in their provenance metadata.
@@ -107,8 +107,8 @@ hash in their provenance metadata.
   projection* by Shaikh, not raw BEA data. For extension years 2012+,
   the Phase 5 loader should either (a) continue the linear projection
   with documented uncertainty band, or (b) freeze the 2011 value with
-  a `data_unavailable_after: 2011` flag. Recommendation: (b) for AS004
-  baseline; (a) for AS006/AS007 sensitivity variants only, with
+  a `data_unavailable_after: 2011` flag. Recommendation: (b) for XS004
+  baseline; (a) for XS006/XS007 sensitivity variants only, with
   explicit caveat in plot legend.
 - Variable `rho_corpnew` is written as `ρ corpnew` in the source
   spreadsheet (Greek rho character). The staged CSV uses ASCII

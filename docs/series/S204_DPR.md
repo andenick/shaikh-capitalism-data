@@ -18,7 +18,7 @@
 
 Monthly cyclical-component index of US business activity, 1831-1866 subperiod. Compiled by Cleveland Trust Co.; pre-NBER composite indicator.
 
-In Shaikh (2016) the series appears as **Figure 2.4A** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.4A** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 

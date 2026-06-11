@@ -1,7 +1,7 @@
 """Bulk register update for the 8 External Study (ES) series.
 
 Idempotent. Updates registry, SUBSOURCE_METADATA, and ANU_LEDGER for:
-  ES2001, ES2101, ES2201, ES2301, ES2302, ES2303, ES2304, ES2305
+  XS2001, XS2101, XS2201, XS2301, XS2302, XS2303, XS2304, XS2305
 """
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import paths  # type: ignore
 
 ES_UPDATES = {
-    "ES2001": {
+    "XS2001": {
         "name": "Shaikh (2020) Sraffa Price-Value Aggregates, US 1947-1998 (Tables 1-2)",
         "units": "dimensionless_ratio",
         "construction": "composite",
@@ -22,11 +22,11 @@ ES_UPDATES = {
         "year_range": [1947, 1998],
         "year_range_book": [1947, 1998],
         "year_range_extension": [1947, 2017],
-        "dpr": "Technical/docs/series/ES2001_DPR.md",
-        "epr": "Technical/docs/series/ES2001_EPR.md",
+        "dpr": "Technical/docs/series/XS2001_DPR.md",
+        "epr": "Technical/docs/series/XS2001_EPR.md",
         "primary_source": "SHAIKH_2020_SRAFFA_PRICES_T1T2",
         "subseries": {
-            "ES2001-circ-rate_profit": {
+            "XS2001-circ-rate_profit": {
                 "name": "Circulating capital rate of profit ratio",
                 "subsource_id": "SHAIKH_2020_SRAFFA_PRICES_T1T2",
                 "source": "Shaikh (2020) Table 1",
@@ -36,7 +36,7 @@ ES_UPDATES = {
                 "color": "#1f77b4", "role": "book_period_primary",
                 "proxy": False, "proxy_justification": None,
             },
-            "ES2001-fixed-rate_profit": {
+            "XS2001-fixed-rate_profit": {
                 "name": "Fixed capital rate of profit ratio",
                 "subsource_id": "SHAIKH_2020_SRAFFA_PRICES_T1T2",
                 "source": "Shaikh (2020) Table 2",
@@ -48,7 +48,7 @@ ES_UPDATES = {
             },
         },
     },
-    "ES2101": {
+    "XS2101": {
         "name": "Shaikh-Coronado-Nassif-Pires (2020) Sraffa CI/Theil Summary Stats",
         "units": "mixed_dimensionless_count_percent",
         "construction": "composite",
@@ -57,11 +57,11 @@ ES_UPDATES = {
         "year_range": [2002, 2007],
         "year_range_book": [2002, 2007],
         "year_range_extension": [2002, 2017],
-        "dpr": "Technical/docs/series/ES2101_DPR.md",
-        "epr": "Technical/docs/series/ES2101_EPR.md",
+        "dpr": "Technical/docs/series/XS2101_DPR.md",
+        "epr": "Technical/docs/series/XS2101_EPR.md",
         "primary_source": "SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY",
         "subseries": {
-            "ES2101-avg_CI_lower_bound": {
+            "XS2101-avg_CI_lower_bound": {
                 "name": "Average CI lower bound across aggregation levels",
                 "subsource_id": "SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY",
                 "source": "Shaikh-Coronado-Nassif-Pires (2020) Section 5 p. 272",
@@ -73,7 +73,7 @@ ES_UPDATES = {
             },
         },
     },
-    "ES2201": {
+    "XS2201": {
         "name": "Shaikh-Jacobo (2020) Econophysics Two-Class Income Parameters, US 2002-2016",
         "units": "mixed_dimensionless_thousandsusd",
         "construction": "composite",
@@ -82,11 +82,11 @@ ES_UPDATES = {
         "year_range": [2002, 2016],
         "year_range_book": [2002, 2016],
         "year_range_extension": [2002, 2022],
-        "dpr": "Technical/docs/series/ES2201_DPR.md",
-        "epr": "Technical/docs/series/ES2201_EPR.md",
+        "dpr": "Technical/docs/series/XS2201_DPR.md",
+        "epr": "Technical/docs/series/XS2201_EPR.md",
         "primary_source": "SHAIKH_JACOBO_2020_TABLE1",
         "subseries": {
-            "ES2201-G_prime": {"name": "Gini coefficient bottom 97%",
+            "XS2201-G_prime": {"name": "Gini coefficient bottom 97%",
                 "subsource_id": "SHAIKH_JACOBO_2020_TABLE1",
                 "source": "Shaikh-Jacobo (2020) Table 1 col G'",
                 "source_url": "https://doi.org/10.1561/105.00000129",
@@ -94,7 +94,7 @@ ES_UPDATES = {
                 "units": "dimensionless", "is_reindexed": False,
                 "color": "#1f77b4", "role": "book_period_primary",
                 "proxy": False, "proxy_justification": None},
-            "ES2201-r_mean": {"name": "Overall mean AGI per return",
+            "XS2201-r_mean": {"name": "Overall mean AGI per return",
                 "subsource_id": "SHAIKH_JACOBO_2020_TABLE1",
                 "source": "Shaikh-Jacobo (2020) Table 1 col r-mean",
                 "source_url": "https://doi.org/10.1561/105.00000129",
@@ -102,7 +102,7 @@ ES_UPDATES = {
                 "units": "thousands_usd", "is_reindexed": False,
                 "color": "#ff7f0e", "role": "book_period_primary",
                 "proxy": False, "proxy_justification": None},
-            "ES2201-w_mean": {"name": "Bottom-97% mean / income temperature",
+            "XS2201-w_mean": {"name": "Bottom-97% mean / income temperature",
                 "subsource_id": "SHAIKH_JACOBO_2020_TABLE1",
                 "source": "Shaikh-Jacobo (2020) Table 1 col w-mean",
                 "source_url": "https://doi.org/10.1561/105.00000129",
@@ -110,7 +110,7 @@ ES_UPDATES = {
                 "units": "thousands_usd", "is_reindexed": False,
                 "color": "#2ca02c", "role": "book_period_primary",
                 "proxy": False, "proxy_justification": None},
-            "ES2201-f_top3": {"name": "Top-3% income share (derived 1-w/r)",
+            "XS2201-f_top3": {"name": "Top-3% income share (derived 1-w/r)",
                 "subsource_id": "SHAIKH_JACOBO_2020_TABLE1",
                 "source": "Shaikh-Jacobo (2020) Table 1 col f",
                 "source_url": "https://doi.org/10.1561/105.00000129",
@@ -118,7 +118,7 @@ ES_UPDATES = {
                 "units": "dimensionless", "is_reindexed": False,
                 "color": "#d62728", "role": "book_period_primary",
                 "proxy": False, "proxy_justification": None},
-            "ES2201-alpha": {"name": "Top-3% power-law exponent",
+            "XS2201-alpha": {"name": "Top-3% power-law exponent",
                 "subsource_id": "SHAIKH_JACOBO_2020_TABLE1",
                 "source": "Shaikh-Jacobo (2020) Table 1 col alpha",
                 "source_url": "https://doi.org/10.1561/105.00000129",
@@ -128,7 +128,7 @@ ES_UPDATES = {
                 "proxy": False, "proxy_justification": None},
         },
     },
-    "ES2301": {
+    "XS2301": {
         "name": "Weber-Shaikh (2020) Fig 1 — US Trade Balance vs World and China",
         "units": "billion_usd",
         "construction": "direct",
@@ -137,11 +137,11 @@ ES_UPDATES = {
         "year_range": [2002, 2024],
         "year_range_book": [2002, 2017],
         "year_range_extension": [2018, 2024],
-        "dpr": "Technical/docs/series/ES2301_DPR.md",
-        "epr": "Technical/docs/series/ES2301_EPR.md",
+        "dpr": "Technical/docs/series/XS2301_DPR.md",
+        "epr": "Technical/docs/series/XS2301_EPR.md",
         "primary_source": "CENSUS_FT900_EXH1",
         "subseries": {
-            "ES2301-world": {"name": "US-World goods trade balance (Census basis)",
+            "XS2301-world": {"name": "US-World goods trade balance (Census basis)",
                 "subsource_id": "CENSUS_FT900_EXH1",
                 "source": "US Census FT900 Exhibit 1 (historical)",
                 "source_url": "https://www.census.gov/foreign-trade/statistics/historical/exh1.txt",
@@ -149,7 +149,7 @@ ES_UPDATES = {
                 "units": "billion_usd", "is_reindexed": False,
                 "color": "#1f77b4", "role": "book_period_primary",
                 "proxy": False, "proxy_justification": None},
-            "ES2301-china": {"name": "US-China bilateral goods trade balance",
+            "XS2301-china": {"name": "US-China bilateral goods trade balance",
                 "subsource_id": "CENSUS_FT900_C5700",
                 "source": "US Census FT900 Exhibit 14 / c5700",
                 "source_url": "https://www.census.gov/foreign-trade/balance/c5700.html",
@@ -159,7 +159,7 @@ ES_UPDATES = {
                 "proxy": False, "proxy_justification": None},
         },
     },
-    "ES2302": {
+    "XS2302": {
         "name": "Weber-Shaikh (2020) Fig 2 — China Current Account Balance (level + %GDP)",
         "units": "billion_usd_and_percent_gdp",
         "construction": "direct",
@@ -168,11 +168,11 @@ ES_UPDATES = {
         "year_range": [1997, 2024],
         "year_range_book": [1997, 2017],
         "year_range_extension": [2018, 2024],
-        "dpr": "Technical/docs/series/ES2302_DPR.md",
-        "epr": "Technical/docs/series/ES2302_EPR.md",
+        "dpr": "Technical/docs/series/XS2302_DPR.md",
+        "epr": "Technical/docs/series/XS2302_EPR.md",
         "primary_source": "IMF_WEO_BCA_CHN",
         "subseries": {
-            "ES2302-level": {"name": "China CA balance (billions USD)",
+            "XS2302-level": {"name": "China CA balance (billions USD)",
                 "subsource_id": "IMF_WEO_BCA_CHN",
                 "source": "IMF WEO subject BCA (CA balance, USD bn)",
                 "source_url": "https://www.imf.org/external/datamapper/BCA@WEO/CHN",
@@ -180,7 +180,7 @@ ES_UPDATES = {
                 "units": "billion_usd", "is_reindexed": False,
                 "color": "#1f77b4", "role": "book_period_primary",
                 "proxy": False, "proxy_justification": None},
-            "ES2302-pctgdp": {"name": "China CA balance (% of nominal GDP)",
+            "XS2302-pctgdp": {"name": "China CA balance (% of nominal GDP)",
                 "subsource_id": "IMF_WEO_BCA_NGDPD_CHN",
                 "source": "IMF WEO subject BCA_NGDPD (CA % GDP)",
                 "source_url": "https://www.imf.org/external/datamapper/BCA_NGDPD@WEO/CHN",
@@ -190,7 +190,7 @@ ES_UPDATES = {
                 "proxy": False, "proxy_justification": None},
         },
     },
-    "ES2303": {
+    "XS2303": {
         "name": "Weber-Shaikh (2020) Fig 3 — China FX Reserves ex-Gold (WDI)",
         "units": "billion_usd",
         "construction": "direct",
@@ -199,11 +199,11 @@ ES_UPDATES = {
         "year_range": [1990, 2024],
         "year_range_book": [1990, 2016],
         "year_range_extension": [2017, 2024],
-        "dpr": "Technical/docs/series/ES2303_DPR.md",
-        "epr": "Technical/docs/series/ES2303_EPR.md",
+        "dpr": "Technical/docs/series/XS2303_DPR.md",
+        "epr": "Technical/docs/series/XS2303_EPR.md",
         "primary_source": "WB_FI_RES_XGLD_CD_CHN",
         "subseries": {
-            "ES2303-A": {"name": "China total reserves ex gold (WDI FI.RES.XGLD.CD)",
+            "XS2303-A": {"name": "China total reserves ex gold (WDI FI.RES.XGLD.CD)",
                 "subsource_id": "WB_FI_RES_XGLD_CD_CHN",
                 "source": "World Bank WDI FI.RES.XGLD.CD",
                 "source_url": "https://data.worldbank.org/indicator/FI.RES.XGLD.CD",
@@ -213,7 +213,7 @@ ES_UPDATES = {
                 "proxy": False, "proxy_justification": None},
         },
     },
-    "ES2304": {
+    "XS2304": {
         "name": "Weber-Shaikh (2020) Fig 4 — RMB Misalignment Extended PPP (literature compilation)",
         "units": "percent",
         "construction": "composite",
@@ -223,11 +223,11 @@ ES_UPDATES = {
         "year_range_book": [1999, 2010],
         "year_range_extension": [1999, 2010],
         "extension_status": "not_applicable_literature_compilation",
-        "dpr": "Technical/docs/series/ES2304_DPR.md",
-        "epr": "Technical/docs/series/ES2304_EPR.md",
+        "dpr": "Technical/docs/series/XS2304_DPR.md",
+        "epr": "Technical/docs/series/XS2304_EPR.md",
         "primary_source": "WEBER_SHAIKH_2020_FIG4_LIT_COMPILATION",
         "subseries": {
-            "ES2304-A": {"name": "Extended-PPP RMB misalignment estimates (named endpoints)",
+            "XS2304-A": {"name": "Extended-PPP RMB misalignment estimates (named endpoints)",
                 "subsource_id": "WEBER_SHAIKH_2020_FIG4_LIT_COMPILATION",
                 "source": "Literature compilation per paper note 17",
                 "source_url": "https://www.piie.com/sites/default/files/publications/pb/pb07-4.pdf",
@@ -237,7 +237,7 @@ ES_UPDATES = {
                 "proxy": False, "proxy_justification": None},
         },
     },
-    "ES2305": {
+    "XS2305": {
         "name": "Weber-Shaikh (2020) Fig 5 — RMB Misalignment Macro Balance (literature compilation)",
         "units": "percent",
         "construction": "composite",
@@ -247,11 +247,11 @@ ES_UPDATES = {
         "year_range_book": [1999, 2012],
         "year_range_extension": [1999, 2012],
         "extension_status": "not_applicable_literature_compilation",
-        "dpr": "Technical/docs/series/ES2305_DPR.md",
-        "epr": "Technical/docs/series/ES2305_EPR.md",
+        "dpr": "Technical/docs/series/XS2305_DPR.md",
+        "epr": "Technical/docs/series/XS2305_EPR.md",
         "primary_source": "WEBER_SHAIKH_2020_FIG5_LIT_COMPILATION",
         "subseries": {
-            "ES2305-A": {"name": "Macro-balance RMB misalignment estimates (named endpoints)",
+            "XS2305-A": {"name": "Macro-balance RMB misalignment estimates (named endpoints)",
                 "subsource_id": "WEBER_SHAIKH_2020_FIG5_LIT_COMPILATION",
                 "source": "Literature compilation per paper note 17",
                 "source_url": "https://www.piie.com/sites/default/files/publications/pb/pb07-4.pdf",
@@ -278,7 +278,7 @@ SUBSOURCE_UPDATES = {
         "release_schedule": "one-time festschrift essay",
         "license": "academic-quotation / fair use of published table",
         "retrieval_method": "salvaged_chopped_table",
-        "retrieval_location": "SalvagedInputs/book_data/Reconstructed/ES2001_aggregate_ratios.csv",
+        "retrieval_location": "SalvagedInputs/book_data/Reconstructed/XS2001_aggregate_ratios.csv",
         "url": None,
         "url_status": "anwarshaikhecon.org_DNS_fail_substituted_with_archival_pdf",
         "discontinued": False,
@@ -298,7 +298,7 @@ SUBSOURCE_UPDATES = {
         "release_schedule": "one-time journal article",
         "license": "fair use of summary statistics quoted in paper text",
         "retrieval_method": "salvaged_chopped_table",
-        "retrieval_location": "SalvagedInputs/book_data/Reconstructed/ES2101_summary_statistics.csv",
+        "retrieval_location": "SalvagedInputs/book_data/Reconstructed/XS2101_summary_statistics.csv",
         "url": "https://doi.org/10.4337/ejeep.2020.0069",
         "url_status": "doi_resolves_in_browser_403_to_HEAD_bot",
         "discontinued": False,
@@ -318,7 +318,7 @@ SUBSOURCE_UPDATES = {
         "release_schedule": "one-time journal article",
         "license": "fair use of published table",
         "retrieval_method": "salvaged_chopped_table",
-        "retrieval_location": "SalvagedInputs/book_data/Reconstructed/ES2201_fitted_parameters.csv",
+        "retrieval_location": "SalvagedInputs/book_data/Reconstructed/XS2201_fitted_parameters.csv",
         "url": "https://doi.org/10.1561/105.00000129",
         "url_status": "doi_resolves_in_browser",
         "discontinued": False,
@@ -438,7 +438,7 @@ SUBSOURCE_UPDATES = {
         "release_schedule": "one-time journal article",
         "license": "fair-use academic compilation",
         "retrieval_method": "salvaged_chopped_table",
-        "retrieval_location": "SalvagedInputs/book_data/Reconstructed/ES2304_literature_compilation.csv",
+        "retrieval_location": "SalvagedInputs/book_data/Reconstructed/XS2304_literature_compilation.csv",
         "url": None,
         "url_status": None,
         "discontinued": False,
@@ -458,7 +458,7 @@ SUBSOURCE_UPDATES = {
         "release_schedule": "one-time journal article",
         "license": "fair-use academic compilation",
         "retrieval_method": "salvaged_chopped_table",
-        "retrieval_location": "SalvagedInputs/book_data/Reconstructed/ES2305_literature_compilation.csv",
+        "retrieval_location": "SalvagedInputs/book_data/Reconstructed/XS2305_literature_compilation.csv",
         "url": None,
         "url_status": None,
         "discontinued": False,

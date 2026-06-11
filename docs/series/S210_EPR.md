@@ -1,6 +1,6 @@
 # S210 -- Extension Provenance Record
 
-**Series**: S210 -- US and UK Wholesale Price Indexes, 1780-2025 (Fig 2.10, log scale)
+**Series**: S210 -- US and UK Wholesale Price Indexes, 1780-2025 (Fig 2.8, log scale)
 **Phase**: 6 (Extension)
 **Construction classification**: `composite`
 **Extension status**: `feasible_with_substitute`

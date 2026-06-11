@@ -58,7 +58,7 @@
       "series_complete": 114,
       "series_total": 118,
       "gate_passed": true,
-      "gate_notes": "16/16 chapter-groups PASS validator (Build/PHASE4_VALIDATION_REPORT.json) with scores 83-100 (avg ~91). Executed via 3 waves of 5 opus subagents in parallel (15 agent runs, ~1.5 hours). Wave 1: Ch2,3,4,5,6+AS (52 series); Wave 2: Ch7+S709-711,8,9,10,11 (31); Wave 3: Ch13+17,14,15,16,ES (31). Per-series adequacy blocks merged into series_registry.json via _phase4_delta_merger.py. Decision 0006 (ES2301 5-way split) RECOMMENDS_SPLIT per ES wave; awaits user ratification before Phase 5.",
+      "gate_notes": "16/16 chapter-groups PASS validator (Build/PHASE4_VALIDATION_REPORT.json) with scores 83-100 (avg ~91). Executed via 3 waves of 5 opus subagents in parallel (15 agent runs, ~1.5 hours). Wave 1: Ch2,3,4,5,6+AS (52 series); Wave 2: Ch7+S709-711,8,9,10,11 (31); Wave 3: Ch13+17,14,15,16,ES (31). Per-series adequacy blocks merged into series_registry.json via _phase4_delta_merger.py. Decision 0006 (XS2301 5-way split) RECOMMENDS_SPLIT per ES wave; awaits user ratification before Phase 5.",
       "verification_method": "step_log"
     },
     "stage_3": {

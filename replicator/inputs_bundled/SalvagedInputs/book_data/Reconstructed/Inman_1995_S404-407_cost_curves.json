@@ -1,0 +1,450 @@
+{
+  "S404": {
+    "figure": "Fig4.19",
+    "curve_native": [
+      {
+        "output": 21.3,
+        "value": 465.9
+      },
+      {
+        "output": 27.6,
+        "value": 408.7
+      },
+      {
+        "output": 39.8,
+        "value": 320.6
+      },
+      {
+        "output": 49.3,
+        "value": 279.8
+      },
+      {
+        "output": 60.3,
+        "value": 240.5
+      },
+      {
+        "output": 71.8,
+        "value": 221.9
+      },
+      {
+        "output": 111.4,
+        "value": 216.7
+      },
+      {
+        "output": 114.4,
+        "value": 229.2
+      },
+      {
+        "output": 120.2,
+        "value": 244.3
+      },
+      {
+        "output": 132.0,
+        "value": 232.3
+      },
+      {
+        "output": 168.4,
+        "value": 207.5
+      },
+      {
+        "output": 210.9,
+        "value": 208.2
+      },
+      {
+        "output": 223.1,
+        "value": 217.2
+      },
+      {
+        "output": 236.3,
+        "value": 214.2
+      },
+      {
+        "output": 257.5,
+        "value": 206.0
+      },
+      {
+        "output": 310.7,
+        "value": 205.6
+      },
+      {
+        "output": 339.0,
+        "value": 225.0
+      },
+      {
+        "output": 356.4,
+        "value": 249.5
+      },
+      {
+        "output": 373.7,
+        "value": 275.0
+      },
+      {
+        "output": 401.9,
+        "value": 315.6
+      },
+      {
+        "output": 418.4,
+        "value": 339.5
+      },
+      {
+        "output": 418.4,
+        "value": 464.2
+      }
+    ],
+    "n": 22,
+    "val_min": 205.6,
+    "val_max": 465.9,
+    "note": "native-resolution polyline trace; continuation-arrow vertices (output<5,>445) trimmed; overlay-validated vs book"
+  },
+  "S405": {
+    "figure": "Fig4.20",
+    "curve_native": [
+      {
+        "output": 71.7,
+        "value": 113.1
+      },
+      {
+        "output": 97.0,
+        "value": 209.0
+      },
+      {
+        "output": 110.4,
+        "value": 393.8
+      },
+      {
+        "output": 115.8,
+        "value": 793.7
+      },
+      {
+        "output": 118.8,
+        "value": 263.4
+      },
+      {
+        "output": 120.1,
+        "value": 113.5
+      },
+      {
+        "output": 163.5,
+        "value": 132.1
+      },
+      {
+        "output": 202.1,
+        "value": 267.3
+      },
+      {
+        "output": 218.0,
+        "value": 369.5
+      },
+      {
+        "output": 222.4,
+        "value": 408.0
+      },
+      {
+        "output": 224.0,
+        "value": 122.1
+      },
+      {
+        "output": 245.9,
+        "value": 132.2
+      },
+      {
+        "output": 264.3,
+        "value": 155.1
+      },
+      {
+        "output": 274.2,
+        "value": 167.9
+      },
+      {
+        "output": 279.3,
+        "value": 179.6
+      },
+      {
+        "output": 285.8,
+        "value": 197.4
+      },
+      {
+        "output": 290.7,
+        "value": 210.5
+      },
+      {
+        "output": 295.3,
+        "value": 225.5
+      },
+      {
+        "output": 299.2,
+        "value": 242.1
+      },
+      {
+        "output": 302.1,
+        "value": 264.6
+      },
+      {
+        "output": 306.0,
+        "value": 284.5
+      },
+      {
+        "output": 309.7,
+        "value": 303.3
+      },
+      {
+        "output": 314.6,
+        "value": 323.7
+      },
+      {
+        "output": 315.8,
+        "value": 333.2
+      },
+      {
+        "output": 318.8,
+        "value": 348.6
+      },
+      {
+        "output": 329.7,
+        "value": 386.9
+      },
+      {
+        "output": 332.3,
+        "value": 419.8
+      },
+      {
+        "output": 334.4,
+        "value": 456.1
+      },
+      {
+        "output": 336.6,
+        "value": 495.3
+      },
+      {
+        "output": 338.9,
+        "value": 563.3
+      },
+      {
+        "output": 341.0,
+        "value": 651.0
+      },
+      {
+        "output": 344.4,
+        "value": 737.8
+      },
+      {
+        "output": 351.5,
+        "value": 819.8
+      },
+      {
+        "output": 355.6,
+        "value": 824.4
+      },
+      {
+        "output": 361.7,
+        "value": 830.2
+      },
+      {
+        "output": 389.0,
+        "value": 831.9
+      },
+      {
+        "output": 417.2,
+        "value": 834.3
+      },
+      {
+        "output": 417.2,
+        "value": 926.4
+      }
+    ],
+    "n": 38,
+    "val_min": 113.1,
+    "val_max": 926.4,
+    "note": "native-resolution polyline trace; continuation-arrow vertices (output<5,>445) trimmed; overlay-validated vs book"
+  },
+  "S406": {
+    "figure": "Fig4.21",
+    "curve_native": [
+      {
+        "output": 48.5,
+        "value": 5471.7
+      },
+      {
+        "output": 58.1,
+        "value": 5412.4
+      },
+      {
+        "output": 80.3,
+        "value": 5331.6
+      },
+      {
+        "output": 87.4,
+        "value": 5315.9
+      },
+      {
+        "output": 92.2,
+        "value": 5307.7
+      },
+      {
+        "output": 109.3,
+        "value": 5303.2
+      },
+      {
+        "output": 115.4,
+        "value": 5317.3
+      },
+      {
+        "output": 117.6,
+        "value": 5323.0
+      },
+      {
+        "output": 122.2,
+        "value": 5317.5
+      },
+      {
+        "output": 141.8,
+        "value": 5288.7
+      },
+      {
+        "output": 159.7,
+        "value": 5269.8
+      },
+      {
+        "output": 179.4,
+        "value": 5255.1
+      },
+      {
+        "output": 204.2,
+        "value": 5249.7
+      },
+      {
+        "output": 222.1,
+        "value": 5259.5
+      },
+      {
+        "output": 225.2,
+        "value": 5257.4
+      },
+      {
+        "output": 233.4,
+        "value": 5252.7
+      },
+      {
+        "output": 262.1,
+        "value": 5240.2
+      },
+      {
+        "output": 282.0,
+        "value": 5235.6
+      },
+      {
+        "output": 297.7,
+        "value": 5234.7
+      },
+      {
+        "output": 312.5,
+        "value": 5235.6
+      },
+      {
+        "output": 325.9,
+        "value": 5240.2
+      },
+      {
+        "output": 334.1,
+        "value": 5244.2
+      },
+      {
+        "output": 340.9,
+        "value": 5252.4
+      },
+      {
+        "output": 380.2,
+        "value": 5309.3
+      },
+      {
+        "output": 418.9,
+        "value": 5360.5
+      },
+      {
+        "output": 420.6,
+        "value": 5469.7
+      }
+    ],
+    "n": 26,
+    "val_min": 5234.7,
+    "val_max": 5471.7,
+    "note": "native-resolution polyline trace; continuation-arrow vertices (output<5,>445) trimmed; overlay-validated vs book"
+  },
+  "S407": {
+    "figure": "Fig4.22",
+    "curve_native": [
+      {
+        "output": 5.0,
+        "value": 5143.0
+      },
+      {
+        "output": 83.1,
+        "value": 5173.9
+      },
+      {
+        "output": 102.4,
+        "value": 5294.9
+      },
+      {
+        "output": 118.0,
+        "value": 5814.1
+      },
+      {
+        "output": 123.0,
+        "value": 5154.9
+      },
+      {
+        "output": 193.7,
+        "value": 5226.3
+      },
+      {
+        "output": 222.9,
+        "value": 5445.6
+      },
+      {
+        "output": 225.7,
+        "value": 5160.5
+      },
+      {
+        "output": 294.9,
+        "value": 5266.0
+      },
+      {
+        "output": 307.8,
+        "value": 5325.9
+      },
+      {
+        "output": 323.5,
+        "value": 5383.3
+      },
+      {
+        "output": 336.5,
+        "value": 5525.4
+      },
+      {
+        "output": 339.6,
+        "value": 5630.1
+      },
+      {
+        "output": 343.9,
+        "value": 5727.6
+      },
+      {
+        "output": 350.9,
+        "value": 5845.7
+      },
+      {
+        "output": 417.6,
+        "value": 5879.1
+      },
+      {
+        "output": 420.0,
+        "value": 7399.9
+      }
+    ],
+    "n": 17,
+    "val_min": 5143.0,
+    "val_max": 7399.9,
+    "note": "native-resolution polyline trace; continuation-arrow vertices (output<5,>445) trimmed; overlay-validated vs book"
+  }
+}

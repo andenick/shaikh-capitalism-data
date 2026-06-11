@@ -18,7 +18,7 @@
 
 Formula series: WPI / gold_price for US and UK separately, rebased to 1930 = 100.
 
-In Shaikh (2016) the series appears as **Figure 2.12** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.10** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 
@@ -58,7 +58,7 @@ Index, 1930 = 100 (log scale on figure); represents WPI deflated by gold price
 
 ## 8. Cross-references
 
-- Book reference: Shaikh (2016), Ch. 2, Figure 2.12
+- Book reference: Shaikh (2016), Ch. 2, Figure 2.10
 - Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
 - Predecessor (CD2): see registry `predecessor_ids` block.
 

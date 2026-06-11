@@ -18,7 +18,7 @@
 
 Two co-plotted index series (both Index 1889 = 100): (a) manufacturing labor productivity, (b) production-worker real compensation per hour. Used by Shaikh to demonstrate divergence between productivity growth and worker wages.
 
-In Shaikh (2016) the series appears as **Figure 2.7** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.5** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 
@@ -58,7 +58,7 @@ Two units co-plotted: Index 1889=100 (productivity); Index 1889=100 (real compen
 
 ## 8. Cross-references
 
-- Book reference: Shaikh (2016), Ch. 2, Figure 2.7
+- Book reference: Shaikh (2016), Ch. 2, Figure 2.5
 - Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
 - Predecessor (CD2): see registry `predecessor_ids` block.
 

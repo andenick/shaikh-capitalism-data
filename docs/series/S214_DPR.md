@@ -18,7 +18,7 @@
 
 Sector-by-sector profit rates for 15 US manufacturing aggregates, 1960-1989. Source: Shaikh Appendix 7.2 hosted on anwarshaikhecon.org.
 
-In Shaikh (2016) the series appears as **Figure 2.14** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.12** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 
@@ -57,7 +57,7 @@ Rate (decimal)
 
 ## 8. Cross-references
 
-- Book reference: Shaikh (2016), Ch. 2, Figure 2.14
+- Book reference: Shaikh (2016), Ch. 2, Figure 2.12
 - Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
 - Predecessor (CD2): see registry `predecessor_ids` block.
 

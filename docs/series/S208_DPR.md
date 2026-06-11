@@ -18,7 +18,7 @@
 
 RULC = real compensation per hour / productivity, rescaled to 1889 = 100. Equivalent to (S207-B / S207-A) * 100.
 
-In Shaikh (2016) the series appears as **Figure 2.8** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.6** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 
@@ -57,7 +57,7 @@ Index, 1889 = 100
 
 ## 8. Cross-references
 
-- Book reference: Shaikh (2016), Ch. 2, Figure 2.8
+- Book reference: Shaikh (2016), Ch. 2, Figure 2.6
 - Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
 - Predecessor (CD2): see registry `predecessor_ids` block.
 

@@ -24,7 +24,7 @@ The canonical Shaikh-published values are transcribed from `SalvagedInputs/book_
 
 ## Construction
 
-Three sectoral profit-rate series + capacity-utilization u_K / u_FRB. rcorp = (P + NMINT) / (KGC(-1) + INV(-1)) re-using AS003, AS004, AS009. Re-computed end-to-end from components; no splice on the published rate.
+Three sectoral profit-rate series + capacity-utilization u_K / u_FRB. rcorp = (P + NMINT) / (KGC(-1) + INV(-1)) re-using XS003, XS004, XS009. Re-computed end-to-end from components; no splice on the published rate.
 
 ## Year Coverage
 
@@ -40,7 +40,7 @@ decimal_rate
 
 ## Cross-references
 
-`AS003`, `AS004`, `AS009`
+`XS003`, `XS004`, `XS009`
 
 ## Validation Expectation
 

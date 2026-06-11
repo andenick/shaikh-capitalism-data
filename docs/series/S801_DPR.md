@@ -24,13 +24,11 @@
 
 ---
 
+> **Reconciliation note (2026-06-11, ch8/9 pass):** Sections 1-9 below were authored when S801 was `data_unavailable` and have been rewritten to the **recovered** state (see the recovery header above). The historical data_unavailable language was internally inconsistent with the recovery header, the populated `chopped/S801.csv`, and the registry status `book_period_validated`.
+
 ## 1. Definition
 
-**S801** is Shaikh's Figure 8.1, a reproduction of Eichner (1973, *Economic Journal*, p. 1187): two wholesale-price-index lines (base 1957-59 = 100) for "concentrated" vs. "competitive" US industries, monthly/annual, **1965-1973**.
-
-Per the playbook recipe for `content_type = data_unavailable`:
-
-> "DPR + EPR documenting the chart-only source and why no underlying data exists ... L01 returns SKIPPED ... V03 returns PASS_DATA_UNAVAILABLE ... No chopped CSV. Extenbook contains only the DPR + EPR + Source pages. Phase 8 viz uses the book figure image directly."
+**S801** is Shaikh's Figure 8.1, a reproduction of Eichner (1973, *Economic Journal*, p. 1187): two wholesale-price-index lines (base 1957-59 = 100) for "concentrated" (oligopolistic) vs. "competitive" US industries, annual, **1965-1973**. The series was recovered (2026-05-26) by offline vector extraction of Shaikh's reproduced figure and overlay-validated against it; provenance is `digitized` (digitization fidelity, not Eichner's exact unpublished table).
 
 ## 2. Why it matters in Chapter 8
 
@@ -40,26 +38,23 @@ Section II.3 of Chapter 8 ("Price rigidity and monopoly power", pp. 371-373) fra
 
 | Subseries | Coverage | Publisher | Status |
 |---|---|---|---|
-| (none — chart-only) | 1965-1973 | EICHNER_1973_FIG8_1 | **data_unavailable** |
+| S801-A-Oligopolistic | 1965-1973 | EICHNER_1973_EJ (via Shaikh Fig 8.1) | book_period_validated |
+| S801-A-Competitive | 1965-1973 | EICHNER_1973_EJ (via Shaikh Fig 8.1) | book_period_validated |
 
-Eichner 1973, Economic Journal 83(332), p. 1187 publishes Figure 8.1 as a chart only. There is no underlying table in the source publication. The Eichner 1973 PDF is not present in `Inputs/` or `Technical/data/raw/01_SOURCE_MATERIALS/` of the RSCD workspace (Phase 5 blocker-resolver searched and confirmed). Shaikh (2016) reproduces the chart on book p. 372 but transcribes no numeric values in the narrative. The `SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_*.xlsx` set tabulates Figures 8.2-8.6 but contains no file for Eichner Fig 8.1.
-
-Phase 5 blocker B6 was formally resolved as `data_unavailable` (research dossier review_history entry, 2026-05-18).
+Eichner 1973, Economic Journal 83(332), p. 1187 publishes Figure 8.1 as a **chart only**; there is no underlying table in the source publication, and Shaikh (2016, p. 372) transcribes no numeric values in the narrative. Because the chart is the authoritative record, the values were recovered by **offline vector extraction of Shaikh's reproduced figure** (Oxford print p. 413, from Robert's `_PDF_LIBRARY`) and overlay-validated against the figure. Provenance is therefore `digitized`. The recovered source workbook is `SalvagedInputs/book_data/Reconstructed/Eichner_1973_Fig8_1_S801.xlsx`.
 
 ## 4. Construction
 
-N/A. No data file exists for the loader to ingest. Per the playbook:
-- `L01_S801_load.py` returns `{"status": "SKIPPED", "reason": "data_unavailable"}`.
-- `P02_S801_construct.py` is not authored.
-- `V03_S801_validate.py` returns `{"status": "PASS_DATA_UNAVAILABLE"}`.
-- No chopped CSV at `Technical/chopped/S801.csv`.
-- No processed parquet at `Technical/data/processed/S801.parquet`.
-- Phase 9 visualization uses the book figure image directly (no digitization in Phase 5).
+`construction: direct` (digitized reproduction of Shaikh's chart):
+- `L01_S801.py` loads the recovered Eichner_1973_Fig8_1 workbook (two index lines, 1965-1973).
+- `V03_S801.py` round-trip validates against the source workbook (PASS, n=18, MAE 0.0).
+- Chopped CSV present at `Technical/chopped/S801.csv` (18 rows: 9 years x 2 entities).
+- Two entities captured: Oligopolistic (concentrated) reaching ~145 by 1973 vs. Competitive (unconcentrated) reaching ~128.5 — the late administered-price divergence.
 
 ## 5. Year coverage
 
 - **Book period**: 1965-1973 (annual, per chart)
-- **Extension period**: not applicable (data_unavailable; see EPR §1 and §2)
+- **Extension period**: not applicable (extension would be a proxy substitution; see caveat 3)
 
 ## 6. Units
 
@@ -67,10 +62,9 @@ Wholesale price index, base 1957-59 = 100 (per Eichner's chart axis).
 
 ## 7. Caveats
 
-1. **No byte-exact reproduction possible** from local materials. Eichner 1973 published Figure 8.1 as a chart with no underlying table; Shaikh did not transcribe values; the Appendix8_* chopped tables do not include this figure. The published Eichner chart stands as the authoritative record.
-2. **WebPlotDigitizer is out of scope for Phase 5.** Even if the Eichner 1973 PDF were obtained from JSTOR (DOI 10.2307/2230843), digitizing the chart would introduce non-trivial sampling noise and would conflict with the Anu No-Synthetic rule for primary data ingestion. Digitization is appropriately constrained as a Phase 9 visualization task (with `provenance: digitized` flagging).
-3. **BLS PPI reconstruction would be a proxy substitution.** The Adequacy Report's extension_candidates (BLS PPI by NAICS industry, partitioned by Census Concentration Ratios) require SIC->NAICS concordance and a re-application of the high-CR / low-CR partition. The set of industries in Eichner's 1965-1973 "concentrated" and "competitive" aggregates is itself unrecoverable. Any modern reconstruction would therefore be a proxy in the Anu sense, requiring formal Concept Match Justification in an EPR. Not attempted in Phase 5.
-4. **Stub-name correction.** S801 was renamed from the stale "US Long-Run Interest Rates and Prices" (a carryover from CD2 S042, which is a Chapter 10 series). `cd2_id` was nulled in Phase 3.
+1. **Digitized provenance, not Eichner's exact table.** Eichner 1973 published Figure 8.1 as a chart with no underlying table; the published chart (as reproduced by Shaikh) is the authoritative record. The recovered values carry digitization fidelity (overlay-validated), not transcription fidelity.
+2. **A BLS PPI reconstruction would be a proxy substitution.** The Adequacy Report's extension_candidates (BLS PPI by NAICS industry, partitioned by Census Concentration Ratios) require SIC->NAICS concordance and re-application of the high-CR / low-CR partition. The set of industries in Eichner's 1965-1973 "concentrated" and "competitive" aggregates is itself unrecoverable, so any modern reconstruction would be a proxy in the Anu sense (formal Concept Match Justification required). Not attempted.
+3. **Stub-name correction.** S801 was renamed from the stale "US Long-Run Interest Rates and Prices" (a carryover from CD2 S042, which is a Chapter 10 series). `cd2_id` was nulled in Phase 3.
 
 ## 8. Cross-references
 
@@ -81,5 +75,5 @@ Wholesale price index, base 1957-59 = 100 (per Eichner's chart axis).
 
 ## 9. Validation expectation
 
-- **Status**: `PASS_DATA_UNAVAILABLE` (per playbook).
-- No tolerance applies; the validator records that no underlying data exists in the workspace and that this is the intended state.
+- **Status**: `PASS` (round-trip against the recovered Eichner_1973_Fig8_1 workbook; n=18, MAE 0.0).
+- Provenance flag: `digitized` (figure-overlay validated, not Eichner's unpublished table).

@@ -18,7 +18,7 @@
 
 Index of US real nonresidential business investment in fixed capital (equipment + structures excluding housing). Spliced at 1901, rebased to 1958=100. Chapter 2's leading-edge illustration of the more turbulent investment path relative to output.
 
-In Shaikh (2016) the series appears as **Figure 2.2** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.2** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 

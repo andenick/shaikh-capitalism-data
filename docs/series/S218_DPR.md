@@ -18,11 +18,11 @@
 
 Average GDP per capita of the 4 richest countries and 4 poorest countries at each decennial benchmark, plus the ratio (richest4/poorest4). Shaikh excludes Kuwait/Qatar/Venezuela from the top 4 (1950+).
 
-In Shaikh (2016) the series appears as **Figure 2.18** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figures 2.16 and 2.17** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 
-Closes the chapter with a stark quantitative measure of global inequality: 40x in 1990, 64x in 2000.
+Closes the chapter with a stark quantitative measure of global inequality: the richest-four to poorest-four ratio rises from 7.1 in 1900 to 64.2 in 2000.
 
 ## 3. Sources (per subseries)
 
@@ -59,7 +59,7 @@ Closes the chapter with a stark quantitative measure of global inequality: 40x i
 
 ## 8. Cross-references
 
-- Book reference: Shaikh (2016), Ch. 2, Figure 2.18
+- Book reference: Shaikh (2016), Ch. 2, Figures 2.16 and 2.17
 - Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
 - Predecessor (CD2): see registry `predecessor_ids` block.
 

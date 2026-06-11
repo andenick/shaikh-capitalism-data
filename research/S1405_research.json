@@ -26,11 +26,13 @@
       "verbatim_check": true
     },
     {
-      "chapter": 14,
+      "chapter": 18,
       "page": 894,
       "quote": "Fitted curves displayed in figure 14.4 of chapter 14 were fitted to the two eras 1949–1982 and 1994–2011 using Phillips's original functional form y = a+bxc, where the dependent variable y = ˙σW /σW = GWSHHP100, the independent variable x = unemployment intensity = ULINTENSITYHP100, and a, b, c are fitted parameters.",
       "role": "method",
-      "verbatim_check": true
+      "verbatim_check": true,
+      "kb_anchor": "ch18, Appendix 14.2",
+      "note": "Verbatim from Appendix 14.2 (lives in ch18_appendices.md, KB line 8624), NOT chapter 14. Shaikh's text says 'figure 14.4' which is his OWN typo for Figure 14.14 [sic] -- verified against the KB. The explainer's 'From the book' uses the clean ch14 Fig 14.14 quote (p.666) instead, which carries the correct figure number. Note chapter field corrected 13->18 (appendix location)."
     }
   ],
   "primary_source": {

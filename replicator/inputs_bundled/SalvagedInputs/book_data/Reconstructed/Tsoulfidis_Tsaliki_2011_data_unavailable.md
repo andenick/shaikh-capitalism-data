@@ -19,8 +19,8 @@
   The correct identifier is 51334. This README documents the correction.)
 
 **Local cache**
-- `D:/Arcanum/Projects/RSCD/_tmp_tsoulfidis2011.pdf` (downloaded
-  2026-05-18; 928 162 bytes; 42 pages).
+- A local working copy of the Tsoulfidis & Tsaliki (2011) PDF was downloaded
+  2026-05-18 (928 162 bytes; 42 pages) for figure digitization.
 
 ---
 

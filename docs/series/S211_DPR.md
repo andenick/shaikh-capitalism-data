@@ -18,7 +18,7 @@
 
 Windowed view of S210 truncated at 1940 by analytical design. Used by Shaikh to focus on the gold-standard era prior to Bretton Woods.
 
-In Shaikh (2016) the series appears as **Figure 2.11** in Chapter 2 ("The Wealth of Nations: A Long View").
+In Shaikh (2016) the series appears as **Figure 2.9** in Chapter 2 ("Turbulent Trends and Hidden Structures").
 
 ## 2. Why it matters in Chapter 2
 
@@ -53,7 +53,7 @@ Index, 1930 = 100 (log scale)
 
 ## 8. Cross-references
 
-- Book reference: Shaikh (2016), Ch. 2, Figure 2.11
+- Book reference: Shaikh (2016), Ch. 2, Figure 2.9
 - Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
 - Predecessor (CD2): see registry `predecessor_ids` block.
 

@@ -10,11 +10,19 @@
 ## Setup
 
 ```bash
-cd D:/Arcanum/Projects/RSCD/Technical
+# cd into the project directory (replace with your local clone path,
+# or set RSCD_TECHNICAL to point at the Technical/ directory)
+cd "$RSCD_TECHNICAL"        # or: cd path/to/rscd/Technical
 python -m venv .venv
-.venv/Scripts/activate    # Windows
+.venv/Scripts/activate      # Windows
+# source .venv/bin/activate # macOS/Linux
 pip install -r requirements.txt
 ```
+
+> Path note (2026-05-19, per Decision 0006): earlier drafts hard-coded an
+> absolute workstation path to the project's `Technical/` directory. Use a
+> relative path from your clone or the `RSCD_TECHNICAL` env variable.
+> Replicator scripts auto-derive paths from their own location.
 
 ## API Keys
 
