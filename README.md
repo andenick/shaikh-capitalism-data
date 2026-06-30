@@ -10,8 +10,9 @@ Open replication and 1860–2025 extension of the empirical material in:
 > Shaikh, Anwar (2016). *Capitalism: Competition, Conflict, Crises.* Oxford University Press.
 
 **118 series** across 17 chapters, 5 external studies, and 9 analytical
-constructs. 109 producible chopped CSVs; the remaining 9 are formally classified
-`PASS_DATA_UNAVAILABLE` or `PASS_THEORETICAL` (see VALIDATION_REPORT.json).
+constructs. 116 produce chopped CSVs; the remaining 2 (S703, S704) are formally
+classified `PASS_DATA_UNAVAILABLE` and produce no empirical output (see
+VALIDATION_REPORT.json).
 
 ## What's here
 
@@ -45,8 +46,8 @@ Publish/
 │   ├── scripts/replicate.py   ← clean-venv end-to-end runner
 │   ├── lib/                   ← bundled copy of code/
 │   └── inputs_bundled/        ← SalvagedInputs + registries
-├── chopped/                   ← 109 chopped CSVs (the deliverable)
-├── extenbooks/                ← 109 extension workbooks (XLSX)
+├── chopped/                   ← 116 chopped CSVs (the deliverable)
+├── extenbooks/                ← 116 extension workbooks (XLSX)
 ├── research/                  ← 118 *_research.json dossiers (verbatim quotes)
 ├── docs/
 │   ├── chapters/              ← per-chapter research summaries + adequacy reports
@@ -54,8 +55,6 @@ Publish/
 │   ├── decisions/             ← 6 architectural decision records
 │   └── methodology/           ← NIPA T7.11 FISIM remap + IFS line→SDMX remap
 └── Build/
-    ├── BUILD_NARRATIVE.md     ← stage-by-stage chronology
-    ├── STEP_LOG.jsonl         ← 1,376 timestamped pipeline events
     ├── PHASE3_VALIDATION_REPORT.json
     ├── PHASE4_VALIDATION_REPORT.json
     └── VIZ_QUALITY_REPORT.json
@@ -65,7 +64,7 @@ Publish/
 
 ```bash
 git clone https://github.com/andenick/shaikh-capitalism-data.git
-cd rscd
+cd shaikh-capitalism-data
 python -m venv .venv && .venv/Scripts/activate
 pip install -r requirements.txt
 
@@ -91,9 +90,11 @@ See **[INSTALL.md](INSTALL.md)** for detailed environment setup and
 | Metric | Value |
 |--------|-------|
 | Series authored | 118 |
-| Series producing chopped output | 109 |
-| Series PASS_DATA_UNAVAILABLE | 11 (S801, S703, S704, S707, S708, S214, S215, S404, ES2306, plus 2 others) |
+| Series producing chopped output | 116 |
+| Series PASS (face-value match) | 104 |
 | Series PASS_THEORETICAL | 8 (no empirical match expected) |
+| Series PASS_CROSS_SECTIONAL_UNAVAILABLE | 2 (S306, S307) |
+| Series PASS_DATA_UNAVAILABLE | 4 (S214, S215, S703, S704) |
 | Verbatim Shaikh quotes in research/ | 118/118 |
 | Chapter adequacy gate PASS | 17/17 |
 | Mean validation MAE (face-value match) | < 1.5% |
@@ -108,7 +109,7 @@ See **[INSTALL.md](INSTALL.md)** for detailed environment setup and
             ``Capitalism: Competition, Conflict, Crises''},
   year   = {2026},
   url    = {https://github.com/andenick/shaikh-capitalism-data},
-  version = {1.0}
+  version = {1.4}
 }
 
 @book{shaikh2016capitalism,
@@ -128,8 +129,8 @@ See [LICENSE](LICENSE).
 
 ## Predecessor projects
 
-This is the v1.0 rebuild on the Anu Framework v12.0. Earlier prototypes:
-- **Capitalism Data (CD)** — 105 series, Anu v4.x, frozen 2025
-- **Capitalism Data v2 (CD2)** — 114 series, Anu v6.0, frozen 2026-04
+This is the v1.0 rebuild of the data-construction pipeline. Earlier prototypes:
+- **Capitalism Data (CD)** — 105 series, frozen 2025
+- **Capitalism Data v2 (CD2)** — 114 series, frozen 2026-04
 
 Crosswalks: `MIGRATION/CD_to_RSCD_crosswalk.csv`, `MIGRATION/CD2_to_RSCD_crosswalk.csv`

@@ -28,10 +28,10 @@
 
 ## Coverage Assessment
 
-**No HDARP top-up required** for v1.0. CD's HDARP v4.2 figure extraction
-(`FIGURE_MASTER_v4.json` with 205 figures + per-chapter JSONs in
-`hdarp_v4/`) is comprehensive enough to seed Phase 3 research without
-re-running an extraction campaign.
+**No further figure extraction required** for v1.0. The salvaged figure
+extraction (`FIGURE_MASTER_v4.json` with 205 figures + per-chapter JSONs) is
+comprehensive enough to seed Phase 3 research without re-running an extraction
+campaign.
 
 **Chapters needing manual verification in Phase 3**:
 
@@ -55,14 +55,13 @@ per chapter.
 
 ## Reference paths
 
-The pipeline uses absolute paths via `Technical/code/utils/paths.py`
-(to be authored in Phase 7). The canonical KB roots are:
+Figure-level metadata used to seed Phase 3 research is bundled in the
+replication package under:
 
-- `SalvagedInputs/figures_reference/` — figure-level metadata (HDARP v4.2)
-- `Inputs/Capitalism Data/Technical/Knowledge_Base/` — CD's broader KB
-  (HDARP historical sources, equations, methodology) — read-only access
-- `Inputs/Capitalism Data/Outputs/ShinyApp/data/ShaikhAbsorbed/hdarp_v4/`
-  — 16 per-chapter HDARP JSONs (not yet salvaged; lazy access via path
-  abstraction)
-- `Council/Robert/Knowledge_Base/CD2/HDARP_Integration/` — mostly empty
-  (CD2's HDARP integration was started but not completed); do not rely on
+- `SalvagedInputs/figures_reference/` — figure-level metadata
+  (`FIGURE_MASTER_v4.json`, `HDARP_SERIES_LINKAGE.json`,
+  `CD_CROSS_REFERENCE_INDEX.json`)
+
+Broader predecessor knowledge-base material (historical sources, equations,
+methodology) lives outside this public bundle and is not required to reproduce
+the series.

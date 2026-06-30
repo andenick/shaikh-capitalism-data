@@ -1,7 +1,7 @@
 # Series ID Prefix Scheme
 
 **Project**: RSCD — Shaikh (2016) Replication
-**Convention**: Anu Framework v12.0, RMWND-compatible
+**Convention**: project series-ID specification
 
 This document is the binding spec for series identifiers. Every series in
 `series_registry.json` MUST follow exactly one of the three patterns below.

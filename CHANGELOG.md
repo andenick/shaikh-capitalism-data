@@ -5,15 +5,13 @@ Versioning follows the project release line (see `RELEASE_NOTES_*`).
 
 ## v1.4 — 2026-06-11 — Series-ID migration + provenance reconciliation
 
-This release brings the public bundle into line with the internal canonical tree
-after the AS/ES → XS series-ID migration (Series ID Spec v2.2, Anu Framework
-v12.2) and a Knowledge-Base reconciliation pass.
+This release brings the public bundle up to date after the AS/ES → XS series-ID
+migration and a source-provenance reconciliation pass.
 
 ### Series-ID migration (AS/ES → XS)
 - The 9 analytical-construct series (legacy `AS001`–`AS009`) and 8 external-study
   series (legacy `ES2001`–`ES2305`) have been migrated to the canonical **`XS`**
-  ("Extra Series") prefix per the Series ID Spec v2.2. `AS`/`ES` are now legacy
-  prefixes rejected by the framework.
+  ("Extra Series") prefix. `AS`/`ES` are now legacy prefixes, no longer used.
 - Every `XS` entry carries `xs_class` (`appendix` for the former AS constructs,
   `external_study` for the former ES replications) and `xs_attribution`.
 - The full old→new correspondence table is published at
@@ -24,8 +22,8 @@ v12.2) and a Knowledge-Base reconciliation pass.
   replicator L01/P02/V03 scripts, and bundled inputs.
 
 ### Provenance reconciliation (KB)
-- DPRs and research JSONs corrected against the Knowledge Base, removing
-  hallucinated provenance statements carried by earlier bundles.
+- DPRs and research JSONs corrected against the underlying source documents,
+  removing unverified provenance statements carried by earlier bundles.
 - Per-subseries `units` now declared where a series mixed dimensionless ratios
   with dollar/level components (e.g. the former AS002 Sigma ratio) — keeps charts
   dimensionally honest.
@@ -38,11 +36,10 @@ v12.2) and a Knowledge-Base reconciliation pass.
   superseded primary series) and `XS2304`, `XS2305` (literature-compilation
   external-study series). Downstream consumers should honor `publish: false`.
 
-### Bundle contents refreshed from canonical tree
+### Bundle contents refreshed
 - Chopped CSVs, Extenbooks, DPRs/EPRs, research JSONs, registry, ledger,
   validation report, subsource metadata, correspondence matrix, and the
-  self-contained replicator package were all re-mirrored from the post-migration
-  internal tree.
+  self-contained replicator package were all regenerated after the migration.
 
 ### Notes
 - Public GitHub repository references (`github.com/andenick/shaikh-capitalism-data`)
