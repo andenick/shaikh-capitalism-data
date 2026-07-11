@@ -37,7 +37,10 @@ jobs:
           ROOT = Path(".")
           EXTS = {".py", ".md", ".json", ".csv", ".txt", ".yml", ".yaml", ".cff", ".ipynb"}
           # FAIL-severity per anu-framework.md: absolute workspace paths + real API keys.
-          PATH_LEAK = re.compile(r"D:[\\/]Arcanum|/Users/[A-Za-z0-9._-]+/|/home/[A-Za-z0-9._-]+/Arcanum")
+          # Require a trailing separator so a *nested* absolute path is a leak,
+          # while a bare doc mention of the drive root (e.g. describing the scrub
+          # in CHANGELOG) is not a false positive.
+          PATH_LEAK = re.compile(r"D:[\\/]Arcanum[\\/]|/Users/[A-Za-z0-9._-]+/|/home/[A-Za-z0-9._-]+/Arcanum")
           KEY_LEAK  = re.compile(r"(FRED|BEA|CENSUS)_API_KEY\s*=\s*[A-Za-z0-9]{16,}")
           hits = []
           for p in ROOT.rglob("*"):
