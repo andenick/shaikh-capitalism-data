@@ -1,0 +1,23 @@
+{
+  "sid": "S402",
+  "display_name": "Average and marginal cost curves with wages paid per hour (illustrative)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Renderable multi-trace cost curve (Shaikh Fig 4.17): the per-hour-wage analogue of S401 — six cost components (afc, ulc, avc, ac, tc, mc) vs cumulative daily output XR. 6 subseries x 21 points = 126 rows (4 nulls are ac at XR=0, expected). Renders as overlaid x-y cost curves (x = cumulative output XR, 'year' index column 0-9, NOT calendar years). TRIAGE_PRESCREEN EMPTY flag is STALE: L01_S402/P02_S402 exist and replicate.py --series S402 builds the chopped (PASS). Data is a verbatim transcription of Appendix Table 4.2.4 (book pp.772-781), validated to <=0.02 rounding noise. KB note: Appendix 4.2 IS in ch18_appendices.md, so a KB-anchored 'From the book' quote is included.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S402-afc": {"label": "Average fixed cost (afc)", "units": "money units per unit output (illustrative)"},
+    "S402-ulc": {"label": "Unit labour cost, per-hour wages (ulc)", "units": "money units per unit output (illustrative)"},
+    "S402-avc": {"label": "Average variable cost (avc)", "units": "money units per unit output (illustrative)"},
+    "S402-ac": {"label": "Average total cost (ac)", "units": "money units per unit output (illustrative)"},
+    "S402-tc": {"label": "Total cost (tc)", "units": "money units (total daily cost, illustrative)"},
+    "S402-mc": {"label": "Marginal cost (mc)", "units": "money units per unit output (illustrative)"}
+  },
+  "field_fixes": {
+    "year_column_is_index": "Chopped 'year' is a point index (0-9), not a calendar year; abscissa is cumulative daily output XR. Viz plots cost vs XR.",
+    "mixed_units_split": "tc is a total; the other five are per-unit. Split per-subseries units."
+  },
+  "notes": "content_type derived; construction formula; not extended. Per-hour-wage twin of S401."
+}

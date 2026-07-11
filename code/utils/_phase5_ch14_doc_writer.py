@@ -407,7 +407,7 @@ def write_S1406() -> None:
     | S1406-B `GPRODVTY` | Appendix 14.3 (derived from BEA T1.10/T1.1.9/T6.5) | decimal annual rate |
     | S1406-C `GDP` (extension input) | FRED annual | billions USD SAAR |
     | S1406-D `GDPDEF` (extension input) | FRED annual mean | index 2017=100 |
-    | S1406-E `B4701C0A222NBEA` (extension input) | FRED annual | thousands of jobs (FTE all industries) |
+    | S1406-E `A4301C0A173NBEA` (extension input) | FRED annual | thousands of persons (full-time equivalent employees, NIPA T6.5A-D) |
 
     ## 4. Construction
     Composite. Productivity formula implemented LITERALLY:
@@ -431,8 +431,8 @@ def write_S1406() -> None:
        wage-share decomposition wr = w/p, gwsh = wr - yr.
     2. **Chain-type GDPDEF**: current FRED vintage uses 2017=100 chain-type.
        For growth rates the base year is immaterial; we use the current vintage.
-    3. **FTE coverage**: `B4701C0A222NBEA` is FTE all industries (NIPA T6.5
-       line 1 broadest) consistent with Shaikh's economy-wide intent.
+    3. **FTE coverage**: `A4301C0A173NBEA` is total full-time equivalent
+       employees (NIPA T6.5A-D) consistent with Shaikh's economy-wide intent.
 
     ## 8. Cross-references
     CD `S073`. Book pp. 669-670, 892.
@@ -451,7 +451,7 @@ def write_S1406() -> None:
     re-derivation (NOT growth-rate splice on the derived series).
 
     ## Method
-    For 2012+, fetch FRED `GDP`, `GDPDEF`, `B4701C0A222NBEA`; apply Shaikh's
+    For 2012+, fetch FRED `GDP`, `GDPDEF`, `A4301C0A173NBEA`; apply Shaikh's
     productivity formula LITERALLY; compute inflation = GDPDEF.pct_change()
     and productivity growth = yr.pct_change(); append.
 

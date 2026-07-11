@@ -1,16 +1,16 @@
 # S216 -- Normalized Total Prices of Production Profit vs Total Unit Labor Costs, US 1972 (71 Industries)
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S216
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave2-ch2
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S216_research.json`
-- Adequacy: `Technical/docs/chapters/CH2_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S216_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S216`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S216`
 
 ---
 
@@ -37,7 +37,6 @@ First-pass empirical test of the Sraffian/classical claim that market prices clu
 
 **Formula**: `Prices of production from Sraffian system at observed r; integrated_ULC = (I - A)^(-1) * l`
 
-
 1. Read 71-industry tpm, tp(r), tv from Appendix9_1972fixed.xlsx.
 2. Normalize each axis so industry totals sum to 1.
 3. Emit long-form: one row per (industry, axis-series).
@@ -60,7 +59,7 @@ Normalized dollars (sums of each axis match)
 ## 8. Cross-references
 
 - Book reference: Shaikh (2016), Ch. 2, Figure 2.14
-- Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
+- Knowledge Base: figure-linkage reference
 - Predecessor (CD2): see registry `predecessor_ids` block.
 
 ## 9. Validation expectation

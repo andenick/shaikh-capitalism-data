@@ -1,7 +1,7 @@
 # Chapter 17 Research Summary — Summary and Conclusions
 
 **Wave**: C
-**Subagent**: opus-subagent-wave-c-ch13-17
+**Subagent**: automated-agent
 **Date**: 2026-05-18
 **Series count**: 3 (S1701, S1702, S1703)
 **Book pages**: 747–759 (chapter body — figures on pp. 749, 752, 753), 900 (Appendix 17.1)
@@ -75,7 +75,7 @@ Expected validator outcome: **PASS** for all three series.
 
 ## Phase 5-8 Closure (2026-05-18)
 
-**Author**: opus-subagent-wave2-ch11-13-17
+**Author**: automated-agent
 
 | SID | Content type | V03 status | MAE | Chopped rows | Notes |
 |-----|--------------|------------|-----|--------------|-------|

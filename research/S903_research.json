@@ -137,11 +137,11 @@
     "Series count correctness (per Phase 3 Ch9 mandate): the figure list includes Fig 9.6, 9.7, 9.13-9.16, 9.18 which belong primarily to S902 (standard prices) or S901 (market-vs-direct prices). The 'core' S903 content is the wage-profit curves themselves (Fig 9.8, 9.12, 9.19). Recommend trimming the figure list; see CH9_RESEARCH_SUMMARY.md.",
     "Verify the PWT 7.1 variable Shaikh uses (likely RGDPL2 or RGDPCH - real GDP per worker chain-weighted, but the PDF text is truncated at 'Real' on p.869). Phase 4 should pull Appendix9_PennWorldTables.xlsx to confirm the column name.",
     "1947 R = 1.088 (Table 9.18) is greater than 1 - this is expected mathematically (R = 1/λ_max of KT) but means r/R ≤ 1 has r ≤ 1.088, i.e., profit rates higher than 100% are admissible in that year's geometry. Confirm this matches Shaikh's plotted x-axis range (0 to 1.134) for Fig 9.19.",
-    "Cross-reference Fig 9.19 with a Volcker-style modern wage-profit replication; CD2's metadata flagged S049 as having PWT 7.1, NBER output/labor adjusted, and 'observed profit rates' as separate subseries which suggests a richer decomposition than the current single-series stub captures."
+    "Cross-reference Fig 9.19 with a modern wage-profit replication; CD2's metadata flagged S049 as having PWT 7.1, NBER output/labor adjusted, and 'observed profit rates' as separate subseries which suggests a richer decomposition than the current single-series stub captures."
   ],
   "review_history": [
     {
-      "reviewer": "opus-subagent-wave-b-ch9",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Verbatim quotes from PDF pp.422-423 (Sec X) and Appendix 9.2 pp.868-869 (PWT 7.1 source citation). Construction = formula (eq. 9.23 and eq. 9.1.10). The CD2 stub's figure list overflows; recommend pruning in Phase 4."

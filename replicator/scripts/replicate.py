@@ -78,6 +78,17 @@ def _bootstrap_filesystem() -> Path:
         except (OSError, NotImplementedError):
             shutil.copytree(salv_src, salv_dst)
 
+    # Wire bundled remediation_campaign (digitization_packet) into Technical/ so
+    # the S703/S704 machine-digitization loaders resolve their durable source CSVs
+    # offline (Technical/remediation_campaign/digitization_packet/machine/*.csv).
+    remed_src = INPUTS_BUNDLED / "remediation_campaign"
+    remed_dst = technical / "remediation_campaign"
+    if remed_src.exists() and not remed_dst.exists():
+        try:
+            os.symlink(remed_src, remed_dst, target_is_directory=True)
+        except (OSError, NotImplementedError):
+            shutil.copytree(remed_src, remed_dst)
+
     # Empty Inputs/ (only needed for path assertions; CD/CD2 legacy not used)
     (work / "Inputs").mkdir(exist_ok=True)
     (work / "Outputs").mkdir(exist_ok=True)
@@ -87,7 +98,6 @@ def _bootstrap_filesystem() -> Path:
         "series_registry.json",
         "SUBSOURCE_METADATA.json",
         "SERIES_CORRESPONDENCE_MATRIX.json",
-        "PIPELINE_STATE.json",
         "ANU_LEDGER.json",
         "VALIDATION_REPORT.json",
     ):

@@ -112,7 +112,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "opus-subagent-wave-c-ch11",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "CD2 S061 ported; quotes verified against PDF pp.526, 876; Appendix 11.1 sources identified (BLS ILC Tables 9 & 11, World Bank WDI PPI, IMF IFS trade weights); BLS ILC discontinuation flagged."

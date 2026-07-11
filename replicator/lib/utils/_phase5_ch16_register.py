@@ -1,7 +1,7 @@
 """Phase 5 Ch16 registry / subsource / ledger updater (idempotent).
 
 Updates Technical/series_registry.json, Technical/SUBSOURCE_METADATA.json, and
-Technical/ANU_LEDGER.json with the S1601-S1606 fanout artifacts.
+Technical/ANU_LEDGER.json with the S1601-S1606 automated-agent artifacts.
 
 Run:
     python Technical/code/utils/_phase5_ch16_register.py
@@ -157,7 +157,7 @@ REGISTRY_UPDATES = {
         "extension_deferred_to_phase6": True,
         "extension_note": ("FRED PPIACO + GOLDPMGBD228NLBM + ONS K646 + BoE "
                            "Millennium splice deferred to Phase 6 per Ch16 "
-                           "fanout direction."),
+                           "automated-agent direction."),
         "notes": ("Book-faithful pass-through of published cubic-trend residual "
                    "columns; extended-sample re-fit emitted as Phase 6 variant."),
     },

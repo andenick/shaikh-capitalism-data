@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-registry-delta-v1.0",
   "chapter": 3,
-  "generated_by": "opus-subagent-p4-wave1-ch3",
+  "generated_by": "automated-agent",
   "generated_at": "2026-05-18",
   "note": "Per-series adequacy block to be merged into series_registry.json entries S301-S309. Also includes content_type confirmations for the 7 Phase 3 re-typings.",
   "per_series_updates": [

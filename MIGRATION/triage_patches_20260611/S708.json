@@ -1,0 +1,16 @@
+{
+  "sid": "S708",
+  "display_name": "Deviations of Greek manufacturing incremental profit rates from the average, 1962–1991",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Recovered (2026-05-26) by offline vector extraction of Tsoulfidis & Tsaliki (2011) Fig 5 (= 2013 revision Fig 6) = Shaikh Fig 7.20 (MPRA 51334), clipped to 1962–1991; 20 Greek industries. provenance: digitized, lower per-year confidence than S707 because incremental-rate curves are high-frequency — values are approximate. Figure 7.20, title, period, and source verified against KB ch07; quotes verbatim-confirmed. Figure-overlay MATCH on structure (MINOR_DEV on per-point precision) per FIGURE_REPRO_ch07.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S708-A": {
+      "label": "Greek manufacturing industry incremental-profit-rate deviation from the average (20 industries)",
+      "units": "rate deviation (decimal)"
+    }
+  }
+}

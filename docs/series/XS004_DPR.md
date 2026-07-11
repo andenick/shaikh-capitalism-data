@@ -8,7 +8,7 @@ GPIM Corporate Capital Stock (Operational Baseline)
 
 ## Why It Matters
 
-Operational baseline used by S601-S604 (combines BEA 2011 initial + BEA 1993 depreciation + IRS interwar adjustment). Source: Appendix Table 6.8.II.5. Per Decision 0002 + Phase 4 Q6: XS004 is the operational baseline; XS005 is the pure reference. See `CH6_GPIM_SUMMARY.md` for the full Ch6 construction pipeline.
+Operational baseline used by S601-S604 (combines the BEA 2011 initial value, the BEA 1993 depreciation rates, and the IRS interwar adjustment). Source: Appendix Table 6.8.II.5. This series is the operational baseline used throughout Chapter 6; its companion series XS005 is the pure Generalized Perpetual Inventory Method (GPIM) reference.
 
 ## Sources (per subseries)
 
@@ -18,11 +18,11 @@ Operational baseline used by S601-S604 (combines BEA 2011 initial + BEA 1993 dep
 | XS004-B | II5 | `KGCcorp` | BEA NIPA / BEA FA / IRS SOI / Census | identity |
 | XS004-C | II5 | `KNHcorp` | BEA NIPA / BEA FA / IRS SOI / Census | identity |
 
-The canonical Shaikh-published values are transcribed from `SalvagedInputs/book_data/ShaikhChoppedTables/Appendix6_Table68*.xlsx` (Appendix 6.8). Upstream agencies are BEA (NIPA / Fixed Asset Accounts), IRS SOI, U.S. Census Bureau Historical Statistics 1975 (IRS book values), and FRB G.17. All public domain.
+The canonical Shaikh-published values are transcribed from the published Chapter 6 appendix workbook (Shaikh 2016, Appendix 6.8). Upstream agencies are the Bureau of Economic Analysis (BEA) — its National Income and Product Accounts (NIPA) and Fixed Asset accounts (FA) — the IRS Statistics of Income (SOI), the U.S. Census Bureau (Historical Statistics 1975, for IRS book values), and the Federal Reserve Board G.17 industrial-production release (FRB G.17). All public domain.
 
 ## Construction
 
-KNCcorp_baseline = GPIM (eq. 6.57): KNCnew = IGC + (1-dcorpnew)*(pKN/pKN(-1))*KNCnew(-1), with BEA 2011 initial value 98.1 (1925), BEA 1993 depreciation rate dcorpnew (from `BEA_1993_FA_methodology/BEA_1993_depreciation_retirement_rates.csv`), and IRS interwar adjustment via XS008 multiplier for 1925-1947.
+KNCcorp_baseline = GPIM (eq. 6.57): KNCnew = IGC + (1-dcorpnew)*(pKN/pKN(-1))*KNCnew(-1), with BEA 2011 initial value 98.1 (1925), BEA 1993 depreciation rate dcorpnew (from the staged 1993 BEA depreciation/retirement rates), and IRS interwar adjustment via the XS008 multiplier for 1925-1947.
 
 ## Year Coverage
 
@@ -42,4 +42,4 @@ billions_current_usd
 
 ## Validation Expectation
 
-`V03_XS004_validate.py` round-trip-validates against the Appendix 6.8 source workbook at 1.0% tolerance. Per the Phase 4 adequacy report (`CH6_ADEQUACY_REPORT.json`), Phase 5 blockers B2 (NIPA T7.11 FISIM remap, resolver in `_nipa_t711_line_resolver.py`) and B3 (BEA 1993 depreciation rates, staged at `Reconstructed/BEA_1993_FA_methodology/`) are RESOLVED.
+The validation step round-trips the constructed series against the Appendix 6.8 source workbook at a 1.0% tolerance. Two data-sourcing steps needed for this construction are resolved: the remap of financial services indirectly measured (FISIM) in NIPA Table 7.11, and the 1993 BEA depreciation rates.

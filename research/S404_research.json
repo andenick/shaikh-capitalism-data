@@ -34,8 +34,8 @@
     }
   ],
   "primary_source": {
-    "agency": "Robert P. Inman (author); Brookings Papers on Economic Activity (publisher)",
-    "publication": "Inman, R. P. (1995). 'How to Have a Fiscal Crisis: Lessons from Philadelphia.' (Actually: Shaikh cites Inman 1995 — the specific citation in the book reference list should be verified for the exact title; reproduced figure is from Inman 1995, p. 61, fig. 3.)",
+    "agency": "Robert R. Inman (author); The Engineering Economist, Taylor & Francis (publisher)",
+    "publication": "Robert R. Inman, The Engineering Economist 41(1):53-67 (1995), DOI 10.1080/00137919508967475. Reproduced figure in Shaikh (2016), p.162, fig. 3 (Inman 1995, 61, fig. 3). Author name and journal citation corrected 2026-07-02 (T3.2): the earlier 'Robert P. Inman / Brookings Papers on Economic Activity / How to Have a Fiscal Crisis' attribution was wrong (that is a different Inman); article title not independently re-verified (paywalled), but the R.R. Inman Engineering Economist 41(1) automotive-plant cost-curve source matches Shaikh's reproduction.",
     "table_or_series_id": "Inman (1995), figure 3 (automotive plant simulated average labor cost, $/car vs. annual vehicle production in thousands)",
     "url": "https://www.google.com/books/edition/_/2bC3AAAAIAAJ",
     "frequency": "synthetic (Monte-Carlo simulation across output levels 0 to ~450 thousand vehicles/year)",
@@ -84,7 +84,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "opus-subagent-wave-a-ch4",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Reproduced from Inman 1995. Cross-sectional cost curve, not a calendar time series. Reclassified to 'derived'. Bibliography lookup deferred."

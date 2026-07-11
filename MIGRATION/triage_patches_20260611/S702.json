@@ -1,0 +1,16 @@
+{
+  "sid": "S702",
+  "display_name": "Change in selling price versus change in unit labour cost, UK industries, 1954–1963",
+  "publish": true,
+  "triage": {
+    "verdict": "fix-completed-then-publish",
+    "reason": "Reconstructed cross-section from Salter (1969) Reddaway Addendum; values verified EXACT against the Salter UK panel (56/56 pairs). Fixed: removed fabricated 'R² ≈ 0.77' statistic; corrected the source citation to the book-canonical 'Salter 1969, p.164, table 28' (book Fig 7.12 caption) in research JSON, DPR, and generator. Open data-layer issue: registry subsource key, SUBSOURCE_METADATA, and chopped source_id still carry the file-derived label TABLE33/p197 — flagged for registry owner.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S702-A": {
+      "label": "UK industry selling-price and unit-labour-cost change, 1963 relative to 1954",
+      "units": "ratio (1963 value ÷ 1954 value × 100)"
+    }
+  }
+}

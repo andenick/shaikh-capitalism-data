@@ -1,11 +1,9 @@
 # XS2303 — China Official Foreign Exchange Reserves Excluding Gold, 1990–2024
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
 **Series ID**: XS2303
 **Status**: study_complete
 **Authored**: 2026-05-18
-**Author**: opus-fanout-ES
 
 ## 1. Definition
 
@@ -27,16 +25,15 @@ single most-cited empirical fact in the paper's headline narrative.
 
 | Subseries | Coverage | Source | Native units | Retrieval |
 |---|---|---|---|---|
-| XS2303-A | 1990–2024 | World Bank WDI indicator `FI.RES.XGLD.CD` (Total reserves minus gold, current US$) for country `CHN` | current USD | World Bank Data API (`api.worldbank.org/v2/country/CHN/indicator/FI.RES.XGLD.CD?format=json`); no auth; CC-BY-4.0 |
+| XS2303-A | 1990–2024 | World Bank World Development Indicators (WDI) indicator `FI.RES.XGLD.CD` (Total reserves minus gold, current US$) for country `CHN` | current USD | World Bank Data API (`api.worldbank.org/v2/country/CHN/indicator/FI.RES.XGLD.CD?format=json`); no auth; CC-BY-4.0 |
 
 ## 4. Construction
 
 Direct pass-through. The WDI series is the canonical source the paper
-cites ("Data sourcre: World Bank, 2018" sic on Fig 3). Phase 5 loader
-fetches WDI raw via the open Data API, divides by 1e9 to convert
-current USD → Billion USD (the paper's plotted unit), and writes one
-parquet with columns `year, value, subseries_id='XS2303-A',
-source_id='WB_FI_RES_XGLD_CD_CHN', units='billion_usd'`.
+cites ("Data sourcre: World Bank, 2018" sic on Fig 3). The loader fetches
+the WDI series via the open Data API, divides by 1e9 to convert current USD →
+Billion USD (the paper's plotted unit), and emits a single subseries
+`XS2303-A` (this series has one component, suffixed `-A`).
 
 ## 5. Year coverage
 
@@ -52,7 +49,8 @@ Billion current USD. (WDI raw is current USD; loader divides by 1e9.)
 
 1. WDI's `FI.RES.XGLD.CD` sources from IMF International Financial
    Statistics; it excludes gold and excludes sovereign-wealth-fund
-   holdings (CIC). Do not substitute `FI.RES.TOTL.CD` (with gold) — the
+   holdings (China Investment Corporation, CIC). Do not substitute
+   `FI.RES.TOTL.CD` (with gold) — the
    paper's figure title is unambiguous "without Gold".
 2. WDI release lag: typical 6–12 months from current year-end. If the
    API returns NaN for the most-recent year, the loader propagates
@@ -63,8 +61,6 @@ Billion current USD. (WDI raw is current USD; loader divides by 1e9.)
 
 ## 8. Cross-references
 
-- Dossier: `Technical/research/XS2303_research.json`
-- Adequacy: `Technical/docs/chapters/CHES_v2_ADEQUACY_REPORT.json` (5-way split)
 - Related: XS2301 (Fig 1 trade balance), XS2302 (Fig 2 CA balance),
   XS2304/XS2305 (literature-compilation Figs 4/5)
 - Book chapter ancestor: S1101 (Ch11 trade balances), but distinct

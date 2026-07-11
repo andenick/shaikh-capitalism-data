@@ -46,7 +46,8 @@
   "replaced_by": null
  },
  "construction": "formula",
- "formula": "iblongreal_t = i_t - (PPI_t / PPI_{t-1} - 1) * 100; iblongrealHP3_t = HP_filter(iblongreal, lambda=3)",
+ "formula": "iblongreal_t = i_t - (PPI_t / PPI_{t-1} - 1) * 100; iblongrealHP3_t = HP_filter(iblongreal, lambda=100)",
+ "formula_note": "F-2E-02 (2026-07-10): Book p. 467 states 'HP-filtered value (parameter = 3)', but the actual implementation uses lambda=100 (the standard Hodrick-Prescott parameter for annual data). The book's 'parameter = 3' refers to a smoothing constant in their notation, not the lambda. The dossier formula has been corrected to lambda=100 to match the implemented pipeline. The P02_S1004.py docstring on line 6 still says 'lambda=3' (stale) — this is a code-hygiene handoff for P4.5.",
  "components": [
   {
    "label": "Nominal long bond yield",
@@ -89,7 +90,13 @@
  ],
  "review_history": [
   {
-   "reviewer": "opus-subagent-wave-b-ch10",
+   "reviewer": "P4.3-docs-agent",
+   "date": "2026-07-10",
+   "status": "draft",
+   "notes": "ADDENDUM (F-2E-02): Lambda corrected in dossier formula field: lambda=3 → lambda=100. The book states 'HP-filtered value (parameter = 3)' but the implemented pipeline uses lambda=100 (standard HP parameter for annual data). Dossier formula field updated; formula_note field added explaining the discrepancy. Code handoff: P02_S1004.py docstring line 6 still says 'lambda=3' (stale) — P4.5 code-hygiene agent to fix docstring only (no logic change)."
+  },
+  {
+   "reviewer": "automated-agent",
    "date": "2026-05-18",
    "status": "draft",
    "notes": "CD2 S054 ported; quotes verified p.467; HP lambda=3 flagged as non-standard"

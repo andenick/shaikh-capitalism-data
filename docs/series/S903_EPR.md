@@ -1,7 +1,7 @@
 # S903 — Extension Provenance Record
 
 **Series**: S903 — Actual Wage-Profit Curves
-**Phase**: 6 · **Construction**: `formula` over per-year benchmark cross-sections
+
 **Extension**: `not_applicable_cross_sectional`
 **Authored**: 2026-05-18
 

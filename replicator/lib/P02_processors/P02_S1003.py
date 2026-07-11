@@ -5,10 +5,14 @@ Extension recomputed from extended S1002 components (No-Lazy-Splices rule).
 """
 from __future__ import annotations
 
+import logging
 import sys
+import warnings
 from pathlib import Path
 
 import pandas as pd
+
+LOG = logging.getLogger(__name__)
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -64,8 +68,15 @@ def run() -> dict:
             diag["extension_status"] = "ok"
             diag["ext_years"] = int(len(ext_part))
             diag["ppiaco_scale_factor"] = scale
-        except Exception as exc:
+        except (KeyError, IndexError, ValueError, TypeError, ZeroDivisionError) as exc:
             diag["extension_error"] = str(exc)
+            msg = (
+                f"S1003 extension failed ({type(exc).__name__}: {exc}); "
+                f"falling back to book-only output. Extension FRED inputs were present "
+                f"but scaling/merge raised. Check anchor year {ANCHOR_YEAR} coverage."
+            )
+            warnings.warn(msg, RuntimeWarning, stacklevel=2)
+            LOG.warning("P02_S1003: %s", msg)
 
     df = pd.concat(parts, ignore_index=True).sort_values(["year", "subseries_id"]).reset_index(drop=True)
     df = df[["year", "value", "subseries_id", "source_id", "units"]]

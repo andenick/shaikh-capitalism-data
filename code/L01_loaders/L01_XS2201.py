@@ -12,7 +12,26 @@ from utils.paths import DATA_RAW, SALVAGED_BOOK_DATA  # noqa: E402
 
 SERIES_ID = "XS2201"
 SOURCE_ID = "SHAIKH_JACOBO_2020_TABLE1"
-CSV_PATH = SALVAGED_BOOK_DATA / "Reconstructed" / "XS2201_fitted_parameters.csv"
+
+
+def _resolve_csv() -> Path:
+    """Resolve the reconstructed CSV, tolerating the ES/XS filename split.
+
+    Prefer the migrated XS name; fall back to the legacy ES name retained in
+    the read-only SalvagedInputs tree. Returns the XS candidate if neither
+    exists so error messages name the canonical spelling.
+    """
+    recon = SALVAGED_BOOK_DATA / "Reconstructed"
+    xs = recon / "XS2201_fitted_parameters.csv"
+    es = recon / "ES2201_fitted_parameters.csv"
+    if xs.exists():
+        return xs
+    if es.exists():
+        return es
+    return xs
+
+
+CSV_PATH = _resolve_csv()
 OUT = DATA_RAW / f"{SERIES_ID}_TABLE1.parquet"
 
 PARAMS = [

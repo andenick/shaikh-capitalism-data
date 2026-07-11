@@ -1,0 +1,17 @@
+{
+  "sid": "S307",
+  "display_name": "Empirical Engel curve for food, UK working-class budgets 1904",
+  "publish": false,
+  "triage": {
+    "verdict": "cull",
+    "reason": "DATA_UNAVAILABLE / signal-less. The chopped CSV contains a single 1904 row with a NULL value: like its companion S306, the Allen & Bowley (1935) Table 1 food-expenditure tabulation (UK Board of Trade 1904 enquiry, Cd. 3864) was never digitized and is absent from SalvagedInputs/. L01_S307 emits a metadata-only NULL row (data_status='data_unavailable_pending_digitization', no synthetic fill). No renderable Engel curve exists, only printed axis bounds. CONTRADICTION FOUND: registry status 'book_period_validated' but zero observations; correct status is 'data_unavailable'. Recommend guided digitization, then re-promote. KB gap: ch03 not HDARP-extracted, figure quotes unverifiable. NOT published in current state.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S307-A": {"label": "Food expenditure (shillings/week) by income band", "units": "shillings per week (food expenditure)"}
+  },
+  "field_fixes": {
+    "registry_status_should_be_data_unavailable": "registry series.S307.status = 'book_period_validated' contradicts the empty/NULL chopped and the DPR's data_unavailable_pending_digitization note. Correct to 'data_unavailable' (registry read-only; flagged for owner)."
+  },
+  "notes": "Explainer intentionally NOT written (publish:false). Recovery path: digitize Allen & Bowley 1935 Table 1 / Board of Trade Cd. 3864 (1908)."
+}

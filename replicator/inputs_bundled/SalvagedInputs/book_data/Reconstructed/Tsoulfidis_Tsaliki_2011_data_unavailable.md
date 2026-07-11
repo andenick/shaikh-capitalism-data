@@ -19,8 +19,8 @@
   The correct identifier is 51334. This README documents the correction.)
 
 **Local cache**
-- A local working copy of the Tsoulfidis & Tsaliki (2011) PDF was downloaded
-  2026-05-18 (928 162 bytes; 42 pages) for figure digitization.
+- a temporary local PDF download (downloaded
+  2026-05-18; 928 162 bytes; 42 pages).
 
 ---
 

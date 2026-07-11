@@ -19,7 +19,7 @@ def run() -> dict:
         return {"status": "FAIL", "error": f"raw missing: {IN}"}
     df = pd.read_parquet(IN).rename(columns={"subsource_id": "source_id"})
     cols = ["year", "value", "subseries_id", "source_id", "units",
-            "industry_index", "x_tv_norm", "model"]
+            "industry_index", "x_tv_norm", "model", "classification_vintage"]
     df = df[cols]
     DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
     df.to_parquet(OUT, index=False)

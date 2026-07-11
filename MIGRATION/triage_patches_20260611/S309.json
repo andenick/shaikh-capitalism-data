@@ -1,0 +1,21 @@
+{
+  "sid": "S309",
+  "display_name": "Luxury-good (x2) demand curves under four micro-foundations",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Renderable multi-trace demand curve (Shaikh Fig 3.11): one analytic curve plus four NetLogo agent-based simulation curves for the luxury good, on shared price-quantity axes (5 subseries x 101 points = 505 rows, all non-null). Renders as overlaid x-y demand curves (x = aggregate x2 quantity, carried in the 'year' index column 1-99, NOT calendar years). TRIAGE_PRESCREEN EMPTY flag is STALE: L01_S309/P02_S309 exist and replicate.py --series S309 builds the chopped (PASS, 505 rows). content_type theoretical, construction composite. KB gap: ch03 not HDARP-extracted, ch3 quotes unverifiable, 'From the book' omitted.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S309-A": {"label": "Analytic demand curve", "units": "price p2 (model currency) vs aggregate x2 (model units)"},
+    "S309-B": {"label": "NetLogo neoclassical-homogeneous simulation", "units": "price p2 (model currency) vs aggregate x2 (model units)"},
+    "S309-C": {"label": "NetLogo neoclassical-heterogeneous simulation", "units": "price p2 (model currency) vs aggregate x2 (model units)"},
+    "S309-D": {"label": "NetLogo whimsical-agents simulation", "units": "price p2 (model currency) vs aggregate x2 (model units)"},
+    "S309-E": {"label": "NetLogo imitate-innovate simulation", "units": "price p2 (model currency) vs aggregate x2 (model units)"}
+  },
+  "field_fixes": {
+    "year_column_is_index": "Chopped 'year' is a point index (1-99), not a calendar year; abscissa is aggregate x2 quantity. Viz plots price vs quantity, one trace per micro-foundation."
+  },
+  "notes": "Population=5000, total_income=$1,000,000. Companion to S308 (necessary good)."
+}

@@ -1,19 +1,19 @@
 # S708 — Figure 7.20 — Greek Manufacturing IROP Deviations, 1962–1991 (Tsoulfidis & Tsaliki 2011 Fig 5)
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S708
 **Status**: book_period_validated
 **Authored**: 2026-05-18 · **Recovery update**: 2026-05-26
-**Author**: opus-subagent-ch7-fanout
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S708_research.json`
-- Adequacy: `Technical/docs/chapters/CH7_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S708_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S708`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `TSOULFIDIS_TSALIKI_2011_FIG5`
-- **Digitized source**: `SalvagedInputs/book_data/Reconstructed/Tsoulfidis_Tsaliki_2011_Fig5_S708.xlsx`
-- **Extraction report**: `Technical/WL1_Tsoulfidis_Tsaliki/EXTRACTION_REPORT.md`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S708`
+- Subsource registry: subsource registry → `TSOULFIDIS_TSALIKI_2011_FIG5`
+- **Digitized source**: reconstructed book source data
+- **Extraction report**: Tsoulfidis-Tsaliki extraction worklog
 
 ---
 
@@ -24,7 +24,7 @@ source paper (paper 51334, 2013 revised version). S708 = Shaikh Fig 7.20 = the 2
 which in the 2013 revision is **Figure 6** (the revision inserted a new aggregate Fig 5). That
 20-industry IROP-deviation grid is vector-drawn; coordinates were recovered by offline PDF vector
 extraction, per-panel y-calibrated, clipped to 1962–1991. Method/validation:
-`Technical/WL1_Tsoulfidis_Tsaliki/EXTRACTION_REPORT.md`.
+Tsoulfidis-Tsaliki extraction worklog.
 
 **Confidence caveat:** the IROP-deviation series are intrinsically high-frequency, so per-year
 digitization fidelity is **lower than S707**. Treat S708 values as approximate (provenance:
@@ -35,11 +35,15 @@ remains obtainable only by author request.
 
 ## 1. Definition
 
-**S708** is the time-series exhibit Shaikh displays in Fig7.20. Period: 1962–1991.
+**S708** is the exhibit Shaikh displays in Fig7.20 — the deviations of twenty Greek manufacturing
+industries' incremental rates of profit (IROP, the return on newly added capital) from the overall
+average incremental rate, 1962–1991.
 
-Per the playbook recipe for `content_type = data_unavailable`:
-
-> "DPR + EPR documenting the chart-only source and why no underlying data exists ... L01 returns SKIPPED ... V03 returns PASS_DATA_UNAVAILABLE ... No chopped CSV."
+Following the 2026-05-26 recovery (§0), this is a **digitized book-period series**, not a
+`data_unavailable` one: the loader (`L01_S708`) reads the digitized panel workbook and emits the
+series, the validator (`V03_S708`) round-trips against it, and a chopped CSV is produced. (The
+earlier `data_unavailable` handling — loader SKIPPED, validator `PASS_DATA_UNAVAILABLE`, no CSV — no
+longer applies; it is retained below only as historical context.)
 
 ## 2. Why it matters in Chapter 7
 
@@ -66,7 +70,7 @@ Digitized industry panel (1962–1991, 20 two-digit Greek manufacturing industri
 ## 5. Year coverage
 
 - **Book period**: 1962–1991
-- **Extension period**: not applicable (data_unavailable)
+- **Extension period**: not applicable (no faithful time-extension of the Greek panel; see `S708_EPR.md` §2)
 
 ## 6. Units
 
@@ -74,15 +78,15 @@ rate deviation (decimal).
 
 ## 7. Caveats
 
-1. **No byte-exact reproduction possible** from local materials. The published figure stands as the authoritative record.
-2. **PDF digitization** (WebPlotDigitizer) is technically possible but is a Phase 9 visualization task, not a Phase 5 data-ingestion task — and would introduce digitization noise that the No-Synthetic rule discourages for primary data.
-3. **No modern substitute** can splice onto the discontinued ISDB / unredistributed T&T panel without violating the Anti-Degradation rule (industry-mapping drift, country-coverage drift, ESYE→ELSTAT methodology break). Any modern continuation is methodologically separate, not an extension.
+1. **Digitization-grade, not table-exact.** The series was recovered by offline vector digitization of the source figure (§0), so it is faithful to the published chart rather than to the authors' exact underlying table (obtainable only by author request). Because the incremental-rate curves are high-frequency, per-year precision is lower than the average-rate panel (S707). The published figure remains the authoritative record.
+2. **Digitization was performed as the book-period recovery**, using offline PDF vector extraction (no API calls), per-panel y-axis calibration, and clipping to 1962–1991. It is disclosed as `provenance: digitized`; it is a documented recovery of the authors' plotted points, not synthetic infill.
+3. **No modern substitute** can splice onto the unredistributed Tsoulfidis & Tsaliki Greek panel without violating the Anti-Degradation rule (industry-mapping drift and the 2010 ESYE→ELSTAT methodology break). Any modern continuation is methodologically separate, not an extension. *(The discontinued OECD-ISDB world/US splice concern belongs to the separate S703/S704 exhibit, not this Greek panel.)*
 
 ## 8. Cross-references
 
 - **CD legacy ID**: `S039`
-- **Book reference**: Shaikh (2016), Ch. 7 (Fig7.20); Appendix 7.1 II / IV (book pp. 856, 859).
-- **B5 provenance document**: see SalvagedInputs/book_data/Reconstructed/ for the relevant `*_data_unavailable.md`.
+- **Book reference**: Shaikh (2016), Ch. 7 (Fig7.20); Appendix 7.1, sub-sections II / IV (book pp. 856, 859).
+- **Recovery documentation**: Tsoulfidis-Tsaliki extraction worklog and the digitized workbook reconstructed book source data (supersedes the earlier `*_data_unavailable.md` marker note, which predates the 2026-05-26 recovery).
 
 ## 9. Validation
 
@@ -92,3 +96,15 @@ rate deviation (decimal).
   Spot anchors from the digitized figure — provenance: digitized.
 - **Fidelity note**: digitization-grade and lower-confidence than S707 (high-frequency IROP series);
   not the authors' exact table.
+
+## Notation (plain-language key)
+
+- **IROP** — incremental rate of profit: the return on newly added capital (year-to-year change in profit over new investment), as distinct from the average rate of profit on the whole existing stock.
+- **Deviation** — an industry's rate minus the overall average rate that year; equalisation shows up as deviations crossing zero.
+- **Subseries (S708-A)** — a data line within series S708; here S708-A holds the 20-industry digitized panel.
+- **ESYE / ELSTAT** — the Greek national statistical service and its post-2010 successor.
+- **ISDB** — OECD International Sectoral Database (relevant to the separate S703/S704 exhibit, not this Greek panel).
+- **MPRA** — the Munich Personal RePEc Archive, which hosts the full-text source paper (working paper 51334).
+- **L01 / V03** — the load and validate scripts that build and check the series.
+- **CD2** — the predecessor build of this dataset (legacy ID S039).
+- **Phase 5 / Phase 6** — Anu pipeline stages: ingestion / extension.

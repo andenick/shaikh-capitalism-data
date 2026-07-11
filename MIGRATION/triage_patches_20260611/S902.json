@@ -1,0 +1,28 @@
+{
+  "sid": "S902",
+  "display_name": "Prices of production versus direct prices (labor values) across US input-output benchmarks, 1947-1998",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of the production-price system behind Shaikh Figures 9.4-9.18 (Ch9, Sections VI-IX). For each US benchmark IO table it pairs each industry's normalized direct price / integrated labor value (V) with its normalized price of production (P), evaluated at the observed rate of profit, plus the observed economy-wide profit rates (ROBS) that locate each year on the wage-profit curve. Construction-relevant: the test that prices of production are near-proportional to labor values, the empirical payoff of the standard-commodity / linear wage-profit analysis. The P/V normalized-share subseries and the ROBS profit-rate subseries genuinely differ in unit and meaning, so units are split per subseries (the registry's series-level 'normalized_share_and_decimal_profit_rate' is the mixed label being resolved here).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S902-V_1947F": {"label": "Direct price (labor value), 1947 (fixed capital)", "units": "normalized_share"},
+    "S902-P_1947F": {"label": "Price of production, 1947 (fixed capital)", "units": "normalized_share"},
+    "S902-V_1958F": {"label": "Direct price (labor value), 1958 (fixed capital)", "units": "normalized_share"},
+    "S902-P_1958F": {"label": "Price of production, 1958 (fixed capital)", "units": "normalized_share"},
+    "S902-V_1963F": {"label": "Direct price (labor value), 1963 (fixed capital)", "units": "normalized_share"},
+    "S902-P_1963F": {"label": "Price of production, 1963 (fixed capital)", "units": "normalized_share"},
+    "S902-V_1967F": {"label": "Direct price (labor value), 1967 (fixed capital)", "units": "normalized_share"},
+    "S902-P_1967F": {"label": "Price of production, 1967 (fixed capital)", "units": "normalized_share"},
+    "S902-V_1972F": {"label": "Direct price (labor value), 1972 (fixed capital)", "units": "normalized_share"},
+    "S902-P_1972F": {"label": "Price of production, 1972 (fixed capital)", "units": "normalized_share"},
+    "S902-V_1998C": {"label": "Direct price (labor value), 1998 (circulating capital)", "units": "normalized_share"},
+    "S902-P_1998C": {"label": "Price of production, 1998 (circulating capital)", "units": "normalized_share"},
+    "S902-V_1998F": {"label": "Direct price (labor value), 1998 (fixed capital)", "units": "normalized_share"},
+    "S902-P_1998F": {"label": "Price of production, 1998 (fixed capital)", "units": "normalized_share"},
+    "S902-ROBS": {"label": "Observed economy-wide rate of profit", "units": "decimal_rate"}
+  },
+  "field_fixes": {}
+}

@@ -18,6 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from utils.paths import DATA_RAW  # noqa: E402
 from L01_loaders._ch9_helpers import (  # noqa: E402
     APPENDIX9_BENCHMARKS, read_benchmark, normalize_industry_frame,
+    assert_benchmark_vintage,
 )
 from L01_loaders._ch2_helpers import book_path  # noqa: E402
 
@@ -55,6 +56,7 @@ def run() -> dict:
             continue
         norm = normalize_industry_frame(df)
         subsource = f"SHAIKH_APPENDIX_9_{label}"
+        vintage = assert_benchmark_vintage(year, label)  # CH9-F4 fix (Decision 0014)
         for _, r in norm.iterrows():
             ind = int(r["Index"])
             rows.append({
@@ -65,6 +67,7 @@ def run() -> dict:
                 "subseries_id": f"S902-P_{label}",
                 "subsource_id": subsource,
                 "model": model,
+                "classification_vintage": vintage,
             })
             rows.append({
                 "year": int(year), "industry_index": ind,
@@ -74,6 +77,7 @@ def run() -> dict:
                 "subseries_id": f"S902-V_{label}",
                 "subsource_id": subsource,
                 "model": model,
+                "classification_vintage": vintage,
             })
         n_loaded[label] = int(len(df))
 
@@ -100,6 +104,7 @@ def run() -> dict:
             "subseries_id": "S902-ROBS",
             "subsource_id": "SHAIKH_APPENDIX_9_OBSERVED_PROFIT_RATES",
             "model": "observed",
+            "classification_vintage": "",  # cross-benchmark aggregate; guard N/A
         })
         robs_out.to_parquet(OUT_ROBS, index=False)
         robs_rows = int(len(robs_out))

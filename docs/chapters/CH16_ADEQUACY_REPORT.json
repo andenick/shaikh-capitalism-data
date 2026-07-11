@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-adequacy-v1.0",
   "chapter": 16,
-  "reviewer": "opus-subagent-p4-wave3-ch16",
+  "reviewer": "automated-agent",
   "review_date": "2026-05-18",
   "series_count": 6,
   "scope_note": "Chapter 16 (Growth, Profitability, and Recurrent Crises) has 6 published series S1601-S1606, all ported from CD2 predecessors S093/S095/S098-S101 with strong dossiers. Empirical themes: long-wave gold-denominated prices (Fig 16.1), wage-productivity gap (Fig 16.3), interest rate decline US/OECD (Fig 16.7), profit-rate-minus-T-bill spread (Fig 16.8), and household debt fragility (Figs 16.9 + 16.10). Phase 4 work was predominantly URL reachability verification, ratification of CD2-to-RSCD construction, and resolution of the wrong-concept-proxy issues inherited from CD2 (S1605 CMDEBT/PI -> HCCSDODNS/DPI). No discontinued APIs in this chapter — all primary data sources remain active.",

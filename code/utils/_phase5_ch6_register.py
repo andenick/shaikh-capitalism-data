@@ -1,7 +1,7 @@
 """Phase 5 Ch6 + AS registry / subsource / ledger updater (idempotent).
 
 Updates Technical/series_registry.json, Technical/SUBSOURCE_METADATA.json, and
-Technical/ANU_LEDGER.json for the 13-series Ch6 fanout: S601-S604 + XS001-XS009.
+Technical/ANU_LEDGER.json for the 13-series Ch6 automated-agent: S601-S604 + XS001-XS009.
 
 Safe to re-run. Invoke from project root:
     python Technical/code/utils/_phase5_ch6_register.py

@@ -20,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils.paths import DATA_RAW, book_data_path  # noqa: E402
 from S00_setup import S00_apis, S00_config  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 CHOPPED_XLSX = book_data_path("Appendix15_MeasuringWorthCPI.xlsx")
 OUT_MW = DATA_RAW / "S1501_MEASURINGWORTH_USCPI.parquet"
@@ -55,6 +56,7 @@ def _save_mw(chopped: pd.DataFrame) -> int:
 def _save_fred() -> tuple[int, bool, str | None]:
     if not S00_config.have_key("FRED_API_KEY"):
         return 0, False, "FRED_API_KEY not set"
+    rs, re = realtime_window("S1501", FRED_SERIES_ID)
     try:
         df = S00_apis.fred_observations(
             series_id=FRED_SERIES_ID,
@@ -62,6 +64,8 @@ def _save_fred() -> tuple[int, bool, str | None]:
             aggregation_method="avg",
             observation_start="2005-01-01",
             observation_end="2025-12-31",
+            realtime_start=rs,
+            realtime_end=re,
         )
     except S00_apis.ApiUnavailable as exc:
         return 0, False, str(exc)

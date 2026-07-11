@@ -21,7 +21,11 @@ def run() -> dict:
         return {"status": "FAIL", "error": f"raw missing: {IN}"}
     df = pd.read_parquet(IN)
     df = df[(df["year"] >= BOOK_START) & (df["year"] <= BOOK_END)].copy()
-    df = df[["year", "value", "subseries_id", "source_id", "units"]]
+    df = df[["year", "value", "subseries_id", "source_id", "units"]].copy()
+    # F-7A-05: the sigma-prime subseries carries normalized z-scores (range ~[-1.5, 2.6]),
+    # not decimal rates. The raw parquet mislabels it 'rate_decimal'; the registry is
+    # correct at 'normalized_zscore'. Propagate the honest label to the chopped output.
+    df.loc[df["subseries_id"].str.endswith("-sigma-prime"), "units"] = "normalized_zscore"
     df = df.sort_values(["year", "subseries_id"]).reset_index(drop=True)
     DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
     df.to_parquet(OUT, index=False)

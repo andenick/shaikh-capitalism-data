@@ -1,12 +1,30 @@
 name: Replicator Check
 
+# Offline replicator smoke against the BUNDLE tree. Runs the shipped replicator
+# for a small series set and compares the produced processed data to the shipped
+# chopped/ CSVs on the intersection of (subseries_id, year) present in BOTH — so
+# missing live-API extension rows never cause a false failure, while any
+# book-period / digitized regression IS caught.
+#
+# The old workflow referenced Technical/replicator/… (does not exist in the
+# bundle) behind `if [ -f … ]` guards, so it silently passed without running
+# anything. Those guards + the `|| true` mask are removed here.
+#
+# EXPECTED STATE (until the P3.3 re-mirror ships the fixed lib + fresh chopped):
+#   S201, S301  -> MATCH   (book series already consistent)
+#   S703, S704  -> FAIL    (bundle lib is the stale data_unavailable version;
+#                           shipped chopped already carries the digitized data)
+#   S1508       -> FAIL    (stale lib scale)
+# After P3.3 the whole set goes green.
+
 on:
   push:
     branches: [master, main]
     paths:
-      - 'Technical/**'
       - 'replicator/**'
       - 'code/**'
+      - 'chopped/**'
+      - 'series_registry.json'
       - '.github/workflows/replicator_check.yml'
   pull_request:
     branches: [master, main]
@@ -16,7 +34,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  validate:
+  smoke:
     runs-on: ubuntu-latest
     timeout-minutes: 20
     env:
@@ -25,52 +43,75 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: pip
 
-      - name: Install dependencies
+      - name: Install replicator dependencies
         run: |
           python -m pip install --upgrade pip
-          # The repo ships the replicator at Technical/replicator/ with its own requirements
-          if [ -f Technical/replicator/requirements.txt ]; then
-            pip install -r Technical/replicator/requirements.txt
-          elif [ -f Technical/requirements.txt ]; then
-            pip install -r Technical/requirements.txt
-          fi
+          pip install -r replicator/requirements.txt
 
-      - name: Phase 3 research validator
+      - name: Offline 5-series replicator smoke (compare to shipped chopped)
         run: |
-          if [ -f Technical/code/utils/_phase3_research_validator.py ]; then
-            python Technical/code/utils/_phase3_research_validator.py
-          fi
+          cat > _ci_smoke.py <<'PY'
+          import subprocess, sys
+          from pathlib import Path
+          import pandas as pd
+          BUNDLE = Path(".").resolve()
+          REPLICATE = BUNDLE / "replicator" / "scripts" / "replicate.py"
+          PROC = BUNDLE / "replicator" / "workdir" / "RSCD" / "Technical" / "data" / "processed"
+          CHOPPED = BUNDLE / "chopped"
+          SMOKE = ["S201", "S301", "S703", "S704", "S1508"]
+          TOL = 1e-6
 
-      - name: Phase 4 adequacy validator
-        run: |
-          if [ -f Technical/code/utils/_phase4_adequacy_validator.py ]; then
-            python Technical/code/utils/_phase4_adequacy_validator.py
-          fi
+          def run(sid):
+              p = subprocess.run([sys.executable, str(REPLICATE), "--series", sid],
+                                 capture_output=True, text=True, cwd=str(BUNDLE))
+              print(f"  [{sid}] pipeline exit={p.returncode}")
+              return p.returncode
 
-      - name: V03 validator sweep (replicator --report)
-        run: |
-          if [ -f Technical/replicator/scripts/replicate.py ]; then
-            cd Technical/replicator
-            # Ensure api_keys.env exists (FRED key from secrets)
-            mkdir -p config
-            echo "FRED_API_KEY=${FRED_API_KEY}" > config/api_keys.env
-            [ -n "${BEA_API_KEY}" ] && echo "BEA_API_KEY=${BEA_API_KEY}" >> config/api_keys.env || true
-            python scripts/replicate.py --report
-          fi
+          def compare(sid):
+              pq, csv = PROC / f"{sid}.parquet", CHOPPED / f"{sid}.csv"
+              if not pq.exists():
+                  return False, "produced parquet missing (stale lib?)"
+              if not csv.exists():
+                  return False, "shipped chopped missing"
+              a, b = pd.read_parquet(pq), pd.read_csv(csv)
+              for d in (a, b):
+                  d["year"] = pd.to_numeric(d["year"], errors="coerce")
+                  d["value"] = pd.to_numeric(d["value"], errors="coerce")
+              m = a.merge(b, on=["subseries_id", "year"], suffixes=("_p", "_s"))
+              if m.empty:
+                  return False, "no shared keys"
+              bad = m[(m["value_p"] - m["value_s"]).abs() > TOL]
+              if len(bad):
+                  w = bad.reindex((bad["value_p"] - bad["value_s"]).abs().sort_values(ascending=False).index).iloc[0]
+                  return False, f"{len(bad)}/{len(m)} rows differ (worst {w['subseries_id']}@{int(w['year'])})"
+              return True, f"{len(m)} shared rows match"
 
-      - name: Upload validation report
+          fails = []
+          for sid in SMOKE:
+              if run(sid) != 0:
+                  fails.append(f"{sid}: pipeline nonzero"); continue
+              ok, detail = compare(sid)
+              print(f"       {'MATCH' if ok else 'MISMATCH'} — {detail}")
+              if not ok:
+                  fails.append(f"{sid}: {detail}")
+          if fails:
+              print("SMOKE: FAIL"); [print("  " + f) for f in fails]; sys.exit(1)
+          print("SMOKE: PASS")
+          PY
+          python _ci_smoke.py
+
+      - name: Upload replicator logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: validation-report
+          name: replicator-smoke-logs
           path: |
-            Technical/Build/PHASE3_VALIDATION_REPORT.json
-            Technical/Build/PHASE4_VALIDATION_REPORT.json
-            Technical/VALIDATION_REPORT.json
-          retention-days: 30
+            replicator/workdir/RSCD/Technical/Build/**
+            replicator/workdir/RSCD/Technical/VALIDATION_REPORT.json
+          retention-days: 14
+          if-no-files-found: ignore

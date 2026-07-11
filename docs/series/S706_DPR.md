@@ -1,23 +1,23 @@
 # S706 — Figure 7.17 — US Industry Incremental Rates of Profit, 1988–2005 (BEA/Shaikh 2008)
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S706
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch7-fanout
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S706_research.json`
-- Adequacy: `Technical/docs/chapters/CH7_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S706_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S706`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `SHAIKH_2008_APPENDIX_7_2_IROP`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S706`
+- Subsource registry: subsource registry → `SHAIKH_2008_APPENDIX_7_2_IROP`
 
 ---
 
 ## 1. Definition
 
-**S706** is the **rate (decimal; IROP = (PG_t - PG_{t-1}) / IG_{t-1}, aggregate-before-ratio)** for the period 1988–2005. It appears in Shaikh (2016) as Fig7.17. The series is a multi-industry panel published as part of Shaikh's Appendix 7.2 derived data (with underlying BEA / OECD primary inputs).
+**S706** is the **rate (decimal; IROP = (PG_t - PG_{t-1}) / IG_{t-1}, aggregate-before-ratio)** for the period 1988–2005. It appears in Shaikh (2016) as Fig7.17. The series is a multi-industry panel published as part of Shaikh's Appendix 7.2 derived data (with underlying BEA (US Bureau of Economic Analysis) / OECD primary inputs).
 
 ## 2. Why it matters in Chapter 7
 
@@ -27,21 +27,21 @@ This series operationalizes Shaikh's distinction between **average profit rates*
 
 | Subseries | Coverage | Source | Native units | Retrieval |
 |---|---|---|---|---|
-| **S706-A** | 1988–2005 | Appendix 7.2 iropdataUSind, byte-exact | rate (decimal) | local salvaged xlsx + Wayback fallback (https://web.archive.org/web/2023/http://www.anwarshaikhecon.org/) |
+| **S706-A** (subseries — one data line within S706) | 1988–2005 | Appendix 7.2 iropdataUSind, byte-exact | rate (decimal) | local salvaged xlsx + Wayback fallback (https://web.archive.org/web/2023/http://www.anwarshaikhecon.org/) |
 
-The Phase 4 adequacy review confirmed: BEA + FRB Z.1 endpoints reachable (HTTP 200); Wayback fallback for `anwarshaikhecon.org` returns 200; salvaged xlsx present locally and verified by row-and-column inventory.
+The adequacy review confirmed: BEA + FRB Z.1 endpoints reachable (HTTP 200); Wayback fallback for `anwarshaikhecon.org` returns 200; salvaged xlsx present locally and verified by row-and-column inventory.
 
 ## 4. Construction
 
 `composite` — see EPR §3 for the formula. For Phase 5 byte-exact replication, we **read Shaikh's Appendix 7.2 sheet directly** rather than rebuild from BEA primaries. The reasons:
 
-1. The salvaged xlsx is the **byte-exact published series**; rebuilding from BEA would require re-applying WEQ/OOH/inventory/reserve adjustments at a specific 2008 NIPA vintage, which is not recoverable from current BEA endpoints.
-2. The Phase 4 adequacy report explicitly endorses this path: "Ratify CD2's post-2005 S705/S706 extension series … as the Phase 5 starting point, subject to vintage re-fetch on a coherent current BEA NIPA vintage."
+1. The salvaged xlsx is the **byte-exact published series**; rebuilding from BEA would require re-applying WEQ (wage-equivalent) / OOH (owner-occupied-housing) / inventory / reserve adjustments at a specific 2008 NIPA (US National Income and Product Accounts) vintage, which is not recoverable from current BEA endpoints.
+2. The adequacy step report explicitly endorses this path: "Ratify CD2's post-2005 S705/S706 extension series … as the Phase 5 starting point, subject to vintage re-fetch on a coherent current BEA NIPA vintage."
 3. End-to-end BEA re-fetch is documented in EPR §3 as the **extension path**, deferred to a follow-up wave.
 
 ### 4.1 Industry sample and aggregate
 
-Shaikh's published panel has 32 industry columns plus an "All Private" aggregate; the 30 *named* retained industries plus 2 sub-aggregates (e.g., Manufacturing, Real & Rental) appear in the 38-panel small-multiple plots. The 31 excluded NAICS industries are listed verbatim in `SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv` (Phase 4 B4 resolution).
+Shaikh's published panel has 32 industry columns plus an "All Private" aggregate; the 30 *named* retained industries plus 2 sub-aggregates (e.g., Manufacturing, Real & Rental) appear in the 38-panel small-multiple plots. The 31 excluded NAICS industries are listed verbatim in reconstructed book source data (Phase 4 B4 resolution).
 
 ## 5. Year coverage
 
@@ -63,9 +63,29 @@ rate (decimal; IROP = (PG_t - PG_{t-1}) / IG_{t-1}, aggregate-before-ratio).
 
 ## 8. Cross-references
 
-- **CD2 legacy ID**: `S036`
+- **CD2 legacy ID** (identifier in CD2, the predecessor build of this dataset): `S036`
 - **Book reference**: Shaikh (2016), Ch. 7, pp. 299–305 + Appendix 7.1 III (pp. 857–859).
-- **Knowledge Base**: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json` → `Fig7.17`.
+- **Knowledge Base**: figure-linkage reference → `Fig7.17`.
+
+## Notation (plain-language key)
+
+Short forms used above, in plain language (this record is a downloadable external artifact):
+
+- **S### / -A** — series identifiers in this project (e.g. S706); a trailing letter (e.g. S706-A) marks a *subseries* — one data line within that series.
+- **DPR / EPR** — Data Provenance Record (this file) / Extension Provenance Record (its companion).
+- **Phase N** — Anu Framework pipeline stages: Phase 4 = adequacy/readiness review, Phase 5 = ingestion, Phase 6 = extension, Phase 9 = visualization.
+- **L01 / P02 / V03** — the per-series load / process / validate scripts.
+- **CD2** — the predecessor build of this dataset.
+- **ROP** — (average) rate of profit.
+- **IROP** — incremental rate of profit: the return on newly added capital (the year-to-year change in profit divided by the new investment that produced it).
+- **BEA** — US Bureau of Economic Analysis.
+- **NIPA** — US National Income and Product Accounts (published by the BEA).
+- **NAICS** — North American Industry Classification System.
+- **WEQ** — wage equivalent: an imputed labour income for self-employed / proprietors, adjusted out of surplus.
+- **OOH** — owner-occupied housing: an adjustment removing imputed housing income.
+- **GOS** — Gross Operating Surplus.
+- **FRB Z.1** — Federal Reserve Board Z.1 (Financial Accounts of the United States).
+- **MAE** — mean absolute error.
 
 ## 9. Validation expectation
 

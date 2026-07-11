@@ -141,7 +141,7 @@
     "If decomposition IS desired, the natural split is: XS2101 = BEA benchmark A-matrices (the primary data input); XS2102 = derived Sraffa price curves p(r); XS2103 = Curvature Index distribution; XS2104 = Theil index distribution. This mirrors a clean Anu Framework dependency DAG.",
     "BLS sector-300 crosswalk URL cited in paper (http://www.bls.gov/emp/classifications-crosswalks/sect300.xls) is likely stale by 2026; BLS reorganized Employment Projections data multiple times. Phase 4 should verify or substitute current BLS NAICS-based labor input crosswalk.",
     "Paper cites a companion working paper (Shaikh, Nassif, Coronado 2018, NSSR WP #1812) for the eigenvalue rank-size results. Replication of XS2101 may require access to that companion paper's data pipeline and may overlap with XS2001 if the latter covers Shaikh's 2020 Sraffa prices empirical-sufficiency paper.",
-    "Paper does NOT report the exact CI / Theil time series values in the body text; they appear only as scatter plots in Figures 6 and 7. Full replication will require either (a) digitizing the figures or (b) reconstructing from BEA tables via equations A1-A3 - the latter is strongly preferred per project provenance standards.",
+    "Paper does NOT report the exact CI / Theil time series values in the body text; they appear only as scatter plots in Figures 6 and 7. Full replication will require either (a) digitizing the figures or (b) reconstructing from BEA tables via equations A1-A3 - the latter is strongly preferred per no-fabrication standards.",
     "Compensation-of-employees normalization (Appendix 2) creates 'skill-adjusted' labor coefficients; the precise weighting scheme is delegated to Shaikh (2012: 98) and not fully restated here. Phase 4 should cross-reference Shaikh 2012 (Classical Political Economy and Modern Theory chapter) for the exact construction."
   ],
   "review_history": [
@@ -152,7 +152,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-es2101-2301",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Filled from full paper read (10 PDF pages). All 4 quotes verbatim from PDF. Primary source = BEA benchmark IO + BLS labor compensation. Construction=composite (Sraffa price model A2 + Bienenfeld A3 + CI = 1-SI). Recommend KEEP AS SINGLE SERIES rather than decompose - one underlying dataset, one pipeline. Extension candidates: BEA 2012 and 2017 benchmarks."

@@ -1,0 +1,491 @@
+{
+  "nonexistent": [],
+  "findings": [
+    {
+      "sid": "S1001",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 10,
+      "registry": [
+        "Fig10.1",
+        "Fig10.2"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig10.1"
+      ],
+      "reg_only": [
+        "Fig10.2"
+      ],
+      "dpr_only": []
+    },
+    {
+      "sid": "S1002",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 10,
+      "registry": [
+        "Fig10.3",
+        "Fig10.6"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig10.6"
+      ],
+      "reg_only": [
+        "Fig10.3"
+      ],
+      "dpr_only": []
+    },
+    {
+      "sid": "S1003",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 10,
+      "registry": [
+        "Fig10.3",
+        "Fig10.7"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig10.7"
+      ],
+      "reg_only": [
+        "Fig10.3"
+      ],
+      "dpr_only": []
+    },
+    {
+      "sid": "S1004",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 10,
+      "registry": [
+        "Fig10.2",
+        "Fig10.8"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig10.8"
+      ],
+      "reg_only": [
+        "Fig10.2"
+      ],
+      "dpr_only": []
+    },
+    {
+      "sid": "S1101",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 11,
+      "registry": [
+        "Fig11.2"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig11.2",
+        "Fig11.7"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig11.7"
+      ]
+    },
+    {
+      "sid": "S1403",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 14,
+      "registry": [
+        "Fig14.12"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig14.12",
+        "Fig14.9"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig14.9"
+      ]
+    },
+    {
+      "sid": "S1404",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 14,
+      "registry": [
+        "Fig14.13"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig14.13",
+        "Fig14.14"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig14.14"
+      ]
+    },
+    {
+      "sid": "S1502",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 15,
+      "registry": [
+        "Fig15.2A"
+      ],
+      "dpr_own_chapter_refs": [],
+      "reg_only": [
+        "Fig15.2A"
+      ],
+      "dpr_only": []
+    },
+    {
+      "sid": "S1503",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 15,
+      "registry": [
+        "Fig15.2B"
+      ],
+      "dpr_own_chapter_refs": [],
+      "reg_only": [
+        "Fig15.2B"
+      ],
+      "dpr_only": []
+    },
+    {
+      "sid": "S1504",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 15,
+      "registry": [
+        "Fig15.3"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig15.3",
+        "Fig15.4",
+        "Fig15.9"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig15.4",
+        "Fig15.9"
+      ]
+    },
+    {
+      "sid": "S1505",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 15,
+      "registry": [
+        "Fig15.7"
+      ],
+      "dpr_own_chapter_refs": [],
+      "reg_only": [
+        "Fig15.7"
+      ],
+      "dpr_only": []
+    },
+    {
+      "sid": "S1506",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 15,
+      "registry": [
+        "Fig15.8"
+      ],
+      "dpr_own_chapter_refs": [],
+      "reg_only": [
+        "Fig15.8"
+      ],
+      "dpr_only": []
+    },
+    {
+      "sid": "S1507",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 15,
+      "registry": [
+        "Fig15.9"
+      ],
+      "dpr_own_chapter_refs": [],
+      "reg_only": [
+        "Fig15.9"
+      ],
+      "dpr_only": []
+    },
+    {
+      "sid": "S1602",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 16,
+      "registry": [
+        "Fig16.3"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig16.3",
+        "Fig16.4"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig16.4"
+      ]
+    },
+    {
+      "sid": "S204",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 2,
+      "registry": [
+        "Fig2.4A"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig2.4",
+        "Fig2.4A"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig2.4"
+      ]
+    },
+    {
+      "sid": "S218",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 2,
+      "registry": [
+        "Fig2.16",
+        "Fig2.17"
+      ],
+      "dpr_own_chapter_refs": [],
+      "reg_only": [
+        "Fig2.16",
+        "Fig2.17"
+      ],
+      "dpr_only": []
+    },
+    {
+      "sid": "S301",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 3,
+      "registry": [
+        "Fig3.3"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig3.3",
+        "Fig3.4",
+        "Fig3.5"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig3.4",
+        "Fig3.5"
+      ]
+    },
+    {
+      "sid": "S303",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 3,
+      "registry": [
+        "Fig3.5"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig3.5",
+        "Fig3.9"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig3.9"
+      ]
+    },
+    {
+      "sid": "S304",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 3,
+      "registry": [
+        "Fig3.6"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig3.6",
+        "Fig3.7"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig3.7"
+      ]
+    },
+    {
+      "sid": "S305",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 3,
+      "registry": [
+        "Fig3.7"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig3.5",
+        "Fig3.6",
+        "Fig3.7"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig3.5",
+        "Fig3.6"
+      ]
+    },
+    {
+      "sid": "S306",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 3,
+      "registry": [
+        "Fig3.8"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig3.8",
+        "Fig3.9"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig3.9"
+      ]
+    },
+    {
+      "sid": "S309",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 3,
+      "registry": [
+        "Fig3.11"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig3.10",
+        "Fig3.11"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig3.10"
+      ]
+    },
+    {
+      "sid": "S402",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 4,
+      "registry": [
+        "Fig4.17"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig4.16",
+        "Fig4.17"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig4.16"
+      ]
+    },
+    {
+      "sid": "S601",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 6,
+      "registry": [
+        "Fig6.1",
+        "Fig6.4",
+        "Fig6.5"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig6.1"
+      ],
+      "reg_only": [
+        "Fig6.4",
+        "Fig6.5"
+      ],
+      "dpr_only": []
+    },
+    {
+      "sid": "S602",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 6,
+      "registry": [
+        "Fig6.2",
+        "Fig6.6"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig6.2"
+      ],
+      "reg_only": [
+        "Fig6.6"
+      ],
+      "dpr_only": []
+    },
+    {
+      "sid": "S707",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 7,
+      "registry": [
+        "Fig7.19"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig7.19",
+        "Fig7.20"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig7.20"
+      ]
+    },
+    {
+      "sid": "S805",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 8,
+      "registry": [
+        "Fig8.6"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig8.4",
+        "Fig8.6"
+      ],
+      "reg_only": [],
+      "dpr_only": [
+        "Fig8.4"
+      ]
+    },
+    {
+      "sid": "S902",
+      "file": "DPR",
+      "issue": "REGISTRY_DPR_MISMATCH",
+      "chapter": 9,
+      "registry": [
+        "Fig9.10",
+        "Fig9.11",
+        "Fig9.13",
+        "Fig9.14",
+        "Fig9.15",
+        "Fig9.18",
+        "Fig9.4",
+        "Fig9.5",
+        "Fig9.6",
+        "Fig9.7",
+        "Fig9.9"
+      ],
+      "dpr_own_chapter_refs": [
+        "Fig9.4"
+      ],
+      "reg_only": [
+        "Fig9.10",
+        "Fig9.11",
+        "Fig9.13",
+        "Fig9.14",
+        "Fig9.15",
+        "Fig9.18",
+        "Fig9.5",
+        "Fig9.6",
+        "Fig9.7",
+        "Fig9.9"
+      ],
+      "dpr_only": []
+    }
+  ]
+}

@@ -1,16 +1,16 @@
 # S217 -- GDP per Capita of World Regions (Maddison), 1600-2000
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S217
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave2-ch2
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S217_research.json`
-- Adequacy: `Technical/docs/chapters/CH2_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S217_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S217`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S217`
 
 ---
 
@@ -59,7 +59,7 @@ Empirical foundation for the chapter's closing 'two-world' argument (~400 years 
 ## 8. Cross-references
 
 - Book reference: Shaikh (2016), Ch. 2, Figure 2.15
-- Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
+- Knowledge Base: figure-linkage reference
 - Predecessor (CD2): see registry `predecessor_ids` block.
 
 ## 9. Validation expectation

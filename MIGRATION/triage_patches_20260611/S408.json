@@ -1,0 +1,16 @@
+{
+  "sid": "S408",
+  "display_name": "Survey shares: cost-curve shapes chosen by business managers (1952)",
+  "publish": false,
+  "triage": {
+    "verdict": "cull",
+    "reason": "CROSS-SECTIONAL SURVEY SNAPSHOT, not a renderable series. The chopped CSV holds two isolated percentages for a single year 1952 (94.0% chose steadily-declining cost curves, 94.3% chose declining-or-flat) from the Eiteman & Guthrie (1952) AER survey, transcribed verbatim from Shaikh's text. These are two scalar findings, not a curve or a time series: there is no x-axis to plot against (the eight survey chart-shapes are qualitative schematics, not data), so a web line/curve chart would be empty or misleading. Per the user mandate, a cross-sectional point-result that cannot render as a series is culled from the web (value preserved in the data download + DPR). TRIAGE_PRESCREEN SPARSE flag is accurate (2 constant points). KB gap: ch04 not HDARP-extracted, so the survey quotes are unverifiable against KB; the verbatim figures (94.0/94.3) are documented in the DPR but no KB-anchored 'From the book' is asserted. NOT published as a chart.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S408-A": {"label": "Share choosing steadily-declining cost curves (charts 6-7)", "units": "percent of survey respondents"},
+    "S408-B": {"label": "Share choosing declining or flat cost curves (charts 6-8)", "units": "percent of survey respondents"}
+  },
+  "field_fixes": {},
+  "notes": "Explainer intentionally NOT written (publish:false). The two percentages remain in the data download and DPR as Shaikh's survey-evidence pillar (Fig 4.23) against U-shaped cost curves; they are simply not a web chart. content_type cross_sectional; not extended."
+}

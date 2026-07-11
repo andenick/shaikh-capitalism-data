@@ -1,0 +1,18 @@
+{
+  "sid": "S1507",
+  "display_name": "Classical and conventional Phillips-type curves, US, 1982-2010 (neoliberal era)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful derived sub-period of S1505 covering 1982-2010, replicating book figure 15.9 (post-Volcker/neoliberal regime). Construction-relevant companion to S1506: the chapter contrasts the two eras to show the downward shift of the classical inflation curve. Deterministic extendable slice of S1505. Per-subseries units split (sigma-prime normalized).",
+    "date": "2026-06-11"
+  },
+  "field_fixes": {"units": "per_subseries"},
+  "subseries": {
+    "S1507-pi": {"label": "Inflation rate (GDP-deflator change)", "units": "rate_decimal"},
+    "S1507-sigma": {"label": "Growth-utilization rate (investment/profit)", "units": "rate_decimal"},
+    "S1507-sigma-prime": {"label": "Normalized growth-utilization rate", "units": "normalized_zscore"},
+    "S1507-uL": {"label": "Civilian unemployment rate", "units": "rate_decimal"},
+    "S1507-uLintensity": {"label": "Unemployment intensity (rate x duration index)", "units": "rate_decimal"}
+  }
+}

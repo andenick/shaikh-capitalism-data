@@ -1,10 +1,10 @@
 # S302 -- Extension Provenance Record
 
 **Series**: S302 -- Expenditure Share of Necessaries, Case I
-**Phase**: 6 (Extension)
+**Record type**: Extension Provenance Record
 **Content type**: `theoretical`
 **Authored**: 2026-05-18
-**Related**: `S302_DPR.md`, `Technical/research/S302_research.json`
+**Related**: `S302_DPR.md`, research dossier
 
 ---
 
@@ -14,7 +14,7 @@ S302 is a `theoretical` series. It is the share form (eq 3.11) of the same Case 
 
 ## 2. Method
 
-**Extension method**: `none`. Regenerated from eq (3.11) each loader run.
+**Extension method**: `none`. Regenerated from eq (3.11) each time the data-loading step runs.
 
 ## 3. Worked example
 
@@ -26,16 +26,15 @@ No proxy substitution. See `S302_DPR.md` for source details.
 
 ## 5. No-Synthetic disclosure
 
-No synthetic gap-filling in the prohibited sense. The DPR documents any
-analytic regeneration or library-data dependence explicitly.
+No synthetic gap-filling in the prohibited sense. The companion Data Provenance Record (DPR) documents any analytic regeneration or library-data dependence explicitly.
 
 ## 6. Failure-mode table
 
 Same failure-mode table as S301: calibration choice (x1min, c), bound violation at low y (handled by trimming the grid to y>=1), shape-check failure (would indicate a code bug in `_ch3_helpers.py`).
 
-## 7. CD2 divergence pre-disclosure
+## 7. Predecessor divergence pre-disclosure
 
-No CD2 predecessor; CD2 comparison block omitted.
+Predecessor series: none (first constructed in this dataset). The predecessor-comparison block is omitted.
 
 ## 8. Why no API extension applies
 

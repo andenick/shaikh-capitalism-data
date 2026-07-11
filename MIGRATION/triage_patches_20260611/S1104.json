@@ -1,0 +1,23 @@
+{
+  "sid": "S1104",
+  "display_name": "US balance of trade, real exchange rate, and relative GDP, 1960-2009",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Figure 11.7 (US trade balance, REER, relative GDP) for the two available lines; per-subseries units split resolves the mixed ratio/index flag. S1104-C (US/EU12 relative GDP) is a documented coverage gap (data_unavailable, not fabricated), so only A and B are emitted.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1104-A": {
+      "label": "US trade balance, net-trade ratio (X-M)/(X+M)",
+      "units": "ratio (dimensionless)"
+    },
+    "S1104-B": {
+      "label": "US real effective exchange rate (PPI basis)",
+      "units": "index (2002=100)"
+    }
+  },
+  "field_fixes": {
+    "units": "per_subseries"
+  }
+}

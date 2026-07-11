@@ -1,0 +1,22 @@
+{
+  "sid": "S1503",
+  "display_name": "Growth rates of real output, US major industries (services and government), 1988-2010",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful formula replication of book figure 15.2B (services and government industries panel), companion to S1502. Log-difference growth rates of BEA real value added by industry, 1988-2010 (book caption reads 1987-2010; 1988 is the first valid growth year - documented). Units rate_decimal_log_diff consistent.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1503-ALL": {"label": "All industries (economy-wide reference)", "units": "rate_decimal_log_diff"},
+    "S1503-TRANS": {"label": "Transportation and warehousing", "units": "rate_decimal_log_diff"},
+    "S1503-INFO": {"label": "Information", "units": "rate_decimal_log_diff"},
+    "S1503-FIRE": {"label": "Finance, insurance, real estate, rental, and leasing", "units": "rate_decimal_log_diff"},
+    "S1503-PROF": {"label": "Professional and business services", "units": "rate_decimal_log_diff"},
+    "S1503-EDUHEALTH": {"label": "Educational services, health care, and social assistance", "units": "rate_decimal_log_diff"},
+    "S1503-ARTSFOOD": {"label": "Arts, entertainment, recreation, accommodation, and food services", "units": "rate_decimal_log_diff"},
+    "S1503-OTHERSVC": {"label": "Other services, except government", "units": "rate_decimal_log_diff"},
+    "S1503-FEDGOV": {"label": "Federal government", "units": "rate_decimal_log_diff"},
+    "S1503-SLGOV": {"label": "State and local government", "units": "rate_decimal_log_diff"}
+  }
+}

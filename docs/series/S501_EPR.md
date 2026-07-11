@@ -1,9 +1,9 @@
 # S501 — Extension Provenance Record
 
 **Series**: S501 — US and UK Wholesale Price Indexes, 1790-1940
-**Phase**: 6 (Extension) · **Construction classification**: `direct` (chronological slice)
+
 **Extension method**: **none** — S501 is a fixed chronological window (Fig 5.3)
-**Authored**: 2026-05-18 · **Author**: opus-fanout-wave3-ch5
+**Authored**: 2026-05-18 · **Author**: Anu Framework pipeline-wave3-ch5
 
 ---
 

@@ -1,0 +1,22 @@
+{
+  "sid": "S1408",
+  "display_name": "HP(100)-filtered rate of change of nominal wages versus unemployment intensity, United States",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.14 Figure 14.17 (HP(100)-Filtered Values, Rate of Change of Nominal Wages versus Unemployment Intensity, United States, 1949-2011) -- the nominal-wage Phillips curve (Eq.14.19 = wage-share curve + inflation + productivity growth). Real data present in chopped CSV (127 points, 2 subseries); book_period_validated; figure number and quotes KB-verified (Fig 14.17 quote verbatim at ch14 KB line 1746/1660; Table 14.3 coefficients cross-checked against Appendix 14.2, ch18 KB line 8527-8595: era-1 1949-1982 inflation 0.963465, productivity 0.836600; era-2 1994-2011 inflation 0.832633, productivity 0.714580 -- match research JSON). NOTE: book TEXT (p.672) states the productivity coefficient as '0.82' while Table 14.3 prints 0.836600; this is Shaikh's own rounding in prose, not a transcription error. Two subseries (nominal-wage growth vs intensity) -- per-subseries split below.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1408-A": {
+      "label": "Nominal wage growth rate, HP(100)-filtered",
+      "units": "growth rate (decimal/year, HP100)"
+    },
+    "S1408-B": {
+      "label": "Unemployment intensity, HP(100)-filtered",
+      "units": "intensity (decimal, HP100)"
+    }
+  },
+  "field_fixes": {},
+  "notes": "Sample-window off-by-one: chapter text says 1948-1982 for Table 14.3 era-1 while the Appendix EViews output and the data (post-differencing) start 1949. The build uses 1949-1982, matching the Appendix; documented in S1408_DPR.md caveat 4."
+}

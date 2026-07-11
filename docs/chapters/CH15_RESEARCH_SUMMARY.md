@@ -1,6 +1,6 @@
 # Chapter 15 — Modern Money and Inflation: Phase 3 Research Summary
 
-**Reviewer**: opus-subagent-wave-c-ch15
+**Reviewer**: automated-agent
 **Date**: 2026-05-18
 **Series**: S1501–S1509 (9 series)
 **Book pages**: 696–719 (chapter) + Appendix 15.1 pp. 895–897
@@ -197,7 +197,7 @@ The IMF cross-check for S1504 is reported informationally, not as a PASS/FAIL.
    reflects the scale ratio, not a concept divergence. Phase 6 enrichment
    should normalize units before the cross-check.
 2. **S1502/S1503 BEA Industry API extension**: not implemented in this
-   fanout (BEA API client is a stub in `S00_apis.py`). Book-period values
+   automated-agent (BEA API client is a stub in `S00_apis.py`). Book-period values
    are authoritative for replication; post-2010 extension marked
    `data_unavailable` until BEA client lands.
 3. **S1505 BEA NIPA / FRED UNRATE extension**: same situation — book-period

@@ -1,0 +1,17 @@
+{
+  "sid": "S306",
+  "display_name": "Empirical food expenditure share, UK working-class budgets 1904",
+  "publish": false,
+  "triage": {
+    "verdict": "cull",
+    "reason": "DATA_UNAVAILABLE / signal-less. The chopped CSV contains a single 1904 row with a NULL value: the Allen & Bowley (1935) Table 1 tabulation of the UK Board of Trade 1904 Cost-of-Living Enquiry (Cd. 3864) was never digitized and is not in SalvagedInputs/. L01_S306 is a SCROUNGER that, finding no tabulation, deliberately emits a metadata-only row marked data_status='data_unavailable_pending_digitization' (no synthetic fill, correct per anu-framework). So there is no renderable cross-section, only printed axis bounds. CONTRADICTION FOUND: registry status is 'book_period_validated' but zero observations exist; correct status is 'data_unavailable'. Recommend data recovery = guided WebPlotDigitizer/library scan of Cd.3864 or Allen & Bowley Table 1, then re-promote to publish. KB gap: ch03 not HDARP-extracted, so the Engel's-Law figure quotes in the research JSON cannot be verified against KB; do not surface them as verified. NOT published in current state.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S306-A": {"label": "Food expenditure share by income band", "units": "percent of total weekly household expenditure on food"}
+  },
+  "field_fixes": {
+    "registry_status_should_be_data_unavailable": "registry series.S306.status = 'book_period_validated' contradicts the empty/NULL chopped and the DPR's own data_unavailable_pending_digitization note. Correct to 'data_unavailable' (registry is read-only for this agent; flagged for the registry owner)."
+  },
+  "notes": "Explainer intentionally NOT written (publish:false). Recovery path: digitize Allen & Bowley 1935 Table 1 (food-share by income band) or original Board of Trade Cd. 3864 (1908)."
+}

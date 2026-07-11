@@ -89,7 +89,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "opus-subagent-wave-c-ch14",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "CD2 S074 ported. CD2 markdown had a fragmentary Intro quote; replaced with the substantive Fig 14.16 description from p. 670."

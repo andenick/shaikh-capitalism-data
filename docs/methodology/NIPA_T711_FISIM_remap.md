@@ -3,7 +3,7 @@
 **Status:** Phase 5 prerequisite (Blocker B2) — RESOLVED
 **Date:** 2026-05-18
 **Author:** RSCD A3 (Ch6 GPIM blocker batch)
-**Scope:** AS003 imputed-interest adjustment, downstream into S601/S602/S603/S604
+**Scope:** XS003 imputed-interest adjustment, downstream into S601/S602/S603/S604
 
 ## Why this exists
 
@@ -59,7 +59,7 @@ change has been published since.
 1. **BEA NIPA Handbook** (NIPA Concepts and Methods), Chapter 13
    "Imputations", Section 13.4 "Implicitly priced financial services" —
    defines the FISIM imputations and the T7.11 sectoral redistribution
-   that AS003 reverses.
+   that XS003 reverses.
    https://www.bea.gov/resources/methodologies/nipa-handbook
 2. **Fixler, D., Reinsdorf, M., and Villones, S. (2010)** "FISIM: A New
    Approach", *Survey of Current Business* 90(5), 31-43. Cited by
@@ -121,7 +121,7 @@ expected 2024 line shifts (+1 for all lines >= 28). Verified 2026-05-18.
 
 - The 2018 +1 shift is documented in BEA release notes but the precise
   inserted row (monetary interest paid by foreign-bank branches vs.
-  primary-dealer category) is not material for the AS003 recipe — what
+  primary-dealer category) is not material for the XS003 recipe — what
   matters is that the *captioned* rows preserve their economic content.
 - If a future BEA revision splits or merges any of the 10 captioned
   rows, the resolver will raise on lookup and the methodology table

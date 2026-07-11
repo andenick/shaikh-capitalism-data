@@ -1,21 +1,25 @@
 # XS2302 — Extension Provenance Record
 
 **Series**: XS2302 — China Current Account Balance
-**Phase**: 6 (Extension)
 **Construction**: `direct` (two parallel direct pulls, dual units)
 **Authored**: 2026-05-18
 
 ## 1. Extendability
 
-IMF WEO is published semi-annually (April, October) and includes
-historical revisions plus 5-year forecasts. China's BCA and BCA_NGDPD
-are continuously reported since 1980. Extension to 2024 is mechanical.
+IMF World Economic Outlook (WEO) is published semi-annually (April, October)
+and includes historical revisions plus multi-year forecasts. China's BCA and
+BCA_NGDPD are continuously reported since 1980. Extension of the **realized**
+series to 2024 is mechanical. The vintage the loader pulls also carries WEO
+**projection** years 2025–2031; these are retained in the chopped CSV but
+flagged `is_forecast=True` (realized 1997–2024 are `is_forecast=False`), rather
+than truncated. See §5 of the data provenance record. No projection value is
+used as a `reference_values` anchor.
 
 ## 2. Method
 
-Loader calls `S00_apis.imf_weo_country(country_iso3='CHN',
-subjects=('BCA', 'BCA_NGDPD'))`. Each subject is returned as a separate
-long-form row block. No splice, no rebase.
+The loader pulls both WEO subjects — `BCA` (level) and `BCA_NGDPD` (percent of
+GDP) — for China (`CHN`). Each subject is returned as a separate long-form row
+block. No splice, no rebase.
 
 ## 3. Proxies
 
@@ -36,7 +40,8 @@ None. NaN propagates.
 
 The extension proxy `IMF WEO subject BCA (level) + BCA_NGDPD (% of GDP)
 for country CHN` measures `China's current account balance` rather than
-`China's goods trade balance` or `China's BoP balance overall` because:
+`China's goods trade balance` or `China's BoP balance overall`
+(balance-of-payments basis) because:
 - Source agency choice: Weber & Shaikh (2020) Fig 2 explicitly cites IMF
   WEO, not China State Administration of Foreign Exchange (SAFE) BoP
   releases. WEO is the published recipe.
@@ -55,14 +60,13 @@ sharply to about 1.3% by 2017" — the reversal narrative that
 counter-evidences the currency-manipulation hypothesis. The modern series
 preserves the WEO BCA concept and the dual unit emission (level + %GDP)
 while permitting WEO vintage revisions to shift historical values
-0.1-0.5 percentage points. This is NOT a proxy substitution forbidden
-by the No-Proxy rule because IMF WEO is exactly the source the paper
-cites; we pull the same two subjects (BCA, BCA_NGDPD) for the same
-country (CHN) at a later vintage.
+0.1-0.5 percentage points. This is not a proxy substitution: IMF WEO is
+exactly the source the paper cites; we pull the same two subjects (BCA,
+BCA_NGDPD) for the same country (CHN) at a later vintage.
 
 ## 7. Dual-axis emission
 
-The DPR mandates two distinct AnuData rows (level + percent-of-GDP).
-Phase 5 enforces this in the loader: each WEO subject is tagged with
-its own `subseries_id` (`XS2302-level` or `XS2302-pctgdp`) so the
-chopped CSV and extenbook reflect the unit split.
+The provenance record mandates two distinct rows (level + percent-of-GDP).
+The loader enforces this: each WEO subject is emitted under its own subseries
+id (`XS2302-level` or `XS2302-pctgdp`, the suffix naming the unit) so the
+published data reflects the unit split.

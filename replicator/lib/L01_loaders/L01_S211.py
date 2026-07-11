@@ -16,15 +16,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils.paths import DATA_RAW, SALVAGED_EXT_BENCH  # noqa: E402
 
-S022_XLSX = SALVAGED_EXT_BENCH / "CD2_v1.3" / "Series" / "S022_us_and_uk_wholesale_price_indexes_1790_1940.xlsx"
+SALVAGED_USUK_WPI_1790_1940_XLSX = SALVAGED_EXT_BENCH / "CD2_v1.3" / "Series" / "S022_us_and_uk_wholesale_price_indexes_1790_1940.xlsx"
 OUT_US = DATA_RAW / "S211_US_WPI_1790_1940.parquet"
 OUT_UK = DATA_RAW / "S211_UK_WPI_1790_1940.parquet"
 
 
 def run() -> dict:
-    if not S022_XLSX.exists():
-        return {"status": "FAIL", "error": f"S022 missing: {S022_XLSX}"}
-    df = pd.read_excel(S022_XLSX, sheet_name="Data").rename(columns={"Year": "year"})
+    if not SALVAGED_USUK_WPI_1790_1940_XLSX.exists():
+        return {"status": "FAIL", "error": f"S022 missing: {SALVAGED_USUK_WPI_1790_1940_XLSX}"}
+    df = pd.read_excel(SALVAGED_USUK_WPI_1790_1940_XLSX, sheet_name="Data").rename(columns={"Year": "year"})
     df = df.dropna(subset=["year"]).astype({"year": int})
     df = df[(df["year"] >= 1780) & (df["year"] <= 1940)]
     us = df[["year", "S022-A"]].rename(columns={"S022-A": "value"}).dropna(subset=["value"]).copy()

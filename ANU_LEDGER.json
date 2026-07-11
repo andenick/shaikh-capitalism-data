@@ -1,6 +1,6 @@
 {
   "schema_version": "anu-ledger-v12.0",
-  "generated_at": "2026-05-27T06:15:39Z",
+  "generated_at": "2026-07-10T19:22:26Z",
   "registry_version": "anu-ingestion-v4.0",
   "series_count": 118,
   "coverage_counts": {
@@ -8,20 +8,20 @@
     "dpr": 118,
     "epr": 118,
     "loader": 118,
-    "processor": 116,
+    "processor": 118,
     "validator": 118,
-    "chopped": 116,
-    "extenbook": 116
+    "chopped": 118,
+    "extenbook": 118
   },
   "coverage_pct": {
     "research": 100.0,
     "dpr": 100.0,
     "epr": 100.0,
     "loader": 100.0,
-    "processor": 98.3,
+    "processor": 100.0,
     "validator": 100.0,
-    "chopped": 98.3,
-    "extenbook": 98.3
+    "chopped": 100.0,
+    "extenbook": 100.0
   },
   "artifacts": {
     "S201": {
@@ -34,7 +34,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -216,7 +216,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "extension_only_validated",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -230,7 +230,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "extension_only_validated",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -300,7 +300,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -421,12 +421,12 @@
       "dpr": true,
       "epr": true,
       "loader": true,
-      "processor": false,
+      "processor": true,
       "validator": true,
-      "chopped": false,
-      "extenbook": false,
+      "chopped": true,
+      "extenbook": true,
       "stage": 8,
-      "status_enum": "data_unavailable",
+      "status_enum": "book_period_validated",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -435,12 +435,12 @@
       "dpr": true,
       "epr": true,
       "loader": true,
-      "processor": false,
+      "processor": true,
       "validator": true,
-      "chopped": false,
-      "extenbook": false,
+      "chopped": true,
+      "extenbook": true,
       "stage": 8,
-      "status_enum": "data_unavailable",
+      "status_enum": "book_period_validated",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -636,7 +636,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -650,7 +650,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -664,7 +664,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -678,7 +678,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -692,7 +692,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -720,7 +720,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -790,7 +790,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -804,7 +804,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -818,7 +818,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -860,7 +860,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -902,7 +902,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -944,7 +944,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "validated_book_and_extension",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -1154,7 +1154,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "theoretical_validated",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -1168,7 +1168,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "theoretical_validated",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -1182,7 +1182,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "theoretical_validated",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -1196,7 +1196,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "theoretical_validated",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -1210,7 +1210,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "theoretical_validated",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -1224,7 +1224,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "data_unavailable",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -1238,7 +1238,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "data_unavailable",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -1252,7 +1252,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "theoretical_validated",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -1266,7 +1266,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "theoretical_validated",
       "last_action_at": "",
       "last_action_step_id": ""
     },
@@ -1392,7 +1392,7 @@
       "chopped": true,
       "extenbook": true,
       "stage": 8,
-      "status_enum": "book_period_validated",
+      "status_enum": "theoretical_validated",
       "last_action_at": "",
       "last_action_step_id": ""
     },

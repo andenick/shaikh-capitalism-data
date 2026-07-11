@@ -9,7 +9,7 @@ subseries:
 
 Extension (FRED PPIACO + GOLDPMGBD228NLBM, ONS K646) is deferred to Phase 6
 sensitivity: book-period reproduction (MAE=0 vs Appendix 5.3 columns) is the
-Phase 5 priority per Ch16 fanout direction.
+Phase 5 priority per Ch16 automated-agent direction.
 """
 from __future__ import annotations
 
@@ -62,7 +62,7 @@ def run() -> dict:
         "sources_fetched": ["SHAIKH_APPENDIX_5"],
         "extension_status": "deferred_to_phase6",
         "extension_note": ("FRED PPIACO + GOLDPMGBD228NLBM + ONS K646 extension "
-                           "deferred per Ch16 fanout direction; book-period "
+                           "deferred per Ch16 automated-agent direction; book-period "
                            "reproduction is Phase 5 priority."),
         "outputs": [str(OUT_A), str(OUT_B), str(OUT_C), str(OUT_D)],
     }

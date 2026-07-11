@@ -25,6 +25,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from utils import paths  # noqa: E402
 from utils.paths import DATA_RAW, book_data_path  # noqa: E402
 from S00_setup import S00_apis, S00_config  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 CHOPPED_XLSX = book_data_path("Appendix2_IndustrialProduction.xlsx")
 OUT_BEA = DATA_RAW / "S201_BEA_LTEG_A173.parquet"
@@ -74,6 +75,7 @@ def _save_fred() -> tuple[int, bool, str | None]:
     """Returns (rows, fetched, error_message)."""
     if not S00_config.have_key("FRED_API_KEY"):
         return 0, False, "FRED_API_KEY not set"
+    rs, re = realtime_window("S201", FRED_SERIES_ID)
     try:
         # Pull from 2005 onward — provides overlap candidates back to 2005 if 2010 NaN
         df = S00_apis.fred_observations(
@@ -82,6 +84,8 @@ def _save_fred() -> tuple[int, bool, str | None]:
             aggregation_method="avg",
             observation_start="2005-01-01",
             observation_end="2025-12-31",
+            realtime_start=rs,
+            realtime_end=re,
         )
     except S00_apis.ApiUnavailable as exc:
         return 0, False, str(exc)

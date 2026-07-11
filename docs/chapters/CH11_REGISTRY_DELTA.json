@@ -2,7 +2,7 @@
   "_schema": "rscd-registry-delta-v1.0",
   "_purpose": "Per-series adequacy block to be merged into Technical/series_registry.json by the main thread after Wave 2 closeout.",
   "chapter": 11,
-  "reviewer": "opus-subagent-p4-wave2-ch11",
+  "reviewer": "automated-agent",
   "review_date": "2026-05-18",
   "deltas": {
     "S1101": {

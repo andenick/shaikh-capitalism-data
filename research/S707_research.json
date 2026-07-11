@@ -105,19 +105,25 @@
   ],
   "review_history": [
     {
+      "reviewer": "P4.3-docs-agent",
+      "date": "2026-07-10",
+      "status": "data_unavailable",
+      "notes": "ADDENDUM (F-2D-04): Two stale items corrected. (1) Stale parenthetical in methodology_notes: '(S709 or similar)' — S709 was assigned to US ROP deviations (Fig 7.16); the OECD IROP series (Fig 7.21) was assigned as S711. Any reference to 'S709 or similar' for the OECD IROP should read S711. (2) Stale predecessor_ids: this dossier carries {cd_id: 'S038', cd2_id: 'S038'}, but CD2 S038 was 'OECD Industry IROP Deviations (PPP-adjusted)' — content that maps to S711 (OECD IROP deviations, Fig 7.21), NOT to S707 (Greek manufacturing, Fig 7.19). S707's genuine predecessor is none; CD2 S038 is S711's predecessor. Predecessor_ids for S707 should be {cd_id: null, cd2_id: null} in any authoritative registry edit (P4.1 agent scope)."
+    },
+    {
       "reviewer": "phase3_stubber",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-wave-b-ch7",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from book pp. 305 and 859 (PDF p. 897) verbatim. RESOLVED stub mismatch in favor of figure number (Fig 7.19 = Greek Mfg AVERAGE ROP deviations, source Tsoulfidis & Tsaliki 2011), NOT the stub's misleading 'OECD IROP' name. CD2 S038 was actually for OECD STAN IROP Fig 7.21 — that mapping is flagged for Phase 4 correction. No Greek raw dataset in SalvagedInputs; flagged as blocker."
     },
     {
-      "reviewer": "opus-subagent-batch1-A4-B5",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "data_unavailable",
       "notes": "B5 underlying-data search: Tsoulfidis & Tsaliki (2011) PDF located and downloaded from MPRA No. 51334 (correct URL: https://mpra.ub.uni-muenchen.de/51334/; the stub's URL 35908 was wrong and pointed to an unrelated paper — corrected in primary_source.url above). PyMuPDF extraction of all 42 pages confirms the paper contains only five tables (cross-section concentration stats, correlation matrices, unit-root tests, and AR(1) regression coefficient summaries). The underlying 20-industry x 30-year deviation TIME SERIES that powers Figures 4 and 5 (= Shaikh's Figs 7.19 and 7.20) is NOT tabulated in the paper; it exists only as line charts on pp. 19 and 30. Marked data_unavailable; full provenance at SalvagedInputs/book_data/Reconstructed/Tsoulfidis_Tsaliki_2011_data_unavailable.md. Phase 5 path: include book figure as image; Phase 6 may digitize via WebPlotDigitizer or contact authors."

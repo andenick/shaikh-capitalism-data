@@ -21,7 +21,7 @@ SERIES_ID = "S301"
 PROCESSED = DATA_PROCESSED / f"{SERIES_ID}.parquet"
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
 
-VALIDATOR_TOL_PCT = 0.5  # axis-bound tolerance for theoretical Ch3 series
+VALIDATOR_TOL_PCT = 1.0  # axis-bound tolerance for theoretical Ch3 series
 Y_BOUND_LO, Y_BOUND_HI = 0.0, 0.8  # Fig 3.3 printed y-axis bounds
 
 

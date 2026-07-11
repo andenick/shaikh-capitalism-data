@@ -1,0 +1,11 @@
+{
+  "sid": "S704",
+  "display_name": "US manufacturing average and incremental rates of profit, 1960–1989",
+  "publish": false,
+  "triage": {
+    "verdict": "cull",
+    "reason": "data_unavailable — Fig 7.14 is the chart-only US-manufacturing counterpart to S703, same Christodoulopoulos (1995)/OECD ISDB 1994 source, discontinued and not recoverable. No chopped CSV. Honest-blocked; recovery = guided WebPlotDigitizer of the US-aggregate line. Figure/title/period verified against KB ch07 (caption 'US Manufacturing Average and Incremental Rates of Profit, 1960–1989').",
+    "date": "2026-06-11"
+  },
+  "subseries": {}
+}

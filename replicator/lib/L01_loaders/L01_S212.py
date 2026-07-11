@@ -20,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils.paths import DATA_RAW, SALVAGED_EXT_BENCH  # noqa: E402
 from L01_loaders._ch2_helpers import fred_annual  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 S024_XLSX = SALVAGED_EXT_BENCH / "CD2_v1.3" / "Series" / "S024_uk_wpi_in_gold_and_uk_gold_price.xlsx"
 S025_XLSX = SALVAGED_EXT_BENCH / "CD2_v1.3" / "Series" / "S025_us_wpi_in_gold_and_us_gold_price.xlsx"
@@ -47,7 +48,8 @@ def run() -> dict:
     us.to_parquet(OUT_US_GOLD, index=False)
     uk.to_parquet(OUT_UK_GOLD, index=False)
     # FRED gold price (London PM fix, USD per oz) for post-2010 extension cross-check
-    df_g, ok, err = fred_annual("GOLDPMGBD228NLBM", start="2005-01-01")
+    df_g, ok, err = fred_annual("GOLDPMGBD228NLBM", start="2005-01-01",
+                                realtime=realtime_window("S212", "GOLDPMGBD228NLBM"))
     sources = ["JASTRAM_1977_T1_MW_US_WPI_GOLD", "JASTRAM_1977_MW_UK_WPI_GOLD"]
     if ok and not df_g.empty:
         df_g["units"] = "usd_per_oz"

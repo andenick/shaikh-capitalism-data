@@ -1,17 +1,17 @@
 # S402 — Average and Marginal Costs with Wage Paid per Hour (Fig 4.17)
 
-**Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+**Data Provenance Record (DPR)** — the internal, full-provenance companion to the public Explainer.
+**Record type**: Data Provenance Record (source-and-construction detail)
 **Series ID**: S402
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch4-fanout
+**Prepared by**: RSCD data-construction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S402_research.json`
-- Adequacy: `Technical/docs/chapters/CH4_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S402_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S402`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `SHAIKH_APPENDIX_4_2`
+- Series research notes: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S402`
+- Subsource registry: subsource registry → `SHAIKH_APPENDIX_4_2`
 
 ---
 
@@ -29,11 +29,11 @@ Shaikh emphasizes (p. 156) that the resulting `avc` is "roughly flat" over the d
 
 | Subseries | Coverage | Publisher / Series ID | Native units | Retrieval |
 |---|---|---|---|---|
-| **S402-A** | XR rows 0–20 (21 points) | Shaikh, *Capitalism* (2016), Appendix 4.2 Table 4.2.4, per-hour-wage columns | money units per unit of output | Reconstructed CSV `SalvagedInputs/book_data/Reconstructed/Appendix_4_2_Table4.csv`, columns `XR`, `afc`, `ulc`, `avc`, `ac`, `mc` |
+| **S402-A** (the dataset's data column set) | output rows 0–20 (21 points) | Shaikh, *Capitalism* (2016), Appendix 4.2 Table 4.2.4, per-hour-wage columns | money units per unit of output | Reconstructed CSV reconstructed book source data, columns `XR`, `afc`, `ulc`, `avc`, `ac`, `mc` |
 
 ## 4. Construction
 
-`derived` / `formula`. Loader consumes the tabulated CSV directly.
+A `derived` series (built by formula). The data-loading step reads the tabulated table directly.
 
 ```
 Per-hour wage:
@@ -74,4 +74,4 @@ Identical to S401 (XR axis, not year; Appendix 4.2 parameter offset; XR=0 row pr
 ## 9. Validation expectation
 
 - **Tolerance**: ±0.5%.
-- **Expected MAE**: 0 — direct CSV round-trip.
+- **Expected mean absolute error (MAE)**: 0 — a direct round-trip of the same table (via the validation step).

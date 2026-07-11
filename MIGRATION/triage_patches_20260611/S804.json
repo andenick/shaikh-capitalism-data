@@ -1,0 +1,15 @@
+{
+  "sid": "S804",
+  "display_name": "Profit rate on assets, concentrated vs. unconcentrated industries (Stigler), 1939-1957",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh Figure 8.5 (Ch8, p.376) from Stigler (1963, Table 17, p.68): rate of profit on assets for concentrated vs. unconcentrated US manufacturing industries across six multi-year bins spanning 1939-1957. Construction-relevant: Shaikh's exhibit that the two groups' profit rates move together with essentially identical means (7.1% concentrated, 6.9% unconcentrated, both verified against KB ch08), supporting real-competition theory against the oligopoly-power reading. The two subseries share a single unit; no mixed units.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S804-CONC": {"label": "Concentrated industries", "units": "percent"},
+    "S804-UNCONC": {"label": "Unconcentrated industries", "units": "percent"}
+  },
+  "field_fixes": {}
+}

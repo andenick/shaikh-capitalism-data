@@ -1,0 +1,24 @@
+{
+  "sid": "S1007",
+  "display_name": "Equity rate of return versus corporate incremental rate of profit, 1948-2011",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Figure 10.11 (equity rate vs corporate IROP) from Shaikh Appendix 10 IntroPPrice columns; pass-through. Fixed figure reference (was 10.7, correct is 10.11).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1007-A": {
+      "label": "Real equity rate of return",
+      "units": "rate (decimal fraction)"
+    },
+    "S1007-B": {
+      "label": "Corporate adjusted real incremental rate of profit",
+      "units": "rate (decimal fraction)"
+    },
+    "S1007-C": {
+      "label": "Corporate NIPA real incremental rate of profit",
+      "units": "rate (decimal fraction)"
+    }
+  }
+}

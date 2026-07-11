@@ -1,6 +1,6 @@
 # Chapter 2 — Turbulent Trends and Hidden Structures
 
-**Subagent**: opus-subagent-wave-a-ch2
+**Subagent**: automated-agent
 **Date**: 2026-05-18
 **Series**: 18 (S201–S218)
 **Validator status**: 18/18 PASS
@@ -66,7 +66,7 @@ Other chapters' failures are not in this subagent's scope (Wave A Ch3–Ch6 and 
 
 ## Phase 5-8 Closure (2026-05-18)
 
-**Author**: opus-subagent-wave2-ch2
+**Author**: automated-agent
 **Scope**: S202-S218 (S201 pilot already complete)
 **Outcome**: 17/17 series PASS at the 1.0% tolerance gate. With S201, chapter total = 18/18 PASS.
 

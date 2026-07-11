@@ -1,7 +1,7 @@
 {
   "_delta_kind": "rscd-registry-adequacy-delta-v1.0",
   "_chapter": 2,
-  "_reviewer": "opus-subagent-p4-wave1-ch2",
+  "_reviewer": "automated-agent",
   "_review_date": "2026-05-18",
   "_merge_instructions": "For each SID below, set registry.series[SID].adequacy = <value>. Do NOT overwrite other fields.",
   "deltas": {

@@ -1,0 +1,15 @@
+{
+  "schema": "rscd-replicator-manifest-v1",
+  "generated": "2026-07-11T03:46:07.649584+00:00",
+  "trees": [
+    "lib",
+    "scripts",
+    "config",
+    "inputs_bundled",
+    "README.md",
+    "requirements.txt"
+  ],
+  "file_count": 798,
+  "aggregate_sha256": "201729cdc825d70d222011ad85ef878a5cdb6abdb66ac0221c48cd02be988e18",
+  "note": "SHA-256 integrity manifest of the self-contained replicator (lib+scripts+config+inputs_bundled). Excludes __pycache__, *.pyc, workdir/, data/ runtime artifacts. aggregate_sha256 = SHA-256 of this manifest's MANIFEST_SHA256.txt (bytes as written); regenerated after the A3 lib/{data,transforms,validation,io} v3.1 shared-helpers restructure (behavior-preserving; helpers relocated + back-shims)."
+}

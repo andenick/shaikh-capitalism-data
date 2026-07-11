@@ -1,4 +1,11 @@
-"""L01_ES2101 — Shaikh-Coronado-Nassif-Pires (2020) headline summary stats."""
+"""L01_XS2101 — Shaikh-Coronado-Nassif-Pires (2020) headline summary stats.
+
+Filename note (AS/ES->XS migration, 2026-06-10): the ground-truth SalvagedInputs
+copy retains the LEGACY ES-prefixed name (ES2101_summary_statistics.csv) BY DESIGN —
+SalvagedInputs is read-only and is never renamed. The replicator's XS-named
+inputs_bundled copy (XS2101_summary_statistics.csv) is preferred where present;
+this loader resolves the XS name first and falls back to the legacy ES name.
+"""
 from __future__ import annotations
 
 import sys
@@ -12,7 +19,27 @@ from utils.paths import DATA_RAW, SALVAGED_BOOK_DATA  # noqa: E402
 
 SERIES_ID = "XS2101"
 SOURCE_ID = "SHAIKH_CORONADO_NASSIF_2020_S5_SUMMARY"
-CSV_PATH = SALVAGED_BOOK_DATA / "Reconstructed" / "XS2101_summary_statistics.csv"
+_RECON_DIR = SALVAGED_BOOK_DATA / "Reconstructed"
+
+
+def _resolve_csv() -> Path:
+    """Resolve the reconstructed CSV, tolerating the ES/XS filename split.
+
+    Prefer the migrated XS name (present in the replicator's XS-named
+    inputs_bundled copy); fall back to the legacy ES name retained in the
+    read-only SalvagedInputs tree. Returns the XS candidate if neither
+    exists so error messages name the canonical spelling.
+    """
+    xs = _RECON_DIR / "XS2101_summary_statistics.csv"
+    es = _RECON_DIR / "ES2101_summary_statistics.csv"
+    if xs.exists():
+        return xs
+    if es.exists():
+        return es
+    return xs
+
+
+CSV_PATH = _resolve_csv()
 OUT = DATA_RAW / f"{SERIES_ID}_SUMMARY_STATS.parquet"
 
 

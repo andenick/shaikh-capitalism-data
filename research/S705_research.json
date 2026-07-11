@@ -161,13 +161,13 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-wave-b-ch7",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from CD2 S034 dossier + book pp. 302-305 + Appendix 7.1 III (book pp. 857-859 / PDF pp. 895-897) verbatim. Source = BEA GDPbyInd_VA_NAICS + Fixed Assets + WEQ/OOH/inventory/reserve adjustments per Shaikh (2008). Appendix7_ropdataUSind.xlsx in SalvagedInputs is the canonical extract. 4 quotes (definition, source, method, caveat), 7 components, 4 extension candidates, 8 methodology notes."
     },
     {
-      "reviewer": "opus-subagent-batch1-A4-B4",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "blocker-resolved",
       "notes": "B4 resolved. Shaikh (2008) Table 9.A1 (Appendix B) located in Capitalism Data and extracted verbatim to SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv (31 rows, industry_no + industry_level + industry_title + interpretive exclusion_ground + naics_subgroup columns). README at same path documents provenance and the interpretive vs verbatim distinction. The 30 retained industries are the NAICS rows NOT in this CSV; the loader for S705/S706/S709/S710 should use this CSV as the sample-restriction key."

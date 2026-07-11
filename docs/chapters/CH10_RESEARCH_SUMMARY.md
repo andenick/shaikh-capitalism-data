@@ -3,7 +3,7 @@
 **Chapter**: 10 (Competition, Finance, and Interest Rates)
 **Series count**: 8 (S1001-S1008)
 **Wave**: B
-**Subagent**: opus-subagent-wave-b-ch10
+**Subagent**: automated-agent
 **Date**: 2026-05-18
 **Book pages covered**: 462-474 (figure-bearing pages); 873-874 (Appendix 10.1 Sources and Methods)
 **Underlying data**: `SalvagedInputs/book_data/ShaikhChoppedTables/Appendix10_*.xlsx` (4 workbooks: Documentation, Ibbotson, IntroPPrice, USLR)
@@ -68,7 +68,7 @@ To be confirmed after running `_phase3_research_validator.py`.
 
 ## Phase 5-8 Closure (2026-05-18)
 
-**Author**: opus-fanout-ch10
+**Author**: automated-agent-ch10
 **Result**: 8 of 8 series ratified ingested with V03 PASS (MAE = 0 on all book-period comparisons).
 
 ### Per-series closure

@@ -1,17 +1,17 @@
 # S709 — Figure 7.16 — US Industry ROP Deviations from Average, 1987–2005 (derivative of S705)
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S709
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch7-fanout
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S709_research.json`
-- Adequacy: `Technical/docs/chapters/CH7_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S709_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S709`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `SHAIKH_2008_APPENDIX_7_2_ROP`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S709`
+- Subsource registry: subsource registry → `SHAIKH_2008_APPENDIX_7_2_ROP`
 
 ---
 
@@ -27,7 +27,7 @@ This is the **operationalization** of Shaikh's turbulent-equalization claim: ind
 
 | Subseries | Coverage | Source | Units |
 |---|---|---|---|
-| **S709-A** | 1987–2005 | Derived from S705 | rate deviation (decimal; industry ROP minus All-Private aggregate ROP) |
+| **S709-A** (subseries — one data line within S709) | 1987–2005 | Derived from S705 | rate deviation (decimal; industry ROP minus All-Private aggregate ROP) |
 
 The values are read directly from the `*_Deviation` / `*_Dev` columns of Shaikh's Appendix 7.2 xlsx (byte-exact). Construction is a one-line algebraic transform of S705's level columns.
 
@@ -58,8 +58,20 @@ rate deviation (decimal; industry ROP minus All-Private aggregate ROP).
 ## 8. Cross-references
 
 - **Parent series**: S705
-- **CD2 legacy ID**: `S035`
+- **CD2 legacy ID** (identifier in CD2, the predecessor build of this dataset): `S035`
 - **Book reference**: Shaikh (2016), Ch. 7, p. 305, Fig7.16.
+
+## Notation (plain-language key)
+
+Short forms used above, in plain language (this record is a downloadable external artifact):
+
+- **S### / -A** — series identifiers in this project (e.g. S709); a trailing letter (e.g. S709-A) marks a *subseries* — one data line within that series.
+- **DPR / EPR** — Data Provenance Record (this file) / Extension Provenance Record (its companion).
+- **Phase N** — Anu Framework pipeline stages: Phase 5 = ingestion, Phase 6 = extension, Phase 9 = visualization.
+- **CD2** — the predecessor build of this dataset.
+- **ROP** — (average) rate of profit.
+- **IROP** — incremental rate of profit: the return on newly added capital (the year-to-year change in profit divided by the new investment that produced it).
+- **MAE** — mean absolute error.
 
 ## 9. Validation expectation
 

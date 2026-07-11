@@ -1,17 +1,17 @@
 # S804 — Rate of Profit on Assets, Concentrated vs. Unconcentrated Industries, 1939-1957 (Stigler Fig 8.5)
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S804
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch8-fanout
+**Author**: Anu automated extraction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S804_research.json`
-- Adequacy: `Technical/docs/chapters/CH8_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S804_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S804`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `STIGLER_1963_TABLE_17`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S804`
+- Subsource registry: subsource registry → `STIGLER_1963_TABLE_17`
 
 ---
 
@@ -21,9 +21,9 @@
 
 Time bins (unequal width): 1939-41, 1942-44, 1945-47, 1948-50, 1951-54, 1955-57.
 
-`content_type = time_series` (per Phase 3 dossier and Phase 4 adequacy ratification). Two subseries, one per industry group. The series is short (6 observations per subseries) and the time bins are unequal, but Shaikh treats it as a time series.
+`content_type = time_series` (per Phase 3 dossier and the adequacy step ratification). Two subseries, one per industry group. The series is short (6 observations per subseries) and the time bins are unequal, but Shaikh treats it as a time series.
 
-Per the playbook recipe (time_series): tolerance 1.0%.
+Per the project's time-series handling convention: tolerance 1.0%.
 
 ## 2. Why it matters in Chapter 8
 
@@ -83,7 +83,7 @@ The midpoint-as-year convention preserves time-series ordering. The unequal-bin 
 
 ## 9. Validation expectation
 
-- **Tolerance**: ±1.0% (time_series per playbook).
+- **Tolerance**: ±1.0% (time-series convention).
 - Compare loaded long-form values to the corresponding xlsx cells on the (bin_label, subseries) key.
 - Sanity check: computed group means should match Stigler's reported 7.066667 and 6.891667 to four decimal places.
 - Expected MAE: 0.0 (cells loaded directly from xlsx).

@@ -1,16 +1,16 @@
 # S218 -- GDP per Capita Richest Four and Poorest Four Countries (Maddison), 1600-2000
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S218
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave2-ch2
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S218_research.json`
-- Adequacy: `Technical/docs/chapters/CH2_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S218_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S218`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S218`
 
 ---
 
@@ -38,7 +38,6 @@ Closes the chapter with a stark quantitative measure of global inequality: the r
 
 **Formula**: `richest4_avg = mean(top 4 excluding KW/QA/VE); poorest4_avg = mean(bottom 4); ratio = richest4/poorest4`
 
-
 1. Read precomputed RICHEST 4, POOREST 4, RATIO rows from chopped table.
 2. Extension: MPD 2023 requires re-applying the exclusion rule (and possibly adding Macao, Luxembourg). Deferred.
 
@@ -60,7 +59,7 @@ Closes the chapter with a stark quantitative measure of global inequality: the r
 ## 8. Cross-references
 
 - Book reference: Shaikh (2016), Ch. 2, Figures 2.16 and 2.17
-- Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
+- Knowledge Base: figure-linkage reference
 - Predecessor (CD2): see registry `predecessor_ids` block.
 
 ## 9. Validation expectation

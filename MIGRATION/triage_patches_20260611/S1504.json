@@ -1,0 +1,21 @@
+{
+  "sid": "S1504",
+  "display_name": "Growth of nominal GDP and relative new purchasing power, US, 1948-2025",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful composite replication of book figure 15.3 (and underlying data for figure 15.4). Operationalizes Shaikh's central inflation variable - relative new purchasing power pp = (domestic credit + current account)/GDP - against nominal GDP growth. Source map (BEA NIPA + IMF IFS) verified against Appendix 15.1. MIXED_UNITS flag is genuine and is resolved here by per-subseries units (levels in USD billions, rates as decimals, deflator as index).",
+    "date": "2026-06-11"
+  },
+  "field_fixes": {"units": "per_subseries"},
+  "subseries": {
+    "S1504-GDP": {"label": "Nominal GDP", "units": "usd_billions"},
+    "S1504-pGDP": {"label": "GDP deflator", "units": "index_2005=100"},
+    "S1504-CR": {"label": "Total domestic credit (IFS lines 31+(78-88)+79+81)", "units": "usd_billions"},
+    "S1504-CA": {"label": "Current account balance", "units": "usd_billions"},
+    "S1504-gGDP": {"label": "Nominal GDP growth rate", "units": "rate_decimal"},
+    "S1504-gCR": {"label": "Domestic credit growth rate", "units": "rate_decimal"},
+    "S1504-pp": {"label": "Relative new purchasing power, (dCR + CA)/GDP", "units": "rate_decimal"},
+    "S1504-CR-modern": {"label": "IMF modern net domestic claims, USA (cross-validation)", "units": "usd"}
+  }
+}

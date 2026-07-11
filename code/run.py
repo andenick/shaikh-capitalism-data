@@ -7,6 +7,12 @@ CLI surface
     python run.py --series SID       run S00 + L01_{SID}_* -> P02_{SID}_* -> V03_{SID}_*
     python run.py --series SID --skip-validate
     python run.py --validate-only [--series SID]
+                                     with --series: validate one series;
+                                     without: run the FULL 118-series V03 batch
+                                     (continue-on-fail, regenerates VALIDATION_REPORT.json,
+                                     non-zero exit if any FAIL)
+    python run.py --gate             CI gate: anu-doctor + anchor suite + full V03 batch
+                                     (non-zero exit on any FAIL or anchor RED)
     python run.py --report           print summary table from VALIDATION_REPORT.json
 
 Phase discovery
@@ -70,7 +76,7 @@ def _discover(phase: str, series: Optional[str] = None) -> list[Path]:
     d = CODE_DIR / phase
     if not d.exists():
         return []
-    sid_re = re.compile(r"_(S\d{3,4}|AS\d{3}|ES\d{4})(?:_|\.)")  # _S201_, _S2010_, _AS101_, _ES2001_
+    sid_re = re.compile(r"_(XS\d{3,4}|S\d{3,4}|AS\d{3}|ES\d{4})(?:_|\.)")  # _XS003_, _XS2001_, _S201_, _S2010_, _AS101_, _ES2001_ (XS first so _XS### matches before the S alternative)
     out = []
     for p in sorted(d.iterdir()):
         if p.suffix != ".py":
@@ -223,6 +229,160 @@ def cmd_series(series: str, validate_only: bool = False, skip_validate: bool = F
     return 0 if overall == "PASS" else 1
 
 
+def _validator_sid(path: Path) -> Optional[str]:
+    """Extract the series id from a V03_<SID>.py validator filename."""
+    import re
+    m = re.match(r"^V03_(XS\d{3,4}|S\d{3,4}|AS\d{3}|ES\d{4})\.py$", path.name)
+    return m.group(1) if m else None
+
+
+def _regenerate_report(rows: dict[str, dict]) -> Path:
+    """Write the per-series results into VALIDATION_REPORT.json.
+
+    Each V03 ``run()`` return dict is the authoritative row for that series (this
+    mirrors what the individual validators self-write, and additionally covers the
+    handful that do NOT self-write — S703/S704/S801 — so a full batch REGENERATES
+    the whole report and clears report-staleness, doctor P43/P41, F-3B-02).
+    """
+    rpt_path = paths.TECHNICAL / "VALIDATION_REPORT.json"
+    if rpt_path.exists():
+        rpt = json.loads(rpt_path.read_text(encoding="utf-8"))
+    else:
+        rpt = {"schema_version": "anu-validation-v1.0", "series": {}}
+    rpt.setdefault("series", {})
+    stamp = time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime())
+    for sid, row in rows.items():
+        row = dict(row)
+        row.setdefault("validated_at", stamp)
+        rpt["series"][sid] = row
+    rpt["generated_at"] = stamp
+    rpt["generated_by"] = "run.py --validate-only (full batch)"
+    rpt_path.write_text(json.dumps(rpt, indent=2, default=str), encoding="utf-8")
+    return rpt_path
+
+
+def cmd_validate_batch() -> int:
+    """Run every V03 validator (all series), continue-on-fail, regenerate the report.
+
+    Dispatches over the same per-series validator path as ``--series SID
+    --validate-only`` but for all 118 series in SID order. Prints a summary table
+    and exits non-zero if any series is FAIL/ERROR.
+    """
+    vdir = CODE_DIR / "V03_validators"
+    validators: list[tuple[str, Path]] = []
+    for p in sorted(vdir.iterdir()):
+        if p.suffix != ".py" or p.name.startswith("_") or p.name == "__init__.py":
+            continue
+        sid = _validator_sid(p)
+        if sid:
+            validators.append((sid, p))
+    validators.sort(key=lambda t: t[0])
+
+    print(f"=== RSCD validate-only: full batch ({len(validators)} series) ===")
+    t0 = time.time()
+    rows: dict[str, dict] = {}
+    results: list[tuple[str, str, float]] = []
+    fails: list[str] = []
+    for sid, path in validators:
+        t = time.time()
+        result = _load_and_run(path)
+        dt = time.time() - t
+        status = str(result.get("status", "OK"))
+        rows[sid] = result
+        results.append((sid, status, dt))
+        if status in ("ERROR", "FAIL"):
+            fails.append(sid)
+        print(f"  {sid:8} {status:24} ({dt:5.1f}s)")
+
+    rpt_path = _regenerate_report(rows)
+
+    # Summary table by status
+    from collections import Counter
+    counts = Counter(s for _, s, _ in results)
+    total = time.time() - t0
+    print("\n=== SUMMARY ===")
+    for status, n in sorted(counts.items()):
+        print(f"  {status:28} {n:3}")
+    print(f"  {'TOTAL':28} {len(results):3}")
+    print(f"\n  report regenerated: {rpt_path}")
+    print(f"  wall-clock: {total:.1f}s")
+    if fails:
+        print(f"\n  FAIL/ERROR series ({len(fails)}): {', '.join(fails)}")
+        print("=== BATCH: FAIL ===")
+        return 1
+    print("=== BATCH: PASS (all series non-FAIL) ===")
+    return 0
+
+
+def cmd_gate() -> int:
+    """Aggregate CI gate: anu-doctor (check_project) + anchor suite + full V03 batch.
+
+    Exit non-zero if ANY of the three reports a failure (doctor FAIL, anchor RED,
+    or any V03 FAIL/ERROR). Doctor P24/P36/P42 etc. are reported honestly — the
+    gate does NOT special-case pending-P4 failures.
+    """
+    import subprocess
+    print("############################################################")
+    print("# RSCD --gate : doctor + anchor suite + V03 batch")
+    print("############################################################")
+    project_root = paths.PROJECT_ROOT
+    parts: dict[str, int] = {}
+
+    # 1) anu-doctor (check_project) — canonical wrapper, text mode for exit code.
+    print("\n----- [1/3] anu-doctor (check_project --project Technical) -----")
+    import os
+    # Resolve the framework doctor (check_project.py) from the ANU_DOCTOR env var
+    # so no workspace-internal path is hard-coded. The doctor is a framework tool
+    # and does not ship in the public replication bundle; if it is unavailable the
+    # step is skipped and the gate still runs the anchor suite + the V03 batch.
+    doctor_env = os.environ.get("ANU_DOCTOR", "")
+    doctor_py = Path(doctor_env) if doctor_env else None
+    if doctor_py is None or not doctor_py.is_file():
+        print("    SKIPPED - anu-doctor not available "
+              "(set ANU_DOCTOR=/path/to/check_project.py to enable).")
+        parts["doctor"] = 0
+    else:
+        try:
+            proc = subprocess.run(
+                [sys.executable, str(doctor_py), "--project", "Technical"],
+                cwd=str(project_root), capture_output=True, text=True, timeout=600,
+            )
+            sys.stdout.write(proc.stdout)
+            if proc.stderr.strip():
+                sys.stderr.write(proc.stderr)
+            parts["doctor"] = proc.returncode
+        except Exception as exc:
+            print(f"    ERROR running doctor: {exc}")
+            parts["doctor"] = 1
+
+    # 2) anchor suite (Decision 0011) — RED -> non-zero.
+    print("\n----- [2/3] anchor suite (Decision 0011) -----")
+    try:
+        from V03_validators._v03_anchor_lib import run_anchor_suite, _print_summary
+        report = run_anchor_suite()
+        _print_summary(report)
+        n_red = report["summary"]["total_red_series"]
+        parts["anchors"] = 1 if n_red else 0
+    except Exception as exc:
+        print(f"    ERROR running anchor suite: {exc}")
+        parts["anchors"] = 1
+
+    # 3) full V03 batch (also regenerates the report).
+    print("\n----- [3/3] V03 full batch -----")
+    parts["v03_batch"] = cmd_validate_batch()
+
+    # Aggregate
+    print("\n############################################################")
+    print("# GATE RESULT")
+    print("############################################################")
+    for name in ("doctor", "anchors", "v03_batch"):
+        rc = parts.get(name, 1)
+        print(f"  {name:12} {'PASS' if rc == 0 else 'FAIL'}  (exit {rc})")
+    overall = 0 if all(rc == 0 for rc in parts.values()) else 1
+    print(f"\n  GATE: {'PASS' if overall == 0 else 'FAIL'}")
+    return overall
+
+
 def cmd_report() -> int:
     rpt_path = paths.TECHNICAL / "VALIDATION_REPORT.json"
     if not rpt_path.exists():
@@ -251,6 +411,7 @@ def main() -> int:
     parser.add_argument("--series", type=str, default=None)
     parser.add_argument("--validate-only", action="store_true")
     parser.add_argument("--skip-validate", action="store_true")
+    parser.add_argument("--gate", action="store_true")
     parser.add_argument("--report", action="store_true")
     args = parser.parse_args()
 
@@ -258,15 +419,16 @@ def main() -> int:
         return cmd_list()
     if args.health:
         return cmd_health()
+    if args.gate:
+        return cmd_gate()
     if args.report:
         return cmd_report()
     if args.series:
         return cmd_series(args.series, validate_only=args.validate_only,
                           skip_validate=args.skip_validate)
     if args.validate_only:
-        # No series specified — error
-        print("--validate-only requires --series (full-batch validation not yet implemented)")
-        return 2
+        # No series specified — run the full 118-series batch (F-ORCH-01).
+        return cmd_validate_batch()
     parser.print_help()
     return 0
 

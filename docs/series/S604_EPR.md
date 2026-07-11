@@ -4,7 +4,9 @@
 
 ## Method
 
-Per the Ch6 GPIM construction pipeline (see `Technical/docs/chapters/CH6_GPIM_SUMMARY.md`) and the Anu Framework anti-degradation rule, **extension does NOT splice the published S604 values**. Instead, the extension re-fetches the underlying NIPA / BEA Fixed Asset / IRS / Census components and re-runs the formula end-to-end at the current vintage.
+Per the Ch6 GPIM construction pipeline (see chapter methodology summary) and the Anu Framework anti-degradation rule, **extension does NOT splice the published S604 values**. Instead, the extension re-fetches the underlying US national-accounts components (BEA National Income and Product Accounts / Fixed Asset accounts, IRS, Census) and re-runs the formula end-to-end at the current vintage.
+
+> **Scope note (Decision 0015).** The shipped data covers the book period only, transcribed verbatim from Shaikh's Appendix 6.8; the linked components XS003 / XS004 / XS009 are recorded as **documentary lineage**, not a live computation wired into this package. The component-refetch-and-recompute recipe below is the *designed forward extension* method; live GPIM re-computation is on the roadmap (Phase L) and has not yet been executed.
 
 1. Fetch BEA NIPA tables via `S00_apis.bea_table` (`BEA_API_KEY` required) using the table ids documented in the dossier `primary_source`.
 2. Fetch BEA Fixed Asset T6.1, T6.4, T6.7, T6.8 via the same client.
@@ -23,7 +25,7 @@ No proxies are used in the book period. Book period is fully sourced from primar
 
 ## No-Synthetic Disclosure
 
-No synthetic values, interpolations, or freezes are used. All values are verbatim from Shaikh's posted Appendix 6.8 chopped tables (MD5-verified per `SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/README.md` for the BEA 1993 staged inputs).
+No synthetic values, interpolations, or freezes are used. All values are verbatim from Shaikh's posted Appendix 6.8 chopped tables (MD5-verified per reconstructed book source data for the BEA 1993 staged inputs).
 
 ## Failure Mode Table
 
@@ -41,4 +43,16 @@ CD2 / RSCD round-trip parity expected within tolerance for the book period. Info
 
 ## Anti-Degradation Compliance
 
-Per Anu Framework: extension MUST re-fetch the BEA / IRS / FRB component series and re-compute the formula end-to-end. Splicing the published series is FORBIDDEN. Loader caches BEA / FRED responses per `S00_cache` with 30-day TTL (book-period values: TTL=None).
+Per the Anu Framework anti-degradation rule, the *designed* extension re-fetches the BEA / IRS / FRB component series and re-computes the formula end-to-end; splicing the published series is FORBIDDEN. (Book-period data ships as the verbatim Appendix 6.8 transcription; the recompute is the roadmap Phase L method — see the Scope note above.) The loader caches BEA / FRED responses with a 30-day time-to-live (book-period values are cached permanently).
+
+## Notation (plain-language key)
+
+- **IROP / incremental rate of profit** — the return on newly added capital: the year-to-year change in profit divided by the new investment that produced it (contrast with the *average* rate of profit on the whole existing capital stock).
+- **GPIM** — the corrected capital-stock-and-surplus construction Shaikh uses across Chapter 6 (his integrated measure of the profit rate).
+- **NMINT** — net monetary interest.
+- **NIPA / BEA / FA / IRS / FRB** — US National Income and Product Accounts / Bureau of Economic Analysis / its Fixed Asset accounts / Internal Revenue Service / Federal Reserve Board.
+- **FISIM** — financial intermediation services indirectly measured (a national-accounts imputation affecting the T7.11 interest line).
+- **XS003 / XS004 / XS009** — appendix "extra series" recording GPIM construction internals; documentary lineage, not a live computation.
+- **L01 / V03** — the load and validate scripts that build and check the series.
+- **CD2** — the predecessor build of this dataset, retained for cross-checking.
+- **Phase 5 / Phase L** — Anu pipeline stages: Phase 5 = ingestion (the shipped book-period build); Phase L = the roadmap live-recompute extension stage.

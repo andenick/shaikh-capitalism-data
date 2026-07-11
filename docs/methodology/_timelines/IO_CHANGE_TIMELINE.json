@@ -1,0 +1,68 @@
+{
+  "title": "BEA Benchmark Input-Output Accounts Timeline (Phase-0 canonical reference)",
+  "scope": "US Bureau of Economic Analysis benchmark input-output (I-O) accounts: benchmark years, classification system (SIC vs NAICS), industry-detail/order, and the capital-flow benchmark matrix, as relevant to the RSCD replication of Shaikh (2016) Chapters 6/7/9.",
+  "compiled_by": "RSCD Phase-0 research agent",
+  "compiled_date": "2026-06-30",
+  "web_verified": true,
+  "benchmark_cadence": "BEA publishes a benchmark I-O account every 5 years, for years ending in 2 and 7, keyed to the quinquennial Economic Census.",
+  "detail_levels": "Benchmark I-O is generally available at four levels: sector (~15 industry groups), summary (~71 groups), underlying summary (~138 groups), and detail (~402-405 industries). Detail-level estimates are available only for benchmark years.",
+  "cross_checks": {
+    "local_CH9_RESEARCH_SUMMARY": "Confirms Shaikh's 1947-1998 I-O panel uses six benchmark cross-sections (1947,1958,1963,1967,1972,1998); 1947-1972 from Ochoa (1984) 71-order; 1998 from BEA industry-by-industry Use table 65-order; NAICS-vs-SIC break prevents a continuous panel; capital-flow benchmark matrix unavailable post-1997.",
+    "local_ADR-005_NAICS": "Local naics_concordance_master.csv already stages NAICS 2002-2022 stability flags for Shaikh's 30-industry Ch7 sample. This timeline adds the upstream benchmark-year classification history and the official Census concordance files."
+  },
+  "benchmark_years": [
+    {"benchmark_year": 1947, "classification_system": "1957 SIC", "industry_detail": "~450+ detail (historical)", "notable_change": "First BEA benchmark I-O. Basis for Shaikh/Ochoa 1947 71-order cross-section.", "authoritative_url": "https://www.bea.gov/industry/historical-benchmark-input-output-tables"},
+    {"benchmark_year": 1958, "classification_system": "1957 SIC", "industry_detail": "detail", "notable_change": "Shaikh/Ochoa 1958 cross-section.", "authoritative_url": "https://www.bea.gov/industry/historical-benchmark-input-output-tables"},
+    {"benchmark_year": 1963, "classification_system": "1957 SIC", "industry_detail": "detail", "notable_change": "Shaikh/Ochoa 1963 cross-section.", "authoritative_url": "https://www.bea.gov/industry/historical-benchmark-input-output-tables"},
+    {"benchmark_year": 1967, "classification_system": "SIC (version current in year)", "industry_detail": "~478 detail", "notable_change": "Shaikh/Ochoa 1967 cross-section.", "authoritative_url": "https://www.bea.gov/industry/historical-benchmark-input-output-tables"},
+    {"benchmark_year": 1972, "classification_system": "SIC (1972 SIC)", "industry_detail": "~496 detail", "notable_change": "Shaikh/Ochoa 1972 cross-section (last of the historical Ochoa 71-order panel used by Shaikh).", "authoritative_url": "https://www.bea.gov/industry/historical-benchmark-input-output-tables"},
+    {"benchmark_year": 1977, "classification_system": "1977 SIC", "industry_detail": "~537 detail", "notable_change": "Not used in Shaikh's Ch9 panel (his historical set jumps 1972 -> 1998).", "authoritative_url": "https://www.bea.gov/industry/historical-benchmark-input-output-tables"},
+    {"benchmark_year": 1982, "classification_system": "1977 SIC", "industry_detail": "~537 detail", "notable_change": "SIC-era benchmark.", "authoritative_url": "https://www.bea.gov/industry/historical-benchmark-input-output-tables"},
+    {"benchmark_year": 1987, "classification_system": "1987 SIC", "industry_detail": "~498 detail", "notable_change": "Last-but-one SIC benchmark; anchors the 1987-SIC side of the Census SIC<->NAICS bridge.", "authoritative_url": "https://www.bea.gov/industry/historical-benchmark-input-output-tables"},
+    {"benchmark_year": 1992, "classification_system": "1987 SIC", "industry_detail": "~498 detail", "notable_change": "LAST SIC-basis benchmark I-O. Do not splice to 1997+ (classification break).", "authoritative_url": "https://www.bea.gov/industry/historical-benchmark-input-output-tables"},
+    {"benchmark_year": 1997, "classification_system": "1997 NAICS", "industry_detail": "~498 detail / 65-order summary (industry-by-industry)", "notable_change": "FIRST NAICS-basis benchmark I-O. Hard classification break vs. 1992-and-earlier SIC benchmarks. First benchmark to include software as investment. Also the LAST benchmark capital-flow table (see capital_flow_matrix).", "authoritative_url": "https://apps.bea.gov/scb/pdf/2002/12December/1202I-OAccounts2Box27.pdf"},
+    {"benchmark_year": 2002, "classification_system": "2002 NAICS", "industry_detail": "detail / summary", "notable_change": "Incorporated into the 2009 NIPA comprehensive revision. Published SCB Oct 2007.", "authoritative_url": "https://apps.bea.gov/scb/pdf/2007/10%20october/1007_benchmark_io.pdf"},
+    {"benchmark_year": 2007, "classification_system": "2007 NAICS", "industry_detail": "detail (~405) / summary (~71) / sector (~15)", "notable_change": "First benchmark FULLY INTEGRATED with the annual industry accounts and the NIPAs (supply-use framework). Incorporated into the 2013 NIPA comprehensive revision.", "authoritative_url": "https://www.bea.gov/industry/benchmark-input-output-data"},
+    {"benchmark_year": 2012, "classification_system": "2012 NAICS", "industry_detail": "detail / summary / sector", "notable_change": "Incorporated into the 2018 NIPA comprehensive update. 2007<->2012 I-O concordance in SCB Aug 2018 Appendix A.", "authoritative_url": "https://apps.bea.gov/scb/issues/2018/08-august/pdf/0818-industry-text.pdf"},
+    {"benchmark_year": 2017, "classification_system": "2017 NAICS", "industry_detail": "detail / summary / sector (supply-use tables)", "notable_change": "Incorporated into the 2023 harmonized comprehensive update; 2017-NAICS effects small (no summary/sector reclassifications). Most recent benchmark as of 2026-06-30.", "authoritative_url": "https://apps.bea.gov/scb/issues/2023/06-june/0623-nea-preview.htm"}
+  ],
+  "classification_break": {
+    "event": "SIC -> NAICS transition",
+    "first_naics_benchmark": 1997,
+    "last_sic_benchmark": 1992,
+    "impact": "The 1947-1992 benchmark I-O tables are SIC-based; the 1997+ tables are NAICS-based. BEA states the historical (pre-1997) tables 'should not be used as a time series' and do not reflect subsequent NIPA comprehensive revisions. For RSCD Ch9 this is the hard limit that prevents splicing the Ochoa 1947-1972 71-order panel to the 1998 BEA 65-order NAICS Use table into one continuous series.",
+    "authoritative_url": "https://www.bea.gov/industry/historical-benchmark-input-output-tables"
+  },
+  "industry_order_notes": [
+    {
+      "topic": "Ochoa 71-order vs BEA 65-order",
+      "detail": "Shaikh's Ch9 historical cross-sections (1947,1958,1963,1967,1972) reuse Ochoa (1984)'s 71-industry-order compilation (as in Shaikh 1998a); real estate is excluded from the Ochoa tables. Shaikh's 1998 cross-section uses BEA's 65-order industry-by-industry Use table (post-redefinition), with the real-estate column corrected for owner-occupied-housing imputations (NIPA T7.12 lines 133-134). The 71-order and 65-order schemes are not directly conformable.",
+      "source": "Local CH9_RESEARCH_SUMMARY.md; Ochoa (1984); Shaikh (1998a)"
+    },
+    {
+      "topic": "BEA summary-level industry order",
+      "detail": "BEA benchmark summary detail is ~71 industry groups; underlying-summary ~138; detail ~402-405 (2007+). The 'order' (row/column sequence and aggregation) is revised at each benchmark, so industry indices are not stable across benchmark years even within the NAICS era.",
+      "source": "BEA Benchmark I-O documentation"
+    }
+  ],
+  "capital_flow_matrix": {
+    "description": "The BEA benchmark CAPITAL FLOW TABLE (capital flow matrix): a use-type-by-using-industry matrix distributing new equipment, software, and structures investment across using industries.",
+    "cadence": "Historically produced for each benchmark year (years ending in 2 and 7).",
+    "last_benchmark": 1997,
+    "release": "1997 capital flow table released in SCB November 2003; it was the seventh in the series and the FIRST on a NAICS basis and the first to include software as an investment category.",
+    "discontinuation": "No benchmark capital-flow table has been published for 2002 or later; the benchmark capital-flow matrix was effectively DISCONTINUED after 1997. (BEA later explored ANNUAL capital-flow tables as research, but the fixed benchmark asset-by-industry matrix ends at 1997.)",
+    "rscd_impact": "Shaikh's Ch9 fixed-capital wage-profit model distributes BEA Fixed Asset Tables 3.1ES/3.4ES across industries USING the 1997 benchmark capital flow matrix. Any post-1998 fixed-capital replication must APPROXIMATE the asset-by-industry distribution from BEA's detailed Fixed Asset Tables (by type x industry) because the benchmark matrix no longer exists. This is CH9 open-question 4 and a structural obstacle to extension.",
+    "authoritative_url": "https://www.bea.gov/industry/capital-flow-data",
+    "supporting_url": "https://www.bea.gov/help/faq/18"
+  },
+  "authoritative_sources": [
+    {"label": "BEA Historical Benchmark Input-Output Tables", "url": "https://www.bea.gov/industry/historical-benchmark-input-output-tables"},
+    {"label": "BEA Benchmark Input-Output Data", "url": "https://www.bea.gov/industry/benchmark-input-output-data"},
+    {"label": "BEA Input-Output Accounts Data", "url": "https://www.bea.gov/data/industries/input-output-accounts-data"},
+    {"label": "BEA FAQ 22 - SIC/I-O/NAICS concordance codes", "url": "https://www.bea.gov/help/faq/22"},
+    {"label": "BEA Capital Flow Data", "url": "https://www.bea.gov/industry/capital-flow-data"},
+    {"label": "SCB Dec 2002 - Benchmark I-O Accounts 1997", "url": "https://apps.bea.gov/scb/pdf/2002/12December/1202I-OAccounts2Box27.pdf"},
+    {"label": "SCB Oct 2007 - Benchmark I-O Accounts 2002", "url": "https://apps.bea.gov/scb/pdf/2007/10%20october/1007_benchmark_io.pdf"},
+    {"label": "SCB Aug 2018 - Preview 2018 Comprehensive Update of Industry Economic Accounts (2007/2012 I-O concordance, App. A)", "url": "https://apps.bea.gov/scb/issues/2018/08-august/pdf/0818-industry-text.pdf"}
+  ]
+}

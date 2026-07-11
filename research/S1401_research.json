@@ -58,7 +58,7 @@
       "subseries_label": "Compensation of Employees (EC)",
       "source": "BEA NIPA Table 1.10 line 2",
       "role": "numerator of wage share",
-      "fred_proxy": "A576RC1 / W209RC1 (compensation of employees, paid)"
+      "fred_proxy": "W209RC1 (total Compensation of Employees; FRED labels it 'Compensation of employees, received' / NIPA Table 2.1, which is the same total-compensation aggregate as the book's Table 1.10 line 2 'paid' and coincides in NIPA accounting). Corrected 2026-07-01 from the earlier A576RC1 id, which was the wrong FRED series (Wage & Salary Disbursements only, ~20% low, and produced a spurious splice break)."
     },
     {
       "subseries_label": "Wage share",
@@ -79,12 +79,12 @@
       "concerns": ["Aggregate to annual frequency by averaging quarterly observations to match Shaikh's annual chart"]
     },
     {
-      "subseries_label": "Compensation of employees, paid",
-      "source": "FRED (BEA NIPA Table 1.10 line 2)",
-      "url": "https://fred.stlouisfed.org/series/A576RC1",
+      "subseries_label": "Compensation of employees (total)",
+      "source": "FRED W209RC1 (BEA NIPA)",
+      "url": "https://fred.stlouisfed.org/series/W209RC1",
       "units": "Billions of dollars",
       "splice_strategy": "growth_rate",
-      "concerns": ["A576RC1 corresponds to NIPA Table 1.10 line 2 (Compensation of employees, paid: domestic) used by Shaikh"]
+      "concerns": ["W209RC1 is the total-compensation aggregate matching Shaikh's numerator. FRED labels W209RC1 'Compensation of employees, received' (NIPA Table 2.1); the book cites 'Compensation of employees, paid' from NIPA Table 1.10 line 2. Both are the same total-compensation aggregate and coincide in NIPA accounting. Corrected 2026-07-01 from the earlier A576RC1 proxy, which was the wrong FRED id (Wage & Salary Disbursements only, ~20% low)."]
     }
   ],
   "methodology_notes": [
@@ -99,7 +99,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "opus-subagent-wave-c-ch14",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "CD2 S068 ported; book quotes verified verbatim against PDF pp. 664 and 892 (Appendix 14.2). FRED extension keys identified."

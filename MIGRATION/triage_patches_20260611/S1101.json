@@ -1,0 +1,76 @@
+{
+  "sid": "S1101",
+  "display_name": "Trade balances in major countries, 1960-2009",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Figure 11.2 (export/import ratios for 15 major OECD countries plus partial Belgium) from IMF IFS; uniform units, no mixing. Country labels assigned (lettered subseries map to US/UK/Germany/Japan).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1101-A": {
+      "label": "United States trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-B": {
+      "label": "United Kingdom trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-C": {
+      "label": "Germany trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-D": {
+      "label": "Japan trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-AUSTRALIA": {
+      "label": "Australia trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-BELGIUM": {
+      "label": "Belgium trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-CANADA": {
+      "label": "Canada trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-DENMARK": {
+      "label": "Denmark trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-FINLAND": {
+      "label": "Finland trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-FRANCE": {
+      "label": "France trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-ITALY": {
+      "label": "Italy trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-KOREA_REPUBLIC_O": {
+      "label": "Republic of Korea trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-NETHERLANDS": {
+      "label": "Netherlands trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-NORWAY": {
+      "label": "Norway trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-SPAIN": {
+      "label": "Spain trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    },
+    "S1101-SWEDEN": {
+      "label": "Sweden trade balance (exports/imports)",
+      "units": "ratio (exports/imports)"
+    }
+  }
+}

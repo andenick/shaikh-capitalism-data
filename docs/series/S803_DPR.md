@@ -1,17 +1,17 @@
 # S803 — Rate of Profit on Equity vs. CR8, Bain 42-Industry Sample, 1936-1940 (Figs 8.3 and 8.4)
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S803
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch8-fanout
+**Author**: Anu automated extraction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S803_research.json`
-- Adequacy: `Technical/docs/chapters/CH8_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S803_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S803`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `BAIN_1951_TABLE_I`, `BAIN_DEMSETZ_CORRECTED_GROUPED`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S803`
+- Subsource registry: subsource registry → `BAIN_1951_TABLE_I`, `BAIN_DEMSETZ_CORRECTED_GROUPED`
 
 ---
 
@@ -25,7 +25,7 @@
 
 `content_type = cross_sectional`: the 42 industry observations are a single 1936-1940 cross-section; Fig 8.4 is the same cross-section re-binned, not a second time point.
 
-Per the playbook recipe (cross_sectional): tolerance 0.5%, no splice, extension N/A.
+Per the project's cross-sectional handling convention: tolerance 0.5%, no splice, extension N/A.
 
 ## 2. Why it matters in Chapter 8
 
@@ -88,7 +88,7 @@ S803-FIG84-DEMSETZ (Demsetz corrected):
 2. **Demsetz correction is integral.** Fig 8.4 in Shaikh uses the corrected values from Demsetz 1973b p. 12, NOT Bain's original Table II values. The loader emits both (`S803-FIG84-BAIN` and `S803-FIG84-DEMSETZ`) so the validator can confirm against the chopped truth. Visualization should use the Demsetz-corrected line as the primary.
 3. **Stub-name correction.** Renamed from stale "Interest Rates, Prices, and Equity Data" (CD2 S041 Ch10 carryover). `cd2_id` nulled.
 4. **Firm-level micro data not available.** Only the industry-level averages and decile groupings are in chopped tables.
-5. **R² values from Shaikh's text** (0.0781 linear, 0.1896 quadratic, 0.033 grouped corrected) are reported in the EPR provenance and can be re-computed from the loaded data for sanity-check in A05 analysis if desired (not required by playbook).
+5. **R² values from Shaikh's text** (0.0781 linear, 0.1896 quadratic, 0.033 grouped corrected) are reported in the EPR provenance and can be re-computed from the loaded data for sanity-check in downstream analysis if desired (not required by the extraction convention).
 
 ## 8. Cross-references
 
@@ -102,6 +102,6 @@ S803-FIG84-DEMSETZ (Demsetz corrected):
 
 ## 9. Validation expectation
 
-- **Tolerance**: ±0.5% (cross_sectional per playbook).
+- **Tolerance**: ±0.5% (cross-sectional convention).
 - Compare loaded long-form values to the corresponding xlsx values on the (subseries, key) join.
 - Expected MAE: 0.0 (cells loaded directly from xlsx).

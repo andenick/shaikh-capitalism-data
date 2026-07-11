@@ -1,0 +1,15 @@
+{
+  "sid": "XS2304",
+  "display_name": "RMB misalignment estimates, extended-PPP approach (Weber & Shaikh 2020, Fig 4)",
+  "publish": false,
+  "triage": {
+    "verdict": "cull",
+    "reason": "Weber & Shaikh (2020) Figure 4 is a literature-compilation SCATTER of ~35-40 individual RMB-misalignment estimates whose entire signal is the DISPERSION of the estimates. The chopped series contains only 2 points: the named high (+50%, Coudert & Couharde 2007) and low (-36%, Cheung 2012) that the paper quotes by name in body text. Two isolated dots do not convey the figure's signal (the spread of dozens of estimates) and would misrepresent the study if charted as the figure. Per the no-fabrication rule the project (correctly) declined to chart-digitize the ~35 unnamed scatter dots; the XS2304/XS2305 README explicitly defers full reconstruction to a v1.1 literature-extraction pass. Until that pass populates the full scatter from the 4 cited reviews, this 2-point stub is not publishable. The 2 named endpoints remain documented in the DPR/EPR as the paper's quoted extremes.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "XS2304-A": {"label": "RMB misalignment estimate (extended-PPP), named endpoints", "units": "percent"}
+  },
+  "field_fixes": {},
+  "republish_condition": "Populate the full ~35-40-point Fig 4 scatter via the v1.1 literature-extraction pass (Cline-Williamson 2007, Dunaway-Li 2005, Cheung-Chinn-Fujii 2010a, Cheung 2012), following paper note 17's compilation rule, then re-triage to publish."
+}

@@ -84,7 +84,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "opus-subagent-wave-b-ch10",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "CD2 S055 ported; Shiller URL verified per Appendix 10.1; corp yield inherited from S1002"

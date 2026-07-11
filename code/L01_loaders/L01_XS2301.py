@@ -21,12 +21,32 @@ from S00_setup import S00_apis  # noqa: E402
 
 SERIES_ID = "XS2301"
 OUT = DATA_RAW / f"{SERIES_ID}_CENSUS_FT900.parquet"
-ANCHOR_CSV = SALVAGED_BOOK_DATA / "Reconstructed" / "XS2301_fig1_anchors.csv"
+
+
+def _resolve_anchor_csv() -> Path:
+    """Resolve the fig-1 anchor CSV, tolerating the ES/XS filename split
+    (prefer XS, fall back to the legacy ES name in read-only SalvagedInputs)."""
+    recon = SALVAGED_BOOK_DATA / "Reconstructed"
+    xs = recon / "XS2301_fig1_anchors.csv"
+    es = recon / "ES2301_fig1_anchors.csv"
+    if xs.exists():
+        return xs
+    if es.exists():
+        return es
+    return xs
+
+
+ANCHOR_CSV = _resolve_anchor_csv()
 START_YEAR = 2002
 END_YEAR = 2024
 
 PARTNERS = [
-    ("world", "XS2301-world", "World", "CENSUS_FT900_EXH1"),
+    # World total is Census country code 0004, published at the same per-country
+    # balance page as China (balance/c0004.html) — NOT FT900 Exhibit 1. The
+    # shipped data, registry, dossier, and DPR are all on CENSUS_FT900_C0004;
+    # the loader was aligned to c0004 on 2026-07-10 (post-v1.6 item A1) so a
+    # future RUN reproduces the shipped world source id rather than re-diverging.
+    ("0004", "XS2301-world", "World", "CENSUS_FT900_C0004"),
     ("5700", "XS2301-china", "China", "CENSUS_FT900_C5700"),
 ]
 
@@ -66,7 +86,7 @@ def _load_anchors() -> list[dict]:
     for _, r in df.iterrows():
         partner = str(r["partner"])
         sub_id = "XS2301-world" if partner == "World" else "XS2301-china"
-        source_id = "CENSUS_FT900_EXH1" if partner == "World" else "CENSUS_FT900_C5700"
+        source_id = "CENSUS_FT900_C0004" if partner == "World" else "CENSUS_FT900_C5700"
         rows.append({
             "year": int(r["year"]),
             "value": float(r["balance_billion_usd"]),

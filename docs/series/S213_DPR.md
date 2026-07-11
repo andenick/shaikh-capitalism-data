@@ -1,16 +1,16 @@
 # S213 -- US Corporate Rate of Profit, 1947-2011
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S213
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave2-ch2
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S213_research.json`
-- Adequacy: `Technical/docs/chapters/CH2_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S213_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S213`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S213`
 
 ---
 
@@ -36,7 +36,6 @@ The book's first long-run profit-rate series; setup for the central-tendency-vs-
 
 **Formula**: `r[t] = NOS_corporate[t] / K_net[t-1]`
 
-
 1. Book values reproduced from CD2 S026 (which itself replicates the Shaikh Appendix 6.7 computation).
 2. Extension: BEA T1.14/T4.1 API line-mapping under review (Phase 3 open question); marked as data_unavailable until Phase 9.
 
@@ -58,7 +57,7 @@ Rate (decimal; e.g. 0.15 = 15%)
 ## 8. Cross-references
 
 - Book reference: Shaikh (2016), Ch. 2, Figure 2.11
-- Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
+- Knowledge Base: figure-linkage reference
 - Predecessor (CD2): see registry `predecessor_ids` block.
 
 ## 9. Validation expectation

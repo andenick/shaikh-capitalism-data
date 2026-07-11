@@ -1,12 +1,12 @@
 # XS2201 — Econophysics Two-Class Income Distribution Parameters, US 2002-2016
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
 **Series ID**: XS2201
 **Content type**: `time_series`
 **Status**: study_complete
 **Authored**: 2026-05-18
-**Author**: opus-fanout-ES
+
+This series was previously catalogued under the identifier ES2201.
 
 ## 1. Definition
 
@@ -42,7 +42,8 @@ universal-arbitrage interpretation of personal income distribution.
 | XS2201-f_top3 | 2002-2016 | Table 1 col f | dimensionless | Reconstructed CSV |
 | XS2201-alpha | 2002-2016 | Table 1 col α | dimensionless | Reconstructed CSV |
 
-Underlying primary data: IRS SOI Publication 1304 Table 1.4 (AGI bin
+Underlying primary data: US Internal Revenue Service Statistics of Income
+(IRS SOI) Publication 1304 Table 1.4 (adjusted gross income (AGI) bin
 counts) and Table 1 (selected income items by size of AGI), tax years
 2002-2016. Public domain.
 
@@ -83,9 +84,7 @@ subseries.
 
 ## 8. Cross-references
 
-- Dossier: `Technical/research/XS2201_research.json`
 - Book chapter ancestor: Ch17 (Theory of personal income distribution)
-- Reconstructed: `SalvagedInputs/book_data/Reconstructed/XS2201_fitted_parameters.csv`
 
 ## 9. Validation expectation
 

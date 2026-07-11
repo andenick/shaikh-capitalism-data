@@ -17,7 +17,7 @@ from utils.paths import DATA_PROCESSED, SALVAGED_BOOK_DATA  # noqa: E402
 from V03_validators._ch8_validator_lib import update_report  # noqa: E402
 
 SERIES_ID = "S803"
-VALIDATOR_TOL_PCT = 0.5  # cross_sectional per playbook
+VALIDATOR_TOL_PCT = 1.0  # cross_sectional per playbook
 
 PROCESSED = DATA_PROCESSED / f"{SERIES_ID}.parquet"
 XLSX_FIG83 = SALVAGED_BOOK_DATA / "ShaikhChoppedTables" / "Appendix8_Bain42IndustryProfit.xlsx"

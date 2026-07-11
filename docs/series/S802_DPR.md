@@ -1,17 +1,17 @@
 # S802 — Percentage of Prices Increases or No Decreases during Contractions, in Relation to Concentration (Fig 8.2)
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S802
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch8-fanout
+**Author**: Anu automated extraction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S802_research.json`
-- Adequacy: `Technical/docs/chapters/CH8_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S802_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S802`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `SEMMLER_1984_TABLE_3_3`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S802`
+- Subsource registry: subsource registry → `SEMMLER_1984_TABLE_3_3`
 
 ---
 
@@ -19,7 +19,7 @@
 
 **S802** is Shaikh's Figure 8.2, a reproduction of the cross-sectional summary by Weston, Lustgarten, and Grottke (1974), as tabulated by Semmler (1984, *Competition, Monopoly, and Differential Profit Rates*, Table 3.3, p. 95). It records, for each of three NBER-dated US contractions, the percentage of firms in each of three CR4 concentration bins (midpoints 20, 50, 80) whose wholesale prices increased or stayed stable during the contraction.
 
-`content_type = cross_sectional`: each contraction is its own industry cross-section binned by CR4 midpoint; the three contractions are not a continuous time index. Per the playbook recipe:
+`content_type = cross_sectional`: each contraction is its own industry cross-section binned by CR4 midpoint; the three contractions are not a continuous time index. Per the project's cross-sectional handling convention:
 
 > "L01: fetch the single-year benchmark from book/source ... P02: emit as single-year row(s); no splice ... V03: compare against book values ... Extension: explicitly `not_applicable_cross_sectional` ... chopped CSV is short (one or few rows) ... Tolerance 0.5%"
 
@@ -74,6 +74,6 @@ Single observation per (cr4_midpoint, contraction). Total = 9 observations.
 
 ## 9. Validation expectation
 
-- **Tolerance**: ±0.5% (cross_sectional per playbook).
+- **Tolerance**: ±0.5% (cross-sectional convention).
 - Compare loaded long-form values to the values in `Appendix8_Semmler19843.3.xlsx` on the (cr4_midpoint, contraction) key.
 - Expected MAE: 0.0 (cells loaded directly from xlsx).

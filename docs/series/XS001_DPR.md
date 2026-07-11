@@ -8,7 +8,7 @@ GDP/GDI Decomposition and Business NOS
 
 ## Why It Matters
 
-Business NOS = Aggregate NOS - HH - NPISH - GenGov - GovEnterp. Source: Appendix Table 6.8.I.1. Used by XS003 / S602. See `CH6_GPIM_SUMMARY.md` for the full Ch6 construction pipeline.
+Business net operating surplus (NOS) = Aggregate NOS − households (HH) − non-profit institutions serving households (NPISH) − general government (GenGov) − government enterprises (GovEnterp). Source: Appendix Table 6.8.I.1. Used by XS003 and S602.
 
 ## Sources (per subseries)
 
@@ -21,7 +21,7 @@ Business NOS = Aggregate NOS - HH - NPISH - GenGov - GovEnterp. Source: Appendix
 | XS001-E | I1 | `NOSgengov` | BEA NIPA / BEA FA / IRS SOI / Census | identity |
 | XS001-F | I1 | `NOSgoventerp` | BEA NIPA / BEA FA / IRS SOI / Census | identity |
 
-The canonical Shaikh-published values are transcribed from `SalvagedInputs/book_data/ShaikhChoppedTables/Appendix6_Table68*.xlsx` (Appendix 6.8). Upstream agencies are BEA (NIPA / Fixed Asset Accounts), IRS SOI, U.S. Census Bureau Historical Statistics 1975 (IRS book values), and FRB G.17. All public domain.
+The canonical Shaikh-published values are transcribed from the published Chapter 6 appendix workbook (Shaikh 2016, Appendix 6.8). Upstream agencies are the Bureau of Economic Analysis (BEA) — its National Income and Product Accounts (NIPA) and Fixed Asset accounts (FA) — the IRS Statistics of Income (SOI), the U.S. Census Bureau (Historical Statistics 1975, for IRS book values), and the Federal Reserve Board G.17 industrial-production release (FRB G.17). All public domain.
 
 ## Construction
 
@@ -45,4 +45,4 @@ billions_current_usd
 
 ## Validation Expectation
 
-`V03_XS001_validate.py` round-trip-validates against the Appendix 6.8 source workbook at 1.0% tolerance. Per the Phase 4 adequacy report (`CH6_ADEQUACY_REPORT.json`), Phase 5 blockers B2 (NIPA T7.11 FISIM remap, resolver in `_nipa_t711_line_resolver.py`) and B3 (BEA 1993 depreciation rates, staged at `Reconstructed/BEA_1993_FA_methodology/`) are RESOLVED.
+The validation step round-trips the constructed series against the Appendix 6.8 source workbook at a 1.0% tolerance. Two data-sourcing steps needed for this construction are resolved: the remap of financial services indirectly measured (FISIM) in NIPA Table 7.11, and the 1993 BEA depreciation rates.

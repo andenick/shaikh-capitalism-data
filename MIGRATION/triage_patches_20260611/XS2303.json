@@ -1,0 +1,14 @@
+{
+  "sid": "XS2303",
+  "display_name": "China official foreign exchange reserves excluding gold, 1990-2024 (Weber & Shaikh 2020)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "China's official FX reserves excluding gold (Weber & Shaikh 2020 Fig 3), single clean continuous series 1990-2024 from World Bank WDI FI.RES.XGLD.CD (CHN), current USD, CC-BY-4.0, no auth. Uniform units; reproduces the paper's narrative anchors (~3.6tn in 2013, ~4tn 2014 peak, ~3tn stabilization). Publishes as-is.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "XS2303-A": {"label": "China FX reserves excluding gold", "units": "billion_usd"}
+  },
+  "field_fixes": {}
+}

@@ -1,0 +1,19 @@
+{
+  "sid": "XS001",
+  "display_name": "GDP/GDI decomposition and business net operating surplus",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Clean six-component dollar decomposition (all billions_current_usd) of aggregate NIPA NOS into the sectors Shaikh nets out to isolate for-profit business NOS. Single-unit, renders sensibly one-trace-per-component; feeds XS003/S602. Appendix Table 6.8.I.1.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "XS001-A": {"label": "Business sector NOS (NIPA)", "units": "billions_current_usd"},
+    "XS001-B": {"label": "Aggregate NOS (NIPA)", "units": "billions_current_usd"},
+    "XS001-C": {"label": "Household NOS", "units": "billions_current_usd"},
+    "XS001-D": {"label": "NPISH NOS", "units": "billions_current_usd"},
+    "XS001-E": {"label": "General government NOS", "units": "billions_current_usd"},
+    "XS001-F": {"label": "Government enterprise NOS", "units": "billions_current_usd"}
+  },
+  "field_fixes": {}
+}

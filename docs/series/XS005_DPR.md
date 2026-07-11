@@ -8,7 +8,7 @@ GPIM Variant - BEA 2011 Reference (Pure GPIM Regenerator)
 
 ## Why It Matters
 
-Pure reference regenerator; verifies 99.6% accuracy of the GPIM rule (Appendix Table 6.8.II.1). Sensitivity variant — NOT used by S601-S604. See `CH6_GPIM_SUMMARY.md` for the full Ch6 construction pipeline.
+Pure reference regenerator; verifies 99.6% accuracy of the Generalized Perpetual Inventory Method (GPIM) rule (Appendix Table 6.8.II.1). Sensitivity variant — NOT used by S601-S604.
 
 ## Sources (per subseries)
 
@@ -18,7 +18,7 @@ Pure reference regenerator; verifies 99.6% accuracy of the GPIM rule (Appendix T
 | XS005-B | II1 | `KNCcorpbea` | BEA NIPA / BEA FA / IRS SOI / Census | identity |
 | XS005-C | II1 | `KNCcorp'ratio` | Shaikh-computed | identity |
 
-The canonical Shaikh-published values are transcribed from `SalvagedInputs/book_data/ShaikhChoppedTables/Appendix6_Table68*.xlsx` (Appendix 6.8). Upstream agencies are BEA (NIPA / Fixed Asset Accounts), IRS SOI, U.S. Census Bureau Historical Statistics 1975 (IRS book values), and FRB G.17. All public domain.
+The canonical Shaikh-published values are transcribed from the published Chapter 6 appendix workbook (Shaikh 2016, Appendix 6.8). Upstream agencies are the Bureau of Economic Analysis (BEA) — its National Income and Product Accounts (NIPA) and Fixed Asset accounts (FA) — the IRS Statistics of Income (SOI), the U.S. Census Bureau (Historical Statistics 1975, for IRS book values), and the Federal Reserve Board G.17 industrial-production release (FRB G.17). All public domain.
 
 ## Construction
 
@@ -42,4 +42,4 @@ billions_current_usd
 
 ## Validation Expectation
 
-`V03_XS005_validate.py` round-trip-validates against the Appendix 6.8 source workbook at 1.0% tolerance. Per the Phase 4 adequacy report (`CH6_ADEQUACY_REPORT.json`), Phase 5 blockers B2 (NIPA T7.11 FISIM remap, resolver in `_nipa_t711_line_resolver.py`) and B3 (BEA 1993 depreciation rates, staged at `Reconstructed/BEA_1993_FA_methodology/`) are RESOLVED.
+The validation step round-trips the constructed series against the Appendix 6.8 source workbook at a 1.0% tolerance. Two data-sourcing steps needed for this construction are resolved: the remap of financial services indirectly measured (FISIM) in NIPA Table 7.11, and the 1993 BEA depreciation rates.

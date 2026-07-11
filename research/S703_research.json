@@ -116,13 +116,19 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-wave-b-ch7",
+      "reviewer": "P4.3-docs-agent",
+      "date": "2026-07-10",
+      "status": "book_period_validated",
+      "notes": "ADDENDUM (F-2D-03): S703/S704 digitization enacted per Decision 0019 (2026-07-02, user-authorized). Machine digitization (dual independent extraction + adversarial verification) recovered the WORLDAVG open-circle line in Christodoulopoulos Fig 7.13 (1970–1990, 20 pts; 1974 omitted — no defensible open-circle marker on steep descent). Confidence: MEDIUM-HIGH (~±0.005 decimal, mean conf 0.666). Gate: M2 raw PASS (95%); M3 CONFIRMED (adversarial verifier independently landed on correct open-circle at every tested year). Status flipped data_unavailable → book_period_validated; publish: false → true. Values stored in decimal (rate convention). Human superseding path preserved forever: if a hand-digitized CSV is filed at digitization_packet/returns/S703_aggregate_digitized.csv, it supersedes machine values. Evidence: Technical/docs/decisions/0019_machine_digitization_s703_s704.md."
+    },
+    {
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from book Ch7 pp. 301-303 and Appendix 7.1 II (book p. 856 / PDF p. 894) verbatim. Source is Christodoulopoulos (1995) reconstruction from OECD ISDB 1994 (discontinued). Extension via OECD STAN possible but with documented industry-mapping and capital-stock-coverage caveats. CD2 had no dossier for S032."
     },
     {
-      "reviewer": "opus-subagent-batch1-A4-B5",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "data_unavailable",
       "notes": "B5 underlying-data search: Christodoulopoulos (1995) PDF is not in Inputs/Capitalism Data and is not publicly hosted (unpublished NSSR working paper). Shaikh (2008) Appendix 1 (PDF p. 14-15) describes the methodology but does not tabulate the underlying world-aggregate series. SalvagedInputs Appendix7_*.xlsx files are for the 1987-2005 BEA-NAICS construction (S705/S706), not for Fig 7.13's 1970-1989 ISDB world reconstruction. Marked data_unavailable; full provenance and recovery options documented at SalvagedInputs/book_data/Reconstructed/Christodoulopoulos_1995_data_unavailable.md. Recommended Phase 5 path: include book figure as image; Phase 6 may digitize via WebPlotDigitizer."

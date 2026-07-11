@@ -1,0 +1,20 @@
+{
+  "sid": "S1102",
+  "display_name": "Real effective exchange rates (PPI basis), US and Japan, 1960-2009",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Figure 11.3 (PPI-basis REER, US and Japan) from BLS data; figure reference verified correct (11.3).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1102-A": {
+      "label": "Japan real effective exchange rate (PPI basis)",
+      "units": "index (2002=100)"
+    },
+    "S1102-B": {
+      "label": "United States real effective exchange rate (PPI basis)",
+      "units": "index (2002=100)"
+    }
+  }
+}

@@ -4,7 +4,7 @@ Loads three subseries:
   - S1401-A: wage share level (wagesh) 1948-2011 from Appendix 14.3
   - S1401-B: nominal GDP growth (ggdp) 1948-2011 from Appendix 14.3 (NaN at 1948)
   - S1401-C: nominal GDP level via FRED GDP (annual avg of quarterly) for 1948-2024
-  - S1401-D: Compensation of Employees via FRED A576RC1 (annual) for 1948-2024
+  - S1401-D: Compensation of Employees via FRED W209RC1 (annual) for 1948-2024
 
 The Appendix 14.3 spreadsheet is the canonical Shaikh-published reference. FRED
 inputs power the post-2011 extension via re-derivation in the processor.
@@ -21,13 +21,17 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils.paths import DATA_RAW  # noqa: E402
-from L01_loaders._ch14_helpers import read_appendix14, fred_annual  # noqa: E402
+from L01_loaders._ch14_helpers import (  # noqa: E402
+    read_appendix14, fred_annual, assert_compensation_is_total,
+    COMPENSATION_T110_LINE2_FRED_ID,
+)
 from S00_setup import S00_apis  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 SERIES_ID = "S1401"
 OUT_BOOK = DATA_RAW / f"{SERIES_ID}_APPENDIX14.parquet"
 OUT_FRED_GDP = DATA_RAW / f"{SERIES_ID}_FRED_GDP.parquet"
-OUT_FRED_EC = DATA_RAW / f"{SERIES_ID}_FRED_A576RC1.parquet"
+OUT_FRED_EC = DATA_RAW / f"{SERIES_ID}_FRED_W209RC1.parquet"
 
 
 def _save_book(df: pd.DataFrame) -> int:
@@ -50,9 +54,15 @@ def _save_book(df: pd.DataFrame) -> int:
 
 
 def _save_fred_pair() -> tuple[int, int, bool, str | None]:
+    # Concept-policing: the wage-share numerator MUST be total Compensation of
+    # Employees (NIPA T1.10 line 2 = FRED W209RC1), the same series S1403 uses.
+    # This guard makes the historical A576RC1 (Wage & Salary Disbursements, ~20%
+    # low) defect impossible to reintroduce silently.
+    assert_compensation_is_total(COMPENSATION_T110_LINE2_FRED_ID)
     try:
-        gdp = fred_annual("GDP")           # billions USD, SAAR
-        ec  = fred_annual("A576RC1")       # billions USD, NIPA T1.10 line 2
+        gdp = fred_annual("GDP", realtime=realtime_window(SERIES_ID, "GDP"))                              # billions USD, SAAR
+        ec  = fred_annual(COMPENSATION_T110_LINE2_FRED_ID,
+                          realtime=realtime_window(SERIES_ID, COMPENSATION_T110_LINE2_FRED_ID))   # W209RC1, billions USD, NIPA T1.10 line 2
     except S00_apis.ApiUnavailable as exc:
         return 0, 0, False, str(exc)
     gdp = gdp.assign(units="billions_usd_saar",
@@ -60,7 +70,7 @@ def _save_fred_pair() -> tuple[int, int, bool, str | None]:
                      subsource_id="FRED_GDP")
     ec  = ec.assign(units="billions_usd",
                     subseries_id=f"{SERIES_ID}-D",
-                    subsource_id="FRED_A576RC1")
+                    subsource_id="FRED_W209RC1")
     gdp.to_parquet(OUT_FRED_GDP, index=False)
     ec.to_parquet(OUT_FRED_EC, index=False)
     return len(gdp), len(ec), True, None
@@ -72,7 +82,7 @@ def run() -> dict:
     n_gdp, n_ec, fred_ok, fred_err = _save_fred_pair()
     sources = ["SHAIKH_APPENDIX_14_3"]
     if fred_ok:
-        sources += ["FRED_GDP", "FRED_A576RC1"]
+        sources += ["FRED_GDP", "FRED_W209RC1"]
     return {
         "status": "OK",
         "rows_loaded": {"book": n_book, "fred_gdp": n_gdp, "fred_ec": n_ec},

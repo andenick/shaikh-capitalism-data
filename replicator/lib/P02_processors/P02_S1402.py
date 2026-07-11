@@ -32,9 +32,14 @@ BASE_WINDOW = (1948, 1951)
 
 
 def _book_long(df: pd.DataFrame) -> pd.DataFrame:
-    return df.rename(columns={"subsource_id": "source_id"})[
+    out = df.rename(columns={"subsource_id": "source_id"})[
         ["year", "value", "subseries_id", "source_id", "units"]
-    ]
+    ].copy()
+    # F-7A-02: the duration-index (-B) is at avg=1 scale (1948-1951 mean == 1.0,
+    # not 100). The raw book parquet mislabels it 'index_1948_1951_avg=100'.
+    # Normalize to the true scale so book + extension rows carry one honest label.
+    out.loc[out["subseries_id"] == f"{SERIES_ID}-B", "units"] = "index_1948_1951_avg=1"
+    return out
 
 
 def _derive_extension(ur: pd.DataFrame, ud: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
@@ -60,10 +65,10 @@ def _derive_extension(ur: pd.DataFrame, ud: pd.DataFrame) -> tuple[pd.DataFrame,
             {"year": y, "value": float(r["unrate"]),
              "subseries_id": f"{SERIES_ID}-A", "source_id": "FRED_DERIVED_UNRATE",
              "units": "decimal_rate"},
-            # Appendix duration column is index *100; FRED-derived index already in *100 scale (Appendix base ~1)
+            # duration_index is at 1948-1951 avg = 1 scale (F-7A-02): units label 'avg=1'
             {"year": y, "value": float(r["duration_index"]),
              "subseries_id": f"{SERIES_ID}-B", "source_id": "FRED_DERIVED_UEMPDURATION",
-             "units": "index_1948_1951_avg=100"},
+             "units": "index_1948_1951_avg=1"},
             {"year": y, "value": float(r["ulintensity"]),
              "subseries_id": f"{SERIES_ID}-C", "source_id": "FRED_DERIVED_ULINTENSITY",
              "units": "decimal"},

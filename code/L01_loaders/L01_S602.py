@@ -1,7 +1,7 @@
 """L01_S602 — load Shaikh Appendix 6.8 columns for S602 (Corrected vs Conventional Corporate Profitability).
 
 Reads the canonical Shaikh chopped Appendix 6.8 workbook(s) and emits one raw
-parquet per subseries. Per Ch6 fanout playbook: the Appendix 6.8 workbooks are
+parquet per subseries. Per Ch6 automated-agent playbook: the Appendix 6.8 workbooks are
 the Phase-5 ground truth; extension recipes for re-fetching the underlying
 NIPA / BEA FA / IRS / Census components are documented in S602_EPR.md.
 
@@ -13,7 +13,10 @@ Source map (subseries_id -> (Appendix table, variable, scale)):
   S602-E <- Appendix 6.8.II7 / variable 'Profshcorp'
   S602-F <- Appendix 6.8.II7 / variable 'Profshcorpnipa'
 
-Units: decimal_rate_and_share
+Units: per-subseries (A/B/C/D decimal_rate profit rates; E/F ratio NOS/VA shares).
+The former single label "decimal_rate_and_share" was a banned mixed string that
+mislabeled every column; corrected 2026-07-02 (T3.3) to honest per-subseries
+units via UNITS_MAP.
 Book year range: [1947, 2011]
 """
 from __future__ import annotations
@@ -33,6 +36,12 @@ OUT = DATA_RAW / f"{SERIES_ID}_raw.parquet"
 
 SOURCE_MAP = {'S602-A': ['II7', 'Rcorp', 1.0], 'S602-B': ['II7', 'Rcorpnipa', 1.0], 'S602-C': ['II7', 'rcorp', 1.0], 'S602-D': ['II7', 'rcorpnipa', 1.0], 'S602-E': ['II7', 'Profshcorp', 1.0], 'S602-F': ['II7', 'Profshcorpnipa', 1.0]}
 
+# Honest per-subseries units (T3.3). A-D are profit rates; E/F are NOS/VA shares.
+UNITS_MAP = {
+    'S602-A': 'decimal_rate', 'S602-B': 'decimal_rate', 'S602-C': 'decimal_rate',
+    'S602-D': 'decimal_rate', 'S602-E': 'ratio', 'S602-F': 'ratio',
+}
+
 
 def run() -> dict:
     rows = []
@@ -49,7 +58,7 @@ def run() -> dict:
         df = df.copy()
         df["value"] = df["value"] * scale
         df["subseries_id"] = sub_id
-        df["units"] = "decimal_rate_and_share"
+        df["units"] = UNITS_MAP[sub_id]
         rows_per_sub[sub_id] = int(len(df))
         sources_used.add(df["source_id"].iloc[0])
         rows.append(df[["year", "value", "subseries_id", "source_id", "units"]])

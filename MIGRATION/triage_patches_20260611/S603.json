@@ -1,0 +1,17 @@
+{
+  "sid": "S603",
+  "display_name": "Components of the gap between corrected and conventional profit rates",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh Figure 6.3 (Ch6). Four dimensionless-ratio lines, 1947-2011: the monetary-interest factor (x1), the inventory factor (x2), the capital-stock revaluation factor (x3), and their product, which equals the ratio of the corrected to the conventional corporate profit rate (equation 6.11). Transcribed from Shaikh's Appendix 6.8 Table II-7. Construction-relevant analytical diagnostic that quantifies which correction drives the wedge in Figure 6.2; the x1 line freezes when corporate net monetary interest data run out (not forward-filled).",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S603-A": {"label": "Monetary-interest factor (x1)", "units": "ratio"},
+    "S603-B": {"label": "Inventory factor (x2)", "units": "ratio"},
+    "S603-C": {"label": "Capital-stock revaluation factor (x3)", "units": "ratio"},
+    "S603-D": {"label": "Combined factor, corrected/NIPA rate ratio", "units": "ratio"}
+  },
+  "field_fixes": {}
+}

@@ -1,0 +1,15 @@
+{
+  "sid": "S604",
+  "display_name": "Corporate incremental rate of profit, corrected versus conventional",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh Figure 6.7 (Ch6, nominal panel). Two incremental-profit-rate lines, 1948-2011: Shaikh's corrected measure and the simpler NIPA measure, transcribed from Shaikh's Appendix 6.8 Table II-7. Construction-relevant: the incremental rate is Shaikh's proxy for the return on new capital that governs turbulent profit-rate equalization, and the near-identity of the corrected and NIPA versions is a headline methodological finding licensing the simpler measure for cross-country work.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S604-A": {"label": "Incremental profit rate (corrected)", "units": "decimal_rate"},
+    "S604-B": {"label": "Incremental profit rate (NIPA)", "units": "decimal_rate"}
+  },
+  "field_fixes": {}
+}

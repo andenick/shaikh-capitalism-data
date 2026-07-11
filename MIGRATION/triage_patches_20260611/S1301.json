@@ -1,0 +1,22 @@
+{
+  "sid": "S1301",
+  "display_name": "Actual and equilibrium paths of output (theoretical illustration)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "EMPTY prescreen flag is a FALSE POSITIVE (index-axis confusion): the chopped CSV holds 152 real data rows (76 time-index values t=0..75 x 2 subseries S1301-EQ and S1301-ACTUAL), and the L01/P02/V03_S1301.py pipeline exists and runs. The prescreen reported points=0 only because coverage.years is null (the x-axis is an abstract time index 0-75, NOT calendar years), exactly the stale index-axis limitation. S1301 is the legitimate theoretical illustration of Shaikh (2016) eq. 13.43 (Fig 13.7): ln Y_t = ln Y0 + alpha*t + eta_t, a deterministic log-linear trend plus a random-walk-with-drift error. It is the ONE sanctioned np.random series in this project (SEED=42, documented in CLAUDE.md and the L01 header). content_type=theoretical, status=book_period_validated; published as an analytical schematic. KB GAP: no ch13 file exists in the KB (KB covers ch02, ch05-ch12, ch14-ch18). The three book quotes in S1301_research.json (ch13 p.632, eq 13.43, random-walk-with-drift) are therefore UNVERIFIABLE against the KB. Checked the two nearest available chapters per mandate: ch12_macroeconomics.md discusses Nelson-Plosser random-walk-with-drift but only as a chapter-12 macro overview that explicitly cross-references 'see chapter 13, section II.9' (it does NOT contain the eq 13.43 derivation or Fig 13.7); ch18_appendices.md contains only unrelated appendix algebra (eq 13.14). Neither covers the Fig 13.7 / eq 13.43 material. Consequently the explainer OMITS the 'From the book' section and the quotes are excluded from it; the quotes remain in the DPR/research JSON carrying an UNVERIFIED marker.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1301-EQ": {
+      "label": "Equilibrium output path (deterministic log-linear trend)",
+      "units": "ln output (model units)"
+    },
+    "S1301-ACTUAL": {
+      "label": "Actual output path (trend plus random-walk-with-drift)",
+      "units": "ln output (model units)"
+    }
+  },
+  "field_fixes": {},
+  "notes": "Theoretical/illustrative series: x-axis is an abstract time index t in [0,75], NOT calendar years; y-axis is ln Y in model units. No empirical data backs Fig 13.7. The 'From the book' section is intentionally omitted from the explainer because no ch13 KB exists to verify the quotes (UNVERIFIED). S1301_research.json quotes should carry an inline <!-- UNVERIFIED: no ch13 KB --> marker; they are not asserted on the web. ch13 KB extraction should be queued so this series can reach T3 and gain a verifiable 'From the book' anchor."
+}

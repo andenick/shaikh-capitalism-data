@@ -1,0 +1,30 @@
+{
+  "sid": "S1405",
+  "display_name": "HP(100)-filtered rate of change of the wage share versus unemployment intensity, United States",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.14 Figure 14.14 (HP(100)-Filtered Values, Rate of Change of the Wage Share versus Unemployment Intensity, United States, 1949-2011) -- the central empirical result of Ch.14: a stable two-era wage-share Phillips curve with the post-1983 segment shifted down. Real data present in chopped CSV (255 points, 4 subseries incl. 2 fitted curves); book_period_validated; figure number and quotes KB-verified (Fig 14.14 quote verbatim at ch14 KB line 1537/1502). The two published constrained-b=1 fits were cross-checked against the Appendix 14.2 EViews output in ch18 KB: era-1 (1949-1982) C(1)=-1.026431, C(3)=-0.010677, R2=0.930871; era-2 (1994-2011) C(1)=-1.010996, C(3)=-0.003709, R2=0.964965 -- all match the research JSON exactly. FAITHFUL-TRANSCRIPTION NOTE (not an error): the method quote in S1405_research.json reads 'figure 14.4 of chapter 14' -- this is Shaikh's OWN typo in Appendix 14.2 (verified verbatim at ch18 KB line 8624); he means Figure 14.14. The transcription is faithful; the explainer uses the clean ch14 Fig 14.14 quote instead to avoid propagating the appendix typo.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1405-A": {
+      "label": "Wage share growth rate, HP(100)-filtered",
+      "units": "growth rate (decimal/year, HP100)"
+    },
+    "S1405-B": {
+      "label": "Unemployment intensity, HP(100)-filtered",
+      "units": "intensity (decimal, HP100)"
+    },
+    "S1405-FIT1": {
+      "label": "Fitted Phillips curve, 1949-1982 era (constrained b=1)",
+      "units": "growth rate (decimal/year)"
+    },
+    "S1405-FIT2": {
+      "label": "Fitted Phillips curve, 1994-2011 era (constrained b=1)",
+      "units": "growth rate (decimal/year)"
+    }
+  },
+  "field_fixes": {},
+  "notes": "When the appendix method quote is anchored anywhere, use <!-- kb: ch18, Appendix 14.2 --> and mark Shaikh's 'figure 14.4' with [sic]. The explainer's 'From the book' uses the verbatim ch14 Fig 14.14 quote (KB line 1537), which carries the correct figure number."
+}

@@ -1,7 +1,7 @@
 """L01_AS006 — load Shaikh Appendix 6.8 columns for XS006 (GPIM Variant - BEA 1993 Depreciation Rates).
 
 Reads the canonical Shaikh chopped Appendix 6.8 workbook(s) and emits one raw
-parquet per subseries. Per Ch6 fanout playbook: the Appendix 6.8 workbooks are
+parquet per subseries. Per Ch6 automated-agent playbook: the Appendix 6.8 workbooks are
 the Phase-5 ground truth; extension recipes for re-fetching the underlying
 NIPA / BEA FA / IRS / Census components are documented in XS006_EPR.md.
 
@@ -30,6 +30,15 @@ OUT = DATA_RAW / f"{SERIES_ID}_raw.parquet"
 
 SOURCE_MAP = {'XS006-depr_only': ['II3', 'KNCcorpnew', 1.0], 'XS006-depr_plus_init': ['II3', 'KNCbea93', 1.0], 'XS006-dcorpnew': ['II3', 'dcorpnew', 1.0]}
 
+# Honest per-subseries units (T3.3). depr_only/depr_plus_init are capital-stock
+# dollar levels; dcorpnew (BEA 1993 depreciation RATE) is a decimal rate, NOT
+# billions_current_usd.
+UNITS_MAP = {
+    'XS006-depr_only': 'billions_current_usd',
+    'XS006-depr_plus_init': 'billions_current_usd',
+    'XS006-dcorpnew': 'decimal_rate',
+}
+
 
 def run() -> dict:
     rows = []
@@ -46,7 +55,7 @@ def run() -> dict:
         df = df.copy()
         df["value"] = df["value"] * scale
         df["subseries_id"] = sub_id
-        df["units"] = "billions_current_usd"
+        df["units"] = UNITS_MAP[sub_id]
         rows_per_sub[sub_id] = int(len(df))
         sources_used.add(df["source_id"].iloc[0])
         rows.append(df[["year", "value", "subseries_id", "source_id", "units"]])

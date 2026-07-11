@@ -1,0 +1,11 @@
+{
+  "sid": "S703",
+  "display_name": "World manufacturing average and incremental rates of profit, 1970–1989",
+  "publish": false,
+  "triage": {
+    "verdict": "cull",
+    "reason": "data_unavailable — Fig 7.13 is a chart-only, 9-series spaghetti plot (8 industries + WORLDAVG) from the Christodoulopoulos (1995) unpublished New School working paper; underlying OECD ISDB 1994 vintage is discontinued and the raw dataset is not recoverable. No chopped CSV exists. Honest-blocked per the no-fabrication rule; recovery would require guided WebPlotDigitizer of the single aggregate line. Figure/title/period verified against KB ch07 (caption 'World Manufacturing Average and Incremental Rates of Profit, 1970–1989').",
+    "date": "2026-06-11"
+  },
+  "subseries": {}
+}

@@ -1,6 +1,6 @@
 # S902 — Integrated Output-Capital Ratios and Standard Prices
 
-**DPR** · **Phase**: 5 · **Series ID**: S902 · **Status**: book_period_validated · **Authored**: 2026-05-18
+**DPR** · **Series ID**: S902 · **Status**: book_period_validated · **Authored**: 2026-05-18
 
 ---
 

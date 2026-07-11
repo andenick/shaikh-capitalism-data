@@ -1,0 +1,21 @@
+{
+  "sid": "S602",
+  "display_name": "Corrected versus conventional corporate profitability measures",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh Figures 6.2/6.6 (Ch6). Six lines, 1947-2011, comparing Shaikh's corrected and the conventional NIPA versions of three concepts: the maximum profit rate, the average profit rate, and the profit share. Transcribed from Shaikh's Appendix 6.8 Table II-7. Construction-relevant: shows how the imputed-interest, inventory, and capital-stock corrections move profitability versus the official accounts. The registry's mixed_units string is split per subseries (rates as decimal_rate, shares as ratio).",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S602-A": {"label": "Maximum profit rate (corrected)", "units": "decimal_rate"},
+    "S602-B": {"label": "Maximum profit rate (NIPA)", "units": "decimal_rate"},
+    "S602-C": {"label": "Average profit rate (corrected)", "units": "decimal_rate"},
+    "S602-D": {"label": "Average profit rate (NIPA)", "units": "decimal_rate"},
+    "S602-E": {"label": "Profit share (corrected)", "units": "ratio"},
+    "S602-F": {"label": "Profit share (NIPA)", "units": "ratio"}
+  },
+  "field_fixes": {
+    "units_note": "Registry-level units 'decimal_rate_and_share' is a mixed_units string banned by UNITS_VALIDATION_STANDARD; per-subseries units supplied here (A-D decimal_rate, E-F ratio). Registry units field should be cleared or set to 'mixed' marker with per-subseries authoritative."
+  }
+}

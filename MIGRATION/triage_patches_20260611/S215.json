@@ -1,0 +1,16 @@
+{
+  "sid": "S215",
+  "display_name": "Incremental Rates of Profit in US Manufacturing",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Ships the author's verifiable Appendix-7 incremental rate (1988-2005); book-period 1960-1989 source unavailable, no values fabricated. Reconstructs Fig.2.13 panel; publishable as documented post-book segment.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S215-EXT": {
+      "label": "Manufacturing incremental profit rate, industry mean (1988-2005)",
+      "units": "rate (decimal fraction)"
+    }
+  }
+}

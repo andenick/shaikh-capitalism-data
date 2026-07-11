@@ -1,0 +1,16 @@
+{
+  "sid": "XS009",
+  "display_name": "Corporate inventories and total corporate capital stock",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Adds IRS corporate inventories to GPIM gross fixed capital to form total corporate capital stock (KTC = KGC + INV), the denominator of the corrected profit rate. All billions_current_usd after the documented IRS thousands-to-billions normalization; single-unit, renders sensibly. Appendix Table 6.8.II.6.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "XS009-A": {"label": "Corporate inventories (current cost)", "units": "billions_current_usd"},
+    "XS009-B": {"label": "Gross fixed corporate capital (Depression/WWII adjusted)", "units": "billions_current_usd"},
+    "XS009-C": {"label": "Total corporate capital stock (fixed + inventories)", "units": "billions_current_usd"}
+  },
+  "field_fixes": {}
+}

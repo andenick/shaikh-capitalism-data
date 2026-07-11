@@ -1,0 +1,66 @@
+sid,chapter,classification_system,industry_scheme_detail,needs_crosswalk_for_extension,official_source_table
+S213,CH07/CH02,ISIC Rev3 (OECD ISDB/STAN),OECD ISIC sector codes; ISDB 1994 discontinued -> STAN,TRUE,NOT STAGED (_sources/naics is US-only); UN ISIC Rev3->Rev4 correspondence external
+S214,CH02,ISIC Rev3->Rev4 (OECD STAN),STAN ISIC Rev3->Rev4 + NAICS crosswalk for modern extension (deferred),TRUE,NOT STAGED (_sources/naics is US-only); UN ISIC Rev3->Rev4 correspondence external
+S215,CH02,BEA IO / SIC->NAICS,SIC->NAICS 1992/1997 hard break; pre-1997 benchmarks not a time series,TRUE,SCB Dec 2002 App.A / SCB Aug 2018 App.A (URL only; SOURCES.md) + _sources/naics/ (Census)
+S216,CH02,Maddison country scheme,"1990 GK -> 2011 PPP base + region reaggregation (rebase, not industry)",FALSE,Maddison Project 2023 region/base rebase (not an industry crosswalk); CH02 timeline
+S217,CH02,Maddison country scheme,"MPD 2003->2023 base/region discontinuity (rebase, not industry)",FALSE,Maddison Project 2023 region/base rebase (not an industry crosswalk); CH02 timeline
+S218,CH02,Maddison country scheme,1990 GK->2011 PPP base shift; ratio base-invariant; re-rank full MPD2023,FALSE,Maddison Project 2023 region/base rebase (not an industry crosswalk); CH02 timeline
+S210,CH02,BLS source-code (WPI->PPI),"WPI->PPI rename, WPS->WPU renumber/rebase (source-code, not industry)",FALSE,within-agency source-code remap (see chapter methodology); NOT an industry crosswalk
+S211,CH02,BLS source-code (WPI->PPI),latent WPI->PPI never reached (stops pre-1940),FALSE,within-agency source-code remap (see chapter methodology); NOT an industry crosswalk
+S212,CH02,BLS/ONS source-code,"WPI->PPI + ONS PLLU rebase (source-code, not industry)",FALSE,within-agency source-code remap (see chapter methodology); NOT an industry crosswalk
+S501,CH05,BLS source-code (WPI->PPI),latent WPS->WPU; stops 1940 inside Jastram archive,FALSE,within-agency source-code remap (see chapter methodology); NOT an industry crosswalk
+S502,CH05,BLS/ONS source-code,live WPS->WPU/PPIACO splice; ONS PLLU rebase,FALSE,within-agency source-code remap (see chapter methodology); NOT an industry crosswalk
+S503,CH05,ONS/LBMA source-code,ONS PLLU rebase; LBMA 2015 gold-fixing reform anchor,FALSE,within-agency source-code remap (see chapter methodology); NOT an industry crosswalk
+S504,CH05,BLS/LBMA source-code,WPS->WPU numerator; LBMA 2015 reform splice,FALSE,within-agency source-code remap (see chapter methodology); NOT an industry crosswalk
+S601,CH06,NIPA T7.11 line-label + FA legal-form,T7.11 FISIM stub-label vintage resolver; corporate/noncorporate split,TRUE,NIPA_T711_FISIM_remap.md + code/L01_loaders/_nipa_t711_line_resolver.py; NIPA_CHANGE_TIMELINE.md
+S602,CH06,NIPA T7.11 line-label + FA legal-form,T7.11 FISIM (NMINT); FA legal-form KNC/KGC; IRS-SOI inventory scaling,TRUE,NIPA_T711_FISIM_remap.md + code/L01_loaders/_nipa_t711_line_resolver.py; NIPA_CHANGE_TIMELINE.md
+S603,CH06,NIPA T7.11 line-label + FA legal-form,T7.11 FISIM; BEA-vs-GPIM capital concordance; IRS-SOI inventory,TRUE,NIPA_T711_FISIM_remap.md + code/L01_loaders/_nipa_t711_line_resolver.py; NIPA_CHANGE_TIMELINE.md
+S604,CH06,FA legal-form + NIPA T7.11,FA T6.7 legal-form -> corporate share of T5.3.5; T7.11 adjusted numerator,TRUE,BEA Fixed Asset Tables legal-form split; FA T6.7 (no CSV crosswalk staged)
+S701,CH07,Pre-SIC US (Salter),Pre-SIC US categories below the 1987-SIC chain; irrecoverable wall; frozen exhibit,FALSE,IRRECOVERABLE (pre-1997 tables frozen; IO_CHANGE_TIMELINE.md)
+S702,CH07,UK SIC 1958 (Salter Table 28),"Chapter's only literal SIC citation, used as ROW LABEL; UK SIC1958->2007 hard break",FALSE,NOT STAGED (RSCD stages US Census SIC-NAICS only); ONS UK SIC 1958->2007 external
+S703,CH07,OECD ISDB / ISIC Rev3->Rev4,ISDB 1994 retired; 8 mfg industries need ISIC Rev3->Rev4; PWT vintage,TRUE,NOT STAGED (_sources/naics is US-only); UN ISIC Rev3->Rev4 correspondence external
+S704,CH07,OECD ISDB US codes,Double wall: ISDB->SIC->NAICS or ISDB->STAN (ISIC Rev3->Rev4),TRUE,NOT STAGED (_sources/naics is US-only); UN ISIC Rev3->Rev4 correspondence external
+S705,CH07,NAICS 1997->2022 (30-industry),PRIME CASE: NAICS-native 30-industry sample tracked across NAICS revisions,TRUE,_sources/naics/{1997..2022}_NAICS revision chain (US Census); ADR-005 naics_concordance_master.csv
+S706,CH07,NAICS 1997->2022 (30-industry),Same 30-industry NAICS sample; 31-industry exclusion key inherited,TRUE,_sources/naics/{1997..2022}_NAICS revision chain (US Census); ADR-005 naics_concordance_master.csv
+S707,CH07,Greek ISIC->NACE Rev2,ESYE->ELSTAT 2010; ISIC->NACE Rev2 wall; classification NOT operationalised (figure recovery),FALSE,NOT STAGED; Greek ESYE/ELSTAT ISIC->NACE Rev2 external (figure-recovery only)
+S708,CH07,Greek ISIC->NACE Rev2,Same Greek wall; figure recovery; investment-side data uneven,FALSE,NOT STAGED; Greek ESYE/ELSTAT ISIC->NACE Rev2 external (figure-recovery only)
+S709,CH07,NAICS 1997->2022 (30-industry),Same 30-industry NAICS sample; All-Private baseline over the 30 retained,TRUE,_sources/naics/{1997..2022}_NAICS revision chain (US Census); ADR-005 naics_concordance_master.csv
+S710,CH07,NAICS 1997->2022 (30-industry),Same 30-industry NAICS sample; IROP_avg baseline over the 30,TRUE,_sources/naics/{1997..2022}_NAICS revision chain (US Census); ADR-005 naics_concordance_master.csv
+S711,CH07,ISIC Rev3->Rev4 (OECD STAN),RICHEST international case; ISIC Rev3->Rev4 crosswalk (STAN 2025); 30->18 country collapse,TRUE,NOT STAGED (_sources/naics is US-only); UN ISIC Rev3->Rev4 correspondence external
+S801,CH08,"SIC (US, concentration)",Eichner concentrated/competitive SIC partition; NO crosswalk applied (historical); extension needs SIC->NAICS,TRUE,_sources/naics/1987_SIC_to_1997_NAICS.csv (US Census)
+S802,CH08,"SIC (US, CR4)",CR4 midpoints (20/50/80) over SIC-era mfg; extension re-derives NAICS CR4 bins,TRUE,_sources/naics/1987_SIC_to_1997_NAICS.csv (US Census)
+S803,CH08,SIC-precursor 1935 Census (CR8),Bain 1935 categories below the 1987-SIC chain; irrecoverable + CR8; Demsetz regroup,TRUE,_sources/naics/1987_SIC_to_1997_NAICS.csv (US Census)
+S804,CH08,"SIC (US, CR4 dichotomy)",Stigler high/low CR4 over SIC-era mfg; extension re-partitions NAICS by CR4,TRUE,_sources/naics/1987_SIC_to_1997_NAICS.csv (US Census)
+S805,CH08,"SIC (US, CR4 binning)",CR4 binning SIC-era; Census CR-form data stops at mfg through 2017,TRUE,_sources/naics/1987_SIC_to_1997_NAICS.csv (US Census)
+S901,CH09,BEA IO 71-order(SIC)->65-order(NAICS),THE Ch9 wall; last SIC benchmark 1992/first NAICS 1997; non-spliceable frozen cross-sections,TRUE,SCB Dec 2002 App.A / SCB Aug 2018 App.A (URL only; SOURCES.md) + _sources/naics/ (Census)
+S902,CH09,BEA IO 71/65-order + capital-flow,Inherits Ch9 wall; BEA benchmark capital-flow matrix discontinued after 1997,TRUE,SCB Dec 2002 App.A / SCB Aug 2018 App.A (URL only; SOURCES.md) + _sources/naics/ (Census)
+S903,CH09,BEA IO 71/65-order + PWT vintage,Inherits Ch9 wall + capital-flow gap; PWT 7.1->10.01 growth-rate splice on derived sigma_W,TRUE,SCB Dec 2002 App.A / SCB Aug 2018 App.A (URL only; SOURCES.md) + _sources/naics/ (Census)
+S1001,CH10,NAICS banking (52 vs 5221),Banking concept concordance; App-7.2 corrected capital not directly published,TRUE,_sources/naics/{1997..2022}_NAICS revision chain (US Census); ADR-005 naics_concordance_master.csv
+S1002,CH10,Fed/BLS source-code,"HS-39 Aaa->FRED AAA; WPS->PPIACO (source mirrors, not industry)",FALSE,within-agency source-code remap (see chapter methodology); NOT an industry crosswalk
+S1006,CH10,Provider concordance,Ibbotson->Damodaran; LT-corp extension is a FRED AAA yield PROXY (proxy:true),FALSE,provider concordance (Damodaran replicates Ibbotson); EPR
+S1007,CH10,NIPA T7.11 line-label,"CRITICAL: resolve monetary interest by LineDescription, not 2011 line# (2018 +1 shift)",TRUE,NIPA_T711_FISIM_remap.md + code/L01_loaders/_nipa_t711_line_resolver.py; NIPA_CHANGE_TIMELINE.md
+S1008,CH10,NIPA T7.11 line-label,Inherits S1007 T7.11 label-resolver + investment-deflator mirror,TRUE,NIPA_T711_FISIM_remap.md + code/L01_loaders/_nipa_t711_line_resolver.py; NIPA_CHANGE_TIMELINE.md
+S1101,CH11,IMF IFS->DOTS/SDMX code-remap,"Provider-code migration (same agency/concept), NOT a proxy; NOT industry",FALSE,"IFS_line_to_SDMX_remap.md (source-code remap, NOT industry)"
+S1102,CH11,BLS ILC->BIS PPI EER code-remap,Post-2009 extension source-code remap + rebase; NOT industry,FALSE,within-agency source-code remap (see chapter methodology); NOT an industry crosswalk
+S1103,CH11,BLS ILC->BIS/OECD code-remap,"Dual post-2009 remap (numerator BIS, denominator OECD/CB ULC); NOT industry",FALSE,within-agency source-code remap (see chapter methodology); NOT an industry crosswalk
+S1104,CH11,IMF IFS/DOTS + BLS ILC->BIS,Mixed source-code remaps + EU12 per-country backfill; NOT industry,FALSE,"IFS_line_to_SDMX_remap.md (source-code remap, NOT industry)"
+S1401,CH14,FRED concept concordance,"A576RC1 mislabel -> correct W209RC1 (concept fix, not industry)",FALSE,FRED concept fix (W209RC1); _ch14_helpers.py guard
+S1403,CH14,FRED concept concordance,CORRECT T1.10 line2 -> W209RC1; documented url_substitution (model to copy),FALSE,FRED concept fix (W209RC1)
+S1502,CH15,NAICS industry + SIC->NAICS wall,NAICS industry concordance; pre-1997 tables not a time series -> bars back-splices,TRUE,_sources/naics/{1997..2022}_NAICS revision chain (US Census); ADR-005 naics_concordance_master.csv
+S1503,CH15,NAICS industry (FIRE/Info restructuring),SIC->NAICS wall; FIRE/Information restructuring complicates post-2017 forward splices,TRUE,_sources/naics/{1997..2022}_NAICS revision chain (US Census); ADR-005 naics_concordance_master.csv
+S1504,CH15,IMF IFS->SDMX code-remap,IFS legacy lines 31/32/78/79/81/88 -> MFS_CBS/MFS_DC codes; NOT industry,FALSE,"IFS_line_to_SDMX_remap.md (source-code remap, NOT industry)"
+S1508,CH15,IMF IFS->SDMX code-remap,"IFS line 32 -> DCORP_N_DC (audit-only, latent); NOT industry",FALSE,"IFS_line_to_SDMX_remap.md (source-code remap, NOT industry)"
+S1509,CH15,IMF IFS->SDMX code-remap,"IFS line 32->DCORP_N_DC + 64->PCPI_IX (audit-only, latent); NOT industry",FALSE,"IFS_line_to_SDMX_remap.md (source-code remap, NOT industry)"
+S1601,CH16,BLS/ONS/LBMA source-code,"US WPI->PPIACO, gold->LBMA; UK WPI->ONS K646 concept-narrowing (flagged)",FALSE,within-agency source-code remap (see chapter methodology); NOT an industry crosswalk
+S1604,CH16,NIPA T7.11 line-label,Profit-rate inputs trace ch6 chain; T7.11 needs 2018 +1 resolver on 2018+ vintage,TRUE,NIPA_T711_FISIM_remap.md + code/L01_loaders/_nipa_t711_line_resolver.py; NIPA_CHANGE_TIMELINE.md
+S1605,CH16,Z.1/NIPA concept restoration,"Z.1 D.3 line2->HCCSDODNS; T2.1 line27->DPI; 1000x dimensional guard (concept, not industry)",FALSE,Fed Z.1 / NIPA concept restoration (P02_S1605.py)
+S1606,CH16,Fed legacy-DDP->FRED code-remap,FOF DTFD%YPD.Q -> FRED TDSP/FODSP (legacy id mapping); NOT industry,FALSE,within-agency source-code remap (see chapter methodology); NOT an industry crosswalk
+XS003,CHXS,NIPA T7.11 line-label,T7.11 stub-label resolver across pinned vintages 2011/2018/2024,TRUE,NIPA_T711_FISIM_remap.md + code/L01_loaders/_nipa_t711_line_resolver.py; NIPA_CHANGE_TIMELINE.md
+XS009,CHXS,BEA IO / SIC->NAICS,SIC->NAICS wall; Census 1987-SIC<->1997-NAICS + revision chain; SCB Dec2002/Aug2018 App.A,TRUE,SCB Dec 2002 App.A / SCB Aug 2018 App.A (URL only; SOURCES.md) + _sources/naics/ (Census)
+XS2101,CHXS,BEA IO nested-aggregation + BLS-170,425/383->...->30-33 ladder; BLS-170 + BEA-summary 71/133 crosswalks; NAICS revision chain,TRUE,SCB Dec 2002 App.A / SCB Aug 2018 App.A (URL only; SOURCES.md) + _sources/naics/ (Census)
+XS2201,CHXS,Census FT900 HS trade codes,"HS-code aggregation revisions (2022 HS) affect sub-categories, not country-level total",FALSE,Census FT900 HS-code revisions (trade classification; country-total unaffected)
+XS2301,CHXS,ISO3 country-code,CHN across IMF WEO/Datamapper; BCA vs BCA_NGDPD vs NGDPD denominator,FALSE,ISO3 country-code mapping (not an industry crosswalk)
+XS2302,CHXS,ISO3 country-code,CHN across WEO; unit-split level vs pctgdp,FALSE,ISO3 country-code mapping (not an industry crosswalk)
+XS2303,CHXS,ISO3 country-code + reserve concept,CHN across WDI; FI.RES.XGLD.CD vs FI.RES.TOTL.CD; WDI<-IFS<-SAFE,FALSE,ISO3 country-code mapping (not an industry crosswalk)
+XS2304,CHXS,Equilibrium-methodology taxonomy,extended-PPP/BEER vs macro-balance per estimate; review->primary attribution,FALSE,"equilibrium-methodology estimate taxonomy (analytical, not statistical-agency)"
+XS2305,CHXS,Equilibrium-methodology taxonomy,macro-balance vs extended-PPP/BEER per estimate; review->primary attribution,FALSE,"equilibrium-methodology estimate taxonomy (analytical, not statistical-agency)"

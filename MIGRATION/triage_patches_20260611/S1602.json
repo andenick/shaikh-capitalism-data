@@ -1,0 +1,32 @@
+{
+  "sid": "S1602",
+  "display_name": "Hourly real wages and productivity, US business sector, 1947–2012 (1982 = 100)",
+  "publish": true,
+  "triage": {
+    "verdict": "fix-completed-then-publish",
+    "reason": "KB-verified against figure 16.3 and appendix; registry name correct. DPR figure-caption corrected to the KB caption (was the in-text 1947–2008 phrasing). Verbatim quotes confirmed.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1602-A": {
+      "label": "Hourly productivity",
+      "units": "index, 1982 = 100"
+    },
+    "S1602-B": {
+      "label": "Real hourly compensation",
+      "units": "index, 1982 = 100"
+    },
+    "S1602-C": {
+      "label": "Counterfactual real hourly compensation",
+      "units": "index, 1982 = 100"
+    },
+    "S1602-G": {
+      "label": "Hourly productivity (alternate base)",
+      "units": "index, 1958 = 100"
+    },
+    "S1602-H": {
+      "label": "Real hourly compensation (alternate base)",
+      "units": "index, 1958 = 100"
+    }
+  }
+}

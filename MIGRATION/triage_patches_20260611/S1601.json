@@ -1,0 +1,28 @@
+{
+  "sid": "S1601",
+  "display_name": "US and UK golden waves, 1786–2010 (deviations from cubic trend, 1930 = 100)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "KB-verified: figure 16.1 caption, in-text description (p.727), and appendix 5.3 sourcing all match registry name, figures, and validation anchors; verbatim quotes confirmed.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1601-A": {
+      "label": "US golden-wave residual",
+      "units": "deviation from cubic trend, 1930 = 100"
+    },
+    "S1601-B": {
+      "label": "UK golden-wave residual",
+      "units": "deviation from cubic trend, 1930 = 100"
+    },
+    "S1601-C": {
+      "label": "US wholesale price / gold ratio (re-fit input)",
+      "units": "ratio (WPI per gold)"
+    },
+    "S1601-D": {
+      "label": "UK wholesale price / gold ratio (re-fit input)",
+      "units": "ratio (WPI per gold)"
+    }
+  }
+}

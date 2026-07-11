@@ -29,6 +29,7 @@ from L01_loaders._ch14_helpers import (  # noqa: E402
     read_appendix14, fred_quarterly, fred_monthly_to_quarterly,
 )
 from S00_setup import S00_apis  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 SERIES_ID = "S1403"
 OUT_BOOK = DATA_RAW / f"{SERIES_ID}_APPENDIX14.parquet"
@@ -61,10 +62,10 @@ def _save_book_annual_reference(df: pd.DataFrame) -> int:
 
 def _save_quarterly() -> tuple[dict, bool, str | None]:
     try:
-        gdp_q = fred_quarterly("GDP")               # billions USD SAAR
-        ec_q  = fred_quarterly("W209RC1")           # billions USD SAAR
-        ur_q  = fred_monthly_to_quarterly("UNRATE")     # percent
-        ud_q  = fred_monthly_to_quarterly("UEMPMEAN")   # weeks
+        gdp_q = fred_quarterly("GDP", realtime=realtime_window(SERIES_ID, "GDP"))               # billions USD SAAR
+        ec_q  = fred_quarterly("W209RC1", realtime=realtime_window(SERIES_ID, "W209RC1"))           # billions USD SAAR
+        ur_q  = fred_monthly_to_quarterly("UNRATE", realtime=realtime_window(SERIES_ID, "UNRATE"))     # percent
+        ud_q  = fred_monthly_to_quarterly("UEMPMEAN", realtime=realtime_window(SERIES_ID, "UEMPMEAN"))   # weeks
     except S00_apis.ApiUnavailable as exc:
         return {}, False, str(exc)
     gdp_q.assign(units="billions_usd_saar",

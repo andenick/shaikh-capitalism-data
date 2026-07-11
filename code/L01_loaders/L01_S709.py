@@ -8,6 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils.paths import DATA_RAW, book_data_path  # noqa: E402
 from L01_loaders._ch7_xlsx_panels import read_panel, deviations_long  # noqa: E402
+from L01_loaders._ch7_xlsx_panels import assert_panel_vintage, PANEL_CLASSIFICATION_VINTAGE  # noqa: E402
 
 SERIES_ID = "S709"
 CHOPPED_XLSX = book_data_path("Appendix7_ropdataUSind.xlsx")
@@ -19,6 +20,7 @@ def run() -> dict:
         return {"status": "FAIL", "error": f"chopped table missing: {CHOPPED_XLSX}"}
 
     panel = read_panel(CHOPPED_XLSX)
+    assert_panel_vintage(PANEL_CLASSIFICATION_VINTAGE)  # CH9-F4-analogous ch7 guard (Decision 0014)
     long_df = deviations_long(
         panel,
         subseries_id=f"{SERIES_ID}-A",

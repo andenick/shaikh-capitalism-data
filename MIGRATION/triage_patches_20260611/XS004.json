@@ -1,0 +1,16 @@
+{
+  "sid": "XS004",
+  "display_name": "GPIM corporate capital stock (operational baseline)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "The operational GPIM corporate capital-stock baseline consumed by S601-S604 (net current-cost, gross current-cost, and historical-cost corporate stocks). All billions_current_usd, single-unit, renders sensibly. Appendix Table 6.8.II.5. This is the primary GPIM series; XS005-XS008 are its methodology variants.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "XS004-A": {"label": "Net current-cost corporate stock (GPIM, operational baseline)", "units": "billions_current_usd"},
+    "XS004-B": {"label": "Gross current-cost corporate stock (GPIM)", "units": "billions_current_usd"},
+    "XS004-C": {"label": "Historical-cost net corporate stock (GPIM)", "units": "billions_current_usd"}
+  },
+  "field_fixes": {}
+}

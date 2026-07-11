@@ -1,0 +1,96 @@
+{
+  "title": "US NIPA Comprehensive-Revision Timeline (Phase-0 canonical reference)",
+  "scope": "US Bureau of Economic Analysis National Income and Product Accounts (NIPAs), comprehensive updates and table-renumbering events relevant to the RSCD replication of Shaikh (2016).",
+  "compiled_by": "RSCD Phase-0 research agent",
+  "compiled_date": "2026-06-30",
+  "web_verified": true,
+  "note_on_count": "BEA counts 16 comprehensive updates of the National (Economic) Accounts through 2023. This file details the modern set (1999-2023) that bear on Shaikh's 2011-vintage construction and any post-book extension. Pre-1999 comprehensive revisions (…1980, 1985, 1991, 1996) are out of RSCD scope and omitted.",
+  "cross_checks": {
+    "local_kb_METHODOLOGY_CHANGES_2010_2025": "Confirms 2013 (R&D capitalization, +~$400B GDP), 2018, 2023 comprehensive revisions. Local doc is thinner and gives 'effective July 2013 / July 2018 / September 2023'; this file adds exact release dates and the 1999/2003/2009 rows the local doc omits.",
+    "local_NIPA_T711_FISIM_remap": "Confirms the 2013 FISIM restatement (no T7.11 row-order change) and the 2018 +1 line shift in T7.11 financial-corporate monetary-interest block. Reproduced in table_renumbering_events below."
+  },
+  "revisions": [
+    {
+      "date": "1999-10",
+      "release_date": "1999-10-28",
+      "revision_name": "1999 Comprehensive Revision (11th comprehensive)",
+      "what_changed": "Recognized business and government purchases of software AND own-account software production as fixed investment (new 'software' asset). Switched featured aggregates fully to chain-type (Fisher) quantity/price indexes with updated reference year. Reclassified government consumption vs. government investment. Improved bank-service and insurance imputations.",
+      "series_families_affected": ["GDP", "Private Fixed Investment (equipment & software)", "Government investment", "Capital stock / Fixed Assets", "Chain-type price & quantity indexes"],
+      "authoritative_url": "https://apps.bea.gov/scb/pdf/national/nipa/1999/0899niw.pdf",
+      "results_url": "https://apps.bea.gov/scb/pdf/national/NIPA/1999/1199gdp.pdf",
+      "verification": "web-verified (BEA SCB Aug 1999 preview + Nov/Dec 1999 initial results)"
+    },
+    {
+      "date": "2003-12",
+      "release_date": "2003-12",
+      "revision_name": "2003 Comprehensive Revision (12th comprehensive)",
+      "what_changed": "Revised measurement of implicitly priced banking services (reference-rate / FISIM-style approach) and of property-casualty insurance services. Extended software capitalization to own-account development of software originals used for reproduction. New and redesigned NIPA tables and presentations.",
+      "series_families_affected": ["Corporate profits (financial vs nonfinancial)", "Personal consumption (financial services)", "GDP by industry", "FISIM / imputed interest", "Insurance services"],
+      "authoritative_url": "https://www.bea.gov/information-previous-updates-nipa-regional-accounts",
+      "verification": "web-verified (BEA 'Information on previous updates' page; SCB Sept 2003 preview, Dec 2003/Jan 2004 results)"
+    },
+    {
+      "date": "2009-07",
+      "release_date": "2009-07-31",
+      "revision_name": "2009 Comprehensive Revision (13th comprehensive)",
+      "what_changed": "Incorporated the 2002 benchmark input-output accounts. Changes in definitions, classifications, statistical methods, source data, and presentation. Reclassifications flowing from the 2002-NAICS benchmark I-O feed into industry detail.",
+      "series_families_affected": ["GDP by industry", "Personal consumption expenditures categories", "Investment", "NIPA-IO integration"],
+      "authoritative_url": "https://www.bea.gov/information-previous-updates-nipa-regional-accounts",
+      "verification": "web-verified (BEA 'Information on previous updates' page; release 2009-07-31)"
+    },
+    {
+      "date": "2013-07",
+      "release_date": "2013-07-31",
+      "revision_name": "2013 Comprehensive Revision (14th comprehensive)",
+      "what_changed": "Capitalized R&D expenditures as fixed investment. Capitalized entertainment, literary, and artistic originals as investment. These two created the new 'intellectual property products' (IPP) fixed-investment category. Adopted accrual accounting for defined-benefit pension plans. Expanded residential ownership-transfer costs recognized as fixed investment. Incorporated the 2007 benchmark input-output accounts. Improved measures of commercial banking services (FISIM restatement by sector, no T7.11 row-order change). Raised measured GDP level by roughly $400 billion.",
+      "series_families_affected": ["GDP", "Private Fixed Investment (new IPP category: R&D + entertainment originals)", "Corporate profits", "Net operating surplus / CFC", "Fixed Assets (capital stock levels rise)", "Personal income & saving (pensions)", "FISIM / imputed interest (T7.11 magnitudes)"],
+      "authoritative_url": "https://apps.bea.gov/scb/pdf/2013/03%20March/0313_nipa_comprehensive_revision_preview.pdf",
+      "supporting_url": "https://www.bea.gov/help/faq/1024",
+      "verification": "web-verified (BEA SCB March 2013 preview + BEA FAQ 1024; results SCB Sept 2013). Cross-checks local METHODOLOGY_CHANGES_2010_2025 and CH6/CH7 vintage-drift warnings."
+    },
+    {
+      "date": "2018-07",
+      "release_date": "2018-07-27",
+      "revision_name": "2018 Comprehensive Update (15th comprehensive)",
+      "what_changed": "Incorporated the 2012 benchmark input-output accounts. New and improved methods for measuring financial services and nonprofit institutions. Revisions to personal saving. New table presentations. Inserted a new monetary-interest sub-row in the T7.11 financial-corporate block, shifting subsequent T7.11 line numbers by +1 (see table_renumbering_events).",
+      "series_families_affected": ["GDP by industry", "Personal saving", "Financial services (FISIM)", "Nonprofit institutions", "NIPA-IO integration", "T7.11 line numbering (+1 shift)"],
+      "authoritative_url": "https://apps.bea.gov/scb/issues/2018/04-april/0418-preview-2018-comprehensive-nipa-update.htm",
+      "results_url": "https://apps.bea.gov/scb/issues/2018/09-september/0918-nipa-update.htm",
+      "verification": "web-verified (BEA SCB April 2018 preview + Sept 2018 update; release 2018-07-27). T7.11 +1 shift cross-checked against local NIPA_T711_FISIM_remap.md."
+    },
+    {
+      "date": "2023-09",
+      "release_date": "2023-09-28",
+      "revision_name": "2023 Comprehensive Update of the National Economic Accounts (16th comprehensive)",
+      "what_changed": "First fully harmonized comprehensive update of the National Economic Accounts: concurrent release of the NIPAs and the Industry Economic Accounts, incorporating the 2017 benchmark supply-use / input-output tables. Reference year updated to 2017. Changes stemming from 2017 NAICS are small (no summary- or sector-level industry reclassifications). Methodological improvements to selected components.",
+      "series_families_affected": ["GDP (reference year -> 2017)", "GDP by industry / supply-use tables", "Chain-type indexes (reference year)", "NIPA-IEA harmonization"],
+      "authoritative_url": "https://apps.bea.gov/scb/issues/2023/06-june/0623-nea-preview.htm",
+      "supporting_url": "https://www.bea.gov/information-updates-national-economic-accounts-2023",
+      "verification": "web-verified (BEA SCB June 2023 preview + BEA 2023 updates page; initial results released 2023-09-28)"
+    }
+  ],
+  "table_renumbering_events": [
+    {
+      "table": "NIPA T7.11 (Interest Paid and Received by Sector and Legal Form of Organization)",
+      "event": "2018 Comprehensive Update inserted one new monetary-interest sub-row in the financial-corporate block, shifting all subsequent line numbers by +1 (e.g. 2011-vintage line 44 -> 2018+ line 45; line 28 -> 29; lines 52/53/54/73/74/75/91 -> 53/54/55/74/75/76/92). Line 4 unchanged.",
+      "vintages_affected": "2011-2017 vintages share the 2011 line numbers; 2019-2024 vintages share the 2018 line numbers.",
+      "impact": "Silently breaks any hard-coded 2011-vintage line-number recipe (Shaikh Appendix Table 6.7.11 / XS003 imputed-interest adjustment). Mitigated by the stub-label resolver.",
+      "resolution_doc": "Technical/docs/methodology/NIPA_T711_FISIM_remap.md",
+      "authoritative_url": "https://www.bea.gov/resources/methodologies/nipa-handbook"
+    },
+    {
+      "table": "NIPA T7.11 (FISIM magnitudes)",
+      "event": "2013 Comprehensive Revision restated FISIM / implicitly-priced financial services by sector. Row ORDER unchanged; the magnitudes each row carries changed.",
+      "vintages_affected": "Pre-2013 vs 2013+ magnitudes differ; line numbers identical through 2017.",
+      "impact": "XS003 recipe rows point to the same captions but different values across the 2013 boundary; do not splice.",
+      "resolution_doc": "Technical/docs/methodology/NIPA_T711_FISIM_remap.md",
+      "authoritative_url": "https://apps.bea.gov/scb/pdf/2013/03%20March/0313_nipa_comprehensive_revision_preview.pdf"
+    }
+  ],
+  "authoritative_sources": [
+    {"label": "BEA Information on previous updates of the National and Regional Economic Accounts", "url": "https://www.bea.gov/information-previous-updates-nipa-regional-accounts"},
+    {"label": "BEA NIPA Handbook (Concepts and Methods)", "url": "https://www.bea.gov/resources/methodologies/nipa-handbook"},
+    {"label": "BEA FAQ 1024 - 2013 comprehensive revision definition/presentation changes", "url": "https://www.bea.gov/help/faq/1024"},
+    {"label": "BEA blog - 2013 comprehensive revisions: R&D and entertainment", "url": "https://www.bea.gov/news/blog/2013-07-23/comprehensive-revisions-nipa-reconsidering-treatment-rd-and-entertainment"}
+  ]
+}

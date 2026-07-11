@@ -1,0 +1,16 @@
+{
+  "sid": "S710",
+  "display_name": "Deviations of US industry incremental profit rates from the average, 1988–2005",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Per-industry deviation of S706 incremental ROP from the All-Private benchmark (31 industries); starts 1988 due to the incremental lag. Figure 7.18, source, and the 'every single case crosses zero' finding verified verbatim against KB ch07. Figure-overlay MATCH per FIGURE_REPRO_ch07.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S710-A": {
+      "label": "US industry incremental-profit-rate deviation from the All-Private average (31 industries)",
+      "units": "rate deviation (decimal)"
+    }
+  }
+}

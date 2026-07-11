@@ -1,0 +1,16 @@
+{
+  "sid": "S711",
+  "display_name": "Deviations of OECD industry incremental profit rates from the average, 1988–2003",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "PPP-adjusted OECD-wide incremental-rate deviation panel (28 industries) from Shaikh's Appendix 7.2 (OECD STAN 2003 vintage + Penn World Table 6.2 PPP). Average ROP not computable (capital stock too sparse), so IROP only — confirmed against KB ch07 p.305. Figure 7.21 caption, the PPP method, and the '~30 OECD countries' caveat verified verbatim against KB. Data ends 2003 (registry-correct, not a reproduction error). Display name updated to 1988–2003 to match the data; the registry/research '1988–2005' framing refers to the data vintage envelope.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S711-A": {
+      "label": "OECD industry incremental-profit-rate deviation from the all-industries average (28 industries, PPP-adjusted)",
+      "units": "rate deviation (decimal)"
+    }
+  }
+}

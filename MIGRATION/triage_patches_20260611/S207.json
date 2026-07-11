@@ -1,0 +1,29 @@
+{
+  "sid": "S207",
+  "display_name": "US Manufacturing Productivity and Real Compensation",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Fig.2.5; book_period_validated; real data present. Units corrected: registry mixed_units string split - all four subseries are index (1889=100).",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S207-A": {
+      "label": "Manufacturing labor productivity",
+      "units": "index (1889=100)"
+    },
+    "S207-B": {
+      "label": "Production-worker real compensation",
+      "units": "index (1889=100)"
+    },
+    "S207-C": {
+      "label": "Manufacturing real output per hour, modern extension",
+      "units": "index (1889=100)"
+    },
+    "S207-D": {
+      "label": "Manufacturing real compensation per hour, modern extension",
+      "units": "index (1889=100)"
+    }
+  },
+  "units": "index (1889=100)"
+}

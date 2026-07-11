@@ -1,0 +1,24 @@
+{
+  "sid": "S1701",
+  "display_name": "The global crisis of 2007 in light of past long waves",
+  "publish": true,
+  "triage": {
+    "verdict": "fix-completed-then-publish",
+    "reason": "HALLUCINATED NAME CORRECTED: registry name field carried stale CD2 S102 inheritance 'IRS 2011 Income Distribution — Full Table'; the Phase-4 rename was logged in name_history but never applied. Chopped data (gold-price HP-100 long waves, 1790+) and KB figure 17.1 caption confirm the long-waves identity. Registry name + figures fixed; generator _phase5_ch11_13_17_register.py patched to emit name+figures. Verbatim quotes match.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1701-A": {
+      "label": "US wholesale price in gold (HP-smoothed)",
+      "units": "index (dimensionless, HP-100 smoothed)"
+    },
+    "S1701-B": {
+      "label": "UK wholesale price in gold (HP-smoothed)",
+      "units": "index (dimensionless, HP-100 smoothed)"
+    },
+    "S1701-C": {
+      "label": "Average of past two waves overlay (data and forecast)",
+      "units": "index (dimensionless, HP-100 smoothed)"
+    }
+  }
+}

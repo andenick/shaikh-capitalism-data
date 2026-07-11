@@ -1,0 +1,16 @@
+{
+  "sid": "S705",
+  "display_name": "Average rates of profit in US industries, 1987–2005",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructed multi-industry panel (30 industries + All-Private) from Shaikh's online Appendix 7.2 (BEA NIPA, with WEQ / owner-occupied-housing / inventory-reserve adjustments). Figure 7.15, period, and source ('Shaikh 2008') verified against KB ch07; all four book_quotes verbatim-confirmed. reference_values are round-trip-circular against the salvaged appendix (auditability only) — the genuine book tie is the figure-overlay (MATCH per FIGURE_REPRO_ch07).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S705-A": {
+      "label": "US industry average rate of profit (30 industries + All-Private benchmark)",
+      "units": "rate (decimal)"
+    }
+  }
+}

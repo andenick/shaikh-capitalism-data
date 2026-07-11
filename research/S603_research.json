@@ -136,13 +136,13 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-wave-a-ch6",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from CD2 S028 dossier + verbatim eq. 6.11 and Fig 6.3 narrative from book p. 249. NMINT incompleteness flagged in extension concerns per CD2 known issue."
     },
     {
-      "reviewer": "opus-subagent-ch6-retry",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Retry pass after Ch6 content-filter incident. Confirmed all acceptance criteria met (3 quotes including verbatim eq. 6.11 with definition+source+method roles, BEA+IRS primary source, formula construction with 5 components for x1/x2/x3 ratios, extension candidates for all input tables, 5 methodology notes). No content changes required."

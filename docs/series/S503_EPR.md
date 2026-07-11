@@ -1,7 +1,7 @@
 # S503 — Extension Provenance Record
 
 **Series**: S503 — UK WPI in Gold and UK Gold Price
-**Phase**: 6 · **Construction**: `formula` · **Extension method**: re-compute (mandatory; no lazy splice)
+
 **Authored**: 2026-05-18
 
 ---

@@ -35,13 +35,13 @@
   ],
   "primary_source": {
     "agency": "Salter, W. E. G. (Cambridge University Press)",
-    "publication": "Productivity and Technical Change, 2nd edition, 1969, Table 28 (UK 1954-1963 industry selling price and unit labor cost indices, base 1954 = 100). Table 28 appears in the Addendum compiled by W. B. Reddaway after Salter's death.",
-    "table_or_series_id": "Salter (1969) p. 164, Table 28",
+    "publication": "Productivity and Technical Change, 2nd edition, 1969, Table 33 (UK 1954-1963 industry selling price and unit labor cost indices, base 1954 = 100). Table 33 appears in the Addendum compiled by W. B. Reddaway after Salter's death.",
+    "table_or_series_id": "Salter (1969) p. 197, Table 33",
     "url": "https://www.cambridge.org/core/books/productivity-and-technical-change/13C6E0F2C6CC5D6E5DAB0F3A1CAA5C28",
     "frequency": "cross_sectional (two-period industry comparison: 1954 vs 1963)",
     "units": "ratio (1963 value / 1954 value, x 100; both selling price and unit labor cost indexed)",
     "license": "Reproduced from Salter (1969); academic fair use. Underlying UK source data is from UK Census of Production and Board of Trade industrial statistics for 1954 and 1963.",
-    "available_through": "Cambridge University Press; transcribed into Appendix 7.2 file 'Appendix7_SalterULCPriceTable28.xlsx' on Shaikh's companion website http://www.anwarshaikhecon.org/",
+    "available_through": "Cambridge University Press; transcribed into Appendix 7.2 file 'Appendix7_SalterULCPriceTable33.xlsx' on Shaikh's companion website http://www.anwarshaikhecon.org/",
     "discontinued": true,
     "replaced_by": "Salter/Reddaway's UK 1954-1963 panel is not maintained as a current series. For modern UK selling-price vs unit-labor-cost cross-sections see ONS Productivity Industry by Industry + ONS Producer Price Inflation by SIC07."
   },
@@ -80,15 +80,22 @@
   ],
   "methodology_notes": [
     "Cross-sectional scatter for the UK, analogous to Figure 7.11 for the US. Each point is one UK manufacturing industry; x = (UCC_1963 / UCC_1954) x 100, y = (price_1963 / price_1954) x 100.",
-    "Per book p. 286, the 1954-1963 UK data appear in Salter's posthumous 'Addendum provided by W. B. Reddaway after Salter's untimely death in 1963', specifically Table 28 on p. 164 of the 1969 second edition.",
-    "Appendix 7.1 (book p. 856, PDF 894) explicitly states 'Figures 7.1-7.12 are either illustrations or have their sources listed within the figure itself,' so the dossier's primary source is Salter (1969) Table 28 - no separate methodology appendix exists.",
-    "Replication for RSCD: digitize Table 28 from Salter (1969) directly OR use Shaikh's transcribed Appendix 7.2 file Appendix7_SalterULCPriceTable28.xlsx. Like S701, the figure is a historical cross-section and is not extensible as a modern time series."
+    "Per book p. 286, the 1954-1963 UK data appear in Salter's posthumous 'Addendum provided by W. B. Reddaway after Salter's untimely death in 1963', specifically Table 33 on p. 197 of the 1969 second edition. (The book's Fig 7.12 caption transposes this to '164, table 28'; that is a caption erratum — see open_questions[0].)",
+    "Appendix 7.1 (book p. 856, PDF 894) explicitly states 'Figures 7.1-7.12 are either illustrations or have their sources listed within the figure itself,' so the dossier's primary source is Salter (1969) Table 33 - no separate methodology appendix exists.",
+    "Replication for RSCD: digitize Table 33 from Salter (1969) directly OR use Shaikh's transcribed Appendix 7.2 file Appendix7_SalterULCPriceTable33.xlsx. Like S701, the figure is a historical cross-section and is not extensible as a modern time series."
   ],
   "open_questions": [
-    "SOURCE-LABEL DESYNC (ch7 reconciliation 2026-06-11): the book caption (KB ground truth) cites this UK Fig 7.12 panel as Salter 1969, p.164, table 28 — research/docs now follow the book. BUT the registry subsource KEY (SALTER_1969_TABLE33_UK), SUBSOURCE_METADATA.json entry, and the chopped S702.csv source_id column still carry the file-derived label TABLE33 with page 197. Registry/chopped left untouched (out of scope). Registry owner should reconcile the key/source_id/table_id to the book-correct p.164/table 28. Data VALUES verified EXACT vs the Salter UK panel (56/56 pairs).",
+    "RESOLVED (Salter caption transposition, campaign DF-2, 2026-07-02): The book Fig 7.12 caption transposes the two Salter tables (it prints 'Source: Salter 1969, 164, table 28'). The AUTHORITATIVE mapping — from the salvaged workbook Row-0 title ('Table 33. Changes over the period 1954-63 for selected United Kingdom industries - (Index numbers 1954 = 100)') and the book body text '(164, table 28; 197, table 33)' — is UK Fig 7.12 = Salter Table 33, p.197 (the Reddaway Addendum). The registry subsource KEY (SALTER_1969_TABLE33_UK), the SUBSOURCE_METADATA.json entry, the chopped S702.csv source_id, and the L01_S702 loader (reads Appendix7_SalterULCPriceTable33.xlsx) are ALL CORRECT and MUST NOT be renamed. Docs and this research JSON have been reverted to the true mapping, reversing the 2026-06-11 reconciliation. DO NOT rename the subsource keys or chopped source_ids. Data VALUES verified EXACT vs the Salter UK panel (56/56 pairs).",
     "Confirm Appendix7_SalterULCPriceTable28.xlsx in SalvagedInputs is verbatim from Salter (1969) Table 28, with no transformation applied by Shaikh.",
     "Decide whether to preserve Salter's UK industry labels (e.g., 'Iron and Steel', 'Cotton', 'Wool') as-is for the regenerated figure, or to map them to modern SIC07 (recommendation: keep original - illustration of a historical pattern).",
     "Re-classify content_type from time_series (stub default) to cross_sectional."
+  ],
+  "review_history_addendum": [
+    {
+      "reviewer": "P4.3-docs-agent",
+      "date": "2026-07-10",
+      "notes": "ADDENDUM (F-2D-02): Stale Table-28 note resolved. The Fig 7.12 caption prints 'Source: Salter 1969, 164, table 28' — this is a caption transposition error in the book. The authoritative data source is Salter (1969) Table 33, p. 197 (Reddaway Addendum), as confirmed by the salvaged workbook row title and the book body text (p. 286). This dossier's open_questions[0] was RESOLVED on 2026-07-02 (campaign DF-2). S702_EXPLAINER.md has been updated to correct the stale 'page 164, table 28' reference to 'page 197, table 33 (the Reddaway Addendum)'. The registry subsource key (SALTER_1969_TABLE33_UK) and chopped source_ids are CORRECT and must NOT be renamed."
+    }
   ],
   "review_history": [
     {
@@ -98,7 +105,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-wave-b-ch7",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from book Ch7 pp. 286-287 verbatim. Source confirmed as Salter (1969) Table 28 (Reddaway Addendum). Excel transcription present in SalvagedInputs (Appendix7_SalterULCPriceTable28.xlsx). Cross-sectional; not extensible. Re-classified content_type."

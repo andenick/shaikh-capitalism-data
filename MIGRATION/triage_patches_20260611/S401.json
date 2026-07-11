@@ -1,0 +1,23 @@
+{
+  "sid": "S401",
+  "display_name": "Average and marginal cost curves with wages paid per worker (illustrative)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Renderable multi-trace cost curve (Shaikh Fig 4.16): six cost components (afc, ulc', avc', ac', tc', mc') vs cumulative daily output XR across a three-shift day, paying wages per worker. 6 subseries x 21 points = 126 rows (4 nulls are the mathematically-undefined ac' at XR=0, expected). Renders as overlaid x-y cost curves (x = cumulative output XR, carried in the 'year' index column 0-9, NOT calendar years). TRIAGE_PRESCREEN EMPTY flag is STALE: L01_S401/P02_S401 exist and replicate.py --series S401 builds the chopped (PASS, 126 rows). Data is a VERBATIM transcription of Appendix Table 4.2.4 (book pp.772-781), validated to <=0.02 rounding noise. KB note: the chapter-4 main text is not HDARP-extracted, BUT Appendix 4.2 (the actual source of this series) IS present in ch18_appendices.md, so a 'From the book' quote anchored to ch18/Appendix 4.2 is verifiable and is included in the explainer.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S401-afc": {"label": "Average fixed cost (afc)", "units": "money units per unit output (illustrative)"},
+    "S401-ulc_prime": {"label": "Unit labour cost, per-worker wages (ulc')", "units": "money units per unit output (illustrative)"},
+    "S401-avc_prime": {"label": "Average variable cost (avc')", "units": "money units per unit output (illustrative)"},
+    "S401-ac_prime": {"label": "Average total cost (ac')", "units": "money units per unit output (illustrative)"},
+    "S401-tc_prime": {"label": "Total cost (tc')", "units": "money units (total daily cost, illustrative)"},
+    "S401-mc_prime": {"label": "Marginal cost (mc')", "units": "money units per unit output (illustrative)"}
+  },
+  "field_fixes": {
+    "year_column_is_index": "Chopped 'year' is a point index (0-9), not a calendar year; abscissa is cumulative daily output XR. Viz plots cost vs XR, one trace per cost component.",
+    "mixed_units_split": "tc_prime is a total (money units), the other five are per-unit (money units per unit output); split per-subseries units so the series-level units string is not mixed."
+  },
+  "notes": "content_type derived; construction formula; not extended. S402 is the per-hour-wage twin; S403 is the profit derivation. Parameters (book p.781): d=0.05, pMK=100, pa=10, a=0.30, wN=100, p=7, MK=14, N in {1,2,3}."
+}

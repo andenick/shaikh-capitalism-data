@@ -1,6 +1,6 @@
 # S901 — Market Prices vs Direct Prices (cross-section, 6 benchmark years)
 
-**DPR** · **Phase**: 5 · **Series ID**: S901 · **Status**: book_period_validated · **Authored**: 2026-05-18
+**DPR** · **Series ID**: S901 · **Status**: book_period_validated · **Authored**: 2026-05-18
 
 ---
 

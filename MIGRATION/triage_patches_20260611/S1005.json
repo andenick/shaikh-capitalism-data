@@ -1,0 +1,36 @@
+{
+  "sid": "S1005",
+  "display_name": "Dividend yield versus bond yields, 1871-2025",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Figure 10.9 (dividend yield vs bond yields) from Shiller and composite bond data; no proxies. Fixed figure reference (was 10.5, correct is 10.9).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1005-A": {
+      "label": "S&P composite dividend yield (book period)",
+      "units": "percent"
+    },
+    "S1005-A-ext": {
+      "label": "S&P composite dividend yield (extension)",
+      "units": "percent"
+    },
+    "S1005-B": {
+      "label": "10-year US government bond yield (book period)",
+      "units": "percent"
+    },
+    "S1005-B-ext": {
+      "label": "10-year US government bond yield, FRED GS10 (extension)",
+      "units": "percent"
+    },
+    "S1005-C": {
+      "label": "Composite long-term corporate bond yield (book period)",
+      "units": "percent"
+    },
+    "S1005-C-ext": {
+      "label": "Long-term corporate bond yield, FRED AAA (extension)",
+      "units": "percent"
+    }
+  }
+}

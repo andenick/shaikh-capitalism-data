@@ -1,7 +1,7 @@
 """Phase 5 Ch11+Ch13+Ch17 registry / subsource / ledger updater (idempotent).
 
 Updates Technical/series_registry.json, Technical/SUBSOURCE_METADATA.json, and
-Technical/ANU_LEDGER.json for the 8-series Ch11/13/17 fanout:
+Technical/ANU_LEDGER.json for the 8-series Ch11/13/17 automated-agent:
   Ch11: S1101, S1102, S1103, S1104
   Ch13: S1301
   Ch17: S1701, S1702, S1703

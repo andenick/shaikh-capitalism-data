@@ -1,0 +1,20 @@
+{
+  "sid": "XS2301",
+  "display_name": "US goods trade balance with the world and China, 2002-2024 (Weber & Shaikh 2020)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Truncation repaired this pass. The loader's fragile Census scrape mis-keyed the annual figure off a non-existent column header and silently fell back to five Fig-1 anchor points, truncating at 2018 while the DPR falsely claimed continuous coverage to 2024. Loader rebuilt on the Census FT900 country balance pages (c0004 World, c5700 China), reading the published TOTAL {YYYY} rows directly. Now genuinely continuous 2002-2024, 23 real annual observations per partner, all live Census data, zero fabrication. V03 validator PASS (4/4 Fig-1 anchors matched, max 2.17% error). DPR + EPR corrected.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "XS2301-world": {"label": "US-World goods trade balance", "units": "billion_usd"},
+    "XS2301-china": {"label": "US-China goods trade balance", "units": "billion_usd"}
+  },
+  "field_fixes": {},
+  "registry_reconciliation_recommended": {
+    "note": "Registry (read-only this pass) records the World subseries subsource_id as CENSUS_FT900_EXH1 with source_url census.gov/.../historical/exh1.txt, which now 404s. The repaired loader emits CENSUS_FT900_C0004 from census.gov/foreign-trade/balance/c0004.html. Recommend updating XS2301-world subsource_id -> CENSUS_FT900_C0004 and source_url accordingly.",
+    "XS2301-world.subsource_id": "CENSUS_FT900_C0004",
+    "XS2301-world.source_url": "https://www.census.gov/foreign-trade/balance/c0004.html"
+  }
+}

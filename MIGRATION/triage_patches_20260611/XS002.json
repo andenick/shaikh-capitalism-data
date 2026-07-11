@@ -1,0 +1,20 @@
+{
+  "sid": "XS002",
+  "display_name": "Wage equivalent and corporate/non-corporate profit split",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Six dollar components of the WEQ2 wage-equivalent adjustment and the corporate/non-corporate profit split, plus the dimensionless Sigma ratio. Feeds XS003/S603. Appendix Table 6.8.I.2. Latent mixed-units: XS002-G (Sigma = corporate EC/profit) is a dimensionless ratio (2.87-7.47), not dollars, so units are now declared per-subseries to keep the chart honest (Sigma must not share a billions axis with the dollar components).",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "XS002-A": {"label": "Proprietors' and partnership income (with IVA, CCAdj)", "units": "billions_current_usd"},
+    "XS002-B": {"label": "Employee compensation of proprietors", "units": "billions_current_usd"},
+    "XS002-C": {"label": "WEQ2 wage equivalent (preferred)", "units": "billions_current_usd"},
+    "XS002-D": {"label": "WEQ1 wage equivalent (alternative)", "units": "billions_current_usd"},
+    "XS002-E": {"label": "Non-corporate profit (WEQ2-based)", "units": "billions_current_usd"},
+    "XS002-F": {"label": "Corporate profit (NIPA)", "units": "billions_current_usd"},
+    "XS002-G": {"label": "Sigma (corporate employee-compensation-to-profit ratio)", "units": "dimensionless_ratio"}
+  },
+  "field_fixes": {"units": "per_subseries"}
+}

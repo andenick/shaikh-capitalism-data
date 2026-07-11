@@ -1,0 +1,16 @@
+{
+  "sid": "S709",
+  "display_name": "Deviations of US industry profit rates from the average, 1987–2005",
+  "publish": true,
+  "triage": {
+    "verdict": "fix-completed-then-publish",
+    "reason": "Per-industry deviation of S705 average ROP from the All-Private benchmark (31 industries). Figure 7.16, source, and the '18 of 30 cross zero' finding verified verbatim against KB ch07. Fixed: research JSON name and year_range_book corrected 1988→1987 (Fig 7.16 is the ROP-deviation panel derived from S705, which starts 1987; chopped data confirms 1987–2005). DPR already carried the correct 1987–2005.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S709-A": {
+      "label": "US industry profit-rate deviation from the All-Private average (31 industries)",
+      "units": "rate deviation (decimal)"
+    }
+  }
+}

@@ -131,13 +131,13 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-s710",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from CD2 S037 dossier + book pp. 300, 305, 857-858 (PDF pp. 344, 895-897) verbatim. Decision 0004: closes Phase 2 gap for Fig 7.18 (US IROP deviations). Construction = formula (one-line algebraic transform of S706). Source = same as S706 (BEA GOS + FA T3.7ES + Shaikh 2008 adjustments). 4 quotes (definition, source, source, method), 3 components, 3 extension candidates, 8 methodology notes. Substantive companion to S709 - together they comprise the chapter's strongest empirical test of turbulent equalization."
     },
     {
-      "reviewer": "opus-subagent-batch1-A4-B4",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "blocker-resolved",
       "notes": "B4 resolved (shared with S705/S706/S709). 31-industry exclusion list at SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv."

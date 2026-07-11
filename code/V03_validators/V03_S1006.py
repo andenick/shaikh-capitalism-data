@@ -12,7 +12,16 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils import paths  # noqa: E402
 from utils.paths import DATA_PROCESSED, SALVAGED_BOOK_DATA  # noqa: E402
+from V03_validators._v03_anchor_lib import (  # noqa: E402
+    RED,
+    check_independent_anchor,
+    check_level_plausibility,
+    check_splice_continuity,
+    _load_processed,
+    _load_registry,
+)
 
+SERIES_ID = "S1006"
 PROCESSED = DATA_PROCESSED / "S1006.parquet"
 CHOPPED_XLSX = SALVAGED_BOOK_DATA / "ShaikhChoppedTables" / "Appendix10_Ibbotson.xlsx"
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
@@ -41,6 +50,23 @@ def _update_report(row: dict) -> None:
     rpt["generated_at"] = datetime.now(timezone.utc).isoformat()
     rpt.setdefault("series", {})["S1006"] = row
     REPORT.write_text(json.dumps(rpt, indent=2, default=str), encoding="utf-8")
+
+
+def _anchor_section(sid: str) -> dict:
+    """Run the Decision-0011 independent-anchor + structural guards for `sid`.
+
+    An anchor/splice/plausibility RED is a genuine defect that MUST fail the
+    validator (breaks the tautological round-trip). NA/GREEN pass through.
+    """
+    registry = _load_registry()
+    df = _load_processed(sid)
+    checks = {
+        "anchors": check_independent_anchor(sid, df, registry),
+        "splice": check_splice_continuity(sid, df, registry),
+        "plausibility": check_level_plausibility(sid, df, registry),
+    }
+    red = [name for name, res in checks.items() if res.get("status") == RED]
+    return {"status": "FAIL" if red else "PASS", "red_checks": red, **checks}
 
 
 def run() -> dict:
@@ -80,9 +106,11 @@ def run() -> dict:
         overall_mae_sum += mae * len(m); overall_mae_n += len(m)
 
     overall_mae = overall_mae_sum / overall_mae_n if overall_mae_n else float("nan")
-    status = "PASS" if not div_years_total else "FAIL"
+    anchor = _anchor_section(SERIES_ID)
+    status = "PASS" if (not div_years_total and anchor["status"] == "PASS") else "FAIL"
     row = {
         "status": status,
+        "independent_anchor_checks": anchor,
         "tolerance_pct": VALIDATOR_TOL_PCT,
         "criterion": "abs_err > 1.0 percentage point (return series)",
         "compare_range": list(BOOK_OVERLAP),

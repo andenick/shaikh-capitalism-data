@@ -1,0 +1,50 @@
+{
+  "$schema": "anu-publish-audit-profile-v1",
+  "profile": "transparency-bundle",
+  "version": "1.0",
+  "pinned": "2026-07-10",
+  "decision_ref": "RSCD v1.6 remediation P5_bundle_blockers (settles the P3.1 vs P5.1b path-severity conflict)",
+  "applies_to": "Outputs/Publish  (the GitHub replication bundle: data + pipeline + full)",
+  "audit_tool": "Council/Druck/.claude/skills/anu-publish/audit.py (v2.2)",
+
+  "deterministic_invocation": {
+    "flags": {
+      "--path-severity": "warn",
+      "--jargon-severity": "warn",
+      "--comment-severity": "warn"
+    },
+    "expected_result": "exit 0 (0 FAIL). WARN count is non-blocking and enumerated below.",
+    "runner": "Technical/remediation_v16/run_publish_audit.py  (reads this file, calls audit.py with these flags)"
+  },
+
+  "rationale": {
+    "principle": "The anu-framework P10/P11 relative-path FAIL rule exists for PUBLIC WEB surfaces (the `web` publish profile, `--profile web` -> `_Web_*`). A GitHub *replication* bundle is a different artifact: its internal-state files (registries, provenance docs, replicator code, build narratives) legitimately name their own source layout as reproducibility references. Those are metadata, not rendered web pages.",
+    "consequence": "For Outputs/Publish, relative workspace paths (Technical/…, SalvagedInputs/…, Inputs/…, Council/… as REL_PATH_ROOTS) are WARN, not FAIL. Absolute paths and internal tool names stay FAIL everywhere.",
+    "web_profile_is_separate": "The public website consumes Outputs/rscd-shaikh-2016-replication_Web_v1.6.0/, which is audited at STRICT default (--path-severity fail) and passes at exit 0 (P3.3 Task 4). That strict gate is NOT relaxed by this profile."
+  },
+
+  "severities": {
+    "absolute_workspace_path (D:/Arcanum, C:/Users, E:/Storage)": "FAIL — enforced everywhere",
+    "/Council/ directory":                                          "FAIL — enforced everywhere",
+    "Druck / Robin tool names":                                     "FAIL — enforced everywhere",
+    "andenick GitHub handle":                                       "FAIL — except the project's own repo URL (github.com/andenick/shaikh-capitalism-data), whitelisted in .publish_ignore",
+    "relative workspace path (REL_PATH_ROOTS)":                     "WARN — reproducibility reference in a replication bundle (this profile)",
+    "jargon (HDARP / agent-ID / Anu phase)":                        "WARN — internal-transparency metadata; agent-IDs additionally neutralized to 'automated-agent'",
+    "HTML comment in shipped .md":                                  "WARN"
+  },
+
+  "per_directory_notes": {
+    "series_registry.json + SUBSOURCE_METADATA.json": "Canonical provenance metadata. Relative source paths are the whole point (they trace each value to a source file). WARN.",
+    "replicator/**, code/**":                          "Self-contained pipeline. Path constants + one-shot registry-mutator scripts (utils/_ch*_register.py) reference the source layout. WARN.",
+    "docs/**":                                         "Chapter summaries / methodology / decisions — internal-transparency prose. WARN.",
+    "ANU_LEDGER.json, VALIDATION_REPORT.json":         "Artifact inventory + per-series V03 results (project-relative filenames, mostly outside REL_PATH_ROOTS). WARN where flagged."
+  },
+
+  "residual_warn_classes_accepted": [
+    "relative workspace path — reproducibility references (bulk of WARN)",
+    "HDARP internal term — frozen filename HDARP_SERIES_LINKAGE.json + refs to it",
+    "Anu phase/stage jargon — internal methodology/research narrative"
+  ],
+
+  "note": "audit.py has no native config-file loader; severities are CLI flags. This file is the DECLARATIVE pin of the chosen profile and the contract the runner enforces, so every future audit of this bundle is deterministic. Do not hand-run audit.py with different --path-severity against this bundle without updating this file."
+}

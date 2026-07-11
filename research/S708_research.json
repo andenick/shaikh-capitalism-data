@@ -110,13 +110,13 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-wave-b-ch7",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from book pp. 301, 305 and Appendix 7.1 IV (book p. 859 / PDF p. 897) verbatim. Source = Tsoulfidis & Tsaliki (2011), Figure 5 (p. 30). CD2 had no S039 dossier; closest is CD2 S038 (OECD IROP Fig 7.21, different data source). No Greek raw dataset in SalvagedInputs; flagged as blocker."
     },
     {
-      "reviewer": "opus-subagent-batch1-A4-B5",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "data_unavailable",
       "notes": "B5 underlying-data search (shared with S707): Tsoulfidis & Tsaliki (2011) MPRA paper No. 51334 downloaded and fully inspected; the 20-industry x 30-year IROP deviation time series is not tabulated in the paper, only plotted in Figure 5 (p. 30). Tables 4 and 5 contain only AR(1) regression coefficients (a, b, a/(1-b), R^2) per industry, not raw deviation values. Marked data_unavailable; full provenance at SalvagedInputs/book_data/Reconstructed/Tsoulfidis_Tsaliki_2011_data_unavailable.md. Same Phase 5 recommendation as S707."

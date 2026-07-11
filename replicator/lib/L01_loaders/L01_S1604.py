@@ -12,7 +12,7 @@ Subseries:
   * S1604-E  Counterfactual Rate of Profit                  (rcorpalt)
 
 Extension subseries (S1604-F, -G) re-derive from S0608 + FRED TB3MS + S1602
-ec_c; deferred to Phase 6 per Ch16 fanout direction.
+ec_c; deferred to Phase 6 per Ch16 automated-agent direction.
 """
 from __future__ import annotations
 

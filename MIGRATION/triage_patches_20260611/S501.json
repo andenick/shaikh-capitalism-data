@@ -1,0 +1,15 @@
+{
+  "sid": "S501",
+  "display_name": "US and UK wholesale price indexes, 1790-1940",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh Figure 5.3 (Ch5). Two clean country price-index lines on a single 1930=100 base, 1790-1940, read directly from Shaikh's Appendix 5 DATALRprices workbook. Single-unit, renders sensibly one trace per country; the chronological-slice parent of S502. Documents the absence of secular price trend before the 1939/40 fiat-money transition.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S501-A": {"label": "US wholesale price index", "units": "index_1930=100"},
+    "S501-B": {"label": "UK wholesale price index", "units": "index_1930=100"}
+  },
+  "field_fixes": {}
+}

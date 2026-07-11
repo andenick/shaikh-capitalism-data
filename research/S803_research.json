@@ -107,7 +107,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-wave-b-ch8",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Filled from book pp.373-375 and Bain 1951 / Demsetz 1973b citations. Corrected stub name (was stale from CD2 S041 Ch10 mapping). Classified content_type as cross_sectional. Two figures (8.3, 8.4) consolidated under one series consistent with stub figures[] field."

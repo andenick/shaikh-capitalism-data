@@ -1,17 +1,17 @@
 # S309 -- Luxury Good (x2) Demand Curves, Four Different Micro Foundations
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+**Record type**: Data Provenance Record
 **Series ID**: S309
-**Status**: book_period_validated
+**Status**: theoretical_validated
 **Content type**: `theoretical`
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave-a-ch3 (Phase 5-8 fanout)
+**Prepared by**: RSCD data-construction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S309_research.json`
-- Adequacy: `Technical/docs/chapters/CH3_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S309_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S309`
+- Series research notes: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S309`
 
 ---
 
@@ -23,11 +23,16 @@
 
 Figure 3.11 is the luxury-good companion to S308's Fig 3.10. Together with Table 3.1 it completes Shaikh's demonstration that aggregate demand behaviour is invariant across micro foundations. Elasticities in Table 3.1 lie in a tight band around -1.00 to -1.04 for x2 across all four models.
 
+## From the Book
+
+> Despite their differences, all of the models give rise to the very same aggregate patterns. The essential point is that the same macroscopic patterns can obtain from a great variety of individual behaviors.
+> -- Shaikh (2016), Chapter 3, p. 90 
+
 ## 3. Sources
 
 | Subseries | Coverage | Source | Native units | Retrieval |
 |---|---|---|---|---|
-| **S309-A** | n/a | Shaikh 2016 eq (3.6) with y=200, c=0.5, x1min=10, p1=1; p2 sweep 2.0->3.0 | aggregate x2 | analytic regeneration |
+| **S309-A** (one of the dataset's data columns) | n/a | Shaikh 2016 eq (3.6) with y=200, c=0.5, x1min=10, p1=1; p2 sweep 2.0->3.0 | aggregate x2 | analytic regeneration |
 | **S309-B** | n/a | NetLogo Neoclassical Homogeneous | aggregate x2 | tabulated from printed Fig 3.11 |
 | **S309-C** | n/a | NetLogo Neoclassical Heterogeneous | aggregate x2 | tabulated from printed Fig 3.11 |
 | **S309-D** | n/a | NetLogo Whimsical (Becker) | aggregate x2 | tabulated from printed Fig 3.11 |
@@ -59,10 +64,11 @@ Figure 3.11 is the luxury-good companion to S308's Fig 3.10. Together with Table
 
 ## 8. Cross-references
 
-- **CD legacy ID**: none
+- **Predecessor series**: none (first constructed in this dataset).
 - **Book reference**: Shaikh (2016), Ch. 3, Fig3.11 on p. 100
-- **Knowledge Base**: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json` -> Fig3.11
+- **Knowledge Base**: figure-linkage reference -> Fig3.11
+- **Source-book text**: Shaikh (2016) Chapter 3, extracted in the project knowledge base (ch03_micro_foundations.md).
 
 ## 9. Validation expectation
 
-- **Tolerance**: PASS_THEORETICAL. Per-subseries: monotone declining, values within [30, 50]. Cross-curve: all NetLogo curves within +/-2 percent of theoretical.
+- **Tolerance**: the validator's theoretical-curve mode (checks the curve's shape and bounds rather than matching tabulated values). Per-subseries: monotone declining, values within [30, 50]. Cross-curve: all NetLogo curves within +/-2 percent of theoretical.

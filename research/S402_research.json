@@ -92,13 +92,13 @@
   ],
   "review_history": [
     {
-      "reviewer": "opus-subagent-wave-a-ch4",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Hourly-wage variant of S401. Same reclassification to 'derived'. Same Appendix 4.2 reconstruction issue."
     },
     {
-      "reviewer": "opus-subagent-batch1-a2",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "blocker_resolved",
       "notes": "CH4-B1 RESOLVED. Verbatim Appendix 4.2 tables transcribed; L01 loader should consume Appendix_4_2_Table4.csv per-hour columns (XR, afc, ulc, avc, ac, mc). Consistency check: wh*8=100=wN confirmed; derived ulc(per-hour, XR=2.84)=4.40 (book) vs 12.5*0.3521=4.401 (recomputed)."

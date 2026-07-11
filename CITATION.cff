@@ -7,11 +7,9 @@ authors:
     family-names: Anderson
     email: ibeforeena@gmail.com
     affiliation: "The New School for Social Research"
-version: 1.4.0
-date-released: 2026-06-11
-license:
-  - MIT
-  - CC-BY-4.0
+version: 1.6.0
+date-released: 2026-07-10
+license: MIT
 license-url: https://opensource.org/licenses/MIT
 keywords:
   - political economy

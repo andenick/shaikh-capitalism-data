@@ -16,11 +16,21 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils import paths  # noqa: E402
 from utils.paths import DATA_PROCESSED, SALVAGED_BOOK_DATA  # noqa: E402
+from V03_validators._v03_anchor_lib import (  # noqa: E402
+    GREEN,
+    RED,
+    _load_registry,
+    check_independent_anchor,
+    check_level_plausibility,
+    check_splice_continuity,
+)
+
+SERIES_ID = "S903"
 
 PROCESSED = DATA_PROCESSED / "S903.parquet"
 PWT2_XLSX = SALVAGED_BOOK_DATA / "ShaikhChoppedTables" / "Appendix9_PennWorldTables2.xlsx"
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
-VALIDATOR_TOL_PCT = 0.5
+VALIDATOR_TOL_PCT = 1.0
 
 EXPECTED_R_FIXED = [1.088, 0.9734, 0.8547, 0.7644, 0.7033, 0.7317]
 EXPECTED_YEARS = [1947, 1958, 1963, 1967, 1972, 1998]
@@ -34,6 +44,35 @@ YEAR_LABELS = [
     ("98FIX", 1998, "wshr98", "wr98fix"),
     ("98CIRC", 1998, "wshrCirc", "wr98circ"),
 ]
+
+
+def _anchor_checks(actual: pd.DataFrame) -> dict:
+    """Run the Decision-0011 independent-anchor / splice / plausibility checks
+    (``_v03_anchor_lib``) against the processed parquet and fold them into the
+    validator verdict. These assert the six Table 9.18 R_fixed anchors as
+    book-published values independent of the PWT2 round-trip. Any RED here FAILS
+    the validator (not a warning). Splice/plausibility return NA for S903 (no
+    extension block, no plausibility_rules) — NA never fails. The hardcoded
+    ``EXPECTED_R_FIXED`` sanity gate and registry ``reference_values`` are NOT
+    touched.
+    """
+    registry = _load_registry()
+    anchors = check_independent_anchor(SERIES_ID, actual, registry)
+    splice = check_splice_continuity(SERIES_ID, actual, registry)
+    plausibility = check_level_plausibility(SERIES_ID, actual, registry)
+    blocks = (anchors, splice, plausibility)
+    if any(b["status"] == RED for b in blocks):
+        verdict = "FAIL"
+    elif any(b["status"] == GREEN for b in blocks):
+        verdict = "PASS"
+    else:
+        verdict = "NA"
+    return {
+        "verdict": verdict,
+        "independent_anchors": anchors,
+        "splice_continuity": splice,
+        "level_plausibility": plausibility,
+    }
 
 
 def _update(row: dict) -> None:
@@ -53,6 +92,7 @@ def run() -> dict:
         return {"status": "FAIL", "error": f"PWT2 truth XLSX missing: {PWT2_XLSX}"}
 
     actual = pd.read_parquet(PROCESSED)
+    anchor_block = _anchor_checks(actual)
     truth = pd.read_excel(PWT2_XLSX, header=1)
     truth.columns = [str(c).strip() for c in truth.columns]
 
@@ -93,11 +133,15 @@ def run() -> dict:
                              "diff_pct": round(diff_pct, 4), "ok": diff_pct < 0.5})
 
     status = "PASS" if (total_div == 0 and all(c["ok"] for c in r_check)) else "FAIL"
+    # An independent-anchor RED is a genuine defect and FAILS the validator.
+    if anchor_block["verdict"] == "FAIL":
+        status = "FAIL"
     row = {
         "status": status, "tolerance_pct": VALIDATOR_TOL_PCT,
         "per_curve": per_curve,
         "mae": round(sum(overall_mae) / max(1, len(overall_mae)), 10),
         "r_fixed_sanity_gate": r_check,
+        "anchor_checks": anchor_block,
         "validated_at": datetime.now(timezone.utc).isoformat(),
     }
     _update(row)

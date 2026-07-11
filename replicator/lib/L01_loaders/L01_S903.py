@@ -20,6 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils.paths import DATA_RAW  # noqa: E402
 from L01_loaders._ch2_helpers import book_path  # noqa: E402
+from L01_loaders._ch9_helpers import assert_benchmark_vintage  # noqa: E402
 
 SERIES_ID = "S903"
 PWT2_XLSX = book_path("Appendix9_PennWorldTables2.xlsx")
@@ -53,6 +54,7 @@ def run() -> dict:
                 return {"status": "FAIL", "error": f"missing column {col}"}
         sub = df[[rcol, wshcol, wrcol]].dropna(how="all").copy()
         sub = sub.dropna(subset=[rcol])
+        vintage = assert_benchmark_vintage(int(year))  # CH9-F4 fix (Decision 0014)
         # Each row is one r-grid point
         for i, r in sub.iterrows():
             rval = r[rcol]
@@ -69,6 +71,7 @@ def run() -> dict:
                     "subseries_id": f"S903-WSHARE-{short.upper()}",
                     "subsource_id": "SHAIKH_APPENDIX_9_PWT_BOOK2",
                     "model": "circulating" if short == "98circ" else "fixed",
+                    "classification_vintage": vintage,
                 })
             if pd.notna(wrval):
                 rows.append({
@@ -80,6 +83,7 @@ def run() -> dict:
                     "subseries_id": f"S903-WRCURVE-{short.upper()}",
                     "subsource_id": "SHAIKH_APPENDIX_9_PWT_BOOK2",
                     "model": "circulating" if short == "98circ" else "fixed",
+                    "classification_vintage": vintage,
                 })
 
     curves = pd.DataFrame(rows)
@@ -97,7 +101,8 @@ def run() -> dict:
                          "value": float(rv), "units": "decimal_max_profit_rate",
                          "subseries_id": "S903-R-FIXED",
                          "subsource_id": "SHAIKH_APPENDIX_9_PWT_BOOK2_TABLE_9_18",
-                         "model": "fixed"})
+                         "model": "fixed",
+                         "classification_vintage": ""})  # cross-benchmark scalar; guard N/A
     r_circ = df["R_circ"].dropna()
     if len(r_circ):
         scalars.append({"year": 1998, "industry_index": 0, "x_tv_norm": 0.0,
@@ -105,7 +110,8 @@ def run() -> dict:
                          "units": "decimal_max_profit_rate",
                          "subseries_id": "S903-R-CIRC",
                          "subsource_id": "SHAIKH_APPENDIX_9_PWT_BOOK2_TABLE_9_18",
-                         "model": "circulating"})
+                         "model": "circulating",
+                         "classification_vintage": ""})
     pwt = df[["Year", "RealGDPperworkerindex"]].dropna(subset=["RealGDPperworkerindex"])
     for _, r in pwt.iterrows():
         y = r["Year"]
@@ -116,7 +122,8 @@ def run() -> dict:
                          "units": "PWT71_RGDPperworker_index_1947base",
                          "subseries_id": "S903-PWT-RGDPPERWORKER",
                          "subsource_id": "SHAIKH_APPENDIX_9_PWT_BOOK2",
-                         "model": "anchor"})
+                         "model": "anchor",
+                         "classification_vintage": ""})
     scalar_df = pd.DataFrame(scalars)
     scalar_df.to_parquet(OUT_SCALARS, index=False)
 

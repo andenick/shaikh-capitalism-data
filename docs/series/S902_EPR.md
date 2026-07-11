@@ -1,7 +1,7 @@
 # S902 — Extension Provenance Record
 
 **Series**: S902 — Integrated Output-Capital Ratios and Standard Prices
-**Phase**: 6 · **Construction**: `composite` of eigensystem-derived per-year vectors
+
 **Extension**: `not_applicable_cross_sectional`
 **Authored**: 2026-05-18
 

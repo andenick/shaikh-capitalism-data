@@ -99,10 +99,16 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-wave-b-ch8",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Filled from book pp.371-372 and Eichner 1973 source citation. Corrected stub name (was incorrectly labeled 'US Long-Run Interest Rates and Prices' from a stale CD2 mapping). No formal Appendix 8 exists in the book (appendices skip from 7.1 to 9.1)."
+    },
+    {
+      "reviewer": "P4.3-docs-agent",
+      "date": "2026-07-10",
+      "status": "book_period_validated",
+      "notes": "ADDENDUM (F-2E-04 + F-T2-01): S801 recovery confirmed. The series was recovered from data_unavailable to book_period_validated by native-vector trace of Shaikh's Fig 8.1 from the book PDF (WL1 workbench: Technical/WL1_Tsoulfidis_Tsaliki/; overlay: book_fig8_1_p413.png, fig8_1_extracted.json, fig8_1_overlay.png). The two concentrated / unconcentrated index lines were extracted, overlay-validated, and stored in the chopped file. 2026-07-10 label fix (F-T2-01): stale subseries label from earlier session corrected; the series now carries its correct 'concentrated' and 'competitive' industry labels per Eichner (1973) — no value changes, pure label swap."
     },
     {
       "reviewer": "phase5-wave-a5-blocker-resolver",

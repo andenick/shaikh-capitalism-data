@@ -20,6 +20,14 @@ from utils.paths import DATA_PROCESSED  # noqa: E402
 from V03_validators._ch14_validator_lib import (  # noqa: E402
     validate_against_appendix14, update_report,
 )
+from V03_validators._v03_anchor_lib import (  # noqa: E402
+    RED,
+    check_independent_anchor,
+    check_level_plausibility,
+    check_splice_continuity,
+    _load_processed,
+    _load_registry,
+)
 
 SERIES_ID = "S1405"
 VALIDATOR_TOL_PCT = 1.0
@@ -54,6 +62,25 @@ def _phillips_fit_check() -> dict:
     return out
 
 
+def _anchor_section(sid: str) -> dict:
+    """Run the Decision-0011 independent-anchor + structural guards for `sid`.
+
+    For S1405 the anchors are derived-statistic Phillips parameters (a, c, R^2)
+    fit with the constrained power_b1 NLLS model (evaluated inside the lib). An
+    anchor/splice/plausibility RED is a genuine defect that MUST fail the
+    validator. NA/GREEN pass through.
+    """
+    registry = _load_registry()
+    df = _load_processed(sid)
+    checks = {
+        "anchors": check_independent_anchor(sid, df, registry),
+        "splice": check_splice_continuity(sid, df, registry),
+        "plausibility": check_level_plausibility(sid, df, registry),
+    }
+    red = [name for name, res in checks.items() if res.get("status") == RED]
+    return {"status": "FAIL" if red else "PASS", "red_checks": red, **checks}
+
+
 def run() -> dict:
     row = validate_against_appendix14(
         SERIES_ID,
@@ -67,6 +94,10 @@ def run() -> dict:
         tol_pct=VALIDATOR_TOL_PCT,
     )
     row["phillips_fit_replication"] = _phillips_fit_check()
+    anchor = _anchor_section(SERIES_ID)
+    row["independent_anchor_checks"] = anchor
+    if anchor["status"] == "FAIL" and row.get("status") != "FAIL":
+        row["status"] = "FAIL"
     row["validated_at"] = datetime.now(timezone.utc).isoformat()
     update_report(SERIES_ID, row)
     return row

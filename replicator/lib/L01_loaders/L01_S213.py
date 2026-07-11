@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from utils.paths import DATA_RAW, SALVAGED_EXT_BENCH  # noqa: E402
 from S00_setup import S00_apis, S00_config  # noqa: E402
 
-S026_XLSX = SALVAGED_EXT_BENCH / "CD2_v1.3" / "Series" / "S026_corporate_and_non_corporate_profit_rates.xlsx"
+SALVAGED_CORP_PROFIT_RATES_XLSX = SALVAGED_EXT_BENCH / "CD2_v1.3" / "Series" / "S026_corporate_and_non_corporate_profit_rates.xlsx"
 OUT_BOOK = DATA_RAW / "S213_BOOK_CORP_PROFIT_RATE.parquet"
 OUT_BEA_NOS = DATA_RAW / "S213_BEA_NIPA_T114_NOS.parquet"
 OUT_BEA_K = DATA_RAW / "S213_BEA_FA_T41_K.parquet"
@@ -39,9 +39,9 @@ def _fetch_bea(table: str) -> tuple[pd.DataFrame, bool, str | None]:
 
 
 def run() -> dict:
-    if not S026_XLSX.exists():
-        return {"status": "FAIL", "error": f"S026 missing: {S026_XLSX}"}
-    df = pd.read_excel(S026_XLSX, sheet_name="Data").rename(columns={"Year": "year"})
+    if not SALVAGED_CORP_PROFIT_RATES_XLSX.exists():
+        return {"status": "FAIL", "error": f"S026 missing: {SALVAGED_CORP_PROFIT_RATES_XLSX}"}
+    df = pd.read_excel(SALVAGED_CORP_PROFIT_RATES_XLSX, sheet_name="Data").rename(columns={"Year": "year"})
     df = df.dropna(subset=["year"]).astype({"year": int})
     book = df[["year", "S026-A"]].rename(columns={"S026-A": "value"}).dropna(subset=["value"]).copy()
     book["units"] = "rate_decimal"

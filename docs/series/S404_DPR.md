@@ -1,19 +1,19 @@
 # S404 — Automotive Unit Labor Cost (Fig 4.19)
 
-**Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+**Data Provenance Record (DPR)** — the internal, full-provenance companion to the public Explainer.
+**Record type**: Data Provenance Record (source-and-construction detail)
 **Series ID**: S404
 **Status**: book_period_validated
 
-> **Recovery (2026-05-26):** Recovered from data_unavailable by native-resolution vector trace of Shaikh Fig 4.19 Unit Labor Cost (= Inman 1995) from the book PDF (Robert _PDF_LIBRARY p204-205), overlay-validated vs the figure. content_type=theoretical (Monte-Carlo simulation curve), x=annual vehicle output; chopped keys on point-index per the S308 functional-curve precedent. provenance: digitized. V03 round-trip PASS; pipeline + anu-doctor 0/0. Source: SalvagedInputs/book_data/Reconstructed/Inman_1995_S404-407_cost_curves.json; method: Technical/WL1_Tsoulfidis_Tsaliki/EXTRACTION_REPORT.md.
+> **Recovery (2026-05-26):** This curve was previously marked as having no available underlying data. It was recovered by digitizing Shaikh's Figure 4.19 (Automotive Unit Labor Cost, which reproduces Inman 1995) via native-vector trace of the book PDF (PyMuPDF `get_drawings`), then overlay-checking the digitized points against the printed figure. It is a theoretical curve (the mean of a Monte-Carlo simulation of an automotive plant); the horizontal axis is annual vehicle output (not calendar years), and the points are ordered by an index number. The validation step reproduces the digitized values exactly, and the project self-audit passes. Reconstructed points: reconstructed book source data. Extraction workbench: Tsoulfidis-Tsaliki extraction worklog (overlays: `inman_S404_native.png`, `inman_S404_overlay.png`). 
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch4-fanout
+**Prepared by**: RSCD data-construction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S404_research.json`
-- Adequacy: `Technical/docs/chapters/CH4_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S404_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S404`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `INMAN_1995_ENGINEERING_ECONOMIST`
+- Series research notes: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S404`
+- Subsource registry: subsource registry → `INMAN_1995_ENGINEERING_ECONOMIST`
 
 ---
 
@@ -27,13 +27,20 @@ This is a **cost-vs-output curve, not a calendar time series.**
 
 Inman's empirical curves (S404–S407) supply the empirical counterpart to Shaikh's theoretical curves (S401–S402). Shaikh's claim on p. 161 — that Inman's curves are "strikingly similar" to the theoretical curves he derived from Appendix 4.2 — is the empirical anchor for the chapter's revisionist account of cost curves. Fig 4.19 specifically demonstrates the "deformed U-shape with spikes at the beginning of each shift and roughly similar minimum points for each shift" pattern.
 
+## From the Book
+
+> Inman (1995) provides one of the most striking illustrations of actual cost curves. [...] The overall result is a deformed U-shape with spikes at the beginning of each shift and roughly similar minimum points for each shift.
+> -- Shaikh (2016), Chapter 4, pp. 160-161 
+
+Verified verbatim against the project knowledge-base extraction of the source book (`ch04_production_costs.md`).
+
 ## 3. Sources (per subseries)
 
 | Subseries | Coverage | Publisher / Series ID | Native units | Retrieval |
 |---|---|---|---|---|
-| **S404-A** | output range 0–~450 thousand vehicles/year | Inman, R. R. (1995), *The Engineering Economist* 41(1), 53–67 | USD per car vs. annual vehicle production (thousands) | **NOT RETRIEVABLE** without paywalled article access or unauthorized figure digitization |
+| **S404-A** (the dataset's single data column) | output range 0–~450 thousand vehicles/year | Inman, R. R. (1995), *The Engineering Economist* 41(1), 53–67 | USD per car vs. annual vehicle production (thousands) | **Recovered by figure digitization** of the curve as reproduced in Shaikh's Figure 4.19 (which reproduces Inman's fig. 3), overlay-validated against the printed figure |
 
-**Citation correction (per Phase 4)**: agency is Robert R. Inman (not Robert P. Inman, as the Phase 3 dossier draft had it). The canonical citation, verified via Crossref API, is:
+**Citation note**: during citation verification the author was confirmed as Robert R. Inman (not Robert P. Inman, as an earlier draft of the source notes had it). The canonical citation, verified via the Crossref bibliographic service, is:
 
 > Inman, R. R. (1995). "Shape Characteristics of Cost Curves Involving Multiple Shifts in Automotive Assembly Plants." *The Engineering Economist* 41(1), 53–67. DOI: 10.1080/00137919508967475
 
@@ -41,7 +48,7 @@ Inman's empirical curves (S404–S407) supply the empirical counterpart to Shaik
 
 Per Inman (1995), `ulc(Q) = (fixed_labor_cost + variable_labor_cost(Q)) / Q`, where the variable component sums overtime, full-time, under-time, and second/third-shift premia, and the fixed component encodes layoff pay (95% of after-tax pay less $17.50/week). All cost values are means of a Monte-Carlo simulation.
 
-**The underlying numerical series is not published as tabulated data** — Inman 1995 reports the simulation only as figures 3–6. The Taylor & Francis full text is paywalled. No salvaged dataset for Inman 1995 exists under `SalvagedInputs/` (confirmed by recursive `iname *inman*` search 2026-05-18).
+**Inman (1995) published the simulation only as figures 3–6, not as a tabulated series**, and the journal full text is behind a paywall. The curve was therefore recovered by digitizing Shaikh's Figure 4.19 (which reproduces Inman's fig. 3) from the source-book scan; the digitized points are stored at reconstructed book source data and were overlay-validated against the printed figure (see the recovery note at the top of this record).
 
 ## 5. Year coverage
 
@@ -53,21 +60,19 @@ USD per car vs. annual vehicle production (thousands). Native to Inman's simulat
 
 ## 7. Caveats
 
-1. **Data unavailable.** The chapter playbook's `data_unavailable` recipe applies:
-   > "DPR + EPR documenting the chart-only source and why no underlying data exists; L01 returns `{status: SKIPPED, reason: data_unavailable}`; V03 returns `{status: PASS_DATA_UNAVAILABLE}`; No chopped CSV; Extenbook contains only the DPR + EPR + Source pages; Phase 8 viz uses the book figure image directly."
-2. **Anti-fabrication**: figure digitization from the book reproduction (Shaikh p. 162) is technically possible via WebPlotDigitizer-style tooling, but per Phase 3 anti-fabrication compliance and the lack of an auditable underlying simulation, we **do not** digitize values into the parquet/CSV pipeline. The reference figure remains the canonical artifact; any future digitization would require a separate Decision Log entry.
-3. **Bibliography corrected**: Phase 3 dossiers carried the wrong "Robert P. Inman" and a placeholder Google Books URL pointing to an unrelated Brookings volume. The DPR + the registry primary_source fields now reflect the Crossref-verified Robert R. Inman (1995) record.
-4. **Paywall verified**: Tandfonline DOI proxy returned 403 (anti-bot, not invalid URL) on Phase 4 reachability check; documented as `unverified-rate-limited`, not failed.
+1. **Recovered curve (was previously unavailable).** The series was originally documented as having no available underlying data, because Inman published only figures and the journal text is paywalled. It has since been recovered (2026-05-26) by digitizing the figure as reproduced in Shaikh's book and validating the digitized points against the printed curve. The data-loading step now emits the digitized curve, a machine-readable (chopped) data file exists, and the validation step round-trips the values.
+2. **Digitization is the documented recovery method.** Recovering a chart-only source by figure digitization, when the exact values cannot be obtained any other way, is the project's sanctioned last-resort method (attempt digitization from figures before giving up). The digitization here was overlay-checked against the printed figure and recorded under a dated recovery note; it is not a fabricated or proxy series.
+3. **Bibliography corrected.** Earlier drafts carried the wrong "Robert P. Inman" and a placeholder link to an unrelated volume. This record and the registry source fields now reflect the verified Robert R. Inman (1995) citation.
+4. **Journal paywall.** The publisher's page returned an automated anti-bot response (HTTP 403, not an invalid address) during a reachability check; this is why the figures had to be recovered from Shaikh's reproduction rather than from the original article.
 
 ## 8. Cross-references
 
-- **CD legacy ID**: none
-- **CD2 legacy ID**: none
+- **Predecessor series**: none (first constructed in this dataset)
 - **Book reference**: Shaikh (2016), Ch. 4, p. 162 (Fig 4.19); narrative pp. 160–161.
 - **Cross-series**: S405 (marginal labor cost from same Inman simulation, fig. 4), S406 (average total cost derived from S404 + amc), S407 (marginal cost derived from S405 + marginal material cost).
 
 ## 9. Validation expectation
 
-- **Status**: `PASS_DATA_UNAVAILABLE` — the validator confirms the loader correctly SKIPPED and the DPR documents the rationale, but does not compute MAE.
-- **Tolerance**: not applicable.
-- **Future remediation**: should Inman 1995 underlying data become available (library access, author contact, replication study), the loader and validator can be extended without breaking the current pipeline contract.
+- **Check performed**: the validation step reproduces the digitized curve from the stored reconstruction and confirms the processed data match the digitized points (a round-trip check). Because the source is a digitized figure rather than a published table, the check verifies faithful reproduction of the digitized points and shape rather than computing an error against an independent tabulation.
+- **Tolerance**: round-trip exact (the validator reads the same reconstruction the data-loading step consumes).
+- **Future refinement**: should Inman's original tabulated values become available (library access, author contact, or a replication study), the digitized reconstruction can be replaced without changing the rest of the pipeline.

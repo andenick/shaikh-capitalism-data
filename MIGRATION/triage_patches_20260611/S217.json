@@ -1,0 +1,36 @@
+{
+  "sid": "S217",
+  "display_name": "GDP per Capita of World Regions",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.2 figure; book_period_validated; real data present in chopped CSV; KB-verified.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S217-A": {
+      "label": "World",
+      "units": "1990 international Geary-Khamis dollars per capita"
+    },
+    "S217-B": {
+      "label": "Western Europe",
+      "units": "1990 international Geary-Khamis dollars per capita"
+    },
+    "S217-C": {
+      "label": "Western Offshoots",
+      "units": "1990 international Geary-Khamis dollars per capita"
+    },
+    "S217-D": {
+      "label": "Latin America",
+      "units": "1990 international Geary-Khamis dollars per capita"
+    },
+    "S217-E": {
+      "label": "Asia",
+      "units": "1990 international Geary-Khamis dollars per capita"
+    },
+    "S217-F": {
+      "label": "Africa",
+      "units": "1990 international Geary-Khamis dollars per capita"
+    }
+  }
+}

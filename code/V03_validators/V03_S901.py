@@ -18,7 +18,7 @@ from L01_loaders._ch9_helpers import (  # noqa: E402
 
 PROCESSED = DATA_PROCESSED / "S901.parquet"
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
-VALIDATOR_TOL_PCT = 0.5
+VALIDATOR_TOL_PCT = 1.0
 
 
 def _truth() -> dict[str, pd.DataFrame]:

@@ -152,13 +152,19 @@
   ],
   "review_history": [
     {
+      "reviewer": "P4.3-docs-agent",
+      "date": "2026-07-10",
+      "status": "draft",
+      "notes": "ADDENDUM (F-2D-04): S711 confirmed as the correct successor to CD2 S038 (OECD Industry IROP Deviations, PPP-adjusted, Fig 7.21). The CD2 crosswalk note 'promoted to AS series per decision 0002' that was carried over to S038→S709 mapping in CD2_to_RSCD_crosswalk.csv is a mis-reference; S711 (not S709) is the OECD IROP series. S707 (Greek manufacturing) incorrectly listed CD2 S038 as predecessor — that mapping is null/null for S707 and S038→S711 for S711. This dossier's predecessor_ids {cd_id: 'S038', cd2_id: 'S038'} are CORRECT for S711."
+    },
+    {
       "reviewer": "phase3_stubber",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-s711",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from CD2 S038 dossier + book pp. 305, 858-859 (PDF pp. 344, 897-899) verbatim. Decision 0004: closes Phase 2 gap for Fig 7.21 (OECD IROP deviations) and resolves the long-standing S707/S038 misalignment flagged in CH7_RESEARCH_SUMMARY. Construction = composite (PPP conversion + country aggregation + IROP + deviation). Source = OECD STAN 2003 vintage (DISCONTINUED) + PWT 6.2. 6 quotes (definition + 3 source/method + caveat), 7 components, 2 extension candidates, 9 methodology notes, 5 open questions. Per anti-degradation rule: extension via OECD STAN 2025 + PWT 10.01 is contingent on Phase 4 ratification of country-coverage discontinuity (30 countries -> 18) and ISIC Rev 3 -> Rev 4 crosswalk."

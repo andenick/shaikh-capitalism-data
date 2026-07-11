@@ -1,0 +1,20 @@
+{
+  "sid": "S216",
+  "display_name": "Market Prices versus Unit Labor Costs, US 1972",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Fig.2.14 cross-sectional scatter (71 industries, 1972); real data present; cross_sectional, no extension; KB-verified.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S216-A": {
+      "label": "Total prices of production (71 industries)",
+      "units": "normalized dollars"
+    },
+    "S216-B": {
+      "label": "Total market prices (71 industries)",
+      "units": "normalized dollars"
+    }
+  }
+}

@@ -95,13 +95,19 @@
   ],
   "review_history": [
     {
+      "reviewer": "P4.3-docs-agent",
+      "date": "2026-07-10",
+      "status": "draft",
+      "notes": "ADDENDUM (F-2F-01): FALSE CLAIM CORRECTED. book_quotes entries carried 'unverified: no ch13 KB' and were excluded from the web explainer. This was incorrect: ch13 KB DOES exist at Inputs/Capitalism Data/Technical/Knowledge_Base/HDARP_v3.3_Campaign/Body_Text/ch13_macro_dynamics.md (HDARP_v3.3_Campaign). All three book_quotes have been verified verbatim against that file: (1) 'Since the slope of the path...' → ch13_macro_dynamics.md line ~1872; (2) equation 13.43 formula → lines 1847–1852; (3) 'random walk with drift' → lines 1853–1855. The 'From the book' section has been added to Technical/docs/explainers/S1301_EXPLAINER.md with KB anchors. The 'unverified: no ch13 KB' notes in this JSON are superseded by this addendum — do NOT re-exclude the quotes."
+    },
+    {
       "reviewer": "phase3_stubber",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-wave-c-ch13-17",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from printed pp. 631-635 (PDF pp. 669-673) and Appendix 13.1 (printed pp. 883-888). Re-typed from cross_sectional to theoretical: Fig 13.7 has no calendar time axis and no empirical observations; it is a model realisation of eq. 13.43."

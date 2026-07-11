@@ -1,0 +1,17 @@
+{
+  "sid": "S801",
+  "display_name": "Wholesale prices of concentrated vs. unconcentrated industries (Eichner), 1965-1973",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh Figure 8.1 (Ch8, p.372), which reproduces Eichner (1973, Economic Journal, p.1187): two wholesale-price-index lines (base 1957-59=100) for concentrated (oligopolistic) vs. competitive US industries, 1965-1973. Recovered 2026-05-26 from data_unavailable by offline vector extraction of Shaikh's figure, overlay-validated (n=18, MAE 0.0). Construction-relevant: opening exhibit of Shaikh's empirical critique of the administered-prices hypothesis. Single index axis; the two entities are an industry dimension, not separate units.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S801-A-Oligopolistic": {"label": "Concentrated (oligopolistic) industries", "units": "index_1957-59=100"},
+    "S801-A-Competitive": {"label": "Unconcentrated (competitive) industries", "units": "index_1957-59=100"}
+  },
+  "field_fixes": {
+    "note": "DPR S801_DPR.md sections 1-9 predate the 2026-05-26 recovery and still describe the series as data_unavailable / chart-only; this contradicts the recovery header, the populated chopped CSV, and the registry status book_period_validated. DPR body rewritten to the recovered state in this reconciliation pass (digitized provenance)."
+  }
+}

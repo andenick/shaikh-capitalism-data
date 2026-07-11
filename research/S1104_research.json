@@ -111,6 +111,14 @@
     "Reference values (CD2 markdown, presumably US trade balance): 1960=-0.606, 1972=-0.924, 1984=0.468, 1996=0.489, 2008=-0.533. Negative values suggest these may actually be in (X-M)/(X+M) percent form rather than X/M ratio (which would never be negative). Confirm interpretation against ShaikhChoppedTables.",
     "Per Shaikh (p.534): the chart demonstrates that REER and relative GDP 'pull in opposite directions' so that improving US competitiveness (declining REER, rising relative GDP) is consistent with deteriorating trade balance."
   ],
+  "review_history": [
+    {
+      "reviewer": "P4.3-docs-agent",
+      "date": "2026-07-10",
+      "status": "book_period_validated",
+      "notes": "ADDENDUM (F-2F-02): S1104-C (US/EU12 relative GDP line, 1960–2009) built and faithful-verdict returned. The third subseries (S1104-C, relative real GDP) was the previously un-sourced component; it has been sourced from OECD QNA real GDP indices (US and EU-12 aggregate), rebased to 2002=100, and the overlay against Shaikh's Fig 11.7 passes. Verdict: faithful reproduction. All three subseries (S1104-A trade balance, S1104-B REER, S1104-C relative GDP) are now populated. No change to S1104-A or S1104-B data."
+    }
+  ],
   "open_questions": [
     "Trade balance units: CD2 markdown reports negative values (-0.606 etc.), inconsistent with X/M ratio (>0). Likely the series is actually (X-M)/(X+M) or net exports as % of trade, NOT pure X/M ratio. Resolve by inspecting Appendix11_USJPNdata.xlsx column F (rulcadjratio1 / trade balance column) directly.",
     "Source of RelGDPR (relative real GDP, US/EU12) is not explicit in Appendix 11.1.II raw-data list. Phase 4 should identify whether Shaikh used OECD QNA, World Bank WDI, or IMF WEO for EU12 real GDP.",
@@ -118,7 +126,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "opus-subagent-wave-c-ch11",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "CD2 S063 ported; quotes verified against PDF pp.534, 875; flagged units inconsistency in CD2 markdown (negative trade-balance values inconsistent with X/M ratio label); flagged missing RelGDPR source in Appendix 11.1."

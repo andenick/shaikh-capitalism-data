@@ -1,0 +1,27 @@
+{
+  "sid": "S901",
+  "display_name": "Normalized market prices versus direct prices across US input-output benchmarks, 1947-1998",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of the data behind Shaikh Figures 9.1, 9.2 and 9.16 (Ch9, Section V). For each US benchmark input-output table (1947, 1958, 1963, 1967, 1972 at 71-order; 1998 at 65-order, circulating and fixed-capital variants) it pairs each industry's normalized total market price (A) with its normalized total direct price (B), the test of Ricardo's cross-sectional hypothesis that the two are close. Construction-relevant: the empirical core of Chapter 9 (market prices differ from direct prices by only ~15-18% across half a century). The year column indexes the benchmark cross-section; the genuine axis is the industry index. All subseries share one dimensionless unit (normalized share); no mixed units.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S901-A_1947F": {"label": "Market price, 1947 (fixed capital)", "units": "normalized_share"},
+    "S901-B_1947F": {"label": "Direct price, 1947 (fixed capital)", "units": "normalized_share"},
+    "S901-A_1958F": {"label": "Market price, 1958 (fixed capital)", "units": "normalized_share"},
+    "S901-B_1958F": {"label": "Direct price, 1958 (fixed capital)", "units": "normalized_share"},
+    "S901-A_1963F": {"label": "Market price, 1963 (fixed capital)", "units": "normalized_share"},
+    "S901-B_1963F": {"label": "Direct price, 1963 (fixed capital)", "units": "normalized_share"},
+    "S901-A_1967F": {"label": "Market price, 1967 (fixed capital)", "units": "normalized_share"},
+    "S901-B_1967F": {"label": "Direct price, 1967 (fixed capital)", "units": "normalized_share"},
+    "S901-A_1972F": {"label": "Market price, 1972 (fixed capital)", "units": "normalized_share"},
+    "S901-B_1972F": {"label": "Direct price, 1972 (fixed capital)", "units": "normalized_share"},
+    "S901-A_1998C": {"label": "Market price, 1998 (circulating capital)", "units": "normalized_share"},
+    "S901-B_1998C": {"label": "Direct price, 1998 (circulating capital)", "units": "normalized_share"},
+    "S901-A_1998F": {"label": "Market price, 1998 (fixed capital)", "units": "normalized_share"},
+    "S901-B_1998F": {"label": "Direct price, 1998 (fixed capital)", "units": "normalized_share"}
+  },
+  "field_fixes": {}
+}

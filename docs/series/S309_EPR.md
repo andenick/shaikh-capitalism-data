@@ -1,10 +1,10 @@
 # S309 -- Extension Provenance Record
 
 **Series**: S309 -- Luxury Good (x2) Demand Curves, Four Different Micro Foundations
-**Phase**: 6 (Extension)
+**Record type**: Extension Provenance Record
 **Content type**: `theoretical`
 **Authored**: 2026-05-18
-**Related**: `S309_DPR.md`, `Technical/research/S309_research.json`
+**Related**: `S309_DPR.md`, research dossier
 
 ---
 
@@ -14,7 +14,7 @@
 
 ## 2. Method
 
-**Extension method**: `none`. Static regeneration each run.
+**Extension method**: `none`. Static regeneration each time the data-loading step runs.
 
 ## 3. Worked example
 
@@ -26,16 +26,15 @@ No proxy substitution. See `S309_DPR.md` for source details.
 
 ## 5. No-Synthetic disclosure
 
-No synthetic gap-filling in the prohibited sense. The DPR documents any
-analytic regeneration or library-data dependence explicitly.
+No synthetic gap-filling in the prohibited sense. The companion Data Provenance Record (DPR) documents any analytic regeneration or library-data dependence explicitly.
 
 ## 6. Failure-mode table
 
 Same as S308; NetLogo source unavailable.
 
-## 7. CD2 divergence pre-disclosure
+## 7. Predecessor divergence pre-disclosure
 
-No CD2 predecessor.
+Predecessor series: none (first constructed in this dataset).
 
 ## 8. Why no API extension applies
 

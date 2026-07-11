@@ -3,7 +3,7 @@
 **Chapter**: 8 (On Perfect and Imperfect Competition)
 **Series count**: 5 (S801-S805)
 **Wave**: B
-**Subagent**: opus-subagent-wave-b-ch8
+**Subagent**: automated-agent
 **Date**: 2026-05-18
 **Book pages covered**: 371-377 (Section II "Empirical Evidence on Competition and Monopoly", subsections II.3-II.5)
 **Appendix**: No formal Appendix 8 exists in the book (the appendix sequence skips from 7.1 directly to 9.1). Underlying numeric data is in `SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_*.xlsx`, derived from the chapter narrative and the cited primary studies.
@@ -61,7 +61,7 @@ Reproduction of Demsetz (1973b, JLE, Table 4, p. 19): six CR4 bins (10-20, 20-30
 
 ## Phase 5-8 Closure (2026-05-18)
 
-Chapter 8 fanout completed. Pipeline run with default orchestrator (`run.py --series S80x`). Validator outputs captured in `Technical/VALIDATION_REPORT.json`.
+Chapter 8 automated-agent completed. Pipeline run with default orchestrator (`run.py --series S80x`). Validator outputs captured in `Technical/VALIDATION_REPORT.json`.
 
 | SID  | Status (V03)            | MAE | Tolerance %     | Chopped rows | Notes |
 |------|-------------------------|-----|-----------------|--------------|-------|

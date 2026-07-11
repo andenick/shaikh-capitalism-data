@@ -1,7 +1,7 @@
 # Chapter 13 Research Summary — Classical Macro Dynamics
 
 **Wave**: C
-**Subagent**: opus-subagent-wave-c-ch13-17
+**Subagent**: automated-agent
 **Date**: 2026-05-18
 **Series count**: 1 (S1301)
 **Book pages**: 602–635 (chapter body), 883–888 (Appendix 13.1)
@@ -46,7 +46,7 @@ No `extension_candidates` (theoretical content_type). `primary_source` points to
 | `extension_candidates` | [] (theoretical — correctly empty) |
 | `methodology_notes` | 5 substantive notes |
 | `open_questions` | 2 |
-| `review_history` | stubber + opus-subagent-wave-c-ch13-17 |
+| `review_history` | stubber + automated-agent |
 
 Expected validator outcome: **PASS** for S1301.
 
@@ -54,7 +54,7 @@ Expected validator outcome: **PASS** for S1301.
 
 ## Phase 5-8 Closure (2026-05-18)
 
-**Author**: opus-subagent-wave2-ch11-13-17
+**Author**: automated-agent
 
 | SID | Content type | V03 status | Chopped rows | Extension status |
 |-----|--------------|------------|--------------|-------------------|

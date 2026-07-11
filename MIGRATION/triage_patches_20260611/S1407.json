@@ -1,0 +1,21 @@
+{
+  "sid": "S1407",
+  "display_name": "HP(100)-filtered rate of change of real wages versus unemployment intensity, United States",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.14 Figure 14.16 (HP(100)-Filtered Values, Rate of Change of Real Wages versus Unemployment Intensity, United States, 1949-2011) -- the real-wage Phillips curve (Eq.14.18 = wage-share curve + productivity growth). Real data present in chopped CSV (127 points, 2 subseries); book_period_validated; figure number and quotes KB-verified (Fig 14.16 quote verbatim at ch14 KB line 1714/1644; HP(100) default method at Appendix 14.2, ch18 KB line 8622). Two subseries (real-wage growth vs intensity) -- per-subseries split below.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1407-A": {
+      "label": "Real wage growth rate, HP(100)-filtered",
+      "units": "growth rate (decimal/year, HP100)"
+    },
+    "S1407-B": {
+      "label": "Unemployment intensity, HP(100)-filtered",
+      "units": "intensity (decimal, HP100)"
+    }
+  },
+  "field_fixes": {}
+}

@@ -1,7 +1,9 @@
 """L01_S1404 - Raw wage-share-growth vs unemployment intensity (Ch14 Fig 14.13).
 
 Direct read of Appendix 14.3 columns gwsh (wage-share growth) and ulintensity.
-Extension via re-derivation in the processor from S1401 + S1402 components.
+Book-period scatter only (1948-2011); this loader implements NO extension. Any
+future extension would be a Phase-6 re-derivation from S1401 + S1402 (handled
+downstream, not in the processor) - see P02_S1404 and the registry.
 """
 from __future__ import annotations
 

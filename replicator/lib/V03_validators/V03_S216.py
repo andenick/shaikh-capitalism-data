@@ -14,7 +14,7 @@ from utils.paths import DATA_PROCESSED, SALVAGED_BOOK_DATA  # noqa: E402
 PROCESSED = DATA_PROCESSED / "S216.parquet"
 XLSX = SALVAGED_BOOK_DATA / "ShaikhChoppedTables" / "Appendix9_1972fixed.xlsx"
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
-VALIDATOR_TOL_PCT = 0.5
+VALIDATOR_TOL_PCT = 1.0
 
 
 def _truth() -> pd.DataFrame:

@@ -27,7 +27,7 @@ def run() -> dict:
     # Drop 'r_value' to keep canonical chopped-writer columns; the x-axis info
     # is preserved in x_tv_norm.
     cols = ["year", "value", "subseries_id", "source_id", "units",
-            "industry_index", "x_tv_norm", "model"]
+            "industry_index", "x_tv_norm", "model", "classification_vintage"]
     df = df[cols]
     DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
     df.to_parquet(OUT, index=False)

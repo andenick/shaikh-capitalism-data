@@ -1,7 +1,9 @@
 """P02_S1104 - pass-through processor for Fig 11.7 US 3-line overlay.
 
-S1104-A net-trade ratio (X-M)/(X+M) and S1104-B REER PPI emitted from raw.
-S1104-C relative GDP US/EU12 deferred (see L01 notes).
+S1104-A net-trade ratio (X-M)/(X+M), S1104-B REER PPI, and S1104-C US/EU12
+relative real GDP index (2002=100) are all emitted from the L01 raw parquet.
+S1104-C is now BUILT (FU-1 / campaign C6) from WDI NY.GDP.MKTP.KD with the
+fixed pre-1995 EU12 basket (see L01_S1104.py notes).
 """
 from __future__ import annotations
 
@@ -38,7 +40,7 @@ def run() -> dict:
         "extension": {"extension_status": "partial",
                       "S1104-A": "IMF DOTS extension feasible (deferred)",
                       "S1104-B": "BIS PPI EER extension deferred",
-                      "S1104-C": "data_unavailable_eu12_relgdp_not_in_salvage"},
+                      "S1104-C": "built (WDI NY.GDP.MKTP.KD, fixed EU12 basket, 2002=100)"},
         "output": str(OUT),
     }
 

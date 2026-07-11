@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-registry-delta-v1.0",
   "chapter": 13,
-  "generated_by": "opus-subagent-p4-wave3-ch13",
+  "generated_by": "automated-agent",
   "generated_at": "2026-05-18",
   "applies_to_registry": "Technical/series_registry.json",
   "operations": [

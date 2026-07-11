@@ -1,7 +1,7 @@
 # Chapter 14 — The Theory of Wages and Unemployment: Phase 3 Research Summary
 
 **Wave**: C
-**Subagent**: opus-subagent-wave-c-ch14
+**Subagent**: automated-agent
 **Date**: 2026-05-18
 **Series count**: 8 (S1401–S1408)
 **Book pages**: 657–673 (chapter); 889–895 (Appendix 14.1 and 14.2)

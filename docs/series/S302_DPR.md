@@ -1,17 +1,17 @@
 # S302 -- Expenditure Share of Necessaries, Case I
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+**Record type**: Data Provenance Record
 **Series ID**: S302
-**Status**: book_period_validated
+**Status**: theoretical_validated
 **Content type**: `theoretical`
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave-a-ch3 (Phase 5-8 fanout)
+**Prepared by**: RSCD data-construction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S302_research.json`
-- Adequacy: `Technical/docs/chapters/CH3_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S302_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S302`
+- Series research notes: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S302`
 
 ---
 
@@ -23,11 +23,16 @@
 
 Figure 3.4 is the share-form analog of the marginal-share curve in S301. It demonstrates that the share of expenditure on necessaries declines monotonically with income, the saturation property that produces Engel's Law from the necessary side. Together with S301 and S303, this is Shaikh's analytical proof that Case I (x1min(y) sub-linear) is sufficient for Engel saturation.
 
+## From the Book
+
+> It is evident that the expenditure share on necessities declines as income increases, while that of luxuries rises.
+> -- Shaikh (2016), Chapter 3, p. 93 
+
 ## 3. Sources
 
 | Subseries | Coverage | Source | Native units | Retrieval |
 |---|---|---|---|---|
-| **S302-A** | n/a (theoretical) | Shaikh 2016 eq (3.11), p. 93; Figure 3.4 axis bounds p. 94 | dimensionless | analytic regeneration from equation |
+| **S302-A** (the dataset's single data column) | n/a (theoretical) | Shaikh 2016 eq (3.11), p. 93; Figure 3.4 axis bounds p. 94 | dimensionless | analytic regeneration from equation |
 
 ## 4. Construction
 
@@ -55,10 +60,11 @@ Figure 3.4 is the share-form analog of the marginal-share curve in S301. It demo
 
 ## 8. Cross-references
 
-- **CD legacy ID**: none
+- **Predecessor series**: none (first constructed in this dataset).
 - **Book reference**: Shaikh (2016), Ch. 3, Fig3.4 on p. 94
-- **Knowledge Base**: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json` -> Fig3.4
+- **Knowledge Base**: figure-linkage reference -> Fig3.4
+- **Source-book text**: Shaikh (2016) Chapter 3, extracted in the project knowledge base (ch03_micro_foundations.md).
 
 ## 9. Validation expectation
 
-- **Tolerance**: PASS_THEORETICAL mode. Checks: monotone declining, asymptote toward c=0.5 at high y, all values within [0.0, 1.2].
+- **Tolerance**: the validator's theoretical-curve mode (checks the curve's shape and bounds rather than matching tabulated values). Checks: monotone declining, asymptote toward c=0.5 at high y, all values within [0.0, 1.2].

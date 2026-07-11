@@ -1,17 +1,17 @@
 # S304 -- Discretionary Propensity to Consume, Case II
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+**Record type**: Data Provenance Record
 **Series ID**: S304
-**Status**: book_period_validated
+**Status**: theoretical_validated
 **Content type**: `theoretical`
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave-a-ch3 (Phase 5-8 fanout)
+**Prepared by**: RSCD data-construction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S304_research.json`
-- Adequacy: `Technical/docs/chapters/CH3_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S304_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S304`
+- Series research notes: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S304`
 
 ---
 
@@ -23,11 +23,16 @@
 
 Figure 3.6 sets up Case II by showing the qualitative shape of c(y) — declining monotonically. The resulting Engel curve (S305 / Fig 3.7) then exhibits saturation through a different mechanism than Case I. Together S304+S305 demonstrate that Engel's Law is overdetermined: at least two distinct micro-foundational paths produce the same aggregate pattern.
 
+## From the Book
+
+> The same result obtains if instead c declines with discretionary income. To see this, we rewrite equation (3.4) as (p1x1 - p1x1min) = c (y - p1x1min), which is a linear relationship between discretionary expenditure on necessary goods and discretionary income. Since c is the slope of this curve, as c falls the curve gets flatter.
+> -- Shaikh (2016), Chapter 3, p. 93 
+
 ## 3. Sources
 
 | Subseries | Coverage | Source | Native units | Retrieval |
 |---|---|---|---|---|
-| **S304-A** | n/a (theoretical) | Shaikh 2016 eq (3.4) framework, p. 91; Figure 3.6 axis bounds p. 94 | dimensionless | analytic regeneration from chosen c(y) form |
+| **S304-A** (the dataset's single data column) | n/a (theoretical) | Shaikh 2016 eq (3.4) framework, p. 91; Figure 3.6 axis bounds p. 94 | dimensionless | analytic regeneration from chosen c(y) form |
 
 ## 4. Construction
 
@@ -53,10 +58,11 @@ Figure 3.6 sets up Case II by showing the qualitative shape of c(y) — declinin
 
 ## 8. Cross-references
 
-- **CD legacy ID**: none
+- **Predecessor series**: none (first constructed in this dataset).
 - **Book reference**: Shaikh (2016), Ch. 3, Fig3.6 on p. 94
-- **Knowledge Base**: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json` -> Fig3.6
+- **Knowledge Base**: figure-linkage reference -> Fig3.6
+- **Source-book text**: Shaikh (2016) Chapter 3, extracted in the project knowledge base (ch03_micro_foundations.md).
 
 ## 9. Validation expectation
 
-- **Tolerance**: PASS_THEORETICAL mode. Checks: monotone declining, all values within [0.0, 0.8] (Fig 3.6 axis bounds).
+- **Tolerance**: the validator's theoretical-curve mode (checks the curve's shape and bounds rather than matching tabulated values). Checks: monotone declining, all values within [0.0, 0.8] (Fig 3.6 axis bounds).

@@ -1,19 +1,19 @@
 # XS2101 — Extension Provenance Record
 
 **Series**: XS2101 — Sraffa Curvature Index Summary
-**Phase**: 6 (Extension)
 **Construction**: `derived` (verbatim summary stats in v1.0; pipeline-derived in v1.1)
 **Authored**: 2026-05-18
 
 ## 1. v1.0 scope
 
-Verbatim Section 5 (p. 272) summary statistics for 2002 and 2007 BEA
-benchmark IO matrices.
+Verbatim Section 5 (p. 272) summary statistics for the 2002 and 2007
+benchmark input-output (IO) matrices from the US Bureau of Economic
+Analysis (BEA).
 
 ## 2. v1.1 plan
 
-Shared BEA-to-Sraffa pipeline with XS2001 (see XS2001_EPR §3). v1.1
-implementation regenerates:
+Shared BEA-to-Sraffa pipeline with XS2001 (see the XS2001 Extension
+Provenance Record §3). v1.1 implementation regenerates:
 
 - 295 aggregated A matrices for 2002 (176 levels) + 2007 (119 levels)
 - Per-matrix Sraffa price curves p(r) at 21 sample points
@@ -25,9 +25,10 @@ implementation regenerates:
 
 ## 3. Proxies
 
-BLS sect300.xls crosswalk URL is 403 (paper-cited). v1.1 substitutes
-current BLS Employment Projections industry data; this is a URL
-migration within an active domain, NOT a data-source proxy.
+The US Bureau of Labor Statistics (BLS) sect300.xls crosswalk URL is 403
+(paper-cited). v1.1 substitutes current BLS Employment Projections
+industry data; this is a URL migration within an active domain, not a
+data-source proxy.
 
 ## 4. Synthetic data
 
@@ -58,7 +59,7 @@ CI < 0.1 across all 295 aggregations and only 6% labor-value sign
 switches in 2002. The modern series preserves the CI estimator and
 aggregation-level rollup methodology while permitting the BLS
 Employment Projections crosswalk URL migration (sect300.xls → current
-EP industry data; same agency, current URL). This is NOT a proxy
-substitution forbidden by the No-Proxy rule because (a) BEA IO is the
+EP industry data; same agency, current URL). This is not a proxy
+substitution because (a) BEA IO is the
 same source family, (b) BLS Employment Projections is the same agency
 under a renamed program — concept-identical labor input data.

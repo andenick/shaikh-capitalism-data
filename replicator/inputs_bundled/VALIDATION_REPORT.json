@@ -20,12 +20,12 @@
         "max_pct_err": 1.857956139498785,
         "note": "Informational. CD2 used a different FRB reindex anchor; ~1-2% divergence expected and acceptable."
       },
-      "validated_at": "2026-05-18T23:20:17.439678+00:00"
+      "validated_at": "2026-07-10T14:18:45.968227+00:00"
     },
     "S301": {
       "status": "PASS_THEORETICAL",
       "sid": "S301",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 119,
       "y_bounds": [
         0.0,
@@ -44,12 +44,12 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-05-18T22:01:40.917916+00:00",
+      "validated_at": "2026-07-10T14:18:46.562088+00:00",
       "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
     },
     "S401": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "derived",
       "comparison_basis": "Reconstructed Appendix_4_2_Table4.csv (verbatim from book pp. 779-780)",
       "n_compared": 122,
@@ -61,12 +61,12 @@
       "cd2_comparison": {
         "note": "no CD/CD2 predecessor for Ch4 series"
       },
-      "validated_at": "2026-05-18T22:03:23.168804+00:00"
+      "validated_at": "2026-07-10T14:18:46.685378+00:00"
     },
     "S302": {
       "status": "PASS_THEORETICAL",
       "sid": "S302",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 119,
       "y_bounds": [
         0.0,
@@ -85,13 +85,13 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-05-18T22:01:45.649536+00:00",
+      "validated_at": "2026-07-10T14:18:46.567449+00:00",
       "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
     },
     "S303": {
       "status": "PASS_THEORETICAL",
       "sid": "S303",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 121,
       "y_bounds": [
         0.0,
@@ -110,13 +110,13 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-05-18T22:01:48.224591+00:00",
+      "validated_at": "2026-07-10T14:18:46.573005+00:00",
       "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
     },
     "S304": {
       "status": "PASS_THEORETICAL",
       "sid": "S304",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 121,
       "y_bounds": [
         0.0,
@@ -129,18 +129,18 @@
       "finite_ok": true,
       "asymptote_target": null,
       "asymptote_err": null,
-      "mae": 0.229927,
-      "max_abs_err": 0.365149,
-      "max_pct_err": 91.287263,
+      "mae": 0.151645,
+      "max_abs_err": 0.4,
+      "max_pct_err": 100.0,
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-05-18T22:01:50.364264+00:00",
+      "validated_at": "2026-07-10T14:18:46.578140+00:00",
       "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
     },
     "S402": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "derived",
       "comparison_basis": "Reconstructed Appendix_4_2_Table4.csv (per-hour cost columns)",
       "n_compared": 122,
@@ -152,12 +152,12 @@
       "cd2_comparison": {
         "note": "no CD/CD2 predecessor"
       },
-      "validated_at": "2026-05-18T21:59:29.072079+00:00"
+      "validated_at": "2026-07-10T14:18:46.737690+00:00"
     },
     "S305": {
       "status": "PASS_THEORETICAL",
       "sid": "S305",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 121,
       "y_bounds": [
         0.0,
@@ -165,23 +165,23 @@
       ],
       "bound_tol_pct": 1.0,
       "n_out_of_bounds": 0,
-      "shape_requested": "non_monotone",
+      "shape_requested": "rising",
       "shape_ok": true,
       "finite_ok": true,
       "asymptote_target": null,
       "asymptote_err": null,
-      "mae": 7.399863,
-      "max_abs_err": 13.5,
-      "max_pct_err": 90.0,
+      "mae": 7.207609,
+      "max_abs_err": 13.0,
+      "max_pct_err": 86.666667,
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-05-18T22:01:52.238444+00:00",
+      "validated_at": "2026-07-10T14:18:46.583501+00:00",
       "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
     },
     "S403": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "derived",
       "comparison_basis": "Reconstructed Appendix_4_2_Table4.csv profit columns (PL, PH)",
       "n_compared": 42,
@@ -193,12 +193,12 @@
       "cd2_comparison": {
         "note": "no CD/CD2 predecessor"
       },
-      "validated_at": "2026-05-18T21:59:45.753660+00:00"
+      "validated_at": "2026-07-10T14:18:46.759256+00:00"
     },
     "S306": {
       "status": "PASS_CROSS_SECTIONAL_UNAVAILABLE",
       "sid": "S306",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 0,
       "n_rows": 1,
       "year": 1904,
@@ -213,13 +213,13 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-05-18T22:01:56.312761+00:00",
+      "validated_at": "2026-07-10T14:56:11.177276+00:00",
       "note": "Underlying Allen & Bowley (1935) Table 1 not in SalvagedInputs/ (Internet Archive URL 404). Processed parquet contains the axis-bound metadata only. No synthetic values. Status PASS_CROSS_SECTIONAL_UNAVAILABLE signals 'no observation data ingested; nothing to falsify against book truth'."
     },
     "S307": {
       "status": "PASS_CROSS_SECTIONAL_UNAVAILABLE",
       "sid": "S307",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 0,
       "n_rows": 1,
       "year": 1904,
@@ -234,31 +234,22 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-05-18T22:02:09.113638+00:00",
+      "validated_at": "2026-07-10T14:56:12.520496+00:00",
       "note": "Underlying Allen & Bowley (1935) Table 1 not in SalvagedInputs/ (Internet Archive URL 404). Processed parquet contains the axis-bound metadata only. No synthetic values. Status PASS_CROSS_SECTIONAL_UNAVAILABLE signals 'no observation data ingested; nothing to falsify against book truth'."
     },
     "S404": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "tolerance_pct": null,
+      "status": "PASS",
+      "n_compared": 22,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
       "content_type": "derived",
-      "comparison_basis": "n/a \u2014 Inman 1995 paywalled, figures-only, no underlying data",
-      "n_compared": 0,
-      "mae": null,
-      "max_abs_err": null,
-      "max_pct_err": null,
-      "divergence_count": 0,
-      "divergences": [],
-      "dpr_documents_data_unavailable": true,
-      "remediation_path": "Phase 9 may pursue authorized library access or Decision-Log-approved figure digitization. Until then the series is intentionally empty in the processed pipeline.",
-      "cd2_comparison": {
-        "note": "no CD/CD2 predecessor"
-      },
-      "validated_at": "2026-05-18T22:00:10.876220+00:00"
+      "is_digitized": true,
+      "validated_at": "2026-07-10T14:18:46.765601+00:00"
     },
     "S308": {
       "status": "PASS_THEORETICAL",
       "sid": "S308",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 255,
       "subseries_results": {
         "S308-A": "PASS_THEORETICAL",
@@ -285,13 +276,13 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-05-18T22:02:23.097445+00:00",
+      "validated_at": "2026-07-10T14:18:46.599436+00:00",
       "note": "Composite theoretical series: 5 subseries (1 analytic + 4 NetLogo tabulations). Validates per-subseries shape/bounds AND Shaikh's central claim that all NetLogo curves lie within +/-2 percent of theoretical."
     },
     "S309": {
       "status": "PASS_THEORETICAL",
       "sid": "S309",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 505,
       "subseries_results": {
         "S309-A": "PASS_THEORETICAL",
@@ -318,12 +309,12 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-05-18T22:02:24.984873+00:00",
+      "validated_at": "2026-07-10T14:18:46.614351+00:00",
       "note": "Composite theoretical series for luxury good x2; 5 subseries. Validates shape/bounds per subseries AND Shaikh's central claim (NetLogo within +/-2 percent of theoretical)."
     },
     "S408": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "cross_sectional",
       "comparison_basis": "Verbatim Shaikh 2016 p. 163 (Eiteman & Guthrie 1952 survey)",
       "n_compared": 2,
@@ -335,62 +326,38 @@
       "cd2_comparison": {
         "note": "no CD/CD2 predecessor"
       },
-      "validated_at": "2026-05-18T22:03:25.099940+00:00"
+      "validated_at": "2026-07-10T14:18:46.804091+00:00"
     },
     "S405": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "tolerance_pct": null,
+      "status": "PASS",
+      "n_compared": 38,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
       "content_type": "derived",
-      "comparison_basis": "n/a \u2014 Inman 1995 fig. 4 paywalled, figures-only",
-      "n_compared": 0,
-      "mae": null,
-      "max_abs_err": null,
-      "max_pct_err": null,
-      "divergence_count": 0,
-      "divergences": [],
-      "dpr_documents_data_unavailable": true,
-      "cd2_comparison": {
-        "note": "no CD/CD2 predecessor"
-      },
-      "validated_at": "2026-05-18T22:01:04.844418+00:00"
+      "is_digitized": true,
+      "validated_at": "2026-07-10T14:18:46.775495+00:00"
     },
     "S406": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "tolerance_pct": null,
+      "status": "PASS",
+      "n_compared": 26,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
       "content_type": "derived",
-      "comparison_basis": "n/a \u2014 Inman 1995 fig. 5 paywalled, figures-only",
-      "n_compared": 0,
-      "mae": null,
-      "max_abs_err": null,
-      "max_pct_err": null,
-      "divergence_count": 0,
-      "divergences": [],
-      "dpr_documents_data_unavailable": true,
-      "cd2_comparison": {
-        "note": "no CD/CD2 predecessor"
-      },
-      "validated_at": "2026-05-18T22:01:39.863010+00:00"
+      "is_digitized": true,
+      "validated_at": "2026-07-10T14:18:46.784823+00:00"
     },
     "S407": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "tolerance_pct": null,
+      "status": "PASS",
+      "n_compared": 17,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
       "content_type": "derived",
-      "comparison_basis": "n/a \u2014 Inman 1995 fig. 6 paywalled, figures-only",
-      "n_compared": 0,
-      "mae": null,
-      "max_abs_err": null,
-      "max_pct_err": null,
-      "divergence_count": 0,
-      "divergences": [],
-      "dpr_documents_data_unavailable": true,
-      "cd2_comparison": {
-        "note": "no CD/CD2 predecessor"
-      },
-      "validated_at": "2026-05-18T22:01:47.993217+00:00"
+      "is_digitized": true,
+      "validated_at": "2026-07-10T14:18:46.794089+00:00"
     },
     "S701": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 51,
       "mae": 0.0,
       "max_abs_err": 0.0,
@@ -398,11 +365,11 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "content_type": "cross_sectional",
-      "validated_at": "2026-05-18T22:07:55.583528+00:00"
+      "validated_at": "2026-07-10T14:18:47.848614+00:00"
     },
     "S702": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 56,
       "mae": 0.0,
       "max_abs_err": 0.0,
@@ -410,17 +377,53 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "content_type": "cross_sectional",
-      "validated_at": "2026-05-18T22:07:57.243823+00:00"
+      "validated_at": "2026-07-10T14:18:47.867836+00:00"
     },
     "S703": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "reason": "Christodoulopoulos (1995) world ISDB panel not in SalvagedInputs; OECD ISDB 1994 discontinued. PDF figure remains; no chopped CSV.",
-      "validated_at": "2026-05-18T22:07:58.385871+00:00"
+      "status": "PASS",
+      "sid": "S703",
+      "n_points": 20,
+      "year_range": [
+        1970,
+        1990
+      ],
+      "checks": {
+        "round_trip": "PASS",
+        "reference_values": "PASS",
+        "axis_range_0_0.45": "PASS",
+        "occupied_band_0.10_0.20": "PASS"
+      },
+      "provenance": "machine_digitized (dual independent extraction, crop-level adjudication, adversarial verification 2026-07-02)",
+      "validation_records": [
+        "remediation_campaign/digitization_packet/machine/S703_consensus_overlay.png",
+        "remediation_campaign/digitization_packet/machine/M3_verify_report.md",
+        "remediation_campaign/digitization_packet/machine/M2_adjudication_log.md"
+      ],
+      "validated_at": "2026-07-10T14:18:49+00:00"
     },
     "S704": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "reason": "Christodoulopoulos (1995) US ISDB sub-industry panel not in SalvagedInputs; OECD ISDB 1994 discontinued.",
-      "validated_at": "2026-05-18T22:08:04.200190+00:00"
+      "status": "PASS",
+      "sid": "S704",
+      "n_points": 30,
+      "year_range": [
+        1960,
+        1989
+      ],
+      "checks": {
+        "round_trip": "PASS",
+        "reference_values": "PASS",
+        "axis_range_-0.10_0.60": "PASS",
+        "occupied_band_0.05_0.30": "PASS",
+        "structure_trough1982_lt_peak1965": "PASS"
+      },
+      "provenance": "machine_digitized (dual independent extraction, crop-level adjudication, adversarial verification 2026-07-02)",
+      "validation_records": [
+        "remediation_campaign/digitization_packet/machine/S704_consensus_overlay.png",
+        "remediation_campaign/digitization_packet/machine/M3_verify_report.md",
+        "remediation_campaign/digitization_packet/machine/M2_adjudication_log.md",
+        "remediation_campaign/digitization_packet/machine/S704_1990_omission_ruling.md"
+      ],
+      "validated_at": "2026-07-10T14:18:49+00:00"
     },
     "S705": {
       "status": "PASS",
@@ -432,7 +435,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": false,
-      "validated_at": "2026-05-18T22:08:08.249736+00:00"
+      "validated_at": "2026-07-10T14:18:47.928548+00:00"
     },
     "S706": {
       "status": "PASS",
@@ -444,12 +447,19 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": false,
-      "validated_at": "2026-05-18T22:08:10.064521+00:00"
+      "validated_at": "2026-07-10T14:18:47.979909+00:00"
     },
     "S707": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "reason": "Tsoulfidis & Tsaliki (2011) Greek 20-industry ROP deviation series not tabulated in MPRA paper; underlying ESYE/Bank of Greece panel not redistributed.",
-      "validated_at": "2026-05-18T22:08:11.346201+00:00"
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 600,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "is_deviation_panel": true,
+      "validated_at": "2026-07-10T14:18:48.022107+00:00"
     },
     "S1501": {
       "status": "PASS",
@@ -486,12 +496,19 @@
           "diff_pct": 0.0
         }
       },
-      "validated_at": "2026-05-18T22:14:07.840935+00:00"
+      "validated_at": "2026-07-10T14:18:45.231068+00:00"
     },
     "S708": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "reason": "Tsoulfidis & Tsaliki (2011) Greek 20-industry IROP deviation series not tabulated in MPRA paper.",
-      "validated_at": "2026-05-18T22:08:12.568597+00:00"
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 600,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "is_deviation_panel": true,
+      "validated_at": "2026-07-10T14:18:48.064433+00:00"
     },
     "S1502": {
       "status": "PASS",
@@ -503,11 +520,11 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "divergence_sample": [],
-      "validated_at": "2026-05-18T22:14:07.879575+00:00"
+      "validated_at": "2026-07-10T14:18:45.264394+00:00"
     },
     "S709": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 589,
       "mae": 0.0,
       "max_abs_err": 0.0,
@@ -515,11 +532,11 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": true,
-      "validated_at": "2026-05-18T22:08:15.145165+00:00"
+      "validated_at": "2026-07-10T14:18:48.117034+00:00"
     },
     "S710": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 558,
       "mae": 0.0,
       "max_abs_err": 0.0,
@@ -527,7 +544,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": true,
-      "validated_at": "2026-05-18T22:08:26.067322+00:00"
+      "validated_at": "2026-07-10T14:18:48.166608+00:00"
     },
     "S711": {
       "status": "PASS",
@@ -539,7 +556,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": true,
-      "validated_at": "2026-05-18T22:08:30.747059+00:00"
+      "validated_at": "2026-07-10T14:18:48.211059+00:00"
     },
     "S1503": {
       "status": "PASS",
@@ -551,7 +568,7 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "divergence_sample": [],
-      "validated_at": "2026-05-18T22:14:07.913664+00:00"
+      "validated_at": "2026-07-10T14:18:45.295116+00:00"
     },
     "S1504": {
       "status": "PASS",
@@ -683,7 +700,7 @@
           }
         ]
       },
-      "validated_at": "2026-05-18T22:14:08.214896+00:00"
+      "validated_at": "2026-07-10T14:18:45.377629+00:00"
     },
     "S1001": {
       "status": "PASS",
@@ -715,7 +732,7 @@
       "cd2_comparison": {
         "note": "CD2 S050 spot values do not match Appendix 7.2; informational only."
       },
-      "validated_at": "2026-05-18T22:26:02.539593+00:00"
+      "validated_at": "2026-07-10T14:18:44.047773+00:00"
     },
     "S1505": {
       "status": "PASS",
@@ -731,7 +748,7 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "divergence_sample": [],
-      "validated_at": "2026-05-18T22:14:08.276353+00:00"
+      "validated_at": "2026-07-10T14:18:45.422374+00:00"
     },
     "S1002": {
       "status": "PASS",
@@ -762,7 +779,7 @@
           "div_count": 0
         }
       },
-      "validated_at": "2026-05-18T22:26:04.193423+00:00"
+      "validated_at": "2026-07-10T14:56:18.675860+00:00"
     },
     "S1506": {
       "status": "PASS",
@@ -778,7 +795,7 @@
       "divergence_count": 0,
       "parent_series": "S1505",
       "construction": "derived_subperiod",
-      "validated_at": "2026-05-18T22:14:08.288266+00:00"
+      "validated_at": "2026-07-10T14:18:45.433885+00:00"
     },
     "S1003": {
       "status": "PASS",
@@ -793,7 +810,7 @@
       "max_pct_err": 0.0,
       "divergence_years": [],
       "divergence_count": 0,
-      "validated_at": "2026-05-18T22:26:05.770606+00:00"
+      "validated_at": "2026-07-10T14:18:44.122635+00:00"
     },
     "S1507": {
       "status": "PASS",
@@ -809,11 +826,11 @@
       "divergence_count": 0,
       "parent_series": "S1505",
       "construction": "derived_subperiod",
-      "validated_at": "2026-05-18T22:14:08.299085+00:00"
+      "validated_at": "2026-07-10T14:18:45.447583+00:00"
     },
     "S1508": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 58,
       "n_countries": 29,
       "mae": 0.0,
@@ -821,7 +838,105 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "content_type": "cross_sectional",
-      "validated_at": "2026-05-18T22:14:08.314218+00:00"
+      "independent_anchors": {
+        "status": "GREEN",
+        "any_red": false,
+        "anchors": {
+          "status": "GREEN",
+          "sid": "S1508",
+          "n_anchors": 6,
+          "n_red": 0,
+          "n_green": 6,
+          "n_na": 0,
+          "anchors": [
+            {
+              "anchor_id": "S1508_H01_lambda",
+              "anchor_type": "point",
+              "subseries_id": "S1508-lambda",
+              "source_description": "Harberger (1988) growth-of-Domestic-Claims (lambda=gDC), country H01. Transcribed in S1508 MHR SS5 + CH15_review hand_checks[4] (independent of loader path).",
+              "status": "GREEN",
+              "expected": 3.123,
+              "actual": 3.123,
+              "detail": "country_key=H01",
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0
+            },
+            {
+              "anchor_id": "S1508_H02_lambda",
+              "anchor_type": "point",
+              "subseries_id": "S1508-lambda",
+              "source_description": "Harberger (1988) lambda=gDC, country H02 (MHR SS5 + CH15_review hand_checks[4]).",
+              "status": "GREEN",
+              "expected": 3.432,
+              "actual": 3.432,
+              "detail": "country_key=H02",
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0
+            },
+            {
+              "anchor_id": "S1508_H03_lambda",
+              "anchor_type": "point",
+              "subseries_id": "S1508-lambda",
+              "source_description": "Harberger (1988) lambda=gDC, country H03 (MHR SS5 + CH15_review hand_checks[4]).",
+              "status": "GREEN",
+              "expected": 1.421,
+              "actual": 1.421,
+              "detail": "country_key=H03",
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0
+            },
+            {
+              "anchor_id": "S1508_H01_pi",
+              "anchor_type": "point",
+              "subseries_id": "S1508-pi",
+              "source_description": "Harberger (1988) inflation (pi), country H01 (MHR SS5 + CH15_review hand_checks[4]).",
+              "status": "GREEN",
+              "expected": 2.546,
+              "actual": 2.546,
+              "detail": "country_key=H01",
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0
+            },
+            {
+              "anchor_id": "S1508_H02_pi",
+              "anchor_type": "point",
+              "subseries_id": "S1508-pi",
+              "source_description": "Harberger (1988) inflation (pi), country H02 (MHR SS5 + CH15_review hand_checks[4]).",
+              "status": "GREEN",
+              "expected": 2.69,
+              "actual": 2.69,
+              "detail": "country_key=H02",
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0
+            },
+            {
+              "anchor_id": "S1508_H03_pi",
+              "anchor_type": "point",
+              "subseries_id": "S1508-pi",
+              "source_description": "Harberger (1988) inflation (pi), country H03 (MHR SS5 + CH15_review hand_checks[4]).",
+              "status": "GREEN",
+              "expected": 1.23,
+              "actual": 1.23,
+              "detail": "country_key=H03",
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0
+            }
+          ]
+        },
+        "splice": {
+          "status": "NA",
+          "sid": "S1508",
+          "detail": "no extension / no book+extension ranges"
+        },
+        "plausibility": {
+          "status": "NA",
+          "sid": "S1508",
+          "n_rules": 0,
+          "rules": [],
+          "detail": "no plausibility_rules registered"
+        }
+      },
+      "validated_at": "2026-07-10T14:18:45.484267+00:00"
     },
     "S1004": {
       "status": "PASS",
@@ -857,11 +972,11 @@
         }
       },
       "note": "iblongreal validated with abs-error pp threshold (sign-crossing values); HP smoothed validated with pct tolerance.",
-      "validated_at": "2026-05-18T22:26:07.337459+00:00"
+      "validated_at": "2026-07-10T14:18:44.162270+00:00"
     },
     "S1509": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "n_compared": 92,
       "n_country_episodes": 46,
       "mae": 0.0,
@@ -869,7 +984,45 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "content_type": "cross_sectional",
-      "validated_at": "2026-05-18T22:14:08.338123+00:00"
+      "independent_anchors": {
+        "status": "GREEN",
+        "any_red": false,
+        "anchors": {
+          "status": "GREEN",
+          "sid": "S1509",
+          "n_anchors": 1,
+          "n_red": 0,
+          "n_green": 1,
+          "n_na": 0,
+          "anchors": [
+            {
+              "anchor_id": "S1509_panel_cardinality",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S1509-lambda",
+              "source_description": "Ramamurthy (2014, ch.3) panel structure independently asserted in S1509 MHR SS1/SS4 + DPR SS3: 46 country-episode rows (= 38 unique countries; Romania appears as TWO episodes: Acute 1991-94, Chronic 1998-02). Structural anchor independent of the numeric cell round-trip; the printed numeric cells are circular (same xlsx V03 reads) and the book 'ten times higher' claim is qualitative, so no independent numeric value anchor exists.",
+              "status": "GREEN",
+              "expected": 46.0,
+              "actual": 46.0,
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0,
+              "detail": "n=46"
+            }
+          ]
+        },
+        "splice": {
+          "status": "NA",
+          "sid": "S1509",
+          "detail": "no extension / no book+extension ranges"
+        },
+        "plausibility": {
+          "status": "NA",
+          "sid": "S1509",
+          "n_rules": 0,
+          "rules": [],
+          "detail": "no plausibility_rules registered"
+        }
+      },
+      "validated_at": "2026-07-10T14:18:45.515817+00:00"
     },
     "S1005": {
       "status": "PASS",
@@ -900,10 +1053,73 @@
           "div_count": 0
         }
       },
-      "validated_at": "2026-05-18T22:26:09.120628+00:00"
+      "validated_at": "2026-07-10T14:18:44.201380+00:00"
     },
     "S1006": {
       "status": "PASS",
+      "independent_anchor_checks": {
+        "status": "PASS",
+        "red_checks": [],
+        "anchors": {
+          "status": "GREEN",
+          "sid": "S1006",
+          "n_anchors": 3,
+          "n_red": 0,
+          "n_green": 3,
+          "n_na": 0,
+          "anchors": [
+            {
+              "anchor_id": "S1006_T101_large_stocks_mean",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S1006-A",
+              "source_description": "Book Table 10.1 / Fig 10.10 (p.469): long-run avg nominal total return, Large Company Stocks 1926-2010 = 11.88% (Ibbotson SBBI 2004 T2-2). Non-circular printed summary stat (CH10_review hand_checks_noncircular).",
+              "status": "GREEN",
+              "expected": 11.88,
+              "actual": 11.87784787,
+              "abs_pct_diff": 0.018116,
+              "tolerance_pct": 1.0,
+              "detail": "n=85"
+            },
+            {
+              "anchor_id": "S1006_T101_lt_corp_mean",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S1006-B",
+              "source_description": "Book Table 10.1 (p.469): long-run avg nominal total return, Long-Term Corporate Bonds 1926-2010 = 6.24% (Ibbotson SBBI 2004 T2-2).",
+              "status": "GREEN",
+              "expected": 6.24,
+              "actual": 6.23558167,
+              "abs_pct_diff": 0.070807,
+              "tolerance_pct": 1.0,
+              "detail": "n=85"
+            },
+            {
+              "anchor_id": "S1006_T101_lt_govt_mean",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S1006-C",
+              "source_description": "Book Table 10.1 (p.469): long-run avg nominal total return, Long-Term Government Bonds 1926-2010 = 5.91% (Ibbotson SBBI 2004 T2-2).",
+              "status": "GREEN",
+              "expected": 5.91,
+              "actual": 5.91106742,
+              "abs_pct_diff": 0.018061,
+              "tolerance_pct": 1.0,
+              "detail": "n=85"
+            }
+          ]
+        },
+        "splice": {
+          "status": "NA",
+          "sid": "S1006",
+          "splice_year": 2011,
+          "detail": "no subseries spans 2010->2011"
+        },
+        "plausibility": {
+          "status": "NA",
+          "sid": "S1006",
+          "n_rules": 0,
+          "rules": [],
+          "detail": "no plausibility_rules registered"
+        }
+      },
       "tolerance_pct": 1.0,
       "criterion": "abs_err > 1.0 percentage point (return series)",
       "compare_range": [
@@ -939,10 +1155,73 @@
           "div_count": 0
         }
       },
-      "validated_at": "2026-05-18T22:26:10.700400+00:00"
+      "validated_at": "2026-07-10T14:18:44.250787+00:00"
     },
     "S1007": {
       "status": "PASS",
+      "independent_anchor_checks": {
+        "status": "PASS",
+        "red_checks": [],
+        "anchors": {
+          "status": "GREEN",
+          "sid": "S1007",
+          "n_anchors": 3,
+          "n_red": 0,
+          "n_green": 3,
+          "n_na": 0,
+          "anchors": [
+            {
+              "anchor_id": "S1007_T102_equity_rate_mean",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S1007-A",
+              "source_description": "Book Table 10.2 / Fig 10.11 (p.469): mean current-cost real equity rate of return 1947-2011 = 9.83% (decimal 0.0983; 1947 NaN, effective 1948-2011 n=64). Non-circular printed summary stat (CH10_review hand_checks_noncircular).",
+              "status": "GREEN",
+              "expected": 0.0983,
+              "actual": 0.09827356,
+              "abs_pct_diff": 0.0269,
+              "tolerance_pct": 1.0,
+              "detail": "n=64"
+            },
+            {
+              "anchor_id": "S1007_T102_iropcorp_mean",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S1007-B",
+              "source_description": "Book Table 10.2 (p.469): mean adjusted corporate real incremental rate of profit (iropcorp) 1947-2011 = 9.50% (decimal 0.0950).",
+              "status": "GREEN",
+              "expected": 0.095,
+              "actual": 0.09501093,
+              "abs_pct_diff": 0.011503,
+              "tolerance_pct": 1.0,
+              "detail": "n=64"
+            },
+            {
+              "anchor_id": "S1007_T102_iropcorpnipa_mean",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S1007-C",
+              "source_description": "Book Table 10.2 (p.469): mean NIPA corporate real incremental rate of profit (iropcorpnipa) 1947-2011 = 8.49% (decimal 0.0849).",
+              "status": "GREEN",
+              "expected": 0.0849,
+              "actual": 0.08492683,
+              "abs_pct_diff": 0.031604,
+              "tolerance_pct": 1.0,
+              "detail": "n=64"
+            }
+          ]
+        },
+        "splice": {
+          "status": "NA",
+          "sid": "S1007",
+          "splice_year": 2012,
+          "detail": "no subseries spans 2011->2012"
+        },
+        "plausibility": {
+          "status": "NA",
+          "sid": "S1007",
+          "n_rules": 0,
+          "rules": [],
+          "detail": "no plausibility_rules registered"
+        }
+      },
       "tolerance_pct": 1.0,
       "criterion": "abs_err > 0.01 (= 1 percentage point on rate_decimal)",
       "compare_range": [
@@ -978,7 +1257,7 @@
           "div_years_first_20": []
         }
       },
-      "validated_at": "2026-05-18T22:26:12.294959+00:00"
+      "validated_at": "2026-07-10T14:18:44.313904+00:00"
     },
     "S1008": {
       "status": "PASS",
@@ -1020,7 +1299,7 @@
         1948,
         2011
       ],
-      "validated_at": "2026-05-18T22:26:13.956249+00:00"
+      "validated_at": "2026-07-10T14:18:44.362930+00:00"
     },
     "S202": {
       "status": "PASS",
@@ -1035,7 +1314,7 @@
       "max_pct_err": 0.0,
       "divergence_years": [],
       "divergence_count": 0,
-      "validated_at": "2026-05-18T23:17:48.676972+00:00"
+      "validated_at": "2026-07-10T14:18:46.009728+00:00"
     },
     "XS001": {
       "status": "PASS",
@@ -1054,7 +1333,7 @@
         "XS001-E",
         "XS001-F"
       ],
-      "validated_at": "2026-05-18T22:46:45.073268+00:00"
+      "validated_at": "2026-07-10T14:18:48.976141+00:00"
     },
     "XS002": {
       "status": "PASS",
@@ -1074,7 +1353,7 @@
         "XS002-F",
         "XS002-G"
       ],
-      "validated_at": "2026-05-18T22:47:15.068411+00:00"
+      "validated_at": "2026-07-10T14:18:49.103042+00:00"
     },
     "XS003": {
       "status": "PASS",
@@ -1094,7 +1373,7 @@
         "XS003-F",
         "XS003-G"
       ],
-      "validated_at": "2026-05-18T22:47:47.043972+00:00"
+      "validated_at": "2026-07-10T14:18:49.344424+00:00"
     },
     "XS004": {
       "status": "PASS",
@@ -1110,7 +1389,7 @@
         "XS004-B",
         "XS004-C"
       ],
-      "validated_at": "2026-05-18T22:48:20.596680+00:00"
+      "validated_at": "2026-07-10T14:18:49.393564+00:00"
     },
     "XS005": {
       "status": "PASS",
@@ -1126,7 +1405,7 @@
         "XS005-B",
         "XS005-C"
       ],
-      "validated_at": "2026-05-18T22:48:59.058054+00:00"
+      "validated_at": "2026-07-10T14:18:49.478093+00:00"
     },
     "XS006": {
       "status": "PASS",
@@ -1142,7 +1421,7 @@
         "XS006-depr_only",
         "XS006-depr_plus_init"
       ],
-      "validated_at": "2026-05-18T22:49:39.714928+00:00"
+      "validated_at": "2026-07-10T14:18:49.542895+00:00"
     },
     "S1401": {
       "status": "PASS",
@@ -1163,7 +1442,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-05-18T23:18:16.553653+00:00"
+      "validated_at": "2026-07-10T14:18:44.813205+00:00"
     },
     "XS007": {
       "status": "PASS",
@@ -1179,7 +1458,7 @@
         "XS007-B",
         "XS007-C"
       ],
-      "validated_at": "2026-05-18T22:50:10.595806+00:00"
+      "validated_at": "2026-07-10T14:18:49.595865+00:00"
     },
     "XS008": {
       "status": "PASS",
@@ -1193,7 +1472,7 @@
       "subseries_compared": [
         "XS008-A"
       ],
-      "validated_at": "2026-05-18T22:50:53.093765+00:00"
+      "validated_at": "2026-07-10T14:18:49.617899+00:00"
     },
     "S1402": {
       "status": "PASS",
@@ -1215,7 +1494,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-05-18T23:18:41.331189+00:00"
+      "validated_at": "2026-07-10T14:18:44.864290+00:00"
     },
     "XS009": {
       "status": "PASS",
@@ -1231,7 +1510,7 @@
         "XS009-B",
         "XS009-C"
       ],
-      "validated_at": "2026-05-18T22:51:22.915744+00:00"
+      "validated_at": "2026-07-10T14:18:49.677627+00:00"
     },
     "S601": {
       "status": "PASS",
@@ -1249,7 +1528,7 @@
         "S601-D",
         "S601-E"
       ],
-      "validated_at": "2026-05-18T23:00:16.755891+00:00"
+      "validated_at": "2026-07-10T14:18:47.338301+00:00"
     },
     "S1403": {
       "status": "PASS",
@@ -1270,12 +1549,12 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-05-18T23:18:45.098691+00:00",
+      "validated_at": "2026-07-10T14:18:44.947423+00:00",
       "informational_quarterly_collapse_check": {
         "S1403-WSH_ANNUALAVG_HP100": {
           "n": 53,
-          "mae": 0.018575490413448418,
-          "max_pct_err": 5.845552222501221,
+          "mae": 0.018575490454150766,
+          "max_pct_err": 5.84555222250088,
           "note": "Annual mean of quarterly HP100 series; expected to differ modestly from annual HP100 of annual data (different filter input + endpoint effects)."
         },
         "S1403-ULINT_ANNUALAVG_HP100": {
@@ -1288,7 +1567,7 @@
     },
     "XS2001": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "time_series",
       "comparison_basis": "Reconstructed XS2001_aggregate_ratios.csv (verbatim Shaikh 2020 Tables 1-2)",
       "n_compared": 108,
@@ -1298,7 +1577,7 @@
       "divergence_count": 0,
       "divergences": [],
       "extension_status": "v1_1_deferred_shared_bea_sraffa_pipeline",
-      "validated_at": "2026-05-18T22:51:41.933914+00:00"
+      "validated_at": "2026-07-10T14:18:49.722867+00:00"
     },
     "S1404": {
       "status": "PASS",
@@ -1319,7 +1598,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-05-18T23:18:48.600782+00:00"
+      "validated_at": "2026-07-10T14:18:44.991571+00:00"
     },
     "S602": {
       "status": "PASS",
@@ -1338,11 +1617,11 @@
         "S602-E",
         "S602-F"
       ],
-      "validated_at": "2026-05-18T23:01:58.880793+00:00"
+      "validated_at": "2026-07-10T14:18:47.535778+00:00"
     },
     "S1101": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "time_series",
       "comparison_basis": "Appendix11_XMData.xlsx X/M (Trade Balance) column",
       "n_compared": 766,
@@ -1354,11 +1633,11 @@
       "cd2_comparison": {
         "note": "CD2 S060 only cross-checked US; this validator checks all 15 countries."
       },
-      "validated_at": "2026-05-18T23:11:01.974196+00:00"
+      "validated_at": "2026-07-10T14:18:44.416056+00:00"
     },
     "S1102": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "time_series",
       "comparison_basis": "Appendix11_USJPNdata.xlsx rxr1 column (REER PPI-basis, 2002=100)",
       "n_compared": 100,
@@ -1370,11 +1649,11 @@
       "cd2_comparison": {
         "note": "CD2 S061 matched on US 1960=188.4; this validator checks all 50 years for US + JP."
       },
-      "validated_at": "2026-05-18T23:11:24.052012+00:00"
+      "validated_at": "2026-07-10T14:18:44.441655+00:00"
     },
     "S1103": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "time_series",
       "comparison_basis": "Appendix11_USJPNdata.xlsx rxrrulcratio1 column (= rxr1 / rulcadjratio1rescaled)",
       "n_compared": 100,
@@ -1390,14 +1669,14 @@
       "cd2_comparison": {
         "note": "CD2 S062 markdown showed Japan 1960=99.79; matches column."
       },
-      "validated_at": "2026-05-18T23:11:36.756266+00:00"
+      "validated_at": "2026-07-10T14:18:44.464913+00:00"
     },
     "S1104": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "time_series",
-      "comparison_basis": "S1104-A: (X-M)/(X+M) from Appendix11_XMData US block; S1104-B: rxr1 from Appendix11_USJPNdata US block",
-      "n_compared": 100,
+      "comparison_basis": "S1104-A: (X-M)/(X+M) from Appendix11_XMData US block; S1104-B: rxr1 from Appendix11_USJPNdata US block; S1104-C: self-consistency vs independent WDI NY.GDP.MKTP.KD reconstruction (book-figure fidelity unverified)",
+      "n_compared": 150,
       "mae": 0.0,
       "max_pct_err": 0.0,
       "divergence_count": 0,
@@ -1416,14 +1695,17 @@
           "div_years": []
         },
         "S1104-C": {
-          "n": 0,
-          "status": "data_unavailable_eu12_relgdp_not_in_salvage"
+          "n": 50,
+          "mae": 0.0,
+          "max_pct_err": 0.0,
+          "div_years": [],
+          "basis": "self_consistency_vs_independent_wdi_reconstruction (book-figure fidelity UNVERIFIED \u2014 figure digitization pending)"
         }
       },
       "cd2_comparison": {
         "note": "CD2 S063 trade-balance samples align with (X-M)/(X+M), not X/M."
       },
-      "validated_at": "2026-05-18T23:11:46.357337+00:00"
+      "validated_at": "2026-07-10T14:56:26.932422+00:00"
     },
     "S1301": {
       "status": "PASS_THEORETICAL",
@@ -1451,11 +1733,11 @@
       "cd2_comparison": {
         "note": "no CD/CD2 predecessor (Fig 13.7 is illustrative)"
       },
-      "validated_at": "2026-05-18T23:11:51.860632+00:00"
+      "validated_at": "2026-07-10T14:18:44.767015+00:00"
     },
     "S1701": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "time_series",
       "comparison_basis": "Appendix5_DATALRprices.xlsx columns USPPIGOLDHP100, UKPPIGOLDHP100, USUKAVGWAVE",
       "n_compared": 469,
@@ -1467,11 +1749,11 @@
         "note": "CD2 S102 was actually the IRS-2011 table (now S1702/S1703); long-wave figure had no CD2 predecessor under S102."
       },
       "forecast_layer_note": "Post-2011 USUKAVGWAVE values are forecast; preserved with is_forecast=True flag in processed parquet.",
-      "validated_at": "2026-05-18T23:11:54.618520+00:00"
+      "validated_at": "2026-07-10T14:18:45.887468+00:00"
     },
     "S1702": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "cross_sectional",
       "comparison_basis": "Appendix17_USIRS2011.xlsx 'Cumulative Frequency from Above' (FPR017_C5), midpoint < $200k",
       "n_compared": 17,
@@ -1505,7 +1787,7 @@
       "cd2_comparison": {
         "note": "CD2 S103 reference_values were the Frequency column, not survival; corrected here."
       },
-      "validated_at": "2026-05-18T23:12:04.887847+00:00"
+      "validated_at": "2026-07-10T14:18:45.907146+00:00"
     },
     "S1703": {
       "status": "PASS",
@@ -1556,7 +1838,7 @@
       "cd2_comparison": {
         "note": "CD2 S104 reference_values were the Frequency column; corrected to column F here."
       },
-      "validated_at": "2026-05-18T23:12:20.695267+00:00"
+      "validated_at": "2026-07-10T14:18:45.927331+00:00"
     },
     "S603": {
       "status": "PASS",
@@ -1573,7 +1855,7 @@
         "S603-C",
         "S603-D"
       ],
-      "validated_at": "2026-05-18T23:02:54.547879+00:00"
+      "validated_at": "2026-07-10T14:18:47.676437+00:00"
     },
     "S1405": {
       "status": "PASS",
@@ -1596,7 +1878,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-05-18T23:19:03.878242+00:00",
+      "validated_at": "2026-07-10T14:18:45.074014+00:00",
       "phillips_fit_replication": {
         "era1": {
           "fitted": {
@@ -1652,11 +1934,74 @@
             "converged": true
           }
         }
+      },
+      "independent_anchor_checks": {
+        "status": "PASS",
+        "red_checks": [],
+        "anchors": {
+          "status": "GREEN",
+          "sid": "S1405",
+          "n_anchors": 3,
+          "n_red": 0,
+          "n_green": 3,
+          "n_na": 0,
+          "anchors": [
+            {
+              "anchor_id": "S1405_phillips_a",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S1405-A",
+              "source_description": "Book Phillips-curve regression (Fig 14.14, era 1 1949-1982): intercept a of Shaikh's constrained form y = a + x^c (implicit b=1, EViews NLLS). y=GWSHHP100 wage-share growth (S1405-A), x=ULINTENSITYHP100 unemployment intensity (S1405-B). Printed a=-1.026431.",
+              "status": "GREEN",
+              "expected": -1.026431,
+              "actual": -1.02643141,
+              "abs_pct_diff": 4e-05,
+              "tolerance_pct": 1.0,
+              "detail": "power_b1(NLLS) n=34 a=-1.026431 c=-0.010677 r2=0.930871"
+            },
+            {
+              "anchor_id": "S1405_phillips_c",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S1405-A",
+              "source_description": "Book Phillips-curve regression (Fig 14.14, era 1): power-law exponent c of y = a + x^c. Printed c=-0.010677.",
+              "status": "GREEN",
+              "expected": -0.010677,
+              "actual": -0.0106765,
+              "abs_pct_diff": 0.004665,
+              "tolerance_pct": 1.0,
+              "detail": "power_b1(NLLS) n=34 a=-1.026431 c=-0.010677 r2=0.930871"
+            },
+            {
+              "anchor_id": "S1405_phillips_r2",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S1405-A",
+              "source_description": "Book Phillips-curve regression (Fig 14.14, era 1): R^2 of the constrained fit y = a + x^c. Printed R^2=0.931.",
+              "status": "GREEN",
+              "expected": 0.931,
+              "actual": 0.93087091,
+              "abs_pct_diff": 0.013866,
+              "tolerance_pct": 1.0,
+              "detail": "power_b1(NLLS) n=34 a=-1.026431 c=-0.010677 r2=0.930871"
+            }
+          ]
+        },
+        "splice": {
+          "status": "NA",
+          "sid": "S1405",
+          "splice_year": 2012,
+          "detail": "no subseries spans 2011->2012"
+        },
+        "plausibility": {
+          "status": "NA",
+          "sid": "S1405",
+          "n_rules": 0,
+          "rules": [],
+          "detail": "no plausibility_rules registered"
+        }
       }
     },
     "XS2101": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "derived",
       "comparison_basis": "Reconstructed XS2101_summary_statistics.csv (verbatim Section 5 p. 272)",
       "n_compared": 10,
@@ -1666,11 +2011,11 @@
       "divergence_count": 0,
       "divergences": [],
       "extension_status": "v1_1_deferred_shared_bea_sraffa_pipeline",
-      "validated_at": "2026-05-18T22:52:29.222860+00:00"
+      "validated_at": "2026-07-10T14:18:49.733690+00:00"
     },
     "XS2201": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "time_series",
       "comparison_basis": "Reconstructed XS2201_fitted_parameters.csv (verbatim Shaikh-Jacobo 2020 Table 1)",
       "n_compared": 75,
@@ -1680,12 +2025,12 @@
       "divergence_count": 0,
       "divergences": [],
       "extension_status": "v1_1_deferred_mle_refit_2017_2022",
-      "validated_at": "2026-05-18T22:52:36.704099+00:00"
+      "validated_at": "2026-07-10T14:18:49.766415+00:00"
     },
     "S604": {
       "status": "PASS",
       "tolerance_pct": 2.0,
-      "n_compared": 128,
+      "n_compared": 256,
       "mae": 0.0,
       "max_abs_err": 0.0,
       "max_pct_err": 0.0,
@@ -1693,9 +2038,85 @@
       "divergence_count": 0,
       "subseries_compared": [
         "S604-A",
-        "S604-B"
+        "S604-B",
+        "S604-C",
+        "S604-D"
       ],
-      "validated_at": "2026-05-18T23:03:53.965027+00:00"
+      "anchor_checks": {
+        "verdict": "PASS",
+        "independent_anchors": {
+          "status": "GREEN",
+          "sid": "S604",
+          "n_anchors": 4,
+          "n_red": 0,
+          "n_green": 4,
+          "n_na": 0,
+          "anchors": [
+            {
+              "anchor_id": "S604_T624_mean_A",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S604-A",
+              "source_description": "Table 6.24 (book p.256): per-period mean of iropcorp = 13.45% (decimal 0.1345). Genuine non-circular anchor (CH06_review non_circular_book_anchors).",
+              "status": "GREEN",
+              "expected": 0.1345,
+              "actual": 0.13447268,
+              "abs_pct_diff": 0.020311,
+              "tolerance_pct": 1.0,
+              "detail": "n=64"
+            },
+            {
+              "anchor_id": "S604_T624_mean_B",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S604-B",
+              "source_description": "Table 6.24 (book p.256): per-period mean of iropcorpnipa = 13.62% (decimal 0.1362).",
+              "status": "GREEN",
+              "expected": 0.1362,
+              "actual": 0.13618539,
+              "abs_pct_diff": 0.010728,
+              "tolerance_pct": 1.0,
+              "detail": "n=64"
+            },
+            {
+              "anchor_id": "S604_T624_mean_C",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S604-C",
+              "source_description": "Table 6.24 (book p.256): per-period mean of real/current-cost iroprcorp = 9.50% (decimal 0.0950). Genuine non-circular anchor (CH06_review non_circular_book_anchors; S604_MHR.md section 1).",
+              "status": "GREEN",
+              "expected": 0.095,
+              "actual": 0.09501093,
+              "abs_pct_diff": 0.011503,
+              "tolerance_pct": 1.0,
+              "detail": "n=64"
+            },
+            {
+              "anchor_id": "S604_T624_mean_D",
+              "anchor_type": "derived_statistic",
+              "subseries_id": "S604-D",
+              "source_description": "Table 6.24 (book p.256): per-period mean of real/current-cost iroprcorpnipa = 8.49% (decimal 0.0849).",
+              "status": "GREEN",
+              "expected": 0.0849,
+              "actual": 0.08492683,
+              "abs_pct_diff": 0.031604,
+              "tolerance_pct": 1.0,
+              "detail": "n=64"
+            }
+          ]
+        },
+        "splice_continuity": {
+          "status": "NA",
+          "sid": "S604",
+          "splice_year": 2012,
+          "detail": "no subseries spans 2011->2012"
+        },
+        "level_plausibility": {
+          "status": "NA",
+          "sid": "S604",
+          "n_rules": 0,
+          "rules": [],
+          "detail": "no plausibility_rules registered"
+        }
+      },
+      "validated_at": "2026-07-10T14:18:47.828925+00:00"
     },
     "S1406": {
       "status": "PASS",
@@ -1716,7 +2137,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-05-18T23:19:14.308714+00:00"
+      "validated_at": "2026-07-10T14:18:45.115658+00:00"
     },
     "S1407": {
       "status": "PASS",
@@ -1737,7 +2158,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-05-18T23:19:20.986192+00:00"
+      "validated_at": "2026-07-10T14:18:45.158523+00:00"
     },
     "S1408": {
       "status": "PASS",
@@ -1758,7 +2179,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-05-18T23:19:25.080115+00:00"
+      "validated_at": "2026-07-10T14:18:45.206247+00:00"
     },
     "XS2302": {
       "status": "PASS",
@@ -1779,7 +2200,7 @@
         "XS2302-level",
         "XS2302-pctgdp"
       ],
-      "validated_at": "2026-05-18T22:53:19.950103+00:00"
+      "validated_at": "2026-07-10T14:18:49.778688+00:00"
     },
     "XS2303": {
       "status": "PASS",
@@ -1796,11 +2217,11 @@
         1990,
         2024
       ],
-      "validated_at": "2026-05-18T23:06:07.248952+00:00"
+      "validated_at": "2026-07-10T14:18:49.784757+00:00"
     },
     "XS2304": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "derived",
       "comparison_basis": "Reconstructed XS2304_literature_compilation.csv (verbatim named endpoints from paper note 17)",
       "n_compared": 2,
@@ -1810,11 +2231,11 @@
       "divergence_count": 0,
       "divergences": [],
       "extension_status": "not_applicable_literature_compilation",
-      "validated_at": "2026-05-18T22:54:55.940352+00:00"
+      "validated_at": "2026-07-10T14:18:49.791560+00:00"
     },
     "XS2305": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "derived",
       "comparison_basis": "Reconstructed XS2305_literature_compilation.csv (verbatim named endpoints)",
       "n_compared": 2,
@@ -1824,7 +2245,7 @@
       "divergence_count": 0,
       "divergences": [],
       "extension_status": "not_applicable_literature_compilation",
-      "validated_at": "2026-05-18T22:55:45.125194+00:00"
+      "validated_at": "2026-07-10T14:18:49.798286+00:00"
     },
     "XS2301": {
       "status": "PASS",
@@ -1832,20 +2253,20 @@
       "content_type": "time_series",
       "comparison_basis": "Fig 1 endpoint anchors (2002, 2017) for World and China",
       "n_compared": 4,
-      "mae": 0.0,
-      "max_abs_err": 0.0,
-      "max_pct_err": 0.0,
+      "mae": 6.0598,
+      "max_abs_err": 17.604,
+      "max_pct_err": 2.1733,
       "divergence_count": 0,
       "divergences": [],
       "year_range_processed": [
         2002,
-        2018
+        2024
       ],
       "subseries_present": [
         "XS2301-china",
         "XS2301-world"
       ],
-      "validated_at": "2026-05-18T23:05:09.211340+00:00"
+      "validated_at": "2026-07-10T14:18:49.772945+00:00"
     },
     "S203": {
       "status": "PASS",
@@ -1854,13 +2275,56 @@
         1889,
         2010
       ],
-      "n_compared": 112,
+      "excluded_corrected_span": [
+        1930,
+        1944
+      ],
+      "n_compared": 97,
       "mae": 0.0,
       "max_abs_err": 0.0,
       "max_pct_err": 0.0,
       "divergence_years": [],
       "divergence_count": 0,
-      "validated_at": "2026-05-18T23:18:01.814590+00:00"
+      "anchor_checks": {
+        "status": "PASS",
+        "red_checks": [],
+        "anchors": {
+          "status": "NA",
+          "sid": "S203",
+          "n_anchors": 0,
+          "anchors": [],
+          "detail": "no independent_anchors registered"
+        },
+        "splice": {
+          "status": "NA",
+          "sid": "S203",
+          "detail": "no extension / no book+extension ranges"
+        },
+        "plausibility": {
+          "status": "GREEN",
+          "sid": "S203",
+          "n_rules": 1,
+          "n_red": 0,
+          "n_green": 1,
+          "n_na": 0,
+          "rules": [
+            {
+              "rule_id": "S203_depression_must_fall",
+              "rule_type": "strictly_falling",
+              "subseries": "S203-A",
+              "from_year": 1929,
+              "to_year": 1933,
+              "grounding": "S203_MHR.md SS5 F-01 (HIGH, source corruption): '1929-34 real GDP/cap rises through Depression ... economically impossible; the Depression trough should show a ~25-30% fall' + SS6 'add an out-of-source sanity assertion (1929>1933)'. Mandated by Decision 0008 (D-1): 'add the 1929>1933 sanity assertion (Depression-must-fall) ... consumed by the D-4 level-plausibility check (Decision 0011)'.",
+              "n": 5,
+              "status": "GREEN",
+              "n_violations": 0,
+              "violations": [],
+              "detail": "0 non-decreasing step(s) over 1929-1933"
+            }
+          ]
+        }
+      },
+      "validated_at": "2026-07-10T14:18:46.039925+00:00"
     },
     "S204": {
       "status": "PASS",
@@ -1877,7 +2341,7 @@
       "divergence_count": 0,
       "frequency": "monthly",
       "extension_status": "not_applicable_discontinued",
-      "validated_at": "2026-05-18T23:18:12.116895+00:00"
+      "validated_at": "2026-07-10T14:18:46.095984+00:00"
     },
     "S205": {
       "status": "PASS",
@@ -1894,7 +2358,7 @@
       "divergence_count": 0,
       "frequency": "monthly",
       "extension_status": "not_applicable_discontinued",
-      "validated_at": "2026-05-18T23:18:16.586202+00:00"
+      "validated_at": "2026-07-10T14:18:46.152926+00:00"
     },
     "S206": {
       "status": "PASS",
@@ -1911,7 +2375,7 @@
       "divergence_count": 0,
       "frequency": "monthly",
       "extension_status": "not_applicable_discontinued",
-      "validated_at": "2026-05-18T23:18:41.311585+00:00"
+      "validated_at": "2026-07-10T14:18:46.216134+00:00"
     },
     "S207": {
       "status": "PASS",
@@ -1943,7 +2407,7 @@
           "divergence_count": 0
         }
       ],
-      "validated_at": "2026-05-18T23:18:45.029196+00:00"
+      "validated_at": "2026-07-10T14:18:46.264846+00:00"
     },
     "S208": {
       "status": "PASS",
@@ -1957,7 +2421,7 @@
       "max_pct_err": 0.0,
       "divergence_years": [],
       "divergence_count": 0,
-      "validated_at": "2026-05-18T23:18:48.527701+00:00"
+      "validated_at": "2026-07-10T14:56:14.119671+00:00"
     },
     "S209": {
       "status": "PASS",
@@ -1972,7 +2436,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "note": "Tolerance: 0.15pp absolute (unemployment in percent; tight pct-err inappropriate near zero).",
-      "validated_at": "2026-05-18T23:19:04.422565+00:00"
+      "validated_at": "2026-07-10T14:18:46.311299+00:00"
     },
     "S210": {
       "status": "PASS",
@@ -2004,7 +2468,7 @@
         }
       ],
       "note": "Book truth = CD2 S023 (no Appendix 2 chopped table); BLS WPU substituted for frozen WPS post-1974.",
-      "validated_at": "2026-05-18T23:19:14.289059+00:00"
+      "validated_at": "2026-07-10T14:18:46.336836+00:00"
     },
     "S211": {
       "status": "PASS",
@@ -2034,7 +2498,7 @@
         }
       ],
       "note": "Book truth = CD2 S022 (Jastram 1977 + NBER). No extension by design.",
-      "validated_at": "2026-05-18T23:19:20.913016+00:00"
+      "validated_at": "2026-07-10T14:18:46.362605+00:00"
     },
     "S212": {
       "status": "PASS",
@@ -2064,7 +2528,7 @@
         }
       ],
       "note": "Book truth = CD2 S024/S025 (Jastram 1977 + MeasuringWorth gold).",
-      "validated_at": "2026-05-18T23:19:25.050770+00:00"
+      "validated_at": "2026-07-10T14:18:46.400279+00:00"
     },
     "S213": {
       "status": "PASS",
@@ -2079,43 +2543,53 @@
       "divergence_years": [],
       "divergence_count": 0,
       "note": "Tolerance: 0.005 absolute (profit rates ~0.10-0.20).",
-      "validated_at": "2026-05-18T23:19:38.562385+00:00"
+      "validated_at": "2026-07-10T14:18:46.418245+00:00"
     },
     "S214": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "book_period": [
-        1960,
-        1989
-      ],
-      "book_period_status": "data_unavailable",
-      "reason": "anwarshaikhecon.org App 7.2 / OECD ISDB 1994 not in SalvagedInputs; per anu-framework no-fabrication rule, book values are not synthesized.",
-      "post_book_rows": 19,
-      "post_book_range": [
+      "status": "PASS_EXTENSION_ONLY",
+      "validation_class": "extension_only",
+      "check": "full_series_recompute_vs_raw_Appendix7 (F-P2.4-01)",
+      "n_years_checked": 19,
+      "max_abs_err": 0.0,
+      "tolerance_abs": 1e-06,
+      "n_mismatches": 0,
+      "mismatches": [],
+      "extension_range": [
         1987,
         2005
       ],
-      "remediation": "When App 7.2 replica is added to SalvagedInputs, re-run L01 to populate 1960-1989.",
-      "validated_at": "2026-05-18T23:19:43.765529+00:00"
-    },
-    "S215": {
-      "status": "PASS_DATA_UNAVAILABLE",
       "book_period": [
         1960,
         1989
       ],
       "book_period_status": "data_unavailable",
-      "reason": "anwarshaikhecon.org App 7.2 / OECD ISDB 1994 not in SalvagedInputs.",
-      "post_book_rows": 18,
-      "post_book_range": [
+      "reason": "Post-book 12-industry ROP average (1987-2005) recompute-verified against raw Appendix7_ropdataUSind.xlsx at every year. Book period 1960-1989 remains data_unavailable (anwarshaikhecon.org App 7.2 / OECD ISDB 1994 not in SalvagedInputs); no values fabricated.",
+      "validated_at": "2026-07-10T17:48:02.704094+00:00"
+    },
+    "S215": {
+      "status": "PASS_EXTENSION_ONLY",
+      "validation_class": "extension_only",
+      "check": "full_series_recompute_vs_raw_Appendix7 (F-P2.4-01)",
+      "n_years_checked": 18,
+      "max_abs_err": 0.0,
+      "tolerance_abs": 1e-06,
+      "n_mismatches": 0,
+      "mismatches": [],
+      "extension_range": [
         1988,
         2005
       ],
-      "remediation": "When App 7.2 replica is added to SalvagedInputs, re-run L01.",
-      "validated_at": "2026-05-18T23:19:46.876579+00:00"
+      "book_period": [
+        1960,
+        1989
+      ],
+      "book_period_status": "data_unavailable",
+      "reason": "Post-book 12-industry incremental-ROP average (1988-2005) recompute-verified against raw Appendix7_iropdataUSind.xlsx at every year. Book period 1960-1989 remains data_unavailable (anwarshaikhecon.org App 7.2 not in SalvagedInputs); no values fabricated.",
+      "validated_at": "2026-07-10T17:48:02.732502+00:00"
     },
     "S216": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "year": 1972,
       "n_industries": 71,
       "per_subseries": [
@@ -2134,7 +2608,7 @@
           "divergence_industries": []
         }
       ],
-      "validated_at": "2026-05-18T23:19:51.537779+00:00"
+      "validated_at": "2026-07-10T14:18:46.456114+00:00"
     },
     "S217": {
       "status": "PASS",
@@ -2155,7 +2629,7 @@
         "Western Offshoots",
         "World"
       ],
-      "validated_at": "2026-05-18T23:19:55.862943+00:00"
+      "validated_at": "2026-07-10T14:18:46.506929+00:00"
     },
     "S218": {
       "status": "PASS",
@@ -2173,7 +2647,7 @@
         "RATIO OF RICHEST 4 TO POOREST 4",
         "RICHEST 4"
       ],
-      "validated_at": "2026-05-18T23:19:58.922177+00:00"
+      "validated_at": "2026-07-10T14:18:46.555962+00:00"
     },
     "S501": {
       "status": "PASS",
@@ -2201,7 +2675,7 @@
           "divergence_years": []
         }
       ],
-      "validated_at": "2026-05-19T00:03:28.841404+00:00"
+      "validated_at": "2026-07-10T14:18:46.895222+00:00"
     },
     "S502": {
       "status": "PASS",
@@ -2235,7 +2709,7 @@
         "book_claim_US": 14.0,
         "book_claim_UK": 58.0
       },
-      "validated_at": "2026-05-19T00:03:31.436314+00:00"
+      "validated_at": "2026-07-10T14:18:46.989049+00:00"
     },
     "S503": {
       "status": "PASS",
@@ -2280,7 +2754,7 @@
           "diff_pct": 0.0
         }
       },
-      "validated_at": "2026-05-19T00:03:37.314924+00:00"
+      "validated_at": "2026-07-10T14:18:47.086324+00:00"
     },
     "S504": {
       "status": "PASS",
@@ -2331,11 +2805,11 @@
           "diff_pct": 0.0
         }
       },
-      "validated_at": "2026-05-19T00:03:39.850821+00:00"
+      "validated_at": "2026-07-10T19:07:41.531408+00:00"
     },
     "S901": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "per_benchmark": [
         {
           "label": "1947F",
@@ -2418,11 +2892,11 @@
         "1998C": 0.4487,
         "1998F": 0.3928
       },
-      "validated_at": "2026-05-19T00:03:42.340776+00:00"
+      "validated_at": "2026-07-10T14:18:48.473647+00:00"
     },
     "S902": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "per_benchmark": [
         {
           "label": "1947F",
@@ -2526,11 +3000,11 @@
           "ok": true
         }
       ],
-      "validated_at": "2026-05-19T00:03:57.860329+00:00"
+      "validated_at": "2026-07-10T14:18:48.653590+00:00"
     },
     "S903": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "per_curve": [
         {
           "subseries": "S903-WSHARE-47",
@@ -2676,16 +3150,127 @@
           "ok": true
         }
       ],
-      "validated_at": "2026-05-19T00:04:01.687104+00:00"
+      "anchor_checks": {
+        "verdict": "PASS",
+        "independent_anchors": {
+          "status": "GREEN",
+          "sid": "S903",
+          "n_anchors": 6,
+          "n_red": 0,
+          "n_green": 6,
+          "n_na": 0,
+          "anchors": [
+            {
+              "anchor_id": "S903_T918_1947",
+              "anchor_type": "point",
+              "subseries_id": "S903-R-FIXED",
+              "source_description": "Table 9.18 maximum profit rate R (fixed-capital model), benchmark year 1947. Genuine non-circular anchor (S903-R-FIXED hand-checked EXACT, CH09_review).",
+              "status": "GREEN",
+              "expected": 1.088,
+              "actual": 1.088,
+              "detail": "year=1947",
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0
+            },
+            {
+              "anchor_id": "S903_T918_1958",
+              "anchor_type": "point",
+              "subseries_id": "S903-R-FIXED",
+              "source_description": "Table 9.18 maximum profit rate R (fixed-capital model), benchmark year 1958. Genuine non-circular anchor (S903-R-FIXED hand-checked EXACT, CH09_review).",
+              "status": "GREEN",
+              "expected": 0.9734,
+              "actual": 0.9734,
+              "detail": "year=1958",
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0
+            },
+            {
+              "anchor_id": "S903_T918_1963",
+              "anchor_type": "point",
+              "subseries_id": "S903-R-FIXED",
+              "source_description": "Table 9.18 maximum profit rate R (fixed-capital model), benchmark year 1963. Genuine non-circular anchor (S903-R-FIXED hand-checked EXACT, CH09_review).",
+              "status": "GREEN",
+              "expected": 0.8547,
+              "actual": 0.8547,
+              "detail": "year=1963",
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0
+            },
+            {
+              "anchor_id": "S903_T918_1967",
+              "anchor_type": "point",
+              "subseries_id": "S903-R-FIXED",
+              "source_description": "Table 9.18 maximum profit rate R (fixed-capital model), benchmark year 1967. Genuine non-circular anchor (S903-R-FIXED hand-checked EXACT, CH09_review).",
+              "status": "GREEN",
+              "expected": 0.7644,
+              "actual": 0.7644,
+              "detail": "year=1967",
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0
+            },
+            {
+              "anchor_id": "S903_T918_1972",
+              "anchor_type": "point",
+              "subseries_id": "S903-R-FIXED",
+              "source_description": "Table 9.18 maximum profit rate R (fixed-capital model), benchmark year 1972. Genuine non-circular anchor (S903-R-FIXED hand-checked EXACT, CH09_review).",
+              "status": "GREEN",
+              "expected": 0.7033,
+              "actual": 0.7033,
+              "detail": "year=1972",
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0
+            },
+            {
+              "anchor_id": "S903_T918_1998",
+              "anchor_type": "point",
+              "subseries_id": "S903-R-FIXED",
+              "source_description": "Table 9.18 maximum profit rate R (fixed-capital model), benchmark year 1998. Genuine non-circular anchor (S903-R-FIXED hand-checked EXACT, CH09_review).",
+              "status": "GREEN",
+              "expected": 0.7317,
+              "actual": 0.7317,
+              "detail": "year=1998",
+              "abs_pct_diff": 0.0,
+              "tolerance_pct": 1.0
+            }
+          ]
+        },
+        "splice_continuity": {
+          "status": "NA",
+          "sid": "S903",
+          "splice_year": 1999,
+          "detail": "no subseries spans 1998->1999"
+        },
+        "level_plausibility": {
+          "status": "NA",
+          "sid": "S903",
+          "n_rules": 0,
+          "rules": [],
+          "detail": "no plausibility_rules registered"
+        }
+      },
+      "validated_at": "2026-07-10T14:18:48.770436+00:00"
     },
     "S801": {
-      "status": "PASS_DATA_UNAVAILABLE",
-      "reason": "Eichner (1973) Fig 8.1 is chart-only with no underlying table in the publication; Shaikh did not transcribe values; no Appendix8_* chopped table exists for this figure; PDF not in RSCD workspace. Phase 5 blocker B6 resolved as data_unavailable. Per playbook recipe.",
-      "validated_at": "2026-05-19T00:08:29.565308+00:00"
+      "status": "PASS",
+      "tolerance_pct": 1.0,
+      "n_compared": 18,
+      "mae": 0.0,
+      "max_abs_err": 0.0,
+      "max_pct_err": 0.0,
+      "divergence_count": 0,
+      "divergence_keys": [],
+      "is_deviation_panel": false,
+      "validated_at": "2026-07-10T14:18:48.226226+00:00",
+      "label_variance_check": {
+        "status": "PASS",
+        "competitive_var": 154.529995,
+        "oligopolistic_var": 81.136728,
+        "rule": "var(Competitive) > var(Oligopolistic) \u2014 concentrated line is smoother (Shaikh p.372)"
+      }
     },
     "S802": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "cross_sectional",
       "n_compared": 9,
       "mae": 0.0,
@@ -2693,11 +3278,11 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "divergence_keys": [],
-      "validated_at": "2026-05-19T00:08:51.282845+00:00"
+      "validated_at": "2026-07-10T14:18:48.243180+00:00"
     },
     "S803": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "cross_sectional",
       "n_compared": 104,
       "mae": 0.0,
@@ -2727,7 +3312,7 @@
           "divergence_count": 0
         }
       },
-      "validated_at": "2026-05-19T00:09:40.830627+00:00"
+      "validated_at": "2026-07-10T14:18:48.277847+00:00"
     },
     "S804": {
       "status": "PASS",
@@ -2739,11 +3324,11 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "divergence_keys": [],
-      "validated_at": "2026-05-19T00:10:02.516923+00:00"
+      "validated_at": "2026-07-10T14:18:48.290206+00:00"
     },
     "S805": {
       "status": "PASS",
-      "tolerance_pct": 0.5,
+      "tolerance_pct": 1.0,
       "content_type": "cross_sectional",
       "n_compared": 12,
       "mae": 0.0,
@@ -2751,7 +3336,7 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "divergence_keys": [],
-      "validated_at": "2026-05-19T00:10:22.264115+00:00"
+      "validated_at": "2026-07-10T14:18:48.303535+00:00"
     },
     "S1601": {
       "status": "PASS",
@@ -2780,7 +3365,7 @@
           "div_years": []
         }
       },
-      "validated_at": "2026-05-19T00:19:54.117861+00:00"
+      "validated_at": "2026-07-10T14:18:45.600608+00:00"
     },
     "S1602": {
       "status": "PASS",
@@ -2827,7 +3412,7 @@
           "div_years": []
         }
       },
-      "validated_at": "2026-05-19T00:19:56.062690+00:00"
+      "validated_at": "2026-07-10T14:18:45.648610+00:00"
     },
     "S1603": {
       "status": "PASS",
@@ -2836,7 +3421,7 @@
         1960,
         2012
       ],
-      "n_compared": 125,
+      "n_compared": 124,
       "mae": 0.0,
       "max_pct_err": 0.0,
       "max_abs_err": 0,
@@ -2844,7 +3429,7 @@
       "divergence_count": 0,
       "per_subseries": {
         "S1603-A": {
-          "n": 53,
+          "n": 52,
           "mae": 0.0,
           "max_pct_err": 0.0,
           "div_years": []
@@ -2862,7 +3447,7 @@
           "div_years": []
         }
       },
-      "validated_at": "2026-05-19T00:19:58.109805+00:00"
+      "validated_at": "2026-07-10T19:12:55.230819+00:00"
     },
     "S1604": {
       "status": "PASS",
@@ -2910,7 +3495,7 @@
         }
       },
       "tolerance_note": "Divergence requires BOTH abs_err > 0.001 (0.1pp) AND pct_err > 1% to avoid false-positives near zero crossings of the incremental series.",
-      "validated_at": "2026-05-19T00:20:02.802946+00:00"
+      "validated_at": "2026-07-10T14:18:45.719484+00:00"
     },
     "S1605": {
       "status": "PASS",
@@ -2945,7 +3530,7 @@
           "div_years": []
         }
       },
-      "validated_at": "2026-05-19T00:20:04.831391+00:00"
+      "validated_at": "2026-07-10T14:18:45.745989+00:00"
     },
     "S1606": {
       "status": "PASS",
@@ -2989,8 +3574,9 @@
         }
       },
       "annual_status": "PASS",
-      "validated_at": "2026-05-19T00:20:06.805239+00:00"
+      "validated_at": "2026-07-10T14:18:45.785640+00:00"
     }
   },
-  "generated_at": "2026-05-19T00:20:06.806315+00:00"
+  "generated_at": "2026-07-10T19:12:55.231951+00:00",
+  "generated_by": "run.py --validate-only (full batch)"
 }

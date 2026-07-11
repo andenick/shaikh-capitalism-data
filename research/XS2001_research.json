@@ -160,7 +160,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-es2001-retry",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Filled from full paper read (20 PDF pages, all figures and tables observed). 4 verbatim quotes (definition + source + caveat + method). Primary source = BEA Benchmark IO (2002 403-order + historical 71/65-order 1947-1998) + BLS labor compensation + Shaikh 1998/2012 data appendices for aggregates. Construction=composite (equations 6, 8, 10 = Sraffa price + Bienenfeld linear + Bienenfeld quadratic 'empirically sufficient' form). Recommend KEEP AS SINGLE SERIES; shares pipeline with XS2101 and should be co-implemented. Extension candidates: BEA 2007/2012/2017 benchmarks + fill missing 1977/1982/1987/1992 aggregate-ratio years."

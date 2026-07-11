@@ -8,7 +8,7 @@ Imputed Interest Adjustment and Sectoral Profit Rates
 
 ## Why It Matters
 
-FISIM-revision-stable T7.11 line resolver used (see _nipa_t711_line_resolver.py). Source: Appendix Tables 6.8.I.3 + 6.8.II.7. Used by S601, S602, S603, S604. See `CH6_GPIM_SUMMARY.md` for the full Ch6 construction pipeline.
+A revision-stable resolver maps the National Income and Product Accounts (NIPA) Table 7.11 line numbers, so the construction survives BEA revisions to financial services indirectly measured (FISIM). Source: Appendix Tables 6.8.I.3 and 6.8.II.7. Used by S601, S602, S603, S604.
 
 ## Sources (per subseries)
 
@@ -22,11 +22,11 @@ FISIM-revision-stable T7.11 line resolver used (see _nipa_t711_line_resolver.py)
 | XS003-F | I3 | `rnoncorp` | BEA NIPA / BEA FA / IRS SOI / Census | identity |
 | XS003-G | I3 | `rnoncorp1` | BEA NIPA / BEA FA / IRS SOI / Census | identity |
 
-The canonical Shaikh-published values are transcribed from `SalvagedInputs/book_data/ShaikhChoppedTables/Appendix6_Table68*.xlsx` (Appendix 6.8). Upstream agencies are BEA (NIPA / Fixed Asset Accounts), IRS SOI, U.S. Census Bureau Historical Statistics 1975 (IRS book values), and FRB G.17. All public domain.
+The canonical Shaikh-published values are transcribed from the published Chapter 6 appendix workbook (Shaikh 2016, Appendix 6.8). Upstream agencies are the Bureau of Economic Analysis (BEA) — NIPA and its Fixed Asset accounts (FA) — the IRS Statistics of Income (SOI), the U.S. Census Bureau (Historical Statistics 1975, for IRS book values), and the Federal Reserve Board G.17 industrial-production release (FRB G.17). All public domain.
 
 ## Construction
 
-BankNetIntPaid = T7.11((L4+L44+L73)-(L28+L52+L91)); NFNetImpIntPaid = T7.11((L74+L75)-(L53+L54)); BusImpIntAdj = -BankNetIntPaid - NFNetImpIntPaid. Sectoral profit rates: rcorp = Pcorp/KNCcorp(-1); rnoncorp = Pnoncorp/KNCnoncorp(-1); rbus = Pbus/KNCbus(-1). All capital stocks lagged one period. FISIM-revision-stable line ids resolved via `_nipa_t711_line_resolver.py`.
+BankNetIntPaid = T7.11((L4+L44+L73)-(L28+L52+L91)); NFNetImpIntPaid = T7.11((L74+L75)-(L53+L54)); BusImpIntAdj = -BankNetIntPaid - NFNetImpIntPaid. Sectoral profit rates: rcorp = Pcorp/KNCcorp(-1); rnoncorp = Pnoncorp/KNCnoncorp(-1); rbus = Pbus/KNCbus(-1). All capital stocks lagged one period. The revision-stable Table 7.11 line ids are resolved by a stub-label resolver rather than by fixed line numbers.
 
 ## Year Coverage
 
@@ -34,7 +34,7 @@ Book period: 1947-2011. Vintage-stable extension recipe in `XS003_EPR.md`.
 
 ## Units
 
-Per-subseries (the banned `mixed_*` series-level string is removed via the triage patch). XS003-A, XS003-B, XS003-C are dollar adjustments in `billions_current_usd`; XS003-D, XS003-E, XS003-F, XS003-G are profit rates in `decimal_rate`. Rendered as a two-panel chart (dollars / rates), never a single shared axis.
+Units are recorded per subseries, because a single series-level unit label would be misleading here. The seven component subseries are labelled -A through -G: XS003-A, XS003-B, XS003-C are dollar adjustments in `billions_current_usd`; XS003-D, XS003-E, XS003-F, XS003-G are profit rates in `decimal_rate`. Rendered as a two-panel chart (dollars / rates), never a single shared axis.
 
 ## Caveats
 
@@ -46,4 +46,4 @@ Per-subseries (the banned `mixed_*` series-level string is removed via the triag
 
 ## Validation Expectation
 
-`V03_XS003_validate.py` round-trip-validates against the Appendix 6.8 source workbook at 1.0% tolerance. Per the Phase 4 adequacy report (`CH6_ADEQUACY_REPORT.json`), Phase 5 blockers B2 (NIPA T7.11 FISIM remap, resolver in `_nipa_t711_line_resolver.py`) and B3 (BEA 1993 depreciation rates, staged at `Reconstructed/BEA_1993_FA_methodology/`) are RESOLVED.
+The validation step round-trips the constructed series against the Appendix 6.8 source workbook at a 1.0% tolerance. Two data-sourcing steps needed for this construction are resolved: the FISIM remap in NIPA Table 7.11, and the 1993 BEA depreciation rates.

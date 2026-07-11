@@ -48,7 +48,8 @@ def _maybe_load_tabulation() -> pd.DataFrame | None:
                         "income_shillings": "x_value",
                         "food_share_pct": "value",
                     })[["x_value", "value"]]
-            except Exception:
+            except (OSError, pd.errors.ParserError, ValueError, KeyError):
+                # Narrow to file-read and schema errors; unexpected exceptions propagate.
                 continue
     return None
 

@@ -1,17 +1,17 @@
 # S305 -- Engel Curve of Necessaries, Case II
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+**Record type**: Data Provenance Record
 **Series ID**: S305
-**Status**: book_period_validated
+**Status**: theoretical_validated
 **Content type**: `theoretical`
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave-a-ch3 (Phase 5-8 fanout)
+**Prepared by**: RSCD data-construction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S305_research.json`
-- Adequacy: `Technical/docs/chapters/CH3_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S305_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S305`
+- Series research notes: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S305`
 
 ---
 
@@ -23,11 +23,16 @@
 
 Figure 3.7 closes the Case II family. Together with S304 it demonstrates that the same saturating Engel shape arises from c(y) declining as from x1min(y) sub-linear (Case I, S303). This is Shaikh's central methodological point in §III.3 — micro-foundational details do not constrain the aggregate empirical pattern.
 
+## From the Book
+
+> This saturation property carries over the relation between total expenditure on necessaries and total income, both of which only differ from their discretionary counterparts by a common minimum expenditure on necessaries.
+> -- Shaikh (2016), Chapter 3, p. 93 
+
 ## 3. Sources
 
 | Subseries | Coverage | Source | Native units | Retrieval |
 |---|---|---|---|---|
-| **S305-A** | n/a (theoretical) | Shaikh 2016 eq (3.5) with c->c(y), p. 91/93; Figure 3.7 axis bounds p. 95 | model units of expenditure | analytic regeneration |
+| **S305-A** (the dataset's single data column) | n/a (theoretical) | Shaikh 2016 eq (3.5) with c->c(y), p. 91/93; Figure 3.7 axis bounds p. 95 | model units of expenditure | analytic regeneration |
 
 ## 4. Construction
 
@@ -38,7 +43,7 @@ Figure 3.7 closes the Case II family. Together with S304 it demonstrates that th
    curve. x1min = 10.0 (constant), pinned by the Engel-curve start point
    (E = 10 at y = 10, shared with Fig 3.5 Case I) and matching the chapter's
    simulation minimum (eq 3.5, x1min = 10). p1 = 1. These parameters are local
-   to L01_S305 and do NOT modify the shared `c_case_ii` used by S304.
+   to this series' data-loading step and do NOT modify the shared `c_case_ii` used by S304.
 3. Evaluate p1*x1 = (1 - c(y)) * p1*x1min + c(y) * y.
 4. Reproduces Fig 3.7 bounds: E(10) = 10.0, E(50) = 25.9 (book ~10 -> ~26),
    monotone-rising and concave (saturating) across the entire [0, 60] grid
@@ -77,10 +82,11 @@ Corrected 2026-05-27 by matching Shaikh's plotted Fig 3.6 c(y) profile.
 
 ## 8. Cross-references
 
-- **CD legacy ID**: none
+- **Predecessor series**: none (first constructed in this dataset).
 - **Book reference**: Shaikh (2016), Ch. 3, Fig3.7 on p. 95
-- **Knowledge Base**: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json` -> Fig3.7
+- **Knowledge Base**: figure-linkage reference -> Fig3.7
+- **Source-book text**: Shaikh (2016) Chapter 3, extracted in the project knowledge base (ch03_micro_foundations.md).
 
 ## 9. Validation expectation
 
-- **Tolerance**: PASS_THEORETICAL. Checks: rising/saturating shape; values within [0.0, 30.0].
+- **Tolerance**: the validator's theoretical-curve mode (checks the curve's shape and bounds rather than matching tabulated values). Checks: rising/saturating shape; values within [0.0, 30.0].

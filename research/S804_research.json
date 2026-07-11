@@ -100,7 +100,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-wave-b-ch8",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Filled from book pp.375-376 and Stigler 1963 Tbl 17 via ShaikhChoppedTables/Appendix8_StiglerRatesOfProfit.xlsx. Note: time bins are unequal length; treated as time_series."

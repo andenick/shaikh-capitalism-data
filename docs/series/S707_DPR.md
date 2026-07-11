@@ -1,19 +1,19 @@
 # S707 — Figure 7.19 — Greek Manufacturing ROP Deviations, 1962–1991 (Tsoulfidis & Tsaliki 2011 Fig 4)
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S707
 **Status**: book_period_validated
 **Authored**: 2026-05-18 · **Recovery update**: 2026-05-26
-**Author**: opus-subagent-ch7-fanout
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S707_research.json`
-- Adequacy: `Technical/docs/chapters/CH7_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S707_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S707`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `TSOULFIDIS_TSALIKI_2011_FIG4`
-- **Digitized source**: `SalvagedInputs/book_data/Reconstructed/Tsoulfidis_Tsaliki_2011_Fig4_S707.xlsx`
-- **Extraction report**: `Technical/WL1_Tsoulfidis_Tsaliki/EXTRACTION_REPORT.md`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S707`
+- Subsource registry: subsource registry → `TSOULFIDIS_TSALIKI_2011_FIG4`
+- **Digitized source**: reconstructed book source data
+- **Extraction report**: Tsoulfidis-Tsaliki extraction worklog
 
 ---
 
@@ -25,7 +25,7 @@ revised version)**. Its Figure 4 — the 20-industry ROP-deviation grid Shaikh r
 7.19 — is **vector-drawn**, so the plotted coordinates were recovered directly from the PDF via
 offline vector extraction (no API calls), per-panel y-axis calibrated from each panel's own tick
 labels, clipped to Shaikh's 1962–1991 window. Method, validation and caveats:
-`Technical/WL1_Tsoulfidis_Tsaliki/EXTRACTION_REPORT.md`.
+Tsoulfidis-Tsaliki extraction worklog.
 
 The aggregate Average ROP / Average IROP chart (the 2013 revision's new Figure 5) was extracted
 as a **validation anchor** and reproduces the paper's own published moments (footnote 20: mean
@@ -40,11 +40,14 @@ the original data_unavailable rationale is retained as historical context where 
 
 ## 1. Definition
 
-**S707** is the time-series exhibit Shaikh displays in Fig7.19. Period: 1962–1991.
+**S707** is the exhibit Shaikh displays in Fig7.19 — the deviations of twenty Greek manufacturing
+industries' average rates of profit (ROP) from the overall average rate, 1962–1991.
 
-Per the playbook recipe for `content_type = data_unavailable`:
-
-> "DPR + EPR documenting the chart-only source and why no underlying data exists ... L01 returns SKIPPED ... V03 returns PASS_DATA_UNAVAILABLE ... No chopped CSV."
+Following the 2026-05-26 recovery (§0), this is a **digitized book-period series**, not a
+`data_unavailable` one: the loader (`L01_S707`) reads the digitized panel workbook and emits the
+series, the validator (`V03_S707`) round-trips against it, and a chopped CSV is produced. (The
+earlier `data_unavailable` handling — loader SKIPPED, validator `PASS_DATA_UNAVAILABLE`, no CSV — no
+longer applies; it is retained below only as historical context.)
 
 ## 2. Why it matters in Chapter 7
 
@@ -56,7 +59,7 @@ Ch7's empirical case for turbulent profit-rate equalization layers several exhib
 |---|---|---|---|
 | S707-A (20 industries, digitized) | 1962–1991 | TSOULFIDIS_TSALIKI_2011_FIG4 | **book_period_validated** (provenance: digitized) |
 
-Tsoulfidis & Tsaliki (2011) publish fig. 4 as a chart only — no underlying table — and the year-by-year 1962–1991 data exists only with the authors. The UoM Discussion Paper 2011_02 hosted PDF is dead (HTTP 500, confirmed via RePEc/EconPapers). No salvaged copy is in `SalvagedInputs`; the Phase 4 B5 search documented this explicitly at `SalvagedInputs/book_data/Reconstructed/Tsoulfidis_Tsaliki_2011_data_unavailable.md` (for S707/S708). *(The companion note `Christodoulopoulos_1995_data_unavailable.md` covers the separate S703/S704 exhibit.)*
+Tsoulfidis & Tsaliki (2011) publish fig. 4 as a chart only — no underlying table — so the authors' exact year-by-year 1962–1991 table is not redistributed. The original University of Macedonia (UoM) Discussion Paper 2011_02 PDF is dead (HTTP 500, confirmed via RePEc/EconPapers), but a live full-text copy survives on MPRA (working paper 51334), and the plotted panel was recovered from it by offline vector digitization (§0). The earlier readiness-review (Phase 4) search — which predates that recovery — recorded the dead-source finding at reconstructed book source data; that note is retained as history and is superseded by the 2026-05-26 recovery. *(The companion note `Christodoulopoulos_1995_data_unavailable.md` covers the separate S703/S704 exhibit, which remains genuinely data_unavailable.)*
 
 ## 4. Construction
 
@@ -73,7 +76,7 @@ Digitized industry panel (1962–1991, 20 two-digit Greek manufacturing industri
 ## 5. Year coverage
 
 - **Book period**: 1962–1991
-- **Extension period**: not applicable (data_unavailable)
+- **Extension period**: not applicable (no faithful time-extension of the Greek panel; see `S707_EPR.md` §2)
 
 ## 6. Units
 
@@ -81,15 +84,15 @@ rate deviation (decimal).
 
 ## 7. Caveats
 
-1. **No byte-exact reproduction possible** from local materials. The published figure stands as the authoritative record.
-2. **PDF digitization** (WebPlotDigitizer) is technically possible but is a Phase 9 visualization task, not a Phase 5 data-ingestion task — and would introduce digitization noise that the No-Synthetic rule discourages for primary data.
-3. **No modern substitute** can splice onto the discontinued ISDB / unredistributed T&T panel without violating the Anti-Degradation rule (industry-mapping drift, country-coverage drift, ESYE→ELSTAT methodology break). Any modern continuation is methodologically separate, not an extension.
+1. **Digitization-grade, not table-exact.** The series was recovered by offline vector digitization of the source figure (§0), so it is faithful to the published chart rather than to the authors' exact underlying table (obtainable only by author request). The published figure remains the authoritative record.
+2. **Digitization was performed as the book-period recovery**, using offline PDF vector extraction (no API calls), per-panel y-axis calibration, and clipping to 1962–1991. It is disclosed as `provenance: digitized` and validated against the paper's own aggregate moments (§0); it is a documented recovery of the authors' plotted points, not synthetic infill.
+3. **No modern substitute** can splice onto the unredistributed Tsoulfidis & Tsaliki Greek panel without violating the Anti-Degradation rule (industry-mapping drift and the 2010 ESYE→ELSTAT methodology break). Any modern continuation is methodologically separate, not an extension. *(The discontinued OECD-ISDB world/US splice concern belongs to the separate S703/S704 exhibit, not this Greek panel.)*
 
 ## 8. Cross-references
 
 - **CD legacy ID**: `S038`
-- **Book reference**: Shaikh (2016), Ch. 7 (Fig7.19); Appendix 7.1 II / IV (book pp. 856, 859).
-- **B5 provenance document**: see SalvagedInputs/book_data/Reconstructed/ for the relevant `*_data_unavailable.md`.
+- **Book reference**: Shaikh (2016), Ch. 7 (Fig7.19); Appendix 7.1, sub-sections II / IV (book pp. 856, 859).
+- **Recovery documentation**: Tsoulfidis-Tsaliki extraction worklog and the digitized workbook reconstructed book source data (supersedes the earlier `*_data_unavailable.md` marker note, which predates the 2026-05-26 recovery).
 
 ## 9. Validation
 
@@ -100,3 +103,16 @@ rate deviation (decimal).
   provenance: digitized, not an independent published table.
 - **Fidelity note**: values are digitization-grade. The Fig-5 aggregate validation (§0) is the
   external confidence anchor; the authors' exact panel remains obtainable only by request.
+
+## Notation (plain-language key)
+
+- **ROP** — (average) rate of profit.
+- **IROP** — incremental rate of profit: the return on newly added capital (year-to-year change in profit over new investment); the subject of the companion series S708.
+- **Deviation** — an industry's rate minus the overall average rate that year; equalisation shows up as deviations crossing zero.
+- **Subseries (S707-A)** — a data line within series S707; here S707-A holds the 20-industry digitized panel.
+- **ESYE / ELSTAT** — the Greek national statistical service and its post-2010 successor.
+- **ISDB** — OECD International Sectoral Database (relevant to the separate S703/S704 exhibit, not this Greek panel).
+- **MPRA** — the Munich Personal RePEc Archive, which hosts the full-text source paper (working paper 51334).
+- **L01 / V03** — the load and validate scripts that build and check the series.
+- **CD2** — the predecessor build of this dataset (legacy ID S038).
+- **Phase 5 / Phase 6** — Anu pipeline stages: ingestion / extension.

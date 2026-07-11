@@ -1,16 +1,16 @@
 # S215 -- Incremental Rates of Profit in US Manufacturing, 1960-1989
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S215
-**Status**: book_period_validated
+**Status**: extension_only_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave2-ch2
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S215_research.json`
-- Adequacy: `Technical/docs/chapters/CH2_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S215_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S215`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S215`
 
 ---
 
@@ -36,7 +36,6 @@ Companion to S214; introduces the *incremental* profit rate measure that becomes
 
 **Formula**: `r*[t] = PG[t] / IG[t-1]`
 
-
 1. Same status as S214: book period 1960-1989 not in SalvagedInputs; post-book 1988-2005 IROP data emitted as S215-EXT.
 
 ## 5. Year coverage
@@ -56,7 +55,7 @@ Rate (decimal)
 ## 8. Cross-references
 
 - Book reference: Shaikh (2016), Ch. 2, Figure 2.13
-- Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
+- Knowledge Base: figure-linkage reference
 - Predecessor (CD2): see registry `predecessor_ids` block.
 
 ## 9. Validation expectation

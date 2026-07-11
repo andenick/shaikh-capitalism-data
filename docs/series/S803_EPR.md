@@ -1,11 +1,11 @@
 # S803 — Extension Provenance Record
 
 **Series**: S803 — Rate of Profit on Equity vs. CR8, Bain 42-Industry Sample, 1936-1940 (Figs 8.3 and 8.4)
-**Phase**: 6 (Extension)
+
 **Construction classification**: `composite` (cross_sectional)
 **Extension method**: not applicable — see §1
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch8-fanout
+**Author**: Anu automated extraction pipeline
 **Related**: `S803_DPR.md`
 
 ---
@@ -14,7 +14,7 @@
 
 `content_type = cross_sectional`. The 42 industry observations are a single 1936-1940 cross-section; Fig 8.4 is the same cross-section re-binned with Demsetz's corrections, not a second time point.
 
-Per the playbook recipe (cross_sectional):
+Per the project's cross-sectional handling convention:
 
 > "Extension: explicitly `not_applicable_cross_sectional` in EPR; extension_candidates empty in dossier (already true after Phase 4)."
 

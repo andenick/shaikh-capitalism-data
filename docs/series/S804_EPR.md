@@ -1,11 +1,11 @@
 # S804 — Extension Provenance Record
 
 **Series**: S804 — Rate of Profit on Assets, Concentrated vs. Unconcentrated Industries, 1939-1957 (Stigler Fig 8.5)
-**Phase**: 6 (Extension)
+
 **Construction classification**: `direct` (time_series, discrete unequal bins)
 **Extension method**: not attempted in Phase 5 — see §2
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch8-fanout
+**Author**: Anu automated extraction pipeline
 **Related**: `S804_DPR.md`
 
 ---

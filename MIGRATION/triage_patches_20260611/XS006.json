@@ -1,0 +1,16 @@
+{
+  "sid": "XS006",
+  "display_name": "GPIM variant: BEA 1993 depreciation rates",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Methodology variant of XS004 isolating the effect of BEA pre-1997 (1993) finite-life depreciation rates, shipped as two sub-variants (depreciation-only on the 2011 initial value; depreciation plus the 1993 initial value). Appendix Table 6.8.II.3. Renders sensibly once units are split: XS006-dcorpnew is the decimal depreciation rate (~0.066-0.098), which must not share the billions axis with the two stock columns (latent mixed-units, fixed here per UNITS_VALIDATION_STANDARD).",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "XS006-depr_only": {"label": "Net stock, BEA 1993 depreciation on BEA 2011 initial value", "units": "billions_current_usd"},
+    "XS006-depr_plus_init": {"label": "Net stock, BEA 1993 depreciation and 1993 initial value", "units": "billions_current_usd"},
+    "XS006-dcorpnew": {"label": "BEA 1993 corporate depreciation rate", "units": "decimal_rate"}
+  },
+  "field_fixes": {"units": "per_subseries"}
+}

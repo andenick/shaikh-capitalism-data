@@ -24,6 +24,19 @@ def run() -> dict:
     if not SRC_XLSX.exists():
         return {"status": "FAIL", "error": f"digitized source missing: {SRC_XLSX}"}
     panel = read_panel(SRC_XLSX)
+    # F-T2-01 fix (2026-07-10): the digitized reconstruction xlsx (frozen under
+    # SalvagedInputs/, deny-listed) carries the two industry columns TRANSPOSED vs
+    # Shaikh Fig 8.1 (Oxford print p.372 / Eichner 1973 EJ p.1187). In the figure the
+    # VOLATILE, spiking line (terminal ~142-145) is the SOLID *Competitive* curve and
+    # the SMOOTH / administered line (terminal ~128) is the DASHED *Oligopolistic*
+    # curve — Shaikh p.372: "the smoother prices of the concentrated [oligopolistic]
+    # industries". The xlsx labels the volatile 145.03 column "Oligopolistic" and the
+    # smooth 128.47 column "Competitive", i.e. backwards. We correct the label mapping
+    # at the loader (values unchanged; only Competitive<->Oligopolistic swap). See
+    # VERIFY_T2 + Technical/anu_framework_review/F-T2-01.md. V03_S801 applies the same
+    # relabel to the frozen truth xlsx so the round-trip still certifies fidelity, and
+    # adds an independent variance sanity check so a future transposition cannot hide.
+    panel = panel.rename(columns={"Oligopolistic": "Competitive", "Competitive": "Oligopolistic"})
     long_df = levels_long(
         panel,
         subseries_id=f"{SERIES_ID}-A",

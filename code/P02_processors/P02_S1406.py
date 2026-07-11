@@ -8,9 +8,14 @@ Extension (2012+): re-derive
   - productivity growth = yr.pct_change()
 
 PRODUCTIVITY CONCEPT-POLICING: formula implemented LITERALLY per Appendix 14.2
-p. 892 -- no algebraic simplification. The *100 (deflator scale) and /1000 (FEE
-unit conversion) multipliers are unit-correcting; removing them silently scales
-productivity by 100,000x.
+p. 892 -- no algebraic simplification. FEE is FULL-TIME-EQUIVALENT EMPLOYEES
+(FRED A4301C0A173NBEA, NIPA T6.5A-D, thousands of persons). The *100 (deflator
+scale) and /1000 (FEE thousands->millions) multipliers are unit-correcting;
+with FEE in thousands, yr = real GDP (billions of 2017$) / millions of FTE =
+thousands of $ per FTE. Removing the multipliers silently rescales productivity.
+The growth rate GPRODVTY = yr.pct_change() is scale-invariant, so the net effect
+of the 2026-07-01 denominator fix is a change of CONCEPT from output-per-HOUR
+back to output-per-EMPLOYEE (SWEEP-ch1417-01) -- see loader docstring.
 """
 from __future__ import annotations
 
@@ -28,7 +33,7 @@ SERIES_ID = "S1406"
 IN_BOOK = DATA_RAW / f"{SERIES_ID}_APPENDIX14.parquet"
 IN_GDP  = DATA_RAW / f"{SERIES_ID}_FRED_GDP.parquet"
 IN_DEF  = DATA_RAW / f"{SERIES_ID}_FRED_GDPDEF.parquet"
-IN_FEE  = DATA_RAW / f"{SERIES_ID}_FRED_B4701C0A222NBEA.parquet"
+IN_FEE  = DATA_RAW / f"{SERIES_ID}_FRED_A4301C0A173NBEA.parquet"
 OUT = DATA_PROCESSED / f"{SERIES_ID}.parquet"
 BOOK_END = 2011
 

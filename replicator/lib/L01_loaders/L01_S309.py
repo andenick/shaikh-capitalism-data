@@ -21,7 +21,7 @@ SERIES_ID = "S309"
 OUT = DATA_RAW / f"{SERIES_ID}_COMPOSITE.parquet"
 SUBSOURCE_TH = "SHAIKH_2016_EQ_3_4_3_11"
 SUBSOURCE_SIM = "SHAIKH_2016_NETLOGO_SIMS"
-UNITS = "x2_aggregate_demand_model_units"
+UNITS = "x2_per_agent_demand_model_units"  # per-agent representative (y=200, Shaikh eq 3.5); NOT population-aggregate
 
 P2_MIN, P2_MAX, N_POINTS = 2.00, 3.00, 101
 

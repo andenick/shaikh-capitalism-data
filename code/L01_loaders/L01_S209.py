@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils.paths import DATA_RAW  # noqa: E402
 from L01_loaders._ch2_helpers import read_chopped, slice_column, fred_annual  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 CHOPPED = "Appendix2_Unemployment.xlsx"
 OUT_A = DATA_RAW / "S209_BEA_LTEG_B1_B2.parquet"
@@ -35,7 +36,8 @@ def run() -> dict:
     DATA_RAW.mkdir(parents=True, exist_ok=True)
     a.to_parquet(OUT_A, index=False)
     b.to_parquet(OUT_B, index=False)
-    fred_df, ok, err = fred_annual("UNRATE", start="2005-01-01")
+    fred_df, ok, err = fred_annual("UNRATE", start="2005-01-01",
+                                   realtime=realtime_window("S209", "UNRATE"))
     sources = ["BEA_LTEG_B1_B2", "ERP_T_B40"]
     if ok and not fred_df.empty:
         fred_df["units"] = "percent"

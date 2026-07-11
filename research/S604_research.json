@@ -164,7 +164,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-ch6-retry",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from CD2 S105 dossier + verbatim quotes from book pp. 254-256 (Fig 6.7 definition, numerator/denominator decomposition, real-rate equivalence, NIPA-proxy validation). All four components (Delta GOS adjusted/NIPA, IG, Delta INV) sourced to BEA tables. NMINT and IRS-inventory extension constraints flagged."

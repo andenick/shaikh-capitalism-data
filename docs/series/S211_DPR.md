@@ -1,16 +1,16 @@
 # S211 -- US and UK Wholesale Price Indexes, 1780-1940 (1930=100, log scale)
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S211
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave2-ch2
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S211_research.json`
-- Adequacy: `Technical/docs/chapters/CH2_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S211_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S211`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S211`
 
 ---
 
@@ -54,7 +54,7 @@ Index, 1930 = 100 (log scale)
 ## 8. Cross-references
 
 - Book reference: Shaikh (2016), Ch. 2, Figure 2.9
-- Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
+- Knowledge Base: figure-linkage reference
 - Predecessor (CD2): see registry `predecessor_ids` block.
 
 ## 9. Validation expectation

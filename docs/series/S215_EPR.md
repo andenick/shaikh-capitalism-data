@@ -1,44 +1,74 @@
 # S215 -- Extension Provenance Record
 
-**Series**: S215 -- Incremental Rates of Profit in US Manufacturing, 1960-1989
-**Phase**: 6 (Extension)
+**Series**: S215 -- Incremental Rates of Profit in US Manufacturing (post-book, 1988-2005)
+
 **Construction classification**: `formula`
-**Extension status**: `data_unavailable`
+**Extension status**: `shipped` (Shaikh Appendix-7 companion data; NOT a live-API extension)
+**Validation class**: `extension_only` (book period 1960-1989 genuinely `data_unavailable`)
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave2-ch2
-**Related**: `S215_DPR.md`, `Technical/research/S215_research.json`
+**Rewritten**: 2026-07-10 (P1.1 remediation, campaign v1.6) to describe what actually ships
+**Related**: `S215_DPR.md`, research dossier
 
 ---
 
-## 1. Classification
+## 1. What this series actually is
 
-Per the playbook content-type rule, S215 is classified `formula`. Extension recipe applied: per the Anu framework rule on lazy splices, this dictates the extension method below.
+S215 ships a single subseries, `S215-EXT` (`role: post_book_only`), covering **1988-2005**.
+It is the **mean across 12 US manufacturing industries** of the incremental rate of profit
+(delta-profit / delta-capital), taken directly from Shaikh's own Appendix-7 companion workbook
+book appendix source table. This is Shaikh's
+own author data, not a modern reconstruction and not a live-API extension.
 
-## 2. Method
+The **book period 1960-1989** (Fig 2.13 / Fig 2.15 panel) is genuinely `data_unavailable`:
+the original inputs (anwarshaikhecon.org Appendix 7.2 + OECD ISDB 1994 vintage) are not in
+`SalvagedInputs/`. Per the no-fabrication rule, no book-period values are synthesized. Because
+no book-window observation was ever validated against book truth, the registry status is
+`validated:extension_only` (NOT `book_period_validated`) and `validation_class: extension_only`.
 
-OECD STAN sector profits + investment with same formula; deferred.
+## 2. Method (as shipped)
 
-## 3. No-Proxy disclosure
+`L01_S215.py` reads the Appendix-7 IROP workbook and averages the 12 manufacturing-industry
+columns: **Chemicals, Electr.Equ., Fab.Metal., Food, Mach., Paper, Petroleum, Plastic,
+Prim.Metal., Printing, Text.Mills, Wood** (workbook header spellings). `P02_S215.py` is a
+pass-through; `O06` writes the chopped CSV and extenbook.
+`splice_method = not_applicable_book_data_unavailable` because there is no book segment to splice.
 
-No proxies used. All extension sources are the same agency/program as the original.
+**Motor Vehicles is genuinely absent** from this Appendix-7 panel, so the recoverable
+manufacturing set is 12 industries (not the 13 an earlier draft named).
 
-## 4. No-Synthetic disclosure
+## 3. The 2026-07-10 correction (F-4C-02 CRITICAL)
 
-No synthetic, interpolated, or placeholder values are introduced. Where the API returns NaN, the NaN propagates to the published series.
+Identical bug and fix to S214. Before this fix the loader kept only **6 of 12** industry columns
+(spelling mismatch dropped Machinery, Petroleum, Plastics, Primary Metals, Printing, Textiles),
+shipping a 6-of-12 incremental mean. For an incremental rate this was even more damaging than for
+S214: the error frequently changed magnitude AND sign relative to the correct 12-industry mean
+(e.g. 1990, 1996, 2002 all sign-flip). The loader now uses an explicit normalization mapping with
+a hard `assert len(matched) == 12` guard. See
+internal review record (Adversarial verification / VERIFY_4C).
 
-## 5. Failure-mode table
+## 4. No-Proxy / No-Synthetic disclosure
+
+No proxies. No synthetic, interpolated, or placeholder values. The 12-industry incremental mean is
+a faithful replication of Shaikh's Appendix-7 companion data. The book period is left empty.
+
+## 5. Independent validation
+
+`validation.independent_anchors` carries three hand-recomputed 12-industry incremental means
+(1990, 1996, 2002) taken directly from the raw workbook, independent of the loader path. They were
+proven RED against the pre-fix (6-column) data and GREEN against the corrected output (evidence:
+internal remediation record). `validation.reference_values` are
+regression guards only — not an independent check.
+
+## 6. Deferred future extension (NOT shipped)
+
+A modern extension via **OECD STAN** (sector profits + investment, ISIC Rev3 -> Rev4 + NAICS
+crosswalk) remains a **deferred, unbuilt** long-term target (scope decision required; OECD ISDB
+1994 vintage discontinued). Nothing from OECD STAN currently ships in S215.
+
+## 7. Failure-mode table
 
 | Failure | Detection | Action |
 |---|---|---|
-| API key not set | `S00_config.have_key` returns False | Loader returns `degraded`; processor publishes book period only; registry stamped `extension_status: api_key_missing` |
-| API non-200 | `S00_apis._retry_get` raises after 3 retries | Same degradation as above |
-| Overlap year NaN | Processor checks pre-splice | Walk back overlap year (e.g. 2010 -> 2009 -> 2008); fail hard if no valid overlap in 5-year window |
-| Source URL discontinued | Phase 4 adequacy URL check | EPR documents the substitute (see section 3) |
-
-## 6. CD2 divergence pre-disclosure
-
-CD2's predecessor series may diverge from S215 due to (a) different extension anchor, (b) different proxy selection, or (c) a different vintage of the underlying source. Divergence is reported informationally in V03 and never causes a FAIL.
-
-## 7. Extension status
-
-Current: `data_unavailable`. See DPR caveats for rationale.
+| Appendix-7 workbook missing | `CHOPPED.exists()` False in L01 | Loader returns `FAIL`; no data shipped |
+| Manufacturing header drift | `assert len(matched) == 12` in L01 | Run FAILS loudly (never a silent partial average) — this is the F-4C-02 guard |
+| Book period requested | book_period_status = `data_unavailable` | No synthesis; 1960-1989 stays empty until the source is recovered to SalvagedInputs |

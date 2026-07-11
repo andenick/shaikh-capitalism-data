@@ -66,7 +66,7 @@ series; CD2 = Anu v6.0, 114 series) with a strict provenance discipline:
    (current implementation uses Shaikh's stated line; reviewer flagged a
    plausible alternative)
 4. **CD/CD2 deep KB rehydration** — currently only the salvaged subset is
-   bundled; a v1.1 patch could re-link the full HDARP corpus from CD
+   bundled; a v1.1 patch could re-link the full agent-assisted-extraction corpus from CD
 5. **Cross-validation against ST2 AnuData (Shaikh-Tonak 1948-2024)** for
    the 1948-2010 overlap window
 6. **CI test harness** — `pytest replicator/scripts/replicate.py --series S201`
@@ -78,7 +78,7 @@ series; CD2 = Anu v6.0, 114 series) with a strict provenance discipline:
 This project was made possible by the open-data work of the Federal Reserve
 (FRED), Bureau of Economic Analysis (NIPA, Industry Accounts), Bureau of
 Labor Statistics, IMF (IFS via SDMX), World Bank (WDI), Shiller, Damodaran,
-and MeasuringWorth, plus the legacy CD / CD2 codebases whose HDARP extraction
+and MeasuringWorth, plus the legacy CD / CD2 codebases whose agent-assisted extraction
 of Shaikh's figures seeded our research phase.
 
 ## How to cite

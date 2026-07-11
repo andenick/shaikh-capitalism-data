@@ -1,0 +1,20 @@
+{
+  "sid": "S1103",
+  "display_name": "Law of one price at the aggregate level, US and Japan, 1960-2009",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Figure 11.6 (aggregate LOP test, real exchange rate over adjusted unit labor costs) from BLS data; figure reference verified correct (11.6).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1103-A": {
+      "label": "Japan: real exchange rate over fundamentals",
+      "units": "ratio (dimensionless)"
+    },
+    "S1103-B": {
+      "label": "United States: real exchange rate over fundamentals",
+      "units": "ratio (dimensionless)"
+    }
+  }
+}

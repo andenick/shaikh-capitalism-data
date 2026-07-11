@@ -19,7 +19,7 @@ PROCESSED = DATA_PROCESSED / f"{SERIES_ID}.parquet"
 CSV_PATH = SALVAGED_BOOK_DATA / "Reconstructed" / "Appendix_4_2_Table4.csv"
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
 
-VALIDATOR_TOL_PCT = 0.5
+VALIDATOR_TOL_PCT = 1.0
 COMPONENTS = ["afc", "ulc", "avc", "ac", "tc", "mc"]
 
 

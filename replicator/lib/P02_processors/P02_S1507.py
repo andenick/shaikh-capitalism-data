@@ -17,7 +17,11 @@ OUT = DATA_PROCESSED / "S1507.parquet"
 def run() -> dict:
     if not IN.exists():
         return {"status": "FAIL", "error": f"raw missing: {IN}"}
-    df = pd.read_parquet(IN)
+    df = pd.read_parquet(IN).copy()
+    # F-7A-05: sigma-prime subseries are normalized z-scores, not decimal rates.
+    # Raw parquet mislabels 'rate_decimal'; registry is correct at 'normalized_zscore'.
+    if "units" in df.columns:
+        df.loc[df["subseries_id"].str.endswith("-sigma-prime"), "units"] = "normalized_zscore"
     DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
     df.to_parquet(OUT, index=False)
     return {

@@ -1,0 +1,16 @@
+{
+  "sid": "S706",
+  "display_name": "Incremental rates of profit in US industries, 1988–2005",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructed multi-industry panel (30 industries + All-Private) from Shaikh's online Appendix 7.2 (BEA NIPA, same adjustments as S705). Incremental rate = Δ gross profit ÷ lagged gross investment; starts 1988 due to the lag. Figure 7.17, period, and source verified against KB ch07; book_quotes verbatim-confirmed. reference_values circular (auditability); figure-overlay MATCH per FIGURE_REPRO_ch07.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S706-A": {
+      "label": "US industry incremental rate of profit (30 industries + All-Private benchmark)",
+      "units": "rate (decimal)"
+    }
+  }
+}

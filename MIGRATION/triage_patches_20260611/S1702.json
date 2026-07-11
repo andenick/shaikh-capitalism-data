@@ -1,0 +1,16 @@
+{
+  "sid": "S1702",
+  "display_name": "Personal income distribution below $200,000, cumulative probability from above (2011)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "KB-verified: figure 17.2 caption and in-text passage (p.752) match; IRS SOI Publication 1304 Table 1.4 (2011) sourcing confirmed; $10M+ open bin dropped (anti-synthetic). Verbatim quotes match.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1702-A": {
+      "label": "Bottom 97% survival function (exponential test)",
+      "units": "cumulative probability from above (dimensionless)"
+    }
+  }
+}

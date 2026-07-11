@@ -3,7 +3,7 @@
 Computes:
   iblongreal[t] = iblong[t] - (USWPI[t]/USWPI[t-1] - 1) * 100
   S1004-A  = iblongreal (book; recomputed for self-consistency)
-  S1004-B  = HP-filter(iblongreal, lambda=3)
+  S1004-B  = HP-filter(iblongreal, lambda=100)
   S1004-C  = HP-filter(iblongreal, lambda=6.25)
   S1004-D  = extension (post-2011, recomputed end-to-end on full extended panel)
 
@@ -12,11 +12,15 @@ recomputed end-to-end whenever the panel grows (No-Lazy-Splices on smoothed).
 """
 from __future__ import annotations
 
+import logging
 import sys
+import warnings
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+LOG = logging.getLogger(__name__)
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -71,8 +75,15 @@ def _build_extended_panel() -> tuple[pd.DataFrame, dict]:
             diag["ext_years"] = int(len(ext))
             diag["ppiaco_scale"] = scale
             diag["extension_status"] = "ok"
-        except Exception as exc:
+        except (KeyError, IndexError, ValueError, TypeError, ZeroDivisionError) as exc:
             diag["extension_status"] = f"error: {exc}"
+            msg = (
+                f"S1004 extension failed ({type(exc).__name__}: {exc}); "
+                f"falling back to book-only panel. Extension FRED inputs were present "
+                f"but scaling/merge raised. Check anchor year {ANCHOR_YEAR} coverage."
+            )
+            warnings.warn(msg, RuntimeWarning, stacklevel=2)
+            LOG.warning("P02_S1004: %s", msg)
     else:
         diag["extension_status"] = "book_only_components"
     return book, diag

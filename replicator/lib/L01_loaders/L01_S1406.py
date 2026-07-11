@@ -1,16 +1,30 @@
 """L01_S1406 - Inflation and Productivity Growth (Ch14 Fig 14.15).
 
-CONCEPT POLICING (Phase 4 Q5 resolution):
-  Productivity = real GDP per FTE per Shaikh's exact formula
-  yr = (GDP*100/p)/(FEE/1000). The loader REJECTS any per-hour substitute
-  (OPHNFB, PRS85006092, OPHPBS, OPHMFG).
+CONCEPT POLICING (Phase 4 Q5 resolution; REMEDIATED 2026-07-01, SWEEP-ch1417-01):
+  Productivity = real GDP per FULL-TIME-EQUIVALENT EMPLOYEE per Shaikh's exact
+  formula yr = (GDP*100/p)/(FEE/1000), where FEE = "full-time equivalent
+  employment from Tables 6.5A-D" (Appendix 14.2 p. 892, verbatim). The loader
+  REJECTS both (a) BLS per-hour productivity indices (OPHNFB, PRS85006092,
+  OPHPBS, OPHMFG) AND (b) BEA *hours-worked* denominators (B4701C0* incl.
+  B4701C0A222NBEA), which are hours, not an employee count.
+
+DEFECT HISTORY: through 2026-07-01 this loader fetched FRED B4701C0A222NBEA as
+  the productivity denominator `fee`. That series is "Hours worked by full-time
+  and part-time employees" (BEA NIPA Table 6.9, millions of hours) -- NOT
+  full-time-equivalent EMPLOYEES. Feeding hours into Shaikh's per-FTE formula
+  made the 2012+ extension output-per-HOUR growth, mislabeled per_FTE, and
+  silently violated the very per-hour concept guard this series was built to
+  enforce. Fixed by switching to A4301C0A173NBEA ("Full-time equivalent
+  employees", total, NIPA Tables 6.5A-D, thousands) -- the exact concept the
+  book cites -- and broadening assert_no_per_hour_substitution to catch the
+  hours-worked class of denominator.
 
 Loads:
   - S1406-A: inflrate (Appendix 14.3)
   - S1406-B: GPRODVTY (Appendix 14.3)
   - S1406-C: FRED GDP (annual avg of quarterly)
   - S1406-D: FRED GDPDEF (annual avg of quarterly, current vintage 2017=100)
-  - S1406-E: FRED B4701C0A222NBEA (FTE all industries, annual, thousands of jobs)
+  - S1406-E: FRED A4301C0A173NBEA (FTE employees, NIPA T6.5A-D, annual, thousands)
 """
 from __future__ import annotations
 
@@ -26,16 +40,17 @@ from L01_loaders._ch14_helpers import (  # noqa: E402
     read_appendix14, fred_annual, assert_no_per_hour_substitution,
 )
 from S00_setup import S00_apis  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 SERIES_ID = "S1406"
 OUT_BOOK = DATA_RAW / f"{SERIES_ID}_APPENDIX14.parquet"
 OUT_GDP    = DATA_RAW / f"{SERIES_ID}_FRED_GDP.parquet"
 OUT_DEF    = DATA_RAW / f"{SERIES_ID}_FRED_GDPDEF.parquet"
-OUT_FEE    = DATA_RAW / f"{SERIES_ID}_FRED_B4701C0A222NBEA.parquet"
+OUT_FEE    = DATA_RAW / f"{SERIES_ID}_FRED_A4301C0A173NBEA.parquet"
 
 # Hard concept-policing assertion: any future maintainer who adds a per-hour
-# substitute to this list will fail import.
-FRED_INPUTS = ["GDP", "GDPDEF", "B4701C0A222NBEA"]
+# OR hours-worked substitute to this list will fail import.
+FRED_INPUTS = ["GDP", "GDPDEF", "A4301C0A173NBEA"]
 assert_no_per_hour_substitution(FRED_INPUTS)
 
 
@@ -60,9 +75,9 @@ def _save_book(df: pd.DataFrame) -> int:
 
 def _save_fred() -> tuple[dict, bool, str | None]:
     try:
-        gdp = fred_annual("GDP")
-        defl = fred_annual("GDPDEF")
-        fee = fred_annual("B4701C0A222NBEA")
+        gdp = fred_annual("GDP", realtime=realtime_window(SERIES_ID, "GDP"))
+        defl = fred_annual("GDPDEF", realtime=realtime_window(SERIES_ID, "GDPDEF"))
+        fee = fred_annual("A4301C0A173NBEA", realtime=realtime_window(SERIES_ID, "A4301C0A173NBEA"))
     except S00_apis.ApiUnavailable as exc:
         return {}, False, str(exc)
     gdp.assign(units="billions_usd_saar",
@@ -71,9 +86,9 @@ def _save_fred() -> tuple[dict, bool, str | None]:
     defl.assign(units="index_2017=100",
                 subseries_id=f"{SERIES_ID}-D",
                 subsource_id="FRED_GDPDEF").to_parquet(OUT_DEF, index=False)
-    fee.assign(units="thousands_of_jobs",
+    fee.assign(units="thousands_of_persons_fte",
                subseries_id=f"{SERIES_ID}-E",
-               subsource_id="FRED_B4701C0A222NBEA").to_parquet(OUT_FEE, index=False)
+               subsource_id="FRED_A4301C0A173NBEA").to_parquet(OUT_FEE, index=False)
     return {"gdp": len(gdp), "gdpdef": len(defl), "fee": len(fee)}, True, None
 
 
@@ -83,7 +98,7 @@ def run() -> dict:
     fred_rows, fred_ok, fred_err = _save_fred()
     sources = ["SHAIKH_APPENDIX_14_3"]
     if fred_ok:
-        sources += ["FRED_GDP", "FRED_GDPDEF", "FRED_B4701C0A222NBEA"]
+        sources += ["FRED_GDP", "FRED_GDPDEF", "FRED_A4301C0A173NBEA"]
     return {
         "status": "OK",
         "rows_loaded": {"book": n_book, **fred_rows},

@@ -153,13 +153,13 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "opus-subagent-wave-a-ch6",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from CD2 S027 dossier + verbatim equations and Fig 6.2/6.6 narrative from book pp. 247-253. Components include all three adjustment axes (NMINT, GPIM, inventories). GPIM-variants disposition flagged."
     },
     {
-      "reviewer": "opus-subagent-ch6-retry",
+      "reviewer": "automated-agent",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Retry pass after Ch6 content-filter incident. Confirmed all acceptance criteria met (3 quotes with definition+source+caveat roles, BEA+IRS primary source identified, formula construction with 9 components covering all 6 plotted curves, extension candidates for NIPA T1.14 + FA T6.1-6.8 + IRS SOI, 6 methodology notes). No content changes required."

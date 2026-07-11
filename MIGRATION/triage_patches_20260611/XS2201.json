@@ -1,0 +1,18 @@
+{
+  "sid": "XS2201",
+  "display_name": "Two-class income-distribution parameters, US 2002-2016 (Shaikh & Jacobo 2020)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Full 15-year annual panel (2002-2016) of the five jointly-fitted econophysics two-class income-distribution parameters from Table 1 of Shaikh & Jacobo (2020). Despite the prescreen MIXED_UNITS flag this is NOT sparse and NOT odd: it is a clean continuous time series. The mixed-units flag is a true-positive resolved by per-subseries units: G', f, and alpha are dimensionless; the two income means (r_mean, w_mean) are in thousands of USD. Renders sensibly once split (dimensionless parameters on one axis, dollar means on another).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "XS2201-G_prime": {"label": "Gini coefficient of the bottom 97%", "units": "dimensionless"},
+    "XS2201-f_top3": {"label": "Top-3% income share", "units": "dimensionless"},
+    "XS2201-alpha": {"label": "Top-3% Pareto exponent", "units": "dimensionless"},
+    "XS2201-r_mean": {"label": "Average AGI per return", "units": "thousands_usd"},
+    "XS2201-w_mean": {"label": "Bottom-97% mean income (income temperature)", "units": "thousands_usd"}
+  },
+  "field_fixes": {"units": "per_subseries"}
+}

@@ -1,7 +1,7 @@
 """Phase 5 Ch11+Ch13+Ch17 registry / subsource / ledger updater (idempotent).
 
 Updates Technical/series_registry.json, Technical/SUBSOURCE_METADATA.json, and
-Technical/ANU_LEDGER.json for the 8-series Ch11/13/17 fanout:
+Technical/ANU_LEDGER.json for the 8-series Ch11/13/17 automated-agent:
   Ch11: S1101, S1102, S1103, S1104
   Ch13: S1301
   Ch17: S1701, S1702, S1703
@@ -345,6 +345,8 @@ REGISTRY_UPDATES = {
         "notes": "Fig 13.7 illustrative schematic; year column is abstract time index t.",
     },
     "S1701": {
+        "name": "The Global Crisis of 2007 in Light of Past Long Waves",
+        "figures": ["Fig17.1"],
         "status": "ingested",
         "content_type": "time_series",
         "construction": "composite",
@@ -382,6 +384,8 @@ REGISTRY_UPDATES = {
         "notes": "Fig 17.1; renamed Phase 4; IRS lineage captured in S1702/S1703.",
     },
     "S1702": {
+        "name": "Personal Income Distribution below $200,000, Cumulative Probability from Above",
+        "figures": ["Fig17.2"],
         "status": "ingested",
         "content_type": "cross_sectional",
         "construction": "composite",
@@ -406,6 +410,8 @@ REGISTRY_UPDATES = {
         "notes": "Fig 17.2; column-fix applied (FPR017_C3 -> FPR017_C5); $10M+ open bin dropped (anti-synthetic).",
     },
     "S1703": {
+        "name": "Personal Income Distribution above $200,000, Cumulative Probability from Above",
+        "figures": ["Fig17.3"],
         "status": "ingested",
         "content_type": "cross_sectional",
         "construction": "composite",

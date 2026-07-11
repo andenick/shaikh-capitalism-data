@@ -1,6 +1,6 @@
 # S901 — Extension Provenance Record
 
-**Series**: S901 — Market Prices vs Direct Prices · **Phase**: 6
+**Series**: S901 — Market Prices vs Direct Prices
 **Construction**: `composite` of six cross-sections · **Extension**: `not_applicable_cross_sectional`
 **Authored**: 2026-05-18
 

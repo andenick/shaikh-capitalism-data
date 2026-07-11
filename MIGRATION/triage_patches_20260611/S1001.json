@@ -1,0 +1,25 @@
+{
+  "sid": "S1001",
+  "display_name": "Bank versus all-private incremental rate of profit, 1988-2005",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Figure 10.1 (bank vs all-private IROP, 1988-2005) faithfully from Shaikh Appendix 7.2; pass-through, KB-verified caption. Fixed hallucinated chapter title and spurious Fig10.2 reference.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1001-A": {
+      "label": "Banking industry incremental rate of profit",
+      "units": "rate (decimal fraction)"
+    },
+    "S1001-B": {
+      "label": "All-private-industry incremental rate of profit",
+      "units": "rate (decimal fraction)"
+    }
+  },
+  "field_fixes": {
+    "figures": [
+      "Fig10.1"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "sid": "S1404",
+  "display_name": "Rate of change of the wage share versus unemployment intensity (raw), United States",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.14 Figure 14.13 (Rate of Change of Wage Share versus Unemployment Intensity, United States, 1949-2011) -- the raw, unfiltered scatter that motivates the Classical wage-share Phillips curve. Real data present in chopped CSV (127 points, 2 subseries); book_period_validated; figure number and quotes KB-verified (Fig 14.13 quote verbatim at ch14 KB line 1487/1457; Classical-curve Eq.14.15 method at KB line 1300). Two subseries with different units (growth rate vs intensity) -- per-subseries split below.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1404-A": {
+      "label": "Wage share growth rate (raw, annual)",
+      "units": "growth rate (decimal/year)"
+    },
+    "S1404-B": {
+      "label": "Unemployment intensity (raw, annual)",
+      "units": "intensity (decimal)"
+    }
+  },
+  "field_fixes": {}
+}

@@ -1,19 +1,19 @@
 # S301 — Change in Expenditure on Necessaries Relative to Change in Income, Case I
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+**Record type**: Data Provenance Record
 **Series ID**: S301
-**Status**: book_period_validated
+**Status**: theoretical_validated
 **Content type**: `theoretical`
 **Construction**: `formula`
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave-a-ch3 (Phase 5-8 fanout)
+**Prepared by**: RSCD data-construction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S301_research.json`
-- Adequacy: `Technical/docs/chapters/CH3_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S301_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S301`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` -> `SHAIKH_2016_EQ_3_4_3_11`
+- Series research notes: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S301`
+- Subsource registry: subsource registry -> `SHAIKH_2016_EQ_3_4_3_11`
 
 ---
 
@@ -29,13 +29,18 @@ where x1min is the socially-defined minimum level of the necessary good, and x1m
 
 Chapter 3 develops the methodological claim that aggregate empirical patterns (here, Engel's Law) are robustly insensitive to the underlying micro foundations. Figures 3.3-3.5 demonstrate that **Case I** — in which the minimum necessary level x1min(y) itself rises sub-linearly in income — is sufficient to generate the saturation property of the Engel curve for necessaries. S301 isolates the marginal-share component of this construction, which is the analytical object behind the saturation visible in the integrated Engel curve (S303 / Fig 3.5).
 
+## From the Book
+
+> it is very plausible that the minimum level of necessaries, which is always socially defined (Trigg 2004), rises as real income (y/p1) rises but not as fast as income, so that it declines as a share of income. [...] In other words, the Engel curve for necessary goods will exhibit saturation.
+> -- Shaikh (2016), Chapter 3, p. 93 
+
 ## 3. Sources
 
 | Subseries | Coverage | Source | Native units | Retrieval |
 |---|---|---|---|---|
 | **S301-A** | n/a (theoretical) | Shaikh 2016 eqs (3.4)-(3.11), p. 91-93; Figure 3.3 axis bounds p. 94 | dimensionless | analytic regeneration from equations |
 
-The single subseries S301-A is an analytic curve. There is no "data" in the sense of historical observations; the data are the values of d(p1*x1)/dy evaluated on a discrete income grid in the same range as Shaikh's Figure 3.3 (y in [0, 60]).
+The dataset's single data column (labelled S301-A) is an analytic curve. There is no "data" in the sense of historical observations; the data are the values of d(p1*x1)/dy evaluated on a discrete income grid in the same range as Shaikh's Figure 3.3 (y in [0, 60]).
 
 ## 4. Construction
 
@@ -77,14 +82,15 @@ At y=4: 0.5 + 0.25/2 = 0.625. At y=60: 0.5 + 0.25/sqrt(60) approx 0.532. The cur
 
 ## 8. Cross-references
 
-- **CD legacy ID**: none (this series has no predecessor in CD1 or CD2 — it was first ingested in RSCD).
+- **Predecessor series**: none (first constructed in this dataset).
 - **Companion analytic series**: S302 (Fig 3.4, share form), S303 (Fig 3.5, integrated Engel curve), all under the same Case I calibration.
 - **Empirical counterpart**: S306 / S307 (the same conceptual object measured in 1904 working-class budgets).
 - **Book reference**: Shaikh (2016), Ch. 3, p. 91-93 (text), p. 94 (Figure 3.3).
-- **Knowledge Base**: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json` -> Fig3.3 (documentation_type="theoretical", is_empirical=false).
+- **Knowledge Base**: figure-linkage reference -> Fig3.3 (documentation_type="theoretical", is_empirical=false).
+- **Source-book text**: Shaikh (2016) Chapter 3, extracted in the project knowledge base (ch03_micro_foundations.md).
 
 ## 9. Validation expectation
 
-- **Tolerance**: validator runs in `PASS_THEORETICAL` mode: it checks that (i) the curve is monotonically declining over y in [0.5, 60], (ii) the asymptote at y=60 is within [0.50, 0.55] (i.e., approaching c=0.5), (iii) all output values lie within the printed axis bound [0.0, 0.8].
-- **Expected MAE** vs printed figure: not measured numerically. There are no published tabulated points to compare against. The validator returns `status=PASS_THEORETICAL` when shape and bound checks pass.
-- **CD2 divergence**: not applicable (no CD2 predecessor).
+- **Tolerance**: the validator runs in its theoretical-curve mode (checks the curve's shape and bounds rather than matching tabulated values): it checks that (i) the curve is monotonically declining over y in [0.5, 60], (ii) the asymptote at y=60 is within [0.50, 0.55] (i.e., approaching c=0.5), (iii) all output values lie within the printed axis bound [0.0, 0.8].
+- **Expected mean absolute error (MAE)** vs printed figure: not measured numerically. There are no published tabulated points to compare against. The validator passes in its theoretical-curve mode when shape and bound checks pass.
+- **Comparison with earlier reconstructions**: not applicable.

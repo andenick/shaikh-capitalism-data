@@ -1,0 +1,21 @@
+{
+  "sid": "S1502",
+  "display_name": "Growth rates of real output, US major industries (goods and trade), 1988-2010",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful formula replication of book figure 15.2A (goods-producing and trade industries panel). Log-difference growth rates of BEA real value added by industry. Data covers 1988-2010 (first valid growth year is 1988 given a 1987 level base; book caption reads 1987-2010 - documented, not an error). Units rate_decimal_log_diff consistent across all subseries.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1502-ALL": {"label": "All industries (economy-wide reference)", "units": "rate_decimal_log_diff"},
+    "S1502-AGRI": {"label": "Agriculture, forestry, fishing, and hunting", "units": "rate_decimal_log_diff"},
+    "S1502-MINE": {"label": "Mining", "units": "rate_decimal_log_diff"},
+    "S1502-UTIL": {"label": "Utilities", "units": "rate_decimal_log_diff"},
+    "S1502-CONS": {"label": "Construction", "units": "rate_decimal_log_diff"},
+    "S1502-DURMFG": {"label": "Durable manufacturing goods", "units": "rate_decimal_log_diff"},
+    "S1502-NONDURMFG": {"label": "Nondurable manufacturing goods", "units": "rate_decimal_log_diff"},
+    "S1502-WHOLE": {"label": "Wholesale trade", "units": "rate_decimal_log_diff"},
+    "S1502-RETAIL": {"label": "Retail trade", "units": "rate_decimal_log_diff"}
+  }
+}
