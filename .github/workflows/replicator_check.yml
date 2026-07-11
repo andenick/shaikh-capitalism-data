@@ -2,20 +2,35 @@ name: Replicator Check
 
 # Offline replicator smoke against the BUNDLE tree. Runs the shipped replicator
 # for a small series set and compares the produced processed data to the shipped
-# chopped/ CSVs on the intersection of (subseries_id, year) present in BOTH — so
-# missing live-API extension rows never cause a false failure, while any
-# book-period / digitized regression IS caught.
+# chopped/ CSVs on the intersection of the full OBSERVATION KEY present in BOTH
+# (subseries_id, year, and country_key when present) — so missing live-API
+# extension rows never cause a false failure, while any book-period / digitized
+# regression IS caught.
 #
 # The old workflow referenced Technical/replicator/… (does not exist in the
 # bundle) behind `if [ -f … ]` guards, so it silently passed without running
 # anything. Those guards + the `|| true` mask are removed here.
 #
-# EXPECTED STATE (until the P3.3 re-mirror ships the fixed lib + fresh chopped):
-#   S201, S301  -> MATCH   (book series already consistent)
-#   S703, S704  -> FAIL    (bundle lib is the stale data_unavailable version;
-#                           shipped chopped already carries the digitized data)
-#   S1508       -> FAIL    (stale lib scale)
-# After P3.3 the whole set goes green.
+# COMPARISON-KEY FIX (2026-07-11): cross-sectional series (e.g. S1508 Harberger
+# 29-country, all rows year=1988, distinguished only by country_key) MUST include
+# country_key in the merge key. Merging on (subseries_id, year) alone cartesian-
+# explodes such series to N^2 rows, so N^2-N off-diagonal pairs falsely register
+# as mismatches (the old "S1508 1624/1682 rows differ" red — worst pair was the
+# largest lambda 3.432 vs the smallest 0.035, a cross-join artifact, NOT a scale
+# bug; the bundle lib is byte-identical to canonical and reproduces shipped values
+# exactly). With country_key in the key, S1508 merges 58 rows, 0 differ.
+#
+# VINTAGE-DRIFT EXEMPTION (2026-07-11): S201 (US Industrial Production, live FRED)
+# carries a revised extension subseries S201-C whose LATEST observation drifts by
+# FRED vintage between build time and a fresh CI fetch. Per the pinning docs
+# (replicator/config/VINTAGE_MANIFEST.json `alfred_realtime_pin` +
+# Technical/docs/methodology/QUARTERLY_OPS.md §1a "VREF — Vintage Refresh"), the
+# shipped values are pinned to a build-time vintage; the single latest-year row of
+# each such live-FRED extension subseries is exempted from the byte comparison.
+# Every other row (all book-period + non-latest extension) is still strictly
+# compared, so real regressions are still caught.
+#
+# EXPECTED STATE: S201, S301, S703, S704, S1508 -> all MATCH (green).
 
 on:
   push:
@@ -65,6 +80,13 @@ jobs:
           CHOPPED = BUNDLE / "chopped"
           SMOKE = ["S201", "S301", "S703", "S704", "S1508"]
           TOL = 1e-6
+          # Full observation key: cross-sectional series need country_key so they
+          # do not cartesian-explode (see workflow header, S1508 case).
+          KEY_CANDIDATES = ["subseries_id", "year", "country_key"]
+          # Live-FRED vintage-drift exemption: {series: [subseries whose LATEST
+          # shipped-year observation is vintage-sensitive]} (see header + pinning
+          # docs: replicator/config/VINTAGE_MANIFEST.json, QUARTERLY_OPS.md §1a).
+          VINTAGE_DRIFT_EXEMPT = {"S201": ["S201-C"]}
 
           def run(sid):
               p = subprocess.run([sys.executable, str(REPLICATE), "--series", sid],
@@ -82,14 +104,22 @@ jobs:
               for d in (a, b):
                   d["year"] = pd.to_numeric(d["year"], errors="coerce")
                   d["value"] = pd.to_numeric(d["value"], errors="coerce")
-              m = a.merge(b, on=["subseries_id", "year"], suffixes=("_p", "_s"))
+              keys = [k for k in KEY_CANDIDATES if k in a.columns and k in b.columns]
+              m = a.merge(b, on=keys, suffixes=("_p", "_s"))
               if m.empty:
                   return False, "no shared keys"
+              # Exempt each live-FRED extension subseries' latest shipped-year row
+              # (documented FRED vintage drift — NOT a replication regression).
+              for ss in VINTAGE_DRIFT_EXEMPT.get(sid, []):
+                  yr = b.loc[b["subseries_id"] == ss, "year"]
+                  if len(yr):
+                      ymax = int(yr.max())
+                      m = m[~((m["subseries_id"] == ss) & (m["year"] == ymax))]
               bad = m[(m["value_p"] - m["value_s"]).abs() > TOL]
               if len(bad):
                   w = bad.reindex((bad["value_p"] - bad["value_s"]).abs().sort_values(ascending=False).index).iloc[0]
                   return False, f"{len(bad)}/{len(m)} rows differ (worst {w['subseries_id']}@{int(w['year'])})"
-              return True, f"{len(m)} shared rows match"
+              return True, f"{len(m)} shared rows match (keys={'+'.join(keys)})"
 
           fails = []
           for sid in SMOKE:
