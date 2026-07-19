@@ -1,0 +1,16 @@
+{
+  "sid": "XS007",
+  "display_name": "GPIM variant: IRS Great-Depression/WWII adjustment",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Methodology variant of XS004 applying the IRS book-value index to correct the corporate capital stock through the Great Depression / WWII window (1925-1947), since the BEA measure assumes scrapping is independent of economic conditions. All billions_current_usd after the documented IRS thousands-to-billions normalization; single-unit, renders sensibly. Appendix Table 6.8.II.4.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "XS007-A": {"label": "IRS book value of corporate total assets", "units": "billions_current_usd"},
+    "XS007-B": {"label": "BEA 2011 net stock, IRS-index adjusted", "units": "billions_current_usd"},
+    "XS007-C": {"label": "BEA 2011 historical-cost stock, IRS-index adjusted", "units": "billions_current_usd"}
+  },
+  "field_fixes": {}
+}

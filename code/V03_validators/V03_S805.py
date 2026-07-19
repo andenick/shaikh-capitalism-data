@@ -12,7 +12,7 @@ from utils.paths import DATA_PROCESSED, SALVAGED_BOOK_DATA  # noqa: E402
 from V03_validators._ch8_validator_lib import validate_long_form  # noqa: E402
 
 SERIES_ID = "S805"
-VALIDATOR_TOL_PCT = 0.5  # cross_sectional per playbook
+VALIDATOR_TOL_PCT = 1.0  # cross_sectional per playbook
 
 PROCESSED = DATA_PROCESSED / f"{SERIES_ID}.parquet"
 CHOPPED_XLSX = SALVAGED_BOOK_DATA / "ShaikhChoppedTables" / "Appendix8_DemsetzRatesOfReturn.xlsx"

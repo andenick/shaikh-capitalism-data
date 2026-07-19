@@ -1,0 +1,16 @@
+{
+  "sid": "S701",
+  "display_name": "Change in selling price versus change in unit labour cost, US industries, 1923–1950",
+  "publish": true,
+  "triage": {
+    "verdict": "fix-completed-then-publish",
+    "reason": "Reconstructed cross-section from Salter (1969); values verified EXACT against the Salter US panel (48/48 pairs). Fixed: removed fabricated 'R² ≈ 0.77 / ~77% explained' statistic (not in book); corrected the source citation to the book-canonical 'Salter 1969, p.197, table 33' (book Fig 7.11 caption is ground truth) in research JSON, DPR, and generator. Open data-layer issue: registry subsource key, SUBSOURCE_METADATA, and chopped source_id still carry the file-derived label TABLE28/p164 — flagged for registry owner.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S701-A": {
+      "label": "US industry selling-price and unit-labour-cost change, 1950 relative to 1923",
+      "units": "ratio (1950 value ÷ 1923 value × 100)"
+    }
+  }
+}

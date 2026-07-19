@@ -21,6 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils.paths import DATA_RAW, book_data_path  # noqa: E402
 from S00_setup import S00_apis  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 CHOPPED_XLSX = book_data_path("Appendix10_USLR.xlsx")
 OUT_TRUTH = DATA_RAW / "S1003_USLR_ibp.parquet"            # book published ratio for validation
@@ -43,7 +44,10 @@ def _ensure_s1002_components() -> dict:
     # FRED components (optional — extension if available)
     if not S1002_AAA.exists():
         try:
-            raw = S00_apis.fred_csv_observations("AAA")
+            rs, re = realtime_window("S1003", "AAA")
+            raw = S00_apis.fred_observations(
+                series_id="AAA", frequency=None, realtime_start=rs, realtime_end=re,
+            )
             raw["year"] = raw["date"].dt.year.astype(int)
             ann = raw.groupby("year", as_index=False)["value"].mean()
             ann["units"] = "percent"; ann["subseries_id"] = "S1002-C"; ann["subsource_id"] = "FRED_AAA"
@@ -53,7 +57,10 @@ def _ensure_s1002_components() -> dict:
             diag["AAA_status"] = f"unavailable: {exc}"
     if not S1002_PPIACO.exists():
         try:
-            raw = S00_apis.fred_csv_observations("PPIACO")
+            rs, re = realtime_window("S1003", "PPIACO")
+            raw = S00_apis.fred_observations(
+                series_id="PPIACO", frequency=None, realtime_start=rs, realtime_end=re,
+            )
             raw["year"] = raw["date"].dt.year.astype(int)
             ann = raw.groupby("year", as_index=False)["value"].mean()
             ann["units"] = "index_native"; ann["subseries_id"] = "S1002-D"; ann["subsource_id"] = "FRED_PPIACO"

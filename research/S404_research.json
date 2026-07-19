@@ -34,8 +34,8 @@
     }
   ],
   "primary_source": {
-    "agency": "Robert P. Inman (author); Brookings Papers on Economic Activity (publisher)",
-    "publication": "Inman, R. P. (1995). 'How to Have a Fiscal Crisis: Lessons from Philadelphia.' (Actually: Shaikh cites Inman 1995 — the specific citation in the book reference list should be verified for the exact title; reproduced figure is from Inman 1995, p. 61, fig. 3.)",
+    "agency": "Robert R. Inman (author); The Engineering Economist, Taylor & Francis (publisher)",
+    "publication": "Robert R. Inman, The Engineering Economist 41(1):53-67 (1995), DOI 10.1080/00137919508967475. Reproduced figure in Shaikh (2016), p.162, fig. 3 (Inman 1995, 61, fig. 3). Author name and journal citation corrected 2026-07-02 (T3.2): the earlier 'Robert P. Inman / Brookings Papers on Economic Activity / How to Have a Fiscal Crisis' attribution was wrong (that is a different Inman); article title not independently re-verified (paywalled), but the R.R. Inman Engineering Economist 41(1) automotive-plant cost-curve source matches Shaikh's reproduction.",
     "table_or_series_id": "Inman (1995), figure 3 (automotive plant simulated average labor cost, $/car vs. annual vehicle production in thousands)",
     "url": "https://www.google.com/books/edition/_/2bC3AAAAIAAJ",
     "frequency": "synthetic (Monte-Carlo simulation across output levels 0 to ~450 thousand vehicles/year)",
@@ -78,9 +78,9 @@
     "Original source (Inman 1995) bibliographic details should be verified against Shaikh's reference list in the book - specifically whether it appears in the back matter as Inman, R. P. (1995). Shaikh's footnote pattern '(Inman 1995, 53-55)' is consistent across pp. 160-163."
   ],
   "open_questions": [
-    "Verify Inman 1995 full citation against Shaikh's bibliography (back of book). The 'How to Have a Fiscal Crisis' attribution above is provisional - I do not have Shaikh's reference list confirmed.",
-    "Inman's underlying paper is paywalled / library-only; need to check whether the underlying numerical series is published. If not, the chopped figure values themselves would need to be reconstructed via figure digitization.",
-    "Phase 4 should decide whether reproduced single-plant simulated cost curves count as 'data' for the RSCD framework or as 'illustrative theoretical evidence'."
+    "Inman 1995 citation RESOLVED 2026-07-02 (T3.2): Robert R. Inman, The Engineering Economist 41(1):53-67, DOI 10.1080/00137919508967475 (Crossref-verified). The earlier 'Robert P. Inman / Brookings Papers / How to Have a Fiscal Crisis' attribution was a false-name-match to a different Inman and has been corrected in the primary_source field above and all DPR/registry entries.",
+    "Underlying data availability RESOLVED 2026-05-26 (v1.3 recovery): Inman published the simulation only as figures, not as tabulated values, and the journal full text is behind a paywall. The values were recovered by native-vector trace of Shaikh's Figure 4.19 from the source-book PDF, overlay-validated, and stored at SalvagedInputs/book_data/Reconstructed/Inman_1995_S404-407_cost_curves.json. All four Inman curves (S404-S407) are now book_period_validated with honest digitized provenance.",
+    "KB availability CONFIRMED: ch04 Knowledge Base is fully extracted (HDARP_v3.3_Campaign Body_Text/ch04_production_costs.md, 2,538 lines, all 23 figures present). Book quotes in the DPR and this research JSON are KB-anchored."
   ],
   "review_history": [
     {

@@ -1,0 +1,12 @@
+{
+  "sid": "XS2001",
+  "display_name": "Sraffa price empirical-sufficiency ratios, US benchmark IO tables (Shaikh 2020)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "18 Sraffa-price test ratios (circulating- and fixed-capital normalizations) across 6 US BEA benchmark-IO years (1947-1998), all dimensionless ratios with uniform units. This is the verbatim aggregate-ratio content of Shaikh (2020) and renders sensibly as a multi-ratio panel. No units conflict; no truncation.",
+    "date": "2026-06-11"
+  },
+  "subseries": {},
+  "field_fixes": {}
+}

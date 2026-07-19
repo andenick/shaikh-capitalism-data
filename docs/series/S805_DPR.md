@@ -1,17 +1,17 @@
 # S805 — Rates of Return and Concentration (CR4), 1963 and 1969 (Demsetz Fig 8.6)
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S805
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch8-fanout
+**Author**: Anu automated extraction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S805_research.json`
-- Adequacy: `Technical/docs/chapters/CH8_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S805_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S805`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `DEMSETZ_1973B_TABLE_4`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S805`
+- Subsource registry: subsource registry → `DEMSETZ_1973B_TABLE_4`
 
 ---
 
@@ -21,9 +21,9 @@
 
 CR4 bins: 10-20, 20-30, 30-40, 40-50, 50-60, 60+ (percent of value-product supplied by top 4 firms).
 
-`content_type = cross_sectional` (per Phase 3 dossier and Phase 4 adequacy ratification). Two cross-sections (1963, 1969), one per year. The two years are non-adjacent and are not a continuous time index.
+`content_type = cross_sectional` (per Phase 3 dossier and the adequacy step ratification). Two cross-sections (1963, 1969), one per year. The two years are non-adjacent and are not a continuous time index.
 
-Per the playbook recipe (cross_sectional): tolerance 0.5%, no splice, extension N/A.
+Per the project's cross-sectional handling convention: tolerance 0.5%, no splice, extension N/A.
 
 ## 2. Why it matters in Chapter 8
 
@@ -76,6 +76,6 @@ Emit long-form (year, value, subseries_id, source_id, units, cr4_bin)
 
 ## 9. Validation expectation
 
-- **Tolerance**: ±0.5% (cross_sectional per playbook).
+- **Tolerance**: ±0.5% (cross-sectional convention).
 - Compare loaded long-form values to the corresponding xlsx cells on the (cr4_bin, year) key.
 - Expected MAE: 0.0 (cells loaded directly from xlsx).

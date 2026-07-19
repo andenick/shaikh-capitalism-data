@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils.paths import DATA_RAW, book_data_path  # noqa: E402
 from S00_setup import S00_apis  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 CHOPPED_XLSX = book_data_path("Appendix10_USLR.xlsx")
 OUT_DIV_BOOK = DATA_RAW / "S1005_USLR_ys.parquet"
@@ -77,7 +78,11 @@ def run() -> dict:
     gs10_err = None
     n_gs10 = 0
     try:
-        raw = S00_apis.fred_csv_observations("GS10")
+        # SI-1: pinned ALFRED native-monthly fetch (GS10 never revised).
+        rs, re = realtime_window("S1005", "GS10")
+        raw = S00_apis.fred_observations(
+            series_id="GS10", frequency=None, realtime_start=rs, realtime_end=re,
+        )
         raw["year"] = raw["date"].dt.year.astype(int)
         ann = raw.groupby("year", as_index=False)["value"].mean()
         ext = ann[ann["year"] > 2011].copy()

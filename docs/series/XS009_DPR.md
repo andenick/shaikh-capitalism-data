@@ -8,7 +8,9 @@ IRS Corporate Inventories and Total Capital Stock
 
 ## Why It Matters
 
-Source: Appendix Table 6.8.II.6. UNIT NORMALIZATION: raw IRS SOI INVIRScorp is in thousands of dollars and divided by 1000 at load time. Per Phase 4 Q3: extension_method='constant_ratio_proxy_2012_onwards' flag carried through; Phase 6 lift to re-estimated ratio is recommended but deferred. See `CH6_GPIM_SUMMARY.md` for the full Ch6 construction pipeline.
+Source: Shaikh (2016), Appendix Table 6.8.II.6. Unit normalization: the raw IRS Statistics of Income (SOI) inventory line is in thousands of dollars, but Shaikh's Appendix Table 6.8.II.6 column `INVcorp` is already rescaled to billions of current USD; the loader reads that Appendix column with **scale = 1.0 — no division at load time**. An extension flag (`extension_method = 'constant_ratio_proxy_2012_onwards'`) is carried through; a later lift to a re-estimated ratio is recommended but deferred.
+
+> **Correction (2026-07-02, DF-2):** the earlier "divided by 1000 at load time" phrasing was inaccurate — the loader applies scale = 1.0 because the Appendix source column is already in billions. The same "/1000" phrasing in the series-registry `notes`/`params` for XS009 (and the "XS007/XS009 apply /1000" mention) is registry-side and left for the registry owner to reconcile.
 
 ## Sources (per subseries)
 
@@ -18,7 +20,7 @@ Source: Appendix Table 6.8.II.6. UNIT NORMALIZATION: raw IRS SOI INVIRScorp is i
 | XS009-B | II6 | `KGCcorp` | BEA NIPA / BEA FA / IRS SOI / Census | identity |
 | XS009-C | II6 | `KTCcorp` | BEA NIPA / BEA FA / IRS SOI / Census | identity |
 
-The canonical Shaikh-published values are transcribed from `SalvagedInputs/book_data/ShaikhChoppedTables/Appendix6_Table68*.xlsx` (Appendix 6.8). Upstream agencies are BEA (NIPA / Fixed Asset Accounts), IRS SOI, U.S. Census Bureau Historical Statistics 1975 (IRS book values), and FRB G.17. All public domain.
+The `-A`, `-B`, and `-C` suffixes label the individual sub-variants of this series. The canonical Shaikh-published values are transcribed from the published Chapter 6 appendix workbook (Shaikh 2016, Appendix 6.8). Upstream agencies are the Bureau of Economic Analysis (BEA) — its National Income and Product Accounts (NIPA) and Fixed Asset accounts (FA) — the IRS Statistics of Income (SOI), the U.S. Census Bureau Historical Statistics 1975 (IRS book values), and the Federal Reserve Board G.17 release. All public domain.
 
 ## Construction
 
@@ -26,7 +28,7 @@ INVcorp = IRS SOI corporate inventories at current cost. KTCcorp = KGCcorp (from
 
 ## Year Coverage
 
-Book period: 1946-2011. Vintage-stable extension recipe in `XS009_EPR.md`.
+Book period: 1946-2011. See the companion Extension Provenance Record for the vintage-stable extension recipe.
 
 ## Units
 
@@ -43,4 +45,4 @@ billions_current_usd
 
 ## Validation Expectation
 
-`V03_XS009_validate.py` round-trip-validates against the Appendix 6.8 source workbook at 1.0% tolerance. Per the Phase 4 adequacy report (`CH6_ADEQUACY_REPORT.json`), Phase 5 blockers B2 (NIPA T7.11 FISIM remap, resolver in `_nipa_t711_line_resolver.py`) and B3 (BEA 1993 depreciation rates, staged at `Reconstructed/BEA_1993_FA_methodology/`) are RESOLVED.
+The series round-trip-validates against the Appendix 6.8 source workbook at 1.0% tolerance. Two construction dependencies are resolved: the remapping of the NIPA Table 7.11 financial services indirectly measured (FISIM) lines, and the BEA 1993 depreciation rates.

@@ -30,6 +30,13 @@ OUT = DATA_RAW / f"{SERIES_ID}_raw.parquet"
 
 SOURCE_MAP = {'XS005-A': ['II1', "KNCcorp'", 1.0], 'XS005-B': ['II1', 'KNCcorpbea', 1.0], 'XS005-C': ['II1', "KNCcorp'ratio", 1.0]}
 
+# Honest per-subseries units (T3.3). A/B are capital-stock dollar levels; C
+# (KNCcorp' / official BEA ratio) is a dimensionless ratio, NOT billions_current_usd.
+UNITS_MAP = {
+    'XS005-A': 'billions_current_usd', 'XS005-B': 'billions_current_usd',
+    'XS005-C': 'dimensionless_ratio',
+}
+
 
 def run() -> dict:
     rows = []
@@ -46,7 +53,7 @@ def run() -> dict:
         df = df.copy()
         df["value"] = df["value"] * scale
         df["subseries_id"] = sub_id
-        df["units"] = "billions_current_usd"
+        df["units"] = UNITS_MAP[sub_id]
         rows_per_sub[sub_id] = int(len(df))
         sources_used.add(df["source_id"].iloc[0])
         rows.append(df[["year", "value", "subseries_id", "source_id", "units"]])

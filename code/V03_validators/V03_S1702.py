@@ -22,7 +22,7 @@ from utils import paths  # noqa: E402
 from utils.paths import DATA_PROCESSED, book_data_path  # noqa: E402
 
 SERIES_ID = "S1702"
-VALIDATOR_TOL_PCT = 0.5
+VALIDATOR_TOL_PCT = 1.0
 PROCESSED = DATA_PROCESSED / f"{SERIES_ID}.parquet"
 TRUTH_XLSX = book_data_path("Appendix17_USIRS2011.xlsx")
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"

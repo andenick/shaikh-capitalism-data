@@ -1,0 +1,20 @@
+{
+  "sid": "XS003",
+  "display_name": "Imputed-interest adjustment and corrected sectoral profit rates",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "HEADLINE MIXED-UNITS FIX. Series interleaves two genuinely different quantities: three dollar imputed-interest adjustments (A-C, billions, can be negative) and four decimal profit rates (D-G, ~0.03-0.19). Under the banned series-level 'mixed_billions_usd_and_decimal_rates' string it rendered as one nonsensical spiky line (the canonical AS003/XS003 failure in UNITS_VALIDATION_STANDARD) and fails gate P14. After per-subseries units the A-C dollar panel and the D-G rate panel each render sensibly one-trace-per-subseries. These corrected profit rates are the empirical objects feeding S601-S604 and Ch16 dynamics.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "XS003-A": {"label": "Bank (financial corporate) net interest paid", "units": "billions_current_usd"},
+    "XS003-B": {"label": "Non-financial business net imputed interest paid", "units": "billions_current_usd"},
+    "XS003-C": {"label": "Business imputed-interest adjustment", "units": "billions_current_usd"},
+    "XS003-D": {"label": "Business sector profit rate", "units": "decimal_rate"},
+    "XS003-E": {"label": "Corporate profit rate", "units": "decimal_rate"},
+    "XS003-F": {"label": "Non-corporate profit rate (WEQ2)", "units": "decimal_rate"},
+    "XS003-G": {"label": "Non-corporate profit rate (WEQ1)", "units": "decimal_rate"}
+  },
+  "field_fixes": {"units": "per_subseries"}
+}

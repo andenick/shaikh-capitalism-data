@@ -1,0 +1,32 @@
+{
+  "sid": "S1604",
+  "display_name": "Net average and real incremental rates of profit, US corporations, 1947–2011",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "KB-verified: figure 16.8 caption and in-text passage (p.734) match; appendix 6.8.II.7 minus 3-month T-bill sourcing confirmed; verbatim quotes match.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1604-A": {
+      "label": "Net corporate rate of profit",
+      "units": "decimal rate"
+    },
+    "S1604-B": {
+      "label": "Net real incremental corporate rate (raw)",
+      "units": "decimal rate"
+    },
+    "S1604-C": {
+      "label": "Net real incremental corporate rate (HP-smoothed)",
+      "units": "decimal rate"
+    },
+    "S1604-D": {
+      "label": "Net real incremental corporate rate (HP-smoothed, one-year lag)",
+      "units": "decimal rate"
+    },
+    "S1604-E": {
+      "label": "Counterfactual rate of profit",
+      "units": "decimal rate"
+    }
+  }
+}

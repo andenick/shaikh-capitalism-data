@@ -1,0 +1,14 @@
+{
+  "sid": "S1501",
+  "display_name": "Consumer price level, United States, 1774-2025",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful direct replication of book figure 15.1 (consumer price level, US, 1774-2011), MeasuringWorth USCPI primary segment extended to 2025 via FRED CPIAUCNS. Contiguous annual index, units clean (index 1982-84=100), reference values verified. KB title/figure/quotes confirmed verbatim.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1501-A": {"label": "MeasuringWorth USCPI, 1774-2011 (book period)", "units": "index_1982_84=100"},
+    "S1501-B": {"label": "FRED CPIAUCNS extension, 2012-2025", "units": "index_1982_84=100"}
+  }
+}

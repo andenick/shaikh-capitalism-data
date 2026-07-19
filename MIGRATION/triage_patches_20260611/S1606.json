@@ -1,0 +1,20 @@
+{
+  "sid": "S1606",
+  "display_name": "Household debt-service ratio, United States, 1980–2012",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "KB-verified: figure 16.10 caption and in-text passage (p.735) match; Federal Reserve FOR/DSR quarterly SA sourcing confirmed; verbatim quotes match.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1606-A": {
+      "label": "Financial obligations ratio",
+      "units": "ratio (quarterly, seasonally adjusted)"
+    },
+    "S1606-B": {
+      "label": "Debt-service ratio",
+      "units": "ratio (quarterly, seasonally adjusted)"
+    }
+  }
+}

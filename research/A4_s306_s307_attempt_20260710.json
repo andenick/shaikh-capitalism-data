@@ -1,0 +1,31 @@
+{
+  "record_type": "recovery_attempt_addendum",
+  "series": ["S306", "S307"],
+  "date": "2026-07-10",
+  "campaign_item": "post_v16 A4 (D4_s306_s307 = ATTEMPT, one bounded attempt)",
+  "underlying_source": "Allen & Bowley (1935), Family Expenditure, Table 1 (p.7); UK Board of Trade 1904 Working-Class Cost-of-Living Enquiry (Cd. 3864, 1908)",
+  "registry_source_url": "https://archive.org/details/familyexpenditur0000alle",
+  "outcome": "NOT_ACCESSIBLE — closed as data_unavailable-with-documented-attempt; no scan, no digitization, no synthetic fill",
+  "probes": [
+    {"target": "archive.org metadata API /metadata/familyexpenditur0000alle", "result": "{} empty object, zero files"},
+    {"target": "archive.org details page /details/familyexpenditur0000alle", "result": "HTTP 404 Not Found"},
+    {"target": "archive.org advancedsearch identifier:familyexpenditur0000alle", "result": "numFound=0 (not indexed; item removed/darkened)"},
+    {"target": "archive.org title:(family expenditure) AND creator:(Allen)", "result": "numFound=0 (no alternate public copy)"},
+    {"target": "archive.org Board of Trade cost-of-living 1907-1910", "result": "Cd. 3864 (1908) not present (only companion Belgian-towns report)"},
+    {"target": "HathiTrust catalog + brief-record API", "result": "HTTP 403 bot-blocked; not machine-confirmable"}
+  ],
+  "copyright_analysis": "Allen & Bowley (1935) monograph in UK copyright (life+70, last author R.G.D. Allen d.1983 -> PD end of 2053), consistent with IA item takedown. Underlying Cd. 3864 (1908) is Crown copyright, expired -> public domain, and is the copyright-clean unlock source.",
+  "digitization": "NOT REACHED — S703/S704 dual-extraction discipline requires a readable Table 1 page image; none obtainable. Zero values transcribed/estimated/interpolated.",
+  "status_decision": {"S306": "data_unavailable (unchanged)", "S307": "data_unavailable (unchanged)", "publish": false},
+  "unlock_paths": [
+    "PREFERRED: library/physical scan of public-domain Cd. 3864 (1908) blue book -> dual-extraction ingest to SalvagedInputs/book_data/AllenBowley1935_Table1.csv (schema income_shillings, food_share_pct [+ food_shillings for S307]); L01_S306/L01_S307 auto-ingest, no code change needed",
+    "Human-browser HathiTrust / Google Books check of Allen & Bowley (1935) Table 1 (p.7)"
+  ],
+  "artifacts_written": [
+    "Technical/series_registry.json (S306/S307 notes only; backup series_registry.json.A4bak_20260710)",
+    "Technical/docs/series/S306_DPR.md (§10)",
+    "Technical/docs/series/S307_DPR.md (§10)",
+    "Technical/post_v16/evidence/A4_s306_s307.md",
+    "Technical/post_v16/STATE.json (item A4)"
+  ]
+}

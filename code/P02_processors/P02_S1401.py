@@ -3,7 +3,7 @@
 Constructs:
   - Book period (1948-2011): subseries S1401-A (wagesh), S1401-B (ggdp)
     pass-through from Appendix 14.3.
-  - Extension (2012+): re-derive wagesh = A576RC1/GDP and ggdp = annual
+  - Extension (2012+): re-derive wagesh = W209RC1/GDP and ggdp = annual
     growth of GDP. Splice via overlap_anchor at 2011 (scale factor stored in
     diagnostics; for ratios this is essentially identity).
 """
@@ -22,7 +22,7 @@ from utils.paths import DATA_RAW, DATA_PROCESSED  # noqa: E402
 SERIES_ID = "S1401"
 IN_BOOK = DATA_RAW / f"{SERIES_ID}_APPENDIX14.parquet"
 IN_GDP  = DATA_RAW / f"{SERIES_ID}_FRED_GDP.parquet"
-IN_EC   = DATA_RAW / f"{SERIES_ID}_FRED_A576RC1.parquet"
+IN_EC   = DATA_RAW / f"{SERIES_ID}_FRED_W209RC1.parquet"
 OUT = DATA_PROCESSED / f"{SERIES_ID}.parquet"
 BOOK_END = 2011
 
@@ -71,7 +71,7 @@ def run() -> dict:
         ext_rows = _derive_extension(gdp, ec)
         ext_diag = {"extension_status": "ok", "years_appended": int(ext_rows["year"].nunique()) if not ext_rows.empty else 0,
                     "last_year": int(ext_rows["year"].max()) if not ext_rows.empty else BOOK_END,
-                    "re_derivation_formula": "wagesh = A576RC1/GDP; ggdp = GDP.pct_change()"}
+                    "re_derivation_formula": "wagesh = W209RC1/GDP; ggdp = GDP.pct_change()"}
 
     final = pd.concat([book, ext_rows], ignore_index=True).sort_values(
         ["subseries_id", "year"]

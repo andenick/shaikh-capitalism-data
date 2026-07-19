@@ -162,8 +162,8 @@ def _make_subseries(sid: str) -> dict:
         for s in slugs:
             out[f"{sid}-{s}"] = {
                 "name": f"{sid} industry {s} growth rate", "subsource_id": "BEA_GDP_BY_INDUSTRY",
-                "period": [1988, 2010], "native_units": "rate_decimal_log_diff",
-                "units": "rate_decimal_log_diff", "role": "book_period_primary",
+                "period": [1988, 2010], "native_units": "decimal_annual_growth_rate",
+                "units": "decimal_annual_growth_rate", "role": "book_period_primary",
                 "proxy": False, "proxy_justification": None,
             }
         return out
@@ -269,8 +269,11 @@ def _update_top(sid: str, entry: dict) -> dict:
         e["year_range_extension"] = [2012, 2025]
     elif sid in ("S1502", "S1503"):
         e["construction"] = "formula"
-        e["formula"] = "g_i(t) = ln(YR_i(t)) - ln(YR_i(t-1))"
-        e["units"] = "rate_decimal_log_diff"
+        # Simple percent change, NOT log-difference — verified against the book's
+        # precomputed Calculated Growth Rate columns (DURMFG 1988 = 0.063481 simple
+        # pct = book 0.06348; log-diff would be 0.061547). T1.7 units-label fix.
+        e["formula"] = "g_i(t) = (YR_i(t) - YR_i(t-1)) / YR_i(t-1)"
+        e["units"] = "decimal_annual_growth_rate"
         e["primary_source"] = "BEA_GDP_BY_INDUSTRY"
         e["year_range"] = [1988, 2010]
         e["year_range_book"] = [1988, 2010]

@@ -4,9 +4,12 @@ Book inputs:
   USLR['iblong']  -> S1002-A (composite long bond yield, percent)
   USLR['USWPI']   -> S1002-B (composite PPI, index 1947=100)
 
-Extension via FRED fredgraph.csv (no API key required):
-  AAA      -> S1002-C (2012+ corp yield)
-  PPIACO   -> S1002-D (2012+ PPI, reindexed to USWPI[2011] anchor)
+Extension via FRED ALFRED JSON (api_key required; SI-1 vintage pinning):
+  AAA      -> S1002-C (2012+ corp yield, pinned via VINTAGE_MANIFEST.json)
+  PPIACO   -> S1002-D (2012+ PPI, pinned via VINTAGE_MANIFEST.json)
+Native monthly frequency fetched via S00_apis.fred_observations(); annual
+average computed client-side. Vintage window resolved by realtime_window().
+(F-4D-03: fredgraph.csv transport claim removed after FU-3 ALFRED migration.)
 """
 from __future__ import annotations
 
@@ -19,6 +22,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils.paths import DATA_RAW, book_data_path  # noqa: E402
 from S00_setup import S00_apis  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 CHOPPED_XLSX = book_data_path("Appendix10_USLR.xlsx")
 OUT_A = DATA_RAW / "S1002_USLR_iblong.parquet"
@@ -49,8 +53,16 @@ def _save_book(df: pd.DataFrame, col: str, out: Path, subseries_id: str,
 
 def _save_fred_annual(series_id: str, out: Path, subseries_id: str,
                       subsource_id: str, units: str) -> tuple[int, bool, str | None]:
+    # SI-1: fetch the pinned ALFRED vintage at NATIVE (monthly) frequency, then
+    # aggregate to annual client-side (identical to the legacy fredgraph.csv
+    # path, which fredgraph cannot vintage-pin). AAA/PPIACO are never revised so
+    # the pinned vintage equals latest; the pin guards a future rebenchmark.
+    rs, re = realtime_window("S1002", series_id)
     try:
-        raw = S00_apis.fred_csv_observations(series_id)
+        raw = S00_apis.fred_observations(
+            series_id=series_id, frequency=None,
+            realtime_start=rs, realtime_end=re,
+        )
     except S00_apis.ApiUnavailable as exc:
         return 0, False, str(exc)
     raw = raw.copy()

@@ -27,6 +27,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils.paths import DATA_RAW  # noqa: E402
 from L01_loaders._ch2_helpers import read_chopped, slice_column, fred_annual  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 CHOPPED_PROD = "Appendix2_ManufacturingProductivityAndRealWages1889-2010.xlsx"
 CHOPPED_COMP = "Appendix2_ManufacturingProductivity.xlsx"
@@ -54,14 +55,16 @@ def run() -> dict:
     comp.to_parquet(OUT_COMP, index=False)
     # Extensions via FRED
     sources = ["BEA_LTEG_BLS_FLS_SPLICE", "MEASURINGWORTH_USWAGE_CPI"]
-    fred_prod_df, ok_p, err_p = fred_annual("OPHMFG", start="2005-01-01")
+    fred_prod_df, ok_p, err_p = fred_annual("OPHMFG", start="2005-01-01",
+                                            realtime=realtime_window("S207", "OPHMFG"))
     if ok_p and not fred_prod_df.empty:
         fred_prod_df["units"] = "index_2017=100"
         fred_prod_df["subseries_id"] = "S207-C"
         fred_prod_df["subsource_id"] = "FRED_OPHMFG"
         fred_prod_df.to_parquet(OUT_FRED_PROD, index=False)
         sources.append("FRED_OPHMFG")
-    fred_comp_df, ok_c, err_c = fred_annual("COMPRMS", start="2005-01-01")
+    fred_comp_df, ok_c, err_c = fred_annual("COMPRMS", start="2005-01-01",
+                                            realtime=realtime_window("S207", "COMPRMS"))
     if ok_c and not fred_comp_df.empty:
         fred_comp_df["units"] = "index_2017=100"
         fred_comp_df["subseries_id"] = "S207-D"

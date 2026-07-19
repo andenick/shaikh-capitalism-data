@@ -1,0 +1,24 @@
+{
+  "sid": "S1605",
+  "display_name": "Household debt-to-income ratio, United States, 1975–2011",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "KB-verified: figure 16.9 caption and in-text passage (p.735) match; No-Proxy household-only numerator (Z.1/Flow-of-Funds TD3 line 2) and DPI denominator confirmed; verbatim quotes match.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1605-A": {
+      "label": "Household debt",
+      "units": "billions of US dollars"
+    },
+    "S1605-B": {
+      "label": "Household disposable personal income",
+      "units": "billions of US dollars (SAAR)"
+    },
+    "S1605-C": {
+      "label": "Household debt-to-income ratio",
+      "units": "ratio"
+    }
+  }
+}

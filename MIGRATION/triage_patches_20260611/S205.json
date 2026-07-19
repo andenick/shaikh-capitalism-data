@@ -1,0 +1,16 @@
+{
+  "sid": "S205",
+  "display_name": "US Business Cycles, 1867-1902",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.2 figure; book_period_validated; real data present in chopped CSV; KB-verified.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S205-A": {
+      "label": "Cyclical component of business activity (Cleveland Trust / Ayres index)",
+      "units": "percent deviation from trend"
+    }
+  }
+}

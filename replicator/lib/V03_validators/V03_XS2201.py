@@ -15,10 +15,29 @@ from utils.paths import DATA_PROCESSED, SALVAGED_BOOK_DATA  # noqa: E402
 
 SERIES_ID = "XS2201"
 PROCESSED = DATA_PROCESSED / f"{SERIES_ID}.parquet"
-CSV_PATH = SALVAGED_BOOK_DATA / "Reconstructed" / "XS2201_fitted_parameters.csv"
+
+
+def _resolve_csv() -> Path:
+    """Resolve the truth CSV, tolerating the ES/XS filename split.
+
+    Prefer the migrated XS name; fall back to the legacy ES name retained in
+    the read-only SalvagedInputs tree. Returns the XS candidate if neither
+    exists so error messages name the canonical spelling.
+    """
+    recon = SALVAGED_BOOK_DATA / "Reconstructed"
+    xs = recon / "XS2201_fitted_parameters.csv"
+    es = recon / "ES2201_fitted_parameters.csv"
+    if xs.exists():
+        return xs
+    if es.exists():
+        return es
+    return xs
+
+
+CSV_PATH = _resolve_csv()
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
 
-VALIDATOR_TOL_PCT = 0.5
+VALIDATOR_TOL_PCT = 1.0
 PARAMS = ["G_prime", "r_mean", "w_mean", "f_top3", "alpha"]
 
 

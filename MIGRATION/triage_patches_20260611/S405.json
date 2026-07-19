@@ -1,0 +1,17 @@
+{
+  "sid": "S405",
+  "display_name": "Automotive marginal labour cost versus output (Inman simulation)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Renderable cost curve (Shaikh Fig 4.20): marginal labour cost per additional car vs annual vehicle production, digitized from Inman (1995) via Shaikh. 38 non-null points, single subseries. Renders as an x-y curve (x = annual vehicle output in thousands, 'year' index column, NOT calendar years). L01/P02 exist; replicate.py builds it (PASS). content_type derived. KB gap: ch04 not HDARP-extracted, figure context unverifiable, 'From the book' omitted.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S405-A": {"label": "Marginal labour cost per additional car", "units": "USD per additional car vs annual vehicle output (thousands)"}
+  },
+  "field_fixes": {
+    "year_column_is_index": "Chopped 'year' is a point index, not a calendar year; abscissa is annual vehicle output (thousands). Viz plots cost vs output."
+  },
+  "notes": "content_type derived; not extended. Marginal-cost counterpart of S404. Inman 1995 via Shaikh 2016 Fig 4.20."
+}

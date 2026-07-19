@@ -1,0 +1,14 @@
+{
+  "sid": "XS008",
+  "display_name": "GPIM variant: interwar adjustment multiplier",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Single dimensionless multiplier (IRS index / BEA historical-cost index, 1925 = 1.0) that drives the 1925-1947 interwar correction feeding XS004/XS007. Renders sensibly as one trace; intrinsically a historical-correction series with no extension. Appendix Table 6.8.II.5 column 'Adj. Ratio'. Units already correctly per-series (dimensionless), no fix needed.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "XS008-A": {"label": "Interwar adjustment ratio (IRS/BEA, 1925 = 1.0)", "units": "dimensionless_ratio_1925eq1"}
+  },
+  "field_fixes": {}
+}

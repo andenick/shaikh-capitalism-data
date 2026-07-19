@@ -1,0 +1,21 @@
+# anu-publish audit exclusions — RSCD v1.6 remediation (P3.1)
+#
+# Each file below is excluded from audit.py ONLY because its sole hard-severity
+# hit is the project's OWN, intentional publication-target URL
+# `github.com/andenick/shaikh-capitalism-data` (the audit flags the `andenick`
+# GitHub handle as a "workstation/GitHub username"). This URL is the deliberate
+# citation/clone target for the published dataset and is pre-adjudicated
+# ACCEPTABLE in finding F-8A-01 and in the project CLAUDE.md ("audit clean
+# except the project's own github.com/andenick repo URLs").
+#
+# Each file was independently verified (P3.1) to contain NO other hard-severity
+# leak (no D:/Arcanum path, no /Council/, no Druck/Robin tool name) after the
+# P3.1 leak fixes. Relative-workspace-path and jargon hits, if any, are WARN.
+#
+# P3.3 re-mirror MUST preserve this .publish_ignore.
+CHANGELOG.md
+README.md
+RELEASE_NOTES_v1.0.md
+replicator/README.md
+replicator/inputs_bundled/SalvagedInputs/methodology_decisions/CD2_series_registry_v2.0.json
+CITATION.cff

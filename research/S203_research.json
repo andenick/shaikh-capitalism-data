@@ -71,6 +71,12 @@
   ],
   "review_history": [
     {
+      "reviewer": "P4.3-docs-agent",
+      "date": "2026-07-10",
+      "status": "draft",
+      "notes": "ADDENDUM (F-2A-03): Source-workbook corruption note. The L01 loader reads the MeasuringWorth USGDP series from a local salvaged workbook. The 1929–1934 rows in that workbook are corrupted (values are truncated / wrong base). The canonical fix is a re-pull from MeasuringWorth (https://www.measuringworth.com/datasets/usgdp/) with re-basing to the 2005 base year for the book period. This is a v1.x backlog item (per CLAUDE.md 'S203 1929–34 source-workbook corruption'). No value in the current chopped file should be trusted for 1929–1934 until the re-pull is done and verified."
+    },
+    {
       "reviewer": "opus-subagent-wave-a-ch2",
       "date": "2026-05-18",
       "status": "draft",

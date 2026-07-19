@@ -1,10 +1,10 @@
 # S305 -- Extension Provenance Record
 
 **Series**: S305 -- Engel Curve of Necessaries, Case II
-**Phase**: 6 (Extension)
+**Record type**: Extension Provenance Record
 **Content type**: `theoretical`
 **Authored**: 2026-05-18
-**Related**: `S305_DPR.md`, `Technical/research/S305_research.json`
+**Related**: `S305_DPR.md`, research dossier
 
 ---
 
@@ -14,7 +14,7 @@
 
 ## 2. Method
 
-**Extension method**: `none`. Re-evaluated each run.
+**Extension method**: `none`. Re-evaluated each time the data-loading step runs.
 
 ## 3. Worked example
 
@@ -26,16 +26,15 @@ No proxy substitution. See `S305_DPR.md` for source details.
 
 ## 5. No-Synthetic disclosure
 
-No synthetic gap-filling in the prohibited sense. The DPR documents any
-analytic regeneration or library-data dependence explicitly.
+No synthetic gap-filling in the prohibited sense. The companion Data Provenance Record (DPR) documents any analytic regeneration or library-data dependence explicitly.
 
 ## 6. Failure-mode table
 
 Calibration choice for c(y); bound violation; non-monotone allowed (curve has rise then plateau).
 
-## 7. CD2 divergence pre-disclosure
+## 7. Predecessor divergence pre-disclosure
 
-No CD2 predecessor.
+Predecessor series: none (first constructed in this dataset).
 
 ## 8. Why no API extension applies
 

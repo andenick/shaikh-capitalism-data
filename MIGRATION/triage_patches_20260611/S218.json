@@ -1,0 +1,25 @@
+{
+  "sid": "S218",
+  "display_name": "GDP per Capita of the Richest and Poorest Four Countries",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Figs.2.16-2.17; real data present. Units split per-subseries: A/B are GK-dollar levels, C is a dimensionless ratio (registry mixed_units string resolved at subseries level).",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S218-A": {
+      "label": "Richest four countries, average GDP per capita",
+      "units": "1990 international Geary-Khamis dollars per capita"
+    },
+    "S218-B": {
+      "label": "Poorest four countries, average GDP per capita",
+      "units": "1990 international Geary-Khamis dollars per capita"
+    },
+    "S218-C": {
+      "label": "Ratio of richest four to poorest four",
+      "units": "ratio"
+    }
+  },
+  "units": "mixed-by-subseries (levels in GK dollars for A/B; dimensionless ratio for C)"
+}

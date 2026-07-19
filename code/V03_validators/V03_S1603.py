@@ -12,14 +12,21 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils import paths  # noqa: E402
 from utils.paths import DATA_PROCESSED  # noqa: E402
-from L01_loaders._ch16_helpers import read_appendix16_rxrrulcoecd  # noqa: E402
+from L01_loaders._ch16_helpers import (  # noqa: E402
+    read_appendix16_rxrrulcoecd,
+    read_appendix16_profit_rates,
+)
 
 PROCESSED = DATA_PROCESSED / "S1603.parquet"
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
 VALIDATOR_TOL_PCT = 1.0
 BOOK_OVERLAP = (1960, 2012)
 
-SUBS = [("S1603-A", "US"), ("S1603-B", "OECD"), ("S1603-C", "EU")]
+# P2.6 / F-P2.1-01: S1603-A is the US 3-month T-Bill (ProfitRates appendix,
+# book Fig 16.6/16.7), NOT the RXRRULCOECD 'US' interbank column. Compare each
+# subseries against the appendix column its loader actually reads.
+US_TBILL_COL = "Interest Rate (3-mo. T-Bill)"
+SUBS = [("S1603-A", "US_TBILL"), ("S1603-B", "OECD"), ("S1603-C", "EU")]
 
 
 def _update_report(row: dict) -> None:
@@ -36,6 +43,12 @@ def run() -> dict:
     actual = pd.read_parquet(PROCESSED)
     truth = read_appendix16_rxrrulcoecd()
     truth = truth[(truth["year"] >= BOOK_OVERLAP[0]) & (truth["year"] <= BOOK_OVERLAP[1])]
+    # US truth comes from the ProfitRates 3-mo T-Bill column (F-P2.1-01).
+    ptr = read_appendix16_profit_rates()
+    ptr = ptr[(ptr["year"] >= BOOK_OVERLAP[0]) & (ptr["year"] <= BOOK_OVERLAP[1])]
+    truth = truth.merge(
+        ptr[["year", US_TBILL_COL]].rename(columns={US_TBILL_COL: "US_TBILL"}),
+        on="year", how="outer")
     per_sub: dict[str, dict] = {}
     div_total: list[int] = []
     mae_list, max_pct_list = [], []

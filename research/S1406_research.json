@@ -63,7 +63,7 @@
       "subseries_label": "Full-time equivalent employees (FEE)",
       "source": "BEA NIPA Tables 6.5A-D",
       "role": "Denominator of productivity",
-      "fred_proxy": "B4701C0A222NBEA (full-time equivalent employees, all industries)"
+      "fred_proxy": "A4301C0A173NBEA (Full-time equivalent employees, total, NIPA T6.5A-D, thousands). CORRECTION 2026-07-01 (SWEEP-ch1417-01): this previously read B4701C0A222NBEA, which is 'Hours worked by full-time and part-time employees' (NIPA T6.9, hours) -- NOT an FTE employee count; that wrong-concept id must NOT be reintroduced on doc/loader regeneration."
     },
     {
       "subseries_label": "Productivity growth (GPRODVTY)",
@@ -84,11 +84,11 @@
     },
     {
       "subseries_label": "Full-time equivalent employees",
-      "source": "FRED (BEA NIPA Table 6.5)",
-      "url": "https://fred.stlouisfed.org/series/B4701C0A222NBEA",
-      "units": "Thousands of jobs, annual",
+      "source": "FRED (BEA NIPA Table 6.5A-D)",
+      "url": "https://fred.stlouisfed.org/series/A4301C0A173NBEA",
+      "units": "Thousands of persons (full-time equivalent employees), annual",
       "splice_strategy": "overlap_anchor",
-      "concerns": ["Verify that the FRED FEE series matches NIPA Tables 6.5A-D coverage (domestic industries)"]
+      "concerns": ["Use A4301C0A173NBEA (FTE employees). Do NOT use B4701C0A222NBEA, which is HOURS WORKED (NIPA T6.9), not an FTE employee count -- SWEEP-ch1417-01, remediated 2026-07-01."]
     }
   ],
   "methodology_notes": [

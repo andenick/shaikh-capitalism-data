@@ -1,17 +1,17 @@
 # S303 -- Engel Curve of Necessaries, Case I
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+**Record type**: Data Provenance Record
 **Series ID**: S303
-**Status**: book_period_validated
+**Status**: theoretical_validated
 **Content type**: `theoretical`
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave-a-ch3 (Phase 5-8 fanout)
+**Prepared by**: RSCD data-construction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S303_research.json`
-- Adequacy: `Technical/docs/chapters/CH3_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S303_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S303`
+- Series research notes: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S303`
 
 ---
 
@@ -23,11 +23,16 @@
 
 Figure 3.5 is the visual payoff of the Case I analytic family: the Engel curve for necessaries that exhibits saturation, the empirically-observed pattern Allen & Bowley documented in 1904 (S307/Fig 3.9). It is the integrated counterpart of S301's marginal-share curve.
 
+## From the Book
+
+> people buy proportionately less of necessary goods, and hence proportionately more of other (luxury) goods, as their income increases [...] This is known as Engel's Law of consumer demand.
+> -- Shaikh (2016), Chapter 3, p. 92 
+
 ## 3. Sources
 
 | Subseries | Coverage | Source | Native units | Retrieval |
 |---|---|---|---|---|
-| **S303-A** | n/a (theoretical) | Shaikh 2016 eq (3.5), p. 91; Figure 3.5 axis bounds p. 94 | model units of expenditure | analytic regeneration from equation |
+| **S303-A** (the dataset's single data column) | n/a (theoretical) | Shaikh 2016 eq (3.5), p. 91; Figure 3.5 axis bounds p. 94 | model units of expenditure | analytic regeneration from equation |
 
 ## 4. Construction
 
@@ -54,10 +59,11 @@ Figure 3.5 is the visual payoff of the Case I analytic family: the Engel curve f
 
 ## 8. Cross-references
 
-- **CD legacy ID**: none
+- **Predecessor series**: none (first constructed in this dataset).
 - **Book reference**: Shaikh (2016), Ch. 3, Fig3.5 on p. 94
-- **Knowledge Base**: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json` -> Fig3.5
+- **Knowledge Base**: figure-linkage reference -> Fig3.5
+- **Source-book text**: Shaikh (2016) Chapter 3, extracted in the project knowledge base (ch03_micro_foundations.md).
 
 ## 9. Validation expectation
 
-- **Tolerance**: PASS_THEORETICAL mode. Checks: monotone rising (saturating shape is concave), all values within [0.0, 40.0].
+- **Tolerance**: the validator's theoretical-curve mode (checks the curve's shape and bounds rather than matching tabulated values). Checks: monotone rising (saturating shape is concave), all values within [0.0, 40.0].

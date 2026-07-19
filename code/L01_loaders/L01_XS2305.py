@@ -12,7 +12,20 @@ from utils.paths import DATA_RAW, SALVAGED_BOOK_DATA  # noqa: E402
 
 SERIES_ID = "XS2305"
 SOURCE_ID = "WEBER_SHAIKH_2020_FIG5_LIT_COMPILATION"
-CSV_PATH = SALVAGED_BOOK_DATA / "Reconstructed" / f"{SERIES_ID}_literature_compilation.csv"
+def _resolve_csv() -> Path:
+    """Resolve the reconstructed CSV, tolerating the ES/XS filename split
+    (prefer XS, fall back to the legacy ES name in read-only SalvagedInputs)."""
+    recon = SALVAGED_BOOK_DATA / "Reconstructed"
+    xs = recon / f"{SERIES_ID}_literature_compilation.csv"
+    es = recon / f"ES{SERIES_ID[2:]}_literature_compilation.csv"
+    if xs.exists():
+        return xs
+    if es.exists():
+        return es
+    return xs
+
+
+CSV_PATH = _resolve_csv()
 OUT = DATA_RAW / f"{SERIES_ID}_LIT_COMPILATION.parquet"
 
 

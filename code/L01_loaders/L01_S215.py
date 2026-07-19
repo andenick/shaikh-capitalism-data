@@ -17,9 +17,29 @@ from utils.paths import DATA_RAW, book_data_path  # noqa: E402
 
 CHOPPED = book_data_path("Appendix7_iropdataUSind.xlsx")
 OUT = DATA_RAW / "S215_APP7_INDUSTRY_IROP_AVG.parquet"
-MFG_INDUSTRIES = ["Chemicals", "Electr.Equ.", "Fab.Metal.", "Food", "Machinery",
-                  "Mtr.Veh.", "Paper", "Petr.&Coal", "Plastic.", "Prim.Met.",
-                  "Print.&Pub.", "Textile.", "Wood"]
+
+# Explicit normalization: intended manufacturing industry -> actual Appendix-7 XLSX
+# header. The prior hard-coded literal list silently matched only 6 of the intended
+# industries because 6 real manufacturing columns are spelled differently in the
+# workbook (e.g. "Machinery" vs "Mach.", "Petr.&Coal" vs "Petroleum"), shipping a
+# 6-of-12 subset as the "manufacturing incremental average" (F-4C-02 CRITICAL,
+# fixed 2026-07-10). Motor Vehicles ("Mtr.Veh.") is GENUINELY ABSENT from this panel
+# (VERIFY_4C), so the recoverable manufacturing set is 12, not the 13 the old list named.
+MFG_INDUSTRY_MAP = {
+    "Chemicals": "Chemicals",
+    "Electrical Equipment": "Electr.Equ.",
+    "Fabricated Metals": "Fab.Metal.",
+    "Food": "Food",
+    "Machinery": "Mach.",
+    "Paper": "Paper",
+    "Petroleum & Coal": "Petroleum",
+    "Plastics": "Plastic",
+    "Primary Metals": "Prim.Metal.",
+    "Printing & Publishing": "Printing",
+    "Textiles": "Text.Mills",
+    "Wood": "Wood",
+}
+N_EXPECTED_MFG = 12
 
 
 def run() -> dict:
@@ -30,10 +50,16 @@ def run() -> dict:
     df = df.dropna(subset=["Year"]).copy()
     df["Year"] = pd.to_numeric(df["Year"], errors="coerce")
     df = df.dropna(subset=["Year"]).astype({"Year": int})
-    have = [c for c in MFG_INDUSTRIES if c in df.columns]
-    if not have:
-        return {"status": "FAIL", "error": "no mfg industry columns found"}
-    df["mfg_avg"] = df[have].mean(axis=1)
+    # Resolve every intended industry to an actual header. ANY unmatched column is a
+    # hard failure (header drift) — never silently drop it (invert of the old dead
+    # `if not have:` guard, which fired only when ALL matched).
+    matched = [hdr for hdr in MFG_INDUSTRY_MAP.values() if hdr in df.columns]
+    missing = {name: hdr for name, hdr in MFG_INDUSTRY_MAP.items() if hdr not in df.columns}
+    assert len(matched) == N_EXPECTED_MFG, (
+        f"expected {N_EXPECTED_MFG} manufacturing industries, matched {len(matched)}: "
+        f"{matched}; MISSING header(s) -> {missing} (column-name drift in "
+        f"{CHOPPED.name}; refusing to ship a partial average)")
+    df["mfg_avg"] = df[matched].mean(axis=1)
     out = df[["Year", "mfg_avg"]].rename(columns={"Year": "year", "mfg_avg": "value"}).copy()
     out["units"] = "rate_decimal"
     out["subseries_id"] = "S215-EXT"

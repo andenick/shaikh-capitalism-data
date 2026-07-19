@@ -23,6 +23,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from utils.paths import DATA_RAW  # noqa: E402
 from L01_loaders._ch14_helpers import read_appendix14, fred_annual  # noqa: E402
 from S00_setup import S00_apis  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 SERIES_ID = "S1402"
 OUT_BOOK = DATA_RAW / f"{SERIES_ID}_APPENDIX14.parquet"
@@ -53,8 +54,8 @@ def _save_book(df: pd.DataFrame) -> int:
 
 def _save_fred_pair() -> tuple[int, int, bool, str | None]:
     try:
-        ur = fred_annual("UNRATE")        # percent, SA
-        ud = fred_annual("UEMPMEAN")      # weeks, SA
+        ur = fred_annual("UNRATE", realtime=realtime_window(SERIES_ID, "UNRATE"))        # percent, SA
+        ud = fred_annual("UEMPMEAN", realtime=realtime_window(SERIES_ID, "UEMPMEAN"))      # weeks, SA
     except S00_apis.ApiUnavailable as exc:
         return 0, 0, False, str(exc)
     ur = ur.assign(units="percent",

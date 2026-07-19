@@ -1,7 +1,7 @@
 # S504 — Extension Provenance Record
 
 **Series**: S504 — US WPI in Gold and US Gold Price
-**Phase**: 6 · **Construction**: `formula` · **Extension method**: re-compute (mandatory)
+
 **Authored**: 2026-05-18
 
 ---

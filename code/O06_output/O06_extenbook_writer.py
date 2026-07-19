@@ -175,13 +175,29 @@ def _write_provenance_sheet(wb: Workbook, sid: str) -> None:
     ws = wb.create_sheet("Provenance")
     ws["A1"] = f"{sid} — Provenance"
     ws["A1"].font = TITLE_FONT
-    led = json.loads(LEDGER.read_text(encoding="utf-8"))
-    entry = led.get("series", {}).get(sid, {})
+    reg = json.loads(REGISTRY.read_text(encoding="utf-8"))
+    entry = reg["series"].get(sid, {})
+    prov_fields = [
+        ("primary_source", entry.get("primary_source")),
+        ("construction", entry.get("construction")),
+        ("status", entry.get("status")),
+        ("validation_class", entry.get("validation_class")),
+        ("triage", entry.get("triage")),
+        ("dpr", entry.get("dpr")),
+        ("epr", entry.get("epr")),
+        ("notes", entry.get("notes")),
+        ("content_type", entry.get("content_type")),
+        ("units", entry.get("units")),
+        ("proxy", entry.get("proxy")),
+        ("publish", entry.get("publish")),
+        ("chapter", entry.get("chapter")),
+    ]
     ws.append([])
     ws.append(["field", "value"])
     _style_header(ws, row=ws.max_row)
-    for k, v in entry.items():
-        ws.append([k, json.dumps(v, default=str) if isinstance(v, (list, dict)) else v])
+    for k, v in prov_fields:
+        if v is not None and v != "":
+            ws.append([k, json.dumps(v, default=str) if isinstance(v, (list, dict, bool)) or v == 0 else str(v)])
     _autosize(ws)
 
 

@@ -11,9 +11,9 @@ loaded in this session)
 **Score: 8 / 10**
 
 The Phase 0.C knowledge-base inventory is recorded in
-`docs/chapters/KB_COVERAGE_INVENTORY.md`. CD's HDARP v4.2 (FIGURE_MASTER_v4
-with 205 figures + HDARP_SERIES_LINKAGE per-chapter JSONs) was deemed
-sufficient as the working KB for v1.0; no top-up HDARP was run for the v1.0
+`docs/chapters/KB_COVERAGE_INVENTORY.md`. CD's agent-assisted extraction (v4.2) (FIGURE_MASTER_v4
+with 205 figures + `HDARP_SERIES_LINKAGE` per-chapter JSONs) was deemed
+sufficient as the working KB for v1.0; no top-up extraction was run for the v1.0
 build. Per-chapter empirical coverage was inventoried (Ch1 0, Ch2 19, Ch3 9,
 Ch4 8, Ch5 4, Ch6 7, Ch7 8, Ch8 6, Ch9 17, Ch10 10, Ch11 4, Ch12 0, Ch13 1,
 Ch14 8, Ch15 9, Ch16 6, Ch17 3 = 119 empirical figures resolving to 98
@@ -21,7 +21,7 @@ series candidates after grouping; subsequently expanded to 118).
 
 **Deduction**: The KB junction (`Inputs/KB/`) was blocked by a write-deny
 rule; code references the KB via abstracted paths in `utils/paths.py`,
-which is correct but means a v1.1 task is to re-link the full HDARP corpus.
+which is correct but means a v1.1 task is to re-link the full agent-assisted-extraction corpus.
 
 ## D2 — Series taxonomy correctness (Phase 2 + Phase 3 reclassifications)
 **Score: 9 / 10**

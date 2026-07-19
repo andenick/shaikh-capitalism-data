@@ -19,6 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from utils.paths import DATA_RAW  # noqa: E402
 from L01_loaders._ch9_helpers import (  # noqa: E402
     APPENDIX9_BENCHMARKS, read_benchmark, normalize_industry_frame,
+    assert_benchmark_vintage,
 )
 
 SERIES_ID = "S901"
@@ -40,6 +41,7 @@ def run() -> dict:
             pass
         norm = normalize_industry_frame(df)
         subsource = f"SHAIKH_APPENDIX_9_{label}"
+        vintage = assert_benchmark_vintage(year, label)  # CH9-F4 fix (Decision 0014)
         for _, r in norm.iterrows():
             ind = int(r["Index"])
             rows.append({
@@ -50,6 +52,7 @@ def run() -> dict:
                 "subseries_id": f"S901-A_{label}",
                 "subsource_id": subsource,
                 "model": model,
+                "classification_vintage": vintage,
             })
             rows.append({
                 "year": int(year), "industry_index": ind,
@@ -59,6 +62,7 @@ def run() -> dict:
                 "subseries_id": f"S901-B_{label}",
                 "subsource_id": subsource,
                 "model": model,
+                "classification_vintage": vintage,
             })
         n_loaded[label] = int(len(df))
 

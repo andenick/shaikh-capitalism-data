@@ -1,17 +1,17 @@
 # S401 — Average and Marginal Costs with Wage Paid per Worker (Fig 4.16)
 
-**Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+**Data Provenance Record (DPR)** — the internal, full-provenance companion to the public Explainer.
+**Record type**: Data Provenance Record (source-and-construction detail)
 **Series ID**: S401
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch4-fanout
+**Prepared by**: RSCD data-construction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S401_research.json`
-- Adequacy: `Technical/docs/chapters/CH4_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S401_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S401`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `SHAIKH_APPENDIX_4_2`
+- Series research notes: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S401`
+- Subsource registry: subsource registry → `SHAIKH_APPENDIX_4_2`
 
 ---
 
@@ -31,13 +31,13 @@ S402 is the per-hour-wage twin; S403 derives the implied profit profile from S40
 
 | Subseries | Coverage | Publisher / Series ID | Native units | Retrieval |
 |---|---|---|---|---|
-| **S401-A** | XR rows 0–20 (21 points, indexed by row, not year) | Shaikh, *Capitalism* (2016), Appendix 4.2 Table 4.2.4, per-worker-wage columns | money units per unit of output | Reconstructed CSV `SalvagedInputs/book_data/Reconstructed/Appendix_4_2_Table4.csv`, columns `XR`, `afc`, `ulc_prime`, `avc_prime`, `ac_prime`, `mc_prime` |
+| **S401-A** (the dataset's data column set) | output rows 0–20 (21 points, indexed by row, not year) | Shaikh, *Capitalism* (2016), Appendix 4.2 Table 4.2.4, per-worker-wage columns | money units per unit of output | Reconstructed CSV reconstructed book source data, columns `XR`, `afc`, `ulc_prime`, `avc_prime`, `ac_prime`, `mc_prime` |
 
-The reconstructed CSV resolves Phase 5 blocker CH4-B1 (verbatim transcription from book PDF pp. 772–781, validated to <=0.02 rounding noise across all derived columns — see `Reconstructed/Appendix_4_2_README.md`).
+The reconstructed table was transcribed verbatim from the source book (pp. 772–781) and matches the printed values to within 0.02 rounding noise across all derived columns (see `Reconstructed/Appendix_4_2_README.md`).
 
 ## 4. Construction
 
-S401 is `derived` (construction `formula`). Because the tabulated Appendix 4.2 values back-solve cleanly to the published formulas, the loader consumes the tabulated CSV directly and the processor writes the cost columns as-is (no re-derivation required for the book-period reproduction). The formula is documented here for traceability.
+S401 is a `derived` series (built by formula). Because the tabulated Appendix 4.2 values back-solve cleanly to the published formulas, the data-loading step reads the tabulated table directly and the processing step writes the cost columns as-is (no re-derivation is required for the book-period reproduction). The formula is documented here for traceability.
 
 ```
 Per-worker wage:
@@ -53,11 +53,11 @@ Parameters (book p. 781):
   MK = 14, N ∈ {1, 2, 3}, i = 1 (for shifts 1–2), shift 3 truncated at h = 4.
 ```
 
-S401 emits one long-form row per XR observation, with `subseries_id` carrying the cost-component label.
+The processing step emits one long-form row per output (XR) observation, with the subseries label carrying the cost-component name.
 
 ## 5. Year coverage
 
-- **Book period**: not applicable (derived numerical illustration; the "axis" is cumulative output `XR`, not calendar year). Year-range fields in the registry are `[null, null]`; the loader stamps a synthetic ordinal index for downstream tooling.
+- **Book period**: not applicable (derived numerical illustration; the "axis" is cumulative output `XR`, not calendar year). Year-range fields in the registry are `[null, null]`; the data-loading step stamps a synthetic ordinal index for downstream tooling.
 - **Extension period**: not applicable — see `S401_EPR.md`.
 
 ## 6. Units
@@ -68,20 +68,19 @@ S401 emits one long-form row per XR observation, with `subseries_id` carrying th
 
 ## 7. Caveats
 
-1. **Not a time series.** The registry's `year_range` is `[null, null]`. We assign a synthetic ordinal `year = row_index` so the generic O06 chopped writer can persist the table. Downstream Phase 9 viz must plot against `XR` (not `year`).
-2. **Appendix 4.2 published parameters are illustrative, not exactly reproducible.** Eq. (4.2.1) with the printed `a1=2, a2=1.2, a3=0.05` gives `xr(h=1)=3.15` whereas Table 4.2.1 prints `xr(h=1)=3.55` (+0.40 offset). Re-running the formula with back-solved `a1=2.40` recovers the tabulated values exactly. We do not re-derive in P02 — we consume the tabulated CSV directly. See `Reconstructed/Appendix_4_2_README.md` for full discussion.
-3. **No CD/CD2 predecessor.** Fully fresh chapter (`CD2_to_RSCD_crosswalk.csv` has no Ch4 entries).
+1. **Not a time series.** The registry's `year_range` is `[null, null]`. We assign a synthetic ordinal `year = row_index` so the standard machine-readable (chopped) writer can persist the table. Downstream visualization must plot against output `XR` (not `year`).
+2. **Appendix 4.2 published parameters are illustrative, not exactly reproducible.** Eq. (4.2.1) with the printed `a1=2, a2=1.2, a3=0.05` gives `xr(h=1)=3.15` whereas Table 4.2.1 prints `xr(h=1)=3.55` (+0.40 offset). Re-running the formula with back-solved `a1=2.40` recovers the tabulated values exactly. We do not re-derive in the processing step — we read the tabulated table directly. See `Reconstructed/Appendix_4_2_README.md` for full discussion.
+3. **No predecessor series.** This is a fully fresh chapter (no earlier-reconstruction entries for Chapter 4).
 4. **Empty row at XR=0** is preserved with `afc=70` (fixed cost alone) and all other cost columns null — matches book's shaded entry on p. 779.
 
 ## 8. Cross-references
 
-- **CD legacy ID**: none
-- **CD2 legacy ID**: none
+- **Predecessor series**: none (first constructed in this dataset)
 - **Book reference**: Shaikh (2016), Ch. 4, p. 155 (Fig 4.16); Appendix 4.2 pp. 772–781
 - **Cross-series**: S402 (per-hour twin), S403 (profit derivation from S401 + S402)
 
 ## 9. Validation expectation
 
-- **Tolerance**: ±0.5% per cost-component row (chapter playbook standard for `derived`).
-- **Expected MAE**: 0 — we round-trip the same CSV the validator reads.
-- The V03 validator compares the processed parquet against `Appendix_4_2_Table4.csv` directly; any deviation > 0.5% indicates pipeline corruption.
+- **Tolerance**: ±0.5% per cost-component row (the standard for a derived series).
+- **Expected mean absolute error (MAE)**: 0 — the check round-trips the same table it reads.
+- The validation step compares the processed data against `Appendix_4_2_Table4.csv` directly; any deviation greater than 0.5% indicates a pipeline error.

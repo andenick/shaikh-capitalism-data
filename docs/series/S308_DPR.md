@@ -1,17 +1,17 @@
 # S308 -- Necessary Good (x1) Demand Curves, Four Different Micro Foundations
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+**Record type**: Data Provenance Record
 **Series ID**: S308
-**Status**: book_period_validated
+**Status**: theoretical_validated
 **Content type**: `theoretical`
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave-a-ch3 (Phase 5-8 fanout)
+**Prepared by**: RSCD data-construction pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S308_research.json`
-- Adequacy: `Technical/docs/chapters/CH3_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S308_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S308`
+- Series research notes: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S308`
 
 ---
 
@@ -23,11 +23,16 @@
 
 Figure 3.10 and Table 3.1 are the capstone of Chapter 3 — the empirical demonstration of Shaikh's central methodological claim. Four radically different micro foundations produce essentially the same downward-sloping aggregate demand curve. Per Shaikh: 'the very different micro foundations of the various models have essentially no effect on the aggregate results' (p. 99).
 
+## From the Book
+
+> It is apparent from equations (3.5) and (3.6) that for each good the quantity demanded responds negatively to a rise in its price at any given income. This negative response is the bedrock of microeconomics (Becker 1962, 4). Yet we will see that it requires no specific model of consumer behavior.
+> -- Shaikh (2016), Chapter 3, p. 91 
+
 ## 3. Sources
 
 | Subseries | Coverage | Source | Native units | Retrieval |
 |---|---|---|---|---|
-| **S308-A** | n/a | Shaikh 2016 eq (3.5) with y=200, c=0.5, x1min=10, p2=2; p1 sweep 1.0->1.5 step 0.01 | aggregate x1 (model units) | analytic regeneration |
+| **S308-A** (one of the dataset's data columns) | n/a | Shaikh 2016 eq (3.5) with y=200, c=0.5, x1min=10, p2=2; p1 sweep 1.0->1.5 step 0.01 | aggregate x1 (model units) | analytic regeneration |
 | **S308-B** | n/a | NetLogo Neoclassical Homogeneous, same parameters | aggregate x1 | tabulated from printed Fig 3.10 curve |
 | **S308-C** | n/a | NetLogo Neoclassical Heterogeneous | aggregate x1 | tabulated from printed Fig 3.10 curve |
 | **S308-D** | n/a | NetLogo Whimsical (Becker 1962) | aggregate x1 | tabulated from printed Fig 3.10 curve |
@@ -59,10 +64,11 @@ Figure 3.10 and Table 3.1 are the capstone of Chapter 3 — the empirical demons
 
 ## 8. Cross-references
 
-- **CD legacy ID**: none
+- **Predecessor series**: none (first constructed in this dataset).
 - **Book reference**: Shaikh (2016), Ch. 3, Fig3.10 on p. 99
-- **Knowledge Base**: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json` -> Fig3.10
+- **Knowledge Base**: figure-linkage reference -> Fig3.10
+- **Source-book text**: Shaikh (2016) Chapter 3, extracted in the project knowledge base (ch03_micro_foundations.md).
 
 ## 9. Validation expectation
 
-- **Tolerance**: PASS_THEORETICAL. Per-subseries shape check (monotone declining), values within [70, 110]. Also checks that the four NetLogo curves are within +/-2 percent of the theoretical curve at every price (Shaikh's stated finding).
+- **Tolerance**: the validator's theoretical-curve mode (checks the curve's shape and bounds rather than matching tabulated values). Per-subseries shape check (monotone declining), values within [70, 110]. Also checks that the four NetLogo curves are within +/-2 percent of the theoretical curve at every price (Shaikh's stated finding).

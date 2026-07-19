@@ -1,0 +1,18 @@
+{
+  "sid": "S1508",
+  "display_name": "World inflation versus growth of private and public credit, 1970-1988 (Harberger)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful direct replication of book figure 15.12 - Harberger's 29-country cross-section of inflation versus domestic-credit growth. Cross-sectional (country panel), so the single year label (1988, the period end) is correct and the COVERAGE_START prescreen flag is an index-axis false positive (these are not a time series). Anchor verified: country H01 = Argentina, pi 2.546 / lambda 3.123, matching the book's '255% inflation, 312% credit growth' for Argentina 1982-1984.",
+    "date": "2026-06-11"
+  },
+  "corrections": [
+    "UNITS FIX: registry declared units 'rate_percent' but stored values are decimal fractions (1.0 = 100%). Confirmed against the book: Argentina value 3.123 means 312% credit growth, not 3.12%. Both subseries are rate_decimal."
+  ],
+  "field_fixes": {"units": "per_subseries"},
+  "subseries": {
+    "S1508-lambda": {"label": "Growth of total domestic credit (Harberger's lambda)", "units": "rate_decimal"},
+    "S1508-pi": {"label": "CPI inflation rate", "units": "rate_decimal"}
+  }
+}

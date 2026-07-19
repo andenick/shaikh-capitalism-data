@@ -1,0 +1,18 @@
+{
+  "sid": "S1505",
+  "display_name": "Classical and conventional Phillips-type curves, US, 1948-2010",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful composite replication of book figure 15.7. Provides the variables for both the classical curve (inflation vs unutilized growth capacity 1-sigma') and the conventional curve (inflation vs unemployment). Source map (BEA NIPA T1.1.4, T5.3.5, T1.16; BLS unemployment; Handfas 2012 sigma construction) verified against Appendix 15.1 p.896. Per-subseries units split because sigma-prime is a normalized z-score, not a rate.",
+    "date": "2026-06-11"
+  },
+  "field_fixes": {"units": "per_subseries"},
+  "subseries": {
+    "S1505-pi": {"label": "Inflation rate (GDP-deflator change)", "units": "rate_decimal"},
+    "S1505-sigma": {"label": "Growth-utilization rate (investment/profit)", "units": "rate_decimal"},
+    "S1505-sigma-prime": {"label": "Normalized growth-utilization rate", "units": "normalized_zscore"},
+    "S1505-uL": {"label": "Civilian unemployment rate", "units": "rate_decimal"},
+    "S1505-uLintensity": {"label": "Unemployment intensity (rate x duration index)", "units": "rate_decimal"}
+  }
+}

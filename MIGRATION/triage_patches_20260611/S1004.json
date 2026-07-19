@@ -1,0 +1,37 @@
+{
+  "sid": "S1004",
+  "display_name": "Real long bond yield and HP-filtered trend, 1857-2025",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Formula series reconstructing Figure 10.8 (real interest rate, HP-filtered); HP trend recomputed end-to-end. Fixed figure reference (was 10.2/10.4, correct is 10.8). lambda documented (book HP3 column matches lambda=100).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1004-A": {
+      "label": "Real long bond yield (nominal yield minus PPI inflation)",
+      "units": "rate (decimal fraction)"
+    },
+    "S1004-B": {
+      "label": "Real long bond yield, HP-filtered trend, book replication (lambda=100)",
+      "units": "rate (decimal fraction)"
+    },
+    "S1004-C": {
+      "label": "Real long bond yield, HP-filtered trend, sensitivity (lambda=6.25)",
+      "units": "rate (decimal fraction)"
+    },
+    "S1004-D": {
+      "label": "Real long bond yield, extension period",
+      "units": "rate (decimal fraction)"
+    },
+    "S1004-D-HP": {
+      "label": "Real long bond yield HP-filtered trend, full extended panel",
+      "units": "rate (decimal fraction)"
+    }
+  },
+  "field_fixes": {
+    "figures": [
+      "Fig10.8"
+    ]
+  }
+}

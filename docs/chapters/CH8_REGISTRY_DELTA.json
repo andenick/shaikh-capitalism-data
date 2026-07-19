@@ -108,7 +108,7 @@
           "Treated as time_series despite unequal time-bin widths; loader preserves bin start/end as metadata"
         ],
         "issues_outstanding": [
-          "IRS Corp Source Book extension URL (404) needs substitute to https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report (200), same as Ch6 AS009.",
+          "IRS Corp Source Book extension URL (404) needs substitute to https://www.irs.gov/statistics/soi-tax-stats-corporation-complete-report (200), same as Ch6 XS009.",
           "Census 2017 Concentration Ratios extension URL (404) needs substitute to https://www.census.gov/programs-surveys/economic-census/data/tables.html (200)."
         ]
       }

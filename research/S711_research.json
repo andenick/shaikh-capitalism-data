@@ -152,6 +152,12 @@
   ],
   "review_history": [
     {
+      "reviewer": "P4.3-docs-agent",
+      "date": "2026-07-10",
+      "status": "draft",
+      "notes": "ADDENDUM (F-2D-04): S711 confirmed as the correct successor to CD2 S038 (OECD Industry IROP Deviations, PPP-adjusted, Fig 7.21). The CD2 crosswalk note 'promoted to AS series per decision 0002' that was carried over to S038→S709 mapping in CD2_to_RSCD_crosswalk.csv is a mis-reference; S711 (not S709) is the OECD IROP series. S707 (Greek manufacturing) incorrectly listed CD2 S038 as predecessor — that mapping is null/null for S707 and S038→S711 for S711. This dossier's predecessor_ids {cd_id: 'S038', cd2_id: 'S038'} are CORRECT for S711."
+    },
+    {
       "reviewer": "phase3_stubber",
       "date": "2026-05-18",
       "status": "draft",

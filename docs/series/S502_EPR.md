@@ -1,7 +1,7 @@
 # S502 — Extension Provenance Record
 
 **Series**: S502 — US and UK Wholesale Price Indexes, 1790-2010
-**Phase**: 6 (Extension) · **Construction**: `composite`
+
 **Extension method**: overlap-anchor splice on US leg only (BLS WPU00000000 via FRED), anchored at 2010; UK leg degrades gracefully (ONS PLLU CDN unavailable).
 **Authored**: 2026-05-18
 

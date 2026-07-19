@@ -1,0 +1,18 @@
+{
+  "sid": "S803",
+  "display_name": "Profit rate on equity versus CR8 concentration, 42 industries (Bain), 1936-1940",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh Figures 8.3 and 8.4 (Ch8, pp.374-375) from Bain (1951, QJE) with Demsetz (1973b) corrections: rate of profit on equity (ROE) versus eight-firm concentration ratio (CR8) for 42 US manufacturing industries averaged over 1936-1940 (Fig 8.3 scatter) and the same data grouped by CR8 decile (Fig 8.4). Construction-relevant: Shaikh's centerpiece exhibit that even Bain's own data show no robust positive concentration-profit correlation (beta=0.0521, R^2=0.0781 scatter; R^2=0.033 corrected grouped). COVERAGE_SHORT/COVERAGE_START prescreen flags are STALE FALSE POSITIVES: this is an index-axis cross-section in which year=1938 is a constant placeholder (midpoint of Bain's 1936-40 averaging window); the genuine axes are CR8/ROE (Fig 8.3) and decile/CR8-midpoint (Fig 8.4). There is no time coverage gap to investigate.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S803-FIG83": {"label": "42-industry scatter: ROE and CR8 (Bain Table I)", "units": "percent"},
+    "S803-FIG84-BAIN": {"label": "CR8-decile grouped ROE (Bain Table II, original)", "units": "percent"},
+    "S803-FIG84-DEMSETZ": {"label": "CR8-midpoint grouped ROE (Demsetz 1973b corrected)", "units": "percent"}
+  },
+  "field_fixes": {
+    "note": "HALLUCINATED/STALE registry name: series_registry.json carries name 'Interest Rates, Prices, and Equity Data' — a stale CD2 S041 (Chapter 10 interest-rate series) carryover that the research JSON explicitly flagged and corrected. The registry name was never updated. Correct content is Bain Fig 8.3/8.4 ROE-vs-CR8. display_name above supersedes the registry name; registry name field should be corrected to match (registry is read-only for this pass)."
+  }
+}

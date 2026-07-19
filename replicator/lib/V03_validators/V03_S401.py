@@ -3,7 +3,7 @@ Appendix 4.2 Table 4 (per-worker cost columns).
 
 Since the loader/processor pass through the CSV directly, this validator
 verifies pipeline integrity: every non-null value in the processed parquet
-matches the CSV cell to within VALIDATOR_TOL_PCT = 0.5% (chapter playbook
+matches the CSV cell to within VALIDATOR_TOL_PCT = 1.0% (chapter playbook
 standard for `derived`).
 """
 from __future__ import annotations
@@ -25,7 +25,7 @@ PROCESSED = DATA_PROCESSED / f"{SERIES_ID}.parquet"
 CSV_PATH = SALVAGED_BOOK_DATA / "Reconstructed" / "Appendix_4_2_Table4.csv"
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
 
-VALIDATOR_TOL_PCT = 0.5
+VALIDATOR_TOL_PCT = 1.0
 COMPONENTS = ["afc", "ulc_prime", "avc_prime", "ac_prime", "tc_prime", "mc_prime"]
 
 

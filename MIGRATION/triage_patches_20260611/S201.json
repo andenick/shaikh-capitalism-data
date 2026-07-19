@@ -1,0 +1,24 @@
+{
+  "sid": "S201",
+  "display_name": "US Industrial Production Index",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.2 figure; book_period_validated; real data present in chopped CSV; KB-verified.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S201-A": {
+      "label": "Historical industrial production (BEA Long Term Economic Growth, 1860-1918)",
+      "units": "index (1958=100)"
+    },
+    "S201-B": {
+      "label": "Federal Reserve industrial production (1919-2010)",
+      "units": "index (1958=100)"
+    },
+    "S201-C": {
+      "label": "Federal Reserve industrial production, modern extension (2011-2025)",
+      "units": "index (1958=100)"
+    }
+  }
+}

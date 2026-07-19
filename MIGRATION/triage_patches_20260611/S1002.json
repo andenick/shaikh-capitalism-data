@@ -1,0 +1,34 @@
+{
+  "sid": "S1002",
+  "display_name": "Long bond yield and the price level, 1857-2025",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Figure 10.6 (interest rate and price level) with documented FRED extension; per-subseries units split resolves the mixed yield/index flag. Fixed DPR/registry figure references (was 10.2/10.3, correct is 10.6).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1002-A": {
+      "label": "Composite long-term bond yield (book period)",
+      "units": "percent"
+    },
+    "S1002-B": {
+      "label": "US wholesale/producer price index, 1947=100 (book period)",
+      "units": "index (1947=100)"
+    },
+    "S1002-C": {
+      "label": "Long-term corporate bond yield, FRED AAA (extension)",
+      "units": "percent"
+    },
+    "S1002-D": {
+      "label": "US producer price index, FRED PPIACO rebased (extension)",
+      "units": "index (1947=100)"
+    }
+  },
+  "field_fixes": {
+    "units": "per_subseries",
+    "figures": [
+      "Fig10.6"
+    ]
+  }
+}

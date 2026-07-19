@@ -24,13 +24,26 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from utils import paths  # noqa: E402
 from utils.paths import DATA_PROCESSED  # noqa: E402
 from L01_loaders._ch6_appendix_loader import load_variables  # noqa: E402
+from V03_validators._v03_anchor_lib import (  # noqa: E402
+    GREEN,
+    RED,
+    _load_registry,
+    check_independent_anchor,
+    check_level_plausibility,
+    check_splice_continuity,
+)
 
 SERIES_ID = "S604"
 PROCESSED = DATA_PROCESSED / f"{SERIES_ID}.parquet"
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
 VALIDATOR_TOL_PCT = 2.0
 
-SOURCE_MAP = {'S604-A': ['II7', 'iropcorp', 1.0], 'S604-B': ['II7', 'iropcorpnipa', 1.0]}
+SOURCE_MAP = {
+    'S604-A': ['II7', 'iropcorp', 1.0],
+    'S604-B': ['II7', 'iropcorpnipa', 1.0],
+    'S604-C': ['II7', 'iroprcorp', 1.0],
+    'S604-D': ['II7', 'iroprcorpnipa', 1.0],
+}
 
 
 def _expected_long() -> pd.DataFrame:
@@ -48,6 +61,34 @@ def _expected_long() -> pd.DataFrame:
     return pd.concat(parts, ignore_index=True)
 
 
+def _anchor_checks(actual: pd.DataFrame) -> dict:
+    """Run the Decision-0011 independent-anchor / splice / plausibility checks
+    (``_v03_anchor_lib``) against the processed parquet and fold them into the
+    validator verdict. These are non-tautological: they assert book-published
+    values that are independent of the round-trip. Any RED here FAILS the
+    validator (it is not downgraded to a warning). Splice/plausibility return NA
+    for S604 (no extension block, no plausibility_rules registered) — NA never
+    fails. The registry's hardcoded ``reference_values`` are NOT touched.
+    """
+    registry = _load_registry()
+    anchors = check_independent_anchor(SERIES_ID, actual, registry)
+    splice = check_splice_continuity(SERIES_ID, actual, registry)
+    plausibility = check_level_plausibility(SERIES_ID, actual, registry)
+    blocks = (anchors, splice, plausibility)
+    if any(b["status"] == RED for b in blocks):
+        verdict = "FAIL"
+    elif any(b["status"] == GREEN for b in blocks):
+        verdict = "PASS"
+    else:
+        verdict = "NA"
+    return {
+        "verdict": verdict,
+        "independent_anchors": anchors,
+        "splice_continuity": splice,
+        "level_plausibility": plausibility,
+    }
+
+
 def _update_report(row: dict) -> None:
     if REPORT.exists():
         rpt = json.loads(REPORT.read_text(encoding="utf-8"))
@@ -63,11 +104,15 @@ def run() -> dict:
         return {"status": "FAIL", "error": f"processed missing: {PROCESSED}"}
 
     actual = pd.read_parquet(PROCESSED)
+    anchor_block = _anchor_checks(actual)
     expected = _expected_long()
     if expected.empty:
         row = {"status": "PASS_NO_BOOKTRUTH",
                "reason": "Appendix-6.8 expected dataframe is empty",
+               "anchor_checks": anchor_block,
                "validated_at": datetime.now(timezone.utc).isoformat()}
+        if anchor_block["verdict"] == "FAIL":
+            row["status"] = "FAIL"
         _update_report(row)
         return row
 
@@ -84,6 +129,9 @@ def run() -> dict:
     div = merged[merged["pct_err"] > VALIDATOR_TOL_PCT][["year", "subseries_id", "value", "expected", "pct_err"]]
     div_years = sorted(div["year"].astype(int).unique().tolist())
     status = "PASS" if len(div) == 0 else "FAIL"
+    # An independent-anchor RED is a genuine defect and FAILS the validator.
+    if anchor_block["verdict"] == "FAIL":
+        status = "FAIL"
 
     row = {
         "status": status,
@@ -95,6 +143,7 @@ def run() -> dict:
         "divergence_years": div_years,
         "divergence_count": int(len(div)),
         "subseries_compared": sorted(merged["subseries_id"].unique().tolist()),
+        "anchor_checks": anchor_block,
         "validated_at": datetime.now(timezone.utc).isoformat(),
     }
     _update_report(row)

@@ -1,0 +1,24 @@
+{
+  "sid": "S209",
+  "display_name": "US Unemployment Rate",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.2 figure; book_period_validated; real data present in chopped CSV; KB-verified.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S209-A": {
+      "label": "Unemployment rate, historical (BEA, 1890-1947)",
+      "units": "percent"
+    },
+    "S209-B": {
+      "label": "Civilian unemployment rate (Economic Report of the President, 1948-2010)",
+      "units": "percent"
+    },
+    "S209-C": {
+      "label": "Civilian unemployment rate, modern extension (2011-2025)",
+      "units": "percent"
+    }
+  }
+}

@@ -1,3 +1,20 @@
+---
+decision_id: "0001"
+title: "External Study Scope for RSCD v1.0"
+status: approved
+proposed_at: "2026-05-18T00:00:00Z"
+approved_at: "2026-05-18T00:00:00Z"
+decided_by: user
+affected_series:
+  - XS2001
+  - XS2101
+  - XS2201
+  - XS2301
+affected_stages:
+  - phase_2
+  - phase_3
+---
+
 # 0001 — External Study Scope for RSCD v1.0
 
 **Status**: CLOSED
@@ -11,7 +28,7 @@
 
 v1.0 ships with:
 - 98 Shaikh 2016 series (S###)
-- 9 Ch6 GPIM analytical-support series (AS001–AS009) — see decision 0002
+- 9 Ch6 GPIM analytical-support series (XS001–XS009) — see decision 0002
 - 3 additional Ch7 series (S709–S711) — see decision 0004
 - ~N ES series across 4 Shaikh-adjacent 2020 papers (group codes 20–23)
 
@@ -26,7 +43,7 @@ ES group code assignments (codes 20+ instead of RMWND's 10–17 to avoid visual 
 
 ## Consequences
 
-- `Technical/series_registry.json` gains placeholder ES2001, ES2101, ES2201, ES2301 entries (status: `needs_decomposition`); next Phase 3 wave expands each paper to N series.
+- `Technical/series_registry.json` gains placeholder XS2001, XS2101, XS2201, XS2301 entries (status: `needs_decomposition`); next Phase 3 wave expands each paper to N series.
 - `PREFIX_SCHEME.md` updated with codes 20–23 and the chapter-collision rationale.
 - `external_study_groups` block in registry populated.
 - Effort impact: ~30–50 hours added across Phases 3–7 (~12–16 additional series, 4 paper PDFs to mine).

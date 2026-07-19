@@ -1,0 +1,16 @@
+{
+  "sid": "S203",
+  "display_name": "US Real GDP per Capita",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.2 figure; book_period_validated; real data present in chopped CSV; KB-verified.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S203-A": {
+      "label": "Real GDP per capita (MeasuringWorth)",
+      "units": "real dollars (2005 base)"
+    }
+  }
+}

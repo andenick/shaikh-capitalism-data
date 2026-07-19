@@ -1,9 +1,9 @@
 # XS2303 — Extension Provenance Record
 
 **Series**: XS2303 — China FX Reserves Excluding Gold
-**Phase**: 6 (Extension)
 **Construction classification**: `direct`
-**Extension method**: continuation of the same WDI series the paper cites
+**Extension method**: continuation of the same World Bank World Development
+Indicators (WDI) series the paper cites
 **Authored**: 2026-05-18
 
 ## 1. Why this series is extendable
@@ -15,8 +15,8 @@ methodological change — it is the *same series* Weber & Shaikh cited
 
 ## 2. Method
 
-1. Loader calls `S00_apis.worldbank_indicator(country='CHN',
-   indicator='FI.RES.XGLD.CD', start=1990, end=2024)`.
+1. The loader pulls World Bank indicator `FI.RES.XGLD.CD` for China (`CHN`),
+   1990–2024.
 2. API returns the full annual series; values divided by 1e9 for
    billion-USD presentation.
 3. No splice, no rebase, no anchor — direct continuation.
@@ -42,7 +42,7 @@ None permitted. NaN at any year propagates.
 The extension proxy `World Bank WDI indicator FI.RES.XGLD.CD for country
 CHN` measures `China's official foreign exchange reserves excluding gold`
 rather than `total reserves including gold` or `sovereign-wealth-fund
-assets (CIC)` because:
+assets (China Investment Corporation, CIC)` because:
 - Source agency choice: Weber & Shaikh (2020) Fig 3 explicitly cites
   "World Bank, 2018" with title "without Gold". WDI is the published
   recipe.
@@ -62,9 +62,8 @@ reserves rose 17-fold from 2000 to 2010, reaching USD 3.6 trillion by
 USD 3 trillion thereafter". The modern series preserves the ex-gold,
 official-sector, USD-denominated reserve concept while permitting WDI
 vintage revisions to shift historical values within tolerance. This is
-NOT a proxy substitution forbidden by the No-Proxy rule because WDI
-FI.RES.XGLD.CD is exactly the indicator the paper cites; only the
-vintage advances.
+not a proxy substitution: WDI FI.RES.XGLD.CD is exactly the indicator the
+paper cites; only the vintage advances.
 
 ## 7. Vintage note
 

@@ -1,0 +1,17 @@
+{
+  "sid": "S302",
+  "display_name": "Expenditure share of necessaries (Case I, analytic)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Renderable analytic curve (Shaikh Fig 3.4): the share-of-income form of the Case I necessaries construction, 119 clean points. Renders as an x-y curve over the income grid (carried in the 'year' index column, NOT calendar years). TRIAGE_PRESCREEN had no EMPTY flag for S302 but it shares the index-as-year pattern; L01/P02 exist and replicate.py builds it (PASS). Caveat: agent-chosen Case I calibration (DPR §7) governs levels, not the book; only the shape is faithful. KB gap: ch03 not HDARP-extracted, so the ch3 figure quotes are unverifiable and 'From the book' is omitted.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S302-A": {"label": "Expenditure share of necessaries (Case I)", "units": "expenditure share (dimensionless ratio)"}
+  },
+  "field_fixes": {
+    "year_column_is_index": "Chopped 'year' is a point index, not a calendar year; abscissa is income (model units). Viz plots value vs income grid."
+  },
+  "notes": "content_type theoretical; construction formula; not extended."
+}

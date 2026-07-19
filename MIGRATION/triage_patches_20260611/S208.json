@@ -1,0 +1,20 @@
+{
+  "sid": "S208",
+  "display_name": "US Manufacturing Real Unit Labor Cost",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.2 figure; book_period_validated; real data present in chopped CSV; KB-verified.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S208-A": {
+      "label": "Real unit labor cost (Shaikh derived, 1889-2010)",
+      "units": "index (1889=100)"
+    },
+    "S208-B": {
+      "label": "Real unit labor cost, modern extension (2011-2025)",
+      "units": "index (1889=100)"
+    }
+  }
+}

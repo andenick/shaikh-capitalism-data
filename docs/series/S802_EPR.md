@@ -1,11 +1,11 @@
 # S802 — Extension Provenance Record
 
 **Series**: S802 — Percentage of Prices Increases or No Decreases during Contractions, in Relation to Concentration (Fig 8.2)
-**Phase**: 6 (Extension)
+
 **Construction classification**: `direct` (cross_sectional)
 **Extension method**: not applicable — see §1
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch8-fanout
+**Author**: Anu automated extraction pipeline
 **Related**: `S802_DPR.md`
 
 ---
@@ -14,7 +14,7 @@
 
 `content_type = cross_sectional`. The series consists of three discrete cross-sections (one per NBER contraction) of firms binned by CR4 midpoint. The three contractions are not a continuous time index; they are independent snapshots used by Shaikh to demonstrate the *sign flip* of the concentration-rigidity relation across the three episodes.
 
-Per the playbook:
+Per the same convention:
 
 > "Extension: explicitly `not_applicable_cross_sectional` in EPR; extension_candidates empty in dossier (already true after Phase 4)."
 

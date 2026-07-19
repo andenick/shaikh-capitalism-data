@@ -6,8 +6,14 @@ the Phase-5 ground truth; extension recipes for re-fetching the underlying
 NIPA / BEA FA / IRS / Census components are documented in S604_EPR.md.
 
 Source map (subseries_id -> (Appendix table, variable, scale)):
-  S604-A <- Appendix 6.8.II7 / variable 'iropcorp'
-  S604-B <- Appendix 6.8.II7 / variable 'iropcorpnipa'
+  S604-A <- Appendix 6.8.II7 / variable 'iropcorp'       (nominal panel)
+  S604-B <- Appendix 6.8.II7 / variable 'iropcorpnipa'   (nominal panel)
+  S604-C <- Appendix 6.8.II7 / variable 'iroprcorp'      (real/current-cost panel)
+  S604-D <- Appendix 6.8.II7 / variable 'iroprcorpnipa'  (real/current-cost panel)
+
+Fig 6.7 has two panels (four curves); the real/current-cost pair was added in
+remediation T1.5 (C567, 2026-07-01) closing CH06_review finding H1 ("ships only
+2 of 4 documented Fig 6.7 curves").
 
 Units: decimal_rate
 Book year range: [1948, 2011]
@@ -27,7 +33,12 @@ from L01_loaders._ch6_appendix_loader import load_variables  # noqa: E402
 SERIES_ID = "S604"
 OUT = DATA_RAW / f"{SERIES_ID}_raw.parquet"
 
-SOURCE_MAP = {'S604-A': ['II7', 'iropcorp', 1.0], 'S604-B': ['II7', 'iropcorpnipa', 1.0]}
+SOURCE_MAP = {
+    'S604-A': ['II7', 'iropcorp', 1.0],
+    'S604-B': ['II7', 'iropcorpnipa', 1.0],
+    'S604-C': ['II7', 'iroprcorp', 1.0],
+    'S604-D': ['II7', 'iroprcorpnipa', 1.0],
+}
 
 
 def run() -> dict:

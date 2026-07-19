@@ -1,12 +1,10 @@
 # XS2301 — US Trade Balance: World Total and China, 2002–2024
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
-**Series ID**: XS2301 (rescoped per decision 0006)
+**Series ID**: XS2301
 **Status**: study_complete
 **Authored**: 2026-05-18
-**Author**: opus-fanout-ES
-**Revised**: 2026-06-11 (XS reconciliation — truncation repair: loader rebuilt on Census country pages; coverage now genuinely continuous 2002–2024)
+**Revised**: 2026-06-11 (truncation repair: loader rebuilt on the Census country pages; coverage now genuinely continuous 2002–2024)
 
 ## 1. Definition
 
@@ -16,7 +14,8 @@ Census basis (Total Exports Value − Customs Import Value). Paper source:
 Weber & Shaikh (2020), Appendix Figure 1 (p. 453), which plots 2002–2017.
 We extend the same source forward to 2024.
 
-Per Census FT900 convention, both series are negative throughout the window
+Per US Census FT900 convention (FT900 is the Census Bureau's monthly
+foreign-trade statistics report), both series are negative throughout the window
 (the US runs a goods-trade deficit). The constructed Census series reproduces
 the paper's Figure 1 endpoints to within figure-read precision: World Total
 2002 = -468.3 bn (paper figure-read ≈ -474), 2017 = -792.4 bn (≈ -810);
@@ -44,10 +43,9 @@ basis). This is the same source family the paper used for Figure 1.
 
 For each partner, read the `TOTAL {YYYY}` annual rows from the Census country
 page; take the published annual Balance (millions USD), and divide by 1000 to
-present in Billion USD. The loader emits the two partner series as two
-subseries (XS2301-world, XS2301-china) with the partner labeled in
-`country_key`; the chopped writer disambiguates uniqueness on
-`(year, subseries_id, country_key)`.
+present in Billion USD. The two partners are emitted as two subseries —
+`XS2301-world` and `XS2301-china` (the suffix after the series id names the
+trading partner) — with each observation labelled by its partner and year.
 
 ## 5. Year coverage
 
@@ -65,7 +63,8 @@ subseries (XS2301-world, XS2301-china) with the partner labeled in
 ## 7. Caveats
 
 1. Census-basis (Total Exports Value − Customs Import Value) differs slightly
-   from BoP-basis (BEA International Transactions); the paper uses Census
+   from BoP-basis (balance-of-payments basis, US Bureau of Economic Analysis
+   (BEA) International Transactions); the paper uses Census
    basis per the Fig 1 footnote, which is what these pages publish.
 2. Section 301 tariffs (2018-) and COVID (2020) create structural breaks in
    the post-paper years — interpretive, not data gaps.
@@ -84,23 +83,15 @@ points (World 2002/2017; China 2002/2017/2018), which truncated the series at
 2018 and were figure-reads rather than source data — while the DPR claimed
 continuous coverage to 2024.
 
-The loader was rebuilt (`L01_XS2301.py` + new `S00_apis.census_country_annual_balance`)
-to read the `TOTAL {YYYY}` rows directly from the Census c0004 (World) and
-c5700 (China) pages. Result: 23 real annual observations per partner,
-2002–2024, no fabrication, no interpolation. Validator V03_XS2301 PASS
-(4/4 anchors matched, max 2.17% error). The verbatim Fig 1 anchors are
-retained only as a per-partner last-resort fallback if a page fetch fails.
-
-> Source-id note: the World subseries now draws on the all-countries balance
-> page (c0004); the registry currently records `CENSUS_FT900_EXH1` /
-> `exh1.txt` (a historical path that now 404s). Recommended registry
-> reconciliation: rename the World subsource to `CENSUS_FT900_C0004` with
-> `source_url = census.gov/foreign-trade/balance/c0004.html`. Flagged in the
-> triage patch (registry is read-only in this pass).
+The loader was rebuilt to read the `TOTAL {YYYY}` rows directly from the
+Census World (c0004) and China (c5700) country pages. Result: 23 real annual
+observations per partner, 2002–2024, no fabrication, no interpolation.
+Validation PASS (4/4 anchors matched, max 2.17% error). The verbatim Figure 1
+anchors are retained only as a per-partner last-resort fallback if a page
+fetch fails.
 
 ## 9. Cross-references
 
-- Dossier: `XS2301_research.json` (decision 0006 rescoped)
 - Related: XS2302, XS2303, XS2304, XS2305 (other Weber-Shaikh figures);
   S1101 (Ch11 trade balance, different concept)
 

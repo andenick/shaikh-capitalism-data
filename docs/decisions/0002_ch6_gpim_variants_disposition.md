@@ -1,3 +1,28 @@
+---
+decision_id: "0002"
+title: "Ch6 GPIM Construction Internals Disposition"
+status: approved
+proposed_at: "2026-05-18T00:00:00Z"
+approved_at: "2026-05-18T00:00:00Z"
+decided_by: user
+affected_series:
+  - XS001
+  - XS002
+  - XS003
+  - XS004
+  - XS005
+  - XS006
+  - XS007
+  - XS008
+  - XS009
+  - S601
+  - S602
+  - S603
+  - S604
+affected_stages:
+  - phase_3
+---
+
 # 0002 — Ch6 GPIM Construction Internals Disposition
 
 **Status**: CLOSED
@@ -19,21 +44,21 @@ algorithm grouped by figure linkage. They need a home.
 
 **Option A — AS-prefixed analytical-support series.**
 
-Register 9 new analytical series (AS001–AS009) corresponding to the CD2
+Register 9 new analytical series (XS001–XS009) corresponding to the CD2
 construction pipeline. Cross-reference from S601–S604 dossiers via the
 `components` field.
 
 | New ID | CD2 ID | Name |
 |---|---|---|
-| AS001 | S206 | GDP/GDI Decomposition and Business NOS |
-| AS002 | S207 | Wage Equivalent and Corporate/Noncorporate Split |
-| AS003 | S208 | Imputed Interest Adjustment and Sectoral Profit Rates |
-| AS004 | S209 | GPIM Corporate Capital Stock |
-| AS005 | S210 | GPIM Variant — BEA 2011 Initial Value |
-| AS006 | S211 | GPIM Variant — BEA 1993 vs 2011 |
-| AS007 | S212 | GPIM Variant — IRS Adjusted |
-| AS008 | S213 | GPIM Variant — Interwar Adjusted |
-| AS009 | S214 | IRS Corporate Inventories and Total Capital Stock |
+| XS001 | S206 | GDP/GDI Decomposition and Business NOS |
+| XS002 | S207 | Wage Equivalent and Corporate/Noncorporate Split |
+| XS003 | S208 | Imputed Interest Adjustment and Sectoral Profit Rates |
+| XS004 | S209 | GPIM Corporate Capital Stock |
+| XS005 | S210 | GPIM Variant — BEA 2011 Initial Value |
+| XS006 | S211 | GPIM Variant — BEA 1993 vs 2011 |
+| XS007 | S212 | GPIM Variant — IRS Adjusted |
+| XS008 | S213 | GPIM Variant — Interwar Adjusted |
+| XS009 | S214 | IRS Corporate Inventories and Total Capital Stock |
 
 ## Rationale (user-confirmed)
 
@@ -44,7 +69,7 @@ dropping them would materially weaken the replication's methodological transpare
 
 ## Consequences
 
-- `series_registry.json` gains 9 AS001–AS009 entries with `content_type: derived`,
+- `series_registry.json` gains 9 XS001–XS009 entries with `content_type: derived`,
   `construction: composite`, and `components` referencing the relevant BEA tables.
 - `CD2_to_RSCD_crosswalk.csv` updated: 9 previously-unmapped rows now map.
 - Each S601–S604 dossier's `components` field references the relevant AS series.

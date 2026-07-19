@@ -1,17 +1,17 @@
 # S201 — US Industrial Production Index, 1860–2025
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S201
-**Status**: book_period_validated
+**Status**: validated_book_and_extension
 **Authored**: 2026-05-18
 **Author**: opus-pilot-S201
 **Related artifacts**:
-- Research dossier: `Technical/research/S201_research.json`
-- Adequacy: `Technical/docs/chapters/CH2_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S201_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S201`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `BEA_LTEG_1966`, `FRB_G17_INDPRO`, `FRED_INDPRO`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S201`
+- Subsource registry: subsource registry → `BEA_LTEG_1966`, `FRB_G17_INDPRO`, `FRED_INDPRO`
 
 ---
 
@@ -33,7 +33,7 @@ Chapter 2 introduces the empirical backbone of the book — the secular regulari
 | **S201-B** | 1919–2010 | Federal Reserve Board (FRB), Statistical Release G.17, *Industrial Production Index — All Industries* | Originally Index 2007=100 (now 2017=100) | Salvaged chopped table (column `IndProd_FRB`) — values as Shaikh retrieved them, ~2011 |
 | **S201-C** | 2011–2025 | Federal Reserve Economic Data (FRED), series ID `INDPRO` (which is the FRB G.17 series republished by St. Louis Fed) | Index 2017=100 | Live API: `https://api.stlouisfed.org/fred/series/observations?series_id=INDPRO`; annual frequency = simple mean of monthly values |
 
-The Phase 4 adequacy review confirmed FRB G.17 and FRED INDPRO both return HTTP 200 on the relevant endpoints, justifying the `ready_for_phase5` classification.
+The adequacy review confirmed FRB G.17 and FRED INDPRO both return HTTP 200 on the relevant endpoints, justifying the `ready_for_phase5` classification.
 
 ## 4. Construction
 
@@ -79,9 +79,9 @@ S201[year] =
 
 - **CD legacy ID**: `S001` (same concept, frozen)
 - **CD2 legacy ID**: `S001` (same concept, frozen; values divergent — CD2 used a different reindex anchor for FRB; see V03 validator output)
-- **Predecessor artifact**: `SalvagedInputs/extension_benchmarks/CD2_v1.3/Series/S001_us_industrial_production_index.xlsx`
+- **Predecessor artifact**: extension benchmark data
 - **Book reference**: Shaikh (2016), Ch. 2, p. 56 (text), p. 57 (Figure 2.1), p. 763 (Appendix 2.1, source documentation)
-- **Knowledge Base**: see `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json` → Fig2.1 entry
+- **Knowledge Base**: see figure-linkage reference → Fig2.1 entry
 
 ## 9. Validation expectation
 

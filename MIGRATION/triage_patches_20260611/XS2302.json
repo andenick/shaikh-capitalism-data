@@ -1,0 +1,16 @@
+{
+  "sid": "XS2302",
+  "display_name": "China current account balance, level and percent of GDP, 1997-2024 (Weber & Shaikh 2020)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "China's current-account balance (Weber & Shaikh 2020 Fig 2), two genuine subseries: level in billion USD and percent of nominal GDP. Live IMF WEO (Datamapper BCA / BCA_NGDPD for CHN). Clean dual-unit time series; resolves the mixed-units registry label via per-subseries units. Renders sensibly as a dual-axis chart (the paper's own format).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "XS2302-level": {"label": "China current account balance", "units": "billion_usd"},
+    "XS2302-pctgdp": {"label": "China current account balance, share of GDP", "units": "percent_of_nominal_gdp"}
+  },
+  "field_fixes": {"units": "per_subseries"},
+  "open_issue": "Chopped data runs to 2031 because IMF WEO bundles forecast years (2025-2031 are IMF projections, not observed). These are real published IMF projections, not fabricated, but exceed the DPR's stated 'extend to 2024' scope. Recommend either (a) trimming the loader to end=2024 to match the DPR, or (b) keeping forecast years but tagging 2025+ as projections in metadata and updating year_range/DPR to say so. Display_name keeps the honest 1997-2024 observed window."
+}

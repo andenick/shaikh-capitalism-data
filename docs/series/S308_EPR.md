@@ -1,10 +1,10 @@
 # S308 -- Extension Provenance Record
 
 **Series**: S308 -- Necessary Good (x1) Demand Curves, Four Different Micro Foundations
-**Phase**: 6 (Extension)
+**Record type**: Extension Provenance Record
 **Content type**: `theoretical`
 **Authored**: 2026-05-18
-**Related**: `S308_DPR.md`, `Technical/research/S308_research.json`
+**Related**: `S308_DPR.md`, research dossier
 
 ---
 
@@ -18,7 +18,7 @@
 
 ## 3. Worked example
 
-At p1=1.0: x1_theoretical = (1-0.5)*10 + 0.5*200/1.0 = 5 + 100 = 105. At p1=1.5: 5 + 66.67 = 71.67. NetLogo curves at p1=1.0: S308-B = 104.79, S308-C = 105.32, S308-D = 104.475, S308-E = 105.525.
+At p1=1.0: x1_theoretical = (1-0.5)*10 + 0.5*200/1.0 = 5 + 100 = 105. At p1=1.5: 5 + 66.67 = 71.67. The four NetLogo micro-foundation variants (each held as its own data column, labelled S308-B through S308-E) at p1=1.0: S308-B = 104.79, S308-C = 105.32, S308-D = 104.475, S308-E = 105.525.
 
 ## 4. No-Proxy disclosure
 
@@ -26,16 +26,15 @@ No proxy substitution. See `S308_DPR.md` for source details.
 
 ## 5. No-Synthetic disclosure
 
-No synthetic gap-filling in the prohibited sense. The DPR documents any
-analytic regeneration or library-data dependence explicitly.
+No synthetic gap-filling in the prohibited sense. The companion Data Provenance Record (DPR) documents any analytic regeneration or library-data dependence explicitly.
 
 ## 6. Failure-mode table
 
 If NetLogo source code is ever obtained and re-simulated, the chopped CSV would replace the tabulated offsets with actual Monte-Carlo curve averages. Until then, the printed-figure tabulation is the best-available proxy.
 
-## 7. CD2 divergence pre-disclosure
+## 7. Predecessor divergence pre-disclosure
 
-No CD2 predecessor.
+Predecessor series: none (first constructed in this dataset).
 
 ## 8. Why no API extension applies
 

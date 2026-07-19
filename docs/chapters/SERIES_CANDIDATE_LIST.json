@@ -842,9 +842,9 @@
     {
       "new_id": "S803",
       "chapter": 8,
-      "cd_id": "S041",
-      "cd2_id": "S041",
-      "name": "Interest Rates, Prices, and Equity Data",
+      "cd_id": null,
+      "cd2_id": null,
+      "name": "Profit rate on equity versus CR8 concentration, 42 industries (Bain), 1936-1940",
       "content_type": "time_series",
       "construction": "direct",
       "year_range": [
@@ -857,7 +857,8 @@
       ],
       "primary_appendix": null,
       "hdarp_sources": [],
-      "cd2_source_file": "ch10/Appendix10_IntroPPrice.csv"
+      "cd2_source_file": null,
+      "predecessor_note": "The former CD/CD2 S041 mapping (name 'Interest Rates, Prices, and Equity Data', ch10/Appendix10_IntroPPrice.csv) was a false name-match: CD2 S041 is a Ch10 interest-rate/price series, whereas RSCD S803 is Bain 1951 QJE profit-rate-vs-CR8 concentration (ch8, Fig 8.3/8.4). No genuine predecessor. See CD2_to_RSCD_crosswalk.csv."
     },
     {
       "new_id": "S804",

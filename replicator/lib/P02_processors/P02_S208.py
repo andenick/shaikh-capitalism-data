@@ -37,6 +37,13 @@ def run() -> dict:
                 c_val = float(comp.loc[comp["year"] == y, "value"].iloc[0])
                 if p_val == 0:
                     continue
+                # dim: comp [index_1889=100, productivity-normalized compensation]
+                #    / prod [index_1889=100, output-per-hour index, same base year]
+                #    = dimensionless ratio (both series are 1889=100 indices from
+                #      S207-A/-C and S207-B/-D which share the 1889=100 base);
+                #    ×100 re-expresses as index_1889=100 (recovers the book convention).
+                #    Anchored to book[2010] below, so the extension shares the book's
+                #    index level.  (F-5B-02, Anu unit-documentation rule.)
                 rulc = (c_val / p_val) * 100.0
                 ext_rows.append({"year": y, "value": rulc, "units": "index_1889=100",
                                  "subseries_id": "S208-B", "source_id": "RECOMPUTED_FROM_S207_EXT"})

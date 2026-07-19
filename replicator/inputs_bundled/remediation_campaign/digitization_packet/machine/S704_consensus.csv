@@ -1,0 +1,31 @@
+year,value,source,confidence,note
+1960,19.72,A-authoritative,0.52,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1961,20.15,adjudicated,0.7,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1962,21.85,A-authoritative,0.85,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1963,22.79,adjudicated,0.76,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1964,24.42,A-authoritative,0.76,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1965,25.31,adjudicated,0.85,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1966,23.78,adjudicated,0.82,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1967,22.35,adjudicated,0.79,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1968,21.0,adjudicated,0.67,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1969,17.78,adjudicated,0.76,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1970,16.5,adjudicated,0.85,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1971,17.17,adjudicated,0.79,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1972,17.78,A-authoritative,0.82,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1973,16.01,A-authoritative,0.79,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1974,13.92,A-authoritative,0.79,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1975,14.57,A-authoritative,0.7,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1976,15.41,A-authoritative,0.76,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1977,15.57,A-authoritative,0.85,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1978,14.41,A-authoritative,0.76,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1979,12.16,adjudicated,0.82,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1980,11.03,adjudicated,0.79,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1981,10.33,adjudicated,0.73,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1982,10.38,adjudicated,0.73,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1983,11.84,adjudicated,0.85,A ruled: boldest/thickest stroke = USMANAVG (crop+DT-confirmed). B rejected (x-shift +1yr and/or drift onto thinner neighbour)
+1984,12.64,A-authoritative,0.79,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1985,12.14,A-authoritative,0.79,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1986,12.49,A-authoritative,0.67,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1987,13.36,A-authoritative,0.7,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1988,14.08,A-authoritative,0.61,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"
+1989,13.75,A-authoritative,0.64,"B concordant on level within threshold; A x-cal (label-anchored) authoritative, B +1yr x-shift"

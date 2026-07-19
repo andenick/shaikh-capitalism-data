@@ -1,17 +1,17 @@
 # S710 — Figure 7.18 — US Industry IROP Deviations from Average, 1988–2005 (derivative of S706)
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S710
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch7-fanout
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S710_research.json`
-- Adequacy: `Technical/docs/chapters/CH7_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S710_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S710`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `SHAIKH_2008_APPENDIX_7_2_IROP`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S710`
+- Subsource registry: subsource registry → `SHAIKH_2008_APPENDIX_7_2_IROP`
 
 ---
 
@@ -27,7 +27,7 @@ This is the **operationalization** of Shaikh's turbulent-equalization claim: ind
 
 | Subseries | Coverage | Source | Units |
 |---|---|---|---|
-| **S710-A** | 1988–2005 | Derived from S706 | rate deviation (decimal; industry IROP minus All-Private aggregate IROP) |
+| **S710-A** (subseries — one data line within S710) | 1988–2005 | Derived from S706 | rate deviation (decimal; industry IROP minus All-Private aggregate IROP) |
 
 The values are read directly from the `*_Deviation` / `*_Dev` columns of Shaikh's Appendix 7.2 xlsx (byte-exact). Construction is a one-line algebraic transform of S706's level columns.
 
@@ -53,13 +53,26 @@ rate deviation (decimal; industry IROP minus All-Private aggregate IROP).
 
 1. **Pure algebraic derivative of S706.** Any S706 re-run automatically re-derives this series; no separate ingestion.
 2. **38-panel small-multiple** in the book includes 6 sub-aggregates (Manufacturing, Manufacturing D, Manufacturing ND, Real & Rental, plus 2 others) on top of the 32 named industry columns. Phase 9 visualization should mirror the book's panel layout.
-3. **All-Private baseline** in the xlsx is the aggregate ROP/IROP across the 30 retained industries (not the 32-column count which includes 2 sub-aggregates already).
+3. **All-Private baseline** in the xlsx is the aggregate IROP across the industries (not the column count which includes sub-aggregates).
+4. **Max-crossings attribution: book says Broadcast, source xlsx assigns Printing (upstream discrepancy, 2026-07-17).** The book's prose on p. 305 states "the largest is twelve (Broadcast)" — KB-verified at `ch07_real_competition.md` line 2765. The source xlsx `Appendix7_iropdataUSind.xlsx` assigns the max=12 count to the Printing industry (Broadcast has 6 crossings in the source file). RSCD faithfully reproduces the source xlsx, so the shipped S710 carries max=12 on Printing with Broadcast=6. This is a second upstream book-prose-vs-source-data-file discrepancy (sibling to the S709 31-vs-30 issue). The magnitude (12) matches the book's claim; only the industry label differs. Evidence in the ch07 review report at internal source record CH07-GAP-003.
 
 ## 8. Cross-references
 
 - **Parent series**: S706
-- **CD2 legacy ID**: `S037`
+- **CD2 legacy ID** (identifier in CD2, the predecessor build of this dataset): `S037`
 - **Book reference**: Shaikh (2016), Ch. 7, p. 305, Fig7.18.
+
+## Notation (plain-language key)
+
+Short forms used above, in plain language (this record is a downloadable external artifact):
+
+- **S### / -A** — series identifiers in this project (e.g. S710); a trailing letter (e.g. S710-A) marks a *subseries* — one data line within that series.
+- **DPR / EPR** — Data Provenance Record (this file) / Extension Provenance Record (its companion).
+- **Phase N** — Anu Framework pipeline stages: Phase 5 = ingestion, Phase 6 = extension, Phase 9 = visualization.
+- **CD2** — the predecessor build of this dataset.
+- **ROP** — (average) rate of profit.
+- **IROP** — incremental rate of profit: the return on newly added capital (the year-to-year change in profit divided by the new investment that produced it).
+- **MAE** — mean absolute error.
 
 ## 9. Validation expectation
 

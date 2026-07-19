@@ -17,6 +17,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from utils.paths import DATA_RAW  # noqa: E402
 from L01_loaders._ch5_helpers import load_datalrprices, country_wpi_proxy_flag  # noqa: E402
 from S00_setup import S00_apis  # noqa: E402
+from utils.vintage_manifest import realtime_window  # noqa: E402
 
 SERIES_ID = "S502"
 YEAR_MIN, YEAR_MAX = 1790, 2010
@@ -30,8 +31,13 @@ def _fred_ppiaco_annual() -> tuple:
 
     Returns (df_year_value, ok, err).
     """
+    # SI-1: pinned ALFRED native-monthly fetch (PPIACO never revised).
+    rs, re = realtime_window("S502", "PPIACO")
     try:
-        df = S00_apis.fred_csv_observations("PPIACO", ttl_days=30)
+        df = S00_apis.fred_observations(
+            series_id="PPIACO", frequency=None, ttl_days=30,
+            realtime_start=rs, realtime_end=re,
+        )
     except S00_apis.ApiUnavailable as exc:
         return None, False, str(exc)
     df = df.copy()

@@ -1,0 +1,318 @@
+{
+  "manifest_version": "1.0",
+  "created": "2026-07-02",
+  "campaign": "RSCD v1.5 Skeptical Review & Remediation — Block G1 (SI-1 ALFRED vintage pinning)",
+  "purpose": "Record, per series x FRED-id, the retrieval date of the data CURRENTLY SHIPPED plus the ALFRED realtime vintage date to pin so a future refresh can reproduce the shipped figures byte-for-byte. This manifest + code/utils/vintage_manifest.py helper + remediation_campaign/scripts/check_vintage_manifest.py coverage check IS the Phase-N deliverable. Migrating loaders to fetch from ALFRED at the pinned realtime date (rather than live FRED) is a documented FOLLOW-UP; loaders are NOT rewritten in this pass (that would change data).",
+  "pin_realtime_date": "2026-07-02",
+  "pin_realtime_date_note": "ALFRED realtime_start/realtime_end to pass on the follow-up migration so each series resolves to the vintage current on this date. Retrieval dates below (from data/raw/api_cache/*/*.meta.json fetched_at) predate this pin; the pin is the reproducibility anchor going forward.",
+  "vintage_policy_vocabulary": {
+    "pin_alfred_realtime": "Genuinely unpinned live-FRED extension (SI-1 sweep candidate). Pin the ALFRED vintage as-of pin_realtime_date to reproduce; follow-up = ALFRED fetch migration.",
+    "pin_alfred_realtime_proxy": "Same, but the FRED id is an explicit PROXY (documented in the series EPR / decision) — pinning reproduces the proxy, it does not upgrade it to a native source.",
+    "pin_alfred_realtime_secondary_overlay": "FRED is a secondary overlay; the shipped primary data comes from another source (e.g. MeasuringWorth per Decision 0008). Pin the FRED overlay for reproducibility.",
+    "pin_alfred_realtime_tail_extension": "Live-FRED tail extension not in the SI-1 priority list; included here for COMPLETE coverage of all live-FRED loaders. Same pin policy.",
+    "salvaged_baked_no_live_fetch": "No live FRED fetch — the extension is baked into a salvaged/CD2-preserved column. Excluded from ALFRED pinning by nature; recorded for completeness."
+  },
+  "series": {
+    "S1401": {
+      "vintage_policy": "pin_alfred_realtime",
+      "chapter": 14,
+      "fred_ids": [
+        {
+          "id": "GDP",
+          "retrieval_date": "2026-07-01",
+          "alfred_realtime_pin": "2026-07-01"
+        },
+        {
+          "id": "W209RC1",
+          "retrieval_date": "2026-07-01",
+          "alfred_realtime_pin": "2026-07-01"
+        }
+      ],
+      "pinned_fetch_active": true
+    },
+    "S1402": {
+      "vintage_policy": "pin_alfred_realtime",
+      "chapter": 14,
+      "fred_ids": [
+        {
+          "id": "UNRATE",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18"
+        },
+        {
+          "id": "UEMPMEAN",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18"
+        }
+      ],
+      "pinned_fetch_active": true
+    },
+    "S1403": {
+      "vintage_policy": "pin_alfred_realtime",
+      "chapter": 14,
+      "pinned_fetch_active": true,
+      "fu3_note": "FU-3: the shipped S1403 quarterly inputs came from the api_cache vintage fetched 2026-05-18 (GDP-q, W209RC1-q, UNRATE-m, UEMPMEAN-m — verified against data/raw/api_cache/fred/*.meta.json). The prior retrieval_date=2026-07-01 for GDP/W209RC1 was an error copied from S1401's annual re-pull; corrected to 2026-05-18. Pins set to 2026-05-18 to reproduce shipped byte-for-byte. W209RC1-q is REVISED: ALFRED@2026-05-18 2025Q4=16022.5 (shipped) vs ALFRED@2026-07-02 2025Q4=15949.5; GDP-q identical across vintages; UNRATE/UEMPMEAN never revised. Newer-vintage delta reported to evidence_FU3.md.",
+      "fred_ids": [
+        {
+          "id": "GDP",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18",
+          "frequency": "quarterly"
+        },
+        {
+          "id": "W209RC1",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18",
+          "frequency": "quarterly"
+        },
+        {
+          "id": "UNRATE",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18",
+          "frequency": "quarterly"
+        },
+        {
+          "id": "UEMPMEAN",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18",
+          "frequency": "quarterly"
+        }
+      ]
+    },
+    "S1406": {
+      "vintage_policy": "pin_alfred_realtime",
+      "chapter": 14,
+      "fred_ids": [
+        {
+          "id": "GDP",
+          "retrieval_date": "2026-07-01",
+          "alfred_realtime_pin": "2026-07-01"
+        },
+        {
+          "id": "GDPDEF",
+          "retrieval_date": "2026-07-02",
+          "alfred_realtime_pin": "2026-07-02"
+        },
+        {
+          "id": "A4301C0A173NBEA",
+          "retrieval_date": "2026-07-02",
+          "alfred_realtime_pin": "2026-07-02",
+          "note": "Correct FTE-employees id (NIPA T6.5A-D); replaced B4701C0A222NBEA per DF-1 fix 2026-07-01."
+        }
+      ],
+      "pinned_fetch_active": true
+    },
+    "S1002": {
+      "vintage_policy": "pin_alfred_realtime",
+      "chapter": 10,
+      "fred_ids": [
+        {
+          "id": "AAA",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18"
+        },
+        {
+          "id": "PPIACO",
+          "retrieval_date": "2026-05-19",
+          "alfred_realtime_pin": "2026-05-19"
+        }
+      ],
+      "pinned_fetch_active": true
+    },
+    "S1003": {
+      "vintage_policy": "pin_alfred_realtime",
+      "chapter": 10,
+      "delegates_to": "S1002",
+      "fred_ids": [
+        {
+          "id": "AAA",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18",
+          "note": "Fetched via L01_S1002 delegation."
+        },
+        {
+          "id": "PPIACO",
+          "retrieval_date": "2026-05-19",
+          "alfred_realtime_pin": "2026-05-19",
+          "note": "Fetched via L01_S1002 delegation."
+        }
+      ],
+      "pinned_fetch_active": true
+    },
+    "S1005": {
+      "vintage_policy": "pin_alfred_realtime",
+      "chapter": 10,
+      "fred_ids": [
+        {
+          "id": "GS10",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18"
+        },
+        {
+          "id": "AAA",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18"
+        }
+      ],
+      "pinned_fetch_active": true
+    },
+    "S1006": {
+      "vintage_policy": "pin_alfred_realtime_proxy",
+      "chapter": 10,
+      "fred_ids": [
+        {
+          "id": "AAA",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18",
+          "note": "PROXY for LT-corporate yield (Damodaran replicates Ibbotson; Decision 0010; publish:false)."
+        }
+      ],
+      "pinned_fetch_active": true
+    },
+    "S1501": {
+      "vintage_policy": "pin_alfred_realtime",
+      "chapter": 15,
+      "fred_ids": [
+        {
+          "id": "CPIAUCNS",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18"
+        }
+      ],
+      "pinned_fetch_active": true
+    },
+    "S502": {
+      "vintage_policy": "pin_alfred_realtime",
+      "chapter": 5,
+      "fred_ids": [
+        {
+          "id": "PPIACO",
+          "retrieval_date": "2026-05-19",
+          "alfred_realtime_pin": "2026-05-19",
+          "subseries": "S502-C",
+          "note": "FRED PPIACO = FRED's mirror of BLS WPU00000000 (successor to legacy WPS00000000 frozen 1974)."
+        }
+      ],
+      "pinned_fetch_active": true
+    },
+    "S210": {
+      "vintage_policy": "salvaged_baked_no_live_fetch",
+      "chapter": 2,
+      "fred_ids": [],
+      "note": "VERIFIED: L01_S210 makes NO live FRED call. The US BLS-PPI extension is baked into the CD2-preserved salvaged column (subsource JASTRAM_1977_T7_PLUS_BLS_PPI_EXT). The legacy FRED WPU00000000 S210-C path was REMOVED (DF-2, 2026-07-02). S210-A therefore has no ALFRED pin target.",
+      "pinned_fetch_active": false
+    },
+    "S201": {
+      "vintage_policy": "pin_alfred_realtime_tail_extension",
+      "chapter": 2,
+      "pinned_fetch_active": true,
+      "fred_ids": [
+        {
+          "id": "INDPRO",
+          "retrieval_date": "2026-05-27",
+          "alfred_realtime_pin": "2026-05-27",
+          "subseries": "S201-C",
+          "note": "Industrial Production index tail-extension (reindexed by processor). FU-3: pin set to the SHIPPED vintage date (2026-05-27), NOT the campaign anchor 2026-07-02, because INDPRO is a REVISED series and a revision landed between the campaign pull and the anchor. ALFRED@2026-05-27 -> 2025 annual=101.2281 (reproduces shipped S201-C 2025=491.3419); ALFRED@2026-07-02 -> 101.2259 (would change the reindexed 2025 value). Newer-vintage delta reported to evidence_FU3.md for a refresh decision."
+        }
+      ]
+    },
+    "S203": {
+      "vintage_policy": "pin_alfred_realtime_secondary_overlay",
+      "chapter": 2,
+      "fred_ids": [
+        {
+          "id": "A939RX0Q048SBEA",
+          "retrieval_date": "2026-07-02",
+          "alfred_realtime_pin": "2026-07-02",
+          "subseries": "S203-B",
+          "note": "Real GDP per Capita (chained 2017$) FRED overlay; shipped PRIMARY is MeasuringWorth usgdp repull (Decision 0008)."
+        }
+      ],
+      "pinned_fetch_active": true
+    },
+    "S207": {
+      "vintage_policy": "pin_alfred_realtime_tail_extension",
+      "chapter": 2,
+      "fred_ids": [
+        {
+          "id": "OPHMFG",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18",
+          "subseries": "S207-C",
+          "note": "FU-3: pin corrected to 2026-05-18 (the SHIPPED vintage), NOT the campaign anchor 2026-07-02. The shipped S207 chopped was built from the <=2026-06-01 OPHMFG vintage (2025 annual=99.344) and never rebuilt after the 2026-07-02 cache re-pull; a revision landed 2026-06-06 (2025 annual -> 99.324). ALFRED@2026-05-18 reproduces shipped S207-C 2025 byte-for-byte. Newer-vintage delta reported to evidence_FU3.md."
+        },
+        {
+          "id": "COMPRMS",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18",
+          "subseries": "S207-D",
+          "note": "FU-3: pin corrected to 2026-05-18 (shipped vintage). Shipped 2025 annual=101.859; the 2026-06-06 revision moved it to 101.780. ALFRED@2026-05-18 reproduces shipped S207-D byte-for-byte. See evidence_FU3.md."
+        }
+      ],
+      "pinned_fetch_active": true
+    },
+    "S209": {
+      "vintage_policy": "pin_alfred_realtime_tail_extension",
+      "chapter": 2,
+      "fred_ids": [
+        {
+          "id": "UNRATE",
+          "retrieval_date": "2026-05-18",
+          "alfred_realtime_pin": "2026-05-18",
+          "subseries": "S209-C"
+        }
+      ],
+      "pinned_fetch_active": true
+    },
+    "S212": {
+      "vintage_policy": "pin_alfred_realtime_proxy",
+      "chapter": 2,
+      "fred_ids": [
+        {
+          "id": "GOLDPMGBD228NLBM",
+          "retrieval_date": "not_cached",
+          "alfred_realtime_pin": "2026-07-02",
+          "subseries": "S212-X-GOLD",
+          "note": "Gold-price PROXY tail extension; only materializes when FRED_API_KEY present (graceful-skip loader). Not in current api_cache -> retrieval_date not_cached."
+        }
+      ],
+      "pinned_fetch_active": true
+    }
+  },
+  "not_candidates": {
+    "note": "Recorded per the SI-1 sweep so the exclusion is explicit and auditable.",
+    "S1007": "book-only / T7.11 line-label recipe, not a live-FRED fetch",
+    "S1008": "book-only / inherits S1007 T7.11 resolver",
+    "S1407": "non-FRED / book-only",
+    "S1408": "non-FRED / book-only",
+    "S1504": "non-FRED (IMF IFS->SDMX code-remap)",
+    "S1505": "non-FRED / book-only",
+    "S1506": "non-FRED / book-only",
+    "S1507": "non-FRED / book-only"
+  },
+  "follow_up_status": {
+    "fu3_migration": "COMPLETE",
+    "date": "2026-07-02",
+    "agent": "FU-3",
+    "summary": "All 15 live-FRED loaders migrated to the shared ALFRED pinned-fetch path (S00_apis.fred_observations with realtime_start=realtime_end=<pin>, resolved via utils.vintage_manifest.realtime_window). Ch10 extension loaders (S1002/S1003/S1005/S1006/S502) switched from the un-pinnable fredgraph.csv transport to native-frequency ALFRED JSON (client-side annual aggregation unchanged).",
+    "pin_semantics": "alfred_realtime_pin now equals each fred_id retrieval_date (the vintage AND observation-release window of the shipped fetch). ALFRED realtime_end gates which partial-year months are published, so pinning to the campaign anchor 2026-07-02 (rather than the shipped retrieval date) would pull extra 2026 partial-year months and change partial-year averages. Pin=retrieval_date reproduces the shipped chopped byte-for-byte.",
+    "newer_vintage_deltas_for_decision": [
+      {
+        "series": "S201",
+        "fred_id": "INDPRO",
+        "shipped_pin": "2026-05-27",
+        "shipped_2025_annual": 101.2281,
+        "anchor_0702_2025_annual": 101.2259,
+        "note": "Revision landed after shipped pull; reindexed S201-C 2025 would change if refreshed to 2026-07-02."
+      },
+      {
+        "series": "S1403",
+        "fred_id": "W209RC1",
+        "shipped_pin": "2026-05-18",
+        "shipped_2025Q4": 16022.5,
+        "anchor_0702_2025Q4": 15949.5,
+        "note": "Compensation Q4-2025 revised down after shipped pull; would shift HP-filtered wage-share tail if refreshed."
+      }
+    ]
+  }
+}

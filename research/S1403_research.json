@@ -64,11 +64,11 @@
   "extension_candidates": [
     {
       "subseries_label": "Wage share (quarterly)",
-      "source": "FRED W270RE1Q156NBEA (Shares of GDI: Compensation of employees, paid) or constructed as A576RC1/GDP",
+      "source": "FRED W270RE1Q156NBEA (Shares of GDI: Compensation of employees, paid) or constructed as W209RC1/GDP",
       "url": "https://fred.stlouisfed.org/series/W270RE1Q156NBEA",
       "units": "Percent of GDI (quarterly)",
       "splice_strategy": "overlap_anchor",
-      "concerns": ["Shaikh denominator is GDP, not GDI; if using W270RE1Q156NBEA verify conceptual match or build A576RC1/GDP directly"]
+      "concerns": ["Shaikh denominator is GDP, not GDI; if using W270RE1Q156NBEA verify conceptual match or build W209RC1/GDP directly. Use W209RC1 (total Compensation of Employees) as the numerator, NOT A576RC1 (Wage & Salary Disbursements only) — corrected 2026-07-01 in line with the S1401 fix. FRED labels W209RC1 'Compensation of employees, received' (NIPA Table 2.1); the book cites Table 1.10 line 2 'paid' — the same total-compensation aggregate, coincident in NIPA accounting."]
     },
     {
       "subseries_label": "Quarterly unemployment intensity",

@@ -1,41 +1,11 @@
-"""Shared Ayres processor: pass through monthly raw to processed, no transforms.
+"""Back-shim (A3 v3.1 layout): canonical impl relocated to ``transforms._ayres_processor``.
 
-The book figure plots monthly values; the chopped CSV likewise should hold one
-row per (year, month). For the standard year/value processed schema we keep
-month as a separate column when present.
+This module is intentionally a thin identity-alias so existing imports
+(``from P02_processors._ayres_processor import ...``) resolve unchanged. Do NOT add logic here;
+edit ``transforms/_ayres_processor.py``. See lib/LAYOUT.md.
 """
-from __future__ import annotations
+import importlib as _il
+import sys as _sys
 
-import sys
-from pathlib import Path
-
-import pandas as pd
-
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-
-from utils.paths import DATA_RAW, DATA_PROCESSED  # noqa: E402
-
-
-def process(sid: str, raw_filename: str) -> dict:
-    raw = DATA_RAW / raw_filename
-    if not raw.exists():
-        return {"status": "FAIL", "error": f"raw missing: {raw}"}
-    df = pd.read_parquet(raw)
-    df = df.rename(columns={"subsource_id": "source_id"})
-    # Final schema: year, value, subseries_id, source_id, units, month
-    cols = ["year", "value", "subseries_id", "source_id", "units"]
-    if "month" in df.columns:
-        cols.append("month")
-    out_df = df[cols].copy()
-    out = DATA_PROCESSED / f"{sid}.parquet"
-    DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
-    out_df.to_parquet(out, index=False)
-    return {
-        "status": "OK",
-        "rows_processed": int(len(out_df)),
-        "year_range": [int(out_df["year"].min()), int(out_df["year"].max())],
-        "subseries_present": sorted(out_df["subseries_id"].unique().tolist()),
-        "extension": {"extension_status": "not_applicable_discontinued",
-                      "reason": "Ayres (1939) has no modern continuation"},
-        "output": str(out),
-    }
+_m = _il.import_module("transforms._ayres_processor")
+_sys.modules[__name__] = _m

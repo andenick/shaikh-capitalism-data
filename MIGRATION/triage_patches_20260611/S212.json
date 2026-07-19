@@ -1,0 +1,20 @@
+{
+  "sid": "S212",
+  "display_name": "US and UK Wholesale Prices in Ounces of Gold",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.2 figure; book_period_validated; real data present in chopped CSV; KB-verified.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S212-A": {
+      "label": "US wholesale prices in gold",
+      "units": "index (1930=100)"
+    },
+    "S212-B": {
+      "label": "UK wholesale prices in gold",
+      "units": "index (1930=100)"
+    }
+  }
+}

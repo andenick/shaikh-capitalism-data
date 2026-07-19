@@ -1,0 +1,19 @@
+RSCD v1.6 publish bundle — scrubbed marker
+Date: 2026-07-10
+Scope: Outputs/Publish/ (root)
+
+This bundle passed the pinned transparency-bundle audit profile
+(.publish_audit_config) at exit 0 (0 FAIL) under:
+  audit.py --path-severity warn --jargon-severity warn --comment-severity warn
+
+Scrub state at this marker:
+- Hard-leak classes = 0 (no D:/Arcanum, C:/Users, /Council/, Druck, Robin).
+- Only andenick token = the project's own GitHub repo URL (whitelisted, .publish_ignore).
+- Authoring agent-IDs (opus-subagent-* / *fanout) neutralized -> automated-agent.
+- Stale internal build state PIPELINE_STATE.json removed (both copies); paths.py /
+  replicate.py de-wired.
+- Relative workspace paths in reproducibility artifacts retained as WARN per profile.
+- Counts: 118 canonical / 113 published / 113 chopped / 112 extenbooks / 112 research.
+
+Per-series scrubbed DPRs/EPRs marker: docs/series/.scrubbed_v16
+Evidence: Technical/remediation_v16/evidence/P5_bundle_blockers.md

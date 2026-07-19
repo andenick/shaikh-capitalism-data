@@ -40,11 +40,19 @@ def _reindex_extension(book: pd.DataFrame, ext_raw: pd.DataFrame, overlap_year: 
     if ext_val == 0:
         return pd.DataFrame(), {"extension_status": "zero_anchor"}
     scale = book_val / ext_val
-    ext = ext_raw[ext_raw["year"] > overlap_year].copy()
+    # Emit extension rows strictly AFTER the book series' last year, not merely
+    # after the scale-anchor overlap_year. The scale anchor (overlap_year) can
+    # precede the book's final year (e.g. compensation book runs to 2010 while
+    # the anchor is 2009), which would otherwise duplicate the book's last year
+    # in the extension (the S207-D double-2010, SWEEP-ch02-03). Clean handoff:
+    # book ends year Y, extension starts Y+1 (matches the productivity A/C pair).
+    book_last = int(book["year"].max())
+    ext = ext_raw[ext_raw["year"] > book_last].copy()
     ext["value"] = ext["value"] * scale
     ext["units"] = "index_1889=100"
     ext = ext.rename(columns={"subsource_id": "source_id"})
     diag = {"extension_status": "ok", "overlap_year": overlap_year, "scale_factor": scale,
+            "book_last_year": book_last, "ext_first_year": int(ext["year"].min()) if not ext.empty else None,
             "years_appended": int(len(ext)), "label": sub_label}
     return ext[["year", "value", "units", "subseries_id", "source_id"]], diag
 

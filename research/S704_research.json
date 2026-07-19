@@ -109,6 +109,12 @@
       "notes": "auto-generated stub"
     },
     {
+      "reviewer": "P4.3-docs-agent",
+      "date": "2026-07-10",
+      "status": "book_period_validated",
+      "notes": "ADDENDUM (F-2D-03): S703/S704 digitization enacted per Decision 0019 (2026-07-02, user-authorized). Machine digitization (dual independent extraction + adversarial verification) recovered the USMANAVG boldest markerless line in Christodoulopoulos Fig 7.14 (1960–1989, 30 pts; 1990 omitted — markerless average line occluded by triangle marker at right edge). Confidence: HIGH (~±0.5pp, mean conf 0.757). Gate: M2 raw FAIL (53%, extractor-B +1-year x-offset) but fully diagnosed — extractor-B had mis-numbered tick ladder; every failing point re-measured by boldest-markerless-stroke criterion and resolved to extractor-A; adversarial verifier rebuilt x-calibration from scratch and confirmed extractor-A registration (peak 1965, trough 1982). Each S704 value carries three agreeing measurements. Status flipped data_unavailable → book_period_validated; publish: false → true. Values stored in decimal (rate convention; figure-percent divided by 100 to match S705/S706 sibling convention). Human superseding path preserved forever. Evidence: Technical/docs/decisions/0019_machine_digitization_s703_s704.md."
+    },
+    {
       "reviewer": "opus-subagent-wave-b-ch7",
       "date": "2026-05-18",
       "status": "draft",

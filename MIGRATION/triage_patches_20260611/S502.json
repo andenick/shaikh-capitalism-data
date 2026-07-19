@@ -1,0 +1,17 @@
+{
+  "sid": "S502",
+  "display_name": "US and UK wholesale price indexes, 1790-2010",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh Figure 5.4 (Ch5) plus a documented US extension. Two book-period country lines (1790-2010, 1930=100) read directly from Shaikh's Appendix 5 DATALRprices workbook, with an optional US PPI continuation (FRED PPIACO/WPU00000000, anchored at 2010); the UK extension leg is left empty because ONS PLLU is unreachable, not substituted with a proxy. Parent series of S501/S503/S504; the empirical centrepiece of Ch5's post-1939/40 fiat-inflation argument.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S502-A": {"label": "US wholesale price index (book period)", "units": "index_1930=100"},
+    "S502-B": {"label": "UK wholesale price index (book period)", "units": "index_1930=100"},
+    "S502-C": {"label": "US wholesale price index (extension, 2011-)", "units": "index_1930=100"},
+    "S502-D": {"label": "UK wholesale price index (extension, 2011-)", "units": "index_1930=100"}
+  },
+  "field_fixes": {}
+}

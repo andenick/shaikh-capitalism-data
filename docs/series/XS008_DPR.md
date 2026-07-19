@@ -4,11 +4,11 @@
 ***Status**: book_period_validated
 ## Definition
 
-GPIM Variant - Interwar Adjustment Multiplier
+Generalized Perpetual Inventory Method (GPIM) variant, the interwar adjustment multiplier.
 
 ## Why It Matters
 
-Source: Appendix Table 6.8.II.5 column 'Adj. Ratio'. Intrinsically 1925-1947 only — feeds XS007/XS004 historical correction. No extension by construction. See `CH6_GPIM_SUMMARY.md` for the full Ch6 construction pipeline.
+Source: Shaikh (2016), Appendix Table 6.8.II.5, column 'Adj. Ratio'. Intrinsically 1925-1947 only — it feeds the XS007/XS004 historical correction. No extension by construction.
 
 ## Sources (per subseries)
 
@@ -16,7 +16,7 @@ Source: Appendix Table 6.8.II.5 column 'Adj. Ratio'. Intrinsically 1925-1947 onl
 |-----------|---------------|----------|---------------|-------|
 | XS008-A | II5 | `Adj. Ratio` | Shaikh-computed | identity |
 
-The canonical Shaikh-published values are transcribed from `SalvagedInputs/book_data/ShaikhChoppedTables/Appendix6_Table68*.xlsx` (Appendix 6.8). Upstream agencies are BEA (NIPA / Fixed Asset Accounts), IRS SOI, U.S. Census Bureau Historical Statistics 1975 (IRS book values), and FRB G.17. All public domain.
+The `-A` suffix labels the single sub-variant of this series. The canonical Shaikh-published values are transcribed from the published Chapter 6 appendix workbook (Shaikh 2016, Appendix 6.8). Upstream agencies are the Bureau of Economic Analysis (BEA) — its National Income and Product Accounts (NIPA) and Fixed Asset accounts (FA) — the IRS Statistics of Income (SOI), the U.S. Census Bureau Historical Statistics 1975 (IRS book values), and the Federal Reserve Board G.17 release. All public domain.
 
 ## Construction
 
@@ -24,7 +24,7 @@ XS008 = IRS index / BEA 2011 historical-cost index, normalized so 1925 = 1.0. In
 
 ## Year Coverage
 
-Book period: 1925-1947. Vintage-stable extension recipe in `XS008_EPR.md`.
+Book period: 1925-1947. See the companion Extension Provenance Record for details.
 
 ## Units
 
@@ -40,4 +40,4 @@ dimensionless_ratio_1925eq1
 
 ## Validation Expectation
 
-`V03_XS008_validate.py` round-trip-validates against the Appendix 6.8 source workbook at 1.0% tolerance. Per the Phase 4 adequacy report (`CH6_ADEQUACY_REPORT.json`), Phase 5 blockers B2 (NIPA T7.11 FISIM remap, resolver in `_nipa_t711_line_resolver.py`) and B3 (BEA 1993 depreciation rates, staged at `Reconstructed/BEA_1993_FA_methodology/`) are RESOLVED.
+The series round-trip-validates against the Appendix 6.8 source workbook at 1.0% tolerance. Two construction dependencies are resolved: the remapping of the NIPA Table 7.11 financial services indirectly measured (FISIM) lines, and the BEA 1993 depreciation rates.

@@ -14,7 +14,10 @@ Source map (subseries_id -> (Appendix table, variable, scale)):
   XS003-F <- Appendix 6.8.I3 / variable 'rnoncorp'
   XS003-G <- Appendix 6.8.I3 / variable 'rnoncorp1'
 
-Units: mixed_billions_usd_and_decimal_rates
+Units: per-subseries (A/B/C billions_current_usd; D/E/F/G decimal_rate). The
+former single label "mixed_billions_usd_and_decimal_rates" was a banned mixed
+string that mislabeled every column; corrected 2026-07-02 (T3.3) to honest
+per-subseries units via UNITS_MAP.
 Book year range: [1947, 2011]
 """
 from __future__ import annotations
@@ -34,6 +37,13 @@ OUT = DATA_RAW / f"{SERIES_ID}_raw.parquet"
 
 SOURCE_MAP = {'XS003-A': ['I3', 'BankMonIntPaid', 1.0], 'XS003-B': ['I3', 'NFNetImpIntPaid', 1.0], 'XS003-C': ['I3', 'BusImpIntAdj', 1.0], 'XS003-D': ['I3', 'rbus', 1.0], 'XS003-E': ['I3', 'rcorp', 1.0], 'XS003-F': ['I3', 'rnoncorp', 1.0], 'XS003-G': ['I3', 'rnoncorp1', 1.0]}
 
+# Honest per-subseries units (T3.3). A/B/C are dollar levels; D-G are profit rates.
+UNITS_MAP = {
+    'XS003-A': 'billions_current_usd', 'XS003-B': 'billions_current_usd',
+    'XS003-C': 'billions_current_usd', 'XS003-D': 'decimal_rate',
+    'XS003-E': 'decimal_rate', 'XS003-F': 'decimal_rate', 'XS003-G': 'decimal_rate',
+}
+
 
 def run() -> dict:
     rows = []
@@ -50,7 +60,7 @@ def run() -> dict:
         df = df.copy()
         df["value"] = df["value"] * scale
         df["subseries_id"] = sub_id
-        df["units"] = "mixed_billions_usd_and_decimal_rates"
+        df["units"] = UNITS_MAP[sub_id]
         rows_per_sub[sub_id] = int(len(df))
         sources_used.add(df["source_id"].iloc[0])
         rows.append(df[["year", "value", "subseries_id", "source_id", "units"]])

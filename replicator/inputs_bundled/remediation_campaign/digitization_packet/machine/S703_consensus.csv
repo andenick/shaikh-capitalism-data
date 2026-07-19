@@ -1,0 +1,21 @@
+year,value,source,confidence,note
+1970,0.1455,A+B mean,0.55,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1971,0.1432,A+B mean,0.65,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1972,0.148,A+B mean,0.72,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1973,0.1563,A+B mean,0.45,"peak convergence knot (PAPER crossed-square on top); circle buried, value agrees (0.64%) but marker identity soft"
+1975,0.1276,A+B mean,0.47,"V-trough; two black lines coincident, circle~diamond; A/B agree 0.13%"
+1976,0.1395,A+B mean,0.65,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1977,0.1411,A+B mean,0.72,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1978,0.1434,A+B mean,0.65,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1979,0.1421,A+B mean,0.65,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1980,0.1309,A+B mean,0.65,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1981,0.1284,A+B mean,0.65,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1982,0.119,adjudicated,0.55,"WORLDAVG dips to V-trough ~0.119 (A). B 0.1319 = crossed-square PAPER above, misID; ruled A via crop"
+1983,0.1325,A+B mean,0.65,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1984,0.1424,A+B mean,0.6,"circle knot; A on circle ~0.146, B lower ~0.139; within threshold, meaned"
+1985,0.1426,A+B mean,0.9,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1986,0.1425,A+B mean,0.65,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1987,0.1436,A+B mean,0.66,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1988,0.1608,A+B mean,0.85,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1989,0.1603,A+B mean,0.8,concordant WORLDAVG open-circle; |A-B|<=2% of range
+1990,0.1562,A+B mean,0.85,concordant WORLDAVG open-circle; |A-B|<=2% of range

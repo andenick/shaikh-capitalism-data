@@ -1,0 +1,25 @@
+{
+  "sid": "S1003",
+  "display_name": "Relative price of finance, 1857-2025",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Formula series (i/p, both rebased 1947=1) recomputed end-to-end per No-Lazy-Splices; reconstructs Figure 10.7. Fixed figure reference (was 10.3, correct is 10.7).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1003-A": {
+      "label": "Relative price of finance, bond yield over price level (book period)",
+      "units": "ratio (1947=1)"
+    },
+    "S1003-B": {
+      "label": "Relative price of finance, recomputed from extended components (extension)",
+      "units": "ratio (1947=1)"
+    }
+  },
+  "field_fixes": {
+    "figures": [
+      "Fig10.7"
+    ]
+  }
+}

@@ -1,12 +1,12 @@
 """L01_S216 - Normalized Total Prices of Production Profit vs Total Unit Labor
-Costs, US 1972 (71 industries) -- Fig 2.16, CROSS-SECTIONAL scatter (single year).
+Costs, US 1972 (71 industries) -- Fig 2.14, CROSS-SECTIONAL scatter (single year).
 
 Source: Appendix9_1972fixed.xlsx columns:
   - 'tpm'  = total market prices per industry (Y axis: market prices)
   - 'tp(r)' = total prices of production per industry (computed at observed r)
   - 'tv'  = total vertically-integrated unit labor cost (X axis: integrated ULC)
 
-Fig 2.16 plots (tv, tp(r)) and (tv, tpm), 71 industries, both axes normalized so
+Fig 2.14 plots (tv, tp(r)) and (tv, tpm), 71 industries, both axes normalized so
 sums match. Per content_type='cross_sectional' (Phase 4 reclassification ratified),
 no temporal extension applies.
 """
@@ -56,10 +56,12 @@ def run() -> dict:
         # Two scatter series: one with y=tpm, one with y=tp(r)
         rows.append({"year": YEAR, "industry_index": ind, "x_tv_norm": r["tv_norm"],
                      "value": r["tpr_norm"], "units": "normalized_dollars",
-                     "subseries_id": "S216-A", "subsource_id": "BEA_IO_1972_71IND_SHAIKH_APP9"})
+                     "subseries_id": "S216-A", "subsource_id": "BEA_IO_1972_71IND_SHAIKH_APP9",
+                     "classification_vintage": "SIC71"})  # 1972 Ochoa 71-order (Decision 0014)
         rows.append({"year": YEAR, "industry_index": ind, "x_tv_norm": r["tv_norm"],
                      "value": r["tpm_norm"], "units": "normalized_dollars",
-                     "subseries_id": "S216-B", "subsource_id": "BEA_IO_1972_71IND_SHAIKH_APP9"})
+                     "subseries_id": "S216-B", "subsource_id": "BEA_IO_1972_71IND_SHAIKH_APP9",
+                     "classification_vintage": "SIC71"})
     out = pd.DataFrame(rows)
     DATA_RAW.mkdir(parents=True, exist_ok=True)
     out.to_parquet(OUT, index=False)

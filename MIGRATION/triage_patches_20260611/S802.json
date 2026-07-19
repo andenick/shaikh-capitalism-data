@@ -1,0 +1,18 @@
+{
+  "sid": "S802",
+  "display_name": "Share of industries with non-falling prices in contractions, by concentration (Weston via Semmler), 1957-1970",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh Figure 8.2 (Ch8, p.372). Cross-sectional: percent of industries with price increases or no decreases during each of three NBER contractions (1957-58, 1960-61, 1969-70), tabulated against CR4 concentration midpoints (20/50/80). From Weston, Lustgarten & Grottke (1974) as reported in Semmler (1984, p.95). The year column (1957/1960/1969) labels each contraction's cross-section; the real explanatory axis is the CR4 midpoint. Construction-relevant: Shaikh's exhibit that the sign of the price-concentration relation flips across contractions, refuting the administered-price prediction.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S802-C1957": {"label": "Contraction Jul-1957 to Apr-1958", "units": "percent"},
+    "S802-C1960": {"label": "Contraction Jan-1960 to Jan-1961", "units": "percent"},
+    "S802-C1969": {"label": "Contraction Nov-1969 to Nov-1970", "units": "percent"}
+  },
+  "field_fixes": {
+    "note": "Source-table number ambiguity: Shaikh's text (Ch8 p.372) cites the Weston data as 'Semmler 1984, 95, table 3.2', while the chopped source_id and the digitized workbook (Appendix8_Semmler19843.3.xlsx) reference Semmler Table 3.3. Both are p.95; the book-narrative citation is table 3.2. Flagged for source-citation reconciliation; data values unaffected."
+  }
+}

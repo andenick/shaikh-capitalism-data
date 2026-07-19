@@ -1,11 +1,11 @@
 # S401 — Extension Provenance Record
 
 **Series**: S401 — Average and Marginal Costs with Wage Paid per Worker (Fig 4.16)
-**Phase**: 6 (Extension)
+**Record type**: Extension Provenance Record
 **Construction classification**: `derived`
 **Extension method**: **not_applicable_theoretical**
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch4-fanout
+**Author**: RSCD data-construction pipeline
 
 ---
 
@@ -40,14 +40,14 @@ Not applicable.
 
 | Failure | Detection | Action |
 |---|---|---|
-| Reconstructed CSV missing | L01 checks `Appendix_4_2_Table4.csv` exists | Loader returns FAIL with explicit path |
-| CSV schema drift (column rename) | L01 explicit column list | Loader returns FAIL with missing-column report |
-| Empty XR=0 row mis-parsed | L01 preserves nulls in non-`afc` columns | Processor passes through; validator treats nulls as not-compared |
+| Reconstructed CSV missing | The data-loading step checks that `Appendix_4_2_Table4.csv` exists | The data-loading step returns FAIL with the explicit path |
+| CSV schema drift (column rename) | The data-loading step's explicit column list | The data-loading step returns FAIL with a missing-column report |
+| Empty XR=0 row mis-parsed | The data-loading step preserves nulls in non-`afc` columns | The processing step passes through; the validation step treats nulls as not-compared |
 
-## 8. CD2 divergence
+## 8. Predecessor divergence
 
-**Not applicable** — no CD/CD2 predecessor for any Ch4 series.
+**Not applicable** — no earlier reconstruction of this project (internally called CD/CD2) contained any Chapter 4 series.
 
 ## 9. Forward roadmap
 
-A possible Phase 9 visualization would re-derive the cost curves on a finer XR grid by re-implementing eq. (4.2.1) directly (with the back-solved `a1=2.40`); that re-derivation would be a viz convenience, **not** an extension of S401, and is out of scope for Phases 5–8.
+A possible later chapter-level visualization would re-derive the cost curves on a finer XR grid by re-implementing eq. (4.2.1) directly (with the back-solved `a1=2.40`); that re-derivation would be a visualization convenience, **not** an extension of S401, and is out of scope for the present data-construction work.

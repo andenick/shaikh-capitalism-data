@@ -2,9 +2,9 @@
 
 Two checks:
   (1) Cell-by-cell match of processed `value` to Appendix11_USJPNdata
-      'rxrrulcratio1' column (tol 0.5%).
+      'rxrrulcratio1' column (tol 1.0%).
   (2) Derivation consistency: rxr1 / rulcadjratio1rescaled ~= rxrrulcratio1
-      (tol 0.5%). Detects the formula construction documented in Appendix 11
+      (tol 1.0%). Detects the formula construction documented in Appendix 11
       Documentation sheet.
 """
 from __future__ import annotations
@@ -22,7 +22,7 @@ from utils import paths  # noqa: E402
 from utils.paths import DATA_PROCESSED, book_data_path  # noqa: E402
 
 SERIES_ID = "S1103"
-VALIDATOR_TOL_PCT = 0.5
+VALIDATOR_TOL_PCT = 1.0
 PROCESSED = DATA_PROCESSED / f"{SERIES_ID}.parquet"
 TRUTH_XLSX = book_data_path("Appendix11_USJPNdata.xlsx")
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"

@@ -1,8 +1,8 @@
 # S501 — US and UK Wholesale Price Indexes, 1790-1940
 
-**Data Provenance Record (DPR)** · **Phase**: 5 (Ingestion) · **Series ID**: S501
+**Data Provenance Record (DPR)** · **Series ID**: S501
 **Status**: book_period_validated
-**Related**: `Technical/research/S501_research.json`, `Technical/docs/chapters/CH5_ADEQUACY_REPORT.json`, `Technical/docs/series/S501_EPR.md`, registry → `series.S501`.
+**Related**: research dossier, chapter adequacy report, extension provenance record, registry → `series.S501`.
 
 ---
 
@@ -18,7 +18,7 @@ Ch5 separates the relative-price problem from the general-price-level problem. F
 
 | Subseries | Coverage | Source | Native units | Retrieval |
 |---|---|---|---|---|
-| **S501-A** | 1790-1940 | Jastram (1977, table 7) — US WPI, spliced 1977-onward via BLS PPI but truncated to 1940 here | Index 1930=100 | Local: `SalvagedInputs/book_data/ShaikhChoppedTables/Appendix5_DATALRprices.xlsx`, column `USWPI` |
+| **S501-A** | 1790-1940 | Jastram (1977, table 7) — US WPI, spliced 1977-onward via BLS PPI but truncated to 1940 here | Index 1930=100 | Local: book appendix source table, column `USWPI` |
 | **S501-B** | 1790-1940 | Jastram (1977, table 2) — UK WPI, with 1939-1945 NBER macrohistory fill (here truncated 1790-1940 so only 1939, 1940 are wartime-affected) | Index 1930=100 | Same XLSX, column `UKWPI` |
 
 Per Phase 4 (CH5_ADEQUACY): anwarshaikhecon.org DNS does not resolve; local `Appendix5_DATALRprices.xlsx` is canonical. Web citation: `https://web.archive.org/web/20240311145229/https://www.anwarshaikhecon.org/`.

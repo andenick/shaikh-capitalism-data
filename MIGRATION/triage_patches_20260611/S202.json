@@ -1,0 +1,20 @@
+{
+  "sid": "S202",
+  "display_name": "US Real Investment Index",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.2 figure; book_period_validated; real data present in chopped CSV; KB-verified.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S202-A": {
+      "label": "Real nonresidential business investment (BEA, 1832-1975)",
+      "units": "index (1958=100)"
+    },
+    "S202-B": {
+      "label": "Real nonresidential fixed investment (BEA wealth tables, 1901-2010)",
+      "units": "index (1958=100)"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "sid": "S1603",
+  "display_name": "US and OECD short-term interest rates, 1960–2011",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "KB-verified: figure 16.7 caption and in-text description (p.733) match; appendix sourcing (Fed H.10 trade weights, IMF IFS) confirmed; verbatim quotes match.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1603-A": {
+      "label": "US 3-month Treasury-bill rate",
+      "units": "decimal rate (annual average)"
+    },
+    "S1603-B": {
+      "label": "OECD weighted-average short rate",
+      "units": "decimal rate (annual average)"
+    },
+    "S1603-C": {
+      "label": "Euro-area short rate",
+      "units": "decimal rate (annual average)"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "sid": "S601",
+  "display_name": "Corporate, non-corporate, and business profit rates with capacity utilization",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh Figures 6.1/6.4/6.5 (Ch6). Three sectoral profit-rate lines (corporate, non-corporate, business), 1947-2011, plus Shaikh's cointegration-derived capacity-utilization measure and the Federal Reserve comparison, transcribed from Shaikh's Appendix 6.8 tables. Construction-relevant: the central regulator of accumulation and the basis for treating the corporate rate as a proxy for the general rate. Profit rates and utilization carry different units, split per subseries.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S601-A": {"label": "Corporate profit rate", "units": "decimal_rate"},
+    "S601-B": {"label": "Non-corporate profit rate", "units": "decimal_rate"},
+    "S601-C": {"label": "Business-sector profit rate", "units": "decimal_rate"},
+    "S601-D": {"label": "Capacity utilization (Shaikh)", "units": "ratio"},
+    "S601-E": {"label": "Capacity utilization (Federal Reserve)", "units": "ratio"}
+  },
+  "field_fixes": {}
+}

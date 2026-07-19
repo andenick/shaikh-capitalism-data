@@ -1,0 +1,21 @@
+{
+  "sid": "XS2101",
+  "display_name": "Sraffa price curvature and label-switching summary statistics, US 2002 and 2007 (Shaikh, Coronado & Nassif-Pires 2020)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Verbatim headline summary statistics from Section 5 (p.272) of Shaikh, Coronado & Nassif-Pires (2020): average curvature-index bounds, total price count, and the value-line / Bienenfeld-line switching counts and shares. Few points is legitimate (these ARE the study's full reported summary stats, not a truncated series). The prescreen MIXED_UNITS flag is real and is resolved by per-subseries units (dimensionless CI bounds, count price tallies, percent switching shares) so each statistic renders on its own scale rather than being mixed on one axis. SPARSE flag is a true-positive but acceptable: the CI bounds span both benchmark years (2002, 2007); the switching statistics are reported for 2002 only (the 425-price benchmark), faithful to the paper.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "XS2101-avg_CI_lower_bound": {"label": "Average curvature index, lower bound", "units": "dimensionless"},
+    "XS2101-avg_CI_upper_bound": {"label": "Average curvature index, upper bound", "units": "dimensionless"},
+    "XS2101-n_prices_total": {"label": "Total prices analyzed", "units": "count"},
+    "XS2101-n_prices_switching_value": {"label": "Prices switching across their labor value", "units": "count"},
+    "XS2101-n_prices_switching_value_pct": {"label": "Share of prices switching across labor value", "units": "percent"},
+    "XS2101-n_prices_switching_bienenfeld": {"label": "Prices switching across the Bienenfeld line", "units": "count"},
+    "XS2101-n_prices_switching_bienenfeld_pct": {"label": "Share of prices switching across the Bienenfeld line", "units": "percent"},
+    "XS2101-max_bienenfeld_deviation_pct": {"label": "Maximum deviation from the Bienenfeld line", "units": "percent"}
+  },
+  "field_fixes": {"units": "per_subseries"}
+}

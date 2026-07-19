@@ -4,39 +4,38 @@
 
 ## Method
 
-Per the Ch6 GPIM construction pipeline (see `Technical/docs/chapters/CH6_GPIM_SUMMARY.md`) and the Anu Framework anti-degradation rule, **extension does NOT splice the published XS002 values**. Instead, the extension re-fetches the underlying NIPA / BEA Fixed Asset / IRS / Census components and re-runs the formula end-to-end at the current vintage.
+Under the Chapter 6 Generalized Perpetual Inventory Method (GPIM) construction pipeline, and following the principle that extended values must be rebuilt from sources rather than spliced, **extension does NOT splice the published XS002 values**. Instead, the extension re-fetches the underlying National Income and Product Accounts (NIPA), BEA Fixed Asset, IRS, and Census components and re-runs the formula end-to-end at the current vintage.
 
-1. Fetch BEA NIPA tables via `S00_apis.bea_table` (`BEA_API_KEY` required) using the table ids documented in the dossier `primary_source`.
-2. Fetch BEA Fixed Asset T6.1, T6.4, T6.7, T6.8 via the same client.
+1. Fetch the BEA NIPA tables via the BEA data API (a BEA API key is required), using the table ids documented for this series' primary source.
+2. Fetch BEA Fixed Asset Tables 6.1, 6.4, 6.7, 6.8 from the same source.
 3. Re-run the construction formula end-to-end.
-
 
 ## Worked Example
 
-For XS002, the Phase 5 round-trip validation reads `XS002_raw.parquet` from the Appendix 6.8 workbook and confirms bit-for-bit reproduction of the published series for the book period 1947-2011. A worked-example year (typically 2009 per book p. 842, or 2011 per Shaikh's last published vintage) verifies headline values.
+For XS002, the round-trip validation reads the raw series from the Appendix 6.8 workbook and confirms bit-for-bit reproduction of the published series for the book period 1947-2011. A worked-example year (typically 2009 per book p. 842, or 2011 per Shaikh's last published vintage) verifies headline values.
 
-## No-Proxy Disclosure
+## Source substitutions
 
 No proxies are used in the book period. Book period is fully sourced from primary BEA / IRS / Census; no proxies.
 
-## No-Synthetic Disclosure
+## Forecast vs. observed data
 
-No synthetic values, interpolations, or freezes are used. All values are verbatim from Shaikh's posted Appendix 6.8 chopped tables (MD5-verified per `SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/README.md` for the BEA 1993 staged inputs).
+No synthetic values, interpolations, or freezes are used. All values are verbatim from Shaikh's posted Appendix 6.8 chopped tables (MD5-verified against the staged 1993 BEA depreciation inputs).
 
 ## Failure Mode Table
 
 | Failure | Detection | Response |
 |---------|-----------|----------|
-| Appendix workbook missing or corrupted | `_ch6_appendix_loader` raises `FileNotFoundError` or empty DataFrame | L01 returns `status: FAIL` with explicit path |
-| Variable name not in workbook | `load_variables` returns empty DataFrame | L01 records 0 rows for that subseries; V03 flags as missing |
-| BEA / IRS vintage drift during extension | EPR-documented re-fetch script logs vintage_year; V03 tolerance widens for extension rows | Documented per-year; no silent overwrite of book period |
-| FISIM T7.11 line revision (XS003) | `_nipa_t711_line_resolver` falls back to nearest pinned vintage with logged warning | Re-mapped by stub label; vintage logged in resolver output |
-| BEA 1993 depreciation rate not available post-2011 | XS004/XS006/XS007 freeze depreciation rate inputs at 2011-vintage projection | Documented in `BEA_1993_FA_methodology/README.md` |
+| Appendix workbook missing or corrupted | The appendix loader raises a file-not-found error or returns an empty table | The load step returns a FAIL status naming the missing file |
+| Variable name not in workbook | The variable lookup returns no rows | The load step records 0 rows for that subseries; validation flags it as missing |
+| BEA / IRS vintage drift during extension | The documented re-fetch script logs the vintage year; validation tolerance widens for extension rows | Documented per-year; no silent overwrite of book period |
+| FISIM (financial services indirectly measured) revision to NIPA Table 7.11 line numbers (affects XS003) | The Table 7.11 line resolver falls back to the nearest pinned vintage with a logged warning | Lines are re-mapped by their published stub labels; the vintage used is logged |
+| BEA 1993 depreciation rate not available post-2011 | The capital-stock series (XS004 and related) freeze depreciation-rate inputs at the 2011-vintage projection | Documented with the staged 1993 BEA methodology inputs |
 
-## CD2 Divergence Pre-Disclosure
+## Comparison with the earlier replication
 
-CD2 / RSCD round-trip parity expected within tolerance for the book period. Informational comparison against CD2 per-series CSV when available.
+Round-trip parity with an earlier replication is expected within tolerance for the book period. The comparison against that earlier replication's per-series output is informational only, when available.
 
-## Anti-Degradation Compliance
+## Extension integrity
 
-Per Anu Framework: extension MUST re-fetch the BEA / IRS / FRB component series and re-compute the formula end-to-end. Splicing the published series is FORBIDDEN. Loader caches BEA / FRED responses per `S00_cache` with 30-day TTL (book-period values: TTL=None).
+Extension MUST re-fetch the BEA, IRS, and Federal Reserve Board (FRB) component series and re-compute the formula end-to-end; splicing the published series is forbidden. The loader caches BEA and FRED responses for 30 days (book-period values are cached permanently).

@@ -1,3 +1,31 @@
+---
+decision_id: "0005"
+title: "Discontinued API Substitutions (Deferred to Phase 4)"
+status: proposed
+proposed_at: "2026-05-18T00:00:00Z"
+decided_by: phase_4_adequacy
+affected_series:
+  - S207
+  - S210
+  - S211
+  - S703
+  - S704
+  - S705
+  - S706
+  - S707
+  - S708
+  - S1006
+  - S1102
+  - S1103
+  - S1104
+  - S1504
+  - S1508
+  - S1509
+affected_stages:
+  - phase_4
+  - phase_6
+---
+
 # 0005 — Discontinued API Substitutions (Deferred to Phase 4)
 
 **Status**: DEFERRED to Phase 4 ADEQUACY (not a single up-front decision)

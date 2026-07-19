@@ -1,0 +1,15 @@
+{
+  "sid": "S805",
+  "display_name": "Rate of return by concentration (CR4) (Demsetz), 1963 and 1969",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh Figure 8.6 (Ch8, pp.376-377) from Demsetz (1973b, Table 4, p.19): profit rate on assets across six CR4 concentration bins for two snapshot years, 1963 and 1969. Cross-sectional (industries binned by CR4 within each year; the two years are not a continuous index). Construction-relevant: Shaikh's exhibit of the temporal instability of the concentration-profit relation (weak positive in 1963, weak negative in 1969), expected under real competition.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S805-1963": {"label": "1963 cross-section by CR4 bin", "units": "percent"},
+    "S805-1969": {"label": "1969 cross-section by CR4 bin", "units": "percent"}
+  },
+  "field_fixes": {}
+}

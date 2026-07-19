@@ -1,0 +1,16 @@
+{
+  "sid": "S213",
+  "display_name": "US General Rate of Profit",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.2 figure; book_period_validated; real data present in chopped CSV; KB-verified.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S213-A": {
+      "label": "Corporate rate of profit (1947-2011)",
+      "units": "rate (decimal fraction)"
+    }
+  }
+}

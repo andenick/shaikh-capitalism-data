@@ -1,0 +1,22 @@
+{
+  "sid": "S1406",
+  "display_name": "Inflation and productivity growth, United States",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.14 Figure 14.15 (Inflation and Productivity Growth, United States, 1948-2011). Real data present in chopped CSV (147 points, 2 subseries, 1949-2022); book_period_validated; figure number and quotes KB-verified (Fig 14.15 quote verbatim at ch14 KB line 1690/1644; productivity formula yr=(GDP*100/p)/(FEE/1000) verbatim from Appendix 14.2, ch18 KB line 8410-8412). These two series supply the shift components for the real- and nominal-wage Phillips curves (S1407/S1408) via Eq.14.18/14.19. Two subseries, both decimal annual growth rates but distinct measures (inflation vs productivity-per-FTE) -- per-subseries labels below.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1406-A": {
+      "label": "Inflation rate (GDP deflator)",
+      "units": "growth rate (decimal/year)"
+    },
+    "S1406-B": {
+      "label": "Productivity growth (real GDP per full-time-equivalent worker)",
+      "units": "growth rate (decimal/year)"
+    }
+  },
+  "field_fixes": {},
+  "notes": "Productivity is real GDP per FTE worker, NOT per hour (per Appendix 14.2). The label makes this explicit so a reader does not confuse it with BLS per-hour productivity."
+}

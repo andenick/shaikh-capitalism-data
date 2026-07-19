@@ -1,0 +1,16 @@
+{
+  "sid": "XS005",
+  "display_name": "GPIM variant: pure BEA 2011 reference regenerator",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Methodology variant of XS004 (NOT used by S601-S604) that re-derives the official BEA 2011 net stock from the pure GPIM rule, verifying ~99.6% accuracy of the accumulation rule (Appendix Table 6.8.II.1). Publishes because it documents the GPIM-rule validation Shaikh relies on and renders sensibly once units are split: XS005-C is the GPIM/BEA ratio (~1.0), which must not share the billions axis with the two stock columns (latent mixed-units, fixed here per UNITS_VALIDATION_STANDARD).",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "XS005-A": {"label": "Net current-cost corporate stock (pure GPIM, BEA 2011 inputs)", "units": "billions_current_usd"},
+    "XS005-B": {"label": "Official BEA 2011 net corporate stock (reference)", "units": "billions_current_usd"},
+    "XS005-C": {"label": "Pure GPIM / official BEA ratio", "units": "dimensionless_ratio"}
+  },
+  "field_fixes": {"units": "per_subseries"}
+}

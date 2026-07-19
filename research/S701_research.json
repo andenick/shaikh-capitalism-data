@@ -35,13 +35,13 @@
   ],
   "primary_source": {
     "agency": "Salter, W. E. G. (Cambridge University Press)",
-    "publication": "Productivity and Technical Change, 2nd edition, 1969 (originally 1960; with addendum by W. B. Reddaway). Table 33 (US 1923-1950 industry selling price and unit labor cost indices, base 1923 = 100).",
-    "table_or_series_id": "Salter (1969) p. 197, Table 33",
+    "publication": "Productivity and Technical Change, 2nd edition, 1969 (originally 1960; with addendum by W. B. Reddaway). Table 28 (US 1923-1950 industry selling price and unit labor cost indices, base 1923 = 100).",
+    "table_or_series_id": "Salter (1969) p. 164, Table 28",
     "url": "https://www.cambridge.org/core/books/productivity-and-technical-change/13C6E0F2C6CC5D6E5DAB0F3A1CAA5C28",
     "frequency": "cross_sectional (two-period industry comparison: 1923 vs 1950)",
     "units": "ratio (1950 value / 1923 value, x 100; both selling price and unit labor cost indexed)",
     "license": "Reproduced from Salter (1969); academic fair use. Underlying US source data is from US Census of Manufactures / BLS productivity studies of the 1950s as compiled by Salter.",
-    "available_through": "Cambridge University Press; transcribed into Appendix 7.2 file 'Appendix7_SalterULCPriceTable33.xlsx' on Shaikh's companion website http://www.anwarshaikhecon.org/",
+    "available_through": "Cambridge University Press; transcribed into Appendix 7.2 file 'Appendix7_SalterULCPriceTable28.xlsx' on Shaikh's companion website http://www.anwarshaikhecon.org/",
     "discontinued": true,
     "replaced_by": "Salter's underlying 1923-1950 US industry tabulations are not maintained as a current series; for modern selling-price vs unit-labor-cost cross-sections see BLS Industry Productivity Program PRS series + BLS PPI by NAICS."
   },
@@ -81,12 +81,12 @@
   ],
   "methodology_notes": [
     "Cross-sectional scatter, not a time series. Each point is one US industry; x-axis is the ratio of that industry's unit labor cost in 1950 to its unit labor cost in 1923 (x 100), y-axis is the corresponding ratio of selling prices.",
-    "Source data is Salter (1969), Table 33 (p. 197), which Shaikh re-plots. Appendix 7.1 (book p. 856, PDF p. 894) states: 'Figures 7.1-7.12 are either illustrations or have their sources listed within the figure itself.' Salter built Table 33 from US Census of Manufactures data and BLS price indexes for ~28 US manufacturing industries spanning 1923-1950.",
+    "Source data is Salter (1969), Table 28 (p. 164), which Shaikh re-plots. Appendix 7.1 (book p. 856, PDF p. 894) states: 'Figures 7.1-7.12 are either illustrations or have their sources listed within the figure itself.' Salter built Table 28 from US Census of Manufactures data and BLS price indexes for twenty-seven US manufacturing industries spanning 1923-1950. (The book's Fig 7.11 caption transposes this to '197, table 33'; that is a caption erratum — see open_questions[0].)",
     "Shaikh's analytical point in plotting this is that cross-industry variation in selling-price changes is closely tracked by cross-industry variation in unit-labour-cost changes; he describes the relationship as 'striking' (book p. 286), supporting the classical/Marxian theory that prices of production are regulated by costs of production. (Note: the book states no R-squared or percentage-explained statistic — earlier drafts citing '~77%' were unverifiable against the KB and have been removed.)",
-    "Replication strategy for RSCD: digitize Table 33 from Salter (1969) directly OR use Shaikh's transcribed Appendix 7.2 file SalterULCPriceTable33.xlsx in SalvagedInputs/book_data/ShaikhChoppedTables/. No modern 'extension' is meaningful because the figure is a historical cross-section, not a time-series."
+    "Replication strategy for RSCD: digitize Table 28 from Salter (1969) directly OR use Shaikh's transcribed Appendix 7.2 file SalterULCPriceTable28.xlsx in SalvagedInputs/book_data/ShaikhChoppedTables/. No modern 'extension' is meaningful because the figure is a historical cross-section, not a time-series."
   ],
   "open_questions": [
-    "SOURCE-LABEL DESYNC (ch7 reconciliation 2026-06-11): the book caption (KB ground truth) cites this US Fig 7.11 panel as Salter 1969, p.197, table 33 — and research/docs now follow the book. BUT the registry subsource KEY (SALTER_1969_TABLE28_US), SUBSOURCE_METADATA.json entry, and the chopped S701.csv source_id column still carry the file-derived label TABLE28 with page 164. Registry/chopped were left untouched (out of scope for the reconciliation agent). The registry owner should either (a) rename the key + source_id to TABLE33/p197, or (b) keep the key as an opaque id and ensure its descriptive table_id/page fields state the book-correct p.197/table 33 (the generator _ch7_fanout_author.py SUBSOURCE entry was updated to do this). Data VALUES are correct and verified EXACT vs the Salter US panel (48/48 pairs).",
+    "RESOLVED (Salter caption transposition, campaign DF-2, 2026-07-02): The book Fig 7.11 caption transposes the two Salter tables (it prints 'Source: Salter 1969, 197, table 33'). The AUTHORITATIVE mapping — from the salvaged workbook Row-0 title ('Table 28. … twenty-seven industries, United States, 1923-50 (1923 = 100)') and the book body text '(164, table 28; 197, table 33)' — is US Fig 7.11 = Salter Table 28, p.164. The registry subsource KEY (SALTER_1969_TABLE28_US), the SUBSOURCE_METADATA.json entry, the chopped S701.csv source_id, and the L01_S701 loader (reads Appendix7_SalterULCPriceTable28.xlsx) are ALL CORRECT and MUST NOT be renamed. Docs and this research JSON have been reverted to the true mapping — this reverses the 2026-06-11 reconciliation, which had wrongly elevated the erratum captions and left the (correct) keys flagged for renaming. DO NOT rename the subsource keys or chopped source_ids. Data VALUES verified EXACT vs the Salter US panel (48/48 pairs).",
     "Confirm whether SalvagedInputs/book_data/ShaikhChoppedTables/Appendix7_SalterULCPriceTable33.xlsx is a verbatim digitization of Salter (1969) Table 33, or whether Shaikh applied any transformation. If transformation, document.",
     "Industry labels in Salter's Table 33 use 1920s SIC-precursor categories; for any Phase 4/5 visualization, decide whether to keep Salter's original labels or to crosswalk to modern NAICS (recommendation: keep original - this is a historical illustration).",
     "Re-classify content_type from time_series (stub default) to cross_sectional in the chapter index; stub had this wrong."

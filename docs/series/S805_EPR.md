@@ -1,11 +1,11 @@
 # S805 — Extension Provenance Record
 
 **Series**: S805 — Rates of Return and Concentration (CR4), 1963 and 1969 (Demsetz Fig 8.6)
-**Phase**: 6 (Extension)
+
 **Construction classification**: `direct` (cross_sectional)
 **Extension method**: not applicable — see §1
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch8-fanout
+**Author**: Anu automated extraction pipeline
 **Related**: `S805_DPR.md`
 
 ---
@@ -14,7 +14,7 @@
 
 `content_type = cross_sectional`. Two non-adjacent year-snapshots (1963 and 1969), each an industry cross-section binned by CR4. The two years are not a continuous time index; they are used by Shaikh specifically to demonstrate the *sign reversal* of the concentration-profit relation between two adjacent years.
 
-Per the playbook recipe (cross_sectional):
+Per the project's cross-sectional handling convention:
 
 > "Extension: explicitly `not_applicable_cross_sectional` in EPR; extension_candidates empty in dossier (already true after Phase 4)."
 

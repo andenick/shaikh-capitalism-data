@@ -1,0 +1,18 @@
+{
+  "sid": "S403",
+  "display_name": "Total profit under per-worker versus per-hour wages (illustrative)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Renderable two-trace profit curve (Shaikh Fig 4.18): total profit vs cumulative daily output XR, one trace for per-worker wages (PL = p*XR - tc') and one for per-hour wages (PH = p*XR - tc), at output price p=7. 2 subseries x 21 points = 42 rows, all non-null. Renders as overlaid x-y profit curves (x = cumulative output XR, 'year' index column 0-9, NOT calendar years). TRIAGE_PRESCREEN EMPTY flag is STALE: L01_S403/P02_S403 exist and replicate.py --series S403 builds the chopped (PASS, 42 rows). Derived from S401+S402, both verbatim from Appendix Table 4.2.4. KB note: the p.781 appendix passage AND Appendix Table 4.2.4 are present verbatim in ch18_appendices.md, so a KB-anchored 'From the book' quote is included.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S403-PL": {"label": "Total profit, per-worker wages (PL = p*XR - tc')", "units": "money units (illustrative)"},
+    "S403-PH": {"label": "Total profit, per-hour wages (PH = p*XR - tc)", "units": "money units (illustrative)"}
+  },
+  "field_fixes": {
+    "year_column_is_index": "Chopped 'year' is a point index (0-9), not a calendar year; abscissa is cumulative daily output XR. Viz plots profit vs XR."
+  },
+  "notes": "content_type derived; construction formula; not extended. Derived from S401 (per-worker costs) and S402 (per-hour costs) at p=7."
+}

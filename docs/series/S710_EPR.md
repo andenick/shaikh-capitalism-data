@@ -1,11 +1,11 @@
 # S710 — Extension Provenance Record
 
 **Series**: S710 — Figure 7.18 — US Industry IROP Deviations from Average, 1988–2005 (derivative of S706)
-**Phase**: 6 (Extension)
+
 **Construction classification**: `formula` (one-line algebraic derivative of S706)
 **Extension method**: re-derive from S706 on any extension wave
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch7-fanout
+**Author**: Anu Framework pipeline
 **Related**: `S710_DPR.md`, `S706_EPR.md`
 
 ---
@@ -16,13 +16,15 @@
 
 > "Growth-rate splice is ONLY valid when the original series was itself a directly-observed time series. If the original computed a formula, the extension must compute the same formula with extended component data."
 
-This series is **formula**: it is the algebraic transform `dev_i,t = level_i,t − aggregate_t`. Therefore extension must re-fetch the underlying S706 components (BEA primaries) and re-compute the deviation; no growth-rate splice is permissible.
+This series is **formula**: it is the algebraic transform `dev_i,t = level_i,t − aggregate_t`. Therefore extension must re-fetch the underlying S706 components (BEA (US Bureau of Economic Analysis) primaries) and re-compute the deviation; no growth-rate splice is permissible.
 
 ## 2. Method
 
+The scripts named below are the per-series loader (`L01`), processor (`P02`), and validator (`V03`).
+
 ```
 INPUTS
-  S706's processed parquet (Technical/data/processed/S706.parquet)
+  S706's processed parquet (processed data file)
   All-Private aggregate column from S706
 
 PROCEDURE (Phase 5, this wave)
@@ -52,4 +54,18 @@ For year 1990, industry Chemicals in S709: `dev_Chemicals_1990 = ROP_Chemicals_1
 
 ## 7. CD2 divergence pre-disclosure
 
-CD2's `S037` used the same xlsx. RSCD's Phase 5 deliverable should match CD2 at MAE = 0 on the book period.
+CD2 (the predecessor build of this dataset) used the same xlsx for `S037`. RSCD's Phase 5 deliverable should match CD2 at MAE = 0 on the book period.
+
+## Notation (plain-language key)
+
+Short forms used above, in plain language (this record is a downloadable external artifact):
+
+- **S###** — series identifiers in this project (e.g. S706, S710).
+- **DPR / EPR** — Data Provenance Record / Extension Provenance Record (this file).
+- **Phase N** — Anu Framework pipeline stages: Phase 5 = ingestion, Phase 6 = extension.
+- **L01 / P02 / V03** — the per-series load / process / validate scripts.
+- **CD2** — the predecessor build of this dataset.
+- **ROP** — (average) rate of profit.
+- **IROP** — incremental rate of profit: the return on newly added capital (the year-to-year change in profit divided by the new investment that produced it).
+- **BEA** — US Bureau of Economic Analysis.
+- **MAE** — mean absolute error.

@@ -1,0 +1,18 @@
+{
+  "sid": "S1509",
+  "display_name": "World inflation versus growth of total credit, 1988-2011 (Ramamurthy)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful direct replication of book figure 15.13 - Ramamurthy's updated 38-country / 46-episode cross-section (Romania de-duplicated from the 39-entry footnote) extending Harberger to 1988-2011. Cross-sectional country panel; the single year label (2011) is correct and the COVERAGE_START prescreen flag is an index-axis false positive. Hyperinflation magnitudes verified (Armenia pi 23.12 = 2,312%) consistent with the book's note that the upper range is ten times higher than figure 15.12.",
+    "date": "2026-06-11"
+  },
+  "corrections": [
+    "UNITS FIX: registry declared units 'rate_percent' but stored values are decimal fractions (1.0 = 100%). Brazil lambda 12.79 means 1,279% credit growth, Armenia pi 23.12 means 2,312% inflation - decimal, not percent. Both subseries are rate_decimal."
+  ],
+  "field_fixes": {"units": "per_subseries"},
+  "subseries": {
+    "S1509-lambda": {"label": "Growth of total domestic credit (Harberger's lambda)", "units": "rate_decimal"},
+    "S1509-pi": {"label": "CPI inflation rate", "units": "rate_decimal"}
+  }
+}

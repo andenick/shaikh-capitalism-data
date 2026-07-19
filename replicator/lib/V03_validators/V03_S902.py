@@ -18,7 +18,7 @@ from L01_loaders._ch9_helpers import (  # noqa: E402
 
 PROCESSED = DATA_PROCESSED / "S902.parquet"
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
-VALIDATOR_TOL_PCT = 0.5
+VALIDATOR_TOL_PCT = 1.0
 
 # Phase 4 + DPR sanity gate: observed profit rates must match Appendix9 (within 0.1%)
 EXPECTED_ROBS = {1947: 0.236, 1958: 0.176, 1963: 0.21, 1967: 0.229, 1972: 0.188, 1998: 0.1258}

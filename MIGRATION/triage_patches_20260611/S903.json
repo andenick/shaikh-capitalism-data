@@ -1,0 +1,30 @@
+{
+  "sid": "S903",
+  "display_name": "Actual wage-profit curves for the US economy, 1947-1998",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh's actual (empirical) wage-profit curves, Figures 9.8, 9.12 and 9.19 (Ch9, Section X). For each US benchmark year the fixed-capital price system is solved for the wage share at each rate of profit (WSHARE), then rescaled by a Penn World Tables productivity index (PWT 7.1) into a real-wage curve (WRCURVE) plotted over its own profit-rate range up to that year's maximum profit rate (R). Construction-relevant: the empirical near-linear wage-profit curves that underpin Shaikh's transformation-problem and choice-of-technique arguments. Subseries carry genuinely different meanings and units (wage share, real-wage productivity index, productivity index, maximum profit rate), so units are split per subseries. NOTE: Figure 9.19's printed caption reads '1947-1972' and plots curves wr47-wr72 only, while the narrative (p.422) and this dataset cover 1947-1998; the display_name follows the data and text. SPARSE flag on S903-R-CIRC is a non-issue: it is a single scalar (one circulating-capital maximum profit rate), correctly one row.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S903-WSHARE-47": {"label": "Wage share curve, 1947", "units": "dimensionless_share"},
+    "S903-WSHARE-58": {"label": "Wage share curve, 1958", "units": "dimensionless_share"},
+    "S903-WSHARE-63": {"label": "Wage share curve, 1963", "units": "dimensionless_share"},
+    "S903-WSHARE-67": {"label": "Wage share curve, 1967", "units": "dimensionless_share"},
+    "S903-WSHARE-72": {"label": "Wage share curve, 1972", "units": "dimensionless_share"},
+    "S903-WSHARE-98CIRC": {"label": "Wage share curve, 1998 (circulating capital)", "units": "dimensionless_share"},
+    "S903-WSHARE-98FIX": {"label": "Wage share curve, 1998 (fixed capital)", "units": "dimensionless_share"},
+    "S903-WRCURVE-47": {"label": "Real wage curve, 1947", "units": "real_wage_index"},
+    "S903-WRCURVE-58": {"label": "Real wage curve, 1958", "units": "real_wage_index"},
+    "S903-WRCURVE-63": {"label": "Real wage curve, 1963", "units": "real_wage_index"},
+    "S903-WRCURVE-67": {"label": "Real wage curve, 1967", "units": "real_wage_index"},
+    "S903-WRCURVE-72": {"label": "Real wage curve, 1972", "units": "real_wage_index"},
+    "S903-WRCURVE-98CIRC": {"label": "Real wage curve, 1998 (circulating capital)", "units": "real_wage_index"},
+    "S903-WRCURVE-98FIX": {"label": "Real wage curve, 1998 (fixed capital)", "units": "real_wage_index"},
+    "S903-PWT-RGDPPERWORKER": {"label": "Productivity index (PWT 7.1 real GDP per worker, 1947 base)", "units": "index_1947=base"},
+    "S903-R-CIRC": {"label": "Maximum profit rate (circulating-capital model)", "units": "decimal_rate"},
+    "S903-R-FIXED": {"label": "Maximum profit rate (fixed-capital model)", "units": "decimal_rate"}
+  },
+  "field_fixes": {}
+}

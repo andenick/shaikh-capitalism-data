@@ -1,0 +1,15 @@
+{
+  "sid": "S503",
+  "display_name": "UK wholesale prices in gold and the pound price of gold, 1790-2010",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful reconstruction of Shaikh Figure 5.5 (Ch5): the empirical implementation of Marx's price decomposition p = p' x pG for the UK. Two lines on a 1930=100 base read directly from Shaikh's Appendix 5 DATALRprices workbook (UK WPI-in-gold and the sterling price of gold). Construction-relevant formula series; internal-consistency check UKWPI ~= p' x pG verified to within rounding.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S503-A": {"label": "UK wholesale prices in gold (p')", "units": "index_1930=100"},
+    "S503-B": {"label": "UK pound price of gold (pG)", "units": "index_1930=100"}
+  },
+  "field_fixes": {}
+}

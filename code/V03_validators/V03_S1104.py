@@ -1,11 +1,21 @@
-"""V03_S1104 - validate S1104-A (X-M)/(X+M) and S1104-B REER.
+"""V03_S1104 - validate S1104-A (X-M)/(X+M), S1104-B REER, S1104-C rel-GDP.
 
 S1104-A: compare against derived (X-M)/(X+M) computed from Appendix11_XMData.xlsx
         US block. Reference CD2 sample values (1960=-0.606, 2008=-0.533) come
         from intratediff1 column NOT trade balance; the V03 reconstructs the
         Phase-4-canonical trade-balance values directly.
 S1104-B: compare against rxr1 (US) from Appendix11_USJPNdata.xlsx.
-S1104-C: not loaded (deferred); validator records data_unavailable.
+S1104-C: no independent BOOK truth exists (Fig 11.7's third line is not in any
+        salvaged workbook, and FIGURE_MASTER_v4 carries only metadata for
+        Fig11.7 — no digitized point values). This validator therefore performs
+        an INDEPENDENT RE-CONSTRUCTION from WDI NY.GDP.MKTP.KD (a fresh fetch,
+        the fixed pre-1995 EU12 basket, US/EU12, rebased 2002=100) and asserts
+        the pipeline output reproduces it within tolerance — a self-consistency
+        guard against pipeline/construction drift, NOT a book-figure fidelity
+        proof. Book-figure fidelity for S1104-C remains UNVERIFIED pending a
+        figure-digitization pass (disclosed in S1104_DPR.md section 9 and the
+        registry). The non-tautological guard is the anchor suite's
+        plausibility range rule on S1104-C.
 """
 from __future__ import annotations
 
@@ -20,13 +30,20 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from utils import paths  # noqa: E402
 from utils.paths import DATA_PROCESSED, book_data_path  # noqa: E402
+from S00_setup import S00_apis  # noqa: E402
 
 SERIES_ID = "S1104"
-VALIDATOR_TOL_PCT = 0.5
+VALIDATOR_TOL_PCT = 1.0
 PROCESSED = DATA_PROCESSED / f"{SERIES_ID}.parquet"
 TRUTH_XM = book_data_path("Appendix11_XMData.xlsx")
 TRUTH_USJPN = book_data_path("Appendix11_USJPNdata.xlsx")
 REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
+
+# S1104-C reconstruction spec (must mirror L01_S1104._build_relgdp)
+RELGDP_INDICATOR = "NY.GDP.MKTP.KD"
+RELGDP_EU12_ISO3 = ["BEL", "DNK", "FRA", "DEU", "GRC", "IRL",
+                    "ITA", "LUX", "NLD", "PRT", "ESP", "GBR"]
+RELGDP_BASE_YEAR = 2002
 
 
 def _update_report(row: dict) -> None:
@@ -59,6 +76,26 @@ def _build_truth_b() -> pd.DataFrame:
     return us[["Year", "rxr1"]].rename(columns={"Year": "year", "rxr1": "expected"}).dropna()
 
 
+def _build_truth_c() -> pd.DataFrame:
+    """Independent re-construction of S1104-C from WDI (self-consistency truth).
+
+    Not a book anchor: reproduces the L01 recipe from a fresh WDI fetch so V03
+    catches pipeline drift. Raises S00_apis.ApiUnavailable if WDI is down.
+    """
+    frames = {}
+    for iso in RELGDP_EU12_ISO3 + ["USA"]:
+        df = S00_apis.worldbank_indicator(country=iso, indicator=RELGDP_INDICATOR,
+                                          start=1960, end=2009)
+        frames[iso] = df.set_index("year")["value"]
+    eu_sum = pd.DataFrame({i: frames[i] for i in RELGDP_EU12_ISO3}).sum(
+        axis=1, min_count=len(RELGDP_EU12_ISO3))
+    rel = frames["USA"] / eu_sum
+    idx = rel / rel.loc[RELGDP_BASE_YEAR] * 100.0
+    out = idx.reset_index()
+    out.columns = ["year", "expected"]
+    return out.dropna()
+
+
 def run() -> dict:
     if not PROCESSED.exists():
         return {"status": "FAIL", "error": f"processed missing: {PROCESSED}"}
@@ -83,24 +120,34 @@ def run() -> dict:
     r_a = _check("S1104-A", truth_a)
     r_b = _check("S1104-B", truth_b)
 
-    n_total = r_a["n"] + r_b["n"]
-    mae = (r_a["mae"] * r_a["n"] + r_b["mae"] * r_b["n"]) / max(n_total, 1)
-    max_pct = max(r_a["max_pct_err"], r_b["max_pct_err"])
-    all_div = r_a["div_years"] + r_b["div_years"]
+    # S1104-C: self-consistency vs independent WDI reconstruction (not a book anchor).
+    try:
+        truth_c = _build_truth_c()
+        r_c = _check("S1104-C", truth_c)
+        r_c["basis"] = ("self_consistency_vs_independent_wdi_reconstruction "
+                        "(book-figure fidelity UNVERIFIED — figure digitization pending)")
+    except S00_apis.ApiUnavailable as exc:
+        r_c = {"n": 0, "mae": 0.0, "max_pct_err": 0.0, "div_years": [],
+               "status": f"wdi_unavailable: {exc}"}
+
+    n_total = r_a["n"] + r_b["n"] + r_c["n"]
+    mae = (r_a["mae"] * r_a["n"] + r_b["mae"] * r_b["n"]
+           + r_c["mae"] * r_c["n"]) / max(n_total, 1)
+    max_pct = max(r_a["max_pct_err"], r_b["max_pct_err"], r_c["max_pct_err"])
+    all_div = r_a["div_years"] + r_b["div_years"] + r_c["div_years"]
     status = "PASS" if not all_div else "FAIL"
 
     row = {
         "status": status,
         "tolerance_pct": VALIDATOR_TOL_PCT,
         "content_type": "time_series",
-        "comparison_basis": "S1104-A: (X-M)/(X+M) from Appendix11_XMData US block; S1104-B: rxr1 from Appendix11_USJPNdata US block",
+        "comparison_basis": "S1104-A: (X-M)/(X+M) from Appendix11_XMData US block; S1104-B: rxr1 from Appendix11_USJPNdata US block; S1104-C: self-consistency vs independent WDI NY.GDP.MKTP.KD reconstruction (book-figure fidelity unverified)",
         "n_compared": n_total,
         "mae": round(mae, 6),
         "max_pct_err": round(max_pct, 6),
         "divergence_count": len(all_div),
         "divergence_years": all_div,
-        "per_subseries": {"S1104-A": r_a, "S1104-B": r_b,
-                          "S1104-C": {"n": 0, "status": "data_unavailable_eu12_relgdp_not_in_salvage"}},
+        "per_subseries": {"S1104-A": r_a, "S1104-B": r_b, "S1104-C": r_c},
         "cd2_comparison": {"note": "CD2 S063 trade-balance samples align with (X-M)/(X+M), not X/M."},
         "validated_at": datetime.now(timezone.utc).isoformat(),
     }

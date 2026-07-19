@@ -1,0 +1,16 @@
+{
+  "sid": "S1703",
+  "display_name": "Personal income distribution above $200,000, cumulative probability from above (2011)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "KB-verified: figure 17.3 caption and in-text passage (pp.752–753) match; IRS SOI Publication 1304 Table 1.4 (2011) sourcing confirmed; Pareto exponent by OLS on log-log; $10M+ open bin dropped. Verbatim quotes match.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1703-A": {
+      "label": "Top 3% survival function (Pareto test)",
+      "units": "cumulative probability from above (dimensionless)"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "sid": "S707",
+  "display_name": "Deviations of Greek manufacturing profit rates from the average, 1962–1991",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Recovered (2026-05-26) by offline vector extraction of Tsoulfidis & Tsaliki (2011) Fig 4 = Shaikh Fig 7.19 (MPRA 51334), clipped to 1962–1991; 20 Greek manufacturing industries. provenance: digitized (faithful to the published figure, not the authors' exact table). Figure 7.19, title, period, and source verified against KB ch07; quotes verbatim-confirmed. Figure-overlay MATCH (point-precision verified on top row) per FIGURE_REPRO_ch07.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S707-A": {
+      "label": "Greek manufacturing industry profit-rate deviation from the average (20 industries)",
+      "units": "rate deviation (decimal)"
+    }
+  }
+}

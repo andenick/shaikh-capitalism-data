@@ -1,0 +1,15 @@
+{
+  "sid": "XS2305",
+  "display_name": "RMB misalignment estimates, macroeconomic-balance approach (Weber & Shaikh 2020, Fig 5)",
+  "publish": false,
+  "triage": {
+    "verdict": "cull",
+    "reason": "Weber & Shaikh (2020) Figure 5 is a literature-compilation SCATTER of ~30-35 individual RMB-misalignment estimates (macroeconomic-balance / current-account-norm methodology) whose entire signal is the dispersion of the estimates. The chopped series contains only 2 points: the named high (+40%, Goldstein 2004) and low (-100%, Bayoumi-Gagnon-Saborowski 2015) quoted by name in the paper text. Same disposition as XS2304: two isolated dots do not convey the figure's signal and would misrepresent the study if charted as the figure. Not publishable until the full scatter is reconstructed. The named endpoints remain documented in the DPR/EPR.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "XS2305-A": {"label": "RMB misalignment estimate (macroeconomic balance), named endpoints", "units": "percent"}
+  },
+  "field_fixes": {},
+  "republish_condition": "Populate the full ~30-35-point Fig 5 scatter via the v1.1 literature-extraction pass (same 4 cited reviews as XS2304), following paper note 17's compilation rule, then re-triage to publish."
+}

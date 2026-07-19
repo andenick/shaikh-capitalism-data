@@ -1,16 +1,16 @@
 # S208 -- US Manufacturing Real Unit Production Labor Cost Index, 1889-2025
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S208
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-wave2-ch2
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S208_research.json`
-- Adequacy: `Technical/docs/chapters/CH2_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S208_EPR.md`
-- Registry entry: `Technical/series_registry.json` -> `series.S208`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry -> `series.S208`
 
 ---
 
@@ -37,7 +37,6 @@ Key Marxian indicator: real unit labor cost is the wage share when productivity 
 
 **Formula**: `RULC[t] = (real_compensation[t] / productivity[t]) * 100`
 
-
 1. Read book-period RULC directly from chopped column 'Mfgrealunitlaborcost'.
 2. Extension: recompute formula from S207-C / S207-D for each post-2010 year, rescaled so the 2010 extension value equals the 2010 book value.
 
@@ -58,7 +57,7 @@ Index, 1889 = 100
 ## 8. Cross-references
 
 - Book reference: Shaikh (2016), Ch. 2, Figure 2.6
-- Knowledge Base: `SalvagedInputs/figures_reference/HDARP_SERIES_LINKAGE.json`
+- Knowledge Base: figure-linkage reference
 - Predecessor (CD2): see registry `predecessor_ids` block.
 
 ## 9. Validation expectation

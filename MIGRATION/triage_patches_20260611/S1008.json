@@ -1,0 +1,24 @@
+{
+  "sid": "S1008",
+  "display_name": "Actual versus warranted real stock price, 1947-2011",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Figure 10.13 (actual vs warranted stock price) via equation 10.31 forward iteration with pinned adj=6.75. Fixed multiple figure references (was 10.10, correct is 10.13; page 478 -> 473/874).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1008-A": {
+      "label": "Actual real S&P composite price (Shiller, BEA-deflated)",
+      "units": "index (real, BEA gross investment deflator)"
+    },
+    "S1008-B": {
+      "label": "Shiller's rational price P* (re-deflated to BEA basis)",
+      "units": "index (real, BEA gross investment deflator)"
+    },
+    "S1008-C": {
+      "label": "Classical warranted price (equation 10.31)",
+      "units": "index (real, BEA gross investment deflator)"
+    }
+  }
+}

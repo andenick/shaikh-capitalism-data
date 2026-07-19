@@ -1,12 +1,12 @@
 # S201 — Extension Provenance Record
 
 **Series**: S201 — US Industrial Production Index
-**Phase**: 6 (Extension)
+
 **Construction classification**: `composite`
 **Extension method**: direct continuation of one of the book's source components (FRB G.17 → FRED INDPRO), reindexed to 1958=100 at the 2010 overlap year
 **Authored**: 2026-05-18
 **Author**: opus-pilot-S201
-**Related**: `S201_DPR.md`, `Technical/research/S201_research.json`, `Technical/SUBSOURCE_METADATA.json`
+**Related**: `S201_DPR.md`, research dossier, subsource registry
 
 ---
 

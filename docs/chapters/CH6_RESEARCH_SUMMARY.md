@@ -85,7 +85,7 @@ All four pass the acceptance criteria. Validator run reported separately.
 
 ## Phase 5-8 Closure (2026-05-18)
 
-All 13 Ch6 series (S601-S604 + AS001-AS009) completed Phases 5-8 in a single fanout pass per the FANOUT_PLAYBOOK. Each series has:
+All 13 Ch6 series (S601-S604 + XS001-XS009) completed Phases 5-8 in a single fanout pass per the FANOUT_PLAYBOOK. Each series has:
 
 - DPR at `Technical/docs/series/{SID}_DPR.md`
 - EPR at `Technical/docs/series/{SID}_EPR.md`
@@ -99,46 +99,46 @@ All 13 Ch6 series (S601-S604 + AS001-AS009) completed Phases 5-8 in a single fan
 
 | SID | construction | V03 status | n_compared | MAE | max_pct_err | chopped rows |
 |-----|--------------|-----------|-----------:|----:|------------:|-------------:|
-| AS001 | composite | PASS | 390 | 0.0 | 0.0 | 390 |
-| AS002 | composite | PASS | 455 | 0.0 | 0.0 | 455 |
-| AS003 | formula   | PASS | 455 | 0.0 | 0.0 | 455 |
-| AS004 | formula   | PASS | 261 | 0.0 | 0.0 | 261 |
-| AS005 | formula   | PASS | 261 | 0.0 | 0.0 | 261 |
-| AS006 | formula   | PASS | 238 | 0.0 | 0.0 | 238 |
-| AS007 | formula   | PASS | 220 | 0.0 | 0.0 | 220 |
-| AS008 | formula   | PASS | 23  | 0.0 | 0.0 | 23  |
-| AS009 | formula   | PASS | 198 | 0.0 | 0.0 | 198 |
+| XS001 | composite | PASS | 390 | 0.0 | 0.0 | 390 |
+| XS002 | composite | PASS | 455 | 0.0 | 0.0 | 455 |
+| XS003 | formula   | PASS | 455 | 0.0 | 0.0 | 455 |
+| XS004 | formula   | PASS | 261 | 0.0 | 0.0 | 261 |
+| XS005 | formula   | PASS | 261 | 0.0 | 0.0 | 261 |
+| XS006 | formula   | PASS | 238 | 0.0 | 0.0 | 238 |
+| XS007 | formula   | PASS | 220 | 0.0 | 0.0 | 220 |
+| XS008 | formula   | PASS | 23  | 0.0 | 0.0 | 23  |
+| XS009 | formula   | PASS | 198 | 0.0 | 0.0 | 198 |
 | S601  | composite | PASS | 305 | 0.0 | 0.0 | 305 |
 | S602  | composite | PASS | 390 | 0.0 | 0.0 | 390 |
 | S603  | formula   | PASS | 260 | 0.0 | 0.0 | 260 |
 | S604  | formula   | PASS | 128 | 0.0 | 0.0 | 128 |
 
-Tolerance per series 1.0% (S604 at 2.0%, AS007 at 1.5%). All 13 round-trip validations pass at 0.0% (bit-for-bit reproduction of the canonical Shaikh Appendix 6.8 chopped table values).
+Tolerance per series 1.0% (S604 at 2.0%, XS007 at 1.5%). All 13 round-trip validations pass at 0.0% (bit-for-bit reproduction of the canonical Shaikh Appendix 6.8 chopped table values).
 
 ### Architectural notes
 
 - **One shared loader helper**: `Technical/code/L01_loaders/_ch6_appendix_loader.py` parses Appendix 6.8.I.{1,2,3} and 6.8.II.{1..7} workbooks into long-form (year, variable, value). Used by all 13 Ch6 L01 loaders.
 - **Bulk registration**: `Technical/code/utils/_phase5_ch6_register.py` writes 13 series-registry entries, 2 SUBSOURCE_METADATA subsources (SHAIKH_APPENDIX_6_8 + BEA_1993_FA_METHODOLOGY_STAGED), 13 ANU_LEDGER entries.
 - **Artifact generator**: `Technical/code/utils/_phase5_ch6_artifact_gen.py` writes all 65 per-series files (L01/P02/V03/DPR/EPR x 13) from a single SOURCE_MAP table.
-- **FISIM resolver usage** (Phase 5 blocker CH6-B2): `_nipa_t711_line_resolver.py` documented in AS003 EPR. Phase 5 reads pre-computed values from Shaikh's Appendix Table 6.8.I.3 (already FISIM-correct for 2011 vintage); the resolver is invoked at Phase 6 extension time to remap T7.11 lines for current BEA vintages.
-- **BEA 1993 staged data usage** (Phase 5 blocker CH6-B3): `SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/BEA_1993_depreciation_retirement_rates.{csv,json}` documented in AS004 and AS006 EPRs. Phase 5 reads pre-computed KNCcorpnew/KNCbea93/KGCcorpnew from Appendix Table 6.8.II.3 (which itself was built with these rates); the staged data is the canonical source for the extension recipe in AS004_EPR.md and AS006_EPR.md.
+- **FISIM resolver usage** (Phase 5 blocker CH6-B2): `_nipa_t711_line_resolver.py` documented in XS003 EPR. Phase 5 reads pre-computed values from Shaikh's Appendix Table 6.8.I.3 (already FISIM-correct for 2011 vintage); the resolver is invoked at Phase 6 extension time to remap T7.11 lines for current BEA vintages.
+- **BEA 1993 staged data usage** (Phase 5 blocker CH6-B3): `SalvagedInputs/book_data/Reconstructed/BEA_1993_FA_methodology/BEA_1993_depreciation_retirement_rates.{csv,json}` documented in XS004 and XS006 EPRs. Phase 5 reads pre-computed KNCcorpnew/KNCbea93/KGCcorpnew from Appendix Table 6.8.II.3 (which itself was built with these rates); the staged data is the canonical source for the extension recipe in XS004_EPR.md and XS006_EPR.md.
 
 ### Unit normalization
 
-- AS007 (KTHcorpirs from Census 1975 V 115): /1000 thousands->billions applied at load time.
-- AS009 (INVcorp from IRS SOI): Appendix Table 6.8.II.6 column `INVcorp` is already rescaled by Shaikh to billions; the raw `INVIRScorp` column is in thousands. Loader reads the rescaled column directly.
+- XS007 (KTHcorpirs from Census 1975 V 115): /1000 thousands->billions applied at load time.
+- XS009 (INVcorp from IRS SOI): Appendix Table 6.8.II.6 column `INVcorp` is already rescaled by Shaikh to billions; the raw `INVIRScorp` column is in thousands. Loader reads the rescaled column directly.
 
-### AS006 dual sub-variant ship
+### XS006 dual sub-variant ship
 
-Per Phase 4 Q1 resolution, AS006 ships two sub-variants:
-- `AS006-depr_only`: BEA 1993 depreciation + BEA 2011 initial value 98.1 (matches dossier text and book p. 846).
-- `AS006-depr_plus_init`: BEA 1993 depreciation + BEA 1993 initial value 77.769 (matches CD2 S211 sample values).
+Per Phase 4 Q1 resolution, XS006 ships two sub-variants:
+- `XS006-depr_only`: BEA 1993 depreciation + BEA 2011 initial value 98.1 (matches dossier text and book p. 846).
+- `XS006-depr_plus_init`: BEA 1993 depreciation + BEA 1993 initial value 77.769 (matches CD2 S211 sample values).
 
 Both are emitted as subseries in S006_processed.parquet. Phase 6 figure replication QA can verify which Shaikh plots in Appendix Figures 6.7.5/6.7.6.
 
-### AS009 post-2011 proxy flag
+### XS009 post-2011 proxy flag
 
-AS009 carries `extension_method: constant_ratio_proxy_2012_onwards` in the registry (Phase 4 Q3 resolution). The Phase 6 lift (re-estimate from current IRS SOI Corporation Complete Report + BEA FA T6.3) is documented in AS009_EPR.md.
+XS009 carries `extension_method: constant_ratio_proxy_2012_onwards` in the registry (Phase 4 Q3 resolution). The Phase 6 lift (re-estimate from current IRS SOI Corporation Complete Report + BEA FA T6.3) is documented in XS009_EPR.md.
 
 ### Open questions
 

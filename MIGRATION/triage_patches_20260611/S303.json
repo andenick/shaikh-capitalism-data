@@ -1,0 +1,18 @@
+{
+  "sid": "S303",
+  "display_name": "Engel curve of necessaries (Case I, analytic)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Renderable analytic Engel curve (Shaikh Fig 3.5): integrated expenditure on necessaries vs income under Case I, 121 clean points. Renders as an x-y curve over the income grid ('year' index column, NOT calendar years). TRIAGE_PRESCREEN EMPTY flag did not apply but the index-as-year pattern does; L01/P02 exist and replicate.py builds it (PASS). Caveat: agent-chosen Case I calibration (DPR §7) governs levels; shape is the faithful object. KB gap: ch03 not HDARP-extracted, ch3 quotes unverifiable, 'From the book' omitted.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S303-A": {"label": "Expenditure on necessaries, Engel curve (Case I)", "units": "expenditure on necessaries (model units)"}
+  },
+  "field_fixes": {
+    "year_column_is_index": "Chopped 'year' is a point index, not a calendar year; abscissa is income (model units). Viz plots value vs income grid.",
+    "dpr_x_value_column_absent": "DPR references an x_value column the chopped lacks; recommend reconciling."
+  },
+  "notes": "content_type theoretical; construction formula; not extended. Integrated counterpart of S301."
+}

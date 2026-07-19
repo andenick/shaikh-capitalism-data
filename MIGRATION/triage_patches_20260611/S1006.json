@@ -1,0 +1,40 @@
+{
+  "sid": "S1006",
+  "display_name": "Bond and equity total returns, 1926-2025",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Figure 10.10 (bond and equity returns) from Ibbotson SBBI 2004 Table 2-2. Fixed figure reference (was 10.6, correct is 10.10) and removed fabricated \"Table 10.1\" cite. One extension subseries is a flagged yield proxy with its own distinct unit string (no silent mixing).",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1006-A": {
+      "label": "Large-company stock total return, Ibbotson (book period)",
+      "units": "percent (total return)"
+    },
+    "S1006-A-ext": {
+      "label": "Large-company stock total return, Damodaran S&P 500 (extension)",
+      "units": "percent (total return)"
+    },
+    "S1006-B": {
+      "label": "Long-term corporate bond total return, Ibbotson (book period)",
+      "units": "percent (total return)"
+    },
+    "S1006-B-ext": {
+      "label": "Long-term corporate bond, FRED AAA yield proxy (extension)",
+      "units": "percent (yield, proxy for total return)"
+    },
+    "S1006-B-ext-damodaran": {
+      "label": "Long-term corporate bond total return, Damodaran Baa (extension)",
+      "units": "percent (total return)"
+    },
+    "S1006-C": {
+      "label": "Long-term government bond total return, Ibbotson (book period)",
+      "units": "percent (total return)"
+    },
+    "S1006-C-ext": {
+      "label": "Long-term government bond total return, Damodaran (extension)",
+      "units": "percent (total return)"
+    }
+  }
+}

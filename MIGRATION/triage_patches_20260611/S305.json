@@ -1,0 +1,17 @@
+{
+  "sid": "S305",
+  "display_name": "Engel curve of necessaries (Case II, analytic)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Renderable analytic Engel curve (Shaikh Fig 3.7): expenditure on necessaries vs income under Case II (c declines, x1min held constant), 121 clean points. Renders as an x-y curve over the income grid ('year' index column, NOT calendar years). L01/P02 exist; replicate.py builds it (PASS). Caveat: Case II calibration illustrative (DPR); shape is the faithful object. KB gap: ch03 not HDARP-extracted, ch3 quotes unverifiable, 'From the book' omitted.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S305-A": {"label": "Expenditure on necessaries, Engel curve (Case II)", "units": "expenditure on necessaries (model units)"}
+  },
+  "field_fixes": {
+    "year_column_is_index": "Chopped 'year' is a point index, not a calendar year; abscissa is income (model units). Viz plots value vs income grid."
+  },
+  "notes": "content_type theoretical; construction formula; not extended. Integrated counterpart of S304."
+}

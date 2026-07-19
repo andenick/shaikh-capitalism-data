@@ -34,8 +34,8 @@
     }
   ],
   "primary_source": {
-    "agency": "Robert P. Inman (author); Shaikh reproduces in Capitalism (2016)",
-    "publication": "Inman 1995 (citation in Shaikh's bibliography); reproduced figure: Shaikh (2016), p. 162, fig. 4.21",
+    "agency": "Robert R. Inman (author); The Engineering Economist, Taylor & Francis (publisher)",
+    "publication": "Robert R. Inman, The Engineering Economist 41(1):53-67 (1995), DOI 10.1080/00137919508967475. Reproduced figure in Shaikh (2016), p.162, fig. 5 (Inman 1995, 64, fig. 5). Author name and journal citation corrected 2026-07-02 (T3.2): the earlier 'Robert P. Inman / Brookings Papers on Economic Activity / How to Have a Fiscal Crisis' attribution was wrong (that is a different Inman); article title not independently re-verified (paywalled), but the R.R. Inman Engineering Economist 41(1) automotive-plant cost-curve source matches Shaikh's reproduction.",
     "table_or_series_id": "Inman (1995), figure 5 (simulated average cost $/car vs. annual vehicle production in thousands)",
     "url": "https://www.google.com/books/edition/_/2bC3AAAAIAAJ",
     "frequency": "synthetic (Monte-Carlo simulation across output levels)",
@@ -77,7 +77,9 @@
     "extension_candidates intentionally empty: same reasoning as S404."
   ],
   "open_questions": [
-    "Same as S404: verify Inman 1995 bibliography and underlying-data availability."
+    "Inman 1995 citation RESOLVED 2026-07-02 (T3.2): Robert R. Inman, The Engineering Economist 41(1):53-67, DOI 10.1080/00137919508967475 (Crossref-verified).",
+    "Underlying data availability RESOLVED 2026-05-26 (v1.3 recovery): values digitized from Shaikh's Figure 4.21, overlay-validated, stored in shared Inman reconstruction file. Series is book_period_validated.",
+    "KB availability CONFIRMED: ch04 KB is fully extracted and available for quote anchoring."
   ],
   "review_history": [
     {

@@ -1,0 +1,18 @@
+{
+  "sid": "S301",
+  "display_name": "Change in expenditure on necessaries relative to change in income (Case I, analytic)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Renderable analytic curve (Shaikh Fig 3.3): marginal expenditure share on the necessary good vs income, 119 clean points, monotone-declining toward c. Renders as an x-y curve (x = income grid in model units, carried in the 'year' index column, NOT calendar years). TRIAGE_PRESCREEN EMPTY flag is STALE: L01_S301/P02_S301 pipelines exist and replicate.py --series S301 builds the chopped (PASS). Caveat: levels depend on an agent-chosen calibration (x1min = y^0.5, c = 0.5) disclosed in the DPR §7; only the qualitative shape is faithful to the book. KB gap: ch03 was not HDARP-extracted, so the chapter-3 figure quotes in the research JSON cannot be verified against KB and 'From the book' is omitted from the explainer.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S301-A": {"label": "Marginal expenditure share on necessaries (Case I)", "units": "marginal expenditure share (dimensionless)"}
+  },
+  "field_fixes": {
+    "year_column_is_index": "The chopped 'year' column is a point-sequence index, not a calendar year; the true abscissa is income (model units 0-60). Viz must plot value vs the income grid, not vs 'year'.",
+    "dpr_x_value_column_absent": "S301_DPR.md §5 references an 'x_value' column that the chopped CSV does not contain (columns are year,value,subseries_id,source_id,units). Doc-vs-data contradiction; recommend either adding x_value in P02 or correcting the DPR."
+  },
+  "notes": "content_type theoretical; construction formula; not extended. Companion analytic series: S302/S303 (Case I), S304/S305 (Case II)."
+}

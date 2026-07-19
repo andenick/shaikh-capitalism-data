@@ -1,17 +1,17 @@
 # S711 — Figure 7.21 — OECD Industry IROP Deviations, 1988–2003 (PPP-adjusted; OECD STAN 2003 + PWT 6.2)
 
 **Data Provenance Record (DPR)**
-**Phase**: 5 (Ingestion)
+
 **Series ID**: S711
 **Status**: book_period_validated
 **Authored**: 2026-05-18
-**Author**: opus-subagent-ch7-fanout
+**Author**: Anu Framework pipeline
 **Related artifacts**:
-- Research dossier: `Technical/research/S711_research.json`
-- Adequacy: `Technical/docs/chapters/CH7_ADEQUACY_REPORT.json`
-- Extension Provenance Record: `Technical/docs/series/S711_EPR.md`
-- Registry entry: `Technical/series_registry.json` → `series.S711`
-- Subsource registry: `Technical/SUBSOURCE_METADATA.json` → `SHAIKH_2008_APPENDIX_7_2_OECD_IROP`
+- Research dossier: research dossier
+- Adequacy: chapter adequacy report
+- Extension Provenance Record: extension provenance record
+- Registry entry: series registry → `series.S711`
+- Subsource registry: subsource registry → `SHAIKH_2008_APPENDIX_7_2_OECD_IROP`
 
 ---
 
@@ -29,21 +29,21 @@ S711 also **resolves a long-standing alias collision**: CD2's `S038` was labelle
 
 | Subseries | Coverage | Source | Units |
 |---|---|---|---|
-| **S711-A** | 1988–2005 | Appendix 7.2 iropOECDPPP — 27 OECD industries (ISIC Rev 3) byte-exact | rate deviation (decimal; industry IROP minus All-Industries average IROP, PPP-adjusted International Dollars) |
+| **S711-A** (subseries — one data line within S711) | 1988–2005 | Appendix 7.2 iropOECDPPP — 27 OECD industries (ISIC Rev 3 = International Standard Industrial Classification, Revision 3) byte-exact | rate deviation (decimal; industry IROP minus All-Industries average IROP, PPP-adjusted International Dollars) |
 
-The Phase 4 adequacy review verified the salvaged xlsx is present and that OECD STAN 2025 + PWT 10.01 endpoints return HTTP 200. Direct OECD STAN 2003 vintage is no longer hosted; Shaikh's pre-computed Appendix 7.2 sheet is the only byte-exact path.
+The adequacy review verified the salvaged xlsx is present and that OECD STAN 2025 + PWT 10.01 endpoints return HTTP 200. Direct OECD STAN 2003 vintage is no longer hosted; Shaikh's pre-computed Appendix 7.2 sheet is the only byte-exact path.
 
 ## 4. Construction
 
 `composite`. Per Appendix 7.1 V:
-1. Country-industry GFCF and GOPS from OECD STAN 2003 vintage (currently irrecoverable; Shaikh's pre-computed sheet stands as byte-exact record).
-2. PPP-convert to International Dollars via PWT 6.2.
+1. Country-industry GFCF (Gross Fixed Capital Formation) and GOPS (Gross Operating Surplus) from OECD STAN 2003 vintage (currently irrecoverable; Shaikh's pre-computed sheet stands as byte-exact record).
+2. PPP (purchasing-power-parity)-convert to International Dollars via PWT 6.2 (Penn World Table 6.2).
 3. Aggregate-before-ratio per industry: `GFCF_i,t = Σ_c GFCF_{c,i,t}`; same for GOPS.
 4. Restrict to industries with 3+ countries reporting both variables.
 5. `IROP_i,t = (GOPS_i,t − GOPS_i,t-1) / GFCF_i,t-1`.
 6. `IROP_avg,t` = aggregate-before-ratio across retained industries.
 7. `dev_i,t = IROP_i,t − IROP_avg,t`.
-8. **No WEQ adjustment** (book p. 859 V.2: international data did not allow removal of self-employed income).
+8. **No WEQ (wage-equivalent) adjustment** (book p. 859 V.2: international data did not allow removal of self-employed income).
 
 For Phase 5 we read the pre-computed deviation columns directly from Shaikh's `iropOECDPPP` sheet.
 
@@ -67,8 +67,27 @@ rate deviation (decimal; industry IROP minus All-Industries average IROP, PPP-ad
 
 ## 8. Cross-references
 
-- **CD2 legacy ID**: `S038`
+- **CD2 legacy ID** (identifier in CD2, the predecessor build of this dataset): `S038`
 - **Book reference**: Shaikh (2016), Ch. 7, p. 305, Appendix 7.1 V (pp. 858–859), Fig7.21.
+
+## Notation (plain-language key)
+
+Short forms used above, in plain language (this record is a downloadable external artifact):
+
+- **S### / -A** — series identifiers in this project (e.g. S711); a trailing letter (e.g. S711-A) marks a *subseries* — one data line within that series.
+- **DPR / EPR** — Data Provenance Record (this file) / Extension Provenance Record (its companion).
+- **Phase N** — Anu Framework pipeline stages: Phase 4 = adequacy/readiness review, Phase 5 = ingestion, Phase 6 = extension, Phase 9 = visualization.
+- **CD2** — the predecessor build of this dataset.
+- **ROP** — (average) rate of profit.
+- **IROP** — incremental rate of profit: the return on newly added capital (the year-to-year change in profit divided by the new investment that produced it).
+- **PPP** — purchasing power parity (used here to convert to International Dollars).
+- **STAN** — OECD Structural Analysis database.
+- **PWT** — Penn World Table.
+- **ISIC Rev 3 / Rev 4** — International Standard Industrial Classification, Revision 3 / Revision 4 (the UN industry-code scheme).
+- **WEQ** — wage equivalent: an imputed labour income for self-employed / proprietors, adjusted out of surplus.
+- **GFCF** — Gross Fixed Capital Formation.
+- **GOPS / GOS** — Gross Operating Surplus.
+- **MAE** — mean absolute error.
 
 ## 9. Validation expectation
 

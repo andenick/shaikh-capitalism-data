@@ -116,6 +116,12 @@
       "notes": "auto-generated stub"
     },
     {
+      "reviewer": "P4.3-docs-agent",
+      "date": "2026-07-10",
+      "status": "book_period_validated",
+      "notes": "ADDENDUM (F-2D-03): S703/S704 digitization enacted per Decision 0019 (2026-07-02, user-authorized). Machine digitization (dual independent extraction + adversarial verification) recovered the WORLDAVG open-circle line in Christodoulopoulos Fig 7.13 (1970–1990, 20 pts; 1974 omitted — no defensible open-circle marker on steep descent). Confidence: MEDIUM-HIGH (~±0.005 decimal, mean conf 0.666). Gate: M2 raw PASS (95%); M3 CONFIRMED (adversarial verifier independently landed on correct open-circle at every tested year). Status flipped data_unavailable → book_period_validated; publish: false → true. Values stored in decimal (rate convention). Human superseding path preserved forever: if a hand-digitized CSV is filed at digitization_packet/returns/S703_aggregate_digitized.csv, it supersedes machine values. Evidence: Technical/docs/decisions/0019_machine_digitization_s703_s704.md."
+    },
+    {
       "reviewer": "opus-subagent-wave-b-ch7",
       "date": "2026-05-18",
       "status": "draft",

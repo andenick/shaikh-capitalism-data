@@ -1,0 +1,21 @@
+{
+  "sid": "S1401",
+  "display_name": "Nominal GDP growth and the level of the wage share, United States",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.14 Figure 14.10 (Nominal GDP Growth and Level of Wages Share, United States, 1948-2011). Real data present in chopped CSV (155 points, 1948-2025); book_period_validated; chapter title, figure number, and book quotes all KB-verified against ch14_wages_unemployment.md (Fig 14.10 quote verbatim at KB line 1389; source method at Appendix 14.2 KB ch18). Two subseries: wage share (decimal ratio) and nominal GDP growth (decimal annual rate) -- a genuine per-subseries unit split, but NOT flagged MIXED_UNITS because the registry units field is a descriptive composite rather than a banned mixed_* string.",
+    "date": "2026-06-11"
+  },
+  "subseries": {
+    "S1401-A": {
+      "label": "Wage share (compensation of employees / nominal GDP)",
+      "units": "ratio (decimal)"
+    },
+    "S1401-B": {
+      "label": "Nominal GDP growth rate",
+      "units": "growth rate (decimal/year)"
+    }
+  },
+  "field_fixes": {}
+}

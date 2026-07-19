@@ -1,0 +1,14 @@
+benchmark_year,classification_system,industry_order,rscd_series_using_it,notes
+1947,1957 SIC,Ochoa 71-order (real estate excluded),"S901,S902,S903",Shaikh/Ochoa 1947 cross-section; frozen exhibit; not spliceable to NAICS era. Detail-level benchmark. Source: BEA Historical Benchmark I-O; IO_CHANGE_TIMELINE.md
+1958,1957 SIC,Ochoa 71-order,"S901,S902,S903",Shaikh/Ochoa 1958 cross-section. Frozen exhibit.
+1963,1957 SIC,Ochoa 71-order,"S901,S902,S903",Shaikh/Ochoa 1963 cross-section. Frozen exhibit.
+1967,SIC (current),Ochoa 71-order (~478 detail),"S901,S902,S903",Shaikh/Ochoa 1967 cross-section. Frozen exhibit.
+1972,1972 SIC,Ochoa 71-order (~496 detail),"S901,S902,S903",LAST of the historical Ochoa 71-order panel Shaikh uses; his set jumps 1972->1998. Frozen exhibit.
+1992,1987 SIC,BEA ~498 detail (SIC basis),"XS009,XS2101 (extension only)",LAST SIC-basis benchmark. BEA: pre-1997 tables 'should not be used as a time series'. Do NOT splice to 1997+.
+1997,1997 NAICS,BEA 65-order summary / ~498 detail,"S901,S902,S903,XS009,XS2101",FIRST NAICS benchmark = the Ch9 wall. Shaikh's 1998 cross-section uses the 65-order Use table; real-estate column corrected via NIPA T7.12 lines 133-134. ALSO last benchmark capital-flow table (SCB Nov 2003). I-O<->NAICS concordance: SCB Dec 2002 App.A (URL in SOURCES.md).
+2002,2002 NAICS,BEA summary(~71)/detail,"XS009,XS2101 (extension)",Incorporated in 2009 NIPA comprehensive revision. I-O<->NAICS concordance: SCB Oct 2007 App.A (URL only). NO benchmark capital-flow table (discontinued after 1997).
+2007,2007 NAICS,BEA summary 71 / detail ~405 / sector 15,"XS009,XS2101 (extension)",First benchmark fully integrated with annual industry accounts (supply-use). 2007<->2012 I-O concordance: SCB Aug 2018 App.A (URL only).
+2012,2012 NAICS,BEA summary/detail/sector,"XS009,XS2101 (extension)",Incorporated in 2018 NIPA update. 2007<->2012 I-O concordance in SCB Aug 2018 App.A.
+2017,2017 NAICS,BEA supply-use detail/summary/sector,"XS009,XS2101 (extension)",MOST RECENT benchmark (as of 2026-06-30); incorporated in 2023 harmonized update; 2017-NAICS effects small.
+1997-2022,NAICS (industry accounts),BEA-summary ~71 collapsed to Shaikh 30/31-industry panel,"S705,S706,S709,S710",Ch7 30-industry sample is NAICS-native from 1997; tracked across 1997->2002->2007->2012->2017->2022 via Census revision chain (_sources/naics/) + ADR-005 naics_concordance_master.csv. 31st industry excluded per Shaikh_2008_Appendix_B_industries.csv (4 exclusion grounds). Text 30 vs Fig 7.16 38 sub-panels ambiguity.
+book-period,ISIC Rev3 (OECD STAN/ISDB),OECD STAN industry list (~mfg + aggregates),"S703,S704,S711",International analogue: book on ISIC Rev3; extension onto STAN 2025 needs ISIC Rev3->Rev4 crosswalk (NOT staged; _sources/naics is US-only). Country coverage 30 (2003) -> 18 (later STAN). CD2 reproduced overlap MAE ~0.04.

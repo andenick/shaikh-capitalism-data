@@ -1,0 +1,20 @@
+{
+  "sid": "S211",
+  "display_name": "US and UK Wholesale Price Indexes, 1780-1940",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Reconstructs Shaikh (2016) Ch.2 figure; book_period_validated; real data present in chopped CSV; KB-verified.",
+    "date": "2026-06-10"
+  },
+  "subseries": {
+    "S211-A": {
+      "label": "US wholesale price index",
+      "units": "index (1930=100)"
+    },
+    "S211-B": {
+      "label": "UK wholesale price index",
+      "units": "index (1930=100)"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "sid": "S1506",
+  "display_name": "Classical and conventional Phillips-type curves, US, 1948-1981 (pre-neoliberal)",
+  "publish": true,
+  "triage": {
+    "verdict": "publish",
+    "reason": "Faithful derived sub-period of S1505 covering 1948-1981, replicating book figure 15.8 (pre-Volcker/pre-neoliberal regime). Construction-relevant: the chapter splits the postwar Phillips relationship at the structural break to show the classical curve's linearity in this era. Deterministic slice of S1505, no independent fetch; same source map. Per-subseries units split (sigma-prime normalized).",
+    "date": "2026-06-11"
+  },
+  "field_fixes": {"units": "per_subseries"},
+  "subseries": {
+    "S1506-pi": {"label": "Inflation rate (GDP-deflator change)", "units": "rate_decimal"},
+    "S1506-sigma": {"label": "Growth-utilization rate (investment/profit)", "units": "rate_decimal"},
+    "S1506-sigma-prime": {"label": "Normalized growth-utilization rate", "units": "normalized_zscore"},
+    "S1506-uL": {"label": "Civilian unemployment rate", "units": "rate_decimal"},
+    "S1506-uLintensity": {"label": "Unemployment intensity (rate x duration index)", "units": "rate_decimal"}
+  }
+}

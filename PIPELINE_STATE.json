@@ -149,17 +149,55 @@
   "v1_0_release_notes": "Outputs/RELEASE_NOTES_v1.0.md",
   "v1_0_review": "Outputs/REVIEW_v1.0.md",
   "framework_audit": {
-    "anu_doctor_last_run": "2026-05-22T15:20:48Z",
+    "anu_doctor_last_run": "2026-07-02T07:07:53Z",
     "anu_doctor_status": "pass",
-    "anu_framework_version": "v12.0",
+    "anu_framework_version": "v12.2",
     "skill_count": null,
     "failures": null,
     "warnings": null,
-    "notes": "RSCD v1.2 — Path-to-100: V1 9 data_unavailable documented; V3 reference_values backfilled (107 series); V4 PDF reports; V5 CI.",
+    "notes": "RSCD v1.5 remediation campaign complete 2026-07-02: 26-item backlog + Phase-D sweep + anchors/guards infrastructure; see RELEASE_NOTES_v1.5",
     "anu_doctor_version": "v2.3",
-    "check_framework": "0 FAIL / 0 WARN",
-    "check_project": "0 FAIL / 0 WARN"
+    "check_framework": "clean",
+    "check_project": "38 PASS / 0 WARN / 0 FAIL"
   },
+  "v1_5_tagged": true,
+  "v1_5_release_date": "2026-07-02",
+  "v1_5_release_notes": "Outputs/RELEASE_NOTES_v1.5.md",
+  "v1_6_campaign": {
+    "status": "in_progress — P3.3-P3.4 (publish mirror + hub deploy) pending",
+    "started": "2026-07-10",
+    "target_release": "v1.6",
+    "campaign_plan": "RSCD_POST_REVIEW_REMEDIATION_PLAN.md",
+    "campaign_state": "Technical/remediation_v16/REMEDIATION_STATE.json",
+    "data_fixes": {
+      "S214_S215_extension": "12-industry mean corrected (was 15-industry NAICS); sign flips in 4 years; extension_only_validated status",
+      "S801_label_swap": "Pure label fix: book-period labels corrected (value-identical, 9/9 rows); guards added",
+      "S1603_source_correction": "Repointed from OECD-MEI interbank (RXRRULCOECD) to Shaikh's own 3-mo T-Bill column; range now 1960-2011"
+    },
+    "anchor_architecture": {
+      "total_anchors": 87,
+      "anchored_series": 28,
+      "honest_census": 66,
+      "mutation_caught": 90,
+      "mutation_blind": 0,
+      "mutation_exempt": 3
+    },
+    "framework_updates": {
+      "anu_doctor": "v2.5 (P24/P20 repaired, P40 inline-anchor exemption, P32b/P41/P42/P43 added)",
+      "anu_ingestion": "v5.3 (theoretical_validated + extension_only_validated + validation_class)",
+      "anu_extension": "v4.2 (performed_by field, ALWAYS-required register)",
+      "anu_review": "v5.1 (taxonomy update)",
+      "xs_migration": "AS/ES->XS migration applied 2026-06-10; 17 XS series, 101 S series"
+    },
+    "counts": {
+      "series_total": 118,
+      "series_anchored_or_census": 94,
+      "data_unavailable": 2,
+      "publish_false": 5,
+      "extension_only_validated": 2
+    }
+  },
+  "last_updated": "2026-07-10T19:22:26Z",
   "predecessor_projects": {
     "CD": {
       "path": "Inputs/Capitalism Data/",
