@@ -9,7 +9,7 @@ Reads Shaikh Appendix 16 WageProdData and emits one parquet per subseries:
 
 Extension (FRED OPHNFB / COMPRNFB rebased to 1982=100, plus re-run of
 counterfactual regression) is deferred to Phase 6: book-period reproduction
-is Phase 5 priority per Ch16 automated-agent direction.
+is Phase 5 priority per Ch16 fanout direction.
 """
 from __future__ import annotations
 

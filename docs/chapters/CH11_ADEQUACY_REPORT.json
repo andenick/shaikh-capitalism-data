@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-adequacy-v1.0",
   "chapter": 11,
-  "reviewer": "automated-agent",
+  "reviewer": "opus-subagent-p4-wave2-ch11",
   "review_date": "2026-05-18",
   "series_count": 4,
   "scope_note": "Chapter 11 (International Competition and the Theory of Exchange Rates) has 4 published series S1101-S1104, all drawing from Appendix 11.1 inputs (IMF IFS X+M, BLS ILC Tables 9 & 11, World Bank WDI PPI, plus IFS trade-weights). S1102/S1103/S1104-B are affected by the 2013 BLS International Labor Comparisons (ILC) program discontinuation flagged in decision 0005; this report adopts BIS PPI-based EER as the canonical post-2013 REER substitute and the Conference Board ILC continuation (with OECD ULC as open-license fallback) for the ULC denominator, with explicit Concept Match Justifications.",

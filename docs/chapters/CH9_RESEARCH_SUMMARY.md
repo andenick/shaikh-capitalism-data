@@ -1,6 +1,6 @@
 # Chapter 9 - Competition and Inter-Industrial Relative Prices: Research Summary
 
-**Author**: automated-agent
+**Author**: opus-subagent-wave-b-ch9
 **Date**: 2026-05-18
 **Status**: draft (Wave B)
 **Series in scope**: S901, S902, S903 (3 of 17 empirical figures)
@@ -93,7 +93,7 @@ This cleanup is **a Phase 4 adequacy task, not Phase 3**. The current 3-series c
 
 ---
 
-## Phase 5-8 Closure (2026-05-18, automated-agent-wave3-ch9)
+## Phase 5-8 Closure (2026-05-18, opus-fanout-wave3-ch9)
 
 All three Ch9 series (S901-S903) authored to playbook spec and pass V03 at tolerance 0.5% with MAE 0.0% (read-the-truth-column pattern against the 14 salvaged Appendix9 workbooks). Per Phase 4 ratification, all three are `content_type: cross_sectional` with `extension_status: not_applicable_cross_sectional` (extension = adding benchmark years, deferred).
 

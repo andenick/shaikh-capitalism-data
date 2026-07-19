@@ -141,7 +141,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-b-ch9",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Verbatim quotes from PDF pp.422-423 (Sec X) and Appendix 9.2 pp.868-869 (PWT 7.1 source citation). Construction = formula (eq. 9.23 and eq. 9.1.10). The CD2 stub's figure list overflows; recommend pruning in Phase 4."

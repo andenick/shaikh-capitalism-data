@@ -497,7 +497,7 @@ def _make_dpr(sid: str, d: dict) -> str:
 **Series ID**: {sid}
 **Status**: ingested
 **Authored**: 2026-05-18
-**Author**: automated-agent
+**Author**: opus-subagent-wave2-ch2
 **Related artifacts**:
 - Research dossier: `Technical/research/{sid}_research.json`
 - Adequacy: `Technical/docs/chapters/CH2_ADEQUACY_REPORT.json`
@@ -563,7 +563,7 @@ def _make_epr(sid: str, d: dict) -> str:
 **Construction classification**: `{d['construction_class']}`
 **Extension status**: `{extension_status}`
 **Authored**: 2026-05-18
-**Author**: automated-agent
+**Author**: opus-subagent-wave2-ch2
 **Related**: `{sid}_DPR.md`, `Technical/research/{sid}_research.json`
 
 ---

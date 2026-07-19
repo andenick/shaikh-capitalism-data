@@ -103,7 +103,7 @@
  ],
  "review_history": [
   {
-   "reviewer": "automated-agent",
+   "reviewer": "opus-subagent-wave-b-ch10",
    "date": "2026-05-18",
    "status": "draft",
    "notes": "CD2 S052 ported; FRED AAA and PPIACO extensions verified; Appendix 10.1 quoted verbatim"

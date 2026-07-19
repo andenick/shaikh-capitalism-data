@@ -79,7 +79,7 @@ series in RSCD follow this doctrine.
 
 ### Decision Namespace (TD.5)
 
-Framework-global decisions use prefix `FW-` (framework governance authority).
+Framework-global decisions use prefix `FW-` (framework authority).
 Project-local decisions use prefix `RSCD-` (this directory).
 Existing files are not renamed; prefix is citation convention only.
 See `DECISION_NAMESPACE.md` in this directory for the id↔file map.
@@ -109,4 +109,4 @@ rule.
 - `Technical/docs/explainers/S702_EXPLAINER.md` — stale Table-28 note corrected
 - `Technical/docs/series/S404_DPR.md` through `S407_DPR.md` — banner method corrected
 - `Technical/research/S703_research.json` et al. — back-annotations per dossier convention
-- Framework skills: anu-ingestion v5.3, anu-review v5.1 (TD.4); TD.5 namespace (framework governance)
+- Framework skills: anu-ingestion v5.3, anu-review v5.1 (TD.4); TD.5 namespace (framework)

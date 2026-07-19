@@ -424,3 +424,10 @@ budget Engel series), a separate, unrelated open item, not part of this recovery
 No existing series' values were modified. Full method + evidence:
 `Technical/remediation_campaign/digitization_packet/machine/` (consensus CSVs, overlays,
 M2_adjudication_log.md, M3_verify_report.md, S704_1990_omission_ruling.md) and Decision 0019.
+
+
+---
+
+## ERRATUM (2026-07-17)
+
+The headline "V03 validator suite: 118 / 118 PASS" in this document conflates validation classes. The partitioned count is: **106 book-period/extension PASS, 8 theoretical (PASS_THEORETICAL), 2 cross-sectional-unavailable, 2 extension-only, plus 2 data-unavailable series** (118 total, zero FAIL). Claims in later release notes (v1.6 onward) are already class-partitioned.

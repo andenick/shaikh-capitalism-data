@@ -89,7 +89,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-c-ch14",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "CD2 S071 ported. Quotes verified against PDF pp. 666 and 892."

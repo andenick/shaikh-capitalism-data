@@ -53,7 +53,8 @@ rate deviation (decimal; industry IROP minus All-Private aggregate IROP).
 
 1. **Pure algebraic derivative of S706.** Any S706 re-run automatically re-derives this series; no separate ingestion.
 2. **38-panel small-multiple** in the book includes 6 sub-aggregates (Manufacturing, Manufacturing D, Manufacturing ND, Real & Rental, plus 2 others) on top of the 32 named industry columns. Phase 9 visualization should mirror the book's panel layout.
-3. **All-Private baseline** in the xlsx is the aggregate ROP/IROP across the 30 retained industries (not the 32-column count which includes 2 sub-aggregates already).
+3. **All-Private baseline** in the xlsx is the aggregate IROP across the industries (not the column count which includes sub-aggregates).
+4. **Max-crossings attribution: book says Broadcast, source xlsx assigns Printing (upstream discrepancy, 2026-07-17).** The book's prose on p. 305 states "the largest is twelve (Broadcast)" — KB-verified at `ch07_real_competition.md` line 2765. The source xlsx `Appendix7_iropdataUSind.xlsx` assigns the max=12 count to the Printing industry (Broadcast has 6 crossings in the source file). RSCD faithfully reproduces the source xlsx, so the shipped S710 carries max=12 on Printing with Broadcast=6. This is a second upstream book-prose-vs-source-data-file discrepancy (sibling to the S709 31-vs-30 issue). The magnitude (12) matches the book's claim; only the industry label differs. Evidence in the ch07 review report at internal source record CH07-GAP-003.
 
 ## 8. Cross-references
 

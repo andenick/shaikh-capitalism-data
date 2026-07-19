@@ -27,11 +27,21 @@ REPORT = paths.TECHNICAL / "VALIDATION_REPORT.json"
 
 VALIDATOR_TOL_PCT = 10.0
 
-# (year, subseries_id, expected_value_billion_usd, source_anchor)
+# (year, subseries_id, expected_value_billion_usd, source_anchor[, tolerance_pct])
+# Figure reads from Weber & Shaikh (2020/2021) Appendix Fig 1, printed p.453 (Int. Review of
+# Applied Economics). 2002/2017 endpoints original (module tolerance); 2005/2010/2015 densified
+# 2026-07-17 (orchestrator figure reads, F-6B-02 blind-cell closure, per-anchor 5% tolerance
+# matching gridline-read precision; completion_100/evidence/T4_xs2301_closure.md)
 ANCHORS = [
     (2002, "XS2301-world", -474.0, "Fig 1 World line 2002 start"),
+    (2005, "XS2301-world", -780.0, "Fig 1 World line 2005", 5.0),
+    (2010, "XS2301-world", -640.0, "Fig 1 World line 2010", 5.0),
+    (2015, "XS2301-world", -750.0, "Fig 1 World line 2015", 5.0),
     (2017, "XS2301-world", -810.0, "Fig 1 World line 2017 endpoint"),
     (2002, "XS2301-china", -103.0, "Fig 1 China line 2002 start"),
+    (2005, "XS2301-china", -200.0, "Fig 1 China line 2005", 5.0),
+    (2010, "XS2301-china", -280.0, "Fig 1 China line 2010", 5.0),
+    (2015, "XS2301-china", -370.0, "Fig 1 China line 2015", 5.0),
     (2017, "XS2301-china", -376.0, "Fig 1 China line 2017 endpoint"),
 ]
 
@@ -55,7 +65,9 @@ def run() -> dict:
     pct_errs: list[float] = []
     divergences: list[dict] = []
     n_compared = 0
-    for yr, sub, expected, note in ANCHORS:
+    for row in ANCHORS:
+        yr, sub, expected, note = row[0], row[1], row[2], row[3]
+        tol_pct = row[4] if len(row) > 4 else VALIDATOR_TOL_PCT
         m = actual[(actual["year"] == yr) & (actual["subseries_id"] == sub)]
         if m.empty:
             divergences.append({"year": yr, "subseries": sub, "issue": "missing",
@@ -67,7 +79,7 @@ def run() -> dict:
         abs_errs.append(abs_err)
         pct_errs.append(pct)
         n_compared += 1
-        if pct > VALIDATOR_TOL_PCT:
+        if pct > tol_pct:
             divergences.append({"year": yr, "subseries": sub, "value": v,
                                 "expected": expected, "pct_err": round(pct, 4),
                                 "anchor_note": note})

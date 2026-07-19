@@ -50,6 +50,8 @@ Publish/
 ├── docs/
 │   ├── chapters/              ← per-chapter research summaries + adequacy reports
 │   ├── series/                ← per-series DPRs + EPRs (226 docs = 113 + 113)
+│   │                            (DPR = Data Provenance Record: sources, construction, units;
+│   │                             EPR = Extension Provenance Record: post-book extension methodology)
 │   ├── decisions/             ← architectural decision records
 │   └── methodology/           ← NIPA T7.11 FISIM remap + IFS line→SDMX remap
 └── Build/

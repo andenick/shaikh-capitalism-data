@@ -110,7 +110,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-a-ch5",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from Ch5 pp. 197-198 and Appendix 5.2 pp. 788-789; CD2 S024 dossier ported with correction (UK gold price extension is MeasuringWorth, not BLS)."

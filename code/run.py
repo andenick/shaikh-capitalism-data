@@ -332,9 +332,8 @@ def cmd_gate() -> int:
     print("\n----- [1/3] anu-doctor (check_project --project Technical) -----")
     import os
     # Resolve the framework doctor (check_project.py) from the ANU_DOCTOR env var
-    # so no workspace-internal path is hard-coded. The doctor is a framework tool
-    # and does not ship in the public replication bundle; if it is unavailable the
-    # step is skipped and the gate still runs the anchor suite + the V03 batch.
+    # so no workspace-internal path is hard-coded (v1.6.1: ported from replicator/lib/run.py;
+    # the previous hard-coded absolute path leaked a workspace path into the publish bundle).
     doctor_env = os.environ.get("ANU_DOCTOR", "")
     doctor_py = Path(doctor_env) if doctor_env else None
     if doctor_py is None or not doctor_py.is_file():

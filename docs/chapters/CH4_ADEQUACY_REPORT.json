@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-adequacy-v1.0",
   "chapter": 4,
-  "reviewer": "automated-agent",
+  "reviewer": "opus-subagent-p4-wave1-ch4",
   "review_date": "2026-05-18",
   "series_count": 8,
   "scores": {
@@ -243,7 +243,7 @@
       "severity": "resolved",
       "status": "RESOLVED",
       "resolved_on": "2026-05-18",
-      "resolved_by": "Batch 1 Agent A2 (automated-agent)",
+      "resolved_by": "Batch 1 Agent A2 (opus-subagent)",
       "affected_series": ["S401", "S402", "S403"],
       "description": "Appendix 4.2 chopped-table workbook is MISSING from SalvagedInputs/book_data/ShaikhChoppedTables/. Only Appendices 2, 5, 6, 7, 8, 9, 10, 11, 12, 14, 15, 16, 17 are present (4 not in the list).",
       "resolution": "Verbatim transcription of Appendix Tables 4.2.1, 4.2.2, 4.2.3, 4.2.4 from book PDF pp. 772-781 (PDF pp. 810-819) produced at SalvagedInputs/book_data/Reconstructed/Appendix_4_2_Table{1,2,3,4}.csv. README at SalvagedInputs/book_data/Reconstructed/Appendix_4_2_README.md documents source pages, columns, parameters, and a derived-column validation matrix (all derived costs/profits in Table 4.2.4 reproduce from Table 4.2.3 inputs to within rounding noise <=0.02). Validation values: xr(h=1)=3.55 and xr(h=12)=9.60 (peak) confirmed in Table 4.2.1. Note: published eq. 4.2.1 parameters (a1=2, a2=1.2, a3=0.05) do NOT reproduce the tabulated xr values (offset +0.40); the tabulated values back-solve to a1~=2.40 with same a2, a3. The CSVs are the canonical source for L01 loaders; if formula re-derivation is preferred, use a1=2.40 (subject to Phase 5 ratification).",

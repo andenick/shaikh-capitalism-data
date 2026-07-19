@@ -149,7 +149,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-batch1-a1-decision-0006-fill",
       "date": "2026-05-18",
       "status": "reviewed",
       "notes": "Filled per APPROVED decision 0006. Scope = Fig 3 only (China official FX reserves ex-gold, WDI FI.RES.XGLD.CD, 1990-2016). Source URL https://data.worldbank.org/indicator/FI.RES.XGLD.CD HEAD 200 OK 2026-05-18. API URL also 200 OK. License: CC-BY-4.0. All quotes verbatim from PDF (Section 1 p. 433, Section 3 p. 438, Appendix Fig 3 p. 454)."

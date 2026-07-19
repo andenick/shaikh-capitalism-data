@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-adequacy-v1.0",
   "chapter": 14,
-  "reviewer": "automated-agent",
+  "reviewer": "opus-subagent-p4-wave3-ch14",
   "review_date": "2026-05-18",
   "series_count": 8,
   "scope_note": "Chapter 14 (The Theory of Wages and Unemployment) has 8 published series S1401-S1408, all drawing from two government providers via Appendix 14.2: BEA NIPA Historical Tables (T1.10 lines 1+2 for GDP and Compensation of Employees; T1.1.9 line 1 for the GDP deflator; Tables 6.5A-D for Full-Time Equivalent Employees) and BLS CPS (LNS14000000 unemployment rate; LNS13008275 mean unemployment duration). All five Phase 3 open questions are addressed in chapter_level_recommendations + phase4_open_question_resolutions blocks below. No BLS-ILC-style discontinuation impacts this chapter.",

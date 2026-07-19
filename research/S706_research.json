@@ -135,13 +135,13 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-b-ch7",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from CD2 S036 dossier + book pp. 299-300, 305 + Appendix 7.1 III (book pp. 857-859) verbatim. Source = BEA GDPbyInd GOS + Fixed Asset Table 3.7ES + WEQ/OOH/inventory/reserve adjustments per Shaikh (2008). Appendix7_iropdataUSind.xlsx in SalvagedInputs is the canonical extract. 3 quotes (definition, source, method), 6 components, 3 extension candidates. Note: book range 1988-2005 (vs stub's 1987-2005) because IROP requires a lagged year."
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-batch1-A4-B4",
       "date": "2026-05-18",
       "status": "blocker-resolved",
       "notes": "B4 resolved (shared with S705). Shaikh (2008) Table 9.A1 extracted to SalvagedInputs/book_data/Reconstructed/Shaikh_2008_Appendix_B_industries.csv. Use this CSV as the 31-industry drop key when building the 30-industry IROP panel."

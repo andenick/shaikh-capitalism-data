@@ -83,5 +83,9 @@ the same source family at successive vintages.
 source-of-record for XS2001 is the archival PDF of Shaikh (2020),
 "An Empirically Sufficient Form for Sraffa Prices".
 
-Festschrift volume metadata per paper's own reference list (p. 20):
-Velupillai (ed.), Palgrave Macmillan. DOI pinning is a v1.1 task.
+Venue confirmed (F-2H-02, 2026-07-10): published as Shaikh (2024),
+"An empirically sufficient form for Sraffa prices", Structural Change
+and Economic Dynamics 69:1-9 (ScienceDirect PII S0954349X23001480).
+The "Velupillai (ed.), Palgrave Macmillan" string in the paper's own
+p.20 reference list is a citation to a different Shaikh chapter, not
+this paper's venue.

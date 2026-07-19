@@ -115,13 +115,13 @@
       "notes": "ADDENDUM (F-2D-03): S703/S704 digitization enacted per Decision 0019 (2026-07-02, user-authorized). Machine digitization (dual independent extraction + adversarial verification) recovered the USMANAVG boldest markerless line in Christodoulopoulos Fig 7.14 (1960–1989, 30 pts; 1990 omitted — markerless average line occluded by triangle marker at right edge). Confidence: HIGH (~±0.5pp, mean conf 0.757). Gate: M2 raw FAIL (53%, extractor-B +1-year x-offset) but fully diagnosed — extractor-B had mis-numbered tick ladder; every failing point re-measured by boldest-markerless-stroke criterion and resolved to extractor-A; adversarial verifier rebuilt x-calibration from scratch and confirmed extractor-A registration (peak 1965, trough 1982). Each S704 value carries three agreeing measurements. Status flipped data_unavailable → book_period_validated; publish: false → true. Values stored in decimal (rate convention; figure-percent divided by 100 to match S705/S706 sibling convention). Human superseding path preserved forever. Evidence: Technical/docs/decisions/0019_machine_digitization_s703_s704.md."
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-b-ch7",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from book pp. 301-304 and Appendix 7.1 II (book p. 856 / PDF p. 894). Source = OECD ISDB 1994 via Christodoulopoulos (1995), US manufacturing subset 1960-1989, unsmoothed. CD2 had no S033 dossier. Raw data file for Fig 7.14 is not in SalvagedInputs ShaikhChoppedTables - flagged as open question."
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-batch1-A4-B5",
       "date": "2026-05-18",
       "status": "data_unavailable",
       "notes": "B5 underlying-data search (shared with S703): Christodoulopoulos (1995) NSSR working paper not located. Shaikh (2008) Appendix 1 does not tabulate the US manufacturing sub-industry ISDB series. Marked data_unavailable; full provenance and recovery options at SalvagedInputs/book_data/Reconstructed/Christodoulopoulos_1995_data_unavailable.md. Same Phase 5 recommendation as S703 (include book figure as image; queue for Phase 6 manual digitization)."

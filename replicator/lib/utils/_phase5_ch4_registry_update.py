@@ -1,7 +1,7 @@
 """Phase 5 Ch4 registry / subsource / ledger updater (idempotent).
 
 Updates Technical/series_registry.json, Technical/SUBSOURCE_METADATA.json, and
-Technical/ANU_LEDGER.json with the S401-S408 automated-agent artifacts (DPR/EPR paths,
+Technical/ANU_LEDGER.json with the S401-S408 fanout artifacts (DPR/EPR paths,
 subseries decomposition, construction_steps, subsource definitions, ledger
 phase-completion stamps).
 

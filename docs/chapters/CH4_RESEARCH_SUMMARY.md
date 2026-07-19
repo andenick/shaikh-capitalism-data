@@ -1,6 +1,6 @@
 # Chapter 4 — Production and Costs: Research Rollup
 
-**Phase 3 Wave A** | Reviewer: `automated-agent` | Date: 2026-05-18
+**Phase 3 Wave A** | Reviewer: `opus-subagent-wave-a-ch4` | Date: 2026-05-18
 
 ## Scope
 
@@ -59,7 +59,7 @@ See `Build/PHASE3_VALIDATION_REPORT.json` after running `python Technical/code/u
 
 ## Phase 5–8 Closure
 
-**Closed**: 2026-05-18 | **Agent**: automated-agent | **All 8 series PASS**
+**Closed**: 2026-05-18 | **Agent**: opus-subagent-ch4-fanout | **All 8 series PASS**
 
 Full DPR + EPR + L01 + P02 + V03 artifacts authored for every series per `Technical/docs/FANOUT_PLAYBOOK.md`. Three new subsources registered in `SUBSOURCE_METADATA.json`: `SHAIKH_APPENDIX_4_2`, `INMAN_1995_ENGINEERING_ECONOMIST`, `EITEMAN_GUTHRIE_1952`. Registry status for all 8 series upgraded from `candidate` → `ingested`. Phase 4 citation correction (Robert P. Inman → Robert R. Inman; placeholder Brookings URL → Crossref DOI 10.1080/00137919508967475) propagated to registry and subsource metadata.
 

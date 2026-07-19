@@ -12,7 +12,7 @@
 
 ## 1. Why this series is extendable in principle
 
-`content_type = time_series` and the underlying primaries (BEA (US Bureau of Economic Analysis) GDP-by-Industry; BEA Fixed Assets; OECD STAN (Structural Analysis database); FRB Z.1 (Federal Reserve Board Z.1, Financial Accounts of the United States)) are continuously published. The adequacy step confirmed all primary endpoints return HTTP 200.
+`content_type = time_series` and the underlying primaries (BEA (US Bureau of Economic Analysis) GDP-by-Industry; BEA Fixed Assets; OECD STAN (Structural Analysis database); FRB Z.1 (Federal Reserve Board Z.1, Financial Accounts of the United States)) are continuously published. The the adequacy step confirmed all primary endpoints return HTTP 200.
 
 ## 2. Construction classification
 

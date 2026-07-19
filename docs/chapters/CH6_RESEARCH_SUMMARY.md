@@ -3,7 +3,7 @@
 **Chapter**: 6 (Foundations of the Analysis - Part II opener; the empirical bridge into Real Competition)
 **Series count**: 4 (S601-S604)
 **Wave**: A
-**Subagent**: automated-agent (first attempt hit content filter)
+**Subagent**: opus-subagent-ch6-retry (first attempt hit content filter)
 **Date**: 2026-05-18
 **Book pages covered**: 213-273 (narrative); pp. 244-256 contain figures 6.1-6.7; Appendix 6.7 (sections I-VIII) and Appendix 6.8 Tables I-3 and II-7 contain the construction details
 
@@ -85,7 +85,7 @@ All four pass the acceptance criteria. Validator run reported separately.
 
 ## Phase 5-8 Closure (2026-05-18)
 
-All 13 Ch6 series (S601-S604 + XS001-XS009) completed Phases 5-8 in a single automated-agent pass per the FANOUT_PLAYBOOK. Each series has:
+All 13 Ch6 series (S601-S604 + XS001-XS009) completed Phases 5-8 in a single fanout pass per the FANOUT_PLAYBOOK. Each series has:
 
 - DPR at `Technical/docs/series/{SID}_DPR.md`
 - EPR at `Technical/docs/series/{SID}_EPR.md`

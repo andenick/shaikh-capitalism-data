@@ -1,7 +1,7 @@
 # Chapter 7 — Real Competition: Research Dossier Summary
 
 **Wave**: B
-**Agent**: automated-agent
+**Agent**: opus-subagent-wave-b-ch7
 **Date**: 2026-05-18
 **Series**: S701-S708 (8 series)
 **Book pages**: 287-311 (Chapter 7 body, figures 7.11-7.20); 856-860 (Appendix 7.1)
@@ -127,7 +127,7 @@ chapter test that thesis at three levels of aggregation:
 ## Addendum — Additional series S709-S711 (decision 0004)
 
 **Wave**: B (expansion)
-**Agent**: automated-agent/s710/s711
+**Agent**: opus-subagent-s709/s710/s711
 **Date**: 2026-05-18
 
 Decision 0004 added three series that complete Ch7's empirical coverage. The
@@ -224,7 +224,7 @@ this dossier set; expect 8/8 PASS for S701-S708 given:
 
 ## Phase 5-8 Closure (2026-05-18)
 
-**Agent**: automated-agent
+**Agent**: opus-subagent-ch7-fanout
 **Scope**: Phases 5 (Ingestion), 6 (Extension), 7 (Replication), 8 (Output) for the full 11-series Ch7 set (S701-S711, including the three series added by decision 0004: S709, S710, S711).
 
 ### Validation summary

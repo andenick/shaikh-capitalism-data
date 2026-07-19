@@ -78,13 +78,13 @@
     "Original source (Inman 1995) bibliographic details should be verified against Shaikh's reference list in the book - specifically whether it appears in the back matter as Inman, R. P. (1995). Shaikh's footnote pattern '(Inman 1995, 53-55)' is consistent across pp. 160-163."
   ],
   "open_questions": [
-    "Verify Inman 1995 full citation against Shaikh's bibliography (back of book). The 'How to Have a Fiscal Crisis' attribution above is provisional - I do not have Shaikh's reference list confirmed.",
-    "Inman's underlying paper is paywalled / library-only; need to check whether the underlying numerical series is published. If not, the chopped figure values themselves would need to be reconstructed via figure digitization.",
-    "Phase 4 should decide whether reproduced single-plant simulated cost curves count as 'data' for the RSCD framework or as 'illustrative theoretical evidence'."
+    "Inman 1995 citation RESOLVED 2026-07-02 (T3.2): Robert R. Inman, The Engineering Economist 41(1):53-67, DOI 10.1080/00137919508967475 (Crossref-verified). The earlier 'Robert P. Inman / Brookings Papers / How to Have a Fiscal Crisis' attribution was a false-name-match to a different Inman and has been corrected in the primary_source field above and all DPR/registry entries.",
+    "Underlying data availability RESOLVED 2026-05-26 (v1.3 recovery): Inman published the simulation only as figures, not as tabulated values, and the journal full text is behind a paywall. The values were recovered by native-vector trace of Shaikh's Figure 4.19 from the source-book PDF, overlay-validated, and stored at SalvagedInputs/book_data/Reconstructed/Inman_1995_S404-407_cost_curves.json. All four Inman curves (S404-S407) are now book_period_validated with honest digitized provenance.",
+    "KB availability CONFIRMED: ch04 Knowledge Base is fully extracted (HDARP_v3.3_Campaign Body_Text/ch04_production_costs.md, 2,538 lines, all 23 figures present). Book quotes in the DPR and this research JSON are KB-anchored."
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-a-ch4",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Reproduced from Inman 1995. Cross-sectional cost curve, not a calendar time series. Reclassified to 'derived'. Bibliography lookup deferred."

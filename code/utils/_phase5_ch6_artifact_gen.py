@@ -127,7 +127,7 @@ L01_TEMPLATE = '''\
 """L01_{sid}_load — load Shaikh Appendix 6.8 columns for {sid} ({name}).
 
 Reads the canonical Shaikh chopped Appendix 6.8 workbook(s) and emits one raw
-parquet per subseries. Per Ch6 automated-agent playbook: the Appendix 6.8 workbooks are
+parquet per subseries. Per Ch6 fanout playbook: the Appendix 6.8 workbooks are
 the Phase-5 ground truth; extension recipes for re-fetching the underlying
 NIPA / BEA FA / IRS / Census components are documented in {sid}_EPR.md.
 

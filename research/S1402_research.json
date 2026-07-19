@@ -99,7 +99,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-c-ch14",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "CD2 S069 ported; intensity formula verified against text Eq. 14.13 (book p. 663) and Appendix 14.2 (book p. 892)."

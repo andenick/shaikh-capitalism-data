@@ -1,7 +1,7 @@
 """Phase 5 Ch14 registry / subsource / ledger updater (idempotent).
 
 Updates Technical/series_registry.json, Technical/SUBSOURCE_METADATA.json, and
-Technical/ANU_LEDGER.json with the S1401-S1408 automated-agent artifacts.
+Technical/ANU_LEDGER.json with the S1401-S1408 fanout artifacts.
 
 Run:
     python Technical/code/utils/_phase5_ch14_register.py

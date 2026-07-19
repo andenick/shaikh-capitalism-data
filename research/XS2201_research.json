@@ -181,7 +181,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-es2201",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Initial dossier from full read of Shaikh & Jacobo (2020), all 17 pages including appendix. Five verbatim quotes (1 definition, 1 source, 3 method) with paper-page citations. Decomposition decision: single composite series; five Table-1 parameters as components."

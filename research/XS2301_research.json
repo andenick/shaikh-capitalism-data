@@ -57,7 +57,7 @@
   "primary_source": {
     "agency": "U.S. Census Bureau, Foreign Trade Division",
     "publication": "U.S. International Trade in Goods and Services (FT900) -- monthly release; country-level detail via 'Trade in Goods with China' (Exhibit 14) and 'Top Trading Partners' tables",
-    "table_or_series_id": "FT900 Exhibit 14 (Trade in Goods with China) and Exhibit 1 (US Total Trade in Goods) -- annual totals derived by summing monthly Total Exports Value minus Customs Import Value in current USD",
+    "table_or_series_id": "FT900 Exhibit 14 / country balance page c5700 (Trade in Goods with China) and country balance page c0004 (US/World Total Trade in Goods) -- annual totals derived by summing monthly Total Exports Value minus Customs Import Value in current USD. [F-2H-04 2026-07-10: world-total source corrected from 'Exhibit 1' to c0004 to match loader+DPR+data.]",
     "url": "https://www.census.gov/foreign-trade/balance/c5700.html",
     "frequency": "annual (computed from monthly FT900 releases)",
     "units": "Billion current USD (trade balance = exports minus imports, on a balance-of-payments / customs-import-value basis)",
@@ -83,8 +83,8 @@
   "construction": "formula",
   "formula": "For year t in {2002, ..., 2017}: TB_World(t) = X_World(t) - M_World(t); TB_China(t) = X_China(t) - M_China(t), where X is Total Exports Value (FT900 column) and M is Customs Import Value (FT900 column), both summed to annual from monthly releases. Figure 1 plots TB_World(t) (solid line, dropping from -474.2 in 2002 to ~-810 in 2017) and TB_China(t) (dashed line, dropping from ~-103 in 2002 to ~-376 in 2017).",
   "components": [
-    "Component A: US Total goods exports value (FT900 Exhibit 1, summed monthly to annual, current USD)",
-    "Component B: US Total goods Customs Import Value (FT900 Exhibit 1, summed monthly to annual, current USD)",
+    "Component A: US Total goods exports value (FT900 country balance page c0004 (World), summed monthly to annual, current USD)",
+    "Component B: US Total goods Customs Import Value (FT900 country balance page c0004 (World), summed monthly to annual, current USD)",
     "Component C: US goods exports to China (FT900 Exhibit 14, monthly summed to annual)",
     "Component D: US goods imports from China, Customs Import Value (FT900 Exhibit 14, monthly summed to annual)"
   ],
@@ -105,12 +105,12 @@
     },
     {
       "subseries_label": "US-World goods trade balance 2018-2024 (extends Fig 1 World Total line)",
-      "source": "U.S. Census Bureau, Foreign Trade Division, FT900 Exhibit 1",
-      "url": "https://www.census.gov/foreign-trade/data/",
+      "source": "U.S. Census Bureau, Foreign Trade Division, FT900 country balance page c0004 (World)",
+      "url": "https://www.census.gov/foreign-trade/balance/c0004.html",
       "units": "Billion current USD",
       "splice_strategy": "direct_concatenation",
       "concerns": [
-        "FT900 Exhibit 1 publishes 'goods balance' (Census basis) and 'goods balance' (BoP basis); paper Fig 1 uses Total Exports Value minus Customs Import Value (Census basis) per the asterisk note",
+        "FT900 country balance page c0004 (World) publishes 'goods balance' (Census basis) and 'goods balance' (BoP basis); paper Fig 1 uses Total Exports Value minus Customs Import Value (Census basis) per the asterisk note",
         "Maintain Census-basis (not BoP-basis) for splice consistency with paper window"
       ]
     },
@@ -129,7 +129,7 @@
   "methodology_notes": [
     "RESCOPED PER DECISION 0006 (APPROVED 2026-05-18): This dossier now covers ONLY Figure 1 (US bilateral trade balances vs World and China, 2002-2017, Census FT900). The composite scope spanning Figs 1-5 has been split into 5 dossiers XS2301-XS2305; the formerly-composite XS2301 is rescoped to the Fig-1 Census FT900 series.",
     "Source label on figure: 'Data Source: U.S. Census Bureau, 2018' -- the '2018' is the data-access vintage year, NOT the period covered. The plotted period covered is 2002-2017 (16 annual data points per series). Phase 5 loaders must emit `data_vintage_year` and `period_covered` as distinct metadata fields to avoid downstream confusion.",
-    "Figure footnote explicitly states 'Total Exports Value minus Customs Import Value in USD' -- this is the Census-basis goods trade balance (not BoP-basis). Census-basis is the FT900 Exhibit 1/14 default and is what Phase 5 loaders should reproduce.",
+    "Figure footnote explicitly states 'Total Exports Value minus Customs Import Value in USD' -- this is the Census-basis goods trade balance (not BoP-basis). Census-basis is the FT900 country-balance-page (c0004 World / c5700 China) default and is what Phase 5 loaders should reproduce.",
     "Year 2002 is selected as the start of the series because it is the first full year after China's WTO accession (December 2001) -- Section 1 explicitly motivates this start date (p. 432).",
     "Figure 1 conventions: World Total drawn as solid line, China drawn as dashed line; both negative throughout the window. World Total deficit widens from approximately -474 bn USD (2002) to -810 bn USD (2017); China deficit widens from approximately -103 bn USD (2002) to -376 bn USD (2017).",
     "Closely related to S1101 (book Ch 11 'Trade Balances in Major Countries') but distinct in: (a) S1101 uses IMF IFS X/M ratio (unitless) for a 15-country panel 1960-2009; (b) XS2301 uses Census FT900 trade balance (USD level) for US bilateral with China and World, 2002-2017. Different sources, units, country coverage, and time windows."
@@ -147,13 +147,13 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-es2101-2301",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Original composite fill (Figs 1-5 in one dossier); recommended 5-way split."
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-batch1-a1-decision-0006-rescope",
       "date": "2026-05-18",
       "status": "reviewed",
       "notes": "Rescoped per APPROVED decision 0006 to Figure 1 only (Census FT900 US bilateral trade balance vs World and China, 2002-2017). Composite Fig 2/3/4/5 content moved to new XS2302/XS2303/XS2304/XS2305 dossiers. Census FT900 URL HEAD 200 OK 2026-05-18. All quotes verbatim from PDF (paper pp. 432-433 and Appendix p. 453)."

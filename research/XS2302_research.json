@@ -139,7 +139,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-batch1-a1-decision-0006-fill",
       "date": "2026-05-18",
       "status": "reviewed",
       "notes": "Filled per APPROVED decision 0006. Scope = Fig 2 only (China CA level + %GDP, IMF WEO 2018 vintage). Source URL https://www.imf.org/en/Publications/WEO/weo-database HEAD 200 OK 2026-05-18. Dual-axis figure requires TWO AnuData rows in Phase 5. All quotes verbatim from PDF (Section 1 p. 432, Appendix Fig 2 p. 453, References p. 450)."

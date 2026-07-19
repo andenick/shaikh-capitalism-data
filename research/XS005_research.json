@@ -84,7 +84,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-as-ch6",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Filled from CD2 S210 markdown + verbatim quotes from Appendix 6.7 Section V.1 and Appendix Table 6.7.13 (book pp. 845-846). Three book quotes (definition, source, method). Documents the precise difference from XS004 baseline."

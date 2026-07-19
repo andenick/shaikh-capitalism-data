@@ -94,7 +94,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-b-ch10",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "CD2 S057 ported; formula verbatim from p.468; sources cross-checked Appendix 10.1"

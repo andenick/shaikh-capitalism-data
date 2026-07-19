@@ -50,7 +50,7 @@ None. NaN propagates.
 
 ## 6. Conceptual continuity vs adjacent concepts
 
-The extension proxy `Census FT900 Exhibit 1 (world) + c5700 (China)` measures
+The extension proxy `Census FT900 c0004 (world) + c5700 (China)` measures
 `US merchandise (goods) trade balance, Census basis` rather than
 `US current account` or `BoP-basis goods balance` (balance-of-payments basis)
 because:

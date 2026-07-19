@@ -48,6 +48,7 @@ SALVAGED_DECISIONS = SALVAGED / "methodology_decisions"
 # Active pipeline directories
 REGISTRY = TECHNICAL / "series_registry.json"
 LEDGER = TECHNICAL / "ANU_LEDGER.json"
+PIPELINE_STATE = TECHNICAL / "PIPELINE_STATE.json"
 SUBSOURCE_METADATA = TECHNICAL / "SUBSOURCE_METADATA.json"
 CORRESPONDENCE = TECHNICAL / "SERIES_CORRESPONDENCE_MATRIX.json"
 
@@ -96,7 +97,7 @@ def assert_paths_exist():
     """Fail-fast sanity check at app/script startup."""
     required = [
         TECHNICAL, INPUTS, OUTPUTS, SALVAGED,
-        REGISTRY,
+        REGISTRY, PIPELINE_STATE,
         BUILD_DIR, CODE_DIR, RESEARCH_DIR, DOCS_DIR,
         KB_FIGURE_MASTER, KB_LINKAGE, KB_CHAPTER_INDEX,
     ]

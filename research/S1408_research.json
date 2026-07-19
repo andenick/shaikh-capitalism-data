@@ -91,7 +91,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-c-ch14",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "CD2 S075 ported. Definitional quote from p. 670 is the substantive text on Fig 14.17; CD2's quote was a fragment, replaced."

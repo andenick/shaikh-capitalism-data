@@ -152,7 +152,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-es2101-2301",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Filled from full paper read (10 PDF pages). All 4 quotes verbatim from PDF. Primary source = BEA benchmark IO + BLS labor compensation. Construction=composite (Sraffa price model A2 + Bienenfeld A3 + CI = 1-SI). Recommend KEEP AS SINGLE SERIES rather than decompose - one underlying dataset, one pipeline. Extension candidates: BEA 2012 and 2017 benchmarks."

@@ -3,6 +3,19 @@
 All notable changes to the public replication bundle are documented here.
 Versioning follows the project release line (see `RELEASE_NOTES_*`).
 
+## v1.6.1 — 2026-07-17 — Validation hardening + provenance completion
+
+**Zero data-value changes** (every chopped CSV value-identical to v1.6.0).
+218 independent anchors registered across 7 series (anu-doctor P40: 7 → 1, the
+sole remaining WARN a documented library-access deferral); XS2301 re-run risk
+retired (cache repopulated + Census-HTML parser fix + mutation blind cell closed);
+extenbook Provenance sheets populated on all workbooks; registry and documentation
+hygiene from the 2026-07-17 comprehensive review (115 findings dispositioned);
+public surfaces completed (CITATION.cff repository fields, site disclaimer,
+WEB_MANIFEST repository link, v1.5 release-notes erratum).
+
+Full detail: `RELEASE_NOTES_v1.6.1.md`.
+
 ## v1.6 — 2026-07-10 — Data corrections + validation hardening
 
 Two data series corrected (one CRITICAL magnitude error, one label transposition),

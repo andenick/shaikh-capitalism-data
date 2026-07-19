@@ -74,6 +74,7 @@ The consensus values are the durable digitized source (`S703_consensus.csv`). Th
 3. **Two knots carry soft marker identity.** The **1973 peak-knot** (circle buried under the PAPER crossed-square) and the **1975 V-trough** (circle ≈ diamond overlap) have soft marker identity; this is already reflected in their low per-point confidences (0.45, 0.47).
 4. **Transcription confidence MEDIUM-HIGH, ≈ ±0.005 decimal.** Per-point confidence ranges 0.45–0.90 (mean 0.666).
 5. **No modern substitute** can splice onto the discontinued ISDB panel without violating the Anti-Degradation rule (ISIC Rev3→Rev4 industry break, sparse modern capital stock). Any modern continuation is methodologically separate, not an extension.
+6. **Scope: average-panel WORLDAVG line only (Decision 0019, 2026-07-02).** The digitization recovered only the WORLDAVG open-circle line from the average-rate (top) panel of Fig 7.13. The incremental-rate (bottom) panel — same 9 lines, 1972–1989, y-axis −0.6 to 0.8 — was NOT digitized. This was an explicit scoping decision (Decision 0019). The display_name was corrected on 2026-07-17 from "World manufacturing average and incremental rates of profit" to "World manufacturing average rate of profit, 1970–1990" to accurately reflect the shipped scope. The incremental panel remains a future digitization candidate. Evidence: internal source record.
 
 ## 8. Cross-references
 

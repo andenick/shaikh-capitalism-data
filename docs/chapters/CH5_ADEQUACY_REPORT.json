@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-adequacy-v1.0",
   "chapter": 5,
-  "reviewer": "automated-agent",
+  "reviewer": "opus-subagent-p4-wave1-ch5",
   "review_date": "2026-05-18",
   "series_count": 4,
   "scores": {

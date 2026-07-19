@@ -1,7 +1,7 @@
 # Chapter 11 Research Summary — International Competition and the Theory of Exchange Rates
 
 **Wave**: C
-**Subagent**: automated-agent
+**Subagent**: opus-subagent-wave-c-ch11
 **Date**: 2026-05-18
 **Series count**: 4 (S1101–S1104)
 **Book pages**: 523–534 (figures), 875–880 (Appendix 11.1)
@@ -56,7 +56,7 @@ All 4 series in scope passed Phase 3 validation (see `Technical/Build/PHASE3_VAL
 
 ## Phase 5-8 Closure (2026-05-18)
 
-**Author**: automated-agent
+**Author**: opus-subagent-wave2-ch11-13-17
 
 | SID | Content type | V03 status | MAE | Max %err | Chopped rows | Extension status (v1) |
 |-----|--------------|------------|-----|----------|--------------|------------------------|

@@ -500,7 +500,7 @@ def main():
                 "validator": f"Technical/code/V03_validators/V03_{sid}_validate.py",
             },
             "last_updated": "2026-05-18",
-            "author": "automated-agent-ES",
+            "author": "opus-fanout-ES",
         }
 
     # Recompute counts

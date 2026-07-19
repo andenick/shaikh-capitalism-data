@@ -16,7 +16,7 @@ This helper is invoked by all Ch6 / AS L01 loaders. It exists so that:
 * The 10 chopped tables are the canonical Shaikh book-truth values (Appendix
   Tables 6.7.* and 6.8.*) for the construction internals, so V03 validators
   validate against the same Excel sheet they loaded from. This is intentional
-  for ingestion-phase automated-agent: extension/divergence behaviour is encoded in
+  for ingestion-phase fanout: extension/divergence behaviour is encoded in
   S00_apis-based extension loaders that the EPR documents.
 
 Layout of every workbook (single sheet "Sheet1"):

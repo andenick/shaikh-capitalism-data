@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-registry-delta-v1.0",
   "chapter": 4,
-  "generated_by": "automated-agent",
+  "generated_by": "opus-subagent-p4-wave1-ch4",
   "generated_at": "2026-05-18",
   "notes": [
     "Apply this delta to series_registry.json after Phase 4 wave 1 close.",
@@ -15,7 +15,7 @@
         "status": "ready_for_phase5_with_blocker",
         "score_contribution": 11.5,
         "reviewed_at": "2026-05-18",
-        "reviewer": "automated-agent",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
         "issues_resolved": [
           "content_type reclassification (time_series -> derived) ratified",
           "URL OUP product page returns 202 (reachable)"
@@ -32,7 +32,7 @@
         "status": "ready_for_phase5_with_blocker",
         "score_contribution": 11.5,
         "reviewed_at": "2026-05-18",
-        "reviewer": "automated-agent",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
         "issues_resolved": [
           "content_type reclassification (time_series -> derived) ratified",
           "URL OUP product page returns 202 (reachable)"
@@ -49,7 +49,7 @@
         "status": "ready_for_phase5_with_blocker",
         "score_contribution": 11.5,
         "reviewed_at": "2026-05-18",
-        "reviewer": "automated-agent",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
         "issues_resolved": [
           "content_type reclassification (time_series -> derived) ratified",
           "URL OUP product page returns 202 (reachable)"
@@ -68,7 +68,7 @@
         "status": "ready_for_phase5_with_blocker",
         "score_contribution": 11.5,
         "reviewed_at": "2026-05-18",
-        "reviewer": "automated-agent",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
         "issues_resolved": [
           "content_type reclassification (time_series -> derived) ratified",
           "Canonical Inman 1995 citation identified via Crossref (DOI 10.1080/00137919508967475)"
@@ -92,7 +92,7 @@
         "status": "ready_for_phase5_with_blocker",
         "score_contribution": 11.5,
         "reviewed_at": "2026-05-18",
-        "reviewer": "automated-agent",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
         "issues_resolved": [
           "content_type reclassification (time_series -> derived) ratified",
           "Canonical Inman 1995 citation identified via Crossref"
@@ -116,7 +116,7 @@
         "status": "ready_for_phase5_with_blocker",
         "score_contribution": 11.5,
         "reviewed_at": "2026-05-18",
-        "reviewer": "automated-agent",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
         "issues_resolved": [
           "content_type reclassification (time_series -> derived) ratified",
           "Canonical Inman 1995 citation identified via Crossref"
@@ -142,7 +142,7 @@
         "status": "ready_for_phase5_with_blocker",
         "score_contribution": 11.5,
         "reviewed_at": "2026-05-18",
-        "reviewer": "automated-agent",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
         "issues_resolved": [
           "content_type reclassification (time_series -> derived) ratified",
           "Canonical Inman 1995 citation identified via Crossref"
@@ -168,7 +168,7 @@
         "status": "ready_for_phase5",
         "score_contribution": 12.0,
         "reviewed_at": "2026-05-18",
-        "reviewer": "automated-agent",
+        "reviewer": "opus-subagent-p4-wave1-ch4",
         "issues_resolved": [
           "content_type reclassification (time_series -> cross_sectional) ratified",
           "Bibliographic citation (Eiteman & Guthrie 1952, AER 42(5):832-838) is well-established"

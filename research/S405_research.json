@@ -73,11 +73,13 @@
     "extension_candidates intentionally empty: same reasoning as S404 (single-plant 1995 simulation, no 'next vintage' to pull)."
   ],
   "open_questions": [
-    "Same as S404: verify Inman 1995 full bibliographic citation; check whether underlying numerical series is published elsewhere or only as a figure."
+    "Inman 1995 citation RESOLVED 2026-07-02 (T3.2): Robert R. Inman, The Engineering Economist 41(1):53-67, DOI 10.1080/00137919508967475 (Crossref-verified). The S404 primary_source field and DPR carry the corrected citation.",
+    "Underlying data availability RESOLVED 2026-05-26 (v1.3 recovery): values recovered by native-vector trace of Shaikh's Figure 4.20, overlay-validated, stored at SalvagedInputs/book_data/Reconstructed/Inman_1995_S404-407_cost_curves.json. All four Inman curves (S404-S407) are now book_period_validated.",
+    "KB availability CONFIRMED: ch04 KB is fully extracted (2,538 lines, all 23 figures). DPR book quotes are KB-anchored."
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-a-ch4",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Marginal-cost twin of S404. Same reclassification and same open question on bibliography."

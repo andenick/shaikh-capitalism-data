@@ -139,7 +139,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-b-ch9",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Verbatim quotes from PDF pp.406-407 (Sec VII.1) and Appendix 9.2 pp.867-869. Source identified: BEA Use Tables + Fixed Asset Tables + 1997 capital flow benchmark, plus historical Ochoa/Shaikh (1998a) for 1947-1972. The construction is mathematically explicit (Appendix 9.1)."

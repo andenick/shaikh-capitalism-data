@@ -98,6 +98,7 @@ def _bootstrap_filesystem() -> Path:
         "series_registry.json",
         "SUBSOURCE_METADATA.json",
         "SERIES_CORRESPONDENCE_MATRIX.json",
+        "PIPELINE_STATE.json",
         "ANU_LEDGER.json",
         "VALIDATION_REPORT.json",
     ):

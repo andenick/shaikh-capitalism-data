@@ -153,3 +153,101 @@ that records the honest validation scope:
 
 See `RELEASE_NOTES_v1.4.md` (backfill stub) and `CHANGELOG.md §v1.4` for the
 AS/ES → XS series-ID migration and provenance reconciliation that shipped in v1.4.
+
+---
+
+## Final-gate certification (P5.3, 2026-07-10)
+
+This section records the campaign's final release gate exactly as measured. All numbers
+are from the P5.1d final re-verification run (`Technical/remediation_v16/evidence/P5.1d_gates.md`)
+and the P5.1c registry audit, reconciled to the **post-register** state (the
+`DIVERGENCE_REGISTER.json` was generated in P5.1, clearing the P10 WARN).
+
+### Certification numbers (post-register)
+
+| Gate | Result |
+|------|--------|
+| **anu-doctor** (`check_project.py`, 43 P-checks) | **0 FAIL / 3 WARN** (P28, P32b, P40 — post-register; P10 cleared by the generated register) |
+| **Anchor suite** | **51 series checked / 0 RED** (0 anchor RED · 0 splice RED · 0 plausibility RED) |
+| **Anchor census (registry)** | 30 independent anchors · 4 plausibility rules · 1 legacy anchor |
+| **V03 batch (118 series)** | **118 non-FAIL / 0 FAIL**, by partition: PASS 106 · PASS_THEORETICAL 8 · PASS_CROSS_SECTIONAL_UNAVAILABLE 2 · PASS_EXTENSION_ONLY 2 |
+| **`validation_class` (118)** | book_verified 12 · pipeline_consistent 88 · study_replication 8 · extension_only 2 · theoretical 8 |
+| **Mutation harness** (33 series × 3) | 99 cells: **96 CAUGHT · 3 EXEMPT · 0 BLIND** · 0 NOT-RUNNABLE |
+| **Framework** (`check_framework.py`, D1–D19) | **0 failures / 0 warnings** |
+| **Live hub** (shaikh.heterodata.org) | **8/8 live checks GREEN** (S214/S215/S801/S1603-A/S1006 values, download disclaimer, 0 kb-comments, S306 held back) |
+| **RED-injection drill** | fires (S1006 ×1.5 → `--gate` exit 1, anchor RED) — the safety net is proven live |
+| **Deny-rule drill** | `Inputs/` + `SalvagedInputs/` writes DENIED |
+| **Vintage manifest** | 15/15 live-FRED loaders covered — PASS |
+
+### Certification language (G5 — partition claims, never blanket)
+
+Per Gate G5-cert, RSCD makes **partitioned** validation claims and **never a blanket
+"all 118 verified against the book."** Honestly:
+
+- **12 series are book-verified** — an independent anchor was checked against the book's own
+  printed values (Shaikh 2016 tables/figures/appendix regressions).
+- **88 series are pipeline-consistent** — the V03 round-trip matches a reference derived from
+  the same pipeline; faithful reproduction, but not an independent-of-the-loader check.
+- **8 series are study-replication** (external-study XS series, validated against the source study).
+- **8 series are theoretical** (analytical derivations; no empirical target — `PASS_THEORETICAL`).
+- **2 series are extension-only** (S214/S215; the book period 1960–1989 is genuinely
+  data-unavailable, so only the Appendix-7 extension exists — `PASS_EXTENSION_ONLY`).
+
+The anchor / mutation / `--gate` architecture (see "validation architecture" above) is what makes
+these claims mechanically enforceable rather than asserted.
+
+### Four independent P5 re-verifier verdicts
+
+| Verifier | Scope | Verdict |
+|----------|-------|---------|
+| **P5.1a** | The 4 data fixes + cross-surface integrity, re-derived from primary sources | **ALL 5 ITEMS VERIFIED** — no discrepant, no campaign blocker (S214/S215 12-industry mean, S801 swap, S1603-A T-Bill, S703 quote all agree across recompute/canonical/Publish/Web/hub) |
+| **P5.1b** | Public bundle, adversarial outsider lens | **BLOCKERS** — repro faithfulness, LF endings, data-fix honesty, manifest hashes and WEB=113 verified good, but a re-scrub of flattened `Technical/` path + agent-ID/HDARP strings, a `viz/`-vs-README mismatch, and a stale `replicator/README.md` were flagged and routed to the blocker-fixer |
+| **P5.1c** | P4 mass registry/metadata work | **CLEAN** — 20/20 spot-audit correct, `validation_class` census 12/88/8/2/8 exact, S707/S711 predecessor bijection correct, doctor 0 FAIL |
+| **P5.1d** | Full gate stack | **ALL-GREEN** — `--gate` exit 0, mutation 96C/3E/0B, framework 0/0, RED-injection fires, deny-drill DENIED, vintage 15/15 |
+
+### Three WARN backlog items (named honestly)
+
+The 3 residual doctor WARNs are documented, non-blocking, and carried in the CLAUDE.md v1.x backlog:
+
+- **P28** — non-standard decision-log filenames (`DECISION_NAMESPACE.md`,
+  `RSCD-0020_v16_remediation.md`) that don't match the `NNNN-title.md` pattern.
+- **P32b** — S1301 (theoretical) carries point-index `reference_values` keys rather than year keys;
+  set `year_column_is_index` or move to `derived_statistics`.
+- **P40** — 44/113 published series lack an independent anchor versus a loader-shared source. These
+  are traceable to **book-appendix series where a printed per-year anchor is structurally impossible**;
+  the shortfall is an honest, documented census, not a hidden tautology.
+
+---
+
+## Campaign statistics (RSCD v1.6 Post-Review Remediation)
+
+- **Structure**: ≈50 Opus subagent work-items (fixer + independent-verifier pairs) across **6 execution
+  phases** — P0 (freeze/baseline/rulings), P1 (data fixes), P2 (validation architecture),
+  P3 (surface refresh), P4 (registry/state/docs/hygiene), P5 (re-review/gate/cert) — **plus a
+  framework Technical-Debt (TD) track**. 34 evidence briefs in `Technical/remediation_v16/evidence/`.
+- **Doctrine**: ANCHOR-BEFORE-FIX — every data fix registers an independent anchor, is proven RED on
+  the defective data, fixed, then proven GREEN; each item carries an evidence bundle.
+- **Four data fixes (v1.6) with magnitudes**:
+  1. **S214** — manufacturing average profit rate: 6-of-12 → full 12-industry mean; **17–42% per-year**
+     corrections (e.g. 1996: 0.2009 → 0.1615, −24.4%).
+  2. **S215** — incremental profit rate: same 12-industry fix; **4 sign-flips** (1990/1996/1998/2002),
+     |Δ| up to **0.319**.
+  3. **S801** — Eichner competitive/oligopolistic price indices: **label transposition** corrected
+     (Oligopolistic@1973 145.03 → 128.47); all values bit-identical.
+  4. **S1603-A** — US short-term interest rate: **OECD-MEI → book's 3-mo T-Bill** (1981 0.15911 → 0.14029,
+     +13%; 2011 0.003 → 0.0006, ~5×).
+  - Reconciled here: **S203** (MeasuringWorth 1929–34 re-pull, −28.6% honest Depression fall) was a
+    v1.5 fix; its stale "to-do" backlog line and `DIVERGENCE_REGISTER` ADR-008 were closed to RESOLVED
+    in P5.3.
+- **Surfaces refreshed to v1.6**: canonical `Technical/` tree · `Outputs/Publish/` bundle · `Web_v1.6.0`
+  export (113 chopped + parquet + dictionary + scrubbed explainers/DPRs) · live hub
+  `shaikh.heterodata.org` · Google-Drive package (`RSCD_Drive_v1.6`, USER STEP = sync) · Reports
+  (Results/Executive/Methodology PDFs) · 116 regenerated Figures · `D:/ArcArchive/RSCD_v1.6` (SHA-256 manifest).
+- **Framework versions shipped (TD track, framework 0/0 at gate)**: anu-doctor **v2.5** (P01–P43; P24/P20
+  ledger-freshness + P40 round-trip census repaired; P32b/P41/P42/P43 added) · anu-ingestion **5.3**
+  (`theoretical_validated` + `extension_only_validated` + `validation_class`) · anu-review **5.1** ·
+  anu-extension **v4.2** (DIVERGENCE_REGISTER always-required + generator + `performed_by`) · anu-publish
+  audit **v2.2** (P11 internal-reference detectors) · carson-visual **1.2** (HTML-comment leak detector) ·
+  `DENY_RULE_SCOPING_STANDARD` **v1.0**.
+- **Accountability ledger**: `Technical/remediation_v16/BACKLOG_DISPOSITION.csv` — all 257 review findings
+  triaged; 100% disposition coverage on every CRITICAL/MAJOR/MODERATE row (65/65).

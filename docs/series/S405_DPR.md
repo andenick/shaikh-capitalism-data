@@ -51,7 +51,9 @@ USD per additional car vs. annual vehicle production (thousands). Y-axis range ~
 
 ## 7. Caveats
 
-Same recovery posture as S404: previously marked as having no available data, now recovered by figure digitization of Shaikh's reproduction and overlay-validated. Digitization from figures is the project's documented last-resort recovery method when exact values cannot be obtained otherwise; this is not a proxy or fabricated series. Citation confirmed as Robert R. Inman (1995).
+1. **Digitized from the printed figure (v1.3 recovery, 2026-05-26).** Inman published the simulation only as figures, not as tabulated values. The series values were recovered by native-vector trace of Shaikh's Figure 4.20 (PyMuPDF `get_drawings` from the source-book PDF), overlay-validated against the printed figure, and stored in the shared Inman reconstruction file reconstructed book source data. This was part of the RSCD v1.3 recovery campaign: 7 book-period series including all four Inman curves (S404–S407) were recovered by offline figure digitization. The series is now `book_period_validated`; the loader emits the digitized curve, a chopped CSV exists, and the validator round-trips the values.
+2. **Honest digitization provenance.** Digitization from figures is the project's documented last-resort recovery method. The digitized points are overlay-checked against the printed figure and carry a dated recovery note; they are not fabricated, proxied, or guessed. Provenance is transparently labeled `digitized` in the registry.
+3. **Citation confirmed.** Robert R. Inman (1995), *The Engineering Economist* 41(1), 53–67, DOI 10.1080/00137919508967475 (Crossref-verified).
 
 ## 8. Cross-references
 

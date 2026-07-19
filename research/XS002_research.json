@@ -94,7 +94,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-as-ch6",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Filled from CD2 S207 markdown + verbatim quotes from Appendix 6.7 Section III and Appendix Table 6.7.4 (book pp. 831-833). Three book quotes (definition, source, method)."

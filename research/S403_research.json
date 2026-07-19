@@ -84,13 +84,13 @@
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-a-ch4",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Profit-curve derivation from S401/S402. Same Appendix 4.2 reconstruction issue."
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-batch1-a2",
       "date": "2026-05-18",
       "status": "blocker_resolved",
       "notes": "CH4-B1 RESOLVED. Verbatim Appendix 4.2 tables transcribed; L01 loader should consume Appendix_4_2_Table4.csv profit columns (XR, PL=per-worker profit, PH=per-hour profit). Validation: PL(XR=2.84)=-158.64 (book) vs 7*2.84-178.52=-158.64 (recomputed) - exact."

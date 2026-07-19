@@ -105,7 +105,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-b-ch7",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from book Ch7 pp. 286-287 verbatim. Source confirmed as Salter (1969) Table 28 (Reddaway Addendum). Excel transcription present in SalvagedInputs (Appendix7_SalterULCPriceTable28.xlsx). Cross-sectional; not extensible. Re-classified content_type."

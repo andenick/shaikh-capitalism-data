@@ -91,7 +91,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-c-ch14",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "CD2 S070 ported. Note that CD2 markdown contained tangential quotes from Section II; replaced with the actual Fig 14.12 description from p. 666."

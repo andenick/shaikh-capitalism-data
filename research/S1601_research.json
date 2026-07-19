@@ -104,7 +104,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-c-ch16",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Ported from CD2 S093 with verbatim book quotes from p. 727 (figure caption + narrative) and p. 898 (Appendix 16.1)."

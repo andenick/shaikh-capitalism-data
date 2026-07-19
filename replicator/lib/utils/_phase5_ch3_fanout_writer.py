@@ -1,9 +1,9 @@
-"""One-shot automated-agent writer for Ch3 series S302-S309.
+"""One-shot fanout writer for Ch3 series S302-S309.
 
 For each series, writes the DPR, EPR, L01 loader, P02 processor, and V03
 validator under the canonical paths. Idempotent — re-running overwrites.
 
-Authored 2026-05-18 by automated-agent.
+Authored 2026-05-18 by opus-subagent-wave-a-ch3.
 """
 from __future__ import annotations
 
@@ -1374,7 +1374,7 @@ DPR_TEMPLATE = '''# {sid} -- {name}
 **Status**: ingested
 **Content type**: `{content_type}`
 **Authored**: 2026-05-18
-**Author**: automated-agent (Phase 5-8 automated-agent)
+**Author**: opus-subagent-wave-a-ch3 (Phase 5-8 fanout)
 **Related artifacts**:
 - Research dossier: `Technical/research/{sid}_research.json`
 - Adequacy: `Technical/docs/chapters/CH3_ADEQUACY_REPORT.json`

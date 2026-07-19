@@ -36,7 +36,7 @@ The adequacy review confirmed: BEA + FRB Z.1 endpoints reachable (HTTP 200); Way
 `composite` — see EPR §3 for the formula. For Phase 5 byte-exact replication, we **read Shaikh's Appendix 7.2 sheet directly** rather than rebuild from BEA primaries. The reasons:
 
 1. The salvaged xlsx is the **byte-exact published series**; rebuilding from BEA would require re-applying WEQ (wage-equivalent) / OOH (owner-occupied-housing) / inventory / reserve adjustments at a specific 2008 NIPA (US National Income and Product Accounts) vintage, which is not recoverable from current BEA endpoints.
-2. The adequacy step report explicitly endorses this path: "Ratify CD2's post-2005 S705/S706 extension series … as the Phase 5 starting point, subject to vintage re-fetch on a coherent current BEA NIPA vintage."
+2. The the adequacy step report explicitly endorses this path: "Ratify CD2's post-2005 S705/S706 extension series … as the Phase 5 starting point, subject to vintage re-fetch on a coherent current BEA NIPA vintage."
 3. End-to-end BEA re-fetch is documented in EPR §3 as the **extension path**, deferred to a follow-up wave.
 
 ### 4.1 Industry sample and aggregate

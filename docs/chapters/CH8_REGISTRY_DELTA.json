@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-registry-delta-v1.0",
   "chapter": 8,
-  "generated_by": "automated-agent",
+  "generated_by": "opus-subagent-p4-wave2-ch8",
   "generated_at": "2026-05-18",
   "note": "Per-series adequacy block + content_type re-typings + stub-name corrections + cd2_id nulls for Ch8 (S801-S805) to be merged into series_registry.json. Phase 3 already corrected the dossier files; this delta propagates those corrections to the registry plus adds the Phase 4 adequacy block.",
   "per_series_updates": [

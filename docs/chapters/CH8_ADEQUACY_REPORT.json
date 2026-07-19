@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-adequacy-v1.0",
   "chapter": 8,
-  "reviewer": "automated-agent",
+  "reviewer": "opus-subagent-p4-wave2-ch8",
   "review_date": "2026-05-18",
   "series_count": 5,
   "scope_note": "Chapter 8 ('On Perfect and Imperfect Competition') has 5 figure-based series (S801-S805) drawn entirely from five external academic studies (Eichner 1973, Weston et al. 1974 via Semmler 1984, Bain 1951 with Demsetz 1973b corrections, Stigler 1963, Demsetz 1973b). No formal Appendix 8 exists in the book — the appendix sequence skips from 7.1 to 9.1. The de-facto data dictionary is SalvagedInputs/book_data/ShaikhChoppedTables/Appendix8_*.xlsx (6 files), constructed by Shaikh's team from the chapter narrative and originating publications. Figure 8.1 (S801) is the only series whose numeric values are NOT digitized in those chopped tables and remains a Phase 5 ingestion blocker (must be digitized directly from Eichner 1973 Economic Journal p. 1187).",

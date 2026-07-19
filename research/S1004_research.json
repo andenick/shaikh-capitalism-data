@@ -96,7 +96,7 @@
    "notes": "ADDENDUM (F-2E-02): Lambda corrected in dossier formula field: lambda=3 → lambda=100. The book states 'HP-filtered value (parameter = 3)' but the implemented pipeline uses lambda=100 (standard HP parameter for annual data). Dossier formula field updated; formula_note field added explaining the discrepancy. Code handoff: P02_S1004.py docstring line 6 still says 'lambda=3' (stale) — P4.5 code-hygiene agent to fix docstring only (no logic change)."
   },
   {
-   "reviewer": "automated-agent",
+   "reviewer": "opus-subagent-wave-b-ch10",
    "date": "2026-05-18",
    "status": "draft",
    "notes": "CD2 S054 ported; quotes verified p.467; HP lambda=3 flagged as non-standard"

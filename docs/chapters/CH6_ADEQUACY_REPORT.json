@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-adequacy-v1.0",
   "chapter": 6,
-  "reviewer": "automated-agent",
+  "reviewer": "opus-subagent-p4-wave1-ch6",
   "review_date": "2026-05-18",
   "series_count": 13,
   "scope_note": "Combined adequacy report for Ch6 published series (S601-S604) PLUS the 9 AS-prefixed analytical-support series (XS001-XS009) that document the Ch6 GPIM construction internals per decision 0002.",

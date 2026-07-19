@@ -99,7 +99,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-b-ch7",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from book Ch7 pp. 286-287 verbatim + Appendix 7.1 (book p. 856 / PDF p. 894) confirming Figs 7.1-7.12 are illustrations with sources listed within. Source is Salter (1969) Table 33; raw Excel transcription present in SalvagedInputs as Appendix7_SalterULCPriceTable33.xlsx. Cross-sectional, not extensible as time series. Re-classified content_type to cross_sectional."

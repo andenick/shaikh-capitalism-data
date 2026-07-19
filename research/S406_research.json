@@ -77,11 +77,13 @@
     "extension_candidates intentionally empty: same reasoning as S404."
   ],
   "open_questions": [
-    "Same as S404: verify Inman 1995 bibliography and underlying-data availability."
+    "Inman 1995 citation RESOLVED 2026-07-02 (T3.2): Robert R. Inman, The Engineering Economist 41(1):53-67, DOI 10.1080/00137919508967475 (Crossref-verified).",
+    "Underlying data availability RESOLVED 2026-05-26 (v1.3 recovery): values digitized from Shaikh's Figure 4.21, overlay-validated, stored in shared Inman reconstruction file. Series is book_period_validated.",
+    "KB availability CONFIRMED: ch04 KB is fully extracted and available for quote anchoring."
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-a-ch4",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Average-cost component of Inman series. Same reclassification."

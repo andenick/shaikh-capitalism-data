@@ -1,7 +1,7 @@
 """L01_AS006 — load Shaikh Appendix 6.8 columns for XS006 (GPIM Variant - BEA 1993 Depreciation Rates).
 
 Reads the canonical Shaikh chopped Appendix 6.8 workbook(s) and emits one raw
-parquet per subseries. Per Ch6 automated-agent playbook: the Appendix 6.8 workbooks are
+parquet per subseries. Per Ch6 fanout playbook: the Appendix 6.8 workbooks are
 the Phase-5 ground truth; extension recipes for re-fetching the underlying
 NIPA / BEA FA / IRS / Census components are documented in XS006_EPR.md.
 

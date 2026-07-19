@@ -20,7 +20,7 @@
         "max_pct_err": 1.857956139498785,
         "note": "Informational. CD2 used a different FRB reindex anchor; ~1-2% divergence expected and acceptable."
       },
-      "validated_at": "2026-07-10T14:18:45.968227+00:00"
+      "validated_at": "2026-07-19T14:53:49.890511+00:00"
     },
     "S301": {
       "status": "PASS_THEORETICAL",
@@ -44,7 +44,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-07-10T14:18:46.562088+00:00",
+      "validated_at": "2026-07-19T14:53:50.802214+00:00",
       "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
     },
     "S401": {
@@ -61,7 +61,7 @@
       "cd2_comparison": {
         "note": "no CD/CD2 predecessor for Ch4 series"
       },
-      "validated_at": "2026-07-10T14:18:46.685378+00:00"
+      "validated_at": "2026-07-19T14:53:51.018098+00:00"
     },
     "S302": {
       "status": "PASS_THEORETICAL",
@@ -85,7 +85,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-07-10T14:18:46.567449+00:00",
+      "validated_at": "2026-07-19T14:53:50.814948+00:00",
       "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
     },
     "S303": {
@@ -110,7 +110,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-07-10T14:18:46.573005+00:00",
+      "validated_at": "2026-07-19T14:53:50.829780+00:00",
       "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
     },
     "S304": {
@@ -135,7 +135,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-07-10T14:18:46.578140+00:00",
+      "validated_at": "2026-07-19T14:53:50.842073+00:00",
       "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
     },
     "S402": {
@@ -152,7 +152,7 @@
       "cd2_comparison": {
         "note": "no CD/CD2 predecessor"
       },
-      "validated_at": "2026-07-10T14:18:46.737690+00:00"
+      "validated_at": "2026-07-19T14:53:51.089744+00:00"
     },
     "S305": {
       "status": "PASS_THEORETICAL",
@@ -176,7 +176,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-07-10T14:18:46.583501+00:00",
+      "validated_at": "2026-07-19T14:53:50.856015+00:00",
       "note": "Theoretical series; tolerance is applied to axis bounds, not point-by-point against tabulated truth (none published)."
     },
     "S403": {
@@ -193,7 +193,7 @@
       "cd2_comparison": {
         "note": "no CD/CD2 predecessor"
       },
-      "validated_at": "2026-07-10T14:18:46.759256+00:00"
+      "validated_at": "2026-07-19T14:53:51.118723+00:00"
     },
     "S306": {
       "status": "PASS_CROSS_SECTIONAL_UNAVAILABLE",
@@ -213,7 +213,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-07-10T14:56:11.177276+00:00",
+      "validated_at": "2026-07-19T14:53:50.869455+00:00",
       "note": "Underlying Allen & Bowley (1935) Table 1 not in SalvagedInputs/ (Internet Archive URL 404). Processed parquet contains the axis-bound metadata only. No synthetic values. Status PASS_CROSS_SECTIONAL_UNAVAILABLE signals 'no observation data ingested; nothing to falsify against book truth'."
     },
     "S307": {
@@ -234,7 +234,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-07-10T14:56:12.520496+00:00",
+      "validated_at": "2026-07-19T14:53:50.881395+00:00",
       "note": "Underlying Allen & Bowley (1935) Table 1 not in SalvagedInputs/ (Internet Archive URL 404). Processed parquet contains the axis-bound metadata only. No synthetic values. Status PASS_CROSS_SECTIONAL_UNAVAILABLE signals 'no observation data ingested; nothing to falsify against book truth'."
     },
     "S404": {
@@ -244,7 +244,7 @@
       "max_abs_err": 0.0,
       "content_type": "derived",
       "is_digitized": true,
-      "validated_at": "2026-07-10T14:18:46.765601+00:00"
+      "validated_at": "2026-07-19T14:53:51.134931+00:00"
     },
     "S308": {
       "status": "PASS_THEORETICAL",
@@ -276,7 +276,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-07-10T14:18:46.599436+00:00",
+      "validated_at": "2026-07-19T14:53:50.896947+00:00",
       "note": "Composite theoretical series: 5 subseries (1 analytic + 4 NetLogo tabulations). Validates per-subseries shape/bounds AND Shaikh's central claim that all NetLogo curves lie within +/-2 percent of theoretical."
     },
     "S309": {
@@ -309,7 +309,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "cd2_comparison": {},
-      "validated_at": "2026-07-10T14:18:46.614351+00:00",
+      "validated_at": "2026-07-19T14:53:50.926684+00:00",
       "note": "Composite theoretical series for luxury good x2; 5 subseries. Validates shape/bounds per subseries AND Shaikh's central claim (NetLogo within +/-2 percent of theoretical)."
     },
     "S408": {
@@ -326,7 +326,7 @@
       "cd2_comparison": {
         "note": "no CD/CD2 predecessor"
       },
-      "validated_at": "2026-07-10T14:18:46.804091+00:00"
+      "validated_at": "2026-07-19T14:53:51.211522+00:00"
     },
     "S405": {
       "status": "PASS",
@@ -335,7 +335,7 @@
       "max_abs_err": 0.0,
       "content_type": "derived",
       "is_digitized": true,
-      "validated_at": "2026-07-10T14:18:46.775495+00:00"
+      "validated_at": "2026-07-19T14:53:51.153140+00:00"
     },
     "S406": {
       "status": "PASS",
@@ -344,7 +344,7 @@
       "max_abs_err": 0.0,
       "content_type": "derived",
       "is_digitized": true,
-      "validated_at": "2026-07-10T14:18:46.784823+00:00"
+      "validated_at": "2026-07-19T14:53:51.172149+00:00"
     },
     "S407": {
       "status": "PASS",
@@ -353,7 +353,7 @@
       "max_abs_err": 0.0,
       "content_type": "derived",
       "is_digitized": true,
-      "validated_at": "2026-07-10T14:18:46.794089+00:00"
+      "validated_at": "2026-07-19T14:53:51.193607+00:00"
     },
     "S701": {
       "status": "PASS",
@@ -365,7 +365,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "content_type": "cross_sectional",
-      "validated_at": "2026-07-10T14:18:47.848614+00:00"
+      "validated_at": "2026-07-19T14:53:52.515771+00:00"
     },
     "S702": {
       "status": "PASS",
@@ -377,7 +377,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "content_type": "cross_sectional",
-      "validated_at": "2026-07-10T14:18:47.867836+00:00"
+      "validated_at": "2026-07-19T14:53:52.544153+00:00"
     },
     "S703": {
       "status": "PASS",
@@ -399,7 +399,7 @@
         "remediation_campaign/digitization_packet/machine/M3_verify_report.md",
         "remediation_campaign/digitization_packet/machine/M2_adjudication_log.md"
       ],
-      "validated_at": "2026-07-10T14:18:49+00:00"
+      "validated_at": "2026-07-19T14:53:55+00:00"
     },
     "S704": {
       "status": "PASS",
@@ -423,7 +423,7 @@
         "remediation_campaign/digitization_packet/machine/M2_adjudication_log.md",
         "remediation_campaign/digitization_packet/machine/S704_1990_omission_ruling.md"
       ],
-      "validated_at": "2026-07-10T14:18:49+00:00"
+      "validated_at": "2026-07-19T14:53:55+00:00"
     },
     "S705": {
       "status": "PASS",
@@ -435,7 +435,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": false,
-      "validated_at": "2026-07-10T14:18:47.928548+00:00"
+      "validated_at": "2026-07-19T14:53:52.629321+00:00"
     },
     "S706": {
       "status": "PASS",
@@ -447,7 +447,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": false,
-      "validated_at": "2026-07-10T14:18:47.979909+00:00"
+      "validated_at": "2026-07-19T14:53:52.713605+00:00"
     },
     "S707": {
       "status": "PASS",
@@ -459,7 +459,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": true,
-      "validated_at": "2026-07-10T14:18:48.022107+00:00"
+      "validated_at": "2026-07-19T14:53:52.763101+00:00"
     },
     "S1501": {
       "status": "PASS",
@@ -496,7 +496,7 @@
           "diff_pct": 0.0
         }
       },
-      "validated_at": "2026-07-10T14:18:45.231068+00:00"
+      "validated_at": "2026-07-19T14:53:48.880279+00:00"
     },
     "S708": {
       "status": "PASS",
@@ -508,7 +508,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": true,
-      "validated_at": "2026-07-10T14:18:48.064433+00:00"
+      "validated_at": "2026-07-19T14:53:52.838300+00:00"
     },
     "S1502": {
       "status": "PASS",
@@ -520,7 +520,7 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "divergence_sample": [],
-      "validated_at": "2026-07-10T14:18:45.264394+00:00"
+      "validated_at": "2026-07-19T14:53:48.921714+00:00"
     },
     "S709": {
       "status": "PASS",
@@ -532,7 +532,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": true,
-      "validated_at": "2026-07-10T14:18:48.117034+00:00"
+      "validated_at": "2026-07-19T14:53:52.918395+00:00"
     },
     "S710": {
       "status": "PASS",
@@ -544,7 +544,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": true,
-      "validated_at": "2026-07-10T14:18:48.166608+00:00"
+      "validated_at": "2026-07-19T14:53:52.982047+00:00"
     },
     "S711": {
       "status": "PASS",
@@ -556,7 +556,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": true,
-      "validated_at": "2026-07-10T14:18:48.211059+00:00"
+      "validated_at": "2026-07-19T14:53:53.034062+00:00"
     },
     "S1503": {
       "status": "PASS",
@@ -568,7 +568,7 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "divergence_sample": [],
-      "validated_at": "2026-07-10T14:18:45.295116+00:00"
+      "validated_at": "2026-07-19T14:53:48.973179+00:00"
     },
     "S1504": {
       "status": "PASS",
@@ -700,7 +700,7 @@
           }
         ]
       },
-      "validated_at": "2026-07-10T14:18:45.377629+00:00"
+      "validated_at": "2026-07-19T14:53:49.069600+00:00"
     },
     "S1001": {
       "status": "PASS",
@@ -732,7 +732,7 @@
       "cd2_comparison": {
         "note": "CD2 S050 spot values do not match Appendix 7.2; informational only."
       },
-      "validated_at": "2026-07-10T14:18:44.047773+00:00"
+      "validated_at": "2026-07-19T14:53:47.362319+00:00"
     },
     "S1505": {
       "status": "PASS",
@@ -748,7 +748,7 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "divergence_sample": [],
-      "validated_at": "2026-07-10T14:18:45.422374+00:00"
+      "validated_at": "2026-07-19T14:53:49.118291+00:00"
     },
     "S1002": {
       "status": "PASS",
@@ -779,7 +779,7 @@
           "div_count": 0
         }
       },
-      "validated_at": "2026-07-10T14:56:18.675860+00:00"
+      "validated_at": "2026-07-19T14:53:47.401837+00:00"
     },
     "S1506": {
       "status": "PASS",
@@ -795,7 +795,7 @@
       "divergence_count": 0,
       "parent_series": "S1505",
       "construction": "derived_subperiod",
-      "validated_at": "2026-07-10T14:18:45.433885+00:00"
+      "validated_at": "2026-07-19T14:53:49.140245+00:00"
     },
     "S1003": {
       "status": "PASS",
@@ -810,7 +810,7 @@
       "max_pct_err": 0.0,
       "divergence_years": [],
       "divergence_count": 0,
-      "validated_at": "2026-07-10T14:18:44.122635+00:00"
+      "validated_at": "2026-07-19T14:53:47.450700+00:00"
     },
     "S1507": {
       "status": "PASS",
@@ -826,7 +826,7 @@
       "divergence_count": 0,
       "parent_series": "S1505",
       "construction": "derived_subperiod",
-      "validated_at": "2026-07-10T14:18:45.447583+00:00"
+      "validated_at": "2026-07-19T14:53:49.158343+00:00"
     },
     "S1508": {
       "status": "PASS",
@@ -936,7 +936,7 @@
           "detail": "no plausibility_rules registered"
         }
       },
-      "validated_at": "2026-07-10T14:18:45.484267+00:00"
+      "validated_at": "2026-07-19T14:53:49.199901+00:00"
     },
     "S1004": {
       "status": "PASS",
@@ -972,7 +972,7 @@
         }
       },
       "note": "iblongreal validated with abs-error pp threshold (sign-crossing values); HP smoothed validated with pct tolerance.",
-      "validated_at": "2026-07-10T14:18:44.162270+00:00"
+      "validated_at": "2026-07-19T14:53:47.497284+00:00"
     },
     "S1509": {
       "status": "PASS",
@@ -1022,7 +1022,7 @@
           "detail": "no plausibility_rules registered"
         }
       },
-      "validated_at": "2026-07-10T14:18:45.515817+00:00"
+      "validated_at": "2026-07-19T14:53:49.249598+00:00"
     },
     "S1005": {
       "status": "PASS",
@@ -1053,7 +1053,7 @@
           "div_count": 0
         }
       },
-      "validated_at": "2026-07-10T14:18:44.201380+00:00"
+      "validated_at": "2026-07-19T14:53:47.551761+00:00"
     },
     "S1006": {
       "status": "PASS",
@@ -1155,7 +1155,7 @@
           "div_count": 0
         }
       },
-      "validated_at": "2026-07-10T14:18:44.250787+00:00"
+      "validated_at": "2026-07-19T14:53:47.619053+00:00"
     },
     "S1007": {
       "status": "PASS",
@@ -1211,8 +1211,7 @@
         "splice": {
           "status": "NA",
           "sid": "S1007",
-          "splice_year": 2012,
-          "detail": "no subseries spans 2011->2012"
+          "detail": "no extension / no book+extension ranges"
         },
         "plausibility": {
           "status": "NA",
@@ -1257,7 +1256,7 @@
           "div_years_first_20": []
         }
       },
-      "validated_at": "2026-07-10T14:18:44.313904+00:00"
+      "validated_at": "2026-07-19T14:53:47.723995+00:00"
     },
     "S1008": {
       "status": "PASS",
@@ -1299,7 +1298,7 @@
         1948,
         2011
       ],
-      "validated_at": "2026-07-10T14:18:44.362930+00:00"
+      "validated_at": "2026-07-19T14:53:47.787887+00:00"
     },
     "S202": {
       "status": "PASS",
@@ -1314,7 +1313,7 @@
       "max_pct_err": 0.0,
       "divergence_years": [],
       "divergence_count": 0,
-      "validated_at": "2026-07-10T14:18:46.009728+00:00"
+      "validated_at": "2026-07-19T14:53:49.933713+00:00"
     },
     "XS001": {
       "status": "PASS",
@@ -1333,7 +1332,7 @@
         "XS001-E",
         "XS001-F"
       ],
-      "validated_at": "2026-07-10T14:18:48.976141+00:00"
+      "validated_at": "2026-07-19T14:53:53.911836+00:00"
     },
     "XS002": {
       "status": "PASS",
@@ -1353,7 +1352,7 @@
         "XS002-F",
         "XS002-G"
       ],
-      "validated_at": "2026-07-10T14:18:49.103042+00:00"
+      "validated_at": "2026-07-19T14:53:54.088091+00:00"
     },
     "XS003": {
       "status": "PASS",
@@ -1373,7 +1372,7 @@
         "XS003-F",
         "XS003-G"
       ],
-      "validated_at": "2026-07-10T14:18:49.344424+00:00"
+      "validated_at": "2026-07-19T14:53:54.373926+00:00"
     },
     "XS004": {
       "status": "PASS",
@@ -1389,7 +1388,7 @@
         "XS004-B",
         "XS004-C"
       ],
-      "validated_at": "2026-07-10T14:18:49.393564+00:00"
+      "validated_at": "2026-07-19T14:53:54.432836+00:00"
     },
     "XS005": {
       "status": "PASS",
@@ -1405,7 +1404,7 @@
         "XS005-B",
         "XS005-C"
       ],
-      "validated_at": "2026-07-10T14:18:49.478093+00:00"
+      "validated_at": "2026-07-19T14:53:54.522519+00:00"
     },
     "XS006": {
       "status": "PASS",
@@ -1421,7 +1420,7 @@
         "XS006-depr_only",
         "XS006-depr_plus_init"
       ],
-      "validated_at": "2026-07-10T14:18:49.542895+00:00"
+      "validated_at": "2026-07-19T14:53:54.605848+00:00"
     },
     "S1401": {
       "status": "PASS",
@@ -1442,7 +1441,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-07-10T14:18:44.813205+00:00"
+      "validated_at": "2026-07-19T14:53:48.325099+00:00"
     },
     "XS007": {
       "status": "PASS",
@@ -1458,7 +1457,7 @@
         "XS007-B",
         "XS007-C"
       ],
-      "validated_at": "2026-07-10T14:18:49.595865+00:00"
+      "validated_at": "2026-07-19T14:53:54.673808+00:00"
     },
     "XS008": {
       "status": "PASS",
@@ -1472,7 +1471,7 @@
       "subseries_compared": [
         "XS008-A"
       ],
-      "validated_at": "2026-07-10T14:18:49.617899+00:00"
+      "validated_at": "2026-07-19T14:53:54.704963+00:00"
     },
     "S1402": {
       "status": "PASS",
@@ -1494,7 +1493,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-07-10T14:18:44.864290+00:00"
+      "validated_at": "2026-07-19T14:53:48.391209+00:00"
     },
     "XS009": {
       "status": "PASS",
@@ -1510,7 +1509,7 @@
         "XS009-B",
         "XS009-C"
       ],
-      "validated_at": "2026-07-10T14:18:49.677627+00:00"
+      "validated_at": "2026-07-19T14:53:54.785291+00:00"
     },
     "S601": {
       "status": "PASS",
@@ -1528,7 +1527,7 @@
         "S601-D",
         "S601-E"
       ],
-      "validated_at": "2026-07-10T14:18:47.338301+00:00"
+      "validated_at": "2026-07-19T14:53:51.866346+00:00"
     },
     "S1403": {
       "status": "PASS",
@@ -1549,7 +1548,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-07-10T14:18:44.947423+00:00",
+      "validated_at": "2026-07-19T14:53:48.500501+00:00",
       "informational_quarterly_collapse_check": {
         "S1403-WSH_ANNUALAVG_HP100": {
           "n": 53,
@@ -1577,7 +1576,7 @@
       "divergence_count": 0,
       "divergences": [],
       "extension_status": "v1_1_deferred_shared_bea_sraffa_pipeline",
-      "validated_at": "2026-07-10T14:18:49.722867+00:00"
+      "validated_at": "2026-07-19T14:53:54.846345+00:00"
     },
     "S1404": {
       "status": "PASS",
@@ -1598,7 +1597,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-07-10T14:18:44.991571+00:00"
+      "validated_at": "2026-07-19T14:53:48.559054+00:00"
     },
     "S602": {
       "status": "PASS",
@@ -1617,7 +1616,7 @@
         "S602-E",
         "S602-F"
       ],
-      "validated_at": "2026-07-10T14:18:47.535778+00:00"
+      "validated_at": "2026-07-19T14:53:52.130597+00:00"
     },
     "S1101": {
       "status": "PASS",
@@ -1633,7 +1632,7 @@
       "cd2_comparison": {
         "note": "CD2 S060 only cross-checked US; this validator checks all 15 countries."
       },
-      "validated_at": "2026-07-10T14:18:44.416056+00:00"
+      "validated_at": "2026-07-19T14:53:47.849932+00:00"
     },
     "S1102": {
       "status": "PASS",
@@ -1649,7 +1648,7 @@
       "cd2_comparison": {
         "note": "CD2 S061 matched on US 1960=188.4; this validator checks all 50 years for US + JP."
       },
-      "validated_at": "2026-07-10T14:18:44.441655+00:00"
+      "validated_at": "2026-07-19T14:53:47.886108+00:00"
     },
     "S1103": {
       "status": "PASS",
@@ -1669,7 +1668,7 @@
       "cd2_comparison": {
         "note": "CD2 S062 markdown showed Japan 1960=99.79; matches column."
       },
-      "validated_at": "2026-07-10T14:18:44.464913+00:00"
+      "validated_at": "2026-07-19T14:53:47.919726+00:00"
     },
     "S1104": {
       "status": "PASS",
@@ -1705,7 +1704,7 @@
       "cd2_comparison": {
         "note": "CD2 S063 trade-balance samples align with (X-M)/(X+M), not X/M."
       },
-      "validated_at": "2026-07-10T14:56:26.932422+00:00"
+      "validated_at": "2026-07-19T14:53:48.240879+00:00"
     },
     "S1301": {
       "status": "PASS_THEORETICAL",
@@ -1733,7 +1732,7 @@
       "cd2_comparison": {
         "note": "no CD/CD2 predecessor (Fig 13.7 is illustrative)"
       },
-      "validated_at": "2026-07-10T14:18:44.767015+00:00"
+      "validated_at": "2026-07-19T14:53:48.255556+00:00"
     },
     "S1701": {
       "status": "PASS",
@@ -1749,7 +1748,7 @@
         "note": "CD2 S102 was actually the IRS-2011 table (now S1702/S1703); long-wave figure had no CD2 predecessor under S102."
       },
       "forecast_layer_note": "Post-2011 USUKAVGWAVE values are forecast; preserved with is_forecast=True flag in processed parquet.",
-      "validated_at": "2026-07-10T14:18:45.887468+00:00"
+      "validated_at": "2026-07-19T14:53:49.784207+00:00"
     },
     "S1702": {
       "status": "PASS",
@@ -1787,7 +1786,7 @@
       "cd2_comparison": {
         "note": "CD2 S103 reference_values were the Frequency column, not survival; corrected here."
       },
-      "validated_at": "2026-07-10T14:18:45.907146+00:00"
+      "validated_at": "2026-07-19T14:53:49.811233+00:00"
     },
     "S1703": {
       "status": "PASS",
@@ -1838,7 +1837,7 @@
       "cd2_comparison": {
         "note": "CD2 S104 reference_values were the Frequency column; corrected to column F here."
       },
-      "validated_at": "2026-07-10T14:18:45.927331+00:00"
+      "validated_at": "2026-07-19T14:53:49.837588+00:00"
     },
     "S603": {
       "status": "PASS",
@@ -1855,7 +1854,7 @@
         "S603-C",
         "S603-D"
       ],
-      "validated_at": "2026-07-10T14:18:47.676437+00:00"
+      "validated_at": "2026-07-19T14:53:52.302336+00:00"
     },
     "S1405": {
       "status": "PASS",
@@ -1878,7 +1877,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-07-10T14:18:45.074014+00:00",
+      "validated_at": "2026-07-19T14:53:48.680575+00:00",
       "phillips_fit_replication": {
         "era1": {
           "fitted": {
@@ -1987,8 +1986,7 @@
         "splice": {
           "status": "NA",
           "sid": "S1405",
-          "splice_year": 2012,
-          "detail": "no subseries spans 2011->2012"
+          "detail": "no extension / no book+extension ranges"
         },
         "plausibility": {
           "status": "NA",
@@ -2011,7 +2009,7 @@
       "divergence_count": 0,
       "divergences": [],
       "extension_status": "v1_1_deferred_shared_bea_sraffa_pipeline",
-      "validated_at": "2026-07-10T14:18:49.733690+00:00"
+      "validated_at": "2026-07-19T14:53:54.864814+00:00"
     },
     "XS2201": {
       "status": "PASS",
@@ -2025,7 +2023,7 @@
       "divergence_count": 0,
       "divergences": [],
       "extension_status": "v1_1_deferred_mle_refit_2017_2022",
-      "validated_at": "2026-07-10T14:18:49.766415+00:00"
+      "validated_at": "2026-07-19T14:53:54.916355+00:00"
     },
     "S604": {
       "status": "PASS",
@@ -2105,8 +2103,7 @@
         "splice_continuity": {
           "status": "NA",
           "sid": "S604",
-          "splice_year": 2012,
-          "detail": "no subseries spans 2011->2012"
+          "detail": "no extension / no book+extension ranges"
         },
         "level_plausibility": {
           "status": "NA",
@@ -2116,7 +2113,7 @@
           "detail": "no plausibility_rules registered"
         }
       },
-      "validated_at": "2026-07-10T14:18:47.828925+00:00"
+      "validated_at": "2026-07-19T14:53:52.489245+00:00"
     },
     "S1406": {
       "status": "PASS",
@@ -2137,7 +2134,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-07-10T14:18:45.115658+00:00"
+      "validated_at": "2026-07-19T14:53:48.735204+00:00"
     },
     "S1407": {
       "status": "PASS",
@@ -2158,7 +2155,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-07-10T14:18:45.158523+00:00"
+      "validated_at": "2026-07-19T14:53:48.785044+00:00"
     },
     "S1408": {
       "status": "PASS",
@@ -2179,7 +2176,7 @@
       "divergence_count": 0,
       "divergence_years": [],
       "divergences_sample": [],
-      "validated_at": "2026-07-10T14:18:45.206247+00:00"
+      "validated_at": "2026-07-19T14:53:48.844235+00:00"
     },
     "XS2302": {
       "status": "PASS",
@@ -2200,7 +2197,7 @@
         "XS2302-level",
         "XS2302-pctgdp"
       ],
-      "validated_at": "2026-07-10T14:18:49.778688+00:00"
+      "validated_at": "2026-07-19T14:53:54.951895+00:00"
     },
     "XS2303": {
       "status": "PASS",
@@ -2217,7 +2214,7 @@
         1990,
         2024
       ],
-      "validated_at": "2026-07-10T14:18:49.784757+00:00"
+      "validated_at": "2026-07-19T14:53:54.965485+00:00"
     },
     "XS2304": {
       "status": "PASS",
@@ -2231,7 +2228,7 @@
       "divergence_count": 0,
       "divergences": [],
       "extension_status": "not_applicable_literature_compilation",
-      "validated_at": "2026-07-10T14:18:49.791560+00:00"
+      "validated_at": "2026-07-19T14:53:54.981127+00:00"
     },
     "XS2305": {
       "status": "PASS",
@@ -2245,17 +2242,17 @@
       "divergence_count": 0,
       "divergences": [],
       "extension_status": "not_applicable_literature_compilation",
-      "validated_at": "2026-07-10T14:18:49.798286+00:00"
+      "validated_at": "2026-07-19T14:53:54.997759+00:00"
     },
     "XS2301": {
       "status": "PASS",
       "tolerance_pct": 10.0,
       "content_type": "time_series",
       "comparison_basis": "Fig 1 endpoint anchors (2002, 2017) for World and China",
-      "n_compared": 4,
-      "mae": 6.0598,
-      "max_abs_err": 17.604,
-      "max_pct_err": 2.1733,
+      "n_compared": 10,
+      "mae": 5.2925,
+      "max_abs_err": 17.6041,
+      "max_pct_err": 2.4851,
       "divergence_count": 0,
       "divergences": [],
       "year_range_processed": [
@@ -2266,7 +2263,7 @@
         "XS2301-china",
         "XS2301-world"
       ],
-      "validated_at": "2026-07-10T14:18:49.772945+00:00"
+      "validated_at": "2026-07-19T14:53:54.936552+00:00"
     },
     "S203": {
       "status": "PASS",
@@ -2324,7 +2321,7 @@
           ]
         }
       },
-      "validated_at": "2026-07-10T14:18:46.039925+00:00"
+      "validated_at": "2026-07-19T14:53:49.991323+00:00"
     },
     "S204": {
       "status": "PASS",
@@ -2341,7 +2338,7 @@
       "divergence_count": 0,
       "frequency": "monthly",
       "extension_status": "not_applicable_discontinued",
-      "validated_at": "2026-07-10T14:18:46.095984+00:00"
+      "validated_at": "2026-07-19T14:53:50.058190+00:00"
     },
     "S205": {
       "status": "PASS",
@@ -2358,7 +2355,7 @@
       "divergence_count": 0,
       "frequency": "monthly",
       "extension_status": "not_applicable_discontinued",
-      "validated_at": "2026-07-10T14:18:46.152926+00:00"
+      "validated_at": "2026-07-19T14:53:50.139863+00:00"
     },
     "S206": {
       "status": "PASS",
@@ -2375,7 +2372,7 @@
       "divergence_count": 0,
       "frequency": "monthly",
       "extension_status": "not_applicable_discontinued",
-      "validated_at": "2026-07-10T14:18:46.216134+00:00"
+      "validated_at": "2026-07-19T14:53:50.210809+00:00"
     },
     "S207": {
       "status": "PASS",
@@ -2407,7 +2404,7 @@
           "divergence_count": 0
         }
       ],
-      "validated_at": "2026-07-10T14:18:46.264846+00:00"
+      "validated_at": "2026-07-19T14:53:50.268495+00:00"
     },
     "S208": {
       "status": "PASS",
@@ -2421,7 +2418,7 @@
       "max_pct_err": 0.0,
       "divergence_years": [],
       "divergence_count": 0,
-      "validated_at": "2026-07-10T14:56:14.119671+00:00"
+      "validated_at": "2026-07-19T14:53:50.301135+00:00"
     },
     "S209": {
       "status": "PASS",
@@ -2436,7 +2433,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "note": "Tolerance: 0.15pp absolute (unemployment in percent; tight pct-err inappropriate near zero).",
-      "validated_at": "2026-07-10T14:18:46.311299+00:00"
+      "validated_at": "2026-07-19T14:53:50.334919+00:00"
     },
     "S210": {
       "status": "PASS",
@@ -2468,7 +2465,7 @@
         }
       ],
       "note": "Book truth = CD2 S023 (no Appendix 2 chopped table); BLS WPU substituted for frozen WPS post-1974.",
-      "validated_at": "2026-07-10T14:18:46.336836+00:00"
+      "validated_at": "2026-07-19T14:53:50.376329+00:00"
     },
     "S211": {
       "status": "PASS",
@@ -2498,7 +2495,7 @@
         }
       ],
       "note": "Book truth = CD2 S022 (Jastram 1977 + NBER). No extension by design.",
-      "validated_at": "2026-07-10T14:18:46.362605+00:00"
+      "validated_at": "2026-07-19T14:53:50.407394+00:00"
     },
     "S212": {
       "status": "PASS",
@@ -2528,7 +2525,7 @@
         }
       ],
       "note": "Book truth = CD2 S024/S025 (Jastram 1977 + MeasuringWorth gold).",
-      "validated_at": "2026-07-10T14:18:46.400279+00:00"
+      "validated_at": "2026-07-19T14:53:50.461494+00:00"
     },
     "S213": {
       "status": "PASS",
@@ -2543,7 +2540,7 @@
       "divergence_years": [],
       "divergence_count": 0,
       "note": "Tolerance: 0.005 absolute (profit rates ~0.10-0.20).",
-      "validated_at": "2026-07-10T14:18:46.418245+00:00"
+      "validated_at": "2026-07-19T14:53:50.493780+00:00"
     },
     "S214": {
       "status": "PASS_EXTENSION_ONLY",
@@ -2564,7 +2561,7 @@
       ],
       "book_period_status": "data_unavailable",
       "reason": "Post-book 12-industry ROP average (1987-2005) recompute-verified against raw Appendix7_ropdataUSind.xlsx at every year. Book period 1960-1989 remains data_unavailable (anwarshaikhecon.org App 7.2 / OECD ISDB 1994 not in SalvagedInputs); no values fabricated.",
-      "validated_at": "2026-07-10T17:48:02.704094+00:00"
+      "validated_at": "2026-07-19T14:53:50.544401+00:00"
     },
     "S215": {
       "status": "PASS_EXTENSION_ONLY",
@@ -2585,7 +2582,7 @@
       ],
       "book_period_status": "data_unavailable",
       "reason": "Post-book 12-industry incremental-ROP average (1988-2005) recompute-verified against raw Appendix7_iropdataUSind.xlsx at every year. Book period 1960-1989 remains data_unavailable (anwarshaikhecon.org App 7.2 not in SalvagedInputs); no values fabricated.",
-      "validated_at": "2026-07-10T17:48:02.732502+00:00"
+      "validated_at": "2026-07-19T14:53:50.592968+00:00"
     },
     "S216": {
       "status": "PASS",
@@ -2608,7 +2605,7 @@
           "divergence_industries": []
         }
       ],
-      "validated_at": "2026-07-10T14:18:46.456114+00:00"
+      "validated_at": "2026-07-19T14:53:50.641515+00:00"
     },
     "S217": {
       "status": "PASS",
@@ -2629,7 +2626,7 @@
         "Western Offshoots",
         "World"
       ],
-      "validated_at": "2026-07-10T14:18:46.506929+00:00"
+      "validated_at": "2026-07-19T14:53:50.717073+00:00"
     },
     "S218": {
       "status": "PASS",
@@ -2647,7 +2644,7 @@
         "RATIO OF RICHEST 4 TO POOREST 4",
         "RICHEST 4"
       ],
-      "validated_at": "2026-07-10T14:18:46.555962+00:00"
+      "validated_at": "2026-07-19T14:53:50.785052+00:00"
     },
     "S501": {
       "status": "PASS",
@@ -2675,7 +2672,7 @@
           "divergence_years": []
         }
       ],
-      "validated_at": "2026-07-10T14:18:46.895222+00:00"
+      "validated_at": "2026-07-19T14:53:51.345772+00:00"
     },
     "S502": {
       "status": "PASS",
@@ -2709,7 +2706,7 @@
         "book_claim_US": 14.0,
         "book_claim_UK": 58.0
       },
-      "validated_at": "2026-07-10T14:18:46.989049+00:00"
+      "validated_at": "2026-07-19T14:53:51.445633+00:00"
     },
     "S503": {
       "status": "PASS",
@@ -2754,7 +2751,7 @@
           "diff_pct": 0.0
         }
       },
-      "validated_at": "2026-07-10T14:18:47.086324+00:00"
+      "validated_at": "2026-07-19T14:53:51.557051+00:00"
     },
     "S504": {
       "status": "PASS",
@@ -2805,7 +2802,7 @@
           "diff_pct": 0.0
         }
       },
-      "validated_at": "2026-07-10T19:07:41.531408+00:00"
+      "validated_at": "2026-07-19T14:53:51.660923+00:00"
     },
     "S901": {
       "status": "PASS",
@@ -2892,7 +2889,7 @@
         "1998C": 0.4487,
         "1998F": 0.3928
       },
-      "validated_at": "2026-07-10T14:18:48.473647+00:00"
+      "validated_at": "2026-07-19T14:53:53.371086+00:00"
     },
     "S902": {
       "status": "PASS",
@@ -3000,7 +2997,7 @@
           "ok": true
         }
       ],
-      "validated_at": "2026-07-10T14:18:48.653590+00:00"
+      "validated_at": "2026-07-19T14:53:53.561354+00:00"
     },
     "S903": {
       "status": "PASS",
@@ -3237,8 +3234,7 @@
         "splice_continuity": {
           "status": "NA",
           "sid": "S903",
-          "splice_year": 1999,
-          "detail": "no subseries spans 1998->1999"
+          "detail": "no extension / no book+extension ranges"
         },
         "level_plausibility": {
           "status": "NA",
@@ -3248,7 +3244,7 @@
           "detail": "no plausibility_rules registered"
         }
       },
-      "validated_at": "2026-07-10T14:18:48.770436+00:00"
+      "validated_at": "2026-07-19T14:53:53.673684+00:00"
     },
     "S801": {
       "status": "PASS",
@@ -3260,7 +3256,7 @@
       "divergence_count": 0,
       "divergence_keys": [],
       "is_deviation_panel": false,
-      "validated_at": "2026-07-10T14:18:48.226226+00:00",
+      "validated_at": "2026-07-19T14:53:53.056332+00:00",
       "label_variance_check": {
         "status": "PASS",
         "competitive_var": 154.529995,
@@ -3278,7 +3274,7 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "divergence_keys": [],
-      "validated_at": "2026-07-10T14:18:48.243180+00:00"
+      "validated_at": "2026-07-19T14:53:53.083187+00:00"
     },
     "S803": {
       "status": "PASS",
@@ -3312,7 +3308,7 @@
           "divergence_count": 0
         }
       },
-      "validated_at": "2026-07-10T14:18:48.277847+00:00"
+      "validated_at": "2026-07-19T14:53:53.136124+00:00"
     },
     "S804": {
       "status": "PASS",
@@ -3324,7 +3320,7 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "divergence_keys": [],
-      "validated_at": "2026-07-10T14:18:48.290206+00:00"
+      "validated_at": "2026-07-19T14:53:53.157706+00:00"
     },
     "S805": {
       "status": "PASS",
@@ -3336,7 +3332,7 @@
       "max_pct_err": 0.0,
       "divergence_count": 0,
       "divergence_keys": [],
-      "validated_at": "2026-07-10T14:18:48.303535+00:00"
+      "validated_at": "2026-07-19T14:53:53.183672+00:00"
     },
     "S1601": {
       "status": "PASS",
@@ -3365,7 +3361,7 @@
           "div_years": []
         }
       },
-      "validated_at": "2026-07-10T14:18:45.600608+00:00"
+      "validated_at": "2026-07-19T14:53:49.359370+00:00"
     },
     "S1602": {
       "status": "PASS",
@@ -3412,7 +3408,7 @@
           "div_years": []
         }
       },
-      "validated_at": "2026-07-10T14:18:45.648610+00:00"
+      "validated_at": "2026-07-19T14:53:49.418954+00:00"
     },
     "S1603": {
       "status": "PASS",
@@ -3447,7 +3443,7 @@
           "div_years": []
         }
       },
-      "validated_at": "2026-07-10T19:12:55.230819+00:00"
+      "validated_at": "2026-07-19T14:53:49.489491+00:00"
     },
     "S1604": {
       "status": "PASS",
@@ -3495,7 +3491,7 @@
         }
       },
       "tolerance_note": "Divergence requires BOTH abs_err > 0.001 (0.1pp) AND pct_err > 1% to avoid false-positives near zero crossings of the incremental series.",
-      "validated_at": "2026-07-10T14:18:45.719484+00:00"
+      "validated_at": "2026-07-19T14:53:49.547919+00:00"
     },
     "S1605": {
       "status": "PASS",
@@ -3530,7 +3526,7 @@
           "div_years": []
         }
       },
-      "validated_at": "2026-07-10T14:18:45.745989+00:00"
+      "validated_at": "2026-07-19T14:53:49.578145+00:00"
     },
     "S1606": {
       "status": "PASS",
@@ -3574,9 +3570,9 @@
         }
       },
       "annual_status": "PASS",
-      "validated_at": "2026-07-10T14:18:45.785640+00:00"
+      "validated_at": "2026-07-19T14:53:49.637405+00:00"
     }
   },
-  "generated_at": "2026-07-10T19:12:55.231951+00:00",
+  "generated_at": "2026-07-19T14:53:55+00:00",
   "generated_by": "run.py --validate-only (full batch)"
 }

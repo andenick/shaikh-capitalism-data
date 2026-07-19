@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-adequacy-v1.0",
   "chapter": "ES",
-  "reviewer": "automated-agent",
+  "reviewer": "opus-subagent-p4-wave3-es",
   "review_date": "2026-05-18",
   "series_count": 4,
   "scope_note": "External Studies (ES) chapter-equivalent covers the 4 Shaikh-adjacent 2020 follow-up papers ratified in decision 0001 (Option B): XS2001 (Shaikh 2020 Empirically Sufficient Form for Sraffa Prices), XS2101 (Shaikh-Coronado-Nassif-Pires 2020 EJEEP On the empirical regularities of Sraffa prices), XS2201 (Shaikh-Jacobo 2020 RBE Econophysics of Income Inequality), XS2301 (Weber-Shaikh 2020 IRAE US-China trade imbalance). XS2001/XS2101 share the BEA Benchmark IO + BLS labor-input pipeline (Sraffa-price family); XS2201 is the IRS SOI Pub 1304 econophysics extension of book Ch. 17; XS2301 is the international-trade / RMB-misalignment extension of book Ch. 11. This report also delivers the Phase 4 recommendation on pending decision 0006 (XS2301 5-way split). BLS pages (S207, XS2001/XS2101 secondary, and BLS ILC for XS2301 XS2306-optional) inherit the BLS ILC discontinuation substitution canonicalized in Ch11 wave2 (BIS PPI EER / OECD ULC / Conference Board ILC).",

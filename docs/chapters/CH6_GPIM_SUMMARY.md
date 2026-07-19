@@ -1,7 +1,7 @@
 # Chapter 6 — GPIM Construction Internals (XS001-XS009)
 
 **Status**: Phase 3 draft, 2026-05-18
-**Author**: automated-agent
+**Author**: opus-subagent-as-ch6
 **Scope**: 9 analytical-support series documenting Shaikh (2016, ch. 6) profit-rate construction pipeline
 **Decision reference**: `Technical/docs/decisions/0002_ch6_gpim_variants_disposition.md`
 

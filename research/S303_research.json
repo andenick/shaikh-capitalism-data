@@ -88,7 +88,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-a-ch3",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from book p. 93. Theoretical curve from eq. (3.5)."

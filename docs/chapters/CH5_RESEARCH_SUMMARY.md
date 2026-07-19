@@ -3,7 +3,7 @@
 **Chapter**: 5 (Foundations of the Analysis - Part I, last chapter)
 **Series count**: 4 (S501-S504)
 **Wave**: A
-**Subagent**: automated-agent
+**Subagent**: opus-subagent-wave-a-ch5
 **Date**: 2026-05-18
 **Book pages covered**: 167-202 (narrative); 783-789 (Appendices 5.1, 5.2)
 
@@ -59,7 +59,7 @@ Implements equation (5.9) for the US: USWPI in gold ounces (p') alongside the $-
 
 ---
 
-## Phase 5-8 Closure (2026-05-18, automated-agent-wave3-ch5)
+## Phase 5-8 Closure (2026-05-18, opus-fanout-wave3-ch5)
 
 All four Ch5 series (S501-S504) authored to playbook spec and pass V03 at tolerance 1.0% with MAE 0.0% (read-the-truth-column pattern against `Appendix5_DATALRprices.xlsx`). Per Phase 4 ratification, anwarshaikhecon.org is treated as DNS-dead with the salvaged local XLSX promoted to canonical and the Internet Archive snapshot 2024-03-11 as web citation.
 

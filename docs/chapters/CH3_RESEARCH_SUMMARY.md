@@ -2,7 +2,7 @@
 
 **Chapter title (book)**: "Micro Foundations and Macro Patterns" (Shaikh 2016, pp. 75–113)
 **Series in this chapter**: S301–S309 (9 series, figures 3.3–3.11)
-**Wave / agent**: Wave A, `automated-agent`
+**Wave / agent**: Wave A, `opus-subagent-wave-a-ch3`
 **Date**: 2026-05-18
 **Predecessor (CD2)**: none — the crosswalk `MIGRATION/CD2_to_RSCD_crosswalk.csv` contains no S30* rows; no CD2 dossier salvage was applicable.
 **Appendix**: none — there is no "Appendix 3" in the book and no `Appendix3_*.xlsx` exists in `SalvagedInputs/book_data/ShaikhChoppedTables/`.
@@ -88,7 +88,7 @@ Working transcripts (pp. 91–111 plain text and the simulation section) were ex
 
 ## Phase 5-8 Closure (2026-05-18)
 
-All nine Chapter 3 series have been ingested, processed, validated, and published as chopped CSV + extenbook xlsx by `automated-agent` following `Technical/docs/FANOUT_PLAYBOOK.md`. No new architectural decisions were introduced; the loaders/processors/validators mirror the S201 pilot pattern adapted for `theoretical` and `cross_sectional` content types.
+All nine Chapter 3 series have been ingested, processed, validated, and published as chopped CSV + extenbook xlsx by `opus-subagent-wave-a-ch3` following `Technical/docs/FANOUT_PLAYBOOK.md`. No new architectural decisions were introduced; the loaders/processors/validators mirror the S201 pilot pattern adapted for `theoretical` and `cross_sectional` content types.
 
 ### Per-series results (all PASS)
 
@@ -133,4 +133,4 @@ For each `sid` in `{S301, S302, ..., S309}`:
 - Chopped CSV: `Technical/chopped/{sid}.csv`
 - Extenbook xlsx: `Technical/extenbooks/{sid}_extenbook.xlsx`
 
-Shared infrastructure: `Technical/code/L01_loaders/_ch3_helpers.py`, `Technical/code/V03_validators/_ch3_helpers.py`, and the automated-agent writer `Technical/code/utils/_phase5_ch3_fanout_writer.py` + registry updater `Technical/code/utils/_phase5_ch3_registry_update.py`.
+Shared infrastructure: `Technical/code/L01_loaders/_ch3_helpers.py`, `Technical/code/V03_validators/_ch3_helpers.py`, and the bulk-fanout writer `Technical/code/utils/_phase5_ch3_fanout_writer.py` + registry updater `Technical/code/utils/_phase5_ch3_registry_update.py`.

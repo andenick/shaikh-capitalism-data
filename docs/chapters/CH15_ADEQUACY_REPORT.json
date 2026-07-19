@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-adequacy-v1.0",
   "chapter": 15,
-  "reviewer": "automated-agent",
+  "reviewer": "opus-subagent-p4-wave3-ch15",
   "review_date": "2026-05-18",
   "series_count": 9,
   "scope_note": "Chapter 15 (Modern Money and Inflation) is the largest in Wave 3 with 9 series (S1501-S1509). All 9 have CD2 predecessors (S076,S077,S078,S079,S083,S084,S085,S088,S089). Content splits 3 ways: (1) US long-run price history Fig 15.1 (MeasuringWorth USCPI); (2) US post-war composite series on inflation, growth-utilization, and unemployment Figs 15.2-15.9 (BEA NIPA + BEA Industry + BLS + IMF IFS for credit aggregates); (3) International cross-sections Figs 15.12-15.13 (Harberger 1988 table 12.11 and Ramamurthy 2014 ch.3, both rooted in IMF IFS monetary survey). Key Phase 4 deliverable: IMF IFS line-number remap recipe for S1504/S1508/S1509 after the 2009 SDDS+ migration replaced numeric line references (31, 32, 64, 78, 79, 81, 88) with FOSAOP_XDC-style sectoral codes. URL reachability: 21/21 in-scope URLs return HTTP 200 (see Technical/Build/_ch15_url_check_results.json). Phase 3 open questions Q1-Q6 all resolved in this report.",

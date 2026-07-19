@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-adequacy-v1.0",
   "chapter": 7,
-  "reviewer": "automated-agent",
+  "reviewer": "opus-subagent-p4-wave2-ch7",
   "review_date": "2026-05-18",
   "series_count": 11,
   "scope_note": "Combined adequacy report for the 8 originally-allotted Ch7 series (S701-S708) PLUS the 3 series added by decision 0004 (S709 Fig 7.16 US ROP deviations, S710 Fig 7.18 US IROP deviations, S711 Fig 7.21 OECD IROP deviations). S709/S710 are pure algebraic derivatives of S705/S706; S711 is an independent OECD STAN 2003 + PWT 6.2 composite that resolves the long-standing S707/S038 misalignment.",

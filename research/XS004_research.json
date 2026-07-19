@@ -94,7 +94,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-as-ch6",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Filled from CD2 S209 markdown + verbatim quotes from Appendix 6.5 Section V.3 and Appendix 6.7 Sections V.1-V.5 (book pp. 820-821, 843-851). Three book quotes (definition, source, method). GPIM accumulation rules in equations 6.5.21-6.5.23."

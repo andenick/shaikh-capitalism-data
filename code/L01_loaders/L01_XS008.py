@@ -1,7 +1,7 @@
 """L01_AS008 — load Shaikh Appendix 6.8 columns for XS008 (GPIM Variant - Interwar Adjustment Multiplier).
 
 Reads the canonical Shaikh chopped Appendix 6.8 workbook(s) and emits one raw
-parquet per subseries. Per Ch6 automated-agent playbook: the Appendix 6.8 workbooks are
+parquet per subseries. Per Ch6 fanout playbook: the Appendix 6.8 workbooks are
 the Phase-5 ground truth; extension recipes for re-fetching the underlying
 NIPA / BEA FA / IRS / Census components are documented in XS008_EPR.md.
 

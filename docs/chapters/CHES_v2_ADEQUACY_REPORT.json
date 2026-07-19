@@ -1,7 +1,7 @@
 {
   "schema_version": "rscd-adequacy-v1.0",
   "chapter": "ES_v2",
-  "reviewer": "automated-agent",
+  "reviewer": "opus-subagent-batch1-a1-decision-0006-catchup",
   "review_date": "2026-05-18",
   "series_count": 4,
   "scope_note": "Phase 4 CATCHUP adequacy report covering the 4 NEW/RESCOPED ES series resulting from APPROVED decision 0006 (5-way split of original XS2301 Weber-Shaikh 2020 composite). Series covered: XS2301-rescoped (Fig 1 US bilateral trade balance vs World and China, Census FT900), XS2302 (Fig 2 China current account level + percent of GDP, IMF WEO -- dual-unit two-row series), XS2303 (Fig 3 China FX reserves ex-gold, World Bank WDI FI.RES.XGLD.CD), XS2304 (Fig 4 RMB misalignment extended PPP, literature compilation per paper note 17 of 4 reviews), XS2305 (Fig 5 RMB misalignment macro-balance, same 4 reviews filtered to MB methodology). XS2304/XS2305 carry extension_status=not_applicable_literature_compilation by paper construction (intrinsically non-extensible, not a data gap). Companion to original CHES_ADEQUACY_REPORT.json which covered XS2001/XS2101/XS2201/XS2301-composite and ratified decision 0006 RECOMMENDS_SPLIT.",

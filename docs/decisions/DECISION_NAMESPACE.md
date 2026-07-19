@@ -11,7 +11,7 @@ source: "Technical/remediation_v16/TD.4_TD.5_taxonomy_namespace.md (template fro
 **Authority**: RSCD project (`Projects/RSCD/Technical/docs/decisions/`)
 **Prefix**: `RSCD-`
 **Scope**: project-local decisions (this directory only)
-**Counterpart**: framework-global decisions live in the framework governance decisions directory under prefix `FW-`
+**Counterpart**: framework-global decisions live in the framework's decision registry under prefix `FW-`
 
 ## Namespace Rules (per TD.5 / FD-10)
 

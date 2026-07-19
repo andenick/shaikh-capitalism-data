@@ -126,7 +126,7 @@
   ],
   "review_history": [
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-c-ch11",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "CD2 S063 ported; quotes verified against PDF pp.534, 875; flagged units inconsistency in CD2 markdown (negative trade-balance values inconsistent with X/M ratio label); flagged missing RelGDPR source in Appendix 11.1."

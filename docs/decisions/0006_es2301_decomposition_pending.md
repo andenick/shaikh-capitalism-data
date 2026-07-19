@@ -5,7 +5,7 @@ status: approved
 proposed_at: "2026-05-18T00:00:00Z"
 approved_at: "2026-05-18T18:45:00Z"
 decided_by: user
-recommended_by: automated-agent
+recommended_by: opus-subagent-p4-wave3-es
 affected_series:
   - XS2301
   - XS2302
@@ -25,7 +25,7 @@ affected_stages:
 **Status**: APPROVED (user ratified 2026-05-18)
 **Date opened**: 2026-05-18 (Phase 3 expansion close)
 **Date Phase 4 recommendation written**: 2026-05-18 (CHES_ADEQUACY_REPORT.json)
-**Recommended by**: automated-agent
+**Recommended by**: opus-subagent-p4-wave3-es
 
 ## Phase 4 Recommendation: RECOMMENDS_SPLIT
 

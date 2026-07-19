@@ -141,7 +141,7 @@ Current exemptions, all `shift_year_+1`:
 **Never certify a flat "N series PASS."** A round-trip PASS and a book-verified PASS are not
 the same claim, and conflating them re-introduces exactly the false confidence F-4C-02 lived
 inside. Certification partitions series by `validation_class` (interim registry field per
-G4-status; taxonomy to follow from the framework governance track):
+G4-status; taxonomy to follow from the framework's Track-D work):
 
 | `validation_class` | what a green check actually proves |
 |---|---|

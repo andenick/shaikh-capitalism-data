@@ -1,0 +1,227 @@
+{
+  "schema_version": "anu-build-v12.0",
+  "project": "rscd-shaikh-2016-replication",
+  "last_updated": "2026-05-22T15:20:48Z",
+  "current_stage": 8,
+  "pilot_series_complete": {
+    "S201": {
+      "phases": [
+        "3_research",
+        "4_adequacy",
+        "5_ingestion",
+        "6_extension",
+        "7_replication",
+        "8_output"
+      ],
+      "validation_status": "PASS",
+      "validation_mae": 0.0,
+      "completed_at": "2026-05-18T21:25:00+00:00",
+      "note": "Pilot for Phases 5-8 architecture; reference implementation for the other 112 series."
+    }
+  },
+  "current_cohort": null,
+  "last_handoff_at": null,
+  "cascade_pointers": {
+    "step_log": "Technical/Build/STEP_LOG.jsonl",
+    "build_narrative": "Technical/Build/BUILD_NARRATIVE.md",
+    "build_manifest": "Technical/Build/ANU_BUILD_MANIFEST.json",
+    "subseries_plan": "Technical/Build/SUBSERIES_PLAN.json"
+  },
+  "stages": {
+    "stage_0": {
+      "status": "complete",
+      "label": "INVENTORY",
+      "started_at": "2026-05-18T12:00:00Z",
+      "completed_at": "2026-05-18T13:30:00Z",
+      "series_complete": 98,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "series_registry.json v0.1 written with 98 candidates; CHAPTER_FIGURE_TABLE_INDEX and SERIES_CANDIDATE_LIST in docs/chapters/; CD/CD2 crosswalks in MIGRATION/",
+      "verification_method": "step_log"
+    },
+    "stage_1": {
+      "status": "complete",
+      "label": "RESEARCH",
+      "started_at": "2026-05-18T14:00:00Z",
+      "completed_at": "2026-05-18T15:00:00Z",
+      "series_complete": 114,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "114/114 dossiers PASS validator (Build/PHASE3_VALIDATION_REPORT.json). 15 per-chapter rollups in docs/chapters/CH{N}_RESEARCH_SUMMARY.md + Ch6 GPIM rollup + 4 external_studies summaries. Executed via 3 waves of 5 opus subagents (15 agent runs, ~3 hours) for the initial 98 book series, then a 4th wave of 5 agents (~1 hour) for the post-decision expansion: 9 AS Ch6 GPIM + 3 Ch7 S709-S711 + 4 ES papers (Shaikh 2020, Coronado et al 2020, Shaikh-Jacobo 2020, Weber-Shaikh 2020). Decisions 0001-0005 resolved before expansion.",
+      "verification_method": "step_log"
+    },
+    "stage_2": {
+      "status": "complete",
+      "label": "ADEQUACY",
+      "started_at": "2026-05-18T17:30:00Z",
+      "completed_at": "2026-05-18T18:30:00Z",
+      "series_complete": 114,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "16/16 chapter-groups PASS validator (Build/PHASE4_VALIDATION_REPORT.json) with scores 83-100 (avg ~91). Executed via 3 waves of 5 opus subagents in parallel (15 agent runs, ~1.5 hours). Wave 1: Ch2,3,4,5,6+AS (52 series); Wave 2: Ch7+S709-711,8,9,10,11 (31); Wave 3: Ch13+17,14,15,16,ES (31). Per-series adequacy blocks merged into series_registry.json via _phase4_delta_merger.py. Decision 0006 (XS2301 5-way split) RECOMMENDS_SPLIT per ES wave; awaits user ratification before Phase 5.",
+      "verification_method": "step_log"
+    },
+    "stage_3": {
+      "status": "complete",
+      "label": "INGESTION",
+      "started_at": "2026-05-18T19:00:00Z",
+      "completed_at": "2026-05-18T23:00:00Z",
+      "series_complete": 118,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "118/118 DPRs authored; series_registry.json subseries decomposition complete; SUBSOURCE_METADATA populated; ANU_LEDGER tracks all series.",
+      "verification_method": "step_log"
+    },
+    "stage_4": {
+      "status": "complete",
+      "label": "EXTENSION",
+      "started_at": "2026-05-18T19:00:00Z",
+      "completed_at": "2026-05-18T23:00:00Z",
+      "series_complete": 118,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "118/118 EPRs authored. Proxy substitutions documented (BLS ILC→BIS PPI EER, Ibbotson→Damodaran, CMDEBT/PI→HCCSDODNS/DPI, etc.). No-lazy-splices rule enforced on formula/composite series.",
+      "verification_method": "filesystem_inventory",
+      "verification_note": "Stage completion verified by filesystem artifact inventory (chopped/, extenbooks/, replicator/, viz/) and V03 validation report. STEP_LOG was not instrumented per-stage during this session — 1,351 entries exist with stage=None. v1.1 will retrofit stage tagging."
+    },
+    "stage_5": {
+      "status": "complete",
+      "label": "REPLICATION",
+      "started_at": "2026-05-18T19:00:00Z",
+      "completed_at": "2026-05-18T23:00:00Z",
+      "series_complete": 118,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "118/118 L01+P02+V03 scripts authored and tested. Validator: 97 PASS, 8 PASS_THEORETICAL, 2 PASS_CROSS_SECTIONAL_UNAVAILABLE, 11 PASS_DATA_UNAVAILABLE. S00_setup architecture (config/cache/apis) + run.py orchestrator established by S201 pilot, replicated across all chapters. New API clients added: FRED, BEA stub, Damodaran NYU, Shiller, IMF SDMX 3.0, World Bank WDI, IMF WEO, Census FT900.",
+      "verification_method": "filesystem_inventory",
+      "verification_note": "Stage completion verified by filesystem artifact inventory (chopped/, extenbooks/, replicator/, viz/) and V03 validation report. STEP_LOG was not instrumented per-stage during this session — 1,351 entries exist with stage=None. v1.1 will retrofit stage tagging."
+    },
+    "stage_6": {
+      "status": "complete",
+      "label": "OUTPUT",
+      "started_at": "2026-05-18T19:00:00Z",
+      "completed_at": "2026-05-18T23:00:00Z",
+      "series_complete": 118,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_notes": "109 chopped CSVs + 109 extenbooks emitted (118 minus 9 data_unavailable series that legitimately have no chopped output: S801, S703, S704, S707, S708 chart-only; S214, S215 OECD ISDB sourceless; S404-S407 paywall + S404=PASS_DATA_UNAVAILABLE). Generic O06 writers extended to handle disambiguating keys (month, country_key, industry, cr4_midpoint, etc.) for cross-sectional series.",
+      "verification_method": "filesystem_inventory",
+      "verification_note": "Stage completion verified by filesystem artifact inventory (chopped/, extenbooks/, replicator/, viz/) and V03 validation report. STEP_LOG was not instrumented per-stage during this session — 1,351 entries exist with stage=None. v1.1 will retrofit stage tagging."
+    },
+    "stage_7": {
+      "status": "complete",
+      "gate_passed": true,
+      "completed_at": "2026-05-19T01:13:14.678790+00:00",
+      "gate_report": "Technical/Build/VIZ_QUALITY_REPORT.json",
+      "gate_grade": "11/11 PASS (1 N/A)",
+      "deliverables": [
+        "Technical/viz/app.py",
+        "Technical/viz/data_loader.py",
+        "Technical/viz/chart_builder.py"
+      ],
+      "launch_ready": true,
+      "verification_method": "filesystem_inventory",
+      "verification_note": "Stage completion verified by filesystem artifact inventory (chopped/, extenbooks/, replicator/, viz/) and V03 validation report. STEP_LOG was not instrumented per-stage during this session — 1,351 entries exist with stage=None. v1.1 will retrofit stage tagging."
+    },
+    "stage_8": {
+      "status": "complete",
+      "label": "DISTRIBUTION",
+      "started_at": "2026-05-19T01:15:00Z",
+      "completed_at": "2026-05-19T02:30:00Z",
+      "series_complete": 118,
+      "series_total": 118,
+      "gate_passed": true,
+      "gate_report": "Outputs/REVIEW_v1.0.md",
+      "gate_grade": "121/130 (93%)",
+      "deliverables": [
+        "Outputs/Publish/ (25 MB, 1828 files) - GitHub replication repo",
+        "Outputs/Drive/RSCD_v1.0/ (3.1 MB, 116 files) - Consumer Drive package",
+        "Outputs/Archive/RSCD_v1.0/ (30 MB, 2283 files) - Audit-grade transparency",
+        "Technical/replicator/ (8 MB, 760 files) - Self-contained clean-venv reproduction",
+        "Outputs/RELEASE_NOTES_v1.0.md",
+        "Outputs/REVIEW_v1.0.md"
+      ],
+      "verification_method": "step_log"
+    }
+  },
+  "v1_0_tagged": true,
+  "v1_0_release_date": "2026-05-19",
+  "v1_0_release_notes": "Outputs/RELEASE_NOTES_v1.0.md",
+  "v1_0_review": "Outputs/REVIEW_v1.0.md",
+  "framework_audit": {
+    "anu_doctor_last_run": "2026-07-02T07:07:53Z",
+    "anu_doctor_status": "pass",
+    "anu_framework_version": "v12.2",
+    "skill_count": null,
+    "failures": null,
+    "warnings": null,
+    "notes": "RSCD v1.5 remediation campaign complete 2026-07-02: 26-item backlog + Phase-D sweep + anchors/guards infrastructure; see RELEASE_NOTES_v1.5",
+    "anu_doctor_version": "v2.3",
+    "check_framework": "clean",
+    "check_project": "38 PASS / 0 WARN / 0 FAIL"
+  },
+  "v1_5_tagged": true,
+  "v1_5_release_date": "2026-07-02",
+  "v1_5_release_notes": "Outputs/RELEASE_NOTES_v1.5.md",
+  "v1_6_campaign": {
+    "status": "in_progress — P3.3-P3.4 (publish mirror + hub deploy) pending",
+    "started": "2026-07-10",
+    "target_release": "v1.6",
+    "campaign_plan": "RSCD_POST_REVIEW_REMEDIATION_PLAN.md",
+    "campaign_state": "Technical/remediation_v16/REMEDIATION_STATE.json",
+    "data_fixes": {
+      "S214_S215_extension": "12-industry mean corrected (was 15-industry NAICS); sign flips in 4 years; extension_only_validated status",
+      "S801_label_swap": "Pure label fix: book-period labels corrected (value-identical, 9/9 rows); guards added",
+      "S1603_source_correction": "Repointed from OECD-MEI interbank (RXRRULCOECD) to Shaikh's own 3-mo T-Bill column; range now 1960-2011"
+    },
+    "anchor_architecture": {
+      "total_anchors": 87,
+      "anchored_series": 28,
+      "honest_census": 66,
+      "mutation_caught": 90,
+      "mutation_blind": 0,
+      "mutation_exempt": 3
+    },
+    "framework_updates": {
+      "anu_doctor": "v2.5 (P24/P20 repaired, P40 inline-anchor exemption, P32b/P41/P42/P43 added)",
+      "anu_ingestion": "v5.3 (theoretical_validated + extension_only_validated + validation_class)",
+      "anu_extension": "v4.2 (performed_by field, ALWAYS-required register)",
+      "anu_review": "v5.1 (taxonomy update)",
+      "xs_migration": "AS/ES->XS migration applied 2026-06-10; 17 XS series, 101 S series"
+    },
+    "counts": {
+      "series_total": 118,
+      "series_anchored_or_census": 94,
+      "data_unavailable": 2,
+      "publish_false": 5,
+      "extension_only_validated": 2
+    }
+  },
+  "last_updated": "2026-07-10T19:22:26Z",
+  "predecessor_projects": {
+    "CD": {
+      "path": "Inputs/Capitalism Data/",
+      "status": "frozen_superseded",
+      "series_count": 105,
+      "framework_era": "Anu v4.x"
+    },
+    "CD2": {
+      "path": "Inputs/CD2/",
+      "status": "frozen_reference",
+      "series_count": 114,
+      "framework_era": "Anu v6.0"
+    }
+  },
+  "stage_0_artifacts": {
+    "series_registry": "Technical/series_registry.json",
+    "build_manifest": "Technical/Build/ANU_BUILD_MANIFEST.json",
+    "subseries_plan": "Technical/Build/SUBSERIES_PLAN.json",
+    "chapter_index": "Technical/docs/chapters/CHAPTER_FIGURE_TABLE_INDEX.json",
+    "candidate_list": "Technical/docs/chapters/SERIES_CANDIDATE_LIST.json",
+    "kb_coverage": "Technical/docs/chapters/KB_COVERAGE_INVENTORY.md",
+    "cd_crosswalk": "Technical/MIGRATION/CD_to_RSCD_crosswalk.csv",
+    "cd2_crosswalk": "Technical/MIGRATION/CD2_to_RSCD_crosswalk.csv",
+    "correspondence_matrix": "Technical/SERIES_CORRESPONDENCE_MATRIX.json",
+    "prefix_scheme": "Technical/MIGRATION/PREFIX_SCHEME.md"
+  }
+}

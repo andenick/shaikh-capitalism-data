@@ -117,13 +117,13 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-b-ch7",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Populated from book pp. 305 and 859 (PDF p. 897) verbatim. RESOLVED stub mismatch in favor of figure number (Fig 7.19 = Greek Mfg AVERAGE ROP deviations, source Tsoulfidis & Tsaliki 2011), NOT the stub's misleading 'OECD IROP' name. CD2 S038 was actually for OECD STAN IROP Fig 7.21 — that mapping is flagged for Phase 4 correction. No Greek raw dataset in SalvagedInputs; flagged as blocker."
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-batch1-A4-B5",
       "date": "2026-05-18",
       "status": "data_unavailable",
       "notes": "B5 underlying-data search: Tsoulfidis & Tsaliki (2011) PDF located and downloaded from MPRA No. 51334 (correct URL: https://mpra.ub.uni-muenchen.de/51334/; the stub's URL 35908 was wrong and pointed to an unrelated paper — corrected in primary_source.url above). PyMuPDF extraction of all 42 pages confirms the paper contains only five tables (cross-section concentration stats, correlation matrices, unit-root tests, and AR(1) regression coefficient summaries). The underlying 20-industry x 30-year deviation TIME SERIES that powers Figures 4 and 5 (= Shaikh's Figs 7.19 and 7.20) is NOT tabulated in the paper; it exists only as line charts on pp. 19 and 30. Marked data_unavailable; full provenance at SalvagedInputs/book_data/Reconstructed/Tsoulfidis_Tsaliki_2011_data_unavailable.md. Phase 5 path: include book figure as image; Phase 6 may digitize via WebPlotDigitizer or contact authors."

@@ -102,7 +102,7 @@
       "notes": "auto-generated stub"
     },
     {
-      "reviewer": "automated-agent",
+      "reviewer": "opus-subagent-wave-b-ch8",
       "date": "2026-05-18",
       "status": "draft",
       "notes": "Filled from book p.372 and Semmler 1984 Tbl 3.3 via ShaikhChoppedTables/Appendix8_Semmler19843.3.xlsx. Classified as cross_sectional (three recession-specific cross-sections), not time_series."

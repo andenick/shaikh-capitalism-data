@@ -2,7 +2,7 @@
 
 **Wave**: C
 **Date**: 2026-05-18
-**Reviewer**: automated-agent
+**Reviewer**: opus-subagent-wave-c-ch16
 **Series count**: 6 (S1601-S1606)
 **Page range**: 727-736 (chapter body); 898-899 (Appendix 16.1 Sources and Methods)
 
@@ -106,7 +106,7 @@ All six Chapter 16 series (S1601-S1606) reached PASS through L01 -> P02 -> V03 -
 | S1605 | PASS | 114 | 0.000000 | 114 | HCCSDODNS / (DPI * 1000) substitution + unit-conversion comment pinned in P02 docstring |
 | S1606 | PASS | 264 | 0.000000 | 66 annual + 264 quarterly | Dual-cadence: quarterly sidecar + annual-mean canonical |
 
-Extension (Phase 6) for all six series deferred per Ch16 automated-agent direction: book-period reproduction is the v1.0 priority; FRED / BLS / BoE / ONS / IMF IFS extension implementations are scaffolded in loader extension_deferred_to_phase6 status fields.
+Extension (Phase 6) for all six series deferred per Ch16 fanout direction: book-period reproduction is the v1.0 priority; FRED / BLS / BoE / ONS / IMF IFS extension implementations are scaffolded in loader extension_deferred_to_phase6 status fields.
 
 Phase 4 substitutions applied:
 - S1601 BoE Millennium canonical + Mitchell cross-check (documented in DPR; extension Phase 6).

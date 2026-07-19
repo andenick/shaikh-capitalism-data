@@ -674,12 +674,14 @@ def census_ft900_annual_balance(
         if tot.empty:
             continue
         for _, r in tot.iterrows():
-            # Extract year from a sibling column header containing 4 digits
+            # Extract year from the "Month" cell value (e.g. "TOTAL 2026").
+            # Census per-country pages embed the year in the TOTAL row label.
             yr = None
             exp_ = imp_ = None
-            for c in tbl.columns:
-                if c.isdigit() and len(c) == 4:
-                    yr = int(c)
+            month_val = str(r.get("Month", ""))
+            for token in month_val.split():
+                if token.isdigit() and len(token) == 4:
+                    yr = int(token)
                     break
             # FT900 per-country page typically has Exports/Imports/Balance
             # columns. We pull whichever variant is present.
