@@ -62,6 +62,15 @@ Publish/
     └── VIZ_QUALITY_REPORT.json
 ```
 
+## Notation
+
+**RSCD** = the Replication of Shaikh's *Capitalism* Data project. **Anu Framework** = the
+data-construction framework this project is built with (registry-driven pipeline; no special
+knowledge needed to use the data). **Series-ID notation**: `S###` = book series (e.g., `S201`);
+`XS###` = extra series (appendix + external studies). Suffixes: `-A`, `-B` = raw historical
+subseries, `-EXT` = modern extension, `-COMBINED` = spliced final series. The bare `S###`/`XS###`
+identifier always refers to the final published series.
+
 ## Quickstart
 
 ```bash
