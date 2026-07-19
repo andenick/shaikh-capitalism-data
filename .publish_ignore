@@ -19,3 +19,8 @@ RELEASE_NOTES_v1.0.md
 replicator/README.md
 replicator/inputs_bundled/SalvagedInputs/methodology_decisions/CD2_series_registry_v2.0.json
 CITATION.cff
+# --- v1.6.1 additions: the two registry copies carry drive_config.repo_url (the same
+# adjudicated publication-target URL, F-8A-01 class; B3 hub<->repo link). Verified: no other
+# hard-severity hits in these files (0 abs paths, 0 Council refs).
+series_registry.json
+replicator/inputs_bundled/series_registry.json
