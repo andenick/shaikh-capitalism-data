@@ -30,7 +30,8 @@
     },
     "institution": "The New School for Social Research",
     "email": "ibeforeena@gmail.com",
-    "license": "CC-BY-4.0 (data); MIT (code, see project LICENSE)"
+    "license": "CC-BY-4.0 (data); MIT (code, see project LICENSE)",
+    "repo_url": "https://github.com/andenick/shaikh-capitalism-data"
   },
   "prefix_scheme": {
     "primary": {
@@ -282,7 +283,7 @@
             "expected_value": 1.6368,
             "tolerance_pct": 1.0,
             "source_description": "Printed BEA LTEG 1966 Table A15: 7.48 (1913=100) at 1860, rebased to 1958=100 by the printed-table's own 1958 value 457.00: 7.48/457.00*100 = 1.6368. Independent of the loader's Appendix2 XLSX (values read from the printed FRASER scan).",
-            "source_file": "BEA, Long Term Economic Growth 1860-1965 (1966), table \"Series A12 to A22\", column A15 (NBER, Nutter industrial production index, 1913=100), volume pp.168-169 (FRASER scan; Inputs/Capitalism Data/Inputs/2025.12.21 pdfs/[1966] BEA - Long Term Economic Growth 1860-1965.pdf)",
+            "source_file": "BEA, Long Term Economic Growth 1860-1965 (1966), table \"Series A12 to A22\", col. A15, pp.168-169 (FRASER scan)",
             "source_cell": "volume p.168-169, A15 column, row 1860"
           },
           {
@@ -293,7 +294,7 @@
             "expected_value": 7.6586,
             "tolerance_pct": 1.0,
             "source_description": "Printed BEA LTEG 1966 Table A15: 35.0 (1913=100) at 1890, rebased to 1958=100 by the printed-table's own 1958 value 457.00: 35.0/457.00*100 = 7.6586. Independent of the loader's Appendix2 XLSX (values read from the printed FRASER scan).",
-            "source_file": "BEA, Long Term Economic Growth 1860-1965 (1966), table \"Series A12 to A22\", column A15 (NBER, Nutter industrial production index, 1913=100), volume pp.168-169 (FRASER scan; Inputs/Capitalism Data/Inputs/2025.12.21 pdfs/[1966] BEA - Long Term Economic Growth 1860-1965.pdf)",
+            "source_file": "BEA, Long Term Economic Growth 1860-1965 (1966), table \"Series A12 to A22\", col. A15, pp.168-169 (FRASER scan)",
             "source_cell": "volume p.168-169, A15 column, row 1890"
           },
           {
@@ -304,7 +305,7 @@
             "expected_value": 21.8818,
             "tolerance_pct": 1.0,
             "source_description": "Printed BEA LTEG 1966 Table A15: 100.0 (1913=100) at 1913, rebased to 1958=100 by the printed-table's own 1958 value 457.00: 100.0/457.00*100 = 21.8818. Independent of the loader's Appendix2 XLSX (values read from the printed FRASER scan).",
-            "source_file": "BEA, Long Term Economic Growth 1860-1965 (1966), table \"Series A12 to A22\", column A15 (NBER, Nutter industrial production index, 1913=100), volume pp.168-169 (FRASER scan; Inputs/Capitalism Data/Inputs/2025.12.21 pdfs/[1966] BEA - Long Term Economic Growth 1860-1965.pdf)",
+            "source_file": "BEA, Long Term Economic Growth 1860-1965 (1966), table \"Series A12 to A22\", col. A15, pp.168-169 (FRASER scan)",
             "source_cell": "volume p.168-169, A15 column, row 1913"
           },
           {
@@ -315,7 +316,7 @@
             "expected_value": 28.1838,
             "tolerance_pct": 1.0,
             "source_description": "Printed BEA LTEG 1966 Table A15: 128.8 (1913=100) at 1918, rebased to 1958=100 by the printed-table's own 1958 value 457.00: 128.8/457.00*100 = 28.1838. Independent of the loader's Appendix2 XLSX (values read from the printed FRASER scan).",
-            "source_file": "BEA, Long Term Economic Growth 1860-1965 (1966), table \"Series A12 to A22\", column A15 (NBER, Nutter industrial production index, 1913=100), volume pp.168-169 (FRASER scan; Inputs/Capitalism Data/Inputs/2025.12.21 pdfs/[1966] BEA - Long Term Economic Growth 1860-1965.pdf)",
+            "source_file": "BEA, Long Term Economic Growth 1860-1965 (1966), table \"Series A12 to A22\", col. A15, pp.168-169 (FRASER scan)",
             "source_cell": "volume p.168-169, A15 column, row 1918"
           }
         ]
@@ -20053,7 +20054,7 @@
             "expected_value": 0.32,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.32 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20064,7 +20065,7 @@
             "expected_value": 0.32,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.32 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20075,7 +20076,7 @@
             "expected_value": 0.36,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.36 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20086,7 +20087,7 @@
             "expected_value": 0.4,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.4 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20097,7 +20098,7 @@
             "expected_value": 0.36,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.36 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20108,7 +20109,7 @@
             "expected_value": 0.23,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.23 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20119,7 +20120,7 @@
             "expected_value": 0.32,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.32 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20130,7 +20131,7 @@
             "expected_value": 0.3,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.3 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20141,7 +20142,7 @@
             "expected_value": 0.35,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.35 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20152,7 +20153,7 @@
             "expected_value": 0.39,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.39 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20163,7 +20164,7 @@
             "expected_value": 0.35,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.35 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20174,7 +20175,7 @@
             "expected_value": 0.22,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.22 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20185,7 +20186,7 @@
             "expected_value": 1.02,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 1.02 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20196,7 +20197,7 @@
             "expected_value": 1.02,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 1.02 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20207,7 +20208,7 @@
             "expected_value": 1.03,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 1.03 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20218,7 +20219,7 @@
             "expected_value": 1.04,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 1.04 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20229,7 +20230,7 @@
             "expected_value": 1.03,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 1.03 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20240,7 +20241,7 @@
             "expected_value": 1.02,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 1.02 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20251,7 +20252,7 @@
             "expected_value": 0.99,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.99 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20262,7 +20263,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20273,7 +20274,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20284,7 +20285,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20295,7 +20296,7 @@
             "expected_value": 0.96,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.96 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20306,7 +20307,7 @@
             "expected_value": 0.99,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.99 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20317,7 +20318,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20328,7 +20329,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20339,7 +20340,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20350,7 +20351,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20361,7 +20362,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20372,7 +20373,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20383,7 +20384,7 @@
             "expected_value": 1.0,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 1.0 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20394,7 +20395,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20405,7 +20406,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20416,7 +20417,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20427,7 +20428,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20438,7 +20439,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20449,7 +20450,7 @@
             "expected_value": 1.03,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 1.03 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20460,7 +20461,7 @@
             "expected_value": 1.0,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 1.0 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20471,7 +20472,7 @@
             "expected_value": 1.0,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 1.0 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20482,7 +20483,7 @@
             "expected_value": 1.0,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 1.0 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20493,7 +20494,7 @@
             "expected_value": 1.02,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 1.02 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20504,7 +20505,7 @@
             "expected_value": 0.99,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.99 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20515,7 +20516,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20526,7 +20527,7 @@
             "expected_value": 0.96,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.96 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20537,7 +20538,7 @@
             "expected_value": 0.94,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.94 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20548,7 +20549,7 @@
             "expected_value": 0.94,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.94 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20559,7 +20560,7 @@
             "expected_value": 0.95,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.95 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20570,7 +20571,7 @@
             "expected_value": 0.96,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.96 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20581,7 +20582,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20592,7 +20593,7 @@
             "expected_value": 0.96,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.96 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20603,7 +20604,7 @@
             "expected_value": 0.94,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.94 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20614,7 +20615,7 @@
             "expected_value": 0.94,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.94 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20625,7 +20626,7 @@
             "expected_value": 0.94,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.94 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20636,7 +20637,7 @@
             "expected_value": 0.96,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 1 (Circulating Capital) printed value 0.96 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 1 (Circulating Capital), p.10"
           },
           {
@@ -20647,7 +20648,7 @@
             "expected_value": 0.24,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.24 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20658,7 +20659,7 @@
             "expected_value": 0.18,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.18 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20669,7 +20670,7 @@
             "expected_value": 0.21,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.21 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20680,7 +20681,7 @@
             "expected_value": 0.23,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.23 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20691,7 +20692,7 @@
             "expected_value": 0.19,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.19 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20702,7 +20703,7 @@
             "expected_value": 0.11,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.11 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20713,7 +20714,7 @@
             "expected_value": 0.29,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.29 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20724,7 +20725,7 @@
             "expected_value": 0.26,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.26 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20735,7 +20736,7 @@
             "expected_value": 0.28,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.28 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20746,7 +20747,7 @@
             "expected_value": 0.31,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.31 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20757,7 +20758,7 @@
             "expected_value": 0.28,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.28 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20768,7 +20769,7 @@
             "expected_value": 0.27,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.27 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20779,7 +20780,7 @@
             "expected_value": 1.02,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.02 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20790,7 +20791,7 @@
             "expected_value": 1.03,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.03 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20801,7 +20802,7 @@
             "expected_value": 1.04,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.04 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20812,7 +20813,7 @@
             "expected_value": 1.04,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.04 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20823,7 +20824,7 @@
             "expected_value": 1.03,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.03 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20834,7 +20835,7 @@
             "expected_value": 1.03,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.03 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20845,7 +20846,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20856,7 +20857,7 @@
             "expected_value": 0.99,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.99 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20867,7 +20868,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20878,7 +20879,7 @@
             "expected_value": 0.99,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.99 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20889,7 +20890,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20900,7 +20901,7 @@
             "expected_value": 1.01,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.01 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20911,7 +20912,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20922,7 +20923,7 @@
             "expected_value": 0.96,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.96 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20933,7 +20934,7 @@
             "expected_value": 0.95,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.95 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20944,7 +20945,7 @@
             "expected_value": 0.94,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.94 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20955,7 +20956,7 @@
             "expected_value": 0.96,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.96 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20966,7 +20967,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20977,7 +20978,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20988,7 +20989,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -20999,7 +21000,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21010,7 +21011,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21021,7 +21022,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21032,7 +21033,7 @@
             "expected_value": 0.96,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.96 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21043,7 +21044,7 @@
             "expected_value": 0.99,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.99 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21054,7 +21055,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21065,7 +21066,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21076,7 +21077,7 @@
             "expected_value": 0.96,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.96 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21087,7 +21088,7 @@
             "expected_value": 0.97,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.97 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21098,7 +21099,7 @@
             "expected_value": 1.0,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.0 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21109,7 +21110,7 @@
             "expected_value": 1.04,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.04 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21120,7 +21121,7 @@
             "expected_value": 1.04,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.04 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21131,7 +21132,7 @@
             "expected_value": 1.05,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.05 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21142,7 +21143,7 @@
             "expected_value": 1.05,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.05 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21153,7 +21154,7 @@
             "expected_value": 1.04,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.04 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21164,7 +21165,7 @@
             "expected_value": 0.98,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 0.98 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21175,7 +21176,7 @@
             "expected_value": 1.04,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.04 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21186,7 +21187,7 @@
             "expected_value": 1.06,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.06 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21197,7 +21198,7 @@
             "expected_value": 1.07,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.07 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21208,7 +21209,7 @@
             "expected_value": 1.08,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.08 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21219,7 +21220,7 @@
             "expected_value": 1.06,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.06 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           },
           {
@@ -21230,7 +21231,7 @@
             "expected_value": 1.0,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh (2020) Table 2 (Fixed Capital) printed value 1.0 (2-decimal print; rounding tolerance)",
-            "source_file": "Technical/MethodologyLibrary/[2020] Shaikh - An Empirically Sufficient Form for Sraffa Prices.pdf",
+            "source_file": "Shaikh, A. (2020), \"An Empirically Sufficient Form for Sraffa Prices\" (working paper PDF, project methodology library)",
             "source_cell": "Table 2 (Fixed Capital), p.10"
           }
         ]
@@ -21503,7 +21504,7 @@
             "expected_value": 0.03,
             "tolerance_pct": 2.5,
             "source_description": "Shaikh-Coronado-Nassif-Pires (2020) Section 5 text / Figure 6: printed value 0.03 (coarse print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Coronado & Nassif-Pires - On the empirical regularities of Sraffa prices.pdf",
+            "source_file": "Shaikh, A., Coronado, R., & Nassif-Pires, L. (2020), \"On the empirical regularities of Sraffa prices\" (paper PDF, project library)",
             "source_cell": "printed p.272 / Section 5 text / Figure 6"
           },
           {
@@ -21514,7 +21515,7 @@
             "expected_value": 0.06,
             "tolerance_pct": 2.5,
             "source_description": "Shaikh-Coronado-Nassif-Pires (2020) Section 5 text / Figure 6: printed value 0.06 (coarse print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Coronado & Nassif-Pires - On the empirical regularities of Sraffa prices.pdf",
+            "source_file": "Shaikh, A., Coronado, R., & Nassif-Pires, L. (2020), \"On the empirical regularities of Sraffa prices\" (paper PDF, project library)",
             "source_cell": "printed p.272 / Section 5 text / Figure 6"
           },
           {
@@ -21525,7 +21526,7 @@
             "expected_value": 1.0,
             "tolerance_pct": 2.5,
             "source_description": "Shaikh-Coronado-Nassif-Pires (2020) Section 5 text: 'none with a deviation greater than 1 percent': printed value 1.0 (coarse print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Coronado & Nassif-Pires - On the empirical regularities of Sraffa prices.pdf",
+            "source_file": "Shaikh, A., Coronado, R., & Nassif-Pires, L. (2020), \"On the empirical regularities of Sraffa prices\" (paper PDF, project library)",
             "source_cell": "printed p.272 / Section 5 text: 'none with a deviation greater than 1 percent'"
           },
           {
@@ -21536,7 +21537,7 @@
             "expected_value": 4,
             "tolerance_pct": 2.5,
             "source_description": "Shaikh-Coronado-Nassif-Pires (2020) Section 5 text: 'Only four (0.9 percent)': printed value 4 (coarse print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Coronado & Nassif-Pires - On the empirical regularities of Sraffa prices.pdf",
+            "source_file": "Shaikh, A., Coronado, R., & Nassif-Pires, L. (2020), \"On the empirical regularities of Sraffa prices\" (paper PDF, project library)",
             "source_cell": "printed p.272 / Section 5 text: 'Only four (0.9 percent)'"
           },
           {
@@ -21547,7 +21548,7 @@
             "expected_value": 0.9,
             "tolerance_pct": 2.5,
             "source_description": "Shaikh-Coronado-Nassif-Pires (2020) Section 5 text: '0.9 percent': printed value 0.9 (coarse print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Coronado & Nassif-Pires - On the empirical regularities of Sraffa prices.pdf",
+            "source_file": "Shaikh, A., Coronado, R., & Nassif-Pires, L. (2020), \"On the empirical regularities of Sraffa prices\" (paper PDF, project library)",
             "source_cell": "printed p.272 / Section 5 text: '0.9 percent'"
           },
           {
@@ -21558,7 +21559,7 @@
             "expected_value": 26,
             "tolerance_pct": 2.5,
             "source_description": "Shaikh-Coronado-Nassif-Pires (2020) Section 5 text: '26 (6.1 percent)': printed value 26 (coarse print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Coronado & Nassif-Pires - On the empirical regularities of Sraffa prices.pdf",
+            "source_file": "Shaikh, A., Coronado, R., & Nassif-Pires, L. (2020), \"On the empirical regularities of Sraffa prices\" (paper PDF, project library)",
             "source_cell": "printed p.272 / Section 5 text: '26 (6.1 percent)'"
           },
           {
@@ -21569,7 +21570,7 @@
             "expected_value": 6.1,
             "tolerance_pct": 2.5,
             "source_description": "Shaikh-Coronado-Nassif-Pires (2020) Section 5 text: '6.1 percent': printed value 6.1 (coarse print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Coronado & Nassif-Pires - On the empirical regularities of Sraffa prices.pdf",
+            "source_file": "Shaikh, A., Coronado, R., & Nassif-Pires, L. (2020), \"On the empirical regularities of Sraffa prices\" (paper PDF, project library)",
             "source_cell": "printed p.272 / Section 5 text: '6.1 percent'"
           },
           {
@@ -21580,7 +21581,7 @@
             "expected_value": 425,
             "tolerance_pct": 2.5,
             "source_description": "Shaikh-Coronado-Nassif-Pires (2020) Section 5 text: '425 prices': printed value 425 (coarse print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Coronado & Nassif-Pires - On the empirical regularities of Sraffa prices.pdf",
+            "source_file": "Shaikh, A., Coronado, R., & Nassif-Pires, L. (2020), \"On the empirical regularities of Sraffa prices\" (paper PDF, project library)",
             "source_cell": "printed p.272 / Section 5 text: '425 prices'"
           },
           {
@@ -21591,7 +21592,7 @@
             "expected_value": 0.03,
             "tolerance_pct": 2.5,
             "source_description": "Shaikh-Coronado-Nassif-Pires (2020) Section 5 text / Figure 6 (stated for both years): printed value 0.03 (coarse print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Coronado & Nassif-Pires - On the empirical regularities of Sraffa prices.pdf",
+            "source_file": "Shaikh, A., Coronado, R., & Nassif-Pires, L. (2020), \"On the empirical regularities of Sraffa prices\" (paper PDF, project library)",
             "source_cell": "printed p.272 / Section 5 text / Figure 6 (stated for both years)"
           },
           {
@@ -21602,7 +21603,7 @@
             "expected_value": 0.06,
             "tolerance_pct": 2.5,
             "source_description": "Shaikh-Coronado-Nassif-Pires (2020) Section 5 text / Figure 6 (stated for both years): printed value 0.06 (coarse print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Coronado & Nassif-Pires - On the empirical regularities of Sraffa prices.pdf",
+            "source_file": "Shaikh, A., Coronado, R., & Nassif-Pires, L. (2020), \"On the empirical regularities of Sraffa prices\" (paper PDF, project library)",
             "source_cell": "printed p.272 / Section 5 text / Figure 6 (stated for both years)"
           }
         ]
@@ -21808,7 +21809,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21819,7 +21820,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21830,7 +21831,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21841,7 +21842,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21852,7 +21853,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21863,7 +21864,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21874,7 +21875,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21885,7 +21886,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21896,7 +21897,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21907,7 +21908,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21918,7 +21919,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21929,7 +21930,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21940,7 +21941,7 @@
             "expected_value": 0.49,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.49 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21951,7 +21952,7 @@
             "expected_value": 0.48,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.48 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21962,7 +21963,7 @@
             "expected_value": 0.48,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.48 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21973,7 +21974,7 @@
             "expected_value": 46.39,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 46.39 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21984,7 +21985,7 @@
             "expected_value": 47.59,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 47.59 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -21995,7 +21996,7 @@
             "expected_value": 51.34,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 51.34 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22006,7 +22007,7 @@
             "expected_value": 55.24,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 55.24 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22017,7 +22018,7 @@
             "expected_value": 58.03,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 58.03 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22028,7 +22029,7 @@
             "expected_value": 60.76,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 60.76 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22039,7 +22040,7 @@
             "expected_value": 58.01,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 58.01 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22050,7 +22051,7 @@
             "expected_value": 54.28,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 54.28 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22061,7 +22062,7 @@
             "expected_value": 56.61,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 56.61 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22072,7 +22073,7 @@
             "expected_value": 57.61,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 57.61 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22083,7 +22084,7 @@
             "expected_value": 62.79,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 62.79 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22094,7 +22095,7 @@
             "expected_value": 61.71,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 61.71 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22105,7 +22106,7 @@
             "expected_value": 65.75,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 65.75 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22116,7 +22117,7 @@
             "expected_value": 67.85,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 67.85 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22127,7 +22128,7 @@
             "expected_value": 68.05,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 68.05 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22138,7 +22139,7 @@
             "expected_value": 38.33,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 38.33 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22149,7 +22150,7 @@
             "expected_value": 38.91,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 38.91 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22160,7 +22161,7 @@
             "expected_value": 40.62,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 40.62 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22171,7 +22172,7 @@
             "expected_value": 42.27,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 42.27 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22182,7 +22183,7 @@
             "expected_value": 43.83,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 43.83 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22193,7 +22194,7 @@
             "expected_value": 44.94,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 44.94 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22204,7 +22205,7 @@
             "expected_value": 44.87,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 44.87 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22215,7 +22216,7 @@
             "expected_value": 43.67,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 43.67 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22226,7 +22227,7 @@
             "expected_value": 44.36,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 44.36 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22237,7 +22238,7 @@
             "expected_value": 45.31,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 45.31 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22248,7 +22249,7 @@
             "expected_value": 46.88,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 46.88 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22259,7 +22260,7 @@
             "expected_value": 47.62,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 47.62 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22270,7 +22271,7 @@
             "expected_value": 49.22,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 49.22 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22281,7 +22282,7 @@
             "expected_value": 50.42,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 50.42 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22292,7 +22293,7 @@
             "expected_value": 50.96,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 50.96 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22303,7 +22304,7 @@
             "expected_value": 0.17,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.17 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22314,7 +22315,7 @@
             "expected_value": 0.18,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.18 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22325,7 +22326,7 @@
             "expected_value": 0.21,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.21 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22336,7 +22337,7 @@
             "expected_value": 0.24,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.24 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22347,7 +22348,7 @@
             "expected_value": 0.25,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.25 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22358,7 +22359,7 @@
             "expected_value": 0.26,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.26 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22369,7 +22370,7 @@
             "expected_value": 0.23,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.23 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22380,7 +22381,7 @@
             "expected_value": 0.2,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.2 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22391,7 +22392,7 @@
             "expected_value": 0.22,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.22 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22402,7 +22403,7 @@
             "expected_value": 0.21,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.21 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22413,7 +22414,7 @@
             "expected_value": 0.25,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.25 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22424,7 +22425,7 @@
             "expected_value": 0.23,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.23 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22435,7 +22436,7 @@
             "expected_value": 0.25,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.25 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22446,7 +22447,7 @@
             "expected_value": 0.26,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.26 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22457,7 +22458,7 @@
             "expected_value": 0.25,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 0.25 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22468,7 +22469,7 @@
             "expected_value": 1.45,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.45 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22479,7 +22480,7 @@
             "expected_value": 1.42,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.42 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22490,7 +22491,7 @@
             "expected_value": 1.35,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.35 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22501,7 +22502,7 @@
             "expected_value": 1.31,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.31 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22512,7 +22513,7 @@
             "expected_value": 1.3,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.3 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22523,7 +22524,7 @@
             "expected_value": 1.29,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.29 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22534,7 +22535,7 @@
             "expected_value": 1.35,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.35 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22545,7 +22546,7 @@
             "expected_value": 1.44,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.44 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22556,7 +22557,7 @@
             "expected_value": 1.39,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.39 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22567,7 +22568,7 @@
             "expected_value": 1.4,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.4 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22578,7 +22579,7 @@
             "expected_value": 1.33,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.33 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22589,7 +22590,7 @@
             "expected_value": 1.43,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.43 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22600,7 +22601,7 @@
             "expected_value": 1.4,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.4 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22611,7 +22612,7 @@
             "expected_value": 1.39,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.39 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           },
           {
@@ -22622,7 +22623,7 @@
             "expected_value": 1.43,
             "tolerance_pct": 3.0,
             "source_description": "Shaikh-Jacobo (2020) Table 1 printed value 1.43 (2-decimal print; rounding tolerance)",
-            "source_file": "Council/Robert/.../RealEcon/[2020] Shaikh & Jacobo - Economic Arbitrage and the Econophysics of Income Inequality.pdf",
+            "source_file": "Shaikh, A., & Jacobo, A. (2020), \"Economic Arbitrage and the Econophysics of Income Inequality\" (paper PDF, project library)",
             "source_cell": "Table 1, printed p.5"
           }
         ]
@@ -22772,7 +22773,7 @@
             "expected_value": -780.0,
             "tolerance_pct": 5.0,
             "source_description": "Weber-Shaikh (2020/2021) Appendix Fig 1: Fig 1 World Total line 2005 (orchestrator read 2026-07-17; figure-read, gridline precision)",
-            "source_file": "Council/Robert/.../RealEcon/[2021] Weber & Shaikh - The U.S..pdf (Int. Review of Applied Economics), Appendix Fig 1 printed p.453",
+            "source_file": "Weber, I., & Shaikh, A. (2021), \"The U.S.-China trade imbalance and the theory of free trade\", International Review of Applied Economics, Appendix Fig 1, printed p.453",
             "source_cell": "Appendix Fig 1, printed p.453"
           },
           {
@@ -22783,7 +22784,7 @@
             "expected_value": -640.0,
             "tolerance_pct": 5.0,
             "source_description": "Weber-Shaikh (2020/2021) Appendix Fig 1: Fig 1 World Total line 2010 (orchestrator read 2026-07-17; figure-read, gridline precision)",
-            "source_file": "Council/Robert/.../RealEcon/[2021] Weber & Shaikh - The U.S..pdf (Int. Review of Applied Economics), Appendix Fig 1 printed p.453",
+            "source_file": "Weber, I., & Shaikh, A. (2021), \"The U.S.-China trade imbalance and the theory of free trade\", International Review of Applied Economics, Appendix Fig 1, printed p.453",
             "source_cell": "Appendix Fig 1, printed p.453"
           },
           {
@@ -22794,7 +22795,7 @@
             "expected_value": -750.0,
             "tolerance_pct": 5.0,
             "source_description": "Weber-Shaikh (2020/2021) Appendix Fig 1: Fig 1 World Total line 2015 (orchestrator read 2026-07-17; figure-read, gridline precision)",
-            "source_file": "Council/Robert/.../RealEcon/[2021] Weber & Shaikh - The U.S..pdf (Int. Review of Applied Economics), Appendix Fig 1 printed p.453",
+            "source_file": "Weber, I., & Shaikh, A. (2021), \"The U.S.-China trade imbalance and the theory of free trade\", International Review of Applied Economics, Appendix Fig 1, printed p.453",
             "source_cell": "Appendix Fig 1, printed p.453"
           },
           {
@@ -22805,7 +22806,7 @@
             "expected_value": -200.0,
             "tolerance_pct": 5.0,
             "source_description": "Weber-Shaikh (2020/2021) Appendix Fig 1: Fig 1 China line 2005 (orchestrator read 2026-07-17; figure-read, gridline precision)",
-            "source_file": "Council/Robert/.../RealEcon/[2021] Weber & Shaikh - The U.S..pdf (Int. Review of Applied Economics), Appendix Fig 1 printed p.453",
+            "source_file": "Weber, I., & Shaikh, A. (2021), \"The U.S.-China trade imbalance and the theory of free trade\", International Review of Applied Economics, Appendix Fig 1, printed p.453",
             "source_cell": "Appendix Fig 1, printed p.453"
           },
           {
@@ -22816,7 +22817,7 @@
             "expected_value": -280.0,
             "tolerance_pct": 5.0,
             "source_description": "Weber-Shaikh (2020/2021) Appendix Fig 1: Fig 1 China line 2010 (orchestrator read 2026-07-17; figure-read, gridline precision)",
-            "source_file": "Council/Robert/.../RealEcon/[2021] Weber & Shaikh - The U.S..pdf (Int. Review of Applied Economics), Appendix Fig 1 printed p.453",
+            "source_file": "Weber, I., & Shaikh, A. (2021), \"The U.S.-China trade imbalance and the theory of free trade\", International Review of Applied Economics, Appendix Fig 1, printed p.453",
             "source_cell": "Appendix Fig 1, printed p.453"
           },
           {
@@ -22827,7 +22828,7 @@
             "expected_value": -370.0,
             "tolerance_pct": 5.0,
             "source_description": "Weber-Shaikh (2020/2021) Appendix Fig 1: Fig 1 China line 2015 (orchestrator read 2026-07-17; figure-read, gridline precision)",
-            "source_file": "Council/Robert/.../RealEcon/[2021] Weber & Shaikh - The U.S..pdf (Int. Review of Applied Economics), Appendix Fig 1 printed p.453",
+            "source_file": "Weber, I., & Shaikh, A. (2021), \"The U.S.-China trade imbalance and the theory of free trade\", International Review of Applied Economics, Appendix Fig 1, printed p.453",
             "source_cell": "Appendix Fig 1, printed p.453"
           }
         ]
