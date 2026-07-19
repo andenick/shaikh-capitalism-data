@@ -37,7 +37,7 @@ output-format. Certification counts are unchanged and class-partitioned as in v1
 - **S202 is the sole remaining P40 WARN**: its printed source (BEA 1977 *Fixed Reproducible Tangible
   Wealth*) requires academic-library access; the deferral is documented in the registry
   (not a `no_printed_anchor_available` census case — printed anchors exist).
-- anu-doctor P40 now reads **1/113** (was 7/113).
+- anu-doctor (the framework self-audit tool) P40 now reads **1/113** (was 7/113).
 
 ## 2. XS2301 re-run risk retired
 
