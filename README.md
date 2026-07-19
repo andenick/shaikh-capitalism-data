@@ -34,10 +34,10 @@ Publish/
 ├── code/                      ← pipeline (S00, L01, P02, V03, M04, A05, O06)
 │   ├── run.py                 ← orchestrator (--series / --health / --report / --gate)
 │   ├── S00_setup/             ← config, cache, API clients
-│   ├── L01_loaders/           ← 118 per-series loaders
-│   ├── P02_processors/        ← 118 per-series constructors
-│   ├── V03_validators/        ← 118 per-series validators
-│   ├── O06_output/            ← generic chopped + extenbook writers
+│   ├── L01_loaders/           ← 118 per-series loaders (L = Load: fetch raw sources to cache)
+│   ├── P02_processors/        ← 118 per-series constructors (P = Process: build final series)
+│   ├── V03_validators/        ← 118 per-series validators (V = Validate: compare vs book/anchors)
+│   ├── O06_output/            ← generic chopped + extenbook writers (O = Output)
 │   └── utils/paths.py         ← centralized path resolution
 ├── replicator/                ← self-contained reproduction package
 │   ├── scripts/replicate.py   ← clean-venv end-to-end runner
@@ -118,7 +118,7 @@ See **[INSTALL.md](INSTALL.md)** for detailed environment setup and
 | Series PASS_THEORETICAL | 8 (no empirical match expected) |
 | Verbatim Shaikh quotes in shipped research/ | 112/112 (118/118 canonical) |
 | Chapter adequacy gate PASS | 17/17 |
-| Mean validation MAE (face-value match) | < 1.5% |
+| Mean validation MAE (face-value match) | < 1.5% (over the 106 book-period/extension PASS series; the 8 theoretical + 2 cross-sectional + 2 extension-only classes validate differently) |
 | Visualization QA score | 11/11 PASS (+ 1 N/A) |
 
 ## Citation
