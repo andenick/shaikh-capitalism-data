@@ -1,3 +1,5 @@
+# Corrected draft: identity unified to nickawebbox@gmail.com (was ibeforeena@gmail.com).
+# All other fields retained from the existing repo CITATION.cff.
 cff-version: 1.2.0
 title: "RSCD: Replication and Extension of Shaikh (2016) Capitalism: Competition, Conflict, Crises"
 message: "If you use this dataset or code, please cite both this work and Shaikh (2016)."
@@ -5,8 +7,9 @@ type: dataset
 authors:
   - given-names: Nicholas
     family-names: Anderson
-    email: ibeforeena@gmail.com
+    email: nickawebbox@gmail.com
     affiliation: "The New School for Social Research"
+    # orcid: "https://orcid.org/0000-0000-0000-0000"  # Nick to fill
 version: 1.6.1
 date-released: 2026-07-17
 repository-code: https://github.com/andenick/shaikh-capitalism-data
