@@ -9,7 +9,7 @@ Open replication and 1860–2025 extension of the empirical material in:
 
 > Shaikh, Anwar (2016). *Capitalism: Competition, Conflict, Crises.* Oxford University Press.
 
-**118 canonical series** across 17 chapters, 5 external studies, and 9 analytical
+**118 canonical series** across 16 chapters, 4 successor papers (external study groups), and 9 analytical
 constructs. **113 series** are in the public bundle (`publish:true` in
 `series_registry.json`); 5 are withheld (`publish:false`: `S306`, `S307`, `S408`,
 `XS2304`, `XS2305` — non-renderable cross-section stubs or literature-compilation
@@ -159,7 +159,7 @@ See [LICENSE](LICENSE).
 
 ## Predecessor projects
 
-This is the v1.0 rebuild on the Anu Framework v12.0. Earlier prototypes:
+This is the v1.0 rebuild on the Anu Framework v12.2. Earlier prototypes:
 - **Capitalism Data (CD)** — 105 series, Anu v4.x, frozen 2025
 - **Capitalism Data v2 (CD2)** — 114 series, Anu v6.0, frozen 2026-04
 
