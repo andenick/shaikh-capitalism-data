@@ -3,6 +3,27 @@
 All notable changes to the public replication bundle are documented here.
 Versioning follows the project release line (see `RELEASE_NOTES_*`).
 
+## Unreleased — anu/ replication-package layer
+
+### Added
+- **`anu/` replication package** (Anu Replication Template, FR4): per-source
+  fetchers `L01..L08` (FRED, BEA, World Bank, IMF, Census FT-900, Shiller,
+  Damodaran, bundled SalvagedInputs), `P01_construct_series.py`,
+  `P02_write_chopped.py` (staging + sha256 MANIFEST), package-level gate
+  `V01_validate.py` (presence / count / schema / unit sanity / coverage,
+  key-free against the shipped `chopped/`), generated
+  `anu/series_registry.json` (118 series; regenerated via
+  `anu/scripts/_build_registry.py` from the canonical repo-root registries),
+  per-source DPRs `D01..D08` + series-family index `D09`, requirements,
+  Makefile (`make -C anu check` key-free).
+- CI: key-free `anu` package gate step added to `ci.yml`.
+
+### Fixed
+- CI health step now runs through `replicator/scripts/replicate.py`
+  (`code/run.py` cannot resolve its workspace layout from a plain checkout).
+- README stale counts corrected: 116 producible chopped CSVs (was 109),
+  2 `data_unavailable` series (S703, S704).
+
 ## v1.4 — 2026-06-11 — Series-ID migration + provenance reconciliation
 
 This release brings the public bundle into line with the internal canonical tree

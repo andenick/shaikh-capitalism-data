@@ -15,7 +15,12 @@ jobs:
       - name: Replicator health + plan
         run: |
           . .venv/bin/activate
-          python code/run.py --health
-          python code/run.py --list
+          # code/run.py requires the bootstrapped workspace layout, so the
+          # health check goes through the self-contained replicator entrypoint.
+          python replicator/scripts/replicate.py --health
+      - name: anu package gate (key-free)
+        run: |
+          . .venv/bin/activate
+          python anu/scripts/V01_validate.py
       - name: anu-doctor project consistency
         run: python check_project.py --project . || true

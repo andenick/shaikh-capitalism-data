@@ -1,0 +1,8 @@
+# anu/ — minimal dependencies for the replication package
+# (the full project environment is at the repo root requirements.txt)
+pandas>=2.1
+numpy>=1.26
+openpyxl>=3.1
+pyarrow>=14.0
+requests>=2.31
+fredapi>=0.5.1

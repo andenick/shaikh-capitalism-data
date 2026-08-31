@@ -10,8 +10,8 @@ Open replication and 1860–2025 extension of the empirical material in:
 > Shaikh, Anwar (2016). *Capitalism: Competition, Conflict, Crises.* Oxford University Press.
 
 **118 series** across 17 chapters, 5 external studies, and 9 analytical
-constructs. 109 producible chopped CSVs; the remaining 9 are formally classified
-`PASS_DATA_UNAVAILABLE` or `PASS_THEORETICAL` (see VALIDATION_REPORT.json).
+constructs. 116 producible chopped CSVs; the remaining 2 are formally classified
+`data_unavailable` (S703, S704 - see VALIDATION_REPORT.json).
 
 ## What's here
 
@@ -45,6 +45,11 @@ Publish/
 │   ├── scripts/replicate.py   ← clean-venv end-to-end runner
 │   ├── lib/                   ← bundled copy of code/
 │   └── inputs_bundled/        ← SalvagedInputs + registries
+├── anu/                       ← Anu replication-package layer (L##/P##/V##)
+│   ├── series_registry.json   ← generated package registry (118 series)
+│   ├── scripts/               ← per-source fetchers + construct + V01 gate
+│   ├── dpr/                   ← per-source DPRs + series-family index
+│   └── Makefile               ← make check (key-free) / make all
 ├── chopped/                   ← 109 chopped CSVs (the deliverable)
 ├── extenbooks/                ← 109 extension workbooks (XLSX)
 ├── research/                  ← 118 *_research.json dossiers (verbatim quotes)
@@ -69,6 +74,9 @@ cd rscd
 python -m venv .venv && .venv/Scripts/activate
 pip install -r requirements.txt
 
+# Key-free package gate (validates the shipped chopped/ against the registry)
+python anu/scripts/V01_validate.py
+
 # API keys
 cp replicator/config/api_keys.env.example replicator/config/api_keys.env
 # edit FRED_API_KEY (and optionally BEA_API_KEY)
@@ -79,21 +87,26 @@ python replicator/scripts/replicate.py --series S201
 # Full replication (~45 min)
 python replicator/scripts/replicate.py --all
 
+# Or through the anu package layer (per-source control + staged output)
+python anu/scripts/P01_construct_series.py --all
+python anu/scripts/P02_write_chopped.py
+python anu/scripts/V01_validate.py --dir anu/data/final/chopped
+
 # Browse interactively
 python viz/app.py     # http://127.0.0.1:8050
 ```
 
-See **[INSTALL.md](INSTALL.md)** for detailed environment setup and
-**[replicator/README.md](replicator/README.md)** for clean-venv reproduction.
+See **[INSTALL.md](INSTALL.md)** for detailed environment setup,
+**[replicator/README.md](replicator/README.md)** for clean-venv reproduction, and
+**[anu/README.md](anu/README.md)** for the Anu replication-package layer.
 
 ## Headline results
 
 | Metric | Value |
 |--------|-------|
 | Series authored | 118 |
-| Series producing chopped output | 109 |
-| Series PASS_DATA_UNAVAILABLE | 11 (S801, S703, S704, S707, S708, S214, S215, S404, ES2306, plus 2 others) |
-| Series PASS_THEORETICAL | 8 (no empirical match expected) |
+| Series producing chopped output | 116 |
+| Series data_unavailable | 2 (S703, S704) |
 | Verbatim Shaikh quotes in research/ | 118/118 |
 | Chapter adequacy gate PASS | 17/17 |
 | Mean validation MAE (face-value match) | < 1.5% |
