@@ -50,8 +50,8 @@ Publish/
 │   ├── scripts/               ← per-source fetchers + construct + V01 gate
 │   ├── dpr/                   ← per-source DPRs + series-family index
 │   └── Makefile               ← make check (key-free) / make all
-├── chopped/                   ← 109 chopped CSVs (the deliverable)
-├── extenbooks/                ← 109 extension workbooks (XLSX)
+├── chopped/                   ← 116 chopped CSVs (the deliverable)
+├── extenbooks/                ← 116 extension workbooks (XLSX)
 ├── research/                  ← 118 *_research.json dossiers (verbatim quotes)
 ├── docs/
 │   ├── chapters/              ← per-chapter research summaries + adequacy reports
