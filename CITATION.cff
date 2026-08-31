@@ -3,10 +3,7 @@ title: "RSCD: Replication and Extension of Shaikh (2016) Capitalism: Competition
 message: "If you use this dataset or code, please cite both this work and Shaikh (2016)."
 type: dataset
 authors:
-  - given-names: Nicholas
-    family-names: Anderson
-    email: ibeforeena@gmail.com
-    affiliation: "The New School for Social Research"
+  - name: "Arcanum Research"
 version: 0.1.0-pre
 date-released: 2026-05-18
 license: MIT
